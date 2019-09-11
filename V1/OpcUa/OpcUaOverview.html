@@ -239,7 +239,51 @@
     &quot;StreamId&quot;: null
   }
 ]
-</code></pre></article>
+</code></pre><h2 id="opc-ua-adapter-security">OPC UA Adapter Security</h2>
+<p>OPC UA security standard is concerned with the authentication of Client and Server applications, the authentication of users and confidentiality of their communication. As the security model relies heavily on Transport Level Security (TLS) to establish a secure communication link with an OPC UA server, each client, including the OSIsoft Adapter, must have a digital certificate deployed and configured. Certificates uniquely identify client applications and machines on servers and allow for creation of a secure communication link when trusted on both sides.</p>
+<p>OSIsoft Adapter for OPC UA generates a self-signed certificate when the first secure connection attempt is made. Each OPC UA Adapter instance creates a certificate store where it&#39;s own as well as the server’s certificates will be persisted.</p>
+<h3 id="procedure-1">Procedure</h3>
+<ol>
+<li>Configure the data source to use secure connection (Set UseSecureConnection as true).</li>
+<li>Add server&#39;s certificate to the adapter&#39;s trust store.</li>
+<li>Add adapter&#39;s certificate to the server&#39;s trust store.</li>
+</ol>
+<h3 id="data-source-configuration">Data source configuration</h3>
+<pre><code class="lang-json">{
+&quot;EndpointUrl&quot;: &quot;opc.tcp://&lt;ip address&gt;:&lt;port - often 62541&gt;/&lt;server path&gt;&quot;,
+&quot;UseSecureConnection&quot;: true,
+&quot;UserName&quot;: null,
+&quot;Password&quot;: null,
+&quot;RootNodeIds&quot;: null,
+&quot;IncomingTimestamp&quot;: &quot;Source&quot;
+}
+</code></pre><blockquote><p><strong>Note:</strong> OSIsoft strongly recommends using secure connection in production environment(s).</p>
+</blockquote>
+<h3 id="adapter-certificate-store">Adapter Certificate store</h3>
+<p>Adapter Certificate store location:</p>
+<pre><code class="lang-bash">Windows: %programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates
+
+Linux: /usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates
+</code></pre><p>Adapter Trust store location:</p>
+<pre><code class="lang-bash">Windows: %programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates\Trusted\certs
+
+Linux: /usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates/Trusted/certs
+</code></pre><p>Adapter Rejected certificates location:</p>
+<pre><code class="lang-bash">Windows: %programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates\RejectedCertificates\certs
+
+Linux: /usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates/RejectedCertificates/certs
+</code></pre><p>The adapter verifies if the server certificate is present in the adapter trust store location and is therefore trusted. In case the certificates were not exchanged upfront, the adapter persists the server certificate within the RejectedCertificates folder and the following warning message about the rejected server certificate will be printed:</p>
+<pre><code class="lang-bash">~~2019-09-08 11:45:48.093 +01:00~~ [Warning] Rejected Certificate: &quot;DC=MyServer.MyDomain.int, O=Prosys OPC, CN=Simulation
+</code></pre><p>After the certificate is reviewed and approved, it can be manually moved from the “RejectedCertificates\certs” folder to the “Trusted\certs&quot; folder using a file explorer or command-line interpreter.</p>
+<ul>
+<li>Linux example using command-line:</li>
+</ul>
+<pre><code class="lang-bash"> mv /usr/share/OSIsoft/EdgeDataStore/OpcUa1/Certificates/RejectedCertificates/certsSimulationServer\ \[F9823DCF607063DBCECCF6F8F39FD2584F46AEBB\].der /usr/share/OSIsoft/EdgeDataStore/OpcUa1/Certificates/Trusted/certs/
+</code></pre><blockquote><p><strong>Note:</strong> Administrator or Root privileges are required to perform this operation.</p>
+</blockquote>
+<p>When the certificate is in the adapter trust store, the adapter trusts the server and the connection attempt proceeds to making the actual connection call to the configured server. Connection succeeds only when the adapter certificate is trusted on the server side. Please refer to your OPC UA server documentation for more details on how to make a client certificate trusted. In general, servers work in a similar fashion to the clients; hence a similar approach for making the server certificate trusted on the client side can be taken on the server.</p>
+<p>When certificates are mutually trusted the connection attempt succeeds and the adapter is connected to the most secure endpoint provided by the server.</p>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

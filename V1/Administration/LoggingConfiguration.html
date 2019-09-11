@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Edge Data Store logging </title>
+    <title>Message logging configuration </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Edge Data Store logging ">
+    <meta name="title" content="Message logging configuration ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -69,17 +69,77 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="loggingConfiguration">
-<h1 id="edge-data-store-logging">Edge Data Store logging</h1>
+<h1 id="message-logging-configuration">Message logging configuration</h1>
 
-<p>Logging is used for diagnosing deployment or production issues, and it can be set dynamically without restarting the system.</p>
-<h2 id="edge-data-store-logging-configuration">Edge Data Store logging configuration</h2>
-<p>Edge Data Store and all loaded components provide the ability to configure logging at the component level.  The following is an example logging configuration:</p>
+<p>Edge Data Store writes daily log messages to flat text files in the following locations:</p>
+<p>• Windows: <em>%ProgramData%/OSIsoft/EdgeDataStore/Logs</em></p>
+<p>• Linux: <em>/usr/share/OSIsoft/EdgeDataStore/Logs</em></p>
+<p>Each message in the log displays the message severity level, timestamp, and the message itself.</p>
+<h2 id="default-logging-configuration-and-schema">Default logging configuration and Schema</h2>
+<p>By default, logging captures Information, Warning and Error and Critical messages in the message logs.
+The default logging configuration for a component on install is </p>
 <pre><code class="lang-json">{
-  &quot;LogLevel&quot;: &quot;Information&quot;,
-  &quot;LogFileSizeLimitBytes&quot;: 34636833,
-  &quot;LogFileCountLimit&quot;: 31
+  &quot;logLevel&quot;: &quot;Information&quot;,
+  &quot;logFileSizeLimitBytes&quot;: 34636833,
+  &quot;logFileCountLimit&quot;: 31   
 }
-</code></pre></article>
+</code></pre><p>The schema file specifies how to formally describe the configuration parameters for message logging. 
+It is located in:</p>
+<p>• Windows: <em>%ProgramFiles%/OSIsoft/EdgeDataStore/Schema</em></p>
+<p>• Linux: <em>/opt/EdgeDataStore/Schema</em></p>
+<h3 id="log-levels">Log Levels</h3>
+<p>Changing the logLevel leads to captures of logs in severity including and above the specified log level. The log levels in their increasing order of severity are as follows: Trace, Debug, Information, Warning, Error, Critical.</p>
+<p>The table descibes general guidelines for setting the log level.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Level</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trace</td>
+<td>Logs that contain the most detailed messages. <em>These messages may contain sensitive application data</em> - like actual received values. Generally, these messages <em>shouldn’t be enabled in production environment</em>.</td>
+</tr>
+<tr>
+<td>Debug</td>
+<td>Log messages are for debugging purposes and are aimed at the developer persona. This could be used to troubleshoot data flow issues by logging metrics and detailed flow related information.</td>
+</tr>
+<tr>
+<td>Information</td>
+<td>Logs that track the general flow of the application. This could be used to any non-repetitive general information would be useful for diagnosing potential application error like version information relating to the software at startup, what external services are being used – data source connection string, number of measurements, egress URL, change of state “Starting”, “Stopping” or configuration.</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>Logs that highlight an abnormal or unexpected event in the application flow, but do not otherwise cause the application execution to stop. This could be used to react on unconfigured data source state, message that communication with backup failover instance has been lost, use of insecure communication channel, or any other event that could require attention, but isn’t directly impacting the flow.</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>Logs that highlight when the current flow of execution is stopped due to a failure. These should indicate a failure in the current activity, not an application-wide failure. This could be used to react on invalid configuration, unavailable external endpoint, internal flow error, etc.</td>
+</tr>
+<tr>
+<td>Critical</td>
+<td>Critical   Logs that describe an unrecoverable application or system crash, or a catastrophic failure that requires immediate attention. This could be used to react on application wide failures like beta timeout expired, unable to start self-hosted endpoint, unable to access vital resource (Data Protection key file for example)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="log-file-count-limit">Log File Count Limit</h3>
+<p>The logFileCountLimit controls the number of days the log files are persisted before they are deleted for creation of new log files. </p>
+<h2 id="changing-logging-configuration">Changing logging configuration</h2>
+<p>To change the logging configuration you can save the new configuration information in a JSON file format and run the following script (or make an equivalent REST API call)</p>
+<p>E.g. Component_Logging.json</p>
+<pre><code class="lang-json">{
+  &quot;logLevel&quot;: &quot;Warning&quot;,
+  &quot;logFileSizeLimitBytes&quot;: 16777216,
+  &quot;logFileCountLimit&quot;: 30   
+}
+</code></pre><pre><code class="lang-bash">curl -i -d &quot;@Component_Logging.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging
+</code></pre><p>where &lt;ComponentId&gt; is the ComponentId of the adapter or Storage.</p>
+<p>On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. </p>
+<h3 id="note"><strong>Note:</strong></h3>
+<p>If you do not specify <em>all</em> the parameters while changing the configuration, it will result in specified parameter(s) getting updated while the unspecified parameter(s) reverting to the default schema values. </p>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

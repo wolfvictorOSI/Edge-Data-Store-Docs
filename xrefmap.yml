@@ -56,7 +56,7 @@ references:
   name: Linux and Windows platform differences
   href: V1/LinuxWindows/LinuxWindows.html
 - uid: loggingConfiguration
-  name: Edge Data Store logging
+  name: Message logging configuration
   href: V1/Administration/LoggingConfiguration.html
 - uid: managementTools
   name: Edge Data Store management tools
