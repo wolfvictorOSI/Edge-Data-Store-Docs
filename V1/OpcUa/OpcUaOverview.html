@@ -75,7 +75,7 @@
 <p>The OPC UA EDS adapter transfers time-series data from OPC UA devices into Edge Data Store.</p>
 <p>It is possible to add a single EDS OPC UA adapter during installation. If multiple EDS OPC UA adapters are desired, please reference <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> on how to add a new component to Edge Data Store. The example below covers configuring the first adapter. If another adapter has been installed, please substitute the name of the installed adapter in the below example for OpcUa1.</p>
 <p>As with other Edge Data Store EDS adapters, the EDS OPC UA adapter is configured using data source and data selection JSON documents. The data source configuration are identical with other adapters, but OPC UA supports an option to generate a template data selection file that can be manually edited and used for subsequent configuration. This optional process for generating and editing the file is different for <a class="xref" href="OpcUaDataSelectionWindows.html">Windows</a> and <a class="xref" href="OpcUaDataSelectionLinux.html">Linux</a>. Once the template file is created it can be reused on both Linux and Windows without changes.</p>
-<p>OPC UA is a standard, which ensures open EDS adapter, interoperability, security, and reliability of industrial automation devices and systems. OPC UA is recognized as one of the key communication and data modeling technologies of Industry 4.0, due to the fact that it works with many software platforms and that it is completely scalable and flexible.</p>
+<p>OPC UA is an open standard, which ensures interoperability, security, and reliability of industrial automation devices and systems. OPC UA is recognized as one of the key communication and data modeling technologies of Industry 4.0, due to the fact that it works with many software platforms and that it is completely scalable and flexible.</p>
 <h2 id="configuration-of-opc-ua-data-source">Configuration of OPC UA data source</h2>
 <p>To use the OPC UA EDS adapter of Edge Data Store, you must configure from which OPC UA data source it will be receiving data.</p>
 <h3 id="procedure-for-configuring-opc-ua-data-source">Procedure for Configuring OPC UA data source</h3>
@@ -111,7 +111,7 @@
 <td><strong>EndpointURL</strong></td>
 <td>Required</td>
 <td>string</td>
-<td>The endpoint URL of the OPC UA server. The following is an example of the URL format: opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer<br><br><strong>Note:</strong> If you change the EndpointURL on a configured OPC UA EDS adapter that has DataCollection.config.csv file exported, you will need to relocate the DataCollection.config.csv file from the configuration directory to trigger a new browse (export).</td>
+<td>The endpoint URL of the OPC UA server. The following is an example of the URL format: opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer<br><br><strong>Note:</strong> If you change the EndpointURL on a configured OPC UA EDS adapter that has ComponentID_DataSelection.json file exported, you will need to relocate the ComponentID_DataSelection.json file from the configuration directory to trigger a new browse (export).</td>
 </tr>
 <tr>
 <td><strong>UseSecureConnection</strong></td>
@@ -147,7 +147,7 @@
 <td><strong>StreamIdPrefix</strong></td>
 <td>Optional</td>
 <td>string</td>
-<td>Specifies what prefix is used for Stream IDs. Naming convention is StreamIdPrefix.NodeId. <strong>Note:</strong> An empty string means no prefix will be added to the Stream IDs.</td>
+<td>Specifies what prefix is used for Stream IDs. Naming convention is StreamIdPrefixNodeId. <strong>Note:</strong> An empty string means no prefix will be added to the Stream IDs. Null value means ComponentID followed by dot character will be added to the stream IDs (example: OpcUa1.NodeId).</td>
 </tr>
 </tbody>
 </table>
@@ -195,7 +195,7 @@
 <td><strong>Selected</strong></td>
 <td>Optional</td>
 <td>bool</td>
-<td>This field is used to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is true.</td>
+<td>This field is used to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is false.</td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
@@ -250,7 +250,7 @@
 </ol>
 <h3 id="data-source-configuration">Data source configuration</h3>
 <pre><code class="lang-json">{
-&quot;EndpointUrl&quot;: &quot;opc.tcp://&lt;ip address&gt;:&lt;port - often 62541&gt;/&lt;server path&gt;&quot;,
+&quot;EndpointUrl&quot;: &quot;opc.tcp://IP-Address/TestOPCUAServer&quot;,
 &quot;UseSecureConnection&quot;: true,
 &quot;UserName&quot;: null,
 &quot;Password&quot;: null,

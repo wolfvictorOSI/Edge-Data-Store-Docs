@@ -8,8 +8,8 @@ references:
   name: Command line configuration of Edge Data Store
   href: V1/CommandLine/CommandLine.html
 - uid: commandLineLinuxQuickStart
-  name: Edge Data Store Command Line Quick Start - Windows
-  href: V1/Overview/CommandLineQuickStartWindows.html
+  name: Edge Data Store Command Line Quick Start - Linux
+  href: V1/Overview/CommandLineLinuxQuickStart.html
 - uid: configurationSchemaList
   name: Configuration schemas
   href: V1/Configuration/Schemas/ConfigurationSchemaList.html
