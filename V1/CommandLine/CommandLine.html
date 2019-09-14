@@ -260,14 +260,12 @@ Example: ./edgecmd Configuration System Port Port=5590
 <li>Note: if an entry with the specified id already exists, it will be updated based on the new key=value pairs</li>
 </ul>
 <h3 id="configuring-with-json-files">Configuring with JSON Files</h3>
-<p>The Edge Data Store can also be configured by inputting a JSON file into the edgecmd application. File imports will completely replace the existing configuration(s) that you are attempting to change. Therefore, it cannot be used to change certain values in a facet without modifying others.</p>
+<p>The Edge Data Store can also be configured by inputting a JSON file into the edgecmd application. File imports will completely replace the existing configuration(s) that you are attempting to change. Therefore, it cannot be used to change individual values in a facet without modifying others.</p>
 <p>To import a bulk configuration:</p>
 <pre><code class="lang-bash">edgecmd Configuration file=PathToJsonFile
-</code></pre><p>To import a configuration file for a specific component:</p>
-<pre><code class="lang-bash">edgecmd Configuration componentId file=PathToJsonFile
-</code></pre><p>To import a facet specific configuration file for a component facet:</p>
+</code></pre><p>To import a facet specific configuration file for a component:</p>
 <pre><code>edgecmd Configuration componentId facetName file=PathToJsonFile
-</code></pre><p>To import a file with configuration for a single component, a bulk file import operation can be used, but the file must contain just payload for the given component ID. For example, running the following command:</p>
+</code></pre><p>To import a file with configuration for individual facets, a bulk file import operation can be used, but the file must contain just payload for the given component ID. For example, running the following command:</p>
 <pre><code class="lang-bash">edgecmd Configuration file=&quot;~/Bulk_Storage_Runtime.json&quot;
 </code></pre><p>where the file &#39;Bulk_Storage_Runtime.json&#39; contains:</p>
 <pre><code class="lang-JSON">{
@@ -293,7 +291,7 @@ Example: ./edgecmd Configuration System Port Port=5590
 }
 </code></pre><h2 id="deleting-configuration-data">Deleting Configuration Data</h2>
 <p>The edgecmd application can be used to delete configuration data from the Edge Data Store.
-To delete a configuration entry from a collection configuration (for example, &#39;PeriodicEgressEndpoints&#39; facet within the &#39;Storage&#39; component) the user must specify the component ID, facet, and ID of the entry to remove followed by the &#39;delete&#39; keyword.
+To delete a configuration entry from a collection configuration (for example, &#39;HealthEndpoints&#39; facet within the &#39;System&#39; component) the user must specify the component ID, facet, and ID of the entry to remove followed by the &#39;delete&#39; keyword.
 Example:</p>
 <pre><code class="lang-bash">edgecmd Configuration System HealthEndpoints Id=endpoint_1 delete
 </code></pre><p>To delete an entire configuration file, the user must specify the component ID and facet followed by the &#39;delete&#39; keyword.

@@ -102,7 +102,7 @@
 <h3 id="debian-9-or-later-linux-ubuntu--raspberry-pi-beaglebone-other-debian-based-linux-distros">Debian 9 or Later Linux (Ubuntu  Raspberry PI, BeagleBone, other Debian based Linux distros)</h3>
 <p>You must have administrative privileges to install the software, e.g. root or sudo privilege. The examples below assume a user with permission to use sudo.</p>
 <p>Open a terminal window and type:</p>
-<pre><code class="lang-bash">sudo apt install ./EdgeDataStore_linux_&lt;either x64 or arm depending upon processor&gt;.deb
+<pre><code class="lang-bash">sudo apt install ./EdgeDataStore_linux-&lt;either x64 or arm depending upon processor&gt;.deb
 </code></pre><p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/LinuxInstall1.jpg" alt="alt text" title="Linux Installation"></p>
 <p>A validation check will be done for prerequisites. If the Linux OS is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:</p>
 <pre><code class="lang-bash">sudo apt update
@@ -115,7 +115,7 @@ sudo apt upgrade
 <pre><code class="lang-bash">sudo apt remove osisoft.EdgeDataStore
 </code></pre><p>Running this command will not delete the data, configuration, or log files.</p>
 <p>To remove data, configuration, and log files, remove the directory /usr/share/OSIsoft/EdgeDataStore/. This will result in deletion of all data stored in the Edge Storage component, in addition to configuration and log files. This can be done with the following command:</p>
-<pre><code class="lang-bash">sudo rm -r /usr/share/EdgeDataStore/
+<pre><code class="lang-bash">sudo rm -r /usr/share/OSIsoft/EdgeDataStore/
 </code></pre><h2 id="after-installation-windows-and-linux">After Installation (Windows and Linux)</h2>
 <p>You can verify that Edge Data Store is correctly installed by running the following script from the terminal window (depending upon the processor, memory, and storage, it may take the system a few seconds to start up):</p>
 <pre><code class="lang-bash">curl http://localhost:5590/api/v1/configuration

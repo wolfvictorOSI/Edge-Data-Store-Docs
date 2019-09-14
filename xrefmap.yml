@@ -103,12 +103,9 @@ references:
 - uid: opcua_schema
   name: OpcUaConfiguration Schema
   href: V1/Configuration/Schemas/OpcUa_schema.html
-- uid: opcUaDataSelectionLinux
-  name: Generating a template OPC UA data selection configuration file on Windows
-  href: V1/OpcUa/OpcUaDataSelectionLinux.html
-- uid: opcUaDataSelectionWindows
-  name: Generating a template OPC UA data selection configuration file on Windows
-  href: V1/OpcUa/OpcUaDataSelectionWindows.html
+- uid: opcUaDataSelection
+  name: Generating a template OPC UA data selection configuration file
+  href: V1/OpcUa/OpcUaDataSelection.html
 - uid: opcUaOverview
   name: OPC UA EDS adapter
   href: V1/OpcUa/OpcUaOverview.html

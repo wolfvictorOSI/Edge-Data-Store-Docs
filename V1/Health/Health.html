@@ -71,7 +71,7 @@
             <article class="content wrap" id="_content" data-uid="EdgeDataStoreHealth">
 <h1 id="edge-data-store-health">Edge Data Store health</h1>
 
-<p>Having insight into the health of the Edge Data Store and the components that make it up can be critical for ensuring that your needs for data collection are being met.  To that end, Edge Data Store and its components produce health information to be sent to OSIsoft Health Omf Endpoints. When enabled, Edge Data Store will transfer to configured Omf health endpoints the types and containers that represent available  health information.</p>
+<p>Having insight into the health of the Edge Data Store and the components that make it up can be critical for ensuring that your needs for data collection are being met. To that end, Edge Data Store and its components produce health information. When configured, Edge Data Store will transfer health information to OSIsoft Omf endpoints, including the types and containers that represent available health information.</p>
 <h2 id="configuring-edge-data-store-health-endpoints">Configuring Edge Data Store health endpoints</h2>
 <p>The Edge Data Store has the ability to report system health to one or more OMF endpoints capable of receiving health messages. To enable this functionality, one or more health endpoints must be configured.</p>
 <p>Table 1. Configuration parameters for Edge Data Store health endpoints</p>
@@ -92,7 +92,7 @@
 <tr>
 <td>Endpoint</td>
 <td>Required</td>
-<td>The URL of the ingress point which accepts OMF health messages.</td>
+<td>The URL of the ingress endpoint which accepts OMF health messages.</td>
 </tr>
 <tr>
 <td>UserName</td>
