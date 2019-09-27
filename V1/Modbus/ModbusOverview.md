@@ -12,7 +12,14 @@ The Modbus TCP EDS adapter communicates with any device conforming to the Modbus
 
 To install a Modbus EDS adapter, please reference [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) on how to add a new component to Edge Data Store. The example below covers configuring a EDS adapter named Modbus1. If another EDS adapter has been installed, please substitute the name of the installed adapter in the below example for Modbus1.
 
-## Operational Overview
+## Supported features
+### Register types
+
+
+
+##  Overview
+
+
 
 ## Configuration of Modbus data source
 
