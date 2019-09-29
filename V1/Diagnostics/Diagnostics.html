@@ -71,14 +71,14 @@
             <article class="content wrap" id="_content" data-uid="EdgeDataStoreDiagnostics">
 <h1 id="edge-data-store-diagnostics">Edge Data Store diagnostics</h1>
 
-<p>Edge Data Store and its components produce diagnostics data which is stored locally in the Storage component, and may be queried locally and/or egressed to PI Web API endpoints or the OSIsoft Cloud Services.</p>
-<p>Diagnostics data is stored within the &#39;diagnostics&#39; namespace of Edge Storage.  Local access to this data is available via the <a class="xref" href="../SDS/Reading_Data.html">Sds</a> methods.</p>
-<h2 id="egressing-diagnostics-data-via-periodicegressendpoints">Egressing diagnostics data via PeriodicEgressEndpoints</h2>
+<p>Edge Data Store and its components produce diagnostics data which is stored locally in the Storage component, and may be queried locally or egressed to PI Web API endpoints or the OSIsoft Cloud Services or both.</p>
+<p>Diagnostics data is stored within the &#39;diagnostics&#39; namespace of Edge Storage.  Local access to this data is available through the <a class="xref" href="../SDS/Reading_Data.html">Sds</a> methods.</p>
+<h2 id="egress-diagnostics-data-through-periodicegressendpoints">Egress diagnostics data through PeriodicEgressEndpoints</h2>
 <p>To egress diagnositcs related data, configure a periodic egress endpoint and specify <code>diagnostics</code> as the NamespaceId in the periodic egress endpoint configuration.</p>
 <h2 id="diagnostics-produced-by-edge-data-store">Diagnostics produced by Edge Data Store</h2>
 <p>Edge Data Store produces the following diagnostics streams:</p>
 <p>The Diagnostics.System dynamic type includes these values which are logged in a stream with the id System.Diagnostics.
-This diagnostic stream contains system level information related to the host platform that the Edge Data Store is running on.</p>
+This diagnostic stream contains system level information related to the host platform that Edge Data Store is running on.</p>
 <table>
 <thead>
 <tr>
@@ -160,7 +160,7 @@ This diagnostic stream contains system level information related to the host pla
 </tr>
 </tbody>
 </table>
-<h2 id="edge-eds-adapter-diagnostics">Edge EDS adapter diagnostics</h2>
+<h2 id="eds-adapter-diagnostics">EDS adapter diagnostics</h2>
 <p>Each EDS adapter of the Edge Data Store produces its own diagnostics streams.</p>
 <h3 id="stream-count">Stream count</h3>
 <p>The Diagnostics.StreamCountEvent dynamic type includes these values, which are logged in a stream with the id {componentid}.StreamCount.  The stream count and type count include only types and streams created for sequential data received from a data source.</p>

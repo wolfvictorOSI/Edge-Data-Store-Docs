@@ -83,7 +83,7 @@ references:
   name: Edge Modbus Quick Start
   href: V1/Overview/ModbusQuickStart.html
 - uid: ocsEgressQuickStart
-  name: OSIsoft Cloud Services (OCS) egress Quick Start
+  name: OSIsoft Cloud Services (OCS) egress quick start
   href: V1/Overview/OCSEgressQuickStart.html
 - uid: omfOverview
   name: OSIsoft Message Format (OMF) ingress with Edge Storage
