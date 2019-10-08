@@ -42,7 +42,7 @@ In addition to ready to use install kits, OSIsoft also provides examples of how 
    * CheckpointRateInSec
    * TransactionLogLimitMB
    * EnableTransactionLog
-* The Id property of a PeriodicEgressEndpoint configuration has been changed to optional.  If one is not provided when the endpoint is configured, a unique value will be assigned to it.
+* The Id property of a PeriodicEgressEndpoint configuration has been changed to be optional.  If one is not provided when the endpoint is configured, a unique value will be assigned to it.
 * Improvements were made to improve resiliency of the product by ensuring data and configuration are properly checkpointed to storage.
 * Improvements were made to handle a wider range of data corruptions encountered in power loss scenarios.
 * In Beta 2, under certain data egress scenarios, the Storage component would attempt to retrieve all data destined to be egressed, and then egress the data to the destination endpoint.  This could lead to high memory usage and potential stability issues.  This behavior has been changed to stream the data in a more controlled manner, leading to less memory being demanded.
@@ -70,7 +70,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the OS you are using. If 5590 is acceptable, press Enter.
+After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.
 
 The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
 
