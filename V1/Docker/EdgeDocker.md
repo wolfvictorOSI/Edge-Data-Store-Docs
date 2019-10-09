@@ -12,7 +12,7 @@ The objective of this document is to provide examples of how to successfully cre
 
 ### ARM32 Processor
 
-1. Create the following Docker file in the directory where you want to create and/or run the container:
+1. Create the following Dockerfile in the directory where you want to create and/or run the container:
 
 ```docker
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2
@@ -31,7 +31,7 @@ docker build -t EdgeDataStore .
 
 ### AMD64 (x64) Processor
 
-1. Create the following Docker file in the directory where you want to create and/or run the container:
+1. Create the following Dockerfile in the directory where you want to create and/or run the container:
 
 ```docker
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2
