@@ -31,16 +31,16 @@ The following table lists all data types with their corresponding type codes sup
 | Data type code | Data type name | Value type | Register type | Description |
 |----------------|----------------|------------|---------------|-------------|
 | 1              | Boolean        | Bool       | Bool          | 0 = false <br> 1 = true
-| 10             | Int16          | Int16      | Bool/16-bit   | Read 1 Modbus register and interpret as a 16-bit integer. Bytes [BA] read from the device are stored as [AB].
-| 20             | UInt16         | UInt16     | Bool/16-bit   | Read 1 Modbus register and interpret as an unsigned 16-bit integer. Bytes [BA] read from the device are stored as [AB].
-| 30             | Int32          | Int32      | 16-bit/32-bit | Read 32 bits from the Modbus device and interpret as a 32-bit integer. Bytes [DCBA] read from the device are stored as [ABCD].
-| 31             | Int32ByteSwap  | Int32      | 16-bit/32-bit | Read 32 bits from the Modbus device and interpret as a 32-bit integer. Bytes [BADC] read from the device are stored as [ABCD].
-| 100            | Float32        | Float32    | 16-bit/32-bit | Read 32 bits from the Modbus device and interpret as a 32-bit float. Bytes [DCBA] read from the device are stored as [ABCD].
-| 101            | Float32ByteSwap | Float32   | 16-bit/32-bit | Read 32 bits from the Modbus device and interpret as a 32-bit float. Bytes [BADC] read from the device are stored as [ABCD].
-| 110            | Float64        | Float64    | 16-bit/32-bit | Read 64 bits from the Modbus device and interpret as a 64-bit float. Bytes [HGFEDCBA] read from the device are stored as [ABCDEFGH].
-| 111            | Float64ByteSwap | Float64   | 16-bit/32-bit | Read 64 bits from the Modbus device and interpret as a 64-bit float. Bytes [BADCFEHG] read from the device are stored as [ABCDEFGH].
-| 1001 - 1250    | String         | String     | 16-bit/32-bit | 1001 will read a one-character string, 1002 will read a two-character string, and 1003 will read a three-character string and so on. Bytes [AB] are interpreted as "AB".
-| 2001 - 2250    | StringByteSwap | String     | 16-bit/32-bit | 2001 will read a one-character string, 2002 will read a two-character string, and 2003 will read a three-character string and so on. Bytes [BA] are interpreted as "AB".
+| 10             | Int16          | Int16      | Bool/16-bit   | Read 1 Modbus register and interpret as a 16-bit integer. Bytes [BA] read from the device are stored as [AB]. |
+| 20             | UInt16         | UInt16     | Bool/16-bit   | Read 1 Modbus register and interpret as an unsigned 16-bit integer. Bytes [BA] read from the device are stored as [AB]. |
+| 30             | Int32          | Int32      | 16-bit/32-bit | Read 32 bits from the Modbus device and interpret as a 32-bit integer. Bytes [DCBA] read from the device are stored as [ABCD]. |
+| 31             | Int32ByteSwap  | Int32      | 16-bit/32-bit | Read 32 bits from the Modbus device and interpret as a 32-bit integer. Bytes [BADC] read from the device are stored as [ABCD]. |
+| 100            | Float32        | Float32    | 16-bit/32-bit | Read 32 bits from the Modbus device and interpret as a 32-bit float. Bytes [DCBA] read from the device are stored as [ABCD]. |
+| 101            | Float32ByteSwap | Float32   | 16-bit/32-bit | Read 32 bits from the Modbus device and interpret as a 32-bit float. Bytes [BADC] read from the device are stored as [ABCD]. |
+| 110            | Float64        | Float64    | 16-bit/32-bit | Read 64 bits from the Modbus device and interpret as a 64-bit float. Bytes [HGFEDCBA] read from the device are stored as [ABCDEFGH]. |
+| 111            | Float64ByteSwap | Float64   | 16-bit/32-bit | Read 64 bits from the Modbus device and interpret as a 64-bit float. Bytes [BADCFEHG] read from the device are stored as [ABCDEFGH]. |
+| 1001 - 1250    | String         | String     | 16-bit/32-bit | 1001 will read a one-character string, 1002 will read a two-character string, and 1003 will read a three-character string and so on. Bytes [AB] are interpreted as "AB". |
+| 2001 - 2250    | StringByteSwap | String     | 16-bit/32-bit | 2001 will read a one-character string, 2002 will read a two-character string, and 2003 will read a three-character string and so on. Bytes [BA] are interpreted as "AB". |
 
 ### Applying bit map
 The Modbus EDS adapter supports applying bitmaps to the value converted from the readings from the Modbus devices. A bitmap is a series of numbers used to extract and reorder bits from a word register. The format of the bitmap is uuvvwwxxyyzz, where uu, vv, ww, yy, and zz each refer to a single bit. A leading zero is required if the referenced bit is less than 10. The low-order bit is 01 and high-order bit is either 16 or 32. Up to 16 bits can be referenced for a 16-bit word (data types 10 and 20) and up to 32 bits can be referenced for a 32-bit word (data type 30 and 31). For example, the bit map 0307120802 will map the second bit of the original word to the first bit of the new word, the eighth bit to the second bit, the twelfth bit to the third bit, and so on. The high-order bits of the new word are padded with zeros if they are not specified. Not all data types support applying bitmap. The data types supporting bitmap are: 
@@ -55,7 +55,7 @@ The Modbus EDS adapter supports applying bitmaps to the value converted from the
  ```
  <After Conversion> = <Before Conversion> / Factor - Offset 
  ```
- 
+
  Not all data types support applying data conversion. The data types supporting data conversion are: 
  - Int16 (Data type code 10) 
  - UInt16 (Data type code 20) 
@@ -66,6 +66,35 @@ The Modbus EDS adapter supports applying bitmaps to the value converted from the
 
 ## Principles of operation
 The following topics give you an operational overview of the Modbus EDS adapter, focusing on streams creation and error handling. 
+
+### Operational overview
+
+#### Adapter configuration
+In order for the Modbus EDS adapter to be ready for data collection, you need to configure the adapter in order to provide necessary information. For more details, see **Configuration of Modbus data source** and **Configuration of Modbus data selection** sections. For a proper configuration of the connector, configure the following:
+- Data source: Provide the information of the data sources from which the connector pulls data
+- Data selection: Provide the selected measurements for which the adapter collects data from the data source
+- Logging: Set up the logging attributes to manage the adapter logging behavior
+
+#### Network communication
+The Modbus EDS adapter communicates with the Modbus devices through the TCP/IP network by sending request packets that are constructed based on the data selection configurations, and collects the response packets returned by the devices. 
+
+#### Stream creation
+From the parsed data selection configurations, the Modbus EDS adapter creates types, streams and data based on the information provided. For each measurement in the data selection configuration, a stream gets created in the Edge Data Store to store time series data.
+
+#### Data collection
+The Modbus EDS adapter collects data from the Modbus devices at the polling rates that you specify. The rates are set in each of the data selection configurations and can range from 0 milliseconds (as fast as possible) up to 1 day per polling. The adapter automatically optimizes the data collection process by grouping the requests to reduce the I/O load imposed to the Modbus networks.
+
+### Streams by Modbus EDS adapter
+For each data selection configuration, the Modbus EDS adapter creates a stream with two properties. The properties are defined in the following table:
+| Property name | Data type | Description |
+|---------------|-----------|-------------|
+| Timestamp     | String    | The response time of the stream data from the Modbus device. |
+| Value         | Specified by the data selection | The value of the stream data from the Modbus device. | 
+
+There is a unique identifier (Stream ID) for each stream created for the selected measurement. If a custom stream ID is specified for the measurement in the data selection configuration, the Modbus EDS adapter will use that stream ID to create the stream. Otherwise, the connector constructs the stream ID using the following format: 
+```
+<Adapter Component ID>.<Unit ID>.<Register Type>.<Register Offset> 
+```
 
 ## Configuration of Modbus data source
 
@@ -93,14 +122,15 @@ The following parameters are available for configuring a Modbus data source.
 
 | Parameter                |Required       | Type      | Description  |
 |--------------------------|-----------|-----------|---------------------------------------------------|
-| **IpAddress**           | Required  | string    | The IP Address of the device from which the data is to be collected using the Modbus protocol. Host name is not supported. |
-| **Port**                | Optional  | number | The TCP port of the target device that listens for and responds to Modbus requests. The value ranges from 0 to 65535. If not configured, the default TCP port is 502 (which is the default port for Modbus protocol). |
-| **StreamIdPrefix**      | Optional          | number | Parameter applied to all data items collected from the data source. If not configured, the default value will be the ID of the Modbus EDS adapter. The custom StreamIdPrefix has the highest priority.|
-| **ConnectTimeout**      | Optional          | number  | Parameter to specify the time (in milliseconds) to wait when Modbus TCP EDS adapter is trying to connect to the data source. The value ranges from 1000 ms to 30000 ms. The default value is 5000 ms.|
-| **ReconnectInterval**   | Optional          | number  | Parameter to specify the time (in milliseconds) to wait before retrying to connect to the data source when the data source is offline. The value ranges from 100 ms to 30000 ms. The default value is 1000 ms. |
-|**RequestTimeout**       | Optional          | number  |Parameter to specify the time (in milliseconds) that Modbus TCP EDS adapter waits for a pending request before marking it as timeout and dropping the request. The default value is 10000 ms. The value must be a positive integer, there is no value range.|
-|**DelayBetweenRequests** | Optional          |number|Parameter to specify the minimum time (in milliseconds) between two successive requests sent to the data source. The value ranges from 0 ms to 1000 ms. The default value is 0 ms.|
-|**MaxResponseDataLength**| Optional          |number    |Parameter to limit the maximum length (in bytes) of data that can be read within one transaction. This feature is provided to support devices that limit the number of bytes that can be returned. If there is no device limitation, the request length should be the maximum length of 250 bytes. The value ranges from 2 to 250. The default value is 250 ms.|
+| **IpAddress**             | Required  | string    | The IP Address of the device from which the data is to be collected using the Modbus protocol. Host name is not supported. |
+| **Port**                  | Optional  | number | The TCP port of the target device that listens for and responds to Modbus requests. The value ranges from 0 to 65535. If not configured, the default TCP port is 502 (which is the default port for Modbus protocol). |
+| **StreamIdPrefix**        | Optional          | number | Parameter applied to all data items collected from the data source. If not configured, the default value will be the ID of the Modbus EDS adapter. The custom StreamIdPrefix has the highest priority.|
+| **ApplyPrefixToStreamId** | Optional          | boolean | Parameter applied to all data items collected from the data source that have custom stream ID configured. If configured, the adapter will apply the StreamIdPrefix property to all the streams with custom ID configured. The property does not affect any streams with default ID configured|
+| **ConnectTimeout**        | Optional          | number  | Parameter to specify the time (in milliseconds) to wait when Modbus TCP EDS adapter is trying to connect to the data source. The value ranges from 1000 ms to 30000 ms. The default value is 5000 ms.|
+| **ReconnectInterval**     | Optional          | number  | Parameter to specify the time (in milliseconds) to wait before retrying to connect to the data source when the data source is offline. The value ranges from 100 ms to 30000 ms. The default value is 1000 ms. |
+|**RequestTimeout**         | Optional          | number  |Parameter to specify the time (in milliseconds) that Modbus TCP EDS adapter waits for a pending request before marking it as timeout and dropping the request. The default value is 10000 ms. The value must be a positive integer, there is no value range.|
+|**DelayBetweenRequests**   | Optional          |number|Parameter to specify the minimum time (in milliseconds) between two successive requests sent to the data source. The value ranges from 0 ms to 1000 ms. The default value is 0 ms.|
+|**MaxResponseDataLength**  | Optional          |number    |Parameter to limit the maximum length (in bytes) of data that can be read within one transaction. This feature is provided to support devices that limit the number of bytes that can be returned. If there is no device limitation, the request length should be the maximum length of 250 bytes. The value ranges from 2 to 250. The default value is 250 ms.|
 
 ### Modbus data source example
 
