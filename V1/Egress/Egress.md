@@ -57,7 +57,7 @@ curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: app
 
 ### Examples
 
-Valid egress configuration examples.
+The following are valid egress configuration examples.
 
 **Egress data to OCS. All streams, every 15 seconds.**
 
