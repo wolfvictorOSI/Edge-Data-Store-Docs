@@ -455,7 +455,7 @@ The following JSON file represents maximal configuration of an Edge Data Store. 
 1. Fill in any credentials or IP addresses with appropriate values for your environment.
 2. Save the edited version of the previous JSON in a file named _EdgeMaximumConfiguration.json_ in any directory. 
 
-If your run the following curl command, this will be set as the configuration of a running Edge Data Store (You should run the command from the same directory where the file is located):
+If you run the following curl command, this will be set as the configuration of a running Edge Data Store (You should run the command from the same directory where the file is located):
 
 ```bash
 curl -i -d "@EdgeMaximumConfiguration.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration
