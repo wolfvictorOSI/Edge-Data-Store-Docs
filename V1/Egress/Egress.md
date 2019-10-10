@@ -21,7 +21,7 @@ One tenant and two namespaces are supported in the Edge Data Store. The tenant i
 Complete the following to create new egress endpoints:
 
 1. Using any text editor, create a file that contains one or more egress endpoints in JSON form
-    - For content structure, see [Examples](#Examples) following. 
+    - For content structure, see the following [Examples](#Examples). 
     - For a table of all available egress parameters, see [Parameters](#Parameters).
 2. Save the file.
 3. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints/`
