@@ -15,3 +15,5 @@ You can configure the following facets in the system component:
 - [Components](xref:system_HealthEndpoints_schema)
 
 - [Health Endpoints](xref:system_HealthEndpoints_schema)
+
+![System Configuration](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSSystem.jpg "EDS System")
