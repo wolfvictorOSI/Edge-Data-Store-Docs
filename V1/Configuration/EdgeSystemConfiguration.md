@@ -127,8 +127,7 @@ The above example results in a minimal configuration of Edge Data Store. It only
 
 ### Configure maximum Edge Data Store
 
-The following JSON file represents maximal configuration of an Edge Data Store. There are Modbus TCP and OPC UA components, and egress is configured to send to both PI Web API and OCS. If a system were configured with this JSON file. In this example both operational data (namespace = default) and diagnostic data for the system and the adapters (namespace = diagnostics).
-
+The following JSON file represents maximal configuration of an Edge Data Store. There are Modbus TCP and OPC UA components, and egress is configured to send to both PI Web API and OCS from both the default (operational data) and diagnostics (diagnostic data) namespace.
 ```json
 {
     "Modbus1": {
