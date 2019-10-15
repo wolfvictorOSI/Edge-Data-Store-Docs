@@ -28,7 +28,7 @@ When the Debian installer is used, Edge Data Store is installed using the servic
 sudo systemctl restart osisoft.edgedatastore.service
 ```
 
-## Handles (File Descriptors)
+## File Descriptors (Handles)
 
 Linux operating systems impose a limit on the number of file descriptors used in a process. The number of open file descriptors is directly related to the number of streams used in EDS (e.g. data ingress) - overall, every stream utilizes 2 file descriptors. When EDS reaches the limit of available file descriptors it will no longer function properly. To prevent this, it is necessary to either limit the number of streams used in EDS or increase the maximum allowed file descriptors per process.
 
