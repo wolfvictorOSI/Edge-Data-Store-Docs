@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Modbus EDS adapter </title>
+    <title>Modbus TCP adapter </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Modbus EDS adapter ">
+    <meta name="title" content="Modbus TCP adapter ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -69,32 +69,30 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="modbusOverview">
-<h1 id="modbus-eds-adapter">Modbus EDS adapter</h1>
+<h1 id="modbus-tcp-adapter">Modbus TCP adapter</h1>
 
 <h2 id="overview">Overview</h2>
-<p>Modbus is a commonly available communication protocol used for connecting and transmitting information between industrial electronic devices. The Modbus TCP EDS adapter Adapter polls Modbus TCP slave devices, and transfers time series data from the data source devices into Edge Data Store.  Polling is based on the measurement configuration provided, and models the register measurements in a Modbus data source.</p>
-<p>The Modbus TCP EDS adapter communicates with any device conforming to the Modbus TCP/IP protocol through a gateway or router. The Modbus slave devices and routers do not need to be on the same subnet as Edge Data Store.</p>
-<p>To install a Modbus EDS adapter, please reference <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> on how to add a new component to Edge Data Store. The example below covers configuring a EDS adapter named Modbus1. If another EDS adapter has been installed, please substitute the name of the installed adapter in the below example for Modbus1.</p>
-<h2 id="configuration-of-modbus-data-source">Configuration of Modbus data source</h2>
+<p>Modbus TCP is a commonly available communication protocol used for connecting and transmitting information between industrial electronic devices. The Modbus TCP adapter polls Modbus TCP slave devices, and transfers time series data from the data source devices into Edge Data Store. Polling is based on the measurement configuration provided, and models the register measurements in a Modbus TCP data source.</p>
+<p>The Modbus TCP adapter communicates with any device conforming to the Modbus TCP/IP protocol through a gateway or router. The Modbus slave devices and routers do not need to be on the same subnet as Edge Data Store.</p>
+<p>To install a Modbus TCP adapter, refer to <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> on how to add a new component to Edge Data Store. The following example covers configuring an EDS adapter named Modbus1. If another EDS adapter has been installed, please substitute the name of the installed adapter in the following example for Modbus1.</p>
+<h2 id="modbus-tcp-data-source-configuration">Modbus TCP data source configuration</h2>
 <p>To use the Modbus TCP EDS adapter Adapter of Edge Data Store, you must configure it for the Modbus data source from which it will be polling data.</p>
-<h3 id="procedure-for-configuring-modbus-data-source">Procedure for configuring Modbus data source</h3>
+<h3 id="configure-modbus-tcp-data-source">Configure Modbus TCP data source</h3>
 <p>Complete the following to configure the Modbus data source:</p>
 <ol>
-<li>Using any text editor, create a file that contains a Modbus data source in JSON form. This file can be created or copied to any directory on a device with Edge Data Store installed.<ul>
-<li>See Modbus Data Source Example section below for content structure</li>
-<li>See Parameters for Modbus Data Source section below for a table of all available parameters</li>
+<li>Using any text editor, create a file that contains a Modbus TCP data source in JSON form. 
+You can create or copy this file to any directory on a device with Edge Data Store installed.<ul>
+<li>For content structure, see <a href="#modbus-tcp-data-source-example">Modbus TCP data source example</a>. </li>
+<li>For a table of all available parameters, see <a href="#parameters-for-modbus-tcp-data-source">Parameters for Modbus TCP data source</a>. </li>
 </ul>
 </li>
-<li>Save the file as DataSource.config.json.</li>
-<li>Use any <a class="xref" href="../Administration/ManagementTools.html">tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSource/</code>. In a Modbus EDS adapter is added during installation it will have a EDS adapterId of Modbus1, which is used in the example below.</li>
+<li>Save the file as <em>DataSource.config.json</em>.</li>
+<li>Use any <a class="xref" href="../Administration/ManagementTools.html">tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSource/</code>. If a Modbus EDS adapter is added during installation, it will have an EDS adapterId of Modbus1, which is used in the following example.</li>
 </ol>
-<ul>
-<li><p>Example using cURL (run this command from the same directory where the file is located):</p>
+<p>Example using cURL (run this command from the same directory where the file is located):</p>
 <pre><code class="lang-bash">curl -v -d &quot;@DataSource.config.json&quot; -H &quot;Content-Type: application/json&quot; -X POST &quot;http://localhost:5590/api/v1/configuration/Modbus1/DataSource&quot;
-</code></pre></li>
-</ul>
-<h3 id="parameters-for-modbus-data-source">Parameters for Modbus data source</h3>
-<p>The following parameters are available for configuring a Modbus data source.</p>
+</code></pre><h3 id="parameters-for-modbus-tcp-data-source">Parameters for Modbus TCP data source</h3>
+<p>The following parameters are available for configuring a Modbus TCP data source.</p>
 <table>
 <thead>
 <tr>
@@ -121,13 +119,13 @@
 <td><strong>StreamIdPrefix</strong></td>
 <td>Optional</td>
 <td>number</td>
-<td>Parameter applied to all data items collected from the data source. If not configured, the default value will be the ID of the Modbus EDS adapter. The custom StreamIdPrefix has the highest priority.</td>
+<td>Parameter applied to all data items collected from the data source. If not configured, the default value will be the ID of the Modbus TCP adapter. The custom StreamIdPrefix has the highest priority.</td>
 </tr>
 <tr>
 <td><strong>ConnectTimeout</strong></td>
 <td>Optional</td>
 <td>number</td>
-<td>Parameter to specify the time (in milliseconds) to wait when Modbus TCP EDS adapter is trying to connect to the data source. The value ranges from 1000 ms to 30000 ms. The default value is 5000 ms.</td>
+<td>Parameter to specify the time (in milliseconds) to wait when Modbus TCP adapter is trying to connect to the data source. The value ranges from 1000 ms to 30000 ms. The default value is 5000 ms.</td>
 </tr>
 <tr>
 <td><strong>ReconnectInterval</strong></td>
@@ -139,7 +137,7 @@
 <td><strong>RequestTimeout</strong></td>
 <td>Optional</td>
 <td>number</td>
-<td>Parameter to specify the time (in milliseconds) that Modbus TCP EDS adapter waits for a pending request before marking it as timeout and dropping the request. The default value is 10000 ms. The value must be a positive integer, there is no value range.</td>
+<td>Parameter to specify the time (in milliseconds) that Modbus TCP adapter waits for a pending request before marking it as timeout and dropping the request. The default value is 10000 ms. The value must be a positive integer, there is no value range.</td>
 </tr>
 <tr>
 <td><strong>DelayBetweenRequests</strong></td>
@@ -155,30 +153,30 @@
 </tr>
 </tbody>
 </table>
-<h3 id="modbus-data-source-example">Modbus data source example</h3>
-<p>The following is an example of valid Modbus data source configuration:</p>
+<h3 id="modbus-tcp-data-source-example">Modbus TCP data source example</h3>
+<p>The following is an example of valid Modbus TCP data source configuration:</p>
 <pre><code class="lang-json">{
     &quot;IpAddress&quot;: &quot;117.23.45.110&quot;,
     &quot;Port&quot; : 502,
     &quot;ConnectTimeout&quot; : 10000,
     &quot;StreamIdPrefix&quot; : &quot;DataSource1&quot;,
 }
-</code></pre><h2 id="configuration-of-modbus-data-selection">Configuration of Modbus data selection</h2>
-<p>Once a data source is configured for a Modbus instance, which data is to be collected from the Modbus slave device must be configured.</p>
-<h3 id="procedure-for-configuring-modbus-data-selection">Procedure for configuring Modbus data selection</h3>
-<p>Complete the following to configure Modbus data selection:</p>
+</code></pre><h2 id="modbus-tcp-data-selection-configuration">Modbus TCP data selection configuration</h2>
+<p>Once a data source is configured for a Modbus instance, you must configure which data is to be collected from the Modbus TCP slave device.</p>
+<h3 id="configure-modbus-tcp-data-selection">Configure Modbus TCP data selection</h3>
+<p>Complete the following to configure Modbus TCP data selection:</p>
 <ol>
-<li>Using any text editor, create a file that contains a Modbus data selection in JSON form. This file can be created or copied to any directory on a device with Edge Data Store installed.<ul>
-<li>See Modbus Data Selection Example section below for content structure</li>
-<li>See Parameters for Modbus Data Selection section below for a table of all available parameters</li>
+<li>Using any text editor, create a file that contains a Modbus TCP data selection in JSON form. This file can be created or copied to any directory on a device with Edge Data Store installed.<ul>
+<li>For content structure, see <a href="#modbus-tcp-data-selection-example">Modbus TCP data selection example</a>. </li>
+<li>For a table of all available parameters, see <a href="#parameters-for-modbus-tcp-data-selection">Parameters for Modbus TCP data selection</a>. </li>
 </ul>
 </li>
-<li>Save the file as DataSelection.config.json.</li>
+<li>Save the file as <em>DataSelection.config.json</em>.</li>
 <li>Use any <a class="xref" href="../Administration/ManagementTools.html">tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection/</code>.
 Example using cURL (run this command from the same directory where the file is located):</li>
 </ol>
 <pre><code class="lang-bash">curl -v -d &quot;@DataSelection.config.json&quot; -H &quot;Content-Type: application/json&quot; -X POST &quot;http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection&quot;
-</code></pre><h3 id="parameters-for-modbus-data-selection">Parameters for Modbus data selection</h3>
+</code></pre><h3 id="parameters-for-modbus-tcp-data-selection">Parameters for Modbus TCP data selection</h3>
 <p>The following parameters are available for configuring Modbus data selection.</p>
 <table>
 <thead>
@@ -206,7 +204,7 @@ Example using cURL (run this command from the same directory where the file is l
 <td><strong>UnitId</strong></td>
 <td>Required</td>
 <td>number</td>
-<td>Modbus slave device unit ID. This must be a value between 0 and 247, inclusively.</td>
+<td>Modbus TCP slave device unit ID. This must be a value between 0 and 247, inclusively.</td>
 </tr>
 <tr>
 <td><strong>RegisterType</strong></td>
@@ -224,19 +222,19 @@ Example using cURL (run this command from the same directory where the file is l
 <td><strong>DataTypeCode</strong></td>
 <td>Required</td>
 <td>number</td>
-<td>An integer representing the data type that Modbus TCP EDS adapter will read starting at the register specified by the offset. Supported data types are:<br>1 = Boolean<br>10 = Int16<br>20 = UInt16<br>30 = Int32<br>31 = Int32ByteSwap<br>100 = Float32<br>101 = Float32ByteSwap<br>110 = Float64<br>111 = Float64ByteSwap<br>1001 - 1250 = String <br>2001 - 2250 = StringByteSwap</td>
+<td>An integer representing the data type that Modbus TCP adapter will read starting at the register specified by the offset. Supported data types are:<br>1 = Boolean<br>10 = Int16<br>20 = UInt16<br>30 = Int32<br>31 = Int32ByteSwap<br>100 = Float32<br>101 = Float32ByteSwap<br>110 = Float64<br>111 = Float64ByteSwap<br>1001 - 1250 = String <br>2001 - 2250 = StringByteSwap</td>
 </tr>
 <tr>
 <td><strong>ScanRate</strong></td>
 <td>Required</td>
 <td>number</td>
-<td>How often this measurement should be read from the device in milliseconds. Acceptable values are from 0 to 86400000. If 0 ms is specified, Modbus TCP EDS adapter will scan for data as fast as possible.</td>
+<td>How often this measurement should be read from the device in milliseconds. Acceptable values are from 0 to 86400000. If 0 ms is specified, Modbus TCP adapter will scan for data as fast as possible.</td>
 </tr>
 <tr>
 <td><strong>BitMap</strong></td>
 <td>Required</td>
 <td>string</td>
-<td>The bitmap is used to extract and reorder bits from a word register. The format of the bitmap is uuvvwwxxyyzz, where uu, vv, ww, yy, and zz each refer to a single bit. A leading zero is required if the referenced bit is less than 10. The low-order bit is 01 and high-order bit is either 16 or 32. Up to 16 bits can be referenced for a 16-bit word (data types 10 and 20) and up to 32 bits can be reference for a 32-bit word (data type 30 and 31). The bitmap 0307120802 will map the second bit of the original word to the first bit of the new word, the eighth bit to the second bit, the twelfth bit to the third bit, and so on. The high-order bits of the new word are padded with zeros if they are not specified.</td>
+<td>The bitmap is used to extract and reorder bits from a word register. The format of the bitmap is uuvvwwxxyyzz, where uu, vv, ww, yy, and zz each refer to a single bit. A leading zero is required if the referenced bit is less than 10. The low-order bit is 01 and high-order bit is either 16 or 32. Up to 16 bits can be referenced for a 16-bit word (data types 10 and 20) and up to 32 bits can be referenced for a 32-bit word (data type 30 and 31). The bitmap 0307120802 will map the second bit of the original word to the first bit of the new word, the eighth bit to the second bit, the twelfth bit to the third bit, and so on. The high-order bits of the new word are padded with zeros if they are not specified.</td>
 </tr>
 <tr>
 <td><strong>ConversionFactor</strong></td>
@@ -254,14 +252,12 @@ Example using cURL (run this command from the same directory where the file is l
 <td><strong>StreamID</strong></td>
 <td>Required</td>
 <td>string</td>
-<td>The custom stream ID that will be used to create the streams. If not specified, the Modbus TCP EDS adapter will generate a default stream ID based on the measurement configuration. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores (&quot;__&quot;).<br>Can contain a maximum of 260 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.</td>
+<td>The custom stream ID that will be used to create the streams. If not specified, the Modbus TCP adapter will generate a default stream ID based on the measurement configuration. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores (&quot;__&quot;).<br>Can contain a maximum of 260 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.</td>
 </tr>
 </tbody>
 </table>
 <p>Each JSON object in the file represents a measurement. You can modify the fields in each object to configure the measurement parameters. To add more measurements, you need to create more JSON objects with properly completed fields.</p>
-<h3 id="data-selection-examples">Data selection examples</h3>
-<p>Below is an example of a valid Modbus data source configuration.</p>
-<p><strong>Modbus data selection example.</strong></p>
+<h3 id="modbus-tcp-data-selection-example">Modbus TCP data selection example</h3>
 <pre><code class="lang-json">[
   {
     &quot;Selected&quot;: true,

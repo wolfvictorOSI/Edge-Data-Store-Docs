@@ -17,7 +17,7 @@ references:
   name: Configuration schemas
   href: V1/Configuration/Schemas/ConfigurationSchemaList.html
 - uid: edge_system_schema
-  name: EdgeDataStoreConfiguration schema
+  name: Edge Data Store configuration schema
   href: V1/Configuration/Schemas/EdgeSystem_schema.html
 - uid: EdgeDataStoreAdministration
   name: Edge Data Store administration
@@ -65,7 +65,7 @@ references:
   name: Edge Data Store management tools
   href: V1/Administration/ManagementTools.html
 - uid: modbus_DataSelection_schema
-  name: Sample Modbus data selection configuration
+  name: Sample Modbus TCP data selection configuration
   href: V1/Configuration/Schemas/Modbus_DataSelection_schema.html
 - uid: modbus_DataSource_schema
   name: Sample Modbus data source configuration
@@ -77,7 +77,7 @@ references:
   name: ModbusConfiguration Schema
   href: V1/Configuration/Schemas/Modbus_schema.html
 - uid: modbusOverview
-  name: Modbus EDS adapter
+  name: Modbus TCP adapter
   href: V1/Modbus/ModbusOverview.html
 - uid: modbusQuickStart
   name: Edge Modbus Quick Start

@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/agent/_work/34/s",
+  "source_base_path": "C:/agent/_work/44/s",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Administration/Administration.html",
-          "hash": "SolOaVLEkzF1Rc9TUjOHZg=="
+          "hash": "Odw9y/ZSDMGwD9pibUk0Fw=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Administration/LoggingConfiguration.html",
-          "hash": "eaHcy4P/C0ybR5sn7yadwA=="
+          "hash": "FxTz6vH4PhrmYb2oy5apdg=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Administration/ManagementTools.html",
-          "hash": "43yenjw+4tyocPmTlUTOkg=="
+          "hash": "fE2MHfXaQ0NF3k4yaqxpNw=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/EDSModbusTCPAdapter.html",
-          "hash": "2PxqOTcBy9NkVeCGPth8ig=="
+          "hash": "V0ffHIMpjIoFCiJE7alHvg=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/EDSOPCUAAdapter.html",
-          "hash": "jph/z+CbtvcImTqcDcqdag=="
+          "hash": "01WE7tbjxmQkIRYDsgsHNA=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/EdgeSystemConfiguration.html",
-          "hash": "lTs4/aWqSv/3OIvyZwE0mw=="
+          "hash": "1yTsJjTz6Vsm/SNKuTrmXQ=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/Schemas/ConfigurationSchemaList.html",
-          "hash": "CzGXrddFPHMPT2YCPjeq2w=="
+          "hash": "X/YdSUCp1AXkeAYj0rWzaA=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/Schemas/EdgeSystem_schema.html",
-          "hash": "pf07AE+aXDnaxsE0PCOshA=="
+          "hash": "bcnZ/gbWDEiTjzAMBbT0dA=="
         }
       },
       "is_incremental": false,
@@ -144,7 +144,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/Schemas/Modbus_DataSelection_schema.html",
-          "hash": "Nvot1OCQnG9kI51X8Y/iWA=="
+          "hash": "EFSaebE7JBJFTDOIX4QwcQ=="
         }
       },
       "is_incremental": false,
@@ -388,7 +388,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/Storage.html",
-          "hash": "0btwqP5wlby5rbgCA+dvdQ=="
+          "hash": "R0OujQMHgS2Q8bSnj2HkxQ=="
         }
       },
       "is_incremental": false,
@@ -400,7 +400,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/System.html",
-          "hash": "GQmXEwzaJo2i1cO3HGRXXg=="
+          "hash": "YPTuZKiLThjFuxPXaJxS6Q=="
         }
       },
       "is_incremental": false,
@@ -412,7 +412,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/DataIngress/EDSDataIngress.html",
-          "hash": "wNUH7AtZO4cYBwy5sAZUmw=="
+          "hash": "IAZtLKd6nSnZZwrpY6Y5zQ=="
         }
       },
       "is_incremental": false,
@@ -424,7 +424,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Design/ScalePerformance.html",
-          "hash": "I9xtMuC7Bvi+6ne9R7+yzA=="
+          "hash": "DkgS1SsqImCM+tVRJMz6GQ=="
         }
       },
       "is_incremental": false,
@@ -448,7 +448,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Docker/EdgeDocker.html",
-          "hash": "v6+hE6hTnX//21Z0K55d1Q=="
+          "hash": "LJbNJOer7N/tWPIiMxQGpw=="
         }
       },
       "is_incremental": false,
@@ -496,7 +496,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/LinuxWindows/LinuxWindows.html",
-          "hash": "tRMAKC4kCNwc/dJPJ8NYHA=="
+          "hash": "ZWUqtJdR0RCMGndrjOKARQ=="
         }
       },
       "is_incremental": false,
@@ -508,7 +508,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Modbus/ModbusOverview.html",
-          "hash": "3alfwhCGTvT3XmiYUDvabQ=="
+          "hash": "KL+AZjU67K/QWzgqQsW4Sw=="
         }
       },
       "is_incremental": false,
@@ -520,7 +520,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/OMF/OMFOverview.html",
-          "hash": "6+AekvWcll6xGJ3XwQC7Bw=="
+          "hash": "mu9JlICEWKn0PdyFkrvBvw=="
         }
       },
       "is_incremental": false,
@@ -544,7 +544,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/OpcUa/OpcUaOverview.html",
-          "hash": "ZvyKnv2oMfEssy0VK4sWcQ=="
+          "hash": "gATrlufZDHJMo4A1UQxecQ=="
         }
       },
       "is_incremental": false,
@@ -664,7 +664,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Overview/SDSQuickStart.html",
-          "hash": "Fkj+1FAts2JHP1LHt9Vn0Q=="
+          "hash": "pm24R8VoYsJAy/RVwNXxPg=="
         }
       },
       "is_incremental": false,
@@ -987,6 +987,28 @@
       "output": {
         "resource": {
           "relative_path": "V1/images/EDSOverview2.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSStorage.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSStorage.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSSystem.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSSystem.jpg"
         }
       },
       "is_incremental": false,

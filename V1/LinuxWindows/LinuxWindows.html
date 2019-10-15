@@ -71,15 +71,15 @@
             <article class="content wrap" id="_content" data-uid="linuxWindows">
 <h1 id="linux-and-windows-platform-differences">Linux and Windows platform differences</h1>
 
-<p>When developing applications to work with the Edge Data Store, there is no difference in expected behavior between Linux and Windows installations. There are some differences in how Edge Data Store is installed between Linux and Windows, to follow best practices on both platforms.</p>
+<p>When developing applications to work with the Edge Data Store, there is no difference between Linux and Windows installations in expected behavior. To follow best practices on both platforms, there are some differences in how Edge Data Store is installed between Linux and Windows. </p>
 <h2 id="windows-file-locations">Windows file locations</h2>
-<p>Program binaries are placed in the C:\Program Files\OSIsoft\EdgeDataStore directory by default. for information about changing this location see the <a href="#installationOverview">installation</a> documentation. </p>
-<p>Configuration, log, and data files are placed under C:\ProgramData\OSIsoft\EdgeDataStore\ This is not configurable. This folder structure will not be automatically removed during uninstallation.  For information about clearing these files, see the <a href="#installationOverview">installation</a> documentation.</p>
+<p>Program binaries are placed in the <em>C:\Program Files\OSIsoft\EdgeDataStore</em> directory by default. For information about changing this location, see the <a href="#installationOverview">installation</a> documentation. </p>
+<p>Configuration, log, and data files are placed under <em>C:\ProgramData\OSIsoft\EdgeDataStore</em> This is not configurable. This folder structure will not be automatically removed during uninstallation.  For information about clearing these files, see the <a href="#installationOverview">installation</a> documentation.</p>
 <p>Key material for configuration files&#39; encrypted secrets is stored using the Windows DPAPI in a secure Windows store. This is not configurable.</p>
 <h2 id="linux-file-locations">Linux file locations</h2>
-<p>Program binaries are placed in the /opt/EdgeDataStore directory.  Configuration, log, and data files are placed under /usr/share/OSIsoft/EdgeDataStore. This folder structure will not be automatically removed during uninstallation. For information about clearing these files, see the <a href="#installationOverview">installation</a> documentation.</p>
-<p>Key material for configuration files&#39; encrypted secrets are stored using limited access files under /usr/share/OSIsoft/EdgeDataStore. File locations for Linux are not user configurable.</p>
-<p>When the Debian installer is used the Edge Data Store is installed using the service identity osisoft.edgedatastore.service. If you have a need to restart the service from the Linux command line you can use the following command:</p>
+<p>Program binaries are placed in the <em>/opt/EdgeDataStore</em> directory.  Configuration, log, and data files are placed under <em>/usr/share/OSIsoft/EdgeDataStore</em>. This folder structure will not be automatically removed during uninstallation. For information about clearing these files, see the <a href="#installationOverview">installation</a> documentation.</p>
+<p>Key material for configuration files&#39; encrypted secrets are stored using limited access files under <em>/usr/share/OSIsoft/EdgeDataStore</em>. You cannot configure file locations for Linux.</p>
+<p>When the Debian installer is used, Edge Data Store is installed using the service identity osisoft.edgedatastore.service. If you need to restart the service from the Linux command line, you can use the following command:</p>
 <pre><code class="lang-bash">sudo systemctl restart osisoft.edgedatastore.service
 </code></pre></article>
           </div>
