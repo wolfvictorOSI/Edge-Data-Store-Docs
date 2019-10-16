@@ -52,7 +52,7 @@ To change the logging configuration you can
 1. Save the new configuration information in a JSON file format.
 2. Run the following script (or make an equivalent REST API call):
 
-For example Component_Logging.json
+For example, Component_Logging.json:
 ```json
 {
   "logLevel": "Warning",
