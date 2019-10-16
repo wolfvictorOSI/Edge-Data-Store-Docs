@@ -66,7 +66,7 @@ For example Component_Logging.json
 curl -i -d "@Component_Logging.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/<ComponentId>/Logging
 ```
 
-<ComponentId> is the ComponentId of the adapter or Storage.
+&lt;ComponentId&gt; is the ComponentId of the adapter or Storage.
 
 On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. 
 
