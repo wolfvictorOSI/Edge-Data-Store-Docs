@@ -4,7 +4,7 @@ uid: egress
 
 # Egress from Edge Data Store
 
-Edge Data Store provides an egress mechanism to copy and transfer data to another device or destination. Data is transferred through OMF. Supported destinations are OSIsoft Cloud Services or a PI server.
+Edge Data Store provides an egress mechanism to copy and transfer data to another device or destination. Data is transferred through OMF. Supported destinations are OSIsoft Cloud Services or a PI Server.
 
 Configuration of egress includes specifying zero or more endpoints. An egress endpoint represents a destination to which data will be sent. Each egress endpoint is comprised of the properties specified in the [Parameters](#Parameters) section, is executed independently of all other egress endpoints, and is expected to accept OMF messages. More than one endpoint for the same destination is allowed.
 
@@ -13,6 +13,8 @@ Configuration of egress includes specifying zero or more endpoints. An egress en
 One tenant and two namespaces are supported in the Edge Data Store. The tenant is default, and the two namespaces are default (where adapter and OMF data is written) and diagnostics. Diagnostics is where the system and its components write information that can be used locally or egressed to a remote PI Server or OCS for monitoring. To egress both namespaces two egress definitions are required.
 
 ## Configuration
+
+Prior to configuring egress on the Edge Data Store, follow [Destination Preparation](#destination-preparation) steps to make available one or more OMF destinations.
 
 ### Procedure
 
@@ -193,3 +195,26 @@ Certain HTTP failures during egress will result in a retry. The Edge Data Store 
 For data collection and egress, in-memory and on-disk storage are used to track the last successfully-egressed data event, per stream. Data is egressed in order and includes events in the future.
 
 **Note**  When an event with a future timestamp is successfully egressed, only values after the associated timestamp of that event will be egressed.
+
+## Destination Preparation
+
+The various OSIsoft OMF destinations may require additional configuration. See details below to prepare an OSIsoft destination to receive OMF messages. 
+
+### OCS
+
+To prepare OCS to receive OMF messages from EDS, add an OMF connection. Creating an OMF connection results in an available OMF endpoint that can be used by the EDS egress mechanism. The basics steps associated with creating an OMF connection are as follows (see OCS documentation for more help):
+
+1. Create a **Client**
+    - The *Client Id* and *Client Secret* will be used for the corresponding properties in the egress configuration
+1. Create an **OMF** type **Connection**
+    - The connection should link the created client to an existing namespace where the data will be stored
+    - The **OMF Endpoint** URL for the connection will be used as the egress configuration *Endpoint* property
+
+### PI
+
+To prepare a PI Server to receive OMF messages from EDS, a PI Web API OMF endpoint must be available. The basic steps are as follows (see the PI Web API documentation for complete steps, as well as best practices and recommendations):
+
+1. Install PI Web API and enable the **OSIsoft Messge Format (OMF) Services** feature
+1. Configure PI Web API to use *Basic* authentication
+
+**Note**  The certificate used by PI Web API must be trusted by the device running EDS, otherwise the egress configuration *ValidateEndpointCertificate* property needs to be set to false (this can be the case with a **self-signed certificate** but should only be used for testing purposes).
