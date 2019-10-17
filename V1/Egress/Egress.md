@@ -36,7 +36,7 @@ curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: app
 
 | Parameter                       | Required                  | Type      | Description                                        |
 |---------------------------------|---------------------------|-----------|----------------------------------------------------|
-| **Backfill**                    | Optional                  | bool      | An indicator of whether data should be backfilled. Backfilling will occur when the egress endpoint is run for the first time after application startup. Enabling backfilling will result in all data from the earliest index to the latest stored index being egressed, after applying the egress filter. Defaults to false. |
+| **Backfill**                    | Optional                  | bool      | An indicator of whether data should be backfilled. Enabling the backfill flag will result in all data from the earliest index to the latest stored index being egressed. Backfilling occurs for each stream, including when a new stream is added. Once backfilling is complete for a stream, any out-of-order data is not egressed.  Defaults to false. |
 | **ClientId**                    | Required for OCS endpoint | string    | Used for authentication with the OCS OMF endpoint. |
 | **ClientSecret**                | Required for OCS endpoint | string    | Used for authentication with the OCS OMF endpoint. |
 | **DebugExpiration**             | Optional                  | string    | A property that enables persistence of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value of this property represents the date and time this detailed information should stop being persisted. See [Troubleshooting](../Troubleshooting/Troubleshooting.md) for more information. |
@@ -45,7 +45,6 @@ curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: app
 | **Enabled**                     | Optional                  | bool      | An indicator of whether egress is enabled when the egress endpoint is loaded. Defaults to true. |
 | **Endpoint**                    | Required                  | string    | Destination that accepts OMF v1.1 messages. Supported destinations include OCS and PI. |
 | **ExecutionPeriod**             | Required                  | string    | Frequency of time between each egress action. Must be a string in the following format d.hh:mm:ss.## |
-
 | **Id**                          | Optional                  | string    | Unique identifier |
 | **Name**                        | Optional                  | string    | Friendly name |
 | **NamespaceId**                 | Optional                  | string    | Represents the namespace that will be egressed. There are two available namespaces: default; diagnostics. Default namespace is “default”. |
@@ -86,7 +85,7 @@ Find various examples below of valid egress configurations.
 }]
 ```
 
-**Egress data to OCS - all streams, every 15 seconds, including backfilling which occurs on first run or restart.**
+**Egress data to OCS - all streams, every 15 seconds, including backfilling.**
 
 ```json
 [{
