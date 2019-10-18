@@ -33,12 +33,6 @@ You must have administrative privileges to run the installer.
 When the install finishes, Edge Data Store will be installed and running on the port specified.
 5. Click **Finish**.
 
-![alt text](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/WindowsInstall1.jpg "Windows Installation 1")
-![alt text](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/WindowsInstall2.jpg "Windows Installation 2")
-![alt text](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/WindowsInstall3.jpg "Windows Installation 3")
-![alt text](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/WindowsInstall4.jpg "Windows Installation 4")
-![alt text](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/WindowsInstall5.jpg "Windows Installation 5")
-
 **Note** The UI based installer will prompt for a port value, and will not proceed if an invalid port is specified.
 
 The installer can be started from the command line with the following command:
