@@ -27,12 +27,12 @@ In addition to ready to use install kits, OSIsoft also provides examples of how 
 * Adapter components may be added or removed at runtime and no longer requires a restart of the product.
 * Changes to the Health Endpoints configuration are now applied at runtime and no longer requires a restart of the product.
 * All endpoint configurations related to transfering data and configuration to PI Web Api or OSIsoft Cloud Services have the following new properties:
-   * ValidateEndpointCertificate - Enable/Disable validation of endpoint certificate. Any endpoint certificate is accepted if false.
+   * ValidateEndpointCertificate - Enable/Disable validation of endpoint certificate. Any endpoint certificate is accepted if set to false.
    * TokenEndpoint - For use with OSIsoft Cloud Services endpoints only.  Allows for alternative endpoint for retrieval of an OCS access token.
 
 ### Modbus Adapter
 
-* Support has been added for an user-defined optional Streamid prefix.
+* Support has been added for a user-defined optional Streamid prefix.
 
 ### Storage
 
@@ -44,8 +44,8 @@ In addition to ready to use install kits, OSIsoft also provides examples of how 
    * EnableTransactionLog
 * The Id property of a PeriodicEgressEndpoint configuration has been changed to be optional.  If one is not provided when the endpoint is configured, a unique value will be assigned to it.
 * Improvements were made to improve resiliency of the product by ensuring data and configuration are properly checkpointed to storage.
-* Improvements were made to handle a wider range of data corruptions encountered when power loss scenarios are encountered.
-* In Beta 2, under certain data egress scenarios, the Storage component would attempt to retrieve all data destine to be egressed and then egress the data to the destination endpoint.  This could lead to high memory useage and potential stability issues.  This behavior has been changed to stream the data from streams in a more controlled manner leading to less memory being demanded.
+* Improvements were made to handle a wider range of data corruptions encountered in power loss scenarios.
+* In Beta 2, under certain data egress scenarios, the Storage component would attempt to retrieve all data destined to be egressed, and then egress the data to the destination endpoint.  This could lead to high memory usage and potential stability issues.  This behavior has been changed to stream the data in a more controlled manner, leading to less memory being demanded.
 
 ## Install Edge Data Store on a Device using an install kit
 
@@ -53,7 +53,7 @@ To use any of the installers, first copy the appropriate file to the file system
 
 ### Windows (Windows 10 x64)
 
-Double click the EdgeDataStore.msi file in Windows Explorer or execute the file from a command prompt. You will be prompted for install location and default port, and when the install finishes the EdgeDataStore will be installed and running on either the default port 5590 or the port you specified during the install.
+Double click the EdgeDataStore.msi file in Windows Explorer or execute the file from a command prompt. You will be prompted for install location and default port, and when the install finishes, the EdgeDataStore will be installed and running on either the default port 5590 or the port you specified during the install.
 
 ### Debian 9 or later Linux (Ubuntu  Raspberry PI, BeagleBone, other Debian based Linux distros)
 
@@ -63,16 +63,16 @@ Open a terminal window and type:
 sudo apt install ./EdgeDataStore_linux_<either x64 or arm depending upon processor>.deb
 ```
 
-A check will be done for prerequisites. If the Linux OS is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:
+A check will be done for prerequisites. If the Linux operating system is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:
 
 ```bash
 sudo apt update
 sudo apt upgrade
 ```
 
-After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port type in another port in the acceptable range for the OS you are using, or if 5590 is acceptable, press enter.
+After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.
 
-The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up
+The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
 
 ```bash
 curl http://localhost:5590/api/v1/configuration
@@ -145,6 +145,3 @@ If the installation was successful, you will get back a JSON copy of the default
 ```
 
 If you get back an error, wait a few seconds and try it again. On a device with limited processor, memory, and slow storage, it may take some time before Edge Data Store is fully initialized and running for the first time.
-
-## Known Issues
-
