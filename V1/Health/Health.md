@@ -4,11 +4,11 @@ uid: EdgeDataStoreHealth
 
 # Edge Data Store health
 
-Having insight into the health of the Edge Data Store and the components that make it up can be critical for ensuring that your needs for data collection are being met. To that end, Edge Data Store and its components produce health information. When configured, Edge Data Store will transfer health information to OSIsoft Omf endpoints, including the types and containers that represent available health information.
+Insight into the health of the Edge Data Store and the components that make it up can be critical for ensuring that your needs for data collection are being met. To that end, Edge Data Store and its components produce health information. When configured, Edge Data Store transfers health information to OSIsoft OMF endpoints, including the types and containers that represent available health information.
 
-## Configuring Edge Data Store health endpoints
+## Configure Edge Data Store health endpoints
 
-The Edge Data Store has the ability to report system health to one or more OMF endpoints capable of receiving health messages. To enable this functionality, one or more health endpoints must be configured.
+Edge Data Store has the ability to report system health to one or more OMF endpoints capable of receiving health messages. To enable this functionality, you must configure one or more health endpoints.
 
 Table 1. Configuration parameters for Edge Data Store health endpoints
 
@@ -22,11 +22,11 @@ Table 1. Configuration parameters for Edge Data Store health endpoints
 | ClientSecret | Required for OSIsoft Cloud Services. | The Client Secret used for authentication to OSIsoft Cloud Services. |
 | Buffering | Optional    | Options are memory, disk, or none. The default is none. |
 | MaxBufferSizeMB | Optional    | The limit on the maximum megabytes of data to buffer for messages to this endpoint if an integer is >0. This parameter is useful if you want to limit memory or disk usage growth in the event of disconnection to the endpoint. If the buffer is full, old messages will be discarded for new messages. The default is 0. |
-| ValidateEndpointCertificate | Optional | Edge EDS adapter validates the endpoint certificate if set to true (recommended). If set to false, Edge EDS adapter accepts any endpoint certificate. OSIsoft strongly recommends using disabled endpoint certificate validation for testing purposes only.|
+| ValidateEndpointCertificate | Optional | Edge EDS adapter validates the endpoint certificate if set to true (recommended). If set to false, Edge EDS adapter accepts any endpoint certificate. OSIsoft recommends you to use disabled endpoint certificate validation for testing purposes only.|
 
 ## EDS adapter health
 
-The following health types and streams are created to reflect the health of EDS adapter adapters.
+The following health types and streams are created to reflect the health of EDS adapters.
 
 The Connectors static type includes these properties and servers as a root AF element with the id Connectors.
 

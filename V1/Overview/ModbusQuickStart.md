@@ -6,6 +6,8 @@ uid: modbusQuickStart
 
 This topic is a quick tour of setting up the Edge Modbus TCP component.  It is possible to add a single EDS Modbus TCP adapter during installation named Modbus1. If multiple EDS Modbus TcP adapters are desired, please reference [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) on how to add a new component to Edge Data Store. The examples below will change if a different adapter is being configured - please replace Modbus1 with the name of the component you have added.
 
+![EDS Modbus TCP](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSModbusTCP.jpg "EDS Modbus TCP")
+
 ## Configure a Modbus TCP data source
 
 Create a file in JSON format describing the location of the Modbus data source. The timeouts are in milliseconds.
