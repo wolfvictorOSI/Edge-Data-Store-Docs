@@ -2,7 +2,7 @@
 uid: commandLineLinuxQuickStart
 ---
 
-# Edge Data Store Command Line Quick Start - Linux
+# Edge Data Store command line quick start - Linux
 
 One of the ways to configure the Edge Data Store is with the edgecmd command line tool. To access the tool on Linux open a command prompt. The utility is available to use in any directory on Linux.
 
