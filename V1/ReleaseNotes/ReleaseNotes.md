@@ -2,7 +2,7 @@
 uid: releaseNotes
 ---
 
-# Edge Data Store Release Notes
+# Edge Data Store release notes
 
 ## Overview
 
@@ -12,7 +12,7 @@ Edge Data Store is supported on a variety of platforms and processors. OSIsoft p
 * Debian 9 or later x64/AMD64 - EdgeDataStore_linux-x64.deb (Intel/AMD 64 bit processors)
 * Debian 9 or later ARM32 - EdgeDataStore_linux-arm.deb (Raspberry PI 2,3,4, BeagleBone devices, other ARM v7 and ARM v8 32 bit processors)
 
-In addition to ready to use install kits, OSIsoft also provides examples of how to create Docker Containers in a separate file. tar.gz files are provided with binaries for customers who want to build their own custom installers or containers for Linux.
+In addition to ready to use install kits, OSIsoft also provides examples of how to create Docker containers in a separate file. tar.gz files are provided with binaries for customers who want to build their own custom installers or containers for Linux.
 
 ## Differences from Beta 2
 
@@ -20,12 +20,12 @@ In addition to ready to use install kits, OSIsoft also provides examples of how 
 
 * The "OSIsoft Edge System" product was renamed to "OSIsoft Edge Data Store".
 * The edgecmd command line utility is now provided to allow access to and modification of Edge Data Store configuration.  This utility supercedes the command line functionality that was previously available via OSIsoft.Data.System.Host.
-* Improvements were made to ensure component health status updates may not lost when the product is shutdown.  
+* Improvements were made to ensure component health status updates may not be lost when the product is shutdown.  
 * When the reset functionality for the entire product or the storage component is invoked, the product now properly restarts.
 * The OPCUA and Modbus adapters may now be enabled at install time of the product.
 * The structure for health streams produced by the product has been updated.
-* Adapter components may be added or removed at runtime and no longer requires a restart of the product.
-* Changes to the Health Endpoints configuration are now applied at runtime and no longer requires a restart of the product.
+* Adapter components may be added or removed at runtime and no longer require a restart of the product.
+* Changes to the Health Endpoints configuration are now applied at runtime and no longer require a restart of the product.
 * All endpoint configurations related to transfering data and configuration to PI Web Api or OSIsoft Cloud Services have the following new properties:
    * ValidateEndpointCertificate - Enable/Disable validation of endpoint certificate. Any endpoint certificate is accepted if set to false.
    * TokenEndpoint - For use with OSIsoft Cloud Services endpoints only.  Allows for alternative endpoint for retrieval of an OCS access token.
@@ -57,7 +57,9 @@ Double click the EdgeDataStore.msi file in Windows Explorer or execute the file 
 
 ### Debian 9 or later Linux (Ubuntu  Raspberry PI, BeagleBone, other Debian based Linux distros)
 
-Open a terminal window and type:
+Complete the following:
+
+1. Open a terminal window and type:
 
 ```bash
 sudo apt install ./EdgeDataStore_linux_<either x64 or arm depending upon processor>.deb
@@ -70,7 +72,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.
+2. After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.
 
 The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
 
