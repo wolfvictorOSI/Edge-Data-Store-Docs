@@ -74,12 +74,12 @@
 <p>You can configure and administer Edge Data Store on Linux and Windows by using the edgecmd command line utility. This document will be referred to as edgecmd, even though it is named edgecmd.exe on Windows and edgecmd on Linux.</p>
 <p>Location on Windows:</p>
 <pre><code class="lang-cmd">C:\Program Files\OSIsoft\EdgeDataStore\edgecmd.exe
-</code></pre><p><strong>Note:</strong> You should specify the full path when using it on Windows.</p>
+</code></pre><p><strong>Note:</strong> Specify the full path when you use it on Windows.</p>
 <p>Location on Linux:</p>
 <pre><code class="lang-bash"> /opt/OSIsoft/EdgeDataStore/edgecmd
-</code></pre><p><strong>Note:</strong> On Linux, you can access it without using the full path. </p>
-<p>Most options that you can configure using REST, you can also configure using the edgecmd utility and command line arguments. Generally, the configuration and administrative REST interfaces are exposed through the command line. Access to reading and writing data to the Edge Data Store Storage Component, OMF Ingress, and SDS Read/Write capabilities are only available using the REST API.</p>
-<p>Example: Viewing system configuration using edgecmd:</p>
+</code></pre><p><strong>Note:</strong> You can access it without using the full path on Linux. </p>
+<p>Most options that you can configure using REST, you can also configure using the edgecmd utility and command line arguments. Generally, the configuration and administrative REST interfaces are exposed through the command line. Access to reading and writing data to the Edge Data Store Storage Component, OMF Ingress, and SDS Read/Write capabilities are only available through using the REST API.</p>
+<p>Example: View system configuration using edgecmd:</p>
 <pre><code class="lang-bash">edgecmd Configuration System
 {
   &quot;Logging&quot;: {
@@ -110,7 +110,7 @@
 <p>The Edgecmd application provides a &#39;Help&#39; utility. For general instructions on how to use the Edgecmd application, type:</p>
 <pre><code class="lang-bash">edgecmd Help
 </code></pre><p>You can also use the utility to get help for any registered component in Edge Data Store. If you add a specific component ID to the end of the previous command, you receive help output for every configuration facet that the component supports, along with examples of commands that you can run to configure the component.</p>
-<p>Example: Viewing help for the &#39;System&#39; component:</p>
+<p>Example: View help for the &#39;System&#39; component:</p>
 <pre><code class="lang-bash">edgecmd Help System
 
 ---------------------------------------------------------------------------------------------------------
@@ -173,7 +173,7 @@ Example: ./edgecmd Configuration System Port Port=5590
 <pre><code class="lang-bash">edgecmd Configuration System Components
 </code></pre><p>To register a new component, use the following command:</p>
 <pre><code class="lang-bash">edgecmd Configuration System Components componentId=&lt;componentId&gt; componentType=&lt;componentType&gt;
-</code></pre><p>Valid component type&#39;s are &quot;Modbus&quot; and &quot;OpcUa&quot;. If you are trying to register a Modbus EDS adapter, use &quot;Modbus&quot; and if you are trying to register an OPC UA adapter, use &quot;OpcUa&quot;. </p>
+</code></pre><p>Valid component types are &quot;Modbus&quot; and &quot;OpcUa&quot;. If you are trying to register a Modbus EDS adapter, use &quot;Modbus&quot; and if you are trying to register an OPC UA adapter, use &quot;OpcUa&quot;. </p>
 <p>Example: Modbus adapter component registration:</p>
 <pre><code class="lang-bash">edgecmd Configuration System Components componentId=Modbus1 componentType=Modbus
 </code></pre><h3 id="configure-components">Configure components</h3>
@@ -258,7 +258,7 @@ Example: ./edgecmd Configuration System Port Port=5590
 <pre><code class="lang-bash">edgecmd Configuration Storage Logging LogFileCountLimit=5
 </code></pre><p>You can also use it to add an entry to a collection configuration, for example, the &#39;Health Endpoints&#39; facet in the &#39;System&#39; component:</p>
 <pre><code class="lang-bash">edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
-</code></pre><p><strong>Note:</strong> If an entry with the specified id already exists, it will be updated based on the new key=value pairs</p>
+</code></pre><p><strong>Note:</strong> If an entry with the specified id already exists, it will be updated based on the new key=value pairs.</p>
 <h3 id="configure-with-json-files">Configure with JSON Files</h3>
 <p>You can also configure Edge Data Store by a JSON file input into the edgecmd application. File imports will completely replace the existing configurations that you are attempting to change. Therefore, it cannot be used to change individual values in a facet without modifying others.</p>
 <p>To import a bulk configuration:</p>
@@ -281,7 +281,7 @@ Example: ./edgecmd Configuration System Port Port=5590
         }
     }
 }
-</code></pre><p>The command will only affect the &#39;Runtime&#39; facet in the &#39;Storage&#39; component, it will not change any other components or facets. However, if a file containing the following was imported, the &#39;StreamStorageLimitMb&#39; and &#39;StreamStorageTargetMb&#39; values would be modified, resetting the remaining values in the facet (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog) to their default values:</p>
+</code></pre><p>The command will only affect the &#39;Runtime&#39; facet in the &#39;Storage&#39; component, it will not change any other components or facets. However, if you import a file containing the following, the &#39;StreamStorageLimitMb&#39; and &#39;StreamStorageTargetMb&#39; values would be modified, resetting the remaining values in the facet (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog) to their default values:</p>
 <pre><code class="lang-JSON">{
     &quot;Storage&quot;: {
         &quot;Runtime&quot;: {
