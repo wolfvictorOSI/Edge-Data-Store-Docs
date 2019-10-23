@@ -14,11 +14,11 @@ The following tools are available to facilitate the execution of REST calls.
 
 ### cURL
 
-Edge Data Store documentation displays cURL commands for configuration and management examples. cURL is a command line tool supported on Windows and Linux, used to make HTTP calls. cURL has a large range of capabilities: you can accomplish any Edge Data Store administrative or programming task with cURL. cURL is also easily scripted, using BASH or Powershell on either Linux or Windows. OSIsoft recommends this tool for managing Edge Data Store. Any system that can run Edge Data Store supports cURL.
+Edge Data Store documentation displays cURL commands for configuration and management examples. cURL is a command line tool supported on Windows and Linux, used to make HTTP calls. cURL has a large range of capabilitie. You can accomplish any Edge Data Store administrative or programming task with cURL. cURL is also easily scripted, using Bash or Powershell on either Linux or Windows. OSIsoft recommends this tool for managing Edge Data Store. Any system that can run Edge Data Store supports cURL.
 
 ### Postman
 
-Postman is an effective REST tool for systems with GUI components (Edge Data Store is supported on platforms that lack this capability). It is particularly useful for learning more about Edge Data Store REST APIs.
+Postman is an effective REST tool for systems with GUI components. Edge Data Store is supported on platforms that lack this capability. It is particularly useful for learning more about Edge Data Store REST APIs.
 
 ### C#, Python, Go
 

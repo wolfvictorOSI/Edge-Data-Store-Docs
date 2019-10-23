@@ -12,7 +12,7 @@ Location on Windows:
 C:\Program Files\OSIsoft\EdgeDataStore\edgecmd.exe
 ```
 
-**Note:** You should specify the full path when using it on Windows.
+**Note:** Specify the full path when you use it on Windows.
 
 Location on Linux:
 
@@ -20,11 +20,11 @@ Location on Linux:
  /opt/OSIsoft/EdgeDataStore/edgecmd
 ```
 
-**Note:** On Linux, you can access it without using the full path. 
+**Note:** You can access it without using the full path on Linux. 
 
-Most options that you can configure using REST, you can also configure using the edgecmd utility and command line arguments. Generally, the configuration and administrative REST interfaces are exposed through the command line. Access to reading and writing data to the Edge Data Store Storage Component, OMF Ingress, and SDS Read/Write capabilities are only available using the REST API.
+Most options that you can configure using REST, you can also configure using the edgecmd utility and command line arguments. Generally, the configuration and administrative REST interfaces are exposed through the command line. Access to reading and writing data to the Edge Data Store Storage Component, OMF Ingress, and SDS Read/Write capabilities are only available through using the REST API.
 
-Example: Viewing system configuration using edgecmd:
+Example: View system configuration using edgecmd:
 
 ```bash
 edgecmd Configuration System
@@ -65,7 +65,7 @@ edgecmd Help
 
 You can also use the utility to get help for any registered component in Edge Data Store. If you add a specific component ID to the end of the previous command, you receive help output for every configuration facet that the component supports, along with examples of commands that you can run to configure the component.
 
-Example: Viewing help for the 'System' component:
+Example: View help for the 'System' component:
 
 ```bash
 edgecmd Help System
@@ -145,7 +145,7 @@ To register a new component, use the following command:
 edgecmd Configuration System Components componentId=<componentId> componentType=<componentType>
 ```
 
-Valid component type's are "Modbus" and "OpcUa". If you are trying to register a Modbus EDS adapter, use "Modbus" and if you are trying to register an OPC UA adapter, use "OpcUa". 
+Valid component types are "Modbus" and "OpcUa". If you are trying to register a Modbus EDS adapter, use "Modbus" and if you are trying to register an OPC UA adapter, use "OpcUa". 
 
 Example: Modbus adapter component registration:
 
@@ -285,7 +285,7 @@ You can also use it to add an entry to a collection configuration, for example, 
 ```bash
 edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
 ```
-**Note:** If an entry with the specified id already exists, it will be updated based on the new key=value pairs
+**Note:** If an entry with the specified id already exists, it will be updated based on the new key=value pairs.
 
 ### Configure with JSON Files
 You can also configure Edge Data Store by a JSON file input into the edgecmd application. File imports will completely replace the existing configurations that you are attempting to change. Therefore, it cannot be used to change individual values in a facet without modifying others.
@@ -323,7 +323,7 @@ The file 'Bulk_Storage_Runtime.json' contains:
 	}
 }
 ```
-The command will only affect the 'Runtime' facet in the 'Storage' component, it will not change any other components or facets. However, if a file containing the following was imported, the 'StreamStorageLimitMb' and 'StreamStorageTargetMb' values would be modified, resetting the remaining values in the facet (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog) to their default values:
+The command will only affect the 'Runtime' facet in the 'Storage' component, it will not change any other components or facets. However, if you import a file containing the following, the 'StreamStorageLimitMb' and 'StreamStorageTargetMb' values would be modified, resetting the remaining values in the facet (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog) to their default values:
 ```JSON
 {
 	"Storage": {

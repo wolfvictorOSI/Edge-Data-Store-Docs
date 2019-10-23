@@ -2,9 +2,9 @@
 uid: commandLineWindowsQuickStart
 ---
 
-# Edge Data Store Command Line Quick Start - Windows
+# Edge Data Store command line quick start - Windows
 
-One of the ways to configure the Edge Data Store is with the edgecmd.exe command line tool. To access the tool on Windows open a command prompt and navigate to the directory where the Edge Data Store has been installed. This is usually in the following location:
+One of the ways to configure Edge Data Store is with the edgecmd.exe command line tool. To access the tool on Windows, open a command prompt and navigate to the directory where Edge Data Store is installed. This is usually in the following location:
 
 ```cmd
 C:\Program Files\OSIsoft\EdgeDataStore\
@@ -36,4 +36,4 @@ Example of configuring System Logging level: .\edgecmd.exe Configuration System 
 C:\Users\John>
 ```
 
-Most configurations options that can be done using REST can also be done using the edgecmd utility and command line arguments. Generally the configuration and administrative REST interfaces are exposed via the command line. Access to reading and writing data to the Edge Data Store Storage Component - OMF Ingress and SDS Read/Write capabilities are only available using the REST API.
+Most configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments. Generally the configuration and administrative REST interfaces are exposed via the command line. Access to reading and writing data to the Edge Data Store Storage Component - OMF Ingress and SDS Read/Write capabilities are only available using the REST API.

@@ -52,7 +52,7 @@ To change the logging configuration you can
 1. Save the new configuration information in a JSON file format.
 2. Run the following script (or make an equivalent REST API call):
 
-For example Component_Logging.json
+For example, Component_Logging.json:
 ```json
 {
   "logLevel": "Warning",
@@ -66,7 +66,7 @@ For example Component_Logging.json
 curl -i -d "@Component_Logging.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/<ComponentId>/Logging
 ```
 
-<ComponentId> is the ComponentId of the adapter or Storage.
+&lt;ComponentId&gt; is the ComponentId of the adapter or Storage.
 
 On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. 
 

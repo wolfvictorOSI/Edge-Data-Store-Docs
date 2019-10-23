@@ -30,7 +30,7 @@ An HTTP status 204 message indicates success.
 
 ## Reset the Edge Storage component
 
-Edge Data Store provides a method by which a user may delete and reset all event and configuration data related to the Edge Data Store component, after which the product will be restarted.
+Edge Data Store provides a method by which you can delete and reset all event and configuration data related to the Edge Data Store component, after which the product will be restarted.
 
 To reset the Storage component, use any REST client and make a request using the following:
 

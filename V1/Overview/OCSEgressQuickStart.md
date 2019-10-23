@@ -4,7 +4,7 @@ uid: ocsEgressQuickStart
 
 # OSIsoft Cloud Services (OCS) egress quick start
 
-This topic is a quick tour of getting data that is stored in the Edge Data Store into OCS. You can accomplish this by using the OCS OMF endpoint which is configured for OCS authentication.
+This topic provides a quick start for getting data stored in the Edge Data Store into OCS. You can accomplish this by using the OCS OMF endpoint which is configured for OCS authentication.
 
 ## Create a periodic egress configuration
 
@@ -33,16 +33,16 @@ Configure Edge Storage periodic egress for the Osisoft Cloud Services (OCS) endp
 }]
 ```
 
-1. To add the URL of your OCS OMF endpoint, edit the previous JSON.
-2. Add a ClientId and ClientSecret that can write data to your OCS tenant and namespace.
+1. Type the URL of your OCS OMF endpoint into the "Endpoint": value in the preceding JSON file.
+2. Type a ClientId and ClientSecret that can write data to your OCS tenant and namespace in the "ClientId": and "ClientSecret": values in the preceding JSON file.
 
     **Note:** If required, you can use the StreamPrefix and TypePrefix to ensure uniqueness on the destination system. If a StreamPrefix is specified, it will be used to create a unique stream id on OCS. This configuration is set up to send all stream data to OCS. If you want to only send specific streams, edit the EgressFilter value. Examples of more advanced scenarios are in the Egress section of this documentation.
 
 3. Save the JSON with the file name PeriodicEgressEndpoints.json.
-4. Run the following curl script to configure the Edge Storage to send data to OCS. Run the script from the same directory where the file exists on the device where Edge Data Store is installed. You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory:
+4. Run the following curl script to configure the Edge Storage component to send data to OCS. Run the script from the same directory where the file exists on the device where Edge Data Store is installed. You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory:
 
 ```bash
 curl -i -d "@PeriodicEgressEndpoints.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
 ```
 
-When this command completes successfully, data will start being sent to OCS.
+When this command completes successfully, data will start being egressed to OCS.
