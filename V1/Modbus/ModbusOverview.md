@@ -124,7 +124,6 @@ The following parameters are available for configuring a Modbus TCP data source.
 
 | Parameter                |Required       | Type      | Description  |
 |--------------------------|-----------|-----------|---------------------------------------------------|
-
 | **IpAddress**             | Required  | string    | The IP address of the device from which the data is to be collected using the Modbus protocol. Host name is not supported. |
 | **Port**                  | Optional  | number | The TCP port of the target device that listens for and responds to Modbus requests. The value ranges from 0 to 65535. If not configured, the default TCP port is 502 (which is the default port for Modbus protocol). |
 | **StreamIdPrefix**        | Optional          | number | Parameter applied to all data items collected from the data source. If not configured, the default value is the ID of the Modbus EDS adapter. The custom StreamIdPrefix has the highest priority.|
