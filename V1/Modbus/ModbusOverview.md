@@ -72,7 +72,7 @@ The following topics provide an operational overview of the Modbus EDS adapter, 
 ### Operational overview
 
 #### Adapter configuration
-In order to provide the necessary information for the EDS Modbus TCP adapter to be ready for data collection, you need to configure the adapter. For more details, see [Configuration of Modbus data source] (#configuration-of-modbus-data-source) and [Configuration of Modbus data selection] (#configuration-of-modbus-data-selection). To configure the adapter, configure the following:
+In order to provide the necessary information for the EDS Modbus TCP adapter to be ready for data collection, you need to configure the adapter. For more details, see **Configuration of Modbus data source** and **Configuration of Modbus data selection**. To configure the adapter, do the following:
 - Data source: Provide the information of the data sources from which the connector pulls data
 - Data selection: Provide the selected measurements for which the adapter collects data from the data source
 - Logging: Set up the logging attributes to manage the adapter logging behavior
