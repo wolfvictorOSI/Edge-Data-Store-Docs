@@ -229,27 +229,23 @@ OSIsoft Adapter for OPC UA generates a self-signed certificate when the first se
 
 Adapter Certificate store location:
 
-```bash
-Windows: %programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates
+Windows: `%programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates`
 
-Linux: /usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates
-```
+Linux: `/usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates`
 
 Adapter Trust store location:
 
-```bash
-Windows: %programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates\Trusted\certs
+Windows: `%programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates\Trusted\certs`
 
-Linux: /usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates/Trusted/certs
-```
+Linux: `/usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates/Trusted/certs`
 
 Adapter Rejected certificates location:
 
-```bash
-Windows: %programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates\RejectedCertificates\certs
 
-Linux: /usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates/RejectedCertificates/certs
-```
+Windows: `%programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates\RejectedCertificates\certs`
+
+Linux: `/usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates/RejectedCertificates/certs`
+
 
 The adapter verifies whether the server certificate is present in the adapter trust store location and is therefore trusted. In case the certificates were not exchanged upfront, the adapter persists the server certificate within the RejectedCertificates folder and the following warning message about the rejected server certificate will be printed:
 
