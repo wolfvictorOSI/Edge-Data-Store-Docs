@@ -72,20 +72,20 @@
 <h1 id="egress-from-edge-data-store">Egress from Edge Data Store</h1>
 
 <p>Edge Data Store provides an egress mechanism to copy and transfer data to another device or destination. Data is transferred through OMF. Supported destinations are OSIsoft Cloud Services or a PI Server.</p>
-<p>Configuration of egress includes specifying zero or more endpoints. An egress endpoint represents a destination to which data will be sent. Each egress endpoint is comprised of the properties specified in the <a href="#Parameters">Parameters</a> section, is executed independently of all other egress endpoints, and is expected to accept OMF messages. More than one endpoint for the same destination is allowed.</p>
-<blockquote><p><strong>Note:</strong> Some types, and consequently containers and data, cannot be egressed. See <a href="#egress-execution-details">Egress Execution Details</a> for more information.</p>
+<p>Configuration of egress includes specifying zero or more endpoints. An egress endpoint represents a destination to which data will be sent. Each egress endpoint is comprised of the properties specified in the <a href="#Parameters">Parameters</a> section. It is executed independently of all other egress endpoints, and is expected to accept OMF messages. More than one endpoint for the same destination is allowed.</p>
+<blockquote><p><strong>Note:</strong> Some types, and consequently containers and data, cannot be egressed. For more information, see <a href="#egress-execution-details">Egress Execution Details</a>.</p>
 </blockquote>
-<p>One tenant and two namespaces are supported in the Edge Data Store. The tenant is default, and the two namespaces are default (where adapter and OMF data is written) and diagnostics. Diagnostics is where the system and its components write information that can be used locally or egressed to a remote PI Server or OCS for monitoring. To egress both namespaces two egress definitions are required.</p>
+<p>One tenant and two namespaces are supported in the Edge Data Store. The tenant is default, and the two namespaces are default (where adapter and OMF data is written) and diagnostics. Diagnostics is where the system and its components write information that can be used locally or egressed to a remote PI server or OCS for monitoring. To egress both namespaces two egress definitions are required.</p>
 <h2 id="configuration">Configuration</h2>
 <p>Prior to configuring egress on the Edge Data Store, follow <a href="#destination-preparation">Destination Preparation</a> steps to make available one or more OMF destinations.</p>
 <h3 id="procedure">Procedure</h3>
-<blockquote><p><strong>Note:</strong> You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. See <a href="#rest-urls">REST Urls</a> for additional endpoints.</p>
+<blockquote><p><strong>Note:</strong> You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see <a href="#rest-urls">REST Urls</a>.</p>
 </blockquote>
 <p>Complete the following to create new egress endpoints:</p>
 <ol>
 <li>Using any text editor, create a file that contains one or more egress endpoints in JSON form<ul>
-<li>See <a href="#Examples">Examples</a> section below for content structure</li>
-<li>See <a href="#Parameters">Parameters</a> section below for a table of all available egress parameters</li>
+<li>For content structure, see the following <a href="#Examples">Examples</a>. </li>
+<li>For a table of all available egress parameters, see <a href="#Parameters">Parameters</a>.</li>
 </ul>
 </li>
 <li>Save the file.</li>
@@ -107,82 +107,28 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Backfill</strong></td>
-<td>Optional</td>
-<td>bool</td>
-<td>An indicator of whether data should be backfilled. Enabling the backfill flag will result in all data from the earliest index to the latest stored index being egressed. Backfilling occurs for each stream, including when a new stream is added. Once backfilling is complete for a stream, any out-of-order data is not egressed.  Defaults to false.</td>
-</tr>
-<tr>
-<td><strong>ClientId</strong></td>
-<td>Required for OCS endpoint</td>
-<td>string</td>
-<td>Used for authentication with the OCS OMF endpoint.</td>
-</tr>
-<tr>
-<td><strong>ClientSecret</strong></td>
-<td>Required for OCS endpoint</td>
-<td>string</td>
-<td>Used for authentication with the OCS OMF endpoint.</td>
-</tr>
-<tr>
-<td><strong>DebugExpiration</strong></td>
-<td>Optional</td>
-<td>string</td>
-<td>A property that enables persistence of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value of this property represents the date and time this detailed information should stop being persisted. See <a href="../Troubleshooting/Troubleshooting.html">Troubleshooting</a> for more information.</td>
-</tr>
-<tr>
-<td><strong>Description</strong></td>
-<td>Optional</td>
-<td>string</td>
-<td>Friendly description</td>
-</tr>
-<tr>
-<td><strong>EgressFilter</strong></td>
-<td>Optional</td>
-<td>string</td>
-<td>A filter used to determine which streams and types are egressed. See <a href="../SDS/Searching.html">Searching</a> for more information on valid filters.</td>
-</tr>
-<tr>
 <td><strong>Enabled</strong></td>
 <td>Optional</td>
 <td>bool</td>
 <td>An indicator of whether egress is enabled when the egress endpoint is loaded. Defaults to true.</td>
 </tr>
 <tr>
-<td><strong>Endpoint</strong></td>
-<td>Required</td>
-<td>string</td>
-<td>Destination that accepts OMF v1.1 messages. Supported destinations include OCS and PI.</td>
+<td><strong>Backfill</strong></td>
+<td>Optional</td>
+<td>bool</td>
+<td>An indicator of whether data should be backfilled. Backfilling will occur when the egress endpoint is run for the first time after application startup. Enabling backfilling will result in all data from the earliest index to the latest stored index being egressed, after applying the egress filter. Defaults to false.</td>
 </tr>
 <tr>
-<td><strong>ExecutionPeriod</strong></td>
-<td>Required</td>
-<td>string</td>
-<td>Frequency of time between each egress action. Must be a string in the following format d.hh:mm:ss.##</td>
+<td><strong>ValidateEndpointCertificate</strong></td>
+<td>Optional</td>
+<td>bool</td>
+<td>Used to disable verification of destination certificate. Use for testing only with self-signed certificates. Defaults to true.</td>
 </tr>
 <tr>
-<td><strong>Id</strong></td>
+<td><strong>EgressFilter</strong></td>
 <td>Optional</td>
 <td>string</td>
-<td>Unique identifier</td>
-</tr>
-<tr>
-<td><strong>Name</strong></td>
-<td>Optional</td>
-<td>string</td>
-<td>Friendly name</td>
-</tr>
-<tr>
-<td><strong>NamespaceId</strong></td>
-<td>Optional</td>
-<td>string</td>
-<td>Represents the namespace that will be egressed. There are two available namespaces: default; diagnostics. Default namespace is “default”.</td>
-</tr>
-<tr>
-<td><strong>Password</strong></td>
-<td>Required for PI endpoint</td>
-<td>string</td>
-<td>Used for Basic authentication to the PI Web API OMF endpoint.</td>
+<td>A filter used to determine which streams and types are egressed. For more information on valid filters, see <a href="../SDS/Searching.html">Searching</a>.</td>
 </tr>
 <tr>
 <td><strong>StreamPrefix</strong></td>
@@ -191,33 +137,28 @@
 <td>Prefix applied to any streams that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters will not be allowed: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = %</td>
 </tr>
 <tr>
-<td><strong>TokenEndpoint</strong></td>
-<td>Optional for OCS endpoint</td>
-<td>string</td>
-<td>Used to retrieve an OCS token from an alternative endpoint. <em>This is not normally necessary with OCS. Only use if directed to do so by customer support</em>.</td>
-</tr>
-<tr>
 <td><strong>TypePrefix</strong></td>
 <td>Optional</td>
 <td>string</td>
 <td>Prefix applied to any types that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters will not be allowed: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = %</td>
 </tr>
 <tr>
-<td><strong>Username</strong></td>
-<td>Required for PI endpoint</td>
-<td>string</td>
-<td>Used for Basic authentication to the PI Web API OMF endpoint.</td>
-</tr>
-<tr>
-<td><strong>ValidateEndpointCertificate</strong></td>
+<td><strong>DebugExpiration</strong></td>
 <td>Optional</td>
-<td>bool</td>
-<td>Used to disable verification of destination certificate. Use for testing only with self-signed certificates. Defaults to true.</td>
+<td>string</td>
+<td>A property that enables persistence of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value of this property represents the date and time this detailed information should stop being persisted. For more information, see <a href="../Troubleshooting/Troubleshooting.html">Troubleshooting</a>.</td>
 </tr>
 </tbody>
 </table>
+<p>=======
+| <strong>EgressFilter</strong>                | Optional                  | string    | A filter used to determine which streams and types are egressed. See <a href="../SDS/Searching.html">Searching</a> for more information on valid filters. |
+| <strong>Enabled</strong>                     | Optional                  | bool      | An indicator of whether egress is enabled when the egress endpoint is loaded. Defaults to true. |
+| <strong>Endpoint</strong>                    | Required                  | string    | Destination that accepts OMF v1.1 messages. Supported destinations include OCS and PI. |
+| <strong>ExecutionPeriod</strong>             | Required                  | string    | Frequency of time between each egress action. Must be a string in the following format d.hh:mm:ss.## |
+| <strong>Id</strong>                          | Optional                  | string    | Unique identifier |
+| <strong>Name</strong>                        | Optional                  | string    | Friendly name |</p>
 <h3 id="examples">Examples</h3>
-<p>Find various examples below of valid egress configurations.</p>
+<p>The following are valid egress configuration examples.</p>
 <p><strong>Egress data to OCS. All streams, every 15 seconds.</strong></p>
 <pre><code class="lang-json">[{
     &quot;Id&quot;: &quot;OCS&quot;,
@@ -350,9 +291,9 @@
 </tbody>
 </table>
 <h2 id="egress-execution-details">Egress execution details</h2>
-<p>After configuration for an egress endpoint is added, egress execution will periodically occur for that endpoint. Egress is handled individually per configured endpoint. On the first execution types and containers will be egressed; subsequently only new or changed types/containers will be egressed. <strong>Only streams with a single, timeseries-based index can be egressed</strong>. Type creation must be successful in order to perform container creation; likewise container creation must be successful in order to perform data egress.</p>
-<p>Type, container and data items are batched into one or more OMF messages when egressing. Per the requirements defined in OMF, a single message will not exceed 192KB in size. Compression is automatically applied to outbound egress messages. On the destination, failure to add a single item will result in the message failing. In that case the Edge Data Store will fall back to egressing each item individually, per type or stream (i.e. each type, each stream, all data for a single stream). Types, containers, and data will continue to be egressed as long as the destination continues to respond to HTTP requests - retrying previous failures as needed.</p>
-<p>Certain HTTP failures during egress will result in a retry. The Edge Data Store will retry an HTTP request a maximum of 5 times with exponentially increasing delays between each request. The total time waiting and retrying is currently set at 1 minute. During that time egress of other messages will be delayed. List of retryable occurrences:</p>
+<p>After you add configuration for an egress endpoint, egress execution will periodically occur for that endpoint. Egress is handled individually per configured endpoint. Only the first execution types and containers will be egressed; subsequently only new or changed types/containers will be egressed. <strong>Only streams with a single, timeseries-based index can be egressed</strong>. Type creation must be successful in order to perform container creation; likewise container creation must be successful in order to perform data egress.</p>
+<p>Type, container and data items are batched into one or more OMF messages when egressing. Per the requirements defined in OMF, a single message will not exceed 192KB in size. Compression is automatically applied to outbound egress messages. On the destination, failure to add a single item will result in the message failing. In that case the Edge Data Store will fall back to egressing each item individually, per type or stream (that is each type, each stream, all data for a single stream). Types, containers, and data will continue to be egressed as long as the destination continues to respond to HTTP requests - retrying previous failures as needed.</p>
+<p>Certain HTTP failures during egress will result in a retry. The Edge Data Store will retry an HTTP request a maximum of five times with exponentially increasing delays between each request. The total time waiting and retrying is currently set at 1 minute. During that time egress of other messages will be delayed. List of retryable occurrences:</p>
 <ul>
 <li>TimeoutException</li>
 <li>HttpRequestException</li>
@@ -361,7 +302,7 @@
 <li>HttpStatusCode ServiceUnavailable (503)</li>
 <li>HttpStatusCode GatewayTimeout (504)</li>
 </ul>
-<p>For data collection and egress, in-memory and on-disk storage are used to track the last successfully-egressed data event, per stream. Data is egressed in order and includes events in the future.</p>
+<p>For data collection and egress, in-memory and on-disk storage are used to track the last successfully-egressed data event, per stream. Data is egressed in order and includes future events.</p>
 <p><strong>Note</strong>  When an event with a future timestamp is successfully egressed, only values after the associated timestamp of that event will be egressed.</p>
 <h2 id="destination-preparation">Destination Preparation</h2>
 <p>The various OSIsoft OMF destinations may require additional configuration. See details below to prepare an OSIsoft destination to receive OMF messages. </p>

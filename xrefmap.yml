@@ -68,7 +68,7 @@ references:
   name: Sample Modbus TCP data selection configuration
   href: V1/Configuration/Schemas/Modbus_DataSelection_schema.html
 - uid: modbus_DataSource_schema
-  name: Sample Modbus data source configuration
+  name: Sample Modbus TCP data source configuration
   href: V1/Configuration/Schemas/Modbus_DataSource_schema.html
 - uid: modbus_Logging_schema
   name: ModbusLoggerConfiguration Schema
@@ -92,7 +92,7 @@ references:
   name: Edge Storage OMF Quick Start
   href: V1/Overview/OMFQuickStart.html
 - uid: opcUa_DataSelection_schema
-  name: Sample Opc Ua data selection configuration
+  name: Sample Opc UA data selection configuration
   href: V1/Configuration/Schemas/OpcUa_DataSelection_schema.html
 - uid: opcUa_DataSource_Schema
   name: Sample Opc Ua data source configuration

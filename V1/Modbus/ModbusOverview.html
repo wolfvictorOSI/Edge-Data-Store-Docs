@@ -74,8 +74,171 @@
 <h2 id="overview">Overview</h2>
 <p>Modbus TCP is a commonly available communication protocol used for connecting and transmitting information between industrial electronic devices. The Modbus TCP adapter polls Modbus TCP slave devices, and transfers time series data from the data source devices into Edge Data Store. Polling is based on the measurement configuration provided, and models the register measurements in a Modbus TCP data source.</p>
 <p>The Modbus TCP adapter communicates with any device conforming to the Modbus TCP/IP protocol through a gateway or router. The Modbus slave devices and routers do not need to be on the same subnet as Edge Data Store.</p>
-<p>To install a Modbus TCP adapter, refer to <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> on how to add a new component to Edge Data Store. The following example covers configuring an EDS adapter named Modbus1. If another EDS adapter has been installed, please substitute the name of the installed adapter in the following example for Modbus1.</p>
-<h2 id="modbus-tcp-data-source-configuration">Modbus TCP data source configuration</h2>
+<p>To install a Modbus EDS adapter, see <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> on how to add a new component to Edge Data Store. The example below covers configuring a EDS adapter named Modbus1. If another EDS adapter has been installed, please substitute the name of the installed adapter in the following example for Modbus1.</p>
+<h2 id="supported-features">Supported features</h2>
+<h3 id="register-types">Register types</h3>
+<p>The Modbus EDS adapter supports the following types of operations on registers of the Modbus devices:</p>
+<ul>
+<li>Read Coil Status (Function code 01)</li>
+<li>Read Discrete Input Status (Function code 02)</li>
+<li>Read Holding Registers (Function code 03)</li>
+<li>Read Input Registers (Function code 04)</li>
+</ul>
+<p>When reading from function codes <strong>01</strong> and <strong>02</strong> the adapter expects these to be returned as single bits. For function codes <strong>03</strong> and <strong>04</strong>, the adapter expects 16 bits to be returned from devices that contain 16-bit registers and 32 bits to be returned from devices that contain 32-bit registers.</p>
+<h3 id="data-types">Data types</h3>
+<p>The Modbus EDS adapter converts readings from single or multiple registers into the data types specified by the data type code and populates the value into streams created in the Edge Data Store.</p>
+<p>The following table lists all data types with their corresponding type codes supported by the Modbus EDS adapter.</p>
+<table>
+<thead>
+<tr>
+<th>Data type code</th>
+<th>Data type name</th>
+<th>Value type</th>
+<th>Register type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Boolean</td>
+<td>Bool</td>
+<td>Bool</td>
+<td>0 = false <br> 1 = true</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Int16</td>
+<td>Int16</td>
+<td>Bool/16-bit</td>
+<td>Read 1 Modbus register and interpret as a 16-bit integer. Bytes [BA] read from the device are stored as [AB].</td>
+</tr>
+<tr>
+<td>20</td>
+<td>UInt16</td>
+<td>UInt16</td>
+<td>Bool/16-bit</td>
+<td>Read 1 Modbus register and interpret as an unsigned 16-bit integer. Bytes [BA] read from the device are stored as [AB].</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Int32</td>
+<td>Int32</td>
+<td>16-bit/32-bit</td>
+<td>Read 32 bits from the Modbus device and interpret as a 32-bit integer. Bytes [DCBA] read from the device are stored as [ABCD].</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Int32ByteSwap</td>
+<td>Int32</td>
+<td>16-bit/32-bit</td>
+<td>Read 32 bits from the Modbus device and interpret as a 32-bit integer. Bytes [BADC] read from the device are stored as [ABCD].</td>
+</tr>
+<tr>
+<td>100</td>
+<td>Float32</td>
+<td>Float32</td>
+<td>16-bit/32-bit</td>
+<td>Read 32 bits from the Modbus device and interpret as a 32-bit float. Bytes [DCBA] read from the device are stored as [ABCD].</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Float32ByteSwap</td>
+<td>Float32</td>
+<td>16-bit/32-bit</td>
+<td>Read 32 bits from the Modbus device and interpret as a 32-bit float. Bytes [BADC] read from the device are stored as [ABCD].</td>
+</tr>
+<tr>
+<td>110</td>
+<td>Float64</td>
+<td>Float64</td>
+<td>16-bit/32-bit</td>
+<td>Read 64 bits from the Modbus device and interpret as a 64-bit float. Bytes [HGFEDCBA] read from the device are stored as [ABCDEFGH].</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Float64ByteSwap</td>
+<td>Float64</td>
+<td>16-bit/32-bit</td>
+<td>Read 64 bits from the Modbus device and interpret as a 64-bit float. Bytes [BADCFEHG] read from the device are stored as [ABCDEFGH].</td>
+</tr>
+<tr>
+<td>1001 - 1250</td>
+<td>String</td>
+<td>String</td>
+<td>16-bit/32-bit</td>
+<td>1001 reads a one-character string, 1002 reads a two-character string, and 1003 reads a three-character string and so on. Bytes [AB] are interpreted as &quot;AB&quot;.</td>
+</tr>
+<tr>
+<td>2001 - 2250</td>
+<td>StringByteSwap</td>
+<td>String</td>
+<td>16-bit/32-bit</td>
+<td>2001 reads a one-character string, 2002 reads a two-character string, and 2003 reads a three-character string and so on. Bytes [BA] are interpreted as &quot;AB&quot;.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="apply-bitmap">Apply bitmap</h3>
+<p>The Modbus EDS adapter supports applying bitmaps to the value converted from the readings from the Modbus devices. A bitmap is a series of numbers used to extract and reorder bits from a word register. The format of the bitmap is uuvvwwxxyyzz, where uu, vv, ww, yy, and zz each refer to a single bit. A leading zero is required if the referenced bit is less than 10. The low-order bit is 01 and high-order bit is either 16 or 32. Up to 16 bits can be referenced for a 16-bit word (data types 10 and 20) and up to 32 bits can be referenced for a 32-bit word (data type 30 and 31). For example, the bitmap 0307120802 will map the second bit of the original word to the first bit of the new word, the eighth bit to the second bit, the twelfth bit to the third bit, and so on. The high-order bits of the new word are padded with zeros if they are not specified. </p>
+<p>Not all data types support applying bitmap. The data types supporting bitmap are: </p>
+<ul>
+<li>Int16 (Data type code 10) </li>
+<li>UInt16 (Data type code 20)</li>
+<li><p>Int32 (Data type code 30 and 31) </p>
+<h3 id="apply-data-conversion">Apply data conversion</h3>
+<p>The Modbus EDS adapter supports applying data conversion to the value converted from reading from the Modbus devices. A conversion factor and conversion offset can be specified. The conversion factor is used for scaling up or down the value, and the conversion offset is used for shifting the value. The mathematical equation used in conversion is the following: </p>
+<pre><code>&lt;After Conversion&gt; = &lt;Before Conversion&gt; / Factor - Offset 
+</code></pre><p>Not all data types support applying data conversion. The data types supporting data conversion are: </p>
+</li>
+<li>Int16 (Data type code 10) </li>
+<li>UInt16 (Data type code 20) </li>
+<li>Int32 (Data type code 30 and 31) </li>
+<li><p>Float32 (Data type code 100 and 101) </p>
+<p>The value with data conversion applied will always be converted to the 32-bit float type to maintain the precision of the conversion factor and conversion offset.</p>
+</li>
+</ul>
+<h2 id="principles-of-operation">Principles of operation</h2>
+<p>The following topics provide an operational overview of the Modbus EDS adapter, focusing on streams creation and error handling. </p>
+<h3 id="operational-overview">Operational overview</h3>
+<h4 id="adapter-configuration">Adapter configuration</h4>
+<p>In order to provide the necessary information for the EDS Modbus TCP adapter to be ready for data collection, you need to configure the adapter. For more details, see <strong>Configuration of Modbus data source</strong> and <strong>Configuration of Modbus data selection</strong>. To configure the adapter, do the following:</p>
+<ul>
+<li>Data source: Provide the information of the data sources from which the connector pulls data</li>
+<li>Data selection: Provide the selected measurements for which the adapter collects data from the data source</li>
+<li>Logging: Set up the logging attributes to manage the adapter logging behavior</li>
+</ul>
+<h4 id="network-communication">Network communication</h4>
+<p>The Modbus EDS adapter communicates with the Modbus devices through the TCP/IP network by sending request packets that are constructed based on the data selection configurations, and collects the response packets returned by the devices. </p>
+<h4 id="stream-creation">Stream creation</h4>
+<p>From the parsed data selection configurations, the Modbus EDS adapter creates types, streams and data based on the information provided. For each measurement in the data selection configuration, a stream is created in the Edge Data Store to store time series data.</p>
+<h4 id="data-collection">Data collection</h4>
+<p>The Modbus EDS adapter collects data from the Modbus devices at the polling rates that you specify. The rates are set in each of the data selection configurations and can range from 0 milliseconds (as fast as possible) up to 1 day per polling. The adapter automatically optimizes the data collection process by grouping the requests to reduce the I/O load imposed to the Modbus networks.</p>
+<h3 id="streams-by-modbus-eds-adapter">Streams by Modbus EDS adapter</h3>
+<p>For each data selection configuration, the Modbus EDS adapter creates a stream with two properties. The properties are defined in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Property name</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Timestamp</td>
+<td>String</td>
+<td>The response time of the stream data from the Modbus device.</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>Specified by the data selection</td>
+<td>The value of the stream data from the Modbus device.</td>
+</tr>
+</tbody>
+</table>
+<p>There is a unique identifier (Stream ID) for each stream created for the selected measurement. If a custom stream ID is specified for the measurement in the data selection configuration, the Modbus EDS adapter will use that stream ID to create the stream. Otherwise, the connector constructs the stream ID using the following format: </p>
+<pre><code>&lt;Adapter Component ID&gt;.&lt;Unit ID&gt;.&lt;Register Type&gt;.&lt;Register Offset&gt; 
+</code></pre><h2 id="modbus-tcp-data-source-configuration">Modbus TCP data source configuration</h2>
 <p>To use the Modbus TCP EDS adapter Adapter of Edge Data Store, you must configure it for the Modbus data source from which it will be polling data.</p>
 <h3 id="configure-modbus-tcp-data-source">Configure Modbus TCP data source</h3>
 <p>Complete the following to configure the Modbus data source:</p>
@@ -107,7 +270,7 @@ You can create or copy this file to any directory on a device with Edge Data Sto
 <td><strong>IpAddress</strong></td>
 <td>Required</td>
 <td>string</td>
-<td>The IP Address of the device from which the data is to be collected using the Modbus protocol. Host name is not supported.</td>
+<td>The IP address of the device from which the data is to be collected using the Modbus protocol. Host name is not supported.</td>
 </tr>
 <tr>
 <td><strong>Port</strong></td>
@@ -119,13 +282,19 @@ You can create or copy this file to any directory on a device with Edge Data Sto
 <td><strong>StreamIdPrefix</strong></td>
 <td>Optional</td>
 <td>number</td>
-<td>Parameter applied to all data items collected from the data source. If not configured, the default value will be the ID of the Modbus TCP adapter. The custom StreamIdPrefix has the highest priority.</td>
+<td>Parameter applied to all data items collected from the data source. If not configured, the default value is the ID of the Modbus EDS adapter. The custom StreamIdPrefix has the highest priority.</td>
+</tr>
+<tr>
+<td><strong>ApplyPrefixToStreamId</strong></td>
+<td>Optional</td>
+<td>boolean</td>
+<td>Parameter applied to all data items collected from the data source that have custom stream ID configured. If configured, the adapter will apply the StreamIdPrefix property to all the streams with custom ID configured. The property does not affect any streams with default ID configured</td>
 </tr>
 <tr>
 <td><strong>ConnectTimeout</strong></td>
 <td>Optional</td>
 <td>number</td>
-<td>Parameter to specify the time (in milliseconds) to wait when Modbus TCP adapter is trying to connect to the data source. The value ranges from 1000 ms to 30000 ms. The default value is 5000 ms.</td>
+<td>Parameter to specify the time (in milliseconds) to wait when Modbus TCP EDS adapter is trying to connect to the data source. The value ranges from 1000 ms to 30000 ms. The default value is 5000 ms.</td>
 </tr>
 <tr>
 <td><strong>ReconnectInterval</strong></td>
@@ -137,7 +306,7 @@ You can create or copy this file to any directory on a device with Edge Data Sto
 <td><strong>RequestTimeout</strong></td>
 <td>Optional</td>
 <td>number</td>
-<td>Parameter to specify the time (in milliseconds) that Modbus TCP adapter waits for a pending request before marking it as timeout and dropping the request. The default value is 10000 ms. The value must be a positive integer, there is no value range.</td>
+<td>Parameter to specify the time (in milliseconds) that Modbus TCP EDS adapter waits for a pending request before marking it as timeout and dropping the request. The default value is 10000 ms. The value must be a positive integer, there is no value range.</td>
 </tr>
 <tr>
 <td><strong>DelayBetweenRequests</strong></td>
@@ -228,13 +397,13 @@ Example using cURL (run this command from the same directory where the file is l
 <td><strong>DataTypeCode</strong></td>
 <td>Required</td>
 <td>number</td>
-<td>An integer representing the data type that Modbus TCP adapter will read starting at the register specified by the offset. Supported data types are:<br>1 = Boolean<br>10 = Int16<br>20 = UInt16<br>30 = Int32<br>31 = Int32ByteSwap<br>100 = Float32<br>101 = Float32ByteSwap<br>110 = Float64<br>111 = Float64ByteSwap<br>1001 - 1250 = String <br>2001 - 2250 = StringByteSwap</td>
+<td>An integer representing the data type that Modbus TCP EDS adapter will read starting at the register specified by the offset. Supported data types are:<br>1 = Boolean<br>10 = Int16<br>20 = UInt16<br>30 = Int32<br>31 = Int32ByteSwap<br>100 = Float32<br>101 = Float32ByteSwap<br>110 = Float64<br>111 = Float64ByteSwap<br>1001 - 1250 = String <br>2001 - 2250 = StringByteSwap</td>
 </tr>
 <tr>
 <td><strong>ScanRate</strong></td>
 <td>Required</td>
 <td>number</td>
-<td>How often this measurement should be read from the device in milliseconds. Acceptable values are from 0 to 86400000. If 0 ms is specified, Modbus TCP adapter will scan for data as fast as possible.</td>
+<td>How often this measurement should be read from the device in milliseconds. Acceptable values are from 0 to 86400000. If 0 ms is specified, Modbus TCP EDS adapter will scan for data as fast as possible.</td>
 </tr>
 <tr>
 <td><strong>BitMap</strong></td>
