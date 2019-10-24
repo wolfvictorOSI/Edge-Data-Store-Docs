@@ -42,13 +42,15 @@ The following table lists all data types with their corresponding type codes sup
 | 1001 - 1250    | String         | String     | 16-bit/32-bit | 1001 reads a one-character string, 1002 reads a two-character string, and 1003 reads a three-character string and so on. Bytes [AB] are interpreted as "AB". |
 | 2001 - 2250    | StringByteSwap | String     | 16-bit/32-bit | 2001 reads a one-character string, 2002 reads a two-character string, and 2003 reads a three-character string and so on. Bytes [BA] are interpreted as "AB". |
 
-### Applying bitmap
-The Modbus EDS adapter supports applying bitmaps to the value converted from the readings from the Modbus devices. A bitmap is a series of numbers used to extract and reorder bits from a word register. The format of the bitmap is uuvvwwxxyyzz, where uu, vv, ww, yy, and zz each refer to a single bit. A leading zero is required if the referenced bit is less than 10. The low-order bit is 01 and high-order bit is either 16 or 32. Up to 16 bits can be referenced for a 16-bit word (data types 10 and 20) and up to 32 bits can be referenced for a 32-bit word (data type 30 and 31). For example, the bitmap 0307120802 will map the second bit of the original word to the first bit of the new word, the eighth bit to the second bit, the twelfth bit to the third bit, and so on. The high-order bits of the new word are padded with zeros if they are not specified. Not all data types support applying bitmap. The data types supporting bitmap are: 
+### Apply bitmap
+The Modbus EDS adapter supports applying bitmaps to the value converted from the readings from the Modbus devices. A bitmap is a series of numbers used to extract and reorder bits from a word register. The format of the bitmap is uuvvwwxxyyzz, where uu, vv, ww, yy, and zz each refer to a single bit. A leading zero is required if the referenced bit is less than 10. The low-order bit is 01 and high-order bit is either 16 or 32. Up to 16 bits can be referenced for a 16-bit word (data types 10 and 20) and up to 32 bits can be referenced for a 32-bit word (data type 30 and 31). For example, the bitmap 0307120802 will map the second bit of the original word to the first bit of the new word, the eighth bit to the second bit, the twelfth bit to the third bit, and so on. The high-order bits of the new word are padded with zeros if they are not specified. 
+
+Not all data types support applying bitmap. The data types supporting bitmap are: 
  - Int16 (Data type code 10) 
  - UInt16 (Data type code 20)
  - Int32 (Data type code 30 and 31) 
  
- ### Applying data conversion 
+ ### Apply data conversion 
  
  The Modbus EDS adapter supports applying data conversion to the value converted from reading from the Modbus devices. A conversion factor and conversion offset can be specified. The conversion factor is used for scaling up or down the value, and the conversion offset is used for shifting the value. The mathematical equation used in conversion is the following: 
 
