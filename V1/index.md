@@ -22,7 +22,7 @@ uid: index
 - [Security](xref:security)
 - [System Configuration](xref:EdgeDataStoreConfiguration)
 - [EDS data ingress](xref:EDSDataIngress)
-  - [OpcUa](xref:opcUaOverview)
+  - [OPC UA adapter](xref:opcUaOverview)
     - [Supported Features](xref:SupportedFeaturesOPCUA)
     - [Principles of operation](xref:PrinciplesOfOperationOPCUA)
     - [Data source configuration](xref:OPCUADataSourceConfiguration)
