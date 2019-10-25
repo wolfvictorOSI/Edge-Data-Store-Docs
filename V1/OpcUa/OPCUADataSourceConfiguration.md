@@ -2,11 +2,11 @@
 uid: OPCUADataSourceConfiguration
 ---
 
-## Configuration of OPC UA data source
+# OPC UA data source configuration
 
 To use the OPC UA EDS adapter, you must configure from which OPC UA data source it will be receiving data.
 
-### Procedure
+## Configure OPC UA data source
 
 > **Note:** You cannot modify OPC UA data source configurations manually. You must use the REST endpoints to add or edit the configuration.
 
@@ -18,15 +18,15 @@ Complete the following to configure the OPC UA data source:
 2. Save the file as _DataSource.config.json_.
 3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`. 
 
-> **Note:** During installation it is possible to add a single OPC UA EDS adapter, and it is named OpcUa1. The example below uses this component name.
+> **Note:** During installation, it is possible to add a single OPC UA EDS adapter which is named OpcUa1. The following example uses this component name.
 
-Example using cURL:
+Example using cURL (run this command from the same directory where the file is located):
 
 ```bash
 curl -v -d "@DataSource.config.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/OpcUa1/DataSource"
 ```
 
-### Parameters for OPC UA data source
+## Parameters for OPC UA data source
 
 The following parameters are available for configuring an OPC UA data source.
 
@@ -41,7 +41,7 @@ The following parameters are available for configuring an OPC UA data source.
 | **StreamIdPrefix** | Optional | string | Specifies what prefix is used for Stream IDs. Naming convention is StreamIdPrefixNodeId. **Note:** An empty string means no prefix will be added to the Stream IDs. Null value means ComponentID followed by dot character will be added to the stream IDs (example: OpcUa1.NodeId).|
 
 
-### OPC UA data source example
+## OPC UA data source example
 
 The following is an example of valid OPC UA data source configuration:
 
