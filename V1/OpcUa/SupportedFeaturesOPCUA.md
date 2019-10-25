@@ -6,7 +6,7 @@ uid: SupportedFeaturesOPCUA
 
 ## Data Types
 
-The table below lists OPC UA variable types that the OPC UA EDS adapter supports data collection from and types of streams that are going to be created in Edge Data Store.
+The following table lists OPC UA variable types that the OPC UA EDS adapter supports data collection from and types of streams that are going to be created in Edge Data Store.
 
 | OPC UA data type | Stream data type |
 |------------------|------------------|
