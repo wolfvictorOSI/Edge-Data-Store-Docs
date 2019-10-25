@@ -31,7 +31,7 @@ The OPC UA EDS adapter uses binary opc.tcp protocol to communicate with the OPC 
 
 OPC UA EDS adapter is collecting time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). This version of adapter supports Data Access (DA) part of OPC UA specification.
 
-## Streams created by OPC UA EDS adapter
+## Streams by OPC UA EDS adapter
 
 OPC UA EDS adapter creates a stream with two properties per selected OPC UA item. The properties are defined in the following table:
 
