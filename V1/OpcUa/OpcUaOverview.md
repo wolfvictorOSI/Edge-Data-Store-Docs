@@ -50,7 +50,7 @@ The following topics provide an operational overview of the OPC UA EDS adapter, 
 
 #### Adapter configuration
 
-In order for the OPC UA EDS adapter to start data collection, you need to configure the adapter. For more information, see **Configuration of OPC UA data source** and **Configuration of OPC UA data selection**. To configure the adapter, configure the following:
+In order for the OPC UA EDS adapter to start data collection, you need to configure the adapter. For more information, see [OPC UA data source configuration](#opc-ua-data-source-configuration) and [OPC UA data selection configuration](#opc-ua-data-selection-configuration). To configure the adapter, configure the following:
 
 Data source: Provide the information of the data source from where the adapter should collect data.
 Data selection: Perform selection of OPC UA items that adapter should should subscribe for data.
@@ -86,7 +86,7 @@ Stream ID is a unique identifier of each stream created by the adapter for a giv
 <Adapter Component ID>.<Namespace>.<Identifier>
 ```
 
-> **Note:** Naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more informaton, refer to **Configuration of OPC UA data source** section.
+> **Note:** Naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more informaton, refer to [OPC UA data source configuration](#opc-ua-data-source-configuration).
 
 
 ## OPC UA data source configuration
@@ -101,11 +101,11 @@ Complete the following to configure the OPC UA data source:
 
 1. Using any text editor, create a file that contains an OPC UA data source in JSON form.
     - For content structure, see the following OPC UA data source example section.
-    - For a table of all available parameters, see the following **Parameters for OPC UA data source** section.
+    - For a table of all available parameters, see [Parameters for OPC UA data source](#parameters-for-opc-ua-data-source).
 2. Save the file as _DataSource.config.json_.
 3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`. 
 
-> **Note:** During installation it is possible to add a single OPC UA EDS adapter, and it is named OpcUa1. The example below uses this component name.
+> **Note:** During installation, it is possible to add a single OPC UA EDS adapter which is named OpcUa1. The following example uses this component name.
 
 Example using cURL (run this command from the same directory where the file is located):
 
@@ -156,7 +156,7 @@ Complete the following to configure OPC UA data selection:
 
 1. Using any text editor, create a file that contains an OPC UA data selection in JSON form.
     - For content structure, see the following OPC UA data selection example.
-    - For a table of all available parameters, see the following Parameters for **OPC UA data selection** section.
+    - For a table of all available parameters, see [Parameters for OPC UA data source](#parameters-for-opc-ua-data-source).
 2. Save the file as _DataSelection.config.json_.
 3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`
 
