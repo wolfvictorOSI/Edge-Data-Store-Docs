@@ -2,19 +2,19 @@
 uid: OPCUAAdapterSecurityConfiguration
 ---
 
-# OPC UA adapter security
+# OPC UA adapter security configuration
 
 The OPC UA security standard is concerned with the authentication of client and server applications, the authentication of users and confidentiality of their communication. As the security model relies heavily on Transport Level Security (TLS) to establish a secure communication link with an OPC UA server, each client, including the OSIsoft Adapter, must have a digital certificate deployed and configured. Certificates uniquely identify client applications and machines on servers, and allow for creation of a secure communication link when trusted on both sides.
 
 OSIsoft Adapter for OPC UA generates a self-signed certificate when the first secure connection attempt is made. Each OPC UA Adapter instance creates a certificate store where its own certificates, as well as those of the server, will be persisted.
 
-## Procedure
+## Configure OPC UA adapter security
 
 1. Configure the data source to use secure connection (Set UseSecureConnection as true).
 2. Add server's certificate to the adapter's trust store.
 3. Add adapter's certificate to the server's trust store.
 
-## Data source configuration
+### Data source configuration
 
 ```json
 {
@@ -29,21 +29,21 @@ OSIsoft Adapter for OPC UA generates a self-signed certificate when the first se
 
 > **Note:** OSIsoft strongly recommends using secure connections in production environment(s).
 
-## Adapter Certificate store
+### Adapter Certificate store
 
-Adapter Certificate store location:
+**Adapter Certificate store location:**
 
 Windows: `%programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates`
 
 Linux: `/usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates`
 
-Adapter Trust store location:
+**Adapter Trust store location:**
 
 Windows: `%programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates\Trusted\certs`
 
 Linux: `/usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates/Trusted/certs`
 
-Adapter Rejected certificates location:
+**Adapter Rejected certificates location:**
 
 
 Windows: `%programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates\RejectedCertificates\certs`
