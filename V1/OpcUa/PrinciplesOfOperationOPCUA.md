@@ -46,4 +46,4 @@ Stream ID is a unique identifier of each stream created by the adapter for a giv
 <Adapter Component ID>.<Namespace>.<Identifier>
 ```
 
-> **Note:** Naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more informaton please refer to **Configuration of OPC UA data source** section.
+> **Note:** Naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more informaton, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration).
