@@ -19,7 +19,7 @@ You can create or copy this file to any directory on a device with Edge Data Sto
 2. Save the file as _DataSource.config.json_.
 3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`. If a Modbus TCP EDS adapter is added during installation, it will have an EDS adapterId of Modbus1, which is used in the following example.
 
-> **Note:** During installation, it is possible to add a single Modbus TCP adapter which is named Modbus1. The following example uses this component name.
+> **Note:** During installation, it is possible to add a single Modbus TCP EDS adapter which is named Modbus1. The following example uses this component name.
 
 Example using cURL (run this command from the same directory where the file is located):
 
