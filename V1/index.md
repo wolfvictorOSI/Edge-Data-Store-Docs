@@ -34,6 +34,7 @@ uid: index
     - [Principles of operation](xref:PrinciplesOfOperationModbus)
     - [Data source configuration](xref:ModbusTCPDataSourceConfiguration)
     - [Data selection configuration](xref:ModbusTCPDataSelectionConfiguration)
+    - [Adapter security](xref:ModbusTCPAdapterSecurity)
   - [OMF](xref:omfOverview)
 - [Storage](xref:)
   - [Sequential Data Store](xref:sdsOverview)
