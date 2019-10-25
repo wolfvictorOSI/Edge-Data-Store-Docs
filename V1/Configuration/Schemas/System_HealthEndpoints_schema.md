@@ -4,6 +4,8 @@ uid: system_HealthEndpoints_schema
 
 # OMF health endpoint configuration schema
 
+The OMF health endpoint configuration schema specifies how to formally describe the OMF health endpoint parameters.
+
 ```json
 [{
         "endpoint": "https://<pi web api server>/piwebapi/omf/",
