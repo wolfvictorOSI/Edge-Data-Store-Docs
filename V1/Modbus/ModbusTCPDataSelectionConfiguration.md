@@ -4,9 +4,11 @@ uid: ModbusTCPDataSelectionConfiguration
 
 # Modbus TCP data selection configuration
 
-Once a data source is configured for a Modbus instance, you must configure which data is to be collected from the Modbus TCP slave device.
+Once a data source is configured for a Modbus TCP instance, you must configure which data is to be collected from the Modbus TCP slave device.
 
 ## Configure Modbus TCP data selection
+
+> **Note:** You cannot modify Modbus TCP data selection configurations manually. You must use the REST endpoints to add or edit the configuration.
 
 Complete the following to configure Modbus TCP data selection:
 
@@ -23,7 +25,7 @@ curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" -X P
 
 ## Parameters for Modbus TCP data selection
 
-The following parameters are available for configuring Modbus data selection.
+The following parameters are available for configuring Modbus TCP data selection.
 
 | Parameter | Required | Type | Description |
 |-----------|----------|------|-------------|
@@ -31,7 +33,7 @@ The following parameters are available for configuring Modbus data selection.
 | **Selected** | Optional | bool | This field is used to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is true.|
 | **Name** | Optional | string | The optional friendly name of the data item collected from the data source. If not configured, the default value will be the stream ID. |
 | **UnitId** | Required | number | Modbus TCP slave device unit ID. This must be a value between 0 and 247, inclusively. |
-| **RegisterType** | Required | number or string | Modbus register type. Supported types are Coil, Discrete, Input16, Input32, Holding16 and Holding32.<br><br>Input16 and Holding16 are used to read registers that have a size of 16 bits. For registers that have a size of 32 bits, use the Input32 and Holding32 register types. To represent the types, you can type in the register type ID or the exact name: <br><br>1 or Coil (Read Coil Status)<br>2 or Discrete (Read Discrete Input Status)<br>3 or Holding16 (Read 16-bit Holding Registers)<br>4 or Holding32 (Read 32-bit Holding Registers)<br>6 or Input16 (Read 16-bit Input Registers)<br>7 or Input32 (Read 32-bit Input Registers) |
+| **RegisterType** | Required | number or string | Modbus TCP register type. Supported types are Coil, Discrete, Input16, Input32, Holding16 and Holding32.<br><br>Input16 and Holding16 are used to read registers that have a size of 16 bits. For registers that have a size of 32 bits, use the Input32 and Holding32 register types. To represent the types, you can type in the register type ID or the exact name: <br><br>1 or Coil (Read Coil Status)<br>2 or Discrete (Read Discrete Input Status)<br>3 or Holding16 (Read 16-bit Holding Registers)<br>4 or Holding32 (Read 32-bit Holding Registers)<br>6 or Input16 (Read 16-bit Input Registers)<br>7 or Input32 (Read 32-bit Input Registers) |
 | **RegisterOffset** | Required | number | The 0 relative offset to the starting register for this measurement. For example, if your Holding registers start at base register 40001, the offset to this register is 0. For 40002, the offset to this register is 1.|
 | **DataTypeCode** | Required | number | An integer representing the data type that Modbus TCP EDS adapter will read starting at the register specified by the offset. Supported data types are:<br>1 = Boolean<br>10 = Int16<br>20 = UInt16<br>30 = Int32<br>31 = Int32ByteSwap<br>100 = Float32<br>101 = Float32ByteSwap<br>110 = Float64<br>111 = Float64ByteSwap<br>1001 - 1250 = String <br>2001 - 2250 = StringByteSwap |
 | **ScanRate** | Required | number | How often this measurement should be read from the device in milliseconds. Acceptable values are from 0 to 86400000. If 0 ms is specified, Modbus TCP EDS adapter will scan for data as fast as possible.|
