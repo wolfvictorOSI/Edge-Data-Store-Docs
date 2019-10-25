@@ -2,11 +2,11 @@
 uid: ModbusTCPDataSelectionConfiguration
 ---
 
-## Modbus TCP data selection configuration
+# Modbus TCP data selection configuration
 
 Once a data source is configured for a Modbus instance, you must configure which data is to be collected from the Modbus TCP slave device.
 
-### Configure Modbus TCP data selection
+## Configure Modbus TCP data selection
 
 Complete the following to configure Modbus TCP data selection:
 
@@ -21,7 +21,7 @@ Example using cURL (run this command from the same directory where the file is l
 curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection"
 ```
 
-### Parameters for Modbus TCP data selection
+## Parameters for Modbus TCP data selection
 
 The following parameters are available for configuring Modbus data selection.
 
@@ -42,7 +42,7 @@ The following parameters are available for configuring Modbus data selection.
 
 Each JSON object in the file represents a measurement. You can modify the fields in each object to configure the measurement parameters. To add more measurements, you need to create more JSON objects with properly completed fields.
 
-### Modbus TCP data selection example
+## Modbus TCP data selection example
 
 ```json
 [
