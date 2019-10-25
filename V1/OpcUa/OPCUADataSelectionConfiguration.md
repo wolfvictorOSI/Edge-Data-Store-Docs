@@ -2,11 +2,11 @@
 uid: OPCUADataSelectionConfiguration
 ---
 
-# Configuration of OPC UA data selection
+# OPC UA data selection configuration
 
 In addition to the data source configuration, you need to provide a data selection configuration to specify the data you want the OPC UA EDS adapter to collect from the data sources.
 
-## Procedure
+## Configure OPC UA data selection
 
 > **Note:** You cannot modify OPC UA data selection configurations manually. You must use the REST endpoints to add or edit the configuration.
 
@@ -17,8 +17,8 @@ Complete the following to configure OPC UA data selection:
     - For a table of all available parameters, see the following Parameters for **OPC UA data selection** section.
 2. Save the file as _DataSelection.config.json_.
 3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`
-    - Example using cURL:
 
+Example using cURL (run this command from the same directory where the file is located):
 
 ```bash
 curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection"
