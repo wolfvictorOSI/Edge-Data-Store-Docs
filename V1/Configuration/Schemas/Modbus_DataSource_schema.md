@@ -4,8 +4,6 @@ uid: modbus_DataSource_schema
 
 # Sample Modbus TCP data source configuration
 
-The Modbus TCP data source configuration schema specifies how to formally describe the Modbus TCP data source parameters.
-
 ```json
 {
     "IpAddress": "<Modbus IP Address>",
@@ -19,6 +17,8 @@ The Modbus TCP data source configuration schema specifies how to formally descri
 ```
 
 # Modbus TCP data source configuration schema
+
+The Modbus TCP data source configuration schema specifies how to formally describe the Modbus TCP data source parameters.
 
 | Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                                     |
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------------- |
