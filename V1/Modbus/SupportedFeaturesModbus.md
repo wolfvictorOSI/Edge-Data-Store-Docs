@@ -5,14 +5,18 @@ uid: SupportedFeaturesModbus
 # Supported features
 
 ## Register types
-The Modbus TCP EDS adapter supports the following types of operations on registers of the Modbus TCP devices:
+The Modbus TCP EDS adatper supports 6 register types, corresponding to 4 Function Code (1-4). Since one function code can returen two types of registers, either 16-bit or 32-bit register depending on the device, the register type (or register type code), intead of the function code, is required wwhen configuring the data selection for the adapter. The following table lists all the supported register types supported in the Modbus TCP EDS adatper.
 
- - Read Coil Status (Function code 01)
- - Read Discrete Input Status (Function code 02)
- - Read Holding Registers (Function code 03)
- - Read Input Registers (Function code 04)
+| Register Type | Registe Type Code | Description | Function Code |
+|---------------|-------------------|-------------|---------------|
+| Coil          | 1                 |Read Coil Status| 1|
+| Discrete          | 2                 |Read Discrete Input Status | 2|
+| Holding16          | 3                 |Read 16-bit Holding Registers | 3|
+| Holding32          | 4                 |Read 32-bit Holding Registers | 3|
+| Input16          | 6                 |Read 16-bit Input Registers |4|
+| Input32          | 7                 |Read 32-bit Input Registers |4|
 
-When reading from function codes **01** and **02** the adapter expects these to be returned as single bits. For function codes **03** and **04**, the adapter expects 16 bits to be returned from devices that contain 16-bit registers and 32 bits to be returned from devices that contain 32-bit registers.
+When reading from function codes **1** and **2** the adapter expects these to be returned as single bits. For function codes **3** and **4**, the adapter expects 16 bits to be returned from devices that contain 16-bit registers and 32 bits to be returned from devices that contain 32-bit registers.
 
 ## Data types
 The Modbus TCP EDS adapter converts readings from single or multiple registers into the data types specified by the data type code and populates the value into streams created in the Edge Data Store.
