@@ -5,9 +5,9 @@ uid: SupportedFeaturesModbus
 # Supported features
 
 ## Register types
-The Modbus TCP EDS adatper supports 6 register types, corresponding to 4 Function Code (1-4). Since one function code can returen two types of registers, either 16-bit or 32-bit register depending on the device, the register type (or register type code), intead of the function code, is required wwhen configuring the data selection for the adapter. The following table lists all the supported register types supported in the Modbus TCP EDS adatper.
+The Modbus TCP EDS adatper supports 6 register types, corresponding to 4 function codes (1-4). Since one function code can return two types of registers, either 16-bit or 32-bit register depending on the device, either the register type, or the register type code, intead of the function code, is required when configuring the data selection for the adapter. The following table lists all the supported register types supported in the Modbus TCP EDS adatper.
 
-| Register Type | Registe Type Code | Description | Function Code |
+| Register Type | Register Type Code | Description | Function Code |
 |---------------|-------------------|-------------|---------------|
 | Coil          | 1                 |Read Coil Status| 1|
 | Discrete          | 2                 |Read Discrete Input Status | 2|
