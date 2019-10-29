@@ -28,7 +28,7 @@ uid: index
     - [Data source configuration](xref:OPCUADataSourceConfiguration)
     - [Data selection configuration](xref:OPCUADataSelectionConfiguration)
       - [Opc Ua Data Selection](xref:opcUaDataSelection)
-    - [Adapter security](xref:OPCUAAdapterSecurity)
+    - [Adapter security](xref:OPCUAAdapterSecurityConfiguration)
   - [Modbus TCP adapter](xref:modbusOverview)
     - [Supported Features](xref:SupportedFeaturesModbus)
     - [Principles of operation](xref:PrinciplesOfOperationModbus)
