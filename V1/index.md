@@ -24,7 +24,7 @@ uid: index
 - [EDS data ingress](xref:EDSDataIngress)
   - [OPC UA adapter](xref:opcUaOverview)
     - [Supported Features](xref:SupportedFeaturesOPCUA)
-    - [Principles of operation](xref:PrinciplesOfOperationOPCUA)
+    - [Principles of operation](xref:PrinciplesOfOperationOPCUA.md)
     - [Data source configuration](xref:OPCUADataSourceConfiguration)
     - [Data selection configuration](xref:OPCUADataSelectionConfiguration)
       - [Opc Ua Data Selection](xref:opcUaDataSelection)
