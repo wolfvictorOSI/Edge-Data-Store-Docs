@@ -36,7 +36,7 @@ uid: index
     - [Data selection configuration](xref:ModbusTCPDataSelectionConfiguration)
     - [Adapter security](xref:ModbusTCPAdapterSecurity)
   - [OMF](xref:omfOverview)
-- [Storage](xref:)
+- [Storage](xref:storage)
   - [Sequential Data Store](xref:sdsOverview)
     - [Types](xref:sdsTypes)
     - [Streams](xref:sdsStreams)
