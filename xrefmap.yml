@@ -77,11 +77,20 @@ references:
   name: ModbusConfiguration Schema
   href: V1/Configuration/Schemas/Modbus_schema.html
 - uid: modbusOverview
-  name: Modbus TCP adapter
+  name: Modbus TCP EDS adapter
   href: V1/Modbus/ModbusOverview.html
 - uid: modbusQuickStart
   name: Edge Modbus Quick Start
   href: V1/Overview/ModbusQuickStart.html
+- uid: ModbusTCPAdapterSecurity
+  name: Modbus TCP EDS adapter security
+  href: V1/Modbus/ModbusTCPAdapterSecurity.html
+- uid: ModbusTCPDataSelectionConfiguration
+  name: Modbus TCP data selection configuration
+  href: V1/Modbus/ModbusTCPDataSelectionConfiguration.html
+- uid: ModbusTCPDataSourceConfiguration
+  name: Modbus TCP data source configuration
+  href: V1/Modbus/ModbusTCPDataSourceConfiguration.html
 - uid: ocsEgressQuickStart
   name: OSIsoft Cloud Services (OCS) egress quick start
   href: V1/Overview/OCSEgressQuickStart.html
@@ -95,7 +104,7 @@ references:
   name: Sample Opc UA data selection configuration
   href: V1/Configuration/Schemas/OpcUa_DataSelection_schema.html
 - uid: opcUa_DataSource_Schema
-  name: Sample Opc Ua data source configuration
+  name: Sample OPC UA data source configuration
   href: V1/Configuration/Schemas/OpcUa_DataSource_schema.html
 - uid: opcUa_Logging_schema
   name: OPC UA logger configuration schema
@@ -103,9 +112,18 @@ references:
 - uid: opcua_schema
   name: OpcUaConfiguration Schema
   href: V1/Configuration/Schemas/OpcUa_schema.html
+- uid: OPCUAAdapterSecurityConfiguration
+  name: OPC UA EDS adapter security configuration
+  href: V1/OpcUa/OPCUAAdapterSecurityConfiguration.html
 - uid: opcUaDataSelection
-  name: Generating a template OPC UA data selection configuration file
+  name: Generate a template OPC UA data selection configuration file
   href: V1/OpcUa/OpcUaDataSelection.html
+- uid: OPCUADataSelectionConfiguration
+  name: OPC UA data selection configuration
+  href: V1/OpcUa/OPCUADataSelectionConfiguration.html
+- uid: OPCUADataSourceConfiguration
+  name: OPC UA data source configuration
+  href: V1/OpcUa/OPCUADataSourceConfiguration.html
 - uid: opcUaOverview
   name: OPC UA EDS adapter
   href: V1/OpcUa/OpcUaOverview.html
@@ -115,6 +133,12 @@ references:
 - uid: piEgressQuickStart
   name: PI System (PI Web API) egress quick start
   href: V1/Overview/PIEgressQuickStart.html
+- uid: PrinciplesOfOperationModbus
+  name: Principles of operation
+  href: V1/Modbus/PrinciplesOfOperationModbus.html
+- uid: PrinciplesOfOperationOPCUA.md
+  name: Principles of operation
+  href: V1/OpcUa/PrinciplesOfOperationOPCUA.html
 - uid: releaseNotes
   name: Edge Data Store release notes
   href: V1/ReleaseNotes/ReleaseNotes.html
@@ -173,7 +197,7 @@ references:
   name: Edge Data Store storage component
   href: V1/Configuration/Storage.html
 - uid: Storage_Logging_schema
-  name: Storage logging schema
+  name: Storage logging configuration schema
   href: V1/Configuration/Schemas/Storage_Logging_schema.html
 - uid: storage_PeriodicEgressEndpoints_schema
   name: Periodic egress configuration schema
@@ -184,6 +208,12 @@ references:
 - uid: storage_schema
   name: StorageConfiguration schema
   href: V1/Configuration/Schemas/Storage_schema.html
+- uid: SupportedFeaturesModbus
+  name: Supported features
+  href: V1/Modbus/SupportedFeaturesModbus.html
+- uid: SupportedFeaturesOPCUA
+  name: Supported features
+  href: V1/OpcUa/SupportedFeaturesOPCUA.html
 - uid: system
   name: Edge Data Store system component
   href: V1/Configuration/System.html
@@ -194,7 +224,7 @@ references:
   name: OMF health endpoint configuration schema
   href: V1/Configuration/Schemas/System_HealthEndpoints_schema.html
 - uid: system_Logging_schema
-  name: System logging schema
+  name: System logging configuration schema
   href: V1/Configuration/Schemas/System_Logging_schema.html
 - uid: system_Port_schema
   name: Sample system port configuration file

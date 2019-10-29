@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Modbus TCP EDS adapter </title>
+    <title>Supported features </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Modbus TCP EDS adapter ">
+    <meta name="title" content="Supported features ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -68,13 +68,76 @@
       <div role="main" class="container body-content hide-when-search">
         <div class="article row grid">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="modbusOverview">
-<h1 id="modbus-tcp-eds-adapter">Modbus TCP EDS adapter</h1>
+            <article class="content wrap" id="_content" data-uid="SupportedFeaturesOPCUA">
+<h1 id="supported-features">Supported features</h1>
 
-<h2 id="overview">Overview</h2>
-<p>Modbus TCP is a commonly available communication protocol used for connecting and transmitting information between industrial electronic devices. The Modbus TCP EDS adapter polls Modbus TCP slave devices, and transfers time series data from the data source devices into Edge Data Store. Polling is based on the measurement configuration provided, and models the register measurements in a Modbus TCP data source.</p>
-<p>The Modbus TCP EDS adapter communicates with any device conforming to the Modbus TCP/IP protocol through a gateway or router. The Modbus TCP slave devices and routers do not need to be on the same subnet as Edge Data Store.</p>
-<p>You can add a single Modbus TCP EDS adapter during installation. If you want multiple Modbus TCP EDS adapters, see <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store configuration</a> on how to add a new component to Edge Data Store. </p>
+<h2 id="data-types">Data Types</h2>
+<p>The following table lists OPC UA variable types that the OPC UA EDS adapter supports data collection from and types of streams that are going to be created in Edge Data Store.</p>
+<table>
+<thead>
+<tr>
+<th>OPC UA data type</th>
+<th>Stream data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>Byte</td>
+<td>Int16</td>
+</tr>
+<tr>
+<td>SByte</td>
+<td>Int16</td>
+</tr>
+<tr>
+<td>Int16</td>
+<td>Int16</td>
+</tr>
+<tr>
+<td>UInt16</td>
+<td>UInt16</td>
+</tr>
+<tr>
+<td>Int32</td>
+<td>Int32</td>
+</tr>
+<tr>
+<td>UInt32</td>
+<td>UInt32</td>
+</tr>
+<tr>
+<td>Int64</td>
+<td>Int64</td>
+</tr>
+<tr>
+<td>UInt64</td>
+<td>UInt64</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>Float32</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>Float64</td>
+</tr>
+<tr>
+<td>DateTime</td>
+<td>DateTime</td>
+</tr>
+<tr>
+<td>String</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<h2 id="export-operation">Export operation</h2>
+<p>The OPC UA EDS adapter is able to export available OPC UA dynamic variables by browsing the OPC UA hierarchies or sub-hierarchies. Browse can be limited by specifying comma separated collection of nodeIds in data source configuration (RootNodeIds) which are going to be treated as a root(s) from where the adapter starts the browse operation. The adapter triggers export operation after successful connection to the OPC UA server when the data selection file doesn&#39;t exist in configuration directory. The exported data selection JSON file can be copied from the directory or retrieved via REST API call.</p>
+<p>Data selection file can be also created manually in order to avoid potentially long and expensive browse operation and configured before configuring data source or pushed in one configuration call with data source configuration.</p>
 </article>
           </div>
           
@@ -83,7 +146,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/Modbus/ModbusOverview.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/OpcUa/SupportedFeaturesOPCUA.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
