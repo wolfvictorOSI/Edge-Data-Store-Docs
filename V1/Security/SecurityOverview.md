@@ -3,18 +3,17 @@ uid: security
 ---
 # Edge Data Store security overview
 
-## EDS adapter
-### REST APIs
+## REST APIs
 Edge Data Store supports REST APIs for configuration, data reading (through SDS), and data writing (through OMF and SDS). Edge Data Store provides only localhost access to REST APIs. Any code that reads or writes to the REST APIs must reside on the computer or device on which Edge Data Store is running. 
 
 REST access is through HTTP. The default port is 5590. The port number can be changed during installation, or during configuration after installation. URLs must be of the form "http://localhost:{port}/" or "http://127.0.0.1:{port}/". **Note:** Do not use the host's name or IP Address in the URL.
 
 **Note:** Docker users must use the "host" networking mode for the container. For an example of running a container using this mode, see the section pertaining to [Docker containers](xref:edgeDocker).
 
-### Data egress
+## Data egress
 Writing data to OSIsoft Cloud Services or OSIsoft PI Web API is not limited to the local machine. You can write data to either of these destinations using HTTPS.
 
-### Adapters
+## Adapters
 Modbus and Opc Ua are not limited to the local machine. Both are enabled to access remote data sources through binary protocols.
 
 ## Secure storage
