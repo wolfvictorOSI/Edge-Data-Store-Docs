@@ -56,10 +56,10 @@ var SimpleType = function () {
 }
 ```
 
-**Example Stream**  
+**Example stream**  
 ``Simple`` is an SdsStream of type ``SimpleType``.
 
-**Example Data**  
+**Example data**  
 ``Simple`` has stored values as follows:
       11/23/2017 12:00:00 PM: Ok  0
       11/23/2017  1:00:00 PM: Ok 10
@@ -87,7 +87,7 @@ default or diagnostics
 ``string streamId``  
 The stream identifier  
 
-**Request Body**  
+**Request body**  
 A serialized list of one or more events of the stream type  
 
 **Response**  
@@ -143,7 +143,7 @@ The stream identifier
 ``string selectExpression``  
 Comma-separated list of strings that indicates the event fields to be changed in stream events  
 
-**Request Body**  
+**Request body**  
 A serialized collection of one or more patch property events
 
 **Response**  
@@ -260,7 +260,7 @@ default or diagnostics
 ``string streamId``  
 The stream identifier  
 
-**Request Body**
+**Request body**
 A serialized list of one or more events of the stream type
 
 **Response**  
@@ -287,7 +287,7 @@ default or diagnostics
 ``string streamId``  
 The stream identifier  
 
-**Request Body**  
+**Request body**  
 A serialized list of one or more events of the stream type
 
 **Response**  
