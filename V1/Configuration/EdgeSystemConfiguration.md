@@ -8,11 +8,9 @@ Edge Data Store uses JSON configuration files in a protected directory on Window
 
 **Note:** You can edit any single component or facet of the system using REST, but also configure the system as a whole with a single REST call.
 
-## Edge Data Store configuration
-
 Edge Data Store hosts other components. While the initial release of the Edge Data Store includes Modbus TCP, OPC UA, and Storage components, they are only active if you configure the system to use them. The system itself has a relatively small configuration surface area - the list of components and the HTTP Port used for REST calls.
 
-### Configure Edge Data Store port
+## Configure Edge Data Store port
 
 _System_Port.json_ specifies the port on which the System is listening for REST API calls. The same port is used for configuration and for writing data to OMF and SDS. The default configuration port is 5590. The default _System_Port.json_ file installed is:
 
@@ -34,7 +32,7 @@ curl -i -d "@EdgePort.json" -H "Content-Type: application/json" -X PUT http://lo
 
 2. After the REST command completes, restart Edge Data Store for the change to take effect.
 
-### Configure Edge Data Store components
+## Configure Edge Data Store components
 
 The default _System_Components.json_ file for the System component is the following. The Storage component is required for this initial release for Edge Data Store to run. With later releases of Edge Data Store, the storage component may not be required.
 
