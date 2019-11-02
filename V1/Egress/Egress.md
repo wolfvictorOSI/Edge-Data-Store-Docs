@@ -34,24 +34,30 @@ Complete the following to create new egress endpoints:
 curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
 ```
 
+> **Note use of the @ symbol in the above command**
+
 ### Parameters
 
 | Parameter                       | Required                  | Type      | Description                                        |
 |---------------------------------|---------------------------|-----------|----------------------------------------------------|
-| **Enabled**                     | Optional                  | bool      | An indicator of whether egress is enabled when the egress endpoint is loaded. Defaults to true. |
-| **Backfill**                    | Optional                  | bool      | An indicator of whether data should be backfilled. Backfilling will occur when the egress endpoint is run for the first time after application startup. Enabling backfilling will result in all data from the earliest index to the latest stored index being egressed, after applying the egress filter. Defaults to false. |
-| **ValidateEndpointCertificate** | Optional                  | bool      | Used to disable verification of destination certificate. Use for testing only with self-signed certificates. Defaults to true. |
-| **EgressFilter**                | Optional                  | string    | A filter used to determine which streams and types are egressed. For more information on valid filters, see [Searching](../Sds/Searching.md). |
-| **StreamPrefix**                | Optional                  | string    | Prefix applied to any streams that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters will not be allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
-| **TypePrefix**                  | Optional                  | string    | Prefix applied to any types that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters will not be allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
+| **Backfill**                    | Optional                  | bool      | An indicator of whether data should be backfilled. Enabling the backfill flag will result in all data from the earliest index to the latest stored index being egressed. Backfilling occurs for each stream, including when a new stream is added. Once backfilling is complete for a stream, any out-of-order data is not egressed.  Defaults to false. |
+| **ClientId**                    | Required for OCS endpoint | string    | Used for authentication with the OCS OMF endpoint. |
+| **ClientSecret**                | Required for OCS endpoint | string    | Used for authentication with the OCS OMF endpoint. |
 | **DebugExpiration**             | Optional                  | string    | A property that enables persistence of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value of this property represents the date and time this detailed information should stop being persisted. For more information, see [Troubleshooting](../Troubleshooting/Troubleshooting.md). |
-=======
-| **EgressFilter**                | Optional                  | string    | A filter used to determine which streams and types are egressed. See [Searching](../Sds/Searching.md) for more information on valid filters. |
+| **Description**                 | Optional                  | string    | Friendly description |
+| **EgressFilter**                | Optional                  | string    | A filter used to determine which streams and types are egressed. For more information on valid filters, see [Searching](../Sds/Searching.md). |
 | **Enabled**                     | Optional                  | bool      | An indicator of whether egress is enabled when the egress endpoint is loaded. Defaults to true. |
 | **Endpoint**                    | Required                  | string    | Destination that accepts OMF v1.1 messages. Supported destinations include OCS and PI. |
 | **ExecutionPeriod**             | Required                  | string    | Frequency of time between each egress action. Must be a string in the following format d.hh:mm:ss.## |
 | **Id**                          | Optional                  | string    | Unique identifier |
 | **Name**                        | Optional                  | string    | Friendly name |
+| **NamespaceId**                 | Optional                  | string    | Represents the namespace that will be egressed. There are two available namespaces: default; diagnostics. Default namespace is “default”. |
+| **Password**                    | Required for PI endpoint  | string    | Used for Basic authentication to the PI Web API OMF endpoint. |
+| **StreamPrefix**                | Optional                  | string    | Prefix applied to any streams that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters will not be allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
+| **TokenEndpoint**               | Optional for OCS endpoint | string    | Used to retrieve an OCS token from an alternative endpoint. *This is not normally necessary with OCS. Only use if directed to do so by customer support*. |
+| **TypePrefix**                  | Optional                  | string    | Prefix applied to any types that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters will not be allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
+| **Username**                    | Required for PI endpoint  | string    | Used for Basic authentication to the PI Web API OMF endpoint. If domain is required the backslash must be escaped (i.e. *domain*\\\\*username*).  |
+| **ValidateEndpointCertificate** | Optional                  | bool      | Used to disable verification of destination certificate. Use for testing only with self-signed certificates. Defaults to true. |
 
 ### Examples
 
@@ -133,7 +139,7 @@ The following are valid egress configuration examples.
 }]
 ```
 
-**Egress data to PI - streams whose Id contains "Modbus" or "Opc", every 1 minute.**
+**Egress data to PI - streams whose Id contains "Modbus" or "Opc", every 1 minute. Includes use of domain for username.**
 
 ```json
 [{
@@ -141,7 +147,7 @@ The following are valid egress configuration examples.
     "ExecutionPeriod" : "00:01:00",
     "EgressFilter" : "Id:*Modbus* OR Id:*Opc*",
     "Endpoint" : "https://{webApiLocation}/piwebapi/omf/",
-    "Username" : "{username}",
+    "Username" : "{domain}\\{username}",
     "Password" : "{password}"
 }]
 ```
@@ -190,7 +196,7 @@ Certain HTTP failures during egress will result in a retry. The Edge Data Store 
 
 For data collection and egress, in-memory and on-disk storage are used to track the last successfully-egressed data event, per stream. Data is egressed in order and includes future events.
 
-**Note**  When an event with a future timestamp is successfully egressed, only values after the associated timestamp of that event will be egressed.
+> **Note**  When an event with a future timestamp is successfully egressed, only values after the associated timestamp of that event will be egressed.
 
 ## Destination Preparation
 
@@ -211,6 +217,8 @@ To prepare OCS to receive OMF messages from EDS, add an OMF connection. Creating
 To prepare a PI Server to receive OMF messages from EDS, a PI Web API OMF endpoint must be available. The basic steps are as follows (see the PI Web API documentation for complete steps, as well as best practices and recommendations):
 
 1. Install PI Web API and enable the **OSIsoft Messge Format (OMF) Services** feature
+    - During configuration, choose an AF database and a PI Data Archive where metadata and data will be stored
+    - Account used in an egress configuration needs permissions to create AF elements and element templates, as well as PI points
 1. Configure PI Web API to use *Basic* authentication
 
-**Note**  The certificate used by PI Web API must be trusted by the device running EDS, otherwise the egress configuration *ValidateEndpointCertificate* property needs to be set to false (this can be the case with a **self-signed certificate** but should only be used for testing purposes).
+> **Note**  The certificate used by PI Web API must be trusted by the device running EDS, otherwise the egress configuration *ValidateEndpointCertificate* property needs to be set to false (this can be the case with a **self-signed certificate** but should only be used for testing purposes).
