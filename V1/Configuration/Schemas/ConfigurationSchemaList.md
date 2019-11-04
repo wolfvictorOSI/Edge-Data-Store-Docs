@@ -36,6 +36,6 @@ Use the following schemas to configure EDS adapters:
 Use the following schemas to configure the Storage component:
 
   - [EdgeLoggerConfiguration](.\Storage_Logging_schema.md)
-  - [StorageRuntimeConfiguration](.\Storage_Runtime_schema.md)
+  - [StorageRuntimeConfiguration](xref:storage_Runtime_schema)
   - [OEMConfiguration](.\Storage_OEM_schema.md)
   - [Periodic Egress Endpoints](.\Storage_PeriodicEgressEndpoints_schema.md)
