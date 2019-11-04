@@ -2,7 +2,7 @@
 uid: EDSDataIngress
 ---
 
-# EDS Data Ingress
+# Edge Data Store data ingress
 
 There are a number of ways to ingress or store data in the Edge Data Store:
 
