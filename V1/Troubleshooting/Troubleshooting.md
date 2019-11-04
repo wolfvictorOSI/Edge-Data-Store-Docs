@@ -34,7 +34,7 @@ The content of the OMF message, including the headers will be written to the Log
 
 EDS Periodic Egress extracts data from SDS streams and will send the appropriate sequences of type, container, and data OMF messages on startup.
 
-If you see unexpected data in an OCS or PI System one thing to check for is if multiple devices may be writing to the same stream. Careful use of stream prefixes in the [periodic egress endpoint configuration](xref:uidegress) will ensure output data streams will be logically separated in the systems of record.
+If you see unexpected data in an OCS or PI System one thing to check for is if multiple devices may be writing to the same stream. Careful use of stream prefixes in the [periodic egress endpoint configuration](xref:egress) will ensure output data streams will be logically separated in the systems of record.
 
 Type prefixes may be helpful if you have a case where you have changed a stream type definitions on EDS. OMF types on both OCS and the PI System are immutable once created - if the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.
 
