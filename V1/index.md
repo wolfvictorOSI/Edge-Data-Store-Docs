@@ -51,7 +51,7 @@ uid: index
     - [Units of Measure](xref:unitsOfMeasure)
     - [Request/Response Compression](xref:sdsCompression)
     - [Searching](xref:sdsSearching)
-    - [Stream Tags and Metadata](xref:sdsStreamExtra)
+    - [Stream Metadata and Tags](xref:sdsStreamExtra)
   - [Egress](xref:egress)
 - [Administration](xref:EdgeDataStoreAdministration)
   - [Management Tools](xref:managementTools)
