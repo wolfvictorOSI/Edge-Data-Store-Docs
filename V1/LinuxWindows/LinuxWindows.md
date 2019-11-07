@@ -30,6 +30,8 @@ sudo systemctl restart osisoft.edgedatastore.service
 
 ## File descriptors (handles)
 
+When installed on a Linux operating system, EDS is configured with a file descriptor limit that may be higher than the corresponding limit for most processes. The limit is controlled by the _LimitNOFILE_ variable in the file _/lib/systemd/system/osisoft.edgedatastore.service_.
+
 Linux operating systems impose a limit on the number of file descriptors used in a process. The number of open file descriptors is directly related to the number of streams used in EDS (e.g. data ingress). Overall, every stream utilizes two file descriptors. EDS will no longer function properly when it reaches the limit of available file descriptors. To prevent this, it is necessary to either limit the number of streams used in EDS or increase the maximum allowed file descriptors per process.
 
 The following figures were identified on a Raspberry Pi 3 Model B+ using a Raspbian operating system. An installation of EDS with no user-defined streams had an average of 424 open file descriptors. The same installation with 250 streams had an average of 932 open file descriptors. The file descriptor limit per process for the operating system used was 1024.
