@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using Edge Data Store with Docker </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Using Edge Data Store with Docker ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../V1/index.html" width="46">
+                <img id="logo" src="../../V1/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Edge System"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="edgeDocker">
+<h1 id="using-edge-data-store-with-docker">Using Edge Data Store with Docker</h1>
+
+<p>Docker is a set of tools that can be used on Linux to manage application deployments. If you want to use Docker, you must be familiar with the underlying technology and have determined it is appropriate for your planned use of the Edge Data Store.</p>
+<p>The objective of this document is to provide examples of how to successfully create a Docker container with the Edge Data Store if you decide that you want Docker. Docker is not a requirement to use Edge Data Store.</p>
+<h2 id="create-a-docker-container-containing-the-edge-data-store">Create a Docker container containing the Edge Data Store</h2>
+<h3 id="arm32-processor">ARM32 Processor</h3>
+<ol>
+<li>Create the following Dockerfile in the directory where you want to create and/or run the container:</li>
+</ol>
+<pre><code class="lang-docker">FROM mcr.microsoft.com/dotnet/core/sdk:2.2
+ARG source
+WORKDIR /
+ADD ./EdgeDataStore_linux-arm.tar .
+ENTRYPOINT [&quot;./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host&quot;]
+</code></pre><ol>
+<li>Copy the <em>EdgeDataStore_linux-arm.tar</em> file to the same directory as the Dockerfile.</li>
+<li>Run the following command line (sudo may be necessary):</li>
+</ol>
+<pre><code class="lang-bash">docker build -t EdgeDataStore .
+</code></pre><h3 id="amd64-x64-processor">AMD64 (x64) Processor</h3>
+<ol>
+<li>Create the following Dockerfile in the directory where you want to create and/or run the container:</li>
+</ol>
+<pre><code class="lang-docker">FROM mcr.microsoft.com/dotnet/core/sdk:2.2
+ARG source
+WORKDIR /
+ADD ./EdgeDataStore_linux-x64.tar .
+ENTRYPOINT [&quot;./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host&quot;]
+</code></pre><ol>
+<li>Copy the EdgeDataStore_linux-x64.tar file to the same directory as the Dockerfile.</li>
+<li>Run the following command line (sudo may be necessary):</li>
+</ol>
+<pre><code class="lang-bash">docker build -t EdgeDataStore .
+</code></pre><h2 id="run-the-edge-data-store-docker-containers">Run the Edge Data Store Docker containers</h2>
+<h3 id="rest-access-from-the-local-machine-from-docker">REST access from the local machine from Docker</h3>
+<p>To run the container you can use the command line (sudo may be necessary):</p>
+<pre><code class="lang-bash">docker run -d --network host EdgeDataStore
+</code></pre><p>Port 5590 will be accessible from the host and REST calls can be made to Edge Data Store from applications on the local host computer. With this configuration, all data stored by the Edge Data Store is stored in the container itself, and when the container is deleted the data stored will also be deleted.</p>
+<h3 id="persistent-storage-on-the-local-file-system-from-docker">Persistent storage on the local file system from Docker</h3>
+<p>To run the container you can use the command line (sudo may be necessary):</p>
+<pre><code class="lang-bash">docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ EdgeDataStore
+</code></pre><p>Port 5590 will be accessible from the host and REST calls can be made to Edge Data Store from applications on the local host computer. In addition, in this example, all data that would be written to the container is instead written to the host directory /edgeds. This directory can be anything you want - this example just uses a simple directory on the local machine.</p>
+<h3 id="changing-port-number-from-docker">Changing Port number from Docker</h3>
+<p>If you want a port other than 5590, see the section regarding <a href="#EdgeDataStoreConfiguration">Port configuration</a> of Edge Data Store. Changing the configuration of the Edge Data Store running in the container will change the port exposed to the local machine.</p>
+<h3 id="limiting-local-host-access-to-docker">Limiting local host access to Docker</h3>
+<p>If the <code>--network host</code> option is removed from the docker run command, no REST access is possible from outside the container. This may be of value where you want to host an application in the same container as Edge Data Store, and does not want to have external REST access enabled.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/Docker/EdgeDocker.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
