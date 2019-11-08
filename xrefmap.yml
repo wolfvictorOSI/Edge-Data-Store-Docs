@@ -2,7 +2,7 @@
 sorted: true
 references:
 - uid: analyticsQuickStart
-  name: Edge Data Store Analytics quick start
+  name: Edge Data Store analytics quick start
   href: V1/Overview/AnalyticsQuickStart.html
 - uid: commandLine
   name: Command line configuration of Edge Data Store
@@ -38,7 +38,7 @@ references:
   name: Using Edge Data Store with Docker
   href: V1/Docker/EdgeDocker.html
 - uid: EDSDataIngress
-  name: EDS Data Ingress
+  name: Edge Data Store data ingress
   href: V1/DataIngress/EDSDataIngress.html
 - uid: edsmodbustcpadapter
   name: Edge Data Store Modbus TCP adapter
@@ -80,7 +80,7 @@ references:
   name: Modbus TCP EDS adapter
   href: V1/Modbus/ModbusOverview.html
 - uid: modbusQuickStart
-  name: Edge Modbus Quick Start
+  name: Edge Modbus TCP quick start
   href: V1/Overview/ModbusQuickStart.html
 - uid: ModbusTCPAdapterSecurity
   name: Modbus TCP EDS adapter security
@@ -149,7 +149,7 @@ references:
   name: Compression
   href: V1/SDS/Compression.html
 - uid: sdsFilterExpressions
-  name: 'Filter Expressions: Values'
+  name: 'Filter expressions: values'
   href: V1/SDS/Filter_Expressions.html
 - uid: sdsIndexes
   name: Indexes
@@ -170,13 +170,13 @@ references:
   name: Searching
   href: V1/SDS/Searching.html
 - uid: sdsStreamExtra
-  name: Stream Metadata and Tags
+  name: Stream metadata and tags
   href: V1/SDS/SdsStreamExtra.html
 - uid: sdsStreams
   name: Streams
   href: V1/SDS/SDS_Streams.html
 - uid: sdsStreamViews
-  name: Stream Views
+  name: Stream views
   href: V1/SDS/SDS_Views.html
 - uid: sdsTableFormat
   name: Table format
@@ -239,5 +239,5 @@ references:
   name: Units of measure
   href: V1/SDS/Units_of_Measure.html
 - uid: visualizationQuickStart
-  name: Edge Data Store Visualization quick start
+  name: Edge Data Store visualization quick start
   href: V1/Overview/VisualizationQuickStart.html

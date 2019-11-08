@@ -73,7 +73,7 @@
 
 <p>The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate events. Events are stored in streams, called SdsStreams. An SdsType defines the shape or structure of the event and how to associate events within the SdsStream.</p>
 <p>SdsTypes can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries. They can also define complex types using SdsTypes. You can define complex, nested types using the Properties collection of an SdsType.</p>
-<p>An SdsType used to define an SdsStream must have a Key. A Key is a property, or a combination of properties that constitute an ordered, unique identity. The Key is ordered, so it functions as an index. It is known as the Primary Index. While a timestamp (DateTime) is a very common type of Key, any type that can be ordered is permitted. Other indexes (secondary indexes), are defined in the SdsStream. For more details on indexes, see <a class="xref" href="indexes.html">Indexes</a>.</p>
+<p>An SdsType used to define an SdsStream must have a key. A key is a property, or a combination of properties that constitute an ordered, unique identity. The key is ordered, so it functions as an index. It is known as the primary index. While a timestamp (DateTime) is a very common type of key, any type that can be ordered is permitted. Other indexes (secondary indexes), are defined in the SdsStream. For more details on indexes, see <a class="xref" href="indexes.html">Indexes</a>.</p>
 <p>When you define a type, consider how the events will be represented in a stream. The SdsType defines each event in the stream. An event is a single unit whose properties have values that relate to the index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.</p>
 <p>An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace.</p>
 <p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability. Nested types and base types are automatically created as separate types. For further information, see <a href="#type-reusability">Type Reusability</a></p>
@@ -144,7 +144,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Rules for the Type Identifier (SdsType.Id)</strong></p>
+<p><strong>Rules for the type identifier (SdsType.Id)</strong></p>
 <ol>
 <li>Is not case sensitive</li>
 <li>Can contain spaces</li>
@@ -785,7 +785,7 @@ Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 <p>If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream, see <a class="xref" href="SDS_Streams.html">Sds Streams</a>.</p>
 <p>For additional information about the effect of read characteristics, see the documentation on the <a class="xref" href="Reading_Data_API.html">read method</a> you are using.</p>
 <h2 id="sdstypeproperty">SdsTypeProperty</h2>
-<p>The Properties collection define the fields in an SdsType.</p>
+<p>The properties collection defines the fields in an SdsType.</p>
 <p>The following table shows the required and optional SdsTypeProperty fields. Fields that are not included are reserved for internal SDS use.</p>
 <table>
 <thead>
@@ -854,14 +854,14 @@ Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 </tbody>
 </table>
 <p>The SdsTypeProperty’s identifier follows the same rules as the SdsType’s identifier.</p>
-<p>IsKey is a Boolean value used to identify the SdsType’s Key. A Key defined by more than one Property is called a compound key. The maximum number of Properties that can define a compound key is three.</p>
-<p>In a compound key, each Property that is included in the Key is specified as IsKey. The Order field defines the precedence of fields applied to the Index.</p>
-<p>The Value field is used for properties that represent a value. An example of a property with a value is an enum’s named constant. When representing an enum in a SdsType, the SdsType’s Properties collection defines the enum’s constant list. The SdsTypeProperty’s Identifier represents the constant’s name and the SdsTypeProperty’s Value represents the constant’s value (see the enum State definitions below).</p>
+<p>IsKey is a Boolean value used to identify the SdsType’s Key. A key defined by more than one property is called a compound key. The maximum number of properties that can define a compound key is three.</p>
+<p>In a compound key, each property that is included in the key is specified as IsKey. The Order field defines the precedence of fields applied to the index.</p>
+<p>The Value field is used for properties that represent a value. An example of a property with a value is an enum’s named constant. When representing an enum in a SdsType, the SdsType’s properties collection defines the enum’s constant list. The SdsTypeProperty’s Identifier represents the constant’s name and the SdsTypeProperty’s value represents the constant’s value (see the enum State definitions below).</p>
 <p>InterpolationMode is assigned when the property of the event should be interpolated in a specific way that differs from the InterpolationMode of the SdsType. InterpolationMode is only applied to a property that is not part of the Index. If the InterpolationMode is not set, the property is are interpolated in the manner defined by the SdsType’s IntepolationMode.</p>
-<p>An SdsType with the InterpolationMode set to <code>Discrete</code> cannot have a Property with an InteroplationMode. For more information on interpolation of events, see <a href="#interpolation">Interpolation</a>.</p>
+<p>An SdsType with the InterpolationMode set to <code>Discrete</code> cannot have a property with an InteroplationMode. For more information on interpolation of events, see <a href="#interpolation">Interpolation</a>.</p>
 <p>Uom is the unit of measure for the property. The Uom of a property may be specified by the name or the abbreviation. The names and abbreviations of Uoms are case sensitive.</p>
 <p>The InterpolationMode and Uom of a property can be overridden on the stream. For more information, see <a class="xref" href="SDS_Streams.html#propertyoverrides">Streams</a>.</p>
-<h2 id="supported-units-of-measure">Supported Units of Measure</h2>
+<h2 id="supported-units-of-measure">Supported units of measure</h2>
 <p>For a list of units of measures that are supported for an SdsTypeProperty, see <a class="xref" href="Units_of_Measure.html#supported-units-of-measure">Units of Measure</a>.</p>
 <h2 id="working-with-sdstypes">Working with SdsTypes</h2>
 <p>The following discussion refers to the following types and are defined in Python and JavaScript samples. 
@@ -1164,7 +1164,7 @@ var derivedType = new SdsObjects.SdsType({
     &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Object,
     &quot;Properties&quot;: [ observationProprety ]
 });
-</code></pre><h2 id="type-reusability">Type Reusability</h2>
+</code></pre><h2 id="type-reusability">Type reusability</h2>
 <p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability.</p>
 <p>For example, if there is a common index and value property for a group of types that may have additional properties, a base type can be created with those properties.</p>
 <pre><code class="lang-json">{
@@ -1244,8 +1244,9 @@ var derivedType = new SdsObjects.SdsType({
         }
     ]
 }
-</code></pre><p>If the full definition is sent, the referenced types (base type &quot;Simple&quot; in the above example) should match the actual type initially created. If the full definition is sent and the referenced types do not exist, they will be created automatically by SDS. Further type creations can reference them as demonstrated above. <strong>Note:</strong> When trying to get types back from SDS, the results will also include types that were automatically created by SDS.</p>
-<p>Base types and properties of type Object, Enum, user-defined collections, such as, Array, List and Dictionary will be treated as referenced types. Note that streams cannot be created using these referenced types. If a stream of particular type is to be created, the type should contain at least one property with a valid index type as described in this section, <a class="xref" href="indexes.html">Indexes</a>. The index property may also be in the base type as shown in the example above.</p>
+</code></pre><p>If the full definition is sent, the referenced types (base type &quot;Simple&quot; in the above example) should match the actual type initially created. If the full definition is sent and the referenced types do not exist, they will be created automatically by SDS. Further type creations can reference them as demonstrated above. 
+<strong>Note:</strong> When trying to get types back from SDS, the results will also include types that were automatically created by SDS.</p>
+<p>Base types and properties of type Object, Enum, and user-defined collections such as Array, List and Dictionary will be treated as referenced types. Note that streams cannot be created using these referenced types. If a stream of particular type is to be created, the type should contain at least one property with a valid index type as described in <a class="xref" href="indexes.html">Indexes</a>. The index property may also be in the base type as shown in the example above.</p>
 <h1 id="sdstype-api">SdsType API</h1>
 <p>The REST APIs provide programmatic access to read and write SDS data. The APIs in this section
 interact with SdsTypes. See <a href="#types">Types</a> for general SdsType information.</p>

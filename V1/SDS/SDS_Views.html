@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Stream Views </title>
+    <title>Stream views </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Stream Views ">
+    <meta name="title" content="Stream views ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -69,9 +69,9 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="sdsStreamViews">
-<h1 id="stream-views">Stream Views</h1>
+<h1 id="stream-views">Stream views</h1>
 
-<p>An SdsStreamView provides a way to map Stream data requests from one data type to another. You can apply a Stream View to any read or GET operation. SdsStreamView is used to specify the mapping between source and target types.</p>
+<p>An SdsStreamView provides a way to map stream data requests from one data type to another. You can apply a stream View to any read or GET operation. SdsStreamView is used to specify the mapping between source and target types.</p>
 <p>SDS attempts to determine how to map Properties from the source to the destination. When the mapping is straightforward, such as when the properties are in the same position and of the same data type, or when the properties have the same name, SDS will map the properties automatically.</p>
 <p>When SDS is unable to determine how to map a source property, the property is removed. If SDS encounters a target property that it cannot map to, the property is added and configured with a default value.</p>
 <p>To map a property that is beyond the ability of SDS to map on its own, you should define an SdsStreamViewProperty and add it to the SdsStreamView’s Properties collection.</p>
@@ -131,7 +131,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Rules for the Stream View Identifier (SdsStreamView.Id)</strong></p>
+<p><strong>Rules for the stream view identifier (SdsStreamView.Id)</strong></p>
 <ol>
 <li>Is not case sensitive</li>
 <li>Can contain spaces</li>
@@ -171,9 +171,9 @@
 </tr>
 </tbody>
 </table>
-<p>The SdsStreamView field supports nested Properties.</p>
+<p>The SdsStreamView field supports nested properties.</p>
 <h2 id="sdsstreamviewmap">SdsStreamViewMap</h2>
-<p>When an SdsStreamView is added, SDS defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. The SdsStreamViewMap provides a detailed Property-by-Property definition of the mapping.</p>
+<p>When an SdsStreamView is added, SDS defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. The SdsStreamViewMap provides a detailed property-by-property definition of the mapping.</p>
 <p>The following table shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to SDS, so required and optional have no meaning.</p>
 <table>
 <thead>
@@ -206,7 +206,7 @@
 </tbody>
 </table>
 <h3 id="properties--sdsstreamviewmapproperty">Properties / SdsStreamViewMapProperty</h3>
-<p>The SdsStreamViewMapProperty is similar an SdsStreamViewProperty but adds a Mode detailing one or more actions taken on
+<p>The SdsStreamViewMapProperty is similar an SdsStreamViewProperty but adds a mode detailing one or more actions taken on
 the property.</p>
 <p>The following table shows the SdsStreamViewMapProperty fields. The SdsStreamViewMap cannot be written; it can only be
 retrieved from SDS, so required and optional have no meaning.</p>
@@ -288,9 +288,9 @@ retrieved from SDS, so required and optional have no meaning.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="changing-stream-type">Changing Stream Type</h2>
-<p>Stream Views can be used to change the Type defining a Stream. You cannot modify the SdsType; types are immutable. But you can map a stream from its current type to a new type.</p>
-<p>To update a Stream&#39;s Type, define an SdsStreamView and PUT the stream view to the following:</p>
+<h2 id="changing-stream-type">Changing stream type</h2>
+<p>Stream Views can be used to change the type defining a stream. You cannot modify the SdsType; types are immutable. But you can map a stream from its current type to a new type.</p>
+<p>To update a stream&#39;s type, define an SdsStreamView and PUT the stream view to the following:</p>
 <pre><code class="lang-text">PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
 </code></pre><p>For details, see <a href="xref:sdsStreams-update-stream-type">Update Stream Type</a>.</p>
 <h2 id="working-with-sdsstreamviews">Working with SdsStreamViews</h2>

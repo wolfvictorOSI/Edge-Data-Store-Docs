@@ -71,9 +71,9 @@
             <article class="content wrap" id="_content" data-uid="sdsReadingDataApi">
 <h1 id="api-calls-for-reading-data">API calls for reading data</h1>
 
-<h2 id="example-type-stream-and-data">Example Type, Stream, and Data</h2>
+<h2 id="example-type-stream-and-data">Example type, stream, and data</h2>
 <p>Many of the API methods described below contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples.</p>
-<p><strong>Example Type</strong><br><code>SimpleType</code> is an SdsType with a single index. This type is defined in Python and Javascript:</p>
+<p><strong>Example type</strong><br><code>SimpleType</code> is an SdsType with a single index. This type is defined in Python and Javascript:</p>
 <h6 id="python">Python</h6>
 <pre><code class="lang-python">class State(Enum):
   Ok = 0
@@ -111,8 +111,8 @@ var SimpleType = function () {
   this.State = null;
   this.Value = null;
 }
-</code></pre><p><strong>Example Stream</strong><br><code>Simple</code> is an SdsStream of type <code>SimpleType</code>.</p>
-<p><strong>Example Data</strong><br><code>Simple</code> has stored values as follows:
+</code></pre><p><strong>Example stream</strong><br><code>Simple</code> is an SdsStream of type <code>SimpleType</code>.</p>
+<p><strong>Example data</strong><br><code>Simple</code> has stored values as follows:
     11/23/2017 12:00:00 PM: Ok  0
     11/23/2017  1:00:00 PM: Ok 10
     11/23/2017  2:00:00 PM: Ok 20
@@ -973,7 +973,7 @@ Content-Type: application/json
     }
 ]
 </code></pre><p>The following are responses for various Joins request options:</p>
-<h5 id="inner-join-example">Inner Join Example</h5>
+<h5 id="inner-join-example">Inner join example</h5>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
     ?streams=Simple1,Simple2&amp;joinMode=inner
     &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
@@ -996,7 +996,7 @@ Content-Type: application/json
         }
     ]
 ]
-</code></pre><h5 id="outer-join-example">Outer Join Example</h5>
+</code></pre><h5 id="outer-join-example">Outer join example</h5>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
     ?streams=Simple1,Simple2&amp;joinMode=outer
     &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
@@ -1067,7 +1067,7 @@ Content-Type: application/json
         }
     ]
 ]
-</code></pre><h5 id="interpolated-join-example">Interpolated Join Example</h5>
+</code></pre><h5 id="interpolated-join-example">Interpolated join example</h5>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
     ?streams=Simple1,Simple2&amp;joinMode=interpolated
     &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
@@ -1162,7 +1162,7 @@ Content-Type: application/json
         }
     ]
 ]
-</code></pre><h5 id="mergeleft-join-example">MergeLeft Join Example</h5>
+</code></pre><h5 id="mergeleft-join-example">MergeLeft join example</h5>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
     ?streams=Simple1,Simple2&amp;joinMode=mergeleft
     &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
@@ -1208,7 +1208,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 80
     }
 ]
-</code></pre><h5 id="mergeright-join-example">MergeRight Join Example</h5>
+</code></pre><h5 id="mergeright-join-example">MergeRight join example</h5>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
     ?streams=Simple1,Simple2&amp;joinMode=mergeright
     &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
@@ -1255,12 +1255,12 @@ Content-Type: application/json
     }
 ]
 </code></pre><p><a name="postjoin"></a></p>
-<h3 id="post-request">POST Request</h3>
+<h3 id="post-request">POST request</h3>
 <pre><code class="lang-text">POST api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
     ?joinMode={joinMode}
 </code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
 <p><code>SdsJoinMode joinMode</code><br>Type of join, that is inner, outer, and so on.</p>
-<p><strong>Request Body</strong><br>Read options specific to each stream.</p>
+<p><strong>Request body</strong><br>Read options specific to each stream.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing multiple serialized events.</p>
 <p>Consider the following outer join request,</p>
 <pre><code class="lang-text">    POST api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins

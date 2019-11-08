@@ -79,7 +79,7 @@
 <h3 id="omf-ingress-logging">OMF Ingress logging</h3>
 <p>You can find log messages related to egress in the Storage logs. If you set the the log level temporarily to <strong>Trace</strong>, most information for troubleshooting will be output.</p>
 <h3 id="omf-ingress-message-debugging">OMF Ingress message debugging</h3>
-<p>In order to troubleshoot problems between an OMF application and Edge Storage, enable debugging. If you set an appropriate value for the <em>IngressDebugExpiration</em> property in an storage runtime configuration, debugging will be enabled for all incoming OMF messages, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to <em>null</em>.</p>
+<p>In order to troubleshoot problems between an OMF application and Edge Storage, enable debugging. If you set an appropriate value for the <em>IngressDebugExpiration</em> property in a <a href=".\Storage_Runtime_schema.md">storage runtime configuration</a>, debugging will be enabled for all incoming OMF messages, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to <em>null</em>.</p>
 <p>Examples of valid strings representing date and time:</p>
 <pre><code>Utc: “yyyy-mm-ddThh:mm:ssZ”
 
@@ -87,7 +87,7 @@ Local: “mm-dd-yyyy hh:mm:ss”
 </code></pre><p>The content of the OMF message, including the headers will be written to the Logs Directory. For an active application this can become quite large. As a result, debug information is stored to disk in a separate format that usual log messages. A single file will be written to the usual Logs directory for every incoming OMF Type, Container, and Data message.</p>
 <h2 id="periodic-egress">Periodic Egress</h2>
 <p>EDS Periodic Egress extracts data from SDS streams and will send the appropriate sequences of type, container, and data OMF messages on startup.</p>
-<p>If you see unexpected data in an OCS or PI System one thing to check for is if multiple devices may be writing to the same stream. Careful use of stream prefixes in the periodic egress endpoint configuration will ensure output data streams will be logically separated in the systems of record.</p>
+<p>If you see unexpected data in an OCS or PI System one thing to check for is if multiple devices may be writing to the same stream. Careful use of stream prefixes in the <a href="https://osisoft.github.io/Edge-Data-Store-Docs/V1/Egress/Egress.html">periodic egress endpoint configuration</a> will ensure output data streams will be logically separated in the systems of record.</p>
 <p>Type prefixes may be helpful if you have a case where you have changed a stream type definitions on EDS. OMF types on both OCS and the PI System are immutable once created - if the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.</p>
 <h3 id="periodic-egress-logging">Periodic Egress logging</h3>
 <p>You can find log messages related to egress in the Storage logs. If you set the the log level temporarily to <strong>Trace</strong>, most information for troubleshooting will be output.</p>
