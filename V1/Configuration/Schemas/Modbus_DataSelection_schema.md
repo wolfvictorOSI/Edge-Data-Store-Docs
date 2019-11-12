@@ -81,7 +81,7 @@ The Modbus TCP data selection configuration schema specifies how to formally des
 | [DataTypeCode](#datatypecode)         | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
 | [Name](#name)                         | `string`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
 | [RegisterOffset](#registeroffset)     | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
-| [RegisterType](#registertype)         | reference | Optional | No       | DataSelectionConfiguration (this schema) |
+| [RegisterType](#registertype)         | reference <br> `#/definitions/ModbusRegisterType`| Optional | No       | DataSelectionConfiguration (this schema) |
 | [ScanRate](#scanrate)                 | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
 | [Selected](#selected)                 | `boolean` | Optional | No       | DataSelectionConfiguration (this schema) |
 | [StreamId](#streamid)                 | `string`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
