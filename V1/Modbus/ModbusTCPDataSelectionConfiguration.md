@@ -23,6 +23,14 @@ Example using cURL (run this command from the same directory where the file is l
 curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection"
 ```
 
+## Modbus TCP data selection schema
+
+The following table defines the basic behavior of the _Modbus_DataSelection_schema.json_ file.
+
+| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
+| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | 
+| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
+
 ## Parameters for Modbus TCP data selection
 
 The following parameters are available for configuring Modbus TCP data selection.
