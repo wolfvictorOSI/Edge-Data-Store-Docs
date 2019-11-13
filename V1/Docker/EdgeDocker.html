@@ -78,9 +78,9 @@
 <ol>
 <li>Create the following Dockerfile in the directory where you want to create and/or run the container:</li>
 </ol>
-<pre><code class="lang-docker">FROM mcr.microsoft.com/dotnet/core/sdk:2.2
-ARG source
+<pre><code class="lang-docker">FROM ubuntu
 WORKDIR /
+RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-arm.tar .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host&quot;]
 </code></pre><ol>
@@ -92,9 +92,9 @@ ENTRYPOINT [&quot;./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host&quot;]
 <ol>
 <li>Create the following Dockerfile in the directory where you want to create and/or run the container:</li>
 </ol>
-<pre><code class="lang-docker">FROM mcr.microsoft.com/dotnet/core/sdk:2.2
-ARG source
+<pre><code class="lang-docker">FROM ubuntu
 WORKDIR /
+RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-x64.tar .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host&quot;]
 </code></pre><ol>
