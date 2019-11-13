@@ -56,10 +56,10 @@ After the curl command completes successfully, you can configure or use the new 
 
 | Parameter                                        | Required |  Type | Nullable | Description |
 | ----------------------------------------------- | --------- | ----- | -------- | ----------- |
-| [Logging](#logging)         | Optional | [`SystemLoggingConfiguration`](xref:system_Logging_schema) | Yes      | |
-| [Components](#components) | Optional | [`[SystemComponentsConfiguration]`](xref:system_Components_schema) | Yes      | |
-| [HealthEndpoints](#healthEndpoints) | Optional | [`[SystemHealthEndpointsConfiguration]`](xref:system_HealthEndpoints_schema) | Yes  | |
-| [Port](#port) | Optional | [`SystemPortConfiguration`](xref:portschema) | Yes      | |
+| **Logging**       | Optional | [`SystemLoggingConfiguration`](xref:system_Logging_schema) | Yes      | |
+| **Components** | Optional | [`[SystemComponentsConfiguration]`](xref:system_Components_schema) | Yes      | |
+| **HealthEndpoints** | Optional | [`[SystemHealthEndpointsConfiguration]`](xref:system_HealthEndpoints_schema) | Yes  | |
+| **Port** | Optional | [`SystemPortConfiguration`](xref:portschema) | Yes      | |
 
 ## System components example
 
