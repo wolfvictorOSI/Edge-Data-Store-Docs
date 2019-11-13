@@ -15,9 +15,9 @@ The objective of this document is to provide examples of how to successfully cre
 1. Create the following Dockerfile in the directory where you want to create and/or run the container:
 
 ```docker
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2
-ARG source
+FROM ubuntu
 WORKDIR /
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-arm.tar .
 ENTRYPOINT ["./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host"]
 ```
@@ -34,9 +34,9 @@ docker build -t EdgeDataStore .
 1. Create the following Dockerfile in the directory where you want to create and/or run the container:
 
 ```docker
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2
-ARG source
+FROM ubuntu
 WORKDIR /
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-x64.tar .
 ENTRYPOINT ["./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host"]
 ```
