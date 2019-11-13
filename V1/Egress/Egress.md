@@ -6,7 +6,7 @@ uid: egress
 
 Edge Data Store provides an egress mechanism to copy and transfer data to another device or destination. Data is transferred through OMF. Supported destinations are OSIsoft Cloud Services or a PI Server.
 
-Configuration of egress includes specifying zero or more endpoints. An egress endpoint represents a destination to which data will be sent. Each egress endpoint is comprised of the properties specified in the [Parameters](#Parameters) section. It is executed independently of all other egress endpoints, and is expected to accept OMF messages. More than one endpoint for the same destination is allowed.
+Configuration of egress includes specifying zero or more endpoints. An egress endpoint represents a destination to which data will be sent. Each egress endpoint is comprised of the properties specified in the [Parameters](#parameters) section. It is executed independently of all other egress endpoints, and is expected to accept OMF messages. More than one endpoint for the same destination is allowed.
 
 > **Note:** Some types, and consequently containers and data, cannot be egressed. For more information, see [Egress Execution Details](#egress-execution-details).
 
@@ -23,8 +23,8 @@ Prior to configuring egress on the Edge Data Store, follow [Destination Preparat
 Complete the following to create new egress endpoints:
 
 1. Using any text editor, create a file that contains one or more egress endpoints in JSON form
-    - For content structure, see the following [Examples](#Examples). 
-    - For a table of all available egress parameters, see [Parameters](#Parameters).
+    - For content structure, see the following [Examples](#examples). 
+    - For a table of all available egress parameters, see [Parameters](#parameters).
 2. Save the file.
 3. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints/`
 
