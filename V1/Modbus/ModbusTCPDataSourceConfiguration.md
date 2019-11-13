@@ -27,6 +27,14 @@ Example using cURL (run this command from the same directory where the file is l
   curl -v -d "@DataSource.config.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/Modbus1/DataSource"
   ```
 
+## Modbus TCP data source schema
+
+The following table defines the basic behavior of the _Modbus_DataSource_schema.json_ file.
+
+| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
+| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- |
+| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
+
 ## Parameters for Modbus TCP data source
 
 The following parameters are available for configuring a Modbus TCP data source.
