@@ -26,6 +26,14 @@ Example using cURL (run this command from the same directory where the file is l
 curl -v -d "@DataSource.config.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/OpcUa1/DataSource"
 ```
 
+## OPC UA data source schema
+
+The following table defines the basic behavior of the _OpcUa_DataSource_schema.json_ file.
+
+| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
+| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- |
+| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
+
 ## Parameters for OPC UA data source
 
 The following parameters are available for configuring an OPC UA data source.
