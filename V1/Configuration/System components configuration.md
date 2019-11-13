@@ -54,12 +54,12 @@ After the curl command completes successfully, you can configure or use the new 
 
 ## Parameters for system components
 
-| Property                                        | Type      | Required | Nullable | Defined by                            |
-| ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
-| [Logging](#logging)         | [`SystemLoggingConfiguration`](xref:system_Logging_schema) | Optional | Yes      | EdgeLoggerConfiguration |
-| [Components](#components) | [`[SystemComponentsConfiguration]`](xref:system_Components_schema) | Optional | Yes      | ComponentsConfiguration |
-| [HealthEndpoints](#healthEndpoints) | [`[SystemHealthEndpointsConfiguration]`](xref:system_HealthEndpoints_schema) | Optional | Yes      | HealthEndpointsConfiguration |
-| [Port](#port) | [`SystemPortConfiguration`](xref:portschema) | Optional | Yes      | PortConfiguration |
+| Parameter                                        | Required |  Type | Nullable | Description |
+| ----------------------------------------------- | --------- | ----- | -------- | ----------- |
+| [Logging](#logging)         | Optional | [`SystemLoggingConfiguration`](xref:system_Logging_schema) | Yes      | |
+| [Components](#components) | Optional | [`[SystemComponentsConfiguration]`](xref:system_Components_schema) | Yes      | |
+| [HealthEndpoints](#healthEndpoints) | Optional | [`[SystemHealthEndpointsConfiguration]`](xref:system_HealthEndpoints_schema) | Yes  | |
+| [Port](#port) | Optional | [`SystemPortConfiguration`](xref:portschema) | Yes      | |
 
 ## System components example
 
