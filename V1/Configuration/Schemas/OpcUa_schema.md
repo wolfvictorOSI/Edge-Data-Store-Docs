@@ -2,7 +2,7 @@
 uid: opcua_schema
 ---
 
-# OpcUaConfiguration Schema
+# OPC UA configuration schema
 
 ```
 
@@ -12,26 +12,11 @@ uid: opcua_schema
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------- |
 | Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [OpcUa_Logging_schema.json](OpcUa_Logging_schema.json) |
 
-## Properties
+## OPC UA configuration properties
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
 | [Logging](#logging)         | [`OpcUaLoggingConfiguration`](xref:opcUa_Logging_schema) | Optional | Yes      | EdgeLoggerConfiguration |
 | [DataSource](#datasource) | [`DataSourceConfiguration`](xref:opcUa_DataSource_Schema) | Optional | Yes      | ComponentsConfiguration |
 | [DataSelection](#dataselection) | [`[OpcUaDataSelectionConfiguration]`](xref:opcUa_DataSelection_schema) | Optional | Yes      | DataSelectionConfiguration |
-
-## Logging
-
-- is optional
-- type: [`OpcUaLoggingConfiguration`](xref:opcUa_Logging_schema)
-
-## DataSource
-
-- is optional
-- type: [`DataSourceConfiguration`](xref:opcUa_DataSource_Schema)
-
-## DataSelection
-
-- is optional
-- type: [`[OpcUaDataSelectionConfiguration]`](xref:opcUa_DataSelection_schema)
 
