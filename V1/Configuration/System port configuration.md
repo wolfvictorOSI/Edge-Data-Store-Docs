@@ -32,9 +32,9 @@ The following table defines the basic behavior of the _System_Port.json_ file.
 
 The following parameters are available for configuring system port.
 
-| Parameter      | Type      | Required | Nullable | Definition                      |
+| Parameter      | Required    | Type   | Nullable | Definition                      |
 | ------------- | --------- | -------- | -------- | ------------------------------- |
-| **Port** | `integer` | Optional | No       | The tcp port to bind Edge Data Store to. (Range [1024,65535]) Example: 5590 | 
+| **Port** | Optional | `integer` | No       | The tcp port to bind Edge Data Store to. (Range [1024,65535]) Example: 5590 | 
 
 
 ## System port example
