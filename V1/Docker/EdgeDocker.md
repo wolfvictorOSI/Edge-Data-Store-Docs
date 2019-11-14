@@ -14,39 +14,39 @@ The objective of this document is to provide examples of how to successfully cre
 
 1. Create the following Dockerfile in the directory where you want to create and/or run the container:
 
-```docker
-FROM ubuntu
-WORKDIR /
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
-ADD ./EdgeDataStore_linux-arm.tar .
-ENTRYPOINT ["./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host"]
-```
+  ```docker
+  FROM ubuntu
+  WORKDIR /
+  RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
+  ADD ./EdgeDataStore_linux-arm.tar .
+  ENTRYPOINT ["./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host"]
+  ```
 
 2. Copy the _EdgeDataStore_linux-arm.tar_ file to the same directory as the Dockerfile.
 3. Run the following command line (sudo may be necessary):
 
-```bash
-docker build -t EdgeDataStore .
-```
+  ```bash
+  docker build -t EdgeDataStore .
+  ```
 
 ### AMD64 (x64) Processor
 
 1. Create the following Dockerfile in the directory where you want to create and/or run the container:
 
-```docker
-FROM ubuntu
-WORKDIR /
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
-ADD ./EdgeDataStore_linux-x64.tar .
-ENTRYPOINT ["./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host"]
-```
+  ```docker
+  FROM ubuntu
+  WORKDIR /
+  RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
+  ADD ./EdgeDataStore_linux-x64.tar .
+  ENTRYPOINT ["./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host"]
+  ```
 
 2. Copy the EdgeDataStore_linux-x64.tar file to the same directory as the Dockerfile.
 3. Run the following command line (sudo may be necessary):
 
-```bash
-docker build -t EdgeDataStore .
-```
+  ```bash
+  docker build -t EdgeDataStore .
+  ```
 
 ## Run the Edge Data Store Docker containers
 
