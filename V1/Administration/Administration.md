@@ -6,6 +6,22 @@ uid: EdgeDataStoreAdministration
 
 Edge Data Store provides a number of administration level functions.
 
+## Retrieve Product Version Information
+
+To retrieve the product version of the Edge Data Store, use any REST client ane make a request using the following:
+
+```http
+Method: GET
+Endpoint: http://localhost:5590/api/v1/diagnostics/productinformation
+Header: Content-Type application/json
+```
+
+Example using cURL:
+
+```bash
+curl -v -d "" -X POST http://localhost:5590/api/v1/Diagnostics/ProductInformation
+```
+
 ## Reset Edge Data Store
 
 Edge Data Store provides a method of performing a complete reset of the product. When you perform a reset, all event data and Edge Data Store configuration is deleted, and the product is restarted.
