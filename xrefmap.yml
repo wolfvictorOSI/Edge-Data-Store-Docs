@@ -61,6 +61,9 @@ references:
 - uid: loggingConfiguration
   name: Message logging configuration
   href: V1/Administration/LoggingConfiguration.html
+- uid: LoggingConfiguration
+  name: Logging configuration
+  href: V1/Configuration/Logging%20configuration.html
 - uid: managementTools
   name: Edge Data Store management tools
   href: V1/Administration/ManagementTools.html
@@ -74,7 +77,7 @@ references:
   name: ModbusLoggerConfiguration Schema
   href: V1/Configuration/Schemas/Modbus_Logging_schema.html
 - uid: modbus_schema
-  name: ModbusConfiguration Schema
+  name: ModbusConfiguration schema
   href: V1/Configuration/Schemas/Modbus_schema.html
 - uid: modbusOverview
   name: Modbus TCP EDS adapter
@@ -101,16 +104,16 @@ references:
   name: Edge Storage OMF Quick Start
   href: V1/Overview/OMFQuickStart.html
 - uid: opcUa_DataSelection_schema
-  name: Sample Opc UA data selection configuration
+  name: Sample OPC UA data selection configuration
   href: V1/Configuration/Schemas/OpcUa_DataSelection_schema.html
 - uid: opcUa_DataSource_Schema
   name: Sample OPC UA data source configuration
   href: V1/Configuration/Schemas/OpcUa_DataSource_schema.html
 - uid: opcUa_Logging_schema
-  name: OPC UA logger configuration schema
+  name: OPC UA logging configuration schema
   href: V1/Configuration/Schemas/OpcUa_Logging_schema.html
 - uid: opcua_schema
-  name: OpcUaConfiguration Schema
+  name: OPC UA configuration schema
   href: V1/Configuration/Schemas/OpcUa_schema.html
 - uid: OPCUAAdapterSecurityConfiguration
   name: OPC UA EDS adapter security configuration
@@ -232,6 +235,15 @@ references:
 - uid: system_schema
   name: SystemConfiguration schema
   href: V1/Configuration/Schemas/System_schema.html
+- uid: SystemComponentsConfiguration
+  name: System components configuration
+  href: V1/Configuration/System%20components%20configuration.html
+- uid: SystemHealthEndpointsConfiguration
+  name: System health endpoints configuration
+  href: V1/Configuration/System%20health%20endpoints%20configuration.html
+- uid: SystemPortConfiguration
+  name: System port configuration
+  href: V1/Configuration/System%20port%20configuration.html
 - uid: troubleShooting
   name: Edge Data Store troubleshooting
   href: V1/Troubleshooting/Troubleshooting.html

@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Storage logging configuration schema </title>
+    <title>System port configuration </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Storage logging configuration schema ">
+    <meta name="title" content="System port configuration ">
     <meta name="generator" content="docfx 2.43.2.0">
     
-    <link rel="shortcut icon" href="../../../favicon.ico">
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../../toc.html">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -33,8 +33,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../../../V1/index.html" width="46">
-                <img id="logo" src="../../../V1/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Edge System"> 
+              <a class="navbar-brand" href="../../V1/index.html" width="46">
+                <img id="logo" src="../../V1/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Edge System"> 
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -68,10 +68,22 @@
       <div role="main" class="container body-content hide-when-search">
         <div class="article row grid">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Storage_Logging_schema">
-<h1 id="storage-logging-configuration-schema">Storage logging configuration schema</h1>
+            <article class="content wrap" id="_content" data-uid="SystemPortConfiguration">
+<h1 id="system-port-configuration">System port configuration</h1>
 
-<p>The Storage logging configuration schema specifies how to formally describe the logging parameters for Storage.</p>
+<p><em>System_Port.json</em> specifies the port on which the System is listening for REST API calls. The same port is used for configuration and for writing data to OMF and SDS. The default configuration port is 5590. </p>
+<p>Allowable ports are in the range of 1024-65535. </p>
+<h2 id="configure-system-port">Configure system port</h2>
+<p>Before you change the default, ensure that no other service or application on the computer running the EdgeDataStore is using that port - only one application or service can use a port. If you change the port number through the REST API, you must restart Edge Data Store.</p>
+<ol>
+<li>Save the JSON containing the new port number in the JSON format above to a file named <em>EdgePort.json</em> and run the following script:</li>
+</ol>
+<pre><code class="lang-bash">curl -i -d &quot;@EdgePort.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/system/port
+</code></pre><ol>
+<li>After the REST command completes, restart Edge Data Store for the change to take effect.</li>
+</ol>
+<h2 id="system-port-schema">System port schema</h2>
+<p>The following table defines the basic behavior of the <em>System_Port.json</em> file.</p>
 <table>
 <thead>
 <tr>
@@ -94,75 +106,34 @@
 </tr>
 </tbody>
 </table>
-<h1 id="storage-logging-configuration-properties">Storage logging configuration properties</h1>
+<h2 id="parameters-for-system-port">Parameters for system port</h2>
+<p>The following parameters are available for configuring system port.</p>
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Type</th>
+<th>Parameter</th>
 <th>Required</th>
+<th>Type</th>
 <th>Nullable</th>
-<th>Defined by</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="#logfilecountlimit">LogFileCountLimit</a></td>
+<td><strong>Port</strong></td>
+<td>Optional</td>
 <td><code>integer</code></td>
-<td>Optional</td>
-<td>Yes</td>
-<td>EdgeLoggerConfiguration (this schema)</td>
-</tr>
-<tr>
-<td><a href="#logfilesizelimitbytes">LogFileSizeLimitBytes</a></td>
-<td><code>integer</code></td>
-<td>Optional</td>
-<td>Yes</td>
-<td>EdgeLoggerConfiguration (this schema)</td>
-</tr>
-<tr>
-<td><a href="#loglevel">LogLevel</a></td>
-<td>reference</td>
-<td>Optional</td>
 <td>No</td>
-<td>EdgeLoggerConfiguration (this schema)</td>
+<td>The tcp port to bind Edge Data Store to. (Range [1024,65535]) Example: 5590</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> All of the following <em>requirements</em> need to be fulfilled.</p>
-<h2 id="requirement-1">Requirement 1</h2>
-<ul>
-<li><a href=""></a> – <code>#/definitions/EdgeConfigurationBase</code></li>
-</ul>
-<h2 id="requirement-2">Requirement 2</h2>
-<p><code>object</code> with following properties:</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>LogFileCountLimit</code></td>
-<td>integer</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td><code>LogFileSizeLimitBytes</code></td>
-<td>integer</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td><code>LogLevel</code></td>
-<td></td>
-<td>Optional</td>
-</tr>
-</tbody>
-</table>
-</article>
+<h2 id="system-port-example">System port example</h2>
+<p>The default <em>System_Port.json</em> file installed is:</p>
+<pre><code class="lang-json">{
+  &quot;Port&quot;: 5590
+}
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
@@ -170,7 +141,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/Configuration/Schemas/Storage_Logging_schema.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/Configuration/System port configuration.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -190,8 +161,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
   </body>
 </html>
