@@ -47,12 +47,16 @@ After the curl command completes successfully, you can configure or use the new 
 
 ## System components schema
 
+The following table defines the basic behavior of the _AddComponent.json_ file.
+
 | Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | 
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | 
 | Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
 
 
 ## Parameters for system components
+
+The following parameters are available for configuring system components.
 
 | Parameter                                        | Required |  Type | Nullable | Description |
 | ----------------------------------------------- | --------- | ----- | -------- | ----------- |
