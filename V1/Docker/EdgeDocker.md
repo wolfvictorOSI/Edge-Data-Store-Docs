@@ -29,7 +29,7 @@ The objective of this document is to provide examples of how to successfully cre
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
     ADD ./EdgeDataStore_linux-arm64.tar .
-    ENTRYPOINT ["./EdgeDataStore_linux-arm64/   OSIsoft.Data.System.Host"]
+    ENTRYPOINT ["./EdgeDataStore_linux-arm64/OSIsoft.Data.System.Host"]
     ```
 
     # [AMD64 (x64)](#tab/tabid-3)
