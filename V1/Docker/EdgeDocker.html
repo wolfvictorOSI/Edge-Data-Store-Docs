@@ -76,33 +76,35 @@
 <h2 id="create-a-docker-container-containing-the-edge-data-store">Create a Docker container containing the Edge Data Store</h2>
 <h3 id="arm32-processor">ARM32 Processor</h3>
 <ol>
-<li>Create the following Dockerfile in the directory where you want to create and/or run the container:</li>
-</ol>
+<li><p>Create the following Dockerfile in the directory where you want to create and/or run the container:</p>
 <pre><code class="lang-docker">FROM ubuntu
 WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-arm.tar .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host&quot;]
-</code></pre><ol>
-<li>Copy the <em>EdgeDataStore_linux-arm.tar</em> file to the same directory as the Dockerfile.</li>
-<li>Run the following command line (sudo may be necessary):</li>
-</ol>
+</code></pre></li>
+<li><p>Copy the <em>EdgeDataStore_linux-arm.tar</em> file to the same directory as the Dockerfile.</p>
+</li>
+<li><p>Run the following command line (sudo may be necessary):</p>
 <pre><code class="lang-bash">docker build -t EdgeDataStore .
-</code></pre><h3 id="amd64-x64-processor">AMD64 (x64) Processor</h3>
-<ol>
-<li>Create the following Dockerfile in the directory where you want to create and/or run the container:</li>
+</code></pre></li>
 </ol>
+<h3 id="amd64-x64-processor">AMD64 (x64) Processor</h3>
+<ol>
+<li><p>Create the following Dockerfile in the directory where you want to create and/or run the container:</p>
 <pre><code class="lang-docker">FROM ubuntu
 WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-x64.tar .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host&quot;]
-</code></pre><ol>
-<li>Copy the EdgeDataStore_linux-x64.tar file to the same directory as the Dockerfile.</li>
-<li>Run the following command line (sudo may be necessary):</li>
-</ol>
+</code></pre></li>
+<li><p>Copy the EdgeDataStore_linux-x64.tar file to the same directory as the Dockerfile.</p>
+</li>
+<li><p>Run the following command line (sudo may be necessary):</p>
 <pre><code class="lang-bash">docker build -t EdgeDataStore .
-</code></pre><h2 id="run-the-edge-data-store-docker-containers">Run the Edge Data Store Docker containers</h2>
+</code></pre></li>
+</ol>
+<h2 id="run-the-edge-data-store-docker-containers">Run the Edge Data Store Docker containers</h2>
 <h3 id="rest-access-from-the-local-machine-from-docker">REST access from the local machine from Docker</h3>
 <p>To run the container you can use the command line (sudo may be necessary):</p>
 <pre><code class="lang-bash">docker run -d --network host EdgeDataStore
