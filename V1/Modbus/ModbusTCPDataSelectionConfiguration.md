@@ -37,7 +37,7 @@ The following parameters are available for configuring Modbus TCP data selection
 
 | Parameter | Required | Type | Nullable | Description |
 |-----------|----------|------|----------|-------------|
-| **Id** | Optional | String | | This field is used to update an existing measurement. The ID automatically updates when there are changes to the measurement and will follow the format of `<UnitId`>.`<RegisterType`>.`<RegisterOffset`>.
+| **Id** | Optional | String | Yes | This field is used to update an existing measurement. The ID automatically updates when there are changes to the measurement and will follow the format of `<UnitId`>.`<RegisterType`>.`<RegisterOffset`>.
 | **Selected** | Optional | bool | No | This field is used to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is true.|
 | **Name** | Optional | string | Yes | The optional friendly name of the data item collected from the data source. If not configured, the default value will be the stream ID. |
 | **UnitId** | Required | number | No | Modbus TCP slave device unit ID. This must be a value between 0 and 247, inclusively. |
