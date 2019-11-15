@@ -126,28 +126,28 @@
 <tr>
 <td><strong>Selected</strong></td>
 <td>Optional</td>
-<td>boolean</td>
+<td><code>boolean</code></td>
 <td>No</td>
 <td>This field is used to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is false.</td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
 <td>Optional</td>
-<td>string</td>
+<td><code>string</code></td>
 <td>Yes</td>
 <td>The optional friendly name of the data item collected from the data source. If not configured, the default value will be the stream id</td>
 </tr>
 <tr>
 <td><strong>NodeId</strong></td>
 <td>Required</td>
-<td>string</td>
+<td><code>string</code></td>
 <td>Yes</td>
 <td>The NodeId of the variable.</td>
 </tr>
 <tr>
 <td><strong>StreamID</strong></td>
 <td>Optional</td>
-<td>string</td>
+<td><code>string</code></td>
 <td>Yes</td>
 <td>The custom stream ID that will be used to create the streams. If not specified, the OPC UA EDS adapter will generate a default stream ID based on the measurement configuration. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores (&quot;__&quot;).<br>Can contain a maximum of 260 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.</td>
 </tr>
