@@ -19,7 +19,7 @@ The objective of this document is to provide examples of how to successfully cre
     FROM ubuntu
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
-    ADD ./EdgeDataStore_linux-arm.tar .
+    ADD ./EdgeDataStore_linux-arm.tar.gz .
     ENTRYPOINT ["./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host"]
     ```
     # [ARM64](#tab/tabid-2)
@@ -28,7 +28,7 @@ The objective of this document is to provide examples of how to successfully cre
     FROM ubuntu
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
-    ADD ./EdgeDataStore_linux-arm64.tar .
+    ADD ./EdgeDataStore_linux-arm64.tar.gz .
     ENTRYPOINT ["./EdgeDataStore_linux-arm64/OSIsoft.Data.System.Host"]
     ```
 
@@ -39,7 +39,7 @@ The objective of this document is to provide examples of how to successfully cre
     FROM ubuntu
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
-    ADD ./EdgeDataStore_linux-x64.tar .
+    ADD ./EdgeDataStore_linux-x64.tar.gz .
     ENTRYPOINT ["./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host"]
     ```
 
