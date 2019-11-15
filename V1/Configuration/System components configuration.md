@@ -49,7 +49,7 @@ After the curl command completes successfully, you can configure or use the new 
 
 The following table defines the basic behavior of the _AddComponent.json_ file.
 
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | 
+| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |                           
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | 
 | Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
 
@@ -58,23 +58,16 @@ The following table defines the basic behavior of the _AddComponent.json_ file.
 
 The following parameters are available for configuring system components.
 
-| Parameter                                        | Required |  Type | Nullable | Description |
-| ----------------------------------------------- | --------- | ----- | -------- | ----------- |
-| **Logging**       | Optional | [`SystemLoggingConfiguration`](xref:system_Logging_schema) | Yes      | |
-| **Components** | Optional | [`[SystemComponentsConfiguration]`](xref:system_Components_schema) | Yes      | |
-| **HealthEndpoints** | Optional | [`[SystemHealthEndpointsConfiguration]`](xref:system_HealthEndpoints_schema) | Yes  | |
-| **Port** | Optional | [`SystemPortConfiguration`](xref:portschema) | Yes      | |
+| Parameters     | Required | Type    | Nullable | Description |
+| -------------- | -------- | --------| ---------|-------------|
+| ComponentId    | Required |`string` | Yes      | The ID of the component. It can be any alphanumeric string, for example Storage.|
+| ComponentType  | Required |`string` | Yes      | The type of the component, for example EDS.Component. There are three types of components: EDS, Modbus TCP connectivity, and OPC UA connectivity. |
 
 ## System components example
 
 ```json
-   "System": {
-        "Logging": {
-            "logLevel": "Information",
-            "logFileSizeLimitBytes": 34636833,
-            "logFileCountLimit": 31
-        },
-        "Components": [{
+[
+  {
                 "componentId": "OpcUa1",
                 "componentType": "OpcUa"
             },
@@ -85,11 +78,6 @@ The following parameters are available for configuring system components.
             {
                 "componentId": "Storage",
                 "componentType": "EDS.Component"
-            }
-        ],
-        "HealthEndpoints": [],
-        "Port": {
-            "port": 5590
-        }
-    }
+   }
+]
 ```
