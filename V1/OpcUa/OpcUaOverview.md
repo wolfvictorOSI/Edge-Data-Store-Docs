@@ -14,4 +14,4 @@ You can add a single OPC UA EDS adapter during installation. If you want multipl
 
 As with other EDS adapters, the OPC UA EDS adapter is configured with data source and data selection JSON documents. The data source configurations are identical with other adapters, but OPC UA supports an option to generate a data selection file template that you can manually edit and use for subsequent configuration. See [OPC UA data selection](xref:opcUaDataSelection) for details. Once you create a template file, you can reuse it on both Linux and Windows without changes.
 
-
+For more information on how to configure logging for the OSIsoft Adapter for OPC UA, see [Logging configuration](xref:LoggingConfiguration).

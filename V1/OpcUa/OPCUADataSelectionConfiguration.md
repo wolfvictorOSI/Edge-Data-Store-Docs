@@ -36,10 +36,10 @@ The following table defines the basic behavior of the _OpcUa_DataSelection_schem
 
 | Parameter     | Required | Type | Nullable | Description |
 |---------------|----------|------|----------|-------------|
-| **Selected** | Optional | bool | No | This field is used to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is false.|
-| **Name**      | Optional | string | Yes |The optional friendly name of the data item collected from the data source. If not configured, the default value will be the stream id |
-| **NodeId**    | Required | string | Yes | The NodeId of the variable. |
-| **StreamID** | Required | string | Yes | The custom stream ID that will be used to create the streams. If not specified, the OPC UA EDS adapter will generate a default stream ID based on the measurement configuration. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores ("__").<br>Can contain a maximum of 260 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % < > &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.
+| **Selected** | Optional | `boolean` | No | This field is used to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is false.|
+| **Name**      | Optional | `string` | Yes |The optional friendly name of the data item collected from the data source. If not configured, the default value will be the stream id |
+| **NodeId**    | Required | `string` | Yes | The NodeId of the variable. |
+| **StreamID** | Optional | `string` | Yes | The custom stream ID that will be used to create the streams. If not specified, the OPC UA EDS adapter will generate a default stream ID based on the measurement configuration. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores ("__").<br>Can contain a maximum of 260 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % < > &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.
 
 ## OPC UA data selection example
 
