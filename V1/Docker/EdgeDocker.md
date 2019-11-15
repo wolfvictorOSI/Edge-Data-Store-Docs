@@ -54,9 +54,9 @@ The objective of this document is to provide examples of how to successfully cre
 
 To run the container you can use the command line (sudo may be necessary):
 
-```bash
-docker run -d --network host EdgeDataStore
-```
+   ```bash
+   docker run -d --network host EdgeDataStore
+   ```
 
 Port 5590 will be accessible from the host and REST calls can be made to Edge Data Store from applications on the local host computer. With this configuration, all data stored by the Edge Data Store is stored in the container itself, and when the container is deleted the data stored will also be deleted.
 
@@ -64,9 +64,9 @@ Port 5590 will be accessible from the host and REST calls can be made to Edge Da
 
 To run the container you can use the command line (sudo may be necessary):
 
-```bash
-docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ EdgeDataStore
-```
+   ```bash
+   docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ EdgeDataStore
+   ```
 
 Port 5590 will be accessible from the host and REST calls can be made to Edge Data Store from applications on the local host computer. In addition, in this example, all data that would be written to the container is instead written to the host directory /edgeds. This directory can be anything you want - this example just uses a simple directory on the local machine.
 
