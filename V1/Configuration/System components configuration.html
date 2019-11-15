@@ -84,20 +84,21 @@
 ]
 </code></pre><p> You can add additional Modbus TCP and OPC UA components if you want, but only a single Storage component is supported. </p>
 <ol>
-<li>To add a new component, in this example a Modbus TCP EDS adapter, create the following JSON. </li>
-</ol>
-<blockquote><p><strong>Note:</strong> A unique ComponentId is necessary for each component in the system. This example uses the ComponentId Modbus1 since it is the first Modbus TCP EDS adapter:</p>
+<li><p>To add a new component, in this example a Modbus TCP EDS adapter, create the following JSON. </p>
+<blockquote><p><strong>Note:</strong> A unique ComponentId is necessary for each component in the system. This example uses the ComponentId Modbus1 since it    is the first Modbus TCP EDS adapter:</p>
 </blockquote>
-<pre><code class="lang-json"> {
-   &quot;ComponentId&quot;: &quot;Modbus1&quot;,
-   &quot;ComponentType&quot;: &quot;Modbus&quot;
- }
-</code></pre><ol>
-<li>Save the JSON in a file named <em>AddComponent.json</em>. </li>
-<li>From the same directory where the file exists, run the following curl script:</li>
+<pre><code class="lang-json">  {
+    &quot;ComponentId&quot;: &quot;Modbus1&quot;,
+    &quot;ComponentType&quot;: &quot;Modbus&quot;
+  }
+</code></pre></li>
+<li><p>Save the JSON in a file named <em>AddComponent.json</em>. </p>
+</li>
+<li><p>From the same directory where the file exists, run the following curl script:</p>
+<pre><code class="lang-bash">curl -i -d &quot;@AddComponent.json&quot; -H &quot;Content-Type: application/json&quot; -X POST     http://localhost:5590/api/v1/configuration/system/components
+</code></pre></li>
 </ol>
-<pre><code class="lang-bash">curl -i -d &quot;@AddComponent.json&quot; -H &quot;Content-Type: application/json&quot; -X POST http://localhost:5590/api/v1/configuration/system/components
-</code></pre><p>After the curl command completes successfully, you can configure or use the new component.</p>
+<p>After the curl command completes successfully, you can configure or use the new component.</p>
 <h2 id="system-components-schema">System components schema</h2>
 <p>The following table defines the basic behavior of the <em>AddComponent.json</em> file.</p>
 <table>
@@ -127,7 +128,7 @@
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Parameters</th>
 <th>Required</th>
 <th>Type</th>
 <th>Nullable</th>
@@ -136,43 +137,24 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Logging</strong></td>
-<td>Optional</td>
-<td><a class="xref" href="Schemas/System_Logging_schema.html"><code>SystemLoggingConfiguration</code></a></td>
+<td>ComponentId</td>
+<td>Required</td>
+<td><code>string</code></td>
 <td>Yes</td>
-<td></td>
+<td>The ID of the component. It can be any alphanumeric string, for example Storage.</td>
 </tr>
 <tr>
-<td><strong>Components</strong></td>
-<td>Optional</td>
-<td><a class="xref" href="Schemas/System_Components_schema.html"><code>[SystemComponentsConfiguration]</code></a></td>
+<td>ComponentType</td>
+<td>Required</td>
+<td><code>string</code></td>
 <td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>HealthEndpoints</strong></td>
-<td>Optional</td>
-<td><a class="xref" href="Schemas/System_HealthEndpoints_schema.html"><code>[SystemHealthEndpointsConfiguration]</code></a></td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Port</strong></td>
-<td>Optional</td>
-<td><a href="xref:portschema"><code>SystemPortConfiguration</code></a></td>
-<td>Yes</td>
-<td></td>
+<td>The type of the component, for example EDS.Component. There are three types of components: Storage, OPC UA EDS Adapter, and Modbus TCP EDS Adapter.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="system-components-example">System components example</h2>
-<pre><code class="lang-json">   &quot;System&quot;: {
-        &quot;Logging&quot;: {
-            &quot;logLevel&quot;: &quot;Information&quot;,
-            &quot;logFileSizeLimitBytes&quot;: 34636833,
-            &quot;logFileCountLimit&quot;: 31
-        },
-        &quot;Components&quot;: [{
+<pre><code class="lang-json">[
+  {
                 &quot;componentId&quot;: &quot;OpcUa1&quot;,
                 &quot;componentType&quot;: &quot;OpcUa&quot;
             },
@@ -183,13 +165,8 @@
             {
                 &quot;componentId&quot;: &quot;Storage&quot;,
                 &quot;componentType&quot;: &quot;EDS.Component&quot;
-            }
-        ],
-        &quot;HealthEndpoints&quot;: [],
-        &quot;Port&quot;: {
-            &quot;port&quot;: 5590
-        }
-    }
+   }
+]
 </code></pre></article>
           </div>
           
