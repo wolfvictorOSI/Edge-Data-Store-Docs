@@ -14,7 +14,7 @@ Complete the following to configure the Modbus TCP data source:
 
 1. Using any text editor, create a file that contains a Modbus TCP data source in JSON form. 
 You can create or copy this file to any directory on a device with Edge Data Store installed.
-    - For content structure, see [Modbus TCP data source example](#modbus-tcp-data-source-example). 
+    - For content structure, see [Modbus TCP data source examples](#modbus-tcp-data-source-examples). 
     - For a table of all available parameters, see [Parameters for Modbus TCP data source](#parameters-for-modbus-tcp-data-source). 
 2. Save the file as _DataSource.config.json_.
 3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`. If a Modbus TCP EDS adapter is added during installation, it will have an EDS adapterId of Modbus1, which is used in the following example.
@@ -52,15 +52,30 @@ The following parameters are available for configuring a Modbus TCP data source.
 |**MaxResponseDataLength**  | Optional          | number | No | Parameter to limit the maximum length (in bytes) of data that can be read within one transaction. This feature is provided to support devices that limit the number of bytes that can be returned. If there is no device limitation, the request length should be the maximum length of 250 bytes. The value ranges from 2 to 250. The default value is 250 ms.|
 
 
-## Modbus TCP data source example
+## Modbus TCP data source examples
 
-The following is an example of valid Modbus TCP data source configuration:
+The following are examples of valid Modbus TCP data source configurations.
+
+**Minimum data source configuration:**
 
 ```json
 {
-    "IpAddress": "117.23.45.110",
-    "Port" : 502,
-    "ConnectTimeout" : 10000,
-    "StreamIdPrefix" : "DataSource1",
+    "IpAddress": "127.0.0.2", 
+}
+```
+
+**Maximum data source configuration:**
+
+```json
+{
+    "IpAddress": "127.0.0.4",
+    "Port": 502,
+    "StreamIdPrefix": "my.prefix",
+    "ApplyPrefixToStreamId": true,
+    "ConnectTimeout": 5000,
+    "ReconnectInterval": 1000,
+    "RequestTimeout": 10000,
+    "DelayBetweenRequests": 500,
+    "MaxResponseDataLength": 125
 }
 ```
