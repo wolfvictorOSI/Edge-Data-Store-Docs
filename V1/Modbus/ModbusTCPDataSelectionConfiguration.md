@@ -75,7 +75,7 @@ The following are examples of valid Modbus TCP data selection configurations.
 ```json
 [
     {
-        "id": "DataItem1",
+        "Id": "DataItem1",
         "Selected": true,
         "Name": "MyDataItem",
         "UnitId": 1,
