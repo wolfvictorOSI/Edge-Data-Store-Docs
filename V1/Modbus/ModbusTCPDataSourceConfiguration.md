@@ -17,7 +17,7 @@ You can create or copy this file to any directory on a device with Edge Data Sto
     - For content structure, see [Modbus TCP data source examples](#modbus-tcp-data-source-examples). 
     - For a table of all available parameters, see [Parameters for Modbus TCP data source](#parameters-for-modbus-tcp-data-source). 
 2. Save the file as _DataSource.config.json_.
-3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <br> `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`.
+3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`.
 
     If a Modbus TCP EDS adapter is added during installation, it will have an EDS adapterId of Modbus1, which is used in the following  example.
 
