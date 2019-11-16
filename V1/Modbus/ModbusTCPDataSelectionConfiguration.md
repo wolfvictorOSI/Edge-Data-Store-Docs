@@ -13,7 +13,7 @@ Once a data source is configured for a Modbus TCP instance, you must configure w
 Complete the following to configure Modbus TCP data selection:
 
 1. Using any text editor, create a file that contains a Modbus TCP data selection in JSON form. This file can be created or copied to any directory on a device with Edge Data Store installed.
-    - For content structure, see [Modbus TCP data selection example](#modbus-tcp-data-selection-example). 
+    - For content structure, see [Modbus TCP data selection examples](#modbus-tcp-data-selection-examples). 
     - For a table of all available parameters, see [Parameters for Modbus TCP data selection](#parameters-for-modbus-tcp-data-selection). 
 2. Save the file as _DataSelection.config.json_.
 3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`.
@@ -52,61 +52,40 @@ The following parameters are available for configuring Modbus TCP data selection
 
 Each JSON object in the file represents a measurement. You can modify the fields in each object to configure the measurement parameters. To add more measurements, you need to create more JSON objects with properly completed fields.
 
-## Modbus TCP data selection example
+## Modbus TCP data selection examples
+
+The following are examples of valid Modbus TCP data selection configurations.
+
+**Minimum data selection configuration:**
 
 ```json
 [
-  {
-    "Selected": true,
-    "Name": "Measurement1",
-    "UnitId": 0,
-    "RegisterType": 1,
-    "RegisterOffset": 0,
-    "DataTypeCode": 1,
-    "BitMap": "",
-    "ConversionFactor": null,
-    "ConversionOffset": null,
-    "StreamId": "SampleStreamID1",
-    "ScanRate": 0
-  },
-  {
-    "Selected": true,
-    "Name": "Measurement2",
-    "UnitId": 247,
-    "RegisterType": 2,
-    "RegisterOffset": 65535,
-    "DataTypeCode": 10,
-    "BitMap": "",
-    "ConversionFactor": 1,
-    "ConversionOffset": 0,
-    "StreamId": "",
-    "ScanRate": 86400000
-  },
-  {
-    "Selected": true,
-    "Name": "Measurement3",
-    "UnitId": 1,
-    "RegisterType": 3,
-    "RegisterOffset": 1,
-    "DataTypeCode": 20,
-    "BitMap": "16151413",
-    "ConversionFactor": 2,
-    "ConversionOffset": 3.4,
-    "StreamId": "Sample Stream ID 2",
-    "ScanRate": 1000
-  },
-  {
-    "Selected": true,
-    "Name": "Measurement4",
-    "UnitId": 1,
-    "RegisterType": 4,
-    "RegisterOffset": 1,
-    "DataTypeCode": 30,
-    "BitMap": "30293231",
-    "ConversionFactor": 1,
-    "ConversionOffset": 2,
-    "StreamId": "Sample_Stream_ID_3",
-    "ScanRate": 1000
-  }
+    {
+        "UnitId": 1,
+        "RegisterType": 3,
+        "RegisterOffset": 122,
+        "DataTypeCode": 20,
+        "ScanRate": 1000,
+    }
 ]
 ```
+
+**Maximum data selection configuration:**
+
+```json
+[
+    {
+        "id": "DataItem1",
+        "Selected": true,
+        "Name": "MyDataItem",
+        "UnitId": 1,
+        "RegisterType": 3,
+        "RegisterOffset": 123,
+        "DataTypeCode": 20,
+        "ScanRate": 300,
+        "StreamId": "stream.1",
+        "BitMap": "020301",
+        "ConversionFactor": 12.3,
+        "ConversionOffset": 14.5
+    }
+]
