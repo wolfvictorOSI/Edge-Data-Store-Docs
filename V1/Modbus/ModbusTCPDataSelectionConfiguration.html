@@ -78,7 +78,7 @@
 <p>Complete the following to configure Modbus TCP data selection:</p>
 <ol>
 <li>Using any text editor, create a file that contains a Modbus TCP data selection in JSON form. This file can be created or copied to any directory on a device with Edge Data Store installed.<ul>
-<li>For content structure, see <a href="#modbus-tcp-data-selection-example">Modbus TCP data selection example</a>. </li>
+<li>For content structure, see <a href="#modbus-tcp-data-selection-examples">Modbus TCP data selection examples</a>. </li>
 <li>For a table of all available parameters, see <a href="#parameters-for-modbus-tcp-data-selection">Parameters for Modbus TCP data selection</a>. </li>
 </ul>
 </li>
@@ -211,60 +211,34 @@ Example using cURL (run this command from the same directory where the file is l
 </tbody>
 </table>
 <p>Each JSON object in the file represents a measurement. You can modify the fields in each object to configure the measurement parameters. To add more measurements, you need to create more JSON objects with properly completed fields.</p>
-<h2 id="modbus-tcp-data-selection-example">Modbus TCP data selection example</h2>
+<h2 id="modbus-tcp-data-selection-examples">Modbus TCP data selection examples</h2>
+<p>The following are examples of valid Modbus TCP data selection configurations.</p>
+<p><strong>Minimum data selection configuration:</strong></p>
 <pre><code class="lang-json">[
-  {
-    &quot;Selected&quot;: true,
-    &quot;Name&quot;: &quot;Measurement1&quot;,
-    &quot;UnitId&quot;: 0,
-    &quot;RegisterType&quot;: 1,
-    &quot;RegisterOffset&quot;: 0,
-    &quot;DataTypeCode&quot;: 1,
-    &quot;BitMap&quot;: &quot;&quot;,
-    &quot;ConversionFactor&quot;: null,
-    &quot;ConversionOffset&quot;: null,
-    &quot;StreamId&quot;: &quot;SampleStreamID1&quot;,
-    &quot;ScanRate&quot;: 0
-  },
-  {
-    &quot;Selected&quot;: true,
-    &quot;Name&quot;: &quot;Measurement2&quot;,
-    &quot;UnitId&quot;: 247,
-    &quot;RegisterType&quot;: 2,
-    &quot;RegisterOffset&quot;: 65535,
-    &quot;DataTypeCode&quot;: 10,
-    &quot;BitMap&quot;: &quot;&quot;,
-    &quot;ConversionFactor&quot;: 1,
-    &quot;ConversionOffset&quot;: 0,
-    &quot;StreamId&quot;: &quot;&quot;,
-    &quot;ScanRate&quot;: 86400000
-  },
-  {
-    &quot;Selected&quot;: true,
-    &quot;Name&quot;: &quot;Measurement3&quot;,
-    &quot;UnitId&quot;: 1,
-    &quot;RegisterType&quot;: 3,
-    &quot;RegisterOffset&quot;: 1,
-    &quot;DataTypeCode&quot;: 20,
-    &quot;BitMap&quot;: &quot;16151413&quot;,
-    &quot;ConversionFactor&quot;: 2,
-    &quot;ConversionOffset&quot;: 3.4,
-    &quot;StreamId&quot;: &quot;Sample Stream ID 2&quot;,
-    &quot;ScanRate&quot;: 1000
-  },
-  {
-    &quot;Selected&quot;: true,
-    &quot;Name&quot;: &quot;Measurement4&quot;,
-    &quot;UnitId&quot;: 1,
-    &quot;RegisterType&quot;: 4,
-    &quot;RegisterOffset&quot;: 1,
-    &quot;DataTypeCode&quot;: 30,
-    &quot;BitMap&quot;: &quot;30293231&quot;,
-    &quot;ConversionFactor&quot;: 1,
-    &quot;ConversionOffset&quot;: 2,
-    &quot;StreamId&quot;: &quot;Sample_Stream_ID_3&quot;,
-    &quot;ScanRate&quot;: 1000
-  }
+    {
+        &quot;UnitId&quot;: 1,
+        &quot;RegisterType&quot;: 3,
+        &quot;RegisterOffset&quot;: 122,
+        &quot;DataTypeCode&quot;: 20,
+        &quot;ScanRate&quot;: 1000,
+    }
+]
+</code></pre><p><strong>Maximum data selection configuration:</strong></p>
+<pre><code class="lang-json">[
+    {
+        &quot;Id&quot;: &quot;DataItem1&quot;,
+        &quot;Selected&quot;: true,
+        &quot;Name&quot;: &quot;MyDataItem&quot;,
+        &quot;UnitId&quot;: 1,
+        &quot;RegisterType&quot;: 3,
+        &quot;RegisterOffset&quot;: 123,
+        &quot;DataTypeCode&quot;: 20,
+        &quot;ScanRate&quot;: 300,
+        &quot;StreamId&quot;: &quot;stream.1&quot;,
+        &quot;BitMap&quot;: &quot;020301&quot;,
+        &quot;ConversionFactor&quot;: 12.3,
+        &quot;ConversionOffset&quot;: 14.5
+    }
 ]
 </code></pre></article>
           </div>

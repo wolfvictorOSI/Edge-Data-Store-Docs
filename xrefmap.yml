@@ -17,7 +17,7 @@ references:
   name: Configuration schemas
   href: V1/Configuration/Schemas/ConfigurationSchemaList.html
 - uid: edge_system_schema
-  name: Edge Data Store configuration schema
+  name: Sample Edge Data Store configuration
   href: V1/Configuration/Schemas/EdgeSystem_schema.html
 - uid: EdgeDataStoreAdministration
   name: Edge Data Store administration
