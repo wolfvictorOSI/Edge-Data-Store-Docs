@@ -90,7 +90,7 @@
 <li>The structure for health streams produced by the product has been updated.</li>
 <li>Adapter components may be added or removed at runtime and no longer require a restart of the product.</li>
 <li>Changes to the Health Endpoints configuration are now applied at runtime and no longer require a restart of the product.</li>
-<li>All endpoint configurations related to transfering data and configuration to PI Web Api or OSIsoft Cloud Services have the following new properties:<ul>
+<li>All endpoint configurations related to transfering data and configuration to PI Web API or OSIsoft Cloud Services have the following new properties:<ul>
 <li>ValidateEndpointCertificate - Enable/Disable validation of endpoint certificate. Any endpoint certificate is accepted if set to false.</li>
 <li>TokenEndpoint - For use with OSIsoft Cloud Services endpoints only.  Allows for alternative endpoint for retrieval of an OCS access token.</li>
 </ul>
@@ -122,10 +122,11 @@
 <h3 id="debian-9-or-later-linux-ubuntu--raspberry-pi-beaglebone-other-debian-based-linux-distros">Debian 9 or later Linux (Ubuntu  Raspberry PI, BeagleBone, other Debian based Linux distros)</h3>
 <p>Complete the following:</p>
 <ol>
-<li>Open a terminal window and type:</li>
-</ol>
+<li><p>Open a terminal window and type:</p>
 <pre><code class="lang-bash">sudo apt install ./EdgeDataStore_linux_&lt;either x64 or arm depending upon processor&gt;.deb
-</code></pre><p>A check will be done for prerequisites. If the Linux operating system is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:</p>
+</code></pre></li>
+</ol>
+<p>A check will be done for prerequisites. If the Linux operating system is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:</p>
 <pre><code class="lang-bash">sudo apt update
 sudo apt upgrade
 </code></pre><ol>
