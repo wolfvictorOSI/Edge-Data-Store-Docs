@@ -26,7 +26,7 @@ In addition to ready to use install kits, OSIsoft also provides examples of how 
 * The structure for health streams produced by the product has been updated.
 * Adapter components may be added or removed at runtime and no longer require a restart of the product.
 * Changes to the Health Endpoints configuration are now applied at runtime and no longer require a restart of the product.
-* All endpoint configurations related to transfering data and configuration to PI Web Api or OSIsoft Cloud Services have the following new properties:
+* All endpoint configurations related to transfering data and configuration to PI Web API or OSIsoft Cloud Services have the following new properties:
    * ValidateEndpointCertificate - Enable/Disable validation of endpoint certificate. Any endpoint certificate is accepted if set to false.
    * TokenEndpoint - For use with OSIsoft Cloud Services endpoints only.  Allows for alternative endpoint for retrieval of an OCS access token.
 
@@ -61,24 +61,24 @@ Complete the following:
 
 1. Open a terminal window and type:
 
-```bash
-sudo apt install ./EdgeDataStore_linux_<either x64 or arm depending upon processor>.deb
-```
+  ```bash
+  sudo apt install ./EdgeDataStore_linux_<either x64 or arm depending upon processor>.deb
+  ```
 
 A check will be done for prerequisites. If the Linux operating system is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:
 
-```bash
-sudo apt update
-sudo apt upgrade
-```
+  ```bash
+  sudo apt update
+  sudo apt upgrade
+  ```
 
 2. After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.
 
 The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
 
-```bash
-curl http://localhost:5590/api/v1/configuration
-```
+  ```bash
+  curl http://localhost:5590/api/v1/configuration
+  ```
 
 If the installation was successful, you will get back a JSON copy of the default system configuration:
 
