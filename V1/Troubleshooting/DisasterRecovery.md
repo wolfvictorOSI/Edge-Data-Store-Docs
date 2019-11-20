@@ -15,7 +15,7 @@ _(Windows and Linux Systems)_
 
 This topic provides procedures for creating a backup of Edge Data Store stream data and configuration files, moving them to a new system, and then restoring the back up files onto the new system. Procedures are provided for Windows and Linux systems.
  
-Prequisite:  Read the Credentials topic prior to beginning this topic.  This guide does not include backing up or restoring of any credentials. All credentials are encrypted for security purposes, so they cannot be copied or transferred. After the new system has had the storage and configuration files copied over, and the service has started, you will need to re-enter the credentials for the system using API calls. After updating, restart the Edge Data Store service. The new edge device will be running as the previous device, and will contain all the data up to the point the previous device went down.
+Prequisite:  This topic does not provide instruction for backing up or restoring credentials. All credentials are encrypted for security purposes, so they cannot be copied or transferred. After the new system has had the storage and configuration files copied over, and the service has started, you will need to re-enter the credentials for the system using API calls. After updating, restart the Edge Data Store service. The new edge device will be running as the previous device, and will contain all the data up to the point the previous device went down.
 
 
 # Windows Recovery
