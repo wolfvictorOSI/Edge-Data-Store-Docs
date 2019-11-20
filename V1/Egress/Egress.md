@@ -31,7 +31,7 @@ Complete the following to create new egress endpoints:
 - Example using cURL:
 
 ```bash
-curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: application/json"  "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
+curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
 ```
 
 > **Note** The @ symbol is a required prefix for the above command.
