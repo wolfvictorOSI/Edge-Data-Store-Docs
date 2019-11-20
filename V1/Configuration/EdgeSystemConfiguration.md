@@ -64,7 +64,7 @@ The default _System_Components.json_ file for the System component is the follow
 3. From the same directory where the file exists, run the following curl script:
 
 ```bash
-curl -i -d "@AddComponent.json" -H "Content-Type: application/json" -X POST http://localhost:5590/api/v1/configuration/system/components
+curl -i -d "@AddComponent.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/system/components
 ```
 
 After the curl command completes successfully, you can configure or use the new component.
