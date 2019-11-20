@@ -100,4 +100,4 @@ Once the new hardware has replaced the previous system and has been installed wi
   _sudo systemctl status osisoft.edgedatastore_
   ```
 
-  **Note:** Default directory permissions are set to 755, and each subsequent file is 644. If you do not use tar it is possible to have permission issues with the recovery files. Tar matches via string name rather than the account ID/UID, and it also preserves permissions on files when zipping them.
+  **Note:** Default directory permissions are set to 755, and each subsequent file is 644. If you do not use tar it is possible to have permission issues with the recovery files. Tar matches via string name rather than the account ID/UID.
