@@ -61,7 +61,6 @@ Prerequisite: Root access on the Linux device
   ```
   _sudo systemctl stop osisoft.edgedatastore_
   ```
-	**Note:** Using the _cp_ command may result in a change in file ownership to the current user. 
 
 2. Locate the storage and configuration files.
 
@@ -70,6 +69,8 @@ Prerequisite: Root access on the Linux device
 			/usr/share/OSIsoft/EdgeDataStore /Storage
 
 3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB or other safe location. File transfer can be done with WinSCP, SFTP, or external device.
+
+	**Note:** Using the _cp_ command may result in a change in file ownership to the current user. 
 
 **Move the files to the new hardware***
 
