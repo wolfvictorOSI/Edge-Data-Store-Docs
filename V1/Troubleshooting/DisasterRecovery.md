@@ -39,16 +39,15 @@ Prerequisite: Administrative access on the device to successfully restore on Win
 Once the new hardware has replaced the previous system and has been installed with Edge Data Store, the new system will have a default configuration. 
 
 1. Stop the Edge Data Store service using the Windows Service Manager or Task Manager service tab.
-2. Once that service has stopped, navigate to the C:\ProgramData\OSIsoft\EdgeDataStore directory and extract your zip or tar file in that directory again using WinSCP, SFTP, or external device.
+2. Once that service has stopped, navigate to the C:\ProgramData\OSIsoft\EdgeDataStore directory, and delete the default storage and configuration folders from the new device.
 
 **Restore data files**
 
-1. Delete the default storage and configuration folders from the new device.
-2. Copy or unzip the backup storage and configuration files into the C:\ProgramData\OSIsoft\EdgeDataStore directory.
+1. Copy or unzip the backup storage and configuration files into the C:\ProgramData\OSIsoft\EdgeDataStore directory.
 
 	**Note:** The C: drive may not be your systems default drive letter. Refer to My Computer, This PC, or simply open a command prompt to verify your systems drive letter.
 
-3. Use the Windows Service Manager or Task Manager to restart the Edge Data Store service.
+2. Use the Windows Service Manager or Task Manager to restart the Edge Data Store service.
 
 
 # Linux Recovery
