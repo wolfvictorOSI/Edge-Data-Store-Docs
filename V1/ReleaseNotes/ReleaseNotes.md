@@ -21,7 +21,7 @@ In addition to ready to use install kits, OSIsoft also provides examples of how 
 * Many performance and resiliency improvements were made to the product.
 * Issues related to long-term memory growth of the product have been addressed.
 * The "System Reset" and "Storage Reset" features of the Edge Data Store are more resilient.
-* The installation kits for the Edge Data Store was updated to create a better experience when upgrading installed instances.
+* The installation kits for the Edge Data Store were updated to create a better experience when upgrading installed instances.
 * The installation kits have been updated to ensure only necessary files are included. 
 
 ### Modbus Adapter
