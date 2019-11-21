@@ -2,14 +2,11 @@
 uid: disasterRecovery
 ---
 
-#
 # Edge Data Store
 
 _Disaster Recovery Process Guidelines_
 
 _(Windows and Linux Systems)_
-
-#
 
 # Intro
 
@@ -59,7 +56,7 @@ Prerequisite: Root access on the Linux device
 1. If your device is still able to boot, verify that Edge Data Store service has stopped, using the following command: 
 
   ```
-  _sudo systemctl stop osisoft.edgedatastore_
+  sudo systemctl stop osisoft.edgedatastore
   ```
 
 2. Locate the storage and configuration files.
@@ -79,7 +76,7 @@ Once the new hardware has replaced the previous system and has been installed wi
 1. Stop the Edge Data Store service using the following command:
 
   ```
-  _sudo systemctl stop osisoft.edgedatastore_
+  sudo systemctl stop osisoft.edgedatastore
   ```
 
 2. Once that service has stopped, navigate to the /usr/share/OSIsoft/EdgeDataStore directory and extract your zip or tar file in that directory again using WinSCP, SFTP, or external device.
@@ -92,13 +89,13 @@ Once the new hardware has replaced the previous system and has been installed wi
 4. Start the Edge Data Store service with the following command:
 
   ```
-  _sudo systemctl start osisoft.edgedatastore_
+  sudo systemctl start osisoft.edgedatastore
   ```
 
 5. Verify that Edge Data Store is running with the following command:
 
   ```
-  _sudo systemctl status osisoft.edgedatastore_
+  sudo systemctl status osisoft.edgedatastore
   ```
 
   **Note:** Default directory permissions are set to 755, and each subsequent file is 644. If you do not use tar it is possible to have permission issues with the recovery files. Tar matches via string name rather than the account ID/UID.
