@@ -12,7 +12,7 @@ The objective of this document is to provide examples of how to successfully cre
 
 1. Create the following Dockerfile in the directory where you want to create and/or run the container:
 
-    # [ARM32](#tab/tabid-1)
+    ### [ARM32](#tab/tabid-1)
 
     ```
     docker
@@ -22,7 +22,7 @@ The objective of this document is to provide examples of how to successfully cre
     ADD ./EdgeDataStore_linux-arm.tar.gz .
     ENTRYPOINT ["./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host"]
     ```
-    # [ARM64](#tab/tabid-2)
+    ### [ARM64](#tab/tabid-2)
     ```
     docker
     FROM ubuntu
@@ -32,7 +32,7 @@ The objective of this document is to provide examples of how to successfully cre
     ENTRYPOINT ["./EdgeDataStore_linux-arm64/OSIsoft.Data.System.Host"]
     ```
 
-    # [AMD64 (x64)](#tab/tabid-3)
+    ### [AMD64 (x64)](#tab/tabid-3)
 
     ```
     docker
