@@ -23,7 +23,7 @@ Header: Content-Type application/json
 Example using cURL:
 
 ```bash
-curl -v -d "" -X POST http://localhost:5590/api/v1/Administration/System/Reset
+curl -v -d "" http://localhost:5590/api/v1/Administration/System/Reset
 ```
 
 An HTTP status 204 message indicates success.
@@ -43,7 +43,7 @@ Header: Content-Type application/json
 Example using cURL:
 
 ```bash
-curl -v -d "" -X POST http://localhost:5590/api/v1/Administration/Storage/Reset
+curl -v -d "" http://localhost:5590/api/v1/Administration/Storage/Reset
 ```
 
 An HTTP status 204 message indicates success.
@@ -65,7 +65,7 @@ Header: Content-Type application/json
 Example using cURL:
 
 ```bash
-curl -v -d "" -X POST http://localhost:5590/api/v1/Administration/EDS adapterId/Stop
+curl -v -d "" http://localhost:5590/api/v1/Administration/EDS adapterId/Stop
 ```
 
 **Note:** Replace _EDS adapterId_ with the id of the EDS adapter you want to stop.
@@ -85,7 +85,7 @@ Header: Content-Type application/json
 Example using cURL:
 
 ```bash
-curl -v -d "" -X POST http://localhost:5590/api/v1/Administration/EDS adapterId/Start
+curl -v -d "" http://localhost:5590/api/v1/Administration/EDS adapterId/Start
 ```
 
 **Note:** Replace _EDS adapterId_ with the id of the EDS adapter you want to start.
