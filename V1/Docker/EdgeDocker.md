@@ -43,8 +43,6 @@ The objective of this document is to provide examples of how to successfully cre
     ENTRYPOINT ["./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host"]
     ```
 
-    ***
-
 2. Copy the _EdgeDataStore_linux-arm.tar_ file to the same directory as the Dockerfile.
 
 3. Run the following command line (sudo may be necessary):
@@ -76,7 +74,7 @@ To run the container you can use the command line (sudo may be necessary):
    
 Port 5590 will be accessible from the host and REST calls can be made to Edge Data Store from applications on the local host computer. In addition, in this example, all data that would be written to the container is instead written to the host directory /edgeds. This directory can be anything you want - this example just uses a simple directory on the local machine.
 
-### Changing Port number from Docker
+### Changing port number from Docker
 
 If you want a port other than 5590, see the section regarding [Port configuration](#EdgeDataStoreConfiguration) of Edge Data Store. Changing the configuration of the Edge Data Store running in the container will change the port exposed to the local machine.
 
