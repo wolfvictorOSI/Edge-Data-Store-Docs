@@ -16,6 +16,9 @@ references:
 - uid: configurationSchemaList
   name: Configuration schemas
   href: V1/Configuration/Schemas/ConfigurationSchemaList.html
+- uid: disasterRecovery
+  name: Edge Data Store
+  href: V1/Troubleshooting/DisasterRecovery.html
 - uid: edge_system_schema
   name: Sample Edge Data Store configuration
   href: V1/Configuration/Schemas/EdgeSystem_schema.html

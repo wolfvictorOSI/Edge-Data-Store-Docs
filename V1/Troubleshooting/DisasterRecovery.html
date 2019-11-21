@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Edge Data Store </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Edge Data Store ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../V1/index.html" width="46">
+                <img id="logo" src="../../V1/images/atlas_icon.png" height="46" width="46" alt="OSIsoft Edge System"> 
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="disasterRecovery">
+
+<p>#</p>
+<h1 id="edge-data-store">Edge Data Store</h1>
+<p><em>Disaster Recovery Process Guidelines</em></p>
+<p><em>(Windows and Linux Systems)</em></p>
+<p>#</p>
+<h1 id="intro">Intro</h1>
+<p>This topic provides procedures for creating a backup of Edge Data Store stream data and configuration files, moving them to a new system, and then restoring the back up files onto the new system. Procedures are provided for Windows and Linux systems.</p>
+<p>Prequisite:  This topic does not provide instruction for backing up or restoring credentials. All credentials are encrypted for security purposes, so they cannot be copied or transferred. After the new system has had the storage and configuration files copied over, and the service has started, you will need to re-enter the credentials for the system using API calls. After updating, restart the Edge Data Store service. The new edge device will be running as the previous device, and will contain all the data up to the point the previous device went down.</p>
+<h1 id="windows-recovery">Windows Recovery</h1>
+<p><strong>Create a backup</strong></p>
+<p>Prerequisite: Administrative access on the device to successfully restore on Windows system</p>
+<ol>
+<li>Verify that Edge Data Store service has stopped, if your device is still able to boot. This can be done through the Windows Service Manager or Task Manager Services tab.</li>
+<li><p>Locate the storage and configuration files.</p>
+<p> <strong>Note:</strong> Windows storage and configuration files should be in the following locations:
+           C:\ProgramData\OSIsoft\EdgeDataStore\Configuration
+           C:\ProgramData\OSIsoft\EdgeDataStore\Storage
+           The ProgramData folder is typically hidden, so if it is not visible, go to the <strong>View</strong> tab in <strong>Windows Explorer</strong> and check <strong>Hidden</strong>.</p>
+</li>
+<li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB or other safe location. File transfer can be done with WinSCP, SFTP, or external device.</p>
+</li>
+</ol>
+<p><strong>Move the files to the new hardware</strong>*</p>
+<p>Once the new hardware has replaced the previous system and has been installed with Edge Data Store, the new system will have a default configuration. </p>
+<ol>
+<li>Stop the Edge Data Store service using the Windows Service Manager or Task Manager service tab.</li>
+<li>Once that service has stopped, navigate to the C:\ProgramData\OSIsoft\EdgeDataStore directory, and delete the default storage and configuration folders from the new device.</li>
+</ol>
+<p><strong>Restore data files</strong></p>
+<ol>
+<li><p>Copy or unzip the backup storage and configuration files into the C:\ProgramData\OSIsoft\EdgeDataStore directory.</p>
+<p> <strong>Note:</strong> The C: drive may not be your systems default drive letter. Refer to My Computer, This PC, or simply open a command prompt to verify your systems drive letter.</p>
+</li>
+<li><p>Use the Windows Service Manager or Task Manager to restart the Edge Data Store service.</p>
+</li>
+</ol>
+<h1 id="linux-recovery">Linux Recovery</h1>
+<p><strong>Create a backup</strong></p>
+<p>Prerequisite: Root access on the Linux device</p>
+<ol>
+<li><p>If your device is still able to boot, verify that Edge Data Store service has stopped, using the following command: </p>
+<pre><code>_sudo systemctl stop osisoft.edgedatastore_
+</code></pre></li>
+<li><p>Locate the storage and configuration files.</p>
+<p> <strong>Note:</strong> Linux storage and configuration files should be in the following locations:
+         /usr/share/OSIsoft/EdgeDataStore/Configuration
+         /usr/share/OSIsoft/EdgeDataStore /Storage</p>
+</li>
+<li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB or other safe location. File transfer can be done with WinSCP, SFTP, or external device.</p>
+<p> <strong>Note:</strong> Using the <em>cp</em> command may result in a change in file ownership to the current user. </p>
+</li>
+</ol>
+<p><strong>Move the files to the new hardware</strong>*</p>
+<p>Once the new hardware has replaced the previous system and has been installed with Edge Data Store, the new system will have a default configuration. </p>
+<ol>
+<li><p>Stop the Edge Data Store service using the following command:</p>
+<pre><code>_sudo systemctl stop osisoft.edgedatastore_
+</code></pre></li>
+<li><p>Once that service has stopped, navigate to the /usr/share/OSIsoft/EdgeDataStore directory and extract your zip or tar file in that directory again using WinSCP, SFTP, or external device.</p>
+</li>
+</ol>
+<p><strong>Restore data files</strong></p>
+<ol>
+<li>Delete the default storage and configuration folders from the /usr/share/OSIsoft/EdgeDataStore directory.</li>
+<li>Copy or unzip the backup storage and configuration files into the EdgeDataStore directory.</li>
+<li>Update the ownership of the 2 directories to <em>edgedatastore</em> for the user and group, if they do not match <em>edgedatastore</em>. </li>
+<li><p>Start the Edge Data Store service with the following command:</p>
+<pre><code>_sudo systemctl start osisoft.edgedatastore_
+</code></pre></li>
+<li><p>Verify that Edge Data Store is running with the following command:</p>
+<pre><code>_sudo systemctl status osisoft.edgedatastore_
+</code></pre><p><strong>Note:</strong> Default directory permissions are set to 755, and each subsequent file is 644. If you do not use tar it is possible to have permission issues with the recovery files. Tar matches via string name rather than the account ID/UID.</p>
+</li>
+</ol>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/Troubleshooting/DisasterRecovery.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+            <span id='copyright-text'>© 2019 - OSIsoft, LLC.<span>
+        </span></span></div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
