@@ -2,9 +2,9 @@
 uid: sdsStreamViews
 ---
 
-# Stream Views
+# Stream views
 
-An SdsStreamView provides a way to map Stream data requests from one data type to another. You can apply a Stream View to any read or GET operation. SdsStreamView is used to specify the mapping between source and target types.
+An SdsStreamView provides a way to map stream data requests from one data type to another. You can apply a stream View to any read or GET operation. SdsStreamView is used to specify the mapping between source and target types.
 
 SDS attempts to determine how to map Properties from the source to the destination. When the mapping is straightforward, such as when the properties are in the same position and of the same data type, or when the properties have the same name, SDS will map the properties automatically.
 
@@ -23,7 +23,7 @@ The following table shows the required and optional SdsStreamView fields. Fields
 | TargetTypeId | String                 | Required    | Yes        |Identifier of the SdsType to convert events to |
 | Properties   | IList\<SdsStreamViewProperty\> | Optional    | Yes, with limitations  |Property level mapping |
 
-**Rules for the Stream View Identifier (SdsStreamView.Id)**
+**Rules for the stream view identifier (SdsStreamView.Id)**
 
 1. Is not case sensitive
 2. Can contain spaces
@@ -42,11 +42,11 @@ The following table shows the required and optional SdsStreamViewProperty fields
 | TargetId | String  | Required    | Identifier of the SdsTypeProperty from the target SdsType Properties list |
 | SdsStreamView  | SdsStreamView | Optional    | Additional mapping instructions for derived types |
 
-The SdsStreamView field supports nested Properties.
+The SdsStreamView field supports nested properties.
 
 ## SdsStreamViewMap
 
-When an SdsStreamView is added, SDS defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. The SdsStreamViewMap provides a detailed Property-by-Property definition of the mapping.
+When an SdsStreamView is added, SDS defines a plan mapping. Plan details are retrieved as an SdsStreamViewMap. The SdsStreamViewMap provides a detailed property-by-property definition of the mapping.
 
 The following table shows the SdsStreamViewMap fields. The SdsStreamViewMap cannot be written to SDS, so required and optional have no meaning.
 
@@ -58,7 +58,7 @@ The following table shows the SdsStreamViewMap fields. The SdsStreamViewMap cann
 
 ### Properties / SdsStreamViewMapProperty
 
-The SdsStreamViewMapProperty is similar an SdsStreamViewProperty but adds a Mode detailing one or more actions taken on
+The SdsStreamViewMapProperty is similar an SdsStreamViewProperty but adds a mode detailing one or more actions taken on
 the property.
 
 The following table shows the SdsStreamViewMapProperty fields. The SdsStreamViewMap cannot be written; it can only be
@@ -83,11 +83,11 @@ The available SdsStreamViewModes are shown in the following table.
 | FieldConversion        | 0x0016 | Converts the source property to the target type |
 | InvalidFieldConversion | 0x0032 | Cannot perform the specified mapping |
 
-## Changing Stream Type
+## Changing stream type
 
-Stream Views can be used to change the Type defining a Stream. You cannot modify the SdsType; types are immutable. But you can map a stream from its current type to a new type.
+Stream Views can be used to change the type defining a stream. You cannot modify the SdsType; types are immutable. But you can map a stream from its current type to a new type.
 
-To update a Stream's Type, define an SdsStreamView and PUT the stream view to the following:
+To update a stream's type, define an SdsStreamView and PUT the stream view to the following:
 
 ```text
 PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}

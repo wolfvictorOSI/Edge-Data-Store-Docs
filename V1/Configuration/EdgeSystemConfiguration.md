@@ -64,7 +64,7 @@ The default _System_Components.json_ file for the System component is the follow
 3. From the same directory where the file exists, run the following curl script:
 
 ```bash
-curl -i -d "@AddComponent.json" -H "Content-Type: application/json" -X POST http://localhost:5590/api/v1/configuration/system/components
+curl -i -d "@AddComponent.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/system/components
 ```
 
 After the curl command completes successfully, you can configure or use the new component.
@@ -76,7 +76,7 @@ After the curl command completes successfully, you can configure or use the new 
 The following JSON file represents minimal configuration of an Edge Data Store. There are no Modbus TCP or OPC UA components, and the Storage component configurations are set to the default. If you configure a system with this JSON file, any existing Modbus TCP or OPC UA components will be disabled and removed. No storage data will be deleted or modified, and OMF and SDS data access will not be impacted.
 
 ```json
-{{
+{
   "Storage": {
     "PeriodicEgressEndpoints": [],
     "Runtime": {

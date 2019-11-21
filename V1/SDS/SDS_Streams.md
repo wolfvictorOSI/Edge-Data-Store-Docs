@@ -25,9 +25,9 @@ The following table shows the required and optional SdsStream fields. Fields not
 | [Tags](xref:sdsStreamExtra)* | IList\<String\>       | Optional    | Yes        | A list of tags denoting special attributes or categories.|
 | [Metadata](xref:sdsStreamExtra)* | IDictionary\<String, String\> | Optional    | Yes   | A dictionary of string keys and associated string values.  |
 
-**\* Notes regarding Tags and Metadata:** Stream Tags and Metadata are accessed via the Tags API And Metadata API respectively. However, they are associated with SdsStream objects and can be used as search criteria.
+**Note:** Stream tags and metadata are accessed via the Tags API And Metadata API, respectively. However, they are associated with SdsStream objects and can be used as search criteria.
 
-**Rules for the Stream Identifier (SdsStream.Id)**
+**Rules for the stream identifier (SdsStream.Id)**
 
 1. Is not case sensitive
 2. Can contain spaces
@@ -38,17 +38,17 @@ The following table shows the required and optional SdsStream fields. Fields not
 
 The Key or Primary Index is defined at the SdsType. Secondary Indexes are defined at the SdsStream.
 
-Secondary Indexes are applied to a single property; there are no compound secondary indexes. Only SdsTypeCodes that can be ordered are supported for use in a secondary index.
+Secondary indexes are applied to a single property; there are no compound secondary indexes. Only SdsTypeCodes that can be ordered are supported for use in a secondary index.
 
 Indexes are discussed in greater detail here: [Indexes](xref:sdsIndexes)
 
-## Interpolation and Extrapolation
+## Interpolation and extrapolation
 
 The InterpolationMode, ExtrapolationMode, and [PropertyOverrides](#propertyoverrides) can be used to determine how a specific stream reads data. These read characteristics are inherited from the type if they are not defined at the stream level. For more information about type read characteristics and how these characteristics dictate how events are read see [Types](xref:sdsTypes).
 
 ## PropertyOverrides
 
-PropertyOverrides provide a way to override interpolation behavior and unit of measure for individual SdsType Properties for a specific stream.
+PropertyOverrides provide a way to override interpolation behavior and unit of measure for individual SdsType properties for a specific stream.
 
 The ``SdsStreamPropertyOverride`` object has the following structure:
 
