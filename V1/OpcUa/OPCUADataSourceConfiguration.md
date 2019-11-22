@@ -23,7 +23,7 @@ Complete the following to configure the OPC UA data source:
 Example using cURL (run this command from the same directory where the file is located):
 
 ```bash
-curl -v -d "@DataSource.config.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/OpcUa1/DataSource"
+curl -v -d "@DataSource.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/OpcUa1/DataSource"
 ```
 
 ## OPC UA data source schema
