@@ -88,7 +88,7 @@ If you have more than one OSIsoft Adapter of the same kind configured, the defau
 <li>Change the values as needed, so it looks similar to the <a href="#logging-example">Logging example</a>.</li>
 <li>Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the respective endpoint. <br><br> Example using cURL for the Edge Data Store logging endpoint (run this command from the same directory where the file is located):</li>
 </ol>
-<pre><code class="lang-bash">curl -v -d &quot;@System_Logging.json&quot; -H &quot;Content-Type application/json&quot; -X POST http://localhost:5590/api/v1/configuration/System/Logging
+<pre><code class="lang-bash">curl -v -d &quot;@System_Logging.json&quot; -H &quot;Content-Type application/json&quot; http://localhost:5590/api/v1/configuration/System/Logging
 </code></pre><blockquote><p><strong>Note:</strong> The other endpoints are the following:<br></p>
 <ul>
 <li>Edge Data Store: <code>http://localhost:5590/api/v1/configuration/System/Logging</code></li>

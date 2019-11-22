@@ -80,7 +80,7 @@
 Endpoint: http://localhost:5590/api/v1/administration/System/Reset
 Header: Content-Type application/json
 </code></pre><p>Example using cURL:</p>
-<pre><code class="lang-bash">curl -v -d &quot;&quot; -X POST http://localhost:5590/api/v1/Administration/System/Reset
+<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/System/Reset
 </code></pre><p>An HTTP status 204 message indicates success.</p>
 <h2 id="reset-the-edge-storage-component">Reset the Edge Storage component</h2>
 <p>Edge Data Store provides a method by which you can delete and reset all event and configuration data related to the Edge Data Store component, after which the product will be restarted.</p>
@@ -89,7 +89,7 @@ Header: Content-Type application/json
 Endpoint: http://localhost:5590/api/v1/administration/Storage/Reset
 Header: Content-Type application/json
 </code></pre><p>Example using cURL:</p>
-<pre><code class="lang-bash">curl -v -d &quot;&quot; -X POST http://localhost:5590/api/v1/Administration/Storage/Reset
+<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/Storage/Reset
 </code></pre><p>An HTTP status 204 message indicates success.</p>
 <h2 id="stop-and-start-an-edge-data-store-adapter">Stop and start an Edge Data Store adapter</h2>
 <p>Edge Data Store provides the ability to stop and start EDS adapters. By default, when Edge Data Store starts, all currently configured EDS adapters are started and remain running until the product shuts down.</p>
@@ -99,7 +99,7 @@ Header: Content-Type application/json
 Endpoint: http://localhost:5590/api/v1/administration/EDS adapterId/Stop
 Header: Content-Type application/json
 </code></pre><p>Example using cURL:</p>
-<pre><code class="lang-bash">curl -v -d &quot;&quot; -X POST http://localhost:5590/api/v1/Administration/EDS adapterId/Stop
+<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/EDS adapterId/Stop
 </code></pre><p><strong>Note:</strong> Replace <em>EDS adapterId</em> with the id of the EDS adapter you want to stop.</p>
 <p>An HTTP status 204 message indicates success.</p>
 <h3 id="start-an-eds-adapter">Start an EDS adapter</h3>
@@ -108,7 +108,7 @@ Header: Content-Type application/json
 Endpoint: http://localhost:5590/api/v1/administration/EDS adapterId/Start
 Header: Content-Type application/json
 </code></pre><p>Example using cURL:</p>
-<pre><code class="lang-bash">curl -v -d &quot;&quot; -X POST http://localhost:5590/api/v1/Administration/EDS adapterId/Start
+<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/EDS adapterId/Start
 </code></pre><p><strong>Note:</strong> Replace <em>EDS adapterId</em> with the id of the EDS adapter you want to start.</p>
 <p>An HTTP status 204 message indicates success. </p>
 </article>

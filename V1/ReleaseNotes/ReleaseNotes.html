@@ -79,8 +79,15 @@
 <li>Debian 9 or later ARM32 - EdgeDataStore_linux-arm.deb (Raspberry PI 2,3,4, BeagleBone devices, other ARM v7 and ARM v8 32 bit processors)</li>
 </ul>
 <p>In addition to ready to use install kits, OSIsoft also provides examples of how to create Docker containers in a separate file. tar.gz files are provided with binaries for customers who want to build their own custom installers or containers for Linux.</p>
-<h2 id="differences-from-beta-2">Differences from Beta 2</h2>
+<h2 id="differences-from-release-candidate-2">Differences from Release Candidate 2</h2>
 <h3 id="general">General</h3>
+<ul>
+<li>Many performance and resiliency improvements were made to the product.</li>
+<li>Issues related to long-term memory growth of the product have been addressed.</li>
+<li>The &quot;System Reset&quot; and &quot;Storage Reset&quot; features of the Edge Data Store are more resilient.</li>
+<li>The installation kits for the Edge Data Store were updated to create a better experience when upgrading installed instances.</li>
+</ul>
+<h1 id="-the-installation-kits-have-been-updated-to-ensure-only-necessary-files-are-included-">* The installation kits have been updated to ensure only necessary files are included. </h1>
 <ul>
 <li>The &quot;OSIsoft Edge System&quot; product was renamed to &quot;OSIsoft Edge Data Store&quot;.</li>
 <li>The edgecmd command line utility is now provided to allow access to and modification of Edge Data Store configuration.  This utility supercedes the command line functionality that was previously available via OSIsoft.Data.System.Host.</li>
@@ -98,22 +105,22 @@
 </ul>
 <h3 id="modbus-adapter">Modbus Adapter</h3>
 <ul>
-<li>Support has been added for a user-defined optional Streamid prefix.</li>
+<li>Improved Modbus adapter performance when large data points are selected for data collection.</li>
+<li>Modbus data selection can be deselected via edgecmd, which wasn&#39;t supported in RC2.</li>
+<li>Modbus logs the data source and data selection configuration in verbose mode instead of information mode.</li>
+</ul>
+<h3 id="opc-ua-adapter">OPC UA Adapter</h3>
+<ul>
+<li>An option was added to override SDK certificate checks when NONE security is configured.</li>
 </ul>
 <h3 id="storage">Storage</h3>
 <ul>
-<li>Significant improvements have been made in the reliability and performance of egressing configuration and data to PI Web Api or OSIsoft Cloud Services.</li>
-<li>Improvements were made to ensure that no data is lost when egressing data to an egress endpoint.</li>
-<li>The OEM configuration facet of the Storage component has been deprecated.  The following configuration properties were relocated to the Storage Runtime configuration facet:<ul>
-<li>CheckpointRateInSec</li>
-<li>TransactionLogLimitMB</li>
-<li>EnableTransactionLog</li>
-</ul>
-</li>
-<li>The Id property of a PeriodicEgressEndpoint configuration has been changed to be optional.  If one is not provided when the endpoint is configured, a unique value will be assigned to it.</li>
-<li>Improvements were made to improve resiliency of the product by ensuring data and configuration are properly checkpointed to storage.</li>
-<li>Improvements were made to handle a wider range of data corruptions encountered in power loss scenarios.</li>
-<li>In Beta 2, under certain data egress scenarios, the Storage component would attempt to retrieve all data destined to be egressed, and then egress the data to the destination endpoint.  This could lead to high memory usage and potential stability issues.  This behavior has been changed to stream the data in a more controlled manner, leading to less memory being demanded.</li>
+<li>Backfilling can now be enabled/disabled by changing the value of the backfill property on an egress configuration. Previously, the configuration needed to be removed and re-added with the changed value. </li>
+<li>For Linux installations, the number of allowed file handles for the service has been tuned to allow for up to 5,000 data streams.</li>
+<li>Fixed an issue with periodic egress where, in very specific scenarios, adding values immediately after egress started would result in only the last value being sent rather than all the values just added. </li>
+<li>Attempts to update to an egress configuration with changes identical to the current configuration are now ignored.</li>
+<li>Issues related to data queries returning incorrect data were addressed.</li>
+<li>The type identifier of the underlying storage component for Edge Data Store was changed from &quot;EDS.Component&quot; to &quot;Storage&quot;.</li>
 </ul>
 <h2 id="install-edge-data-store-on-a-device-using-an-install-kit">Install Edge Data Store on a Device using an install kit</h2>
 <p>To use any of the installers, first copy the appropriate file to the file system of the device.</p>
@@ -136,6 +143,24 @@ sudo apt upgrade
 <pre><code class="lang-bash">curl http://localhost:5590/api/v1/configuration
 </code></pre><p>If the installation was successful, you will get back a JSON copy of the default system configuration:</p>
 <pre><code class="lang-json">{
+  &quot;Modbus1&quot;: {
+    &quot;Logging&quot;: {
+      &quot;logLevel&quot;: &quot;Information&quot;,
+      &quot;logFileSizeLimitBytes&quot;: 34636833,
+      &quot;logFileCountLimit&quot;: 31
+    },
+    &quot;DataSource&quot;: {},
+    &quot;DataSelection&quot;: []
+  },
+  &quot;OpcUa1&quot;: {
+    &quot;Logging&quot;: {
+      &quot;logLevel&quot;: &quot;Information&quot;,
+      &quot;logFileSizeLimitBytes&quot;: 34636833,
+      &quot;logFileCountLimit&quot;: 31
+    },
+    &quot;DataSource&quot;: {},
+    &quot;DataSelection&quot;: []
+  },
   &quot;Storage&quot;: {
     &quot;PeriodicEgressEndpoints&quot;: [],
     &quot;Runtime&quot;: {
@@ -151,15 +176,6 @@ sudo apt upgrade
       &quot;logFileSizeLimitBytes&quot;: 34636833,
       &quot;logFileCountLimit&quot;: 31
     }
-  },
-  &quot;Modbus1&quot;: {
-    &quot;Logging&quot;: {
-      &quot;logLevel&quot;: &quot;Information&quot;,
-      &quot;logFileSizeLimitBytes&quot;: 34636833,
-      &quot;logFileCountLimit&quot;: 31
-    },
-    &quot;DataSource&quot;: {},
-    &quot;DataSelection&quot;: []
   },
   &quot;System&quot;: {
     &quot;Logging&quot;: {
@@ -182,18 +198,9 @@ sudo apt upgrade
       },
       {
         &quot;componentId&quot;: &quot;Storage&quot;,
-        &quot;componentType&quot;: &quot;EDS.Component&quot;
+        &quot;componentType&quot;: &quot;Storage&quot;
       }
     ]
-  },
-  &quot;OpcUa1&quot;: {
-    &quot;Logging&quot;: {
-      &quot;logLevel&quot;: &quot;Information&quot;,
-      &quot;logFileSizeLimitBytes&quot;: 34636833,
-      &quot;logFileCountLimit&quot;: 31
-    },
-    &quot;DataSource&quot;: {},
-    &quot;DataSelection&quot;: []
   }
 }
 </code></pre><p>If you get back an error, wait a few seconds and try it again. On a device with limited processor, memory, and slow storage, it may take some time before Edge Data Store is fully initialized and running for the first time.</p>

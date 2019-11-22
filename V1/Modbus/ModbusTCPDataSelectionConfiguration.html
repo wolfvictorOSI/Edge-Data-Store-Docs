@@ -86,7 +86,7 @@
 <li>Use any <a class="xref" href="../Administration/ManagementTools.html">tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection/</code>.
 Example using cURL (run this command from the same directory where the file is located):</li>
 </ol>
-<pre><code class="lang-bash">curl -v -d &quot;@DataSelection.config.json&quot; -H &quot;Content-Type: application/json&quot; -X POST &quot;http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection&quot;
+<pre><code class="lang-bash">curl -v -d &quot;@DataSelection.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection&quot;
 </code></pre><h2 id="modbus-tcp-data-selection-schema">Modbus TCP data selection schema</h2>
 <p>The following table defines the basic behavior of the <em>Modbus_DataSelection_schema.json</em> file.</p>
 <table>

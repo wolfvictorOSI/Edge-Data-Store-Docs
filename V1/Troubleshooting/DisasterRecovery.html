@@ -69,12 +69,10 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="disasterRecovery">
-
-<p>#</p>
 <h1 id="edge-data-store">Edge Data Store</h1>
+
 <p><em>Disaster Recovery Process Guidelines</em></p>
 <p><em>(Windows and Linux Systems)</em></p>
-<p>#</p>
 <h1 id="intro">Intro</h1>
 <p>This topic provides procedures for creating a backup of Edge Data Store stream data and configuration files, moving them to a new system, and then restoring the back up files onto the new system. Procedures are provided for Windows and Linux systems.</p>
 <p>Prequisite:  This topic does not provide instruction for backing up or restoring credentials. All credentials are encrypted for security purposes, so they cannot be copied or transferred. After the new system has had the storage and configuration files copied over, and the service has started, you will need to re-enter the credentials for the system using API calls. After updating, restart the Edge Data Store service. The new edge device will be running as the previous device, and will contain all the data up to the point the previous device went down.</p>
@@ -111,7 +109,7 @@
 <p>Prerequisite: Root access on the Linux device</p>
 <ol>
 <li><p>If your device is still able to boot, verify that Edge Data Store service has stopped, using the following command: </p>
-<pre><code>_sudo systemctl stop osisoft.edgedatastore_
+<pre><code>sudo systemctl stop osisoft.edgedatastore
 </code></pre></li>
 <li><p>Locate the storage and configuration files.</p>
 <p> <strong>Note:</strong> Linux storage and configuration files should be in the following locations:
@@ -126,7 +124,7 @@
 <p>Once the new hardware has replaced the previous system and has been installed with Edge Data Store, the new system will have a default configuration. </p>
 <ol>
 <li><p>Stop the Edge Data Store service using the following command:</p>
-<pre><code>_sudo systemctl stop osisoft.edgedatastore_
+<pre><code>sudo systemctl stop osisoft.edgedatastore
 </code></pre></li>
 <li><p>Once that service has stopped, navigate to the /usr/share/OSIsoft/EdgeDataStore directory and extract your zip or tar file in that directory again using WinSCP, SFTP, or external device.</p>
 </li>
@@ -137,10 +135,10 @@
 <li>Copy or unzip the backup storage and configuration files into the EdgeDataStore directory.</li>
 <li>Update the ownership of the 2 directories to <em>edgedatastore</em> for the user and group, if they do not match <em>edgedatastore</em>. </li>
 <li><p>Start the Edge Data Store service with the following command:</p>
-<pre><code>_sudo systemctl start osisoft.edgedatastore_
+<pre><code>sudo systemctl start osisoft.edgedatastore
 </code></pre></li>
 <li><p>Verify that Edge Data Store is running with the following command:</p>
-<pre><code>_sudo systemctl status osisoft.edgedatastore_
+<pre><code>sudo systemctl status osisoft.edgedatastore
 </code></pre><p><strong>Note:</strong> Default directory permissions are set to 755, and each subsequent file is 644. If you do not use tar it is possible to have permission issues with the recovery files. Tar matches via string name rather than the account ID/UID.</p>
 </li>
 </ol>

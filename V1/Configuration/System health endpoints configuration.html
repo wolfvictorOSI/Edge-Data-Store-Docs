@@ -85,7 +85,7 @@ receiving health messages. To enable this functionality, you must configure Heal
 <li>Use any <a class="xref" href="../Administration/ManagementTools.html">tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/System/HealthEndpoints</code>.
 Example using cURL (run this command from the same directory where the file is located):</li>
 </ol>
-<pre><code class="lang-bash">curl -v -d &quot;@System_HealthEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; -X POST http://localhost:5590/api/v1/configuration/System/HealthEndpoints
+<pre><code class="lang-bash">curl -v -d &quot;@System_HealthEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; http://localhost:5590/api/v1/configuration/System/HealthEndpoints
 </code></pre><h2 id="system-health-endpoints-schema">System health endpoints schema</h2>
 <p>The following table defines the basic behavior of the <em>System_HealthEndpoints.config.json</em> file.</p>
 <table>
