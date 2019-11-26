@@ -141,8 +141,7 @@ It is located in:</p>
 </code></pre><pre><code class="lang-bash">curl -i -d &quot;@Component_Logging.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging
 </code></pre><p>&lt;ComponentId&gt; is the ComponentId of the adapter or Storage.</p>
 <p>On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. </p>
-<h3 id="note"><strong>Note:</strong></h3>
-<p>If you do not specify all the parameters while changing the configuration, the specified parameters will be updated while the unspecified parameters will revert to the default schema values. </p>
+<p><strong>Note:</strong>  If you do not specify all the parameters while changing the configuration, the specified parameters will be updated while the unspecified parameters will revert to the default schema values.</p>
 </article>
           </div>
           

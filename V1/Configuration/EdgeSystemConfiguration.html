@@ -83,11 +83,11 @@
 </code></pre><p>Allowable ports are in the range of 1024-65535. </p>
 <p>Before you change the default, ensure that no other service or application on the computer running the EdgeDataStore is using that port - only one application or service can use a port. If you change the port number through the REST API, you must restart Edge Data Store.</p>
 <ol>
-<li>Save the JSON containing the new port number in the JSON format above to a file named <em>EdgePort.json</em> and run the following script:</li>
-</ol>
+<li><p>Save the JSON containing the new port number in the JSON format above to a file named <em>EdgePort.json</em> and run the following script:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@EdgePort.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/system/port
-</code></pre><ol>
-<li>After the REST command completes, restart Edge Data Store for the change to take effect.</li>
+</code></pre></li>
+<li><p>After the REST command completes, restart Edge Data Store for the change to take effect.</p>
+</li>
 </ol>
 <h3 id="configure-edge-data-store-components">Configure Edge Data Store components</h3>
 <p>The default <em>System_Components.json</em> file for the System component is the following. The Storage component is required for this initial release for Edge Data Store to run. With later releases of Edge Data Store, the storage component may not be required.</p>
@@ -99,19 +99,20 @@
 ]
 </code></pre><p> You can add additional Modbus TCP and OPC UA components if you want, but only a single Storage component is supported. </p>
 <ol>
-<li>To add a new component, in this example a Modbus TCP EDS adapter, create the following JSON. </li>
-</ol>
-<p><strong>Note:</strong> A unique ComponentId is necessary for each component in the system. This example uses the ComponentId Modbus1 since it is the first Modbus TCP EDS adapter:</p>
+<li><p>To add a new component, in this example a Modbus TCP EDS adapter, create the following JSON. </p>
+<p><strong>Note:</strong> A unique ComponentId is necessary for each component in the system. This example uses the ComponentId Modbus1 since it is   the first Modbus TCP EDS adapter:</p>
 <pre><code class="lang-json"> {
    &quot;ComponentId&quot;: &quot;Modbus1&quot;,
    &quot;ComponentType&quot;: &quot;Modbus&quot;
  }
-</code></pre><ol>
-<li>Save the JSON in a file named <em>AddComponent.json</em>. </li>
-<li>From the same directory where the file exists, run the following curl script:</li>
-</ol>
+</code></pre></li>
+<li><p>Save the JSON in a file named <em>AddComponent.json</em>. </p>
+</li>
+<li><p>From the same directory where the file exists, run the following curl script:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@AddComponent.json&quot; -H &quot;Content-Type: application/json&quot; http://localhost:5590/api/v1/configuration/system/components
-</code></pre><p>After the curl command completes successfully, you can configure or use the new component.</p>
+</code></pre></li>
+</ol>
+<p>After the curl command completes successfully, you can configure or use the new component.</p>
 <h2 id="entire-edge-data-store-configuration">Entire Edge Data Store configuration</h2>
 <h3 id="configure-minimum-edge-data-store">Configure minimum Edge Data Store</h3>
 <p>The following JSON file represents minimal configuration of an Edge Data Store. There are no Modbus TCP or OPC UA components, and the Storage component configurations are set to the default. If you configure a system with this JSON file, any existing Modbus TCP or OPC UA components will be disabled and removed. No storage data will be deleted or modified, and OMF and SDS data access will not be impacted.</p>
