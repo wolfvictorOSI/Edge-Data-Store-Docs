@@ -28,9 +28,9 @@ Before you change the default, ensure that no other service or application on th
 
 1. Save the JSON containing the new port number in the JSON format above to a file named _EdgePort.json_ and run the following script:
 
-```bash
-curl -i -d "@EdgePort.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/system/port
-```
+  ```bash
+  curl -i -d "@EdgePort.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/system/port
+  ```
 
 2. After the REST command completes, restart Edge Data Store for the change to take effect.
 
@@ -51,21 +51,21 @@ The default _System_Components.json_ file for the System component is the follow
 
 1. To add a new component, in this example a Modbus TCP EDS adapter, create the following JSON. 
 
-**Note:** A unique ComponentId is necessary for each component in the system. This example uses the ComponentId Modbus1 since it is the first Modbus TCP EDS adapter:
+  **Note:** A unique ComponentId is necessary for each component in the system. This example uses the ComponentId Modbus1 since it is   the first Modbus TCP EDS adapter:
 
- ```json
-  {
-    "ComponentId": "Modbus1",
-    "ComponentType": "Modbus"
-  }
- ```
+   ```json
+    {
+      "ComponentId": "Modbus1",
+      "ComponentType": "Modbus"
+    }
+  ```
 
 2. Save the JSON in a file named _AddComponent.json_. 
 3. From the same directory where the file exists, run the following curl script:
 
-```bash
-curl -i -d "@AddComponent.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/system/components
-```
+  ```bash
+  curl -i -d "@AddComponent.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/system/components
+  ```
 
 After the curl command completes successfully, you can configure or use the new component.
 
