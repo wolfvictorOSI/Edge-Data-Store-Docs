@@ -1,0 +1,5 @@
+---
+uid: VerifyInstallation
+---
+
+# Verify installation
