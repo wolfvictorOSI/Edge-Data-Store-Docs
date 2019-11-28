@@ -13,6 +13,9 @@ references:
 - uid: commandLineWindowsQuickStart
   name: Edge Data Store command line quick start - Windows
   href: V1/Overview/CommandLineQuickStartWindows.html
+- uid: Configuration
+  name: Configuration
+  href: V1/Configuration/Configuration.html
 - uid: configurationSchemaList
   name: Configuration schemas
   href: V1/Configuration/Schemas/ConfigurationSchemaList.html
@@ -22,6 +25,9 @@ references:
 - uid: edge_system_schema
   name: Sample Edge Data Store configuration
   href: V1/Configuration/Schemas/EdgeSystem_schema.html
+- uid: EdgecmdCommands
+  name: Edgecmd commands
+  href: V1/Reference/Edgecmd%20commands.html
 - uid: EdgeDataStoreAdministration
   name: Edge Data Store administration
   href: V1/Administration/Administration.html
@@ -35,7 +41,7 @@ references:
   name: Edge Data Store health
   href: V1/Health/Health.html
 - uid: EdgeDataStoreOverview
-  name: Edge Data Store overview
+  name: Overview
   href: V1/Overview/EdgeSystemOverview.html
 - uid: edgeDocker
   name: Using Edge Data Store with Docker
@@ -52,6 +58,12 @@ references:
 - uid: egress
   name: Egress from Edge Data Store
   href: V1/Egress/Egress.html
+- uid: Egress execution details
+  name: Egress execution details
+  href: V1/Egress/Egress%20execution%20details.html
+- uid: HealthEndpointsConfiguration
+  name: Health endpoints configuration
+  href: V1/Configuration/System%20health%20endpoints%20configuration.html
 - uid: index
   name: OSIsoft Edge Data Store
   href: V1/index.html
@@ -136,18 +148,36 @@ references:
 - uid: opcUaQuickStart
   name: Edge OPC UA quick start
   href: V1/Overview/OpcUaQuickStart.html
+- uid: Performance
+  name: Performance
+  href: V1/Overview/Performance.html
 - uid: piEgressQuickStart
   name: PI System (PI Web API) egress quick start
   href: V1/Overview/PIEgressQuickStart.html
+- uid: Prepare egress destinations
+  name: Prepare egress destinations
+  href: V1/Egress/Prepare%20egress%20destinations.html
 - uid: PrinciplesOfOperationModbus
   name: Principles of operation
   href: V1/Modbus/PrinciplesOfOperationModbus.html
 - uid: PrinciplesOfOperationOPCUA.md
   name: Principles of operation
   href: V1/OpcUa/PrinciplesOfOperationOPCUA.html
+- uid: Reference
+  name: Reference
+  href: V1/Reference/Reference.html
 - uid: releaseNotes
   name: Edge Data Store release notes
   href: V1/ReleaseNotes/ReleaseNotes.html
+- uid: ResetEdgeDataStore
+  name: Reset Edge Data Store
+  href: V1/Administration/Reset%20Edge%20Data%20Store.html
+- uid: ResetTheStorageComponent
+  name: Reset the Storage component
+  href: V1/Administration/Reset%20the%20Storage%20component.html
+- uid: RestCommands
+  name: Rest commands
+  href: V1/Reference/REST%20commands.html
 - uid: scalePerformance
   name: Edge Data Store design considerations
   href: V1/Design/ScalePerformance.html
@@ -199,6 +229,9 @@ references:
 - uid: security
   name: Edge Data Store security overview
   href: V1/Security/SecurityOverview.html
+- uid: StopAndStartAnEDSAdapter
+  name: Stop and start an EDS adapter
+  href: V1/Administration/Stop%20and%20start%20an%20EDS%20adapter.html
 - uid: storage
   name: Edge Data Store storage component
   href: V1/Configuration/Storage.html
@@ -241,18 +274,24 @@ references:
 - uid: SystemComponentsConfiguration
   name: System components configuration
   href: V1/Configuration/System%20components%20configuration.html
-- uid: SystemHealthEndpointsConfiguration
-  name: System health endpoints configuration
-  href: V1/Configuration/System%20health%20endpoints%20configuration.html
 - uid: SystemPortConfiguration
   name: System port configuration
   href: V1/Configuration/System%20port%20configuration.html
+- uid: SystemRequirements
+  name: System requirements
+  href: V1/Installation/System%20Requirements.html
 - uid: troubleShooting
   name: Edge Data Store troubleshooting
   href: V1/Troubleshooting/Troubleshooting.html
+- uid: UninstallEdgeDataStore
+  name: Uninstall Edge Data Store
+  href: V1/Installation/Uninstall%20Edge%20Data%20Store.html
 - uid: unitsOfMeasure
   name: Units of measure
   href: V1/SDS/Units_of_Measure.html
+- uid: VerifyInstallation
+  name: Verify installation
+  href: V1/Installation/Verify%20installation.html
 - uid: visualizationQuickStart
   name: Edge Data Store visualization quick start
   href: V1/Overview/VisualizationQuickStart.html
