@@ -58,7 +58,7 @@ You must have administrative privileges to install the software, for example roo
 - Open a terminal window and type:
 
 ```bash
-sudo apt install ./EdgeDataStore_linux-<either x64 or arm depending upon processor>.deb
+sudo apt install ./EdgeDataStore_linux-<either x64, arm64, or arm, depending upon processor>.deb
 ```
 
 ![alt text](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/LinuxInstall1.jpg "Linux Installation")
