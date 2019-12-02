@@ -22,7 +22,7 @@ uid: UninstallEdgeDataStore
     sudo apt remove osisoft.EdgeDataStore
     ```
 
-    **Note:** Running this command will not delete the data, configuration, or log files.
+    > **Note:** Running this command will not delete the data, configuration, or log files.
 
 2. Optional: To remove data, configuration, and log files, remove the directory _/usr/share/OSIsoft/EdgeDataStore/_.
 
