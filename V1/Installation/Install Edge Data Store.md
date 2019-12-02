@@ -31,3 +31,36 @@ You must have administrative privileges to run the installer.
 5. Click **Next** > **Install**.
 When the install finishes, Edge Data Store will be installed and running on the port specified.
 6. Click **Finish**.
+
+## Debian 9 or later Linux (Ubuntu  Raspberry PI, BeagleBone, other Debian based Linux distros)
+
+You must have administrative privileges to install the software, for example root or sudo privilege. The following examples assume a user with permission to use sudo.
+
+1. Open a terminal window and type:
+
+    ```bash
+    sudo apt install ./EdgeDataStore_linux-<either x64 or arm depending upon processor>.deb
+    ```
+
+    ![alt text](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/LinuxInstall1.jpg "Linux Installation")
+
+    A validation check for prerequisites will be completed. If the Linux OS is up to date, the install will succeed.
+
+    If the install fails, run the following commands from the terminal window and try the install again:
+
+    ```bash
+    sudo apt update
+    sudo apt upgrade
+    ```
+
+    After the check for prerequisites succeeds, you will be prompted if you want to change the default port (5590).
+
+2. Optional: Type the port value you want and press Enter. If 5590 is acceptable, press Enter.
+
+    **Note** If you specify an invalid value for the port, the install will proceed with the default value of 5590.
+
+    You will then be prompted if you want to install a Modbus TCP or OPC UA EDS adapter in addition to the default Storage component. The default is not to install them. You can add them after the installation is complete if you want.
+
+3. If you want to install neither EDS adapter, press enter to proceed.
+
+    The install will complete and Edge Data Store will be running on your device.
