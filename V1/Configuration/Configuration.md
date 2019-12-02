@@ -12,3 +12,5 @@ You can configure the following facets of Edge Data Store:
 - [Diagnostics](xref:EdgeDataStoreDiagnostics)
 - [Health endpoints](xref:SystemHealthEndpointsConfiguration)
 - [Logging](xref:loggingConfiguration)
+
+For more information on which tools to use to configure EDS facets, see [Configuration tools](xref:managementTools)
