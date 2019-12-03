@@ -35,7 +35,7 @@ references:
   name: Edge Data Store configuration
   href: V1/Configuration/EdgeSystemConfiguration.html
 - uid: EdgeDataStoreDiagnostics
-  name: Edge Data Store diagnostics
+  name: Diagnostics configuration
   href: V1/Diagnostics/Diagnostics.html
 - uid: EdgeDataStoreHealth
   name: Edge Data Store health
@@ -56,7 +56,7 @@ references:
   name: Edge Data Store OPC UA adapter
   href: V1/Configuration/EDSOPCUAAdapter.html
 - uid: egress
-  name: Egress from Edge Data Store
+  name: Data egress configuration
   href: V1/Egress/Egress.html
 - uid: Egress execution details
   name: Egress execution details
@@ -68,8 +68,11 @@ references:
   name: OSIsoft Edge Data Store
   href: V1/index.html
 - uid: installationOverview
-  name: Installation of Edge Data Store
+  name: Installation
   href: V1/Installation/InstallationOverview.html
+- uid: InstallEdgeDataStore
+  name: Install Edge Data Store
+  href: V1/Installation/Install%20Edge%20Data%20Store.html
 - uid: linuxWindows
   name: Linux and Windows platform differences
   href: V1/LinuxWindows/LinuxWindows.html
@@ -274,6 +277,9 @@ references:
 - uid: SystemComponentsConfiguration
   name: System components configuration
   href: V1/Configuration/System%20components%20configuration.html
+- uid: SystemConfiguration
+  name: System configuration
+  href: V1/Configuration/System%20configuration.html
 - uid: SystemPortConfiguration
   name: System port configuration
   href: V1/Configuration/System%20port%20configuration.html

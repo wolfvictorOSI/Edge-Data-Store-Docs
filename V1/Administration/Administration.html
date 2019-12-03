@@ -71,46 +71,12 @@
             <article class="content wrap" id="_content" data-uid="EdgeDataStoreAdministration">
 <h1 id="edge-data-store-administration">Edge Data Store administration</h1>
 
-<p>Edge Data Store provides a number of administration level functions.</p>
-<h2 id="reset-edge-data-store">Reset Edge Data Store</h2>
-<p>Edge Data Store provides a method of performing a complete reset of the product. When you perform a reset, all event data and Edge Data Store configuration is deleted, and the product is restarted.</p>
-<p><strong>Note:</strong> All configuration and stored data will be lost as a result of performing this action.</p>
-<p>To reset Edge Data Store, use any REST client and make a request using the following:</p>
-<pre><code class="lang-http">Method: POST
-Endpoint: http://localhost:5590/api/v1/administration/System/Reset
-Header: Content-Type application/json
-</code></pre><p>Example using cURL:</p>
-<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/System/Reset
-</code></pre><p>An HTTP status 204 message indicates success.</p>
-<h2 id="reset-the-edge-storage-component">Reset the Edge Storage component</h2>
-<p>Edge Data Store provides a method by which you can delete and reset all event and configuration data related to the Edge Data Store component, after which the product will be restarted.</p>
-<p>To reset the Storage component, use any REST client and make a request using the following:</p>
-<pre><code class="lang-http">Method: POST
-Endpoint: http://localhost:5590/api/v1/administration/Storage/Reset
-Header: Content-Type application/json
-</code></pre><p>Example using cURL:</p>
-<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/Storage/Reset
-</code></pre><p>An HTTP status 204 message indicates success.</p>
-<h2 id="stop-and-start-an-edge-data-store-adapter">Stop and start an Edge Data Store adapter</h2>
-<p>Edge Data Store provides the ability to stop and start EDS adapters. By default, when Edge Data Store starts, all currently configured EDS adapters are started and remain running until the product shuts down.</p>
-<h3 id="stop-an-eds-adapter">Stop an EDS adapter</h3>
-<p>To stop an individual EDS adapter, use any REST client and make a request using the following:</p>
-<pre><code class="lang-http">Method: POST
-Endpoint: http://localhost:5590/api/v1/administration/EDS adapterId/Stop
-Header: Content-Type application/json
-</code></pre><p>Example using cURL:</p>
-<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/EDS adapterId/Stop
-</code></pre><p><strong>Note:</strong> Replace <em>EDS adapterId</em> with the id of the EDS adapter you want to stop.</p>
-<p>An HTTP status 204 message indicates success.</p>
-<h3 id="start-an-eds-adapter">Start an EDS adapter</h3>
-<p>To start an individual EDS adapter, use any REST client and make a request using the following:</p>
-<pre><code class="lang-http">Method: POST
-Endpoint: http://localhost:5590/api/v1/administration/EDS adapterId/Start
-Header: Content-Type application/json
-</code></pre><p>Example using cURL:</p>
-<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/EDS adapterId/Start
-</code></pre><p><strong>Note:</strong> Replace <em>EDS adapterId</em> with the id of the EDS adapter you want to start.</p>
-<p>An HTTP status 204 message indicates success. </p>
+<p>Edge Data Store provides the following administration level functions:</p>
+<ul>
+<li><a class="xref" href="Reset%20Edge%20Data%20Store.html">Reset Edge Data Store</a></li>
+<li><a class="xref" href="Reset%20the%20Storage%20component.html">Reset the Storage component</a></li>
+<li><a class="xref" href="Stop%20and%20start%20an%20EDS%20adapter.html">Stop and start and EDS adapter</a></li>
+</ul>
 </article>
           </div>
           

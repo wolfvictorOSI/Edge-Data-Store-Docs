@@ -71,6 +71,17 @@
             <article class="content wrap" id="_content" data-uid="ResetTheStorageComponent">
 <h1 id="reset-the-storage-component">Reset the Storage component</h1>
 
+<p>Edge Data Store provides a method by which you can delete and reset all event and configuration data related to the Edge Data Store component, after which the product will be restarted.</p>
+<ul>
+<li><p>To reset the Storage component, use any REST client and make a request using the following:</p>
+<pre><code class="lang-http">Method: POST
+Endpoint: http://localhost:5590/api/v1/administration/Storage/Reset
+Header: Content-Type application/json
+</code></pre><p>  Example using cURL:</p>
+<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/Storage/Reset
+</code></pre><p>  An HTTP status 204 message indicates success.</p>
+</li>
+</ul>
 </article>
           </div>
           
