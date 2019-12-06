@@ -8,9 +8,13 @@ The following tables gives an overview of available edgecmd commands that you ca
 
 ## Edge  Data Store
 
-| edgecmd command | Example | Description |
-|-----------------|---------|-------------|
-|`Configuration System` | | Displays the current System configuration.|
-|`Help`| | Displays instructions on how to use the edgecmd utility.|
-|`Configuration System Components`| |Displays which components are currently configured on Edge Data Store. |
-|`edgecmd Configuration System Components componentId=<componentId> componentType=<componentType>` | | Registers a new component |
+| edgecmd command | Description | Examples |
+|-----------------|-------------|----------|
+|`Help`| Display instructions on how to use a certain component and facet of Edge Data Store. | `Help System`<br>**or**<br> `Help System Port`|
+|`Configuration System Components` |Display the components that are currently configured. | 
+|`Configuration System Components componentId=<componentId> componentType=<componentType>` | Add a new component  | `Configuration System Components componentId=Modbus1 componentType=Modbus`|
+|`Configuration <componentId> DataSource` | Configure the data source for either the Modbus TCP EDS adapter or the OPC UA EDS adapter | For examples, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration) and [Modbus TCP data source configuration](xref:ModbusTCPDataSourceConfiguration)|
+|`Configuration <componentId> DataSelection` | Configure the data selection for either the Modbus TCP EDS adapter or the OPC UA EDS adapter | For examples, see [OPC UA data selection configuration](xref:OPCUADataSelectionConfiguration) and [Modbus TCP data selection configuration](xref:ModbusTCPDataSelectionConfiguration)|
+|`Configuration <componentId> Logging` | Configure the data source for either the Modbus TCP EDS adapter or the OPC UA EDS adapter | For examples, see [Logging configuration](xref:LoggingConfiguration)|
+|`Configuration System Components id=<componentId> delete` |Delete a component | `Configuration System Components id=Modbus1 delete` |
+
