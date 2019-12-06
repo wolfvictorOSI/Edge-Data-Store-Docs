@@ -32,21 +32,35 @@ You must have administrative privileges to run the installer.
 When the install finishes, Edge Data Store will be installed and running on the port specified.
 6. Click **Finish**.
 
-## Debian 9 or later Linux (Ubuntu  Raspberry PI, BeagleBone, other Debian based Linux distros)
+## Linux
 
 You must have administrative privileges to install the software, for example root or sudo privilege. The following examples assume a user with permission to use sudo.
 
-1. Open a terminal window and type:
+1. Open a terminal window and type the sudo command for the installation kit appropriate to your operating system and processor:
+
+    **Debian 9 or later (Intel/AMD 64 bit processors)**
 
     ```bash
-    sudo apt install ./EdgeDataStore_linux-<either x64 or arm depending upon processor>.deb
+    sudo apt install ./EdgeDataStore_linux-x64.deb
+    ```
+
+    **Debian 9 or later (ARM32, Raspberry PI 2,3,4: Raspbian, BeagleBone)**
+
+    ```bash
+    sudo apt install ./EdgeDataStore_linux-arm.deb
     ```
 
     ![alt text](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/LinuxInstall1.jpg "Linux Installation")
 
+    **Debian 9 or later (Raspberry PI 3,4: Ubuntu ARM64 Server, Google Coral Dev Board, Nvidia Nano Jetson)**
+
+    ```bash
+    sudo apt install ./EdgeDataStore_linux-arm64.deb
+    ```
+
     A validation check for prerequisites will be completed. If the Linux OS is up to date, the install will succeed.
 
-    If the install fails, run the following commands from the terminal window and try the install again:
+2. If the install fails, run the following commands from the terminal window and try the install again:
 
     ```bash
     sudo apt update
@@ -55,12 +69,12 @@ You must have administrative privileges to install the software, for example roo
 
     After the check for prerequisites succeeds, you will be prompted if you want to change the default port (5590).
 
-2. Optional: Type the port value you want and press Enter. If 5590 is acceptable, press Enter.
+3. Optional: Type the port value you want and press Enter. If 5590 is acceptable, press Enter.
 
     > **Note** If you specify an invalid value for the port, the install will proceed with the default value of 5590.
 
     You will then be prompted if you want to install a Modbus TCP or OPC UA EDS adapter in addition to the default Storage component. The default is not to install them. You can add them after the installation is complete if you want.
 
-3. If you want to install neither EDS adapter, press enter to proceed.
+4. If you want to install neither EDS adapter, press enter to proceed.
 
     The install will complete and Edge Data Store will be running on your device.
