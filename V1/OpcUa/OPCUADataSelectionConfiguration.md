@@ -2,7 +2,7 @@
 uid: OPCUADataSelectionConfiguration
 ---
 
-# OPC UA data selection configuration
+# Data selection configuration
 
 In addition to the data source configuration, you need to provide a data selection configuration to specify the data you want the OPC UA EDS adapter to collect from the data sources.
 
