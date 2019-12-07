@@ -2,7 +2,7 @@
 uid: disasterRecovery
 ---
 
-# Edge Data Store
+# Disaster Recovery
 
 _Disaster Recovery Process Guidelines_
 
