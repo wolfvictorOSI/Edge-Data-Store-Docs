@@ -2,7 +2,7 @@
 uid: ModbusTCPDataSourceConfiguration
 ---
 
-# Modbus TCP data source configuration
+# Data source configuration
 
 To use the Modbus TCP EDS adapter, you must configure it for the Modbus TCP data source from which it will be polling data.
 
