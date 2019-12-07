@@ -4,7 +4,7 @@ uid: UninstallEdgeDataStore
 
 # Uninstall Edge Data Store
 
-## Windows uninstallation
+## Uninstall from Windows
 
 1. To remove the EdgeDataStore program files from a computer, use the Windows Control Panel uninstall application process.
 
@@ -14,7 +14,7 @@ uid: UninstallEdgeDataStore
 
     This will result in deletion of all data stored in the Edge Storage component in addition to configuration and log files.
 
-## Linux uninstallation
+## Uninstall from Linux
 
 1. To remove Edge Data Store software from a Linux computer, open a terminal window and run the following command:
 
