@@ -2,7 +2,7 @@
 uid: managementTools
 ---
 
-# Edge Data Store management tools
+# Configuration tools
 
 ## Command Line configuration
 
