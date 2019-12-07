@@ -2,7 +2,7 @@
 uid: OPCUAAdapterSecurityConfiguration
 ---
 
-# OPC UA EDS adapter security configuration
+# Adapter security
 
 The OPC UA security standard is concerned with the authentication of client and server applications, the authentication of users and confidentiality of their communication. As the security model relies heavily on Transport Level Security (TLS) to establish a secure communication link with an OPC UA server, each client, including the EDS adapter, must have a digital certificate deployed and configured. Certificates uniquely identify client applications and machines on servers, and allow for creation of a secure communication link when trusted on both sides.
 
