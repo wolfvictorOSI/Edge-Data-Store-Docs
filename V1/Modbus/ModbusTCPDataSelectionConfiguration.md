@@ -2,7 +2,7 @@
 uid: ModbusTCPDataSelectionConfiguration
 ---
 
-# Modbus TCP data selection configuration
+# Data selection configuration
 
 Once a data source is configured for a Modbus TCP instance, you must configure which data is to be collected from the Modbus TCP slave device.
 
