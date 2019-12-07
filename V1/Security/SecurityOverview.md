@@ -1,7 +1,7 @@
 ---
 uid: security
 ---
-# Edge Data Store security overview
+# Security
 
 ## EDS adapter
 ### REST APIs
