@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Administration/ManagementTools.html",
-          "hash": "qmuwWXwOYEqsF3F1fw8yeA=="
+          "hash": "qC1cjKFEw7cjhJL3DTrZBA=="
         }
       },
       "is_incremental": false,
@@ -526,7 +526,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/DataIngress/EDSDataIngress.html",
-          "hash": "LQHWESFcF0Qnkew6qB93iw=="
+          "hash": "QoFALRPLQTiX1TbK03sqLQ=="
         }
       },
       "is_incremental": false,
@@ -538,7 +538,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Design/ScalePerformance.html",
-          "hash": "gvkp7GjdfNk33h3Cx+mnXA=="
+          "hash": "RhuK0olAOpLOJMPMiDhiag=="
         }
       },
       "is_incremental": false,
@@ -562,7 +562,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Docker/EdgeDocker.html",
-          "hash": "JLFpQTcrL/g02UZex6hD/w=="
+          "hash": "fDB9ZwYZbMBtyy9ZflN9cg=="
         }
       },
       "is_incremental": false,
@@ -622,7 +622,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Installation/Install Edge Data Store.html",
-          "hash": "PV1K0efZlXzFQUkgUJ8zYg=="
+          "hash": "CBiivRju4NtgRyhqKvLTBw=="
         }
       },
       "is_incremental": false,
@@ -634,7 +634,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Installation/InstallationOverview.html",
-          "hash": "wtmF6lU4ldkWo1j5XC9yNA=="
+          "hash": "4VxJpqjQbXuO3DHmFnki+Q=="
         }
       },
       "is_incremental": false,
@@ -646,7 +646,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Installation/System Requirements.html",
-          "hash": "vbla1uAUL17cFirZo7NARg=="
+          "hash": "lbFYu0jtX4nNDxv/fck5bA=="
         }
       },
       "is_incremental": false,
@@ -658,7 +658,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Installation/Uninstall Edge Data Store.html",
-          "hash": "wHu9bMHB8M4ZyFnBb92u9w=="
+          "hash": "/Pnn3JsrM4Xy3yr/XgsKjw=="
         }
       },
       "is_incremental": false,
@@ -706,7 +706,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Modbus/ModbusTCPAdapterSecurity.html",
-          "hash": "3nhiyAqWPzCWIpdsaYBPBg=="
+          "hash": "M80MNELLmR/yfd9gj/1TUw=="
         }
       },
       "is_incremental": false,
@@ -718,7 +718,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Modbus/ModbusTCPDataSelectionConfiguration.html",
-          "hash": "+LioL2EHoqNyyce7j9ErwQ=="
+          "hash": "FOdWz5Df5NArIUJCa3mwfA=="
         }
       },
       "is_incremental": false,
@@ -730,7 +730,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Modbus/ModbusTCPDataSourceConfiguration.html",
-          "hash": "IPQQns1+Tfng9g0ODGLXrQ=="
+          "hash": "T0tYDR+An5j4YsTvhLF08w=="
         }
       },
       "is_incremental": false,
@@ -766,7 +766,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/OMF/OMFOverview.html",
-          "hash": "T4H1HBWQ7WFOzRp51xwwRA=="
+          "hash": "qESpZLQ11/noyBxHvclqJw=="
         }
       },
       "is_incremental": false,
@@ -778,7 +778,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/OpcUa/OPCUAAdapterSecurityConfiguration.html",
-          "hash": "XV3IQibEOV+83sDSJ4EEDA=="
+          "hash": "eYxi32Tl48PDtB8yaDnU/Q=="
         }
       },
       "is_incremental": false,
@@ -790,7 +790,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/OpcUa/OPCUADataSelectionConfiguration.html",
-          "hash": "KRrF6yQBvhJ2LoNTTmmN7A=="
+          "hash": "8yQwpRNOzMD5viWVNfFylA=="
         }
       },
       "is_incremental": false,
@@ -802,7 +802,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/OpcUa/OPCUADataSourceConfiguration.html",
-          "hash": "80Y/3PHABKN+snMS74Sntg=="
+          "hash": "bDb40VnbwsYq4UcCci+Esw=="
         }
       },
       "is_incremental": false,
@@ -814,7 +814,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/OpcUa/OpcUaDataSelection.html",
-          "hash": "AVJZmzdlVND4lI8sULp3Ew=="
+          "hash": "3j1d14OhUKwQYhrPiZ9P9A=="
         }
       },
       "is_incremental": false,
@@ -898,7 +898,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Overview/EdgeSystemOverview.html",
-          "hash": "rUG/LFsMYhlRGuf7iQeOTg=="
+          "hash": "6CQTE8wX7Ae2CkT62T0kFA=="
         }
       },
       "is_incremental": false,
@@ -978,6 +978,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "V1/Overview/Quick start guides.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/Quick start guides.html",
+          "hash": "V1tHc/RMwztCWmqTr+UXMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "V1/Overview/SDSQuickStart.md",
       "output": {
         ".html": {
@@ -1006,7 +1018,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Reference/Edgecmd commands.html",
-          "hash": "6fPZiPjM6eX91vxLguZbYQ=="
+          "hash": "9dw2ov+iD9MOa4zcuQD1QQ=="
         }
       },
       "is_incremental": false,
@@ -1066,7 +1078,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/SDS/Filter_Expressions.html",
-          "hash": "Y2qMklXyNYhSSj6nnV7TQg=="
+          "hash": "EC+BAyCFKh4zjQpwtXoJYg=="
         }
       },
       "is_incremental": false,
@@ -1168,7 +1180,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/SDS/SequentialDataStore.html",
-          "hash": "QIzeJXMr4wy9w886+iQllA=="
+          "hash": "ZYmM8yp1QZhJ/0OdEVeDjA=="
         }
       },
       "is_incremental": false,
@@ -1192,7 +1204,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/SDS/Writing_Data.html",
-          "hash": "bHS8+PSUdx9nZwIeCwtDOQ=="
+          "hash": "ujsKdbn+p7i5YCd6Nbmegg=="
         }
       },
       "is_incremental": false,
@@ -1204,7 +1216,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/SDS/Writing_Data_API.html",
-          "hash": "rYvQQoWFamHPxbUTlmsyNg=="
+          "hash": "RjYVhbvTVK/Xs+v8qbJnGQ=="
         }
       },
       "is_incremental": false,
@@ -1240,7 +1252,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Security/SecurityOverview.html",
-          "hash": "JkwRGN69N0ag2S0ykZo52A=="
+          "hash": "qSwhOHMV25Uj8un3rNdTAA=="
         }
       },
       "is_incremental": false,
@@ -1252,7 +1264,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Troubleshooting/DisasterRecovery.html",
-          "hash": "WWJEdNMQsVExsxI8mAMZYg=="
+          "hash": "Cz6mrSB19WlEjz0LjItWPw=="
         }
       },
       "is_incremental": false,
@@ -1267,7 +1279,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Troubleshooting/Troubleshooting.html",
-          "hash": "iDrEF3050yGrZNMqw+K2uA=="
+          "hash": "79/5Ixirh5SJy07SpRCbiQ=="
         }
       },
       "is_incremental": false,
@@ -1558,13 +1570,6 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -1575,7 +1580,14 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 104,
+          "total_file_count": 105,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }

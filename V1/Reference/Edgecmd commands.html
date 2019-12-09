@@ -77,30 +77,45 @@
 <thead>
 <tr>
 <th>edgecmd command</th>
-<th>Example</th>
 <th>Description</th>
+<th>Examples</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Configuration System</code></td>
-<td></td>
-<td>Displays the current System configuration.</td>
-</tr>
-<tr>
 <td><code>Help</code></td>
-<td></td>
-<td>Displays instructions on how to use the edgecmd utility.</td>
+<td>Display instructions on how to use a certain component and facet of Edge Data Store.</td>
+<td><code>Help System</code><br><strong>or</strong><br> <code>Help System Port</code></td>
 </tr>
 <tr>
 <td><code>Configuration System Components</code></td>
+<td>Display the components that are currently configured.</td>
 <td></td>
-<td>Displays which components are currently configured on Edge Data Store.</td>
 </tr>
 <tr>
-<td><code>edgecmd Configuration System Components componentId=&lt;componentId&gt; componentType=&lt;componentType&gt;</code></td>
-<td></td>
-<td>Registers a new component</td>
+<td><code>Configuration System Components componentId=&lt;componentId&gt; componentType=&lt;componentType&gt;</code></td>
+<td>Add a new component</td>
+<td><code>Configuration System Components componentId=Modbus1 componentType=Modbus</code></td>
+</tr>
+<tr>
+<td><code>Configuration &lt;componentId&gt; DataSource</code></td>
+<td>Configure the data source for either the Modbus TCP EDS adapter or the OPC UA EDS adapter</td>
+<td>For examples, see <a class="xref" href="../OpcUa/OPCUADataSourceConfiguration.html">OPC UA data source configuration</a> and <a class="xref" href="../Modbus/ModbusTCPDataSourceConfiguration.html">Modbus TCP data source configuration</a></td>
+</tr>
+<tr>
+<td><code>Configuration &lt;componentId&gt; DataSelection</code></td>
+<td>Configure the data selection for either the Modbus TCP EDS adapter or the OPC UA EDS adapter</td>
+<td>For examples, see <a class="xref" href="../OpcUa/OPCUADataSelectionConfiguration.html">OPC UA data selection configuration</a> and <a class="xref" href="../Modbus/ModbusTCPDataSelectionConfiguration.html">Modbus TCP data selection configuration</a></td>
+</tr>
+<tr>
+<td><code>Configuration &lt;componentId&gt; Logging</code></td>
+<td>Configure the data source for either the Modbus TCP EDS adapter or the OPC UA EDS adapter</td>
+<td>For examples, see <a class="xref" href="../Configuration/Logging%20configuration.html">Logging configuration</a></td>
+</tr>
+<tr>
+<td><code>Configuration System Components id=&lt;componentId&gt; delete</code></td>
+<td>Delete a component</td>
+<td><code>Configuration System Components id=Modbus1 delete</code></td>
 </tr>
 </tbody>
 </table>
