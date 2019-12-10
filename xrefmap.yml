@@ -182,7 +182,7 @@ references:
   name: Reset the Storage component
   href: V1/Administration/Reset%20the%20Storage%20component.html
 - uid: RestCommands
-  name: Rest commands
+  name: REST commands
   href: V1/Reference/REST%20commands.html
 - uid: scalePerformance
   name: Design considerations

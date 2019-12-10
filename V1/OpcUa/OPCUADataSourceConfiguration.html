@@ -175,6 +175,13 @@
 <td>Yes</td>
 <td>Specifies what prefix is used for Stream IDs. Naming convention is StreamIdPrefixNodeId. <strong>Note:</strong> An empty string means no prefix will be added to the Stream IDs. Null value means ComponentID followed by dot character will be added to the stream IDs (example: OpcUa1.NodeId).</td>
 </tr>
+<tr>
+<td><strong>ApplyPrefixToStreamId</strong></td>
+<td>Optional</td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Parameter applied to all data items collected from the data source that have custom stream ID configured. If configured, the adapter will apply the StreamIdPrefix property to all the streams with custom ID configured. The property does not affect any streams with default ID configured</td>
+</tr>
 </tbody>
 </table>
 <h2 id="opc-ua-data-source-example">OPC UA data source example</h2>
