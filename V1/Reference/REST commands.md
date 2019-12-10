@@ -16,8 +16,8 @@ configuration, the request will fail.
 | ----------- | ------ | -------- |
 |Delete and reset all event and configuration data related to the Edge Data Store component | POST | `http://localhost:5590/api/v1/administration/Storage/Reset`|
 |Reset Edge Data Store | POST | `http://localhost:5590/api/v1/administration/System/Reset`|
-|Stop an individual EDS adapter | POST | `http://localhost:5590/api/v1/Administration/EDS adapterId/Stop`|
-| Start an individual EDS adapter | POST | `http://localhost:5590/api/v1/Administration/EDS adapterId/Start` |
+|Stop an individual EDS adapter | POST | `http://localhost:5590/api/v1/administration/EDS adapterId/Stop`|
+| Start an individual EDS adapter | POST | `http://localhost:5590/api/v1/administration/EDS adapterId/Start` |
 
 ## Configuration
 
@@ -87,4 +87,3 @@ configuration, the request will fail.
 | ----------- | ------ | -------- |
 | Create an OMF type <br><br>Create an OMF container<br><br>Write data events to the OMF container  | POST | `http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/`|
 | Create an OMF container | POST | `http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/`|
-| 
