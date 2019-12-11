@@ -10,7 +10,7 @@ uid: InstallEdgeDataStore
 
 You must have administrative privileges to run the installer.
 
-1. To use any of the installers, copy the appropriate file to the file system of the device.
+1. Copy the _EdgeDataStore.msi_ file to the file system of the device.
 2. To start the installer UI, double-click the _EdgeDataStore.msi_ file in Windows Explorer.
 
     Alternatively, you can start the installer from the command line with the following command:
@@ -29,7 +29,9 @@ You must have administrative privileges to run the installer.
     If you omit PORT=nnnn, the default will be used. The UI will start with the port pre-set to the value specified; validity will be checked as mentioned previously, with the install proceeding only when a valid port number is provided. If, however,the "quiet" or "no ui" flag for msiexec is specified, and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
 
 5. Click **Next** > **Install**.
-When the install finishes, Edge Data Store will be installed and running on the port specified.
+
+    When the install finishes, Edge Data Store will be installed and running on the port specified.
+    
 6. Click **Finish**.
 
 ## Linux
