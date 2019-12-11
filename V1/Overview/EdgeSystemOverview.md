@@ -5,7 +5,8 @@ uid: EdgeDataStoreOverview
 # Overview
 
 
-Edge Data Store is an embedded data server that runs on Linux and Windows. It is designed for small devices, and you can install and run it on 64-bit Intel/AMD compatible and 32-bit ARM v7/v8 compatible chips. It offers REST programming, configuration, administrative interfaces, and a command line tool that can be used for configuring and administering EDS.
+Edge Data Store (EDS) is an embedded data server that runs on Linux and Windows. It is designed for small devices, and you can install and run it on 64-bit Intel/AMD compatible and 32-bit ARM v7/v8 compatible chips. It offers REST programming, configuration, administrative interfaces, and a command line tool that you use to configure and administer EDS.
+
 EDS is a supplement to existing OSIsoft products. In this release, it does not offer any built-in visualization or analytic support. However, if you use the REST programming capabilities built into EDS, you can write analytics or visualization programs on either Linux, Windows, or both in a variety of programming languages.
 
 ## Edge Data Store architecture
@@ -31,9 +32,9 @@ Edge Data Store can ingress data in a number of ways. There are two built-in ada
 
 ![EDS OMF Ingress](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOMFIngress.jpg "EDS OMF Ingress")
 
-During installation of Edge Data Store, options are presented to install either an EDS Modbus TCP adapter or an EDS OPC UA adapter, or both. The EDS Modbus and EDS OPC UA adapters require additional configuration of data source and data selection before they can collect data in Edge Data Store. You can use OMF data ingress once Edge Data Store is installed, with no further configuration steps.
+During installation of Edge Data Store, you can choose to install either an EDS Modbus TCP adapter or an EDS OPC UA adapter, or both. The EDS Modbus and EDS OPC UA adapters require additional configuration of data source and data selection before they can collect data in Edge Data Store. You can use OMF data ingress once Edge Data Store is installed, with no further configuration steps.
 
-Edge Data Store is composed of components, and is designed to allow the addition at a later date of additional EDS adapters.
+Edge Data Store is composed of components, and is designed to allow additional EDS adapters at a later point.
 
 
 ## Local data read and write access
