@@ -6,7 +6,7 @@ uid: UninstallEdgeDataStore
 
 ## Uninstall from Windows
 
-1. To remove the EdgeDataStore program files from a computer, use the Windows Control Panel uninstall application process.
+1. To remove the EdgeDataStore program files from a Windows computer, use the Windows Control Panel uninstall application process.
 
     The configuration, data, and log files will not be removed by the uninstallation process.
 
@@ -21,8 +21,6 @@ uid: UninstallEdgeDataStore
     ```bash
     sudo apt remove osisoft.EdgeDataStore
     ```
-
-    > **Note:** Running this command will not delete the data, configuration, or log files.
 
 2. Optional: To remove data, configuration, and log files, remove the directory _/usr/share/OSIsoft/EdgeDataStore/_.
 
