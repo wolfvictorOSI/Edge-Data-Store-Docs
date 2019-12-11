@@ -2,7 +2,7 @@
 uid: visualizationQuickStart
 ---
 
-# Edge Data Store Visualization quick start
+# Edge Data Store visualization quick start
 
 This document is a quick tour of getting data from the Edge Data Store Storage component and displaying it on the screen of the device where the Edge Data Store is installed. This example is intended for simplicity rather than thoroughness, and should run on any device that is supported by Edge Data Store. This example will iterate through all streams in the default namespace on the Edge Data Store and continously display the latest values to the screen. This example assumes the Edge Data Store was installed with the default port (5590).
 

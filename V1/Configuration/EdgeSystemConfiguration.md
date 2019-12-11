@@ -74,7 +74,7 @@ After the curl command completes successfully, you can configure or use the new 
 The following JSON file represents minimal configuration of an Edge Data Store. There are no Modbus TCP or OPC UA components, and the Storage component configurations are set to the default. If you configure a system with this JSON file, any existing Modbus TCP or OPC UA components will be disabled and removed. No storage data will be deleted or modified, and OMF and SDS data access will not be impacted.
 
 ```json
-{{
+{
   "Storage": {
     "PeriodicEgressEndpoints": [],
     "Runtime": {
@@ -111,7 +111,7 @@ The following JSON file represents minimal configuration of an Edge Data Store. 
 }
 ```
 
-- Save or copy the JSON in a file named _EdgeMinimumConfiguration.json_ in any directory on a device with Edge Data Store installed. 
+- Save or copy the JSON in a file named _EdgeMinimumConfiguration.json_ in any directory on a device with Edge Data Store installed.
 
 When you run the following curl command from the directory where the file exists, this will be set as the configuration of a running Edge Data Store (run the command from the directory where the file is located):
 
@@ -121,11 +121,12 @@ curl -i -d "@EdgeMinimumConfiguration.json" -H "Content-Type: application/json" 
 
 The configuration takes effect immediately after the command completes.
 
-The above example results in a minimal configuration of Edge Data Store. It only supports [OMF](xref:omfQuickStart) and [SDS](xref:sdsQuickStart) operations using REST. No egress is configured, so no data will be forwarded to either [OCS](xref:ocsEgressQuickStart) or [PI Web API](xref:piEgressQuickStart).
+The previous example results in a minimal configuration of Edge Data Store. It only supports [OMF](xref:omfQuickStart) and [SDS](xref:sdsQuickStart) operations using REST. No egress is configured, so no data will be forwarded to either [OCS](xref:ocsEgressQuickStart) or [PI Web API](xref:piEgressQuickStart).
 
-### Configure maximum Edge Data Store
+## Configure maximum Edge Data Store
 
 The following JSON file represents maximal configuration of an Edge Data Store. There are Modbus TCP and OPC UA components, and egress is configured to send to both PI Web API and OCS from both the default (operational data) and diagnostics (diagnostic data) namespace.
+
 ```json
 {
     "Modbus1": {

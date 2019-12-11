@@ -36,7 +36,7 @@ UInt16                   | 8
 UInt32                   | 10
 UInt64                   | 12
 
-Working with Indexes
+Working with indexes
 --------------------
 
 The following discusses the types defined in the [Python](<https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/Python/SDSPy>) and [Java Script](<https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/JavaScript>) samples. Samples in other languages can be found [here](<https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS>).

@@ -2,7 +2,7 @@
 uid: omfOverview
 ---
 
-# OSIsoft Message Format (OMF) ingress with Edge Storage
+# OSIsoft Message Format (OMF)
 
 The Edge Storage component supports both OMF version 1.0 and OMF version 1.1 for data ingress. The OMF ingress functionality is the same technology that is used in OSIsoft Cloud Services (OCS). Writing an OMF application to run on EDS is very similar to writing an OMF application to write data to OCS. No authentication is necessary for writing to Edge Data Store, as long as the application is running on the same device as Edge Data Store. Remote access to OMF data ingress is currently not supported.
 

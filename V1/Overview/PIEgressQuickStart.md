@@ -4,7 +4,7 @@ uid: piEgressQuickStart
 
 # PI System (PI Web API) egress quick start
 
-This document is a quick tour of getting data stored in the Edge Data Store into a remote PI System. This is accomplished using PI Web API which is configured for Basic authentication.
+This document is a quick start for egressing data stored in the Edge Data Store into a remote PI System. This is accomplished using PI Web API which is configured for Basic authentication.
 
 ## Create a periodic egress configuration
 

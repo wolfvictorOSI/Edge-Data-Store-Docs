@@ -14,10 +14,17 @@ Edge Data Store is supported on a variety of platforms and processors. OSIsoft p
 
 In addition to ready to use install kits, OSIsoft also provides examples of how to create Docker containers in a separate file. tar.gz files are provided with binaries for customers who want to build their own custom installers or containers for Linux.
 
-## Differences from Beta 2
+## Differences from Release Candidate 2
 
 ### General
 
+
+* Many performance and resiliency improvements were made to the product.
+* Issues related to long-term memory growth of the product have been addressed.
+* The "System Reset" and "Storage Reset" features of the Edge Data Store are more resilient.
+* The installation kits for the Edge Data Store were updated to create a better experience when upgrading installed instances.
+* The installation kits have been updated to ensure only necessary files are included. 
+=======
 * The "OSIsoft Edge System" product was renamed to "OSIsoft Edge Data Store".
 * The edgecmd command line utility is now provided to allow access to and modification of Edge Data Store configuration.  This utility supercedes the command line functionality that was previously available via OSIsoft.Data.System.Host.
 * Improvements were made to ensure component health status updates may not be lost when the product is shutdown.  
@@ -26,26 +33,28 @@ In addition to ready to use install kits, OSIsoft also provides examples of how 
 * The structure for health streams produced by the product has been updated.
 * Adapter components may be added or removed at runtime and no longer require a restart of the product.
 * Changes to the Health Endpoints configuration are now applied at runtime and no longer require a restart of the product.
-* All endpoint configurations related to transfering data and configuration to PI Web Api or OSIsoft Cloud Services have the following new properties:
+* All endpoint configurations related to transfering data and configuration to PI Web API or OSIsoft Cloud Services have the following new properties:
    * ValidateEndpointCertificate - Enable/Disable validation of endpoint certificate. Any endpoint certificate is accepted if set to false.
    * TokenEndpoint - For use with OSIsoft Cloud Services endpoints only.  Allows for alternative endpoint for retrieval of an OCS access token.
 
 ### Modbus Adapter
 
-* Support has been added for a user-defined optional Streamid prefix.
+*	Improved Modbus adapter performance when large data points are selected for data collection.
+* Modbus data selection can be deselected via edgecmd, which wasn't supported in RC2.
+* Modbus logs the data source and data selection configuration in verbose mode instead of information mode.
+
+### OPC UA Adapter
+
+* An option was added to override SDK certificate checks when NONE security is configured.
 
 ### Storage
 
-* Significant improvements have been made in the reliability and performance of egressing configuration and data to PI Web Api or OSIsoft Cloud Services.
-* Improvements were made to ensure that no data is lost when egressing data to an egress endpoint.
-* The OEM configuration facet of the Storage component has been deprecated.  The following configuration properties were relocated to the Storage Runtime configuration facet:
-   * CheckpointRateInSec
-   * TransactionLogLimitMB
-   * EnableTransactionLog
-* The Id property of a PeriodicEgressEndpoint configuration has been changed to be optional.  If one is not provided when the endpoint is configured, a unique value will be assigned to it.
-* Improvements were made to improve resiliency of the product by ensuring data and configuration are properly checkpointed to storage.
-* Improvements were made to handle a wider range of data corruptions encountered in power loss scenarios.
-* In Beta 2, under certain data egress scenarios, the Storage component would attempt to retrieve all data destined to be egressed, and then egress the data to the destination endpoint.  This could lead to high memory usage and potential stability issues.  This behavior has been changed to stream the data in a more controlled manner, leading to less memory being demanded.
+* Backfilling can now be enabled/disabled by changing the value of the backfill property on an egress configuration. Previously, the configuration needed to be removed and re-added with the changed value. 
+* For Linux installations, the number of allowed file handles for the service has been tuned to allow for up to 5,000 data streams.
+* Fixed an issue with periodic egress where, in very specific scenarios, adding values immediately after egress started would result in only the last value being sent rather than all the values just added. 
+* Attempts to update to an egress configuration with changes identical to the current configuration are now ignored.
+* Issues related to data queries returning incorrect data were addressed.
+* The type identifier of the underlying storage component for Edge Data Store was changed from "EDS.Component" to "Storage".
 
 ## Install Edge Data Store on a Device using an install kit
 
@@ -61,29 +70,47 @@ Complete the following:
 
 1. Open a terminal window and type:
 
-```bash
-sudo apt install ./EdgeDataStore_linux_<either x64 or arm depending upon processor>.deb
-```
+  ```bash
+  sudo apt install ./EdgeDataStore_linux_<either x64 or arm depending upon processor>.deb
+  ```
 
 A check will be done for prerequisites. If the Linux operating system is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:
 
-```bash
-sudo apt update
-sudo apt upgrade
-```
+  ```bash
+  sudo apt update
+  sudo apt upgrade
+  ```
 
 2. After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.
 
 The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
 
-```bash
-curl http://localhost:5590/api/v1/configuration
-```
+  ```bash
+  curl http://localhost:5590/api/v1/configuration
+  ```
 
 If the installation was successful, you will get back a JSON copy of the default system configuration:
 
 ```json
 {
+  "Modbus1": {
+    "Logging": {
+      "logLevel": "Information",
+      "logFileSizeLimitBytes": 34636833,
+      "logFileCountLimit": 31
+    },
+    "DataSource": {},
+    "DataSelection": []
+  },
+  "OpcUa1": {
+    "Logging": {
+      "logLevel": "Information",
+      "logFileSizeLimitBytes": 34636833,
+      "logFileCountLimit": 31
+    },
+    "DataSource": {},
+    "DataSelection": []
+  },
   "Storage": {
     "PeriodicEgressEndpoints": [],
     "Runtime": {
@@ -99,15 +126,6 @@ If the installation was successful, you will get back a JSON copy of the default
       "logFileSizeLimitBytes": 34636833,
       "logFileCountLimit": 31
     }
-  },
-  "Modbus1": {
-    "Logging": {
-      "logLevel": "Information",
-      "logFileSizeLimitBytes": 34636833,
-      "logFileCountLimit": 31
-    },
-    "DataSource": {},
-    "DataSelection": []
   },
   "System": {
     "Logging": {
@@ -130,18 +148,9 @@ If the installation was successful, you will get back a JSON copy of the default
       },
       {
         "componentId": "Storage",
-        "componentType": "EDS.Component"
+        "componentType": "Storage"
       }
     ]
-  },
-  "OpcUa1": {
-    "Logging": {
-      "logLevel": "Information",
-      "logFileSizeLimitBytes": 34636833,
-      "logFileCountLimit": 31
-    },
-    "DataSource": {},
-    "DataSelection": []
   }
 }
 ```
