@@ -2,7 +2,7 @@
 uid: scalePerformance
 ---
 
-# Edge Data Store design considerations
+# Design considerations
 
 ## Edge Storage role
 

@@ -2,7 +2,7 @@
 uid: system_schema
 ---
 
-# SystemConfiguration schema
+# Sample system configuration
 
 ```json
    "System": {
@@ -31,11 +31,13 @@ uid: system_schema
     }
 ```
 
+# System configuration schema
+
 | Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                               |
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------- |
 | Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [Modbus_Logging_schema.json](Modbus_Logging_schema.json) |
 
-## Properties
+# System configuration properties
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
@@ -43,23 +45,3 @@ uid: system_schema
 | [Components](#components) | [`[SystemComponentsConfiguration]`](xref:system_Components_schema) | Optional | Yes      | ComponentsConfiguration |
 | [HealthEndpoints](#healthEndpoints) | [`[SystemHealthEndpointsConfiguration]`](xref:system_HealthEndpoints_schema) | Optional | Yes      | HealthEndpointsConfiguration |
 | [Port](#port) | [`SystemPortConfiguration`](xref:portschema) | Optional | Yes      | PortConfiguration |
-
-## Logging
-
-- is optional
-- type: [`SystemLoggingConfiguration`](xref:system_Logging_schema)
-
-## Components
-
-- is optional
-- type: [`[SystemComponentsConfiguration]`](xref:system_Components_schema)
-
-## HealthEndpoints
-
-- is optional
-- type: [`[SystemHealthEndpointsConfiguration]`](xref:system_HealthEndpoints_schema)
-
-## Port
-
-- is optional
-- type: [`SystemPortConfiguration`](xref:portschema)

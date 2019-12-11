@@ -2,7 +2,7 @@
 uid: troubleShooting
 ---
 
-# Edge Data Store troubleshooting
+# Troubleshooting
 
 If you encounter errors while using or developing against Edge Data Store, you have both local and remote means of diagnosing issues.
 

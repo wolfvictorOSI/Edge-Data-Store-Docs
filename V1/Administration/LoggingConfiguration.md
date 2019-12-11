@@ -70,5 +70,4 @@ curl -i -d "@Component_Logging.json" -H "Content-Type: application/json" -X PUT 
 
 On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. 
 
-### **Note:** 
-If you do not specify all the parameters while changing the configuration, the specified parameters will be updated while the unspecified parameters will revert to the default schema values. 
+**Note:**  If you do not specify all the parameters while changing the configuration, the specified parameters will be updated while the unspecified parameters will revert to the default schema values.
