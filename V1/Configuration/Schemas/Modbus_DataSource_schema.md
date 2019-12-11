@@ -2,7 +2,7 @@
 uid: modbus_DataSource_schema
 ---
 
-# Sample Modbus data source configuration
+# Sample Modbus TCP data source configuration
 
 ```json
 {
@@ -16,7 +16,9 @@ uid: modbus_DataSource_schema
 }
 ```
 
-# Modbus data source configuration schema
+# Modbus TCP data source configuration schema
+
+The Modbus TCP data source configuration schema specifies how to formally describe the Modbus TCP data source parameters.
 
 | Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                                     |
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------------- |
@@ -35,109 +37,14 @@ uid: modbus_DataSource_schema
 | [RequestTimeout](#requesttimeout)               | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
 | [StreamIdPrefix](#streamidprefix)               | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
 
-## ConnectTimeout
 
-`ConnectTimeout`
+**Note:** All of the following _requirements_ need to be fulfilled.
 
-- is optional
-- type: `integer`
-- defined in this schema
-
-### ConnectTimeout type
-
-`integer`
-
-## DelayBetweenRequests
-
-`DelayBetweenRequests`
-
-- is optional
-- type: `integer`
-- defined in this schema
-
-### DelayBetweenRequests type
-
-`integer`
-
-## IpAddress
-
-`IpAddress`
-
-- is optional
-- type: `string`
-- defined in this schema
-
-### IpAddress type
-
-`string`, nullable
-
-## MaxResponseDataLength
-
-`MaxResponseDataLength`
-
-- is optional
-- type: `integer`
-- defined in this schema
-
-### MaxResponseDataLength type
-
-`integer`
-
-## Port
-
-`Port`
-
-- is optional
-- type: `integer`
-- defined in this schema
-
-### Port type
-
-`integer`
-
-## ReconnectInterval
-
-`ReconnectInterval`
-
-- is optional
-- type: `integer`
-- defined in this schema
-
-### ReconnectInterval type
-
-`integer`
-
-## RequestTimeout
-
-`RequestTimeout`
-
-- is optional
-- type: `integer`
-- defined in this schema
-
-### RequestTimeout type
-
-`integer`
-
-## StreamIdPrefix
-
-`StreamIdPrefix`
-
-- is optional
-- type: `string`
-- defined in this schema
-
-### StreamIdPrefix type
-
-`string`, nullable
-
-**All** of the following _requirements_ need to be fulfilled.
-
-#### Requirement 1
+## Requirement 1
 
 - []() – `#/definitions/EdgeConfigurationBase`
 
-#### Requirement 2
+## Requirement 2
 
 `object` with following properties:
 
@@ -151,91 +58,3 @@ uid: modbus_DataSource_schema
 | `ReconnectInterval`     | integer | Optional |
 | `RequestTimeout`        | integer | Optional |
 | `StreamIdPrefix`        | string  | Optional |
-
-#### ConnectTimeout
-
-`ConnectTimeout`
-
-- is optional
-- type: `integer`
-
-##### ConnectTimeout type
-
-`integer`
-
-#### DelayBetweenRequests
-
-`DelayBetweenRequests`
-
-- is optional
-- type: `integer`
-
-##### DelayBetweenRequests type
-
-`integer`
-
-#### IpAddress
-
-`IpAddress`
-
-- is optional
-- type: `string`
-
-##### IpAddress type
-
-`string`, nullable
-
-#### MaxResponseDataLength
-
-`MaxResponseDataLength`
-
-- is optional
-- type: `integer`
-
-##### MaxResponseDataLength type
-
-`integer`
-
-#### Port
-
-`Port`
-
-- is optional
-- type: `integer`
-
-##### Port type
-
-`integer`
-
-#### ReconnectInterval
-
-`ReconnectInterval`
-
-- is optional
-- type: `integer`
-
-##### ReconnectInterval type
-
-`integer`
-
-#### RequestTimeout
-
-`RequestTimeout`
-
-- is optional
-- type: `integer`
-
-##### RequestTimeout type
-
-`integer`
-
-#### StreamIdPrefix
-
-`StreamIdPrefix`
-
-- is optional
-- type: `string`
-
-##### StreamIdPrefix type
-
-`string`, nullable

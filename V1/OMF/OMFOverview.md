@@ -2,9 +2,9 @@
 uid: omfOverview
 ---
 
-# OSIsoft Message Format (OMF) ingress with Edge Storage
+# OSIsoft Message Format (OMF)
 
-The Edge Storage component supports both OMF version 1.0 and OMF version 1.1 for data ingress. The OMF ingress functionality is the same technology that is used in OSIsoft Cloud Services (OCS). Writing an OMF application to run on EDS is very similar to writing an OMF application to write data to OCS. No authentication is necessary for writing to Edge Data Store, as long as the application is running on the same computer or device as Edge Data Store. Remote access to OMF data ingress is currently not supported.
+The Edge Storage component supports both OMF version 1.0 and OMF version 1.1 for data ingress. The OMF ingress functionality is the same technology that is used in OSIsoft Cloud Services (OCS). Writing an OMF application to run on EDS is very similar to writing an OMF application to write data to OCS. No authentication is necessary for writing to Edge Data Store, as long as the application is running on the same device as Edge Data Store. Remote access to OMF data ingress is currently not supported.
 
 ## OMF specification
 
@@ -23,8 +23,6 @@ Endpoint: http://localhost:5590/api/v1/tenants/default/namespaces/default/omf
 
 ## Supported functionality
 
-The OMF endpoint for the Edge Storage component supports both OMF version 1.0 and OMF version 1.1 for data ingress. If you specify a later version of OMF, errors will be returned.
+The OMF endpoint for the Edge Storage component supports both OMF version 1.0 and OMF version 1.1 for data ingress. If you specify a later version of OMF, errors will be returned. The OMF endpoint for the Edge Storage component does not support the update action, but can only create messages. If a create data message is sent with the same time index, the values will be replaced at that index value.
 
-The OMF endpoint for the Edge Storage component does not support the update action but only create messages. If a create data message is sent with the same time index, the values will be replaced at that index value.
-
-For efficiency reasons, OSIsoft recommends to batch OMF messages that are sent to the EDS endpoint. Sending single messages or a small number of messsages can be successful to the OMF endpoint, but it is relatively inefficient. When a single message or a small number of messages are sent at a time, the HTTP overhead of creating the request and processing the response on a small device is more expensive than the processing of the OMF message itself. While a large number of OMF messages per second can be processed by EDS platforms, for efficiency reasons, OSIsoft recommends to keep the number of HTTP calls per second fairly low.
+For efficiency reasons, OSIsoft recommends batching OMF messages that are sent to the EDS endpoint. Sending single messages or a small number of messsages to the OMF endpoint can be successful, but it is relatively inefficient. When a single message or a small number of messages are sent at a time, the HTTP overhead of creating the request and processing the response on a small device is more expensive than the processing of the OMF message itself. While a large number of OMF messages per second can be processed by EDS platforms,  OSIsoft recommends keeping the number of HTTP calls per second fairly low for efficiency reasons.

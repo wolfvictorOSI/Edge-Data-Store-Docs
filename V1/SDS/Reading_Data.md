@@ -4,7 +4,7 @@ uid: sdsReadingData
 
 # Reading data
 
-The REST APIs provide programmatic access to read and write data. This section identifies and describes the APIs used to read [Streams](xref:sdsStreams) data. Results are influenced by [Types](xref:sdsTypes), [Stream Views](xref:sdsStreamViews), [Filter expressions](xref:sdsFilterExpressions), and [Table format](xref:sdsTableFormat).
+The REST APIs provide programmatic access to read and write data. This section identifies and describes the APIs used to read [streams](xref:sdsStreams) data. Results are influenced by [types](xref:sdsTypes), [stream views](xref:sdsStreamViews), [filter expressions](xref:sdsFilterExpressions), and [table format](xref:sdsTableFormat).
 
 ### Single stream reads
 

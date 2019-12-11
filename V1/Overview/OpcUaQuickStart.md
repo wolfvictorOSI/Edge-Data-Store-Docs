@@ -4,7 +4,7 @@ uid: opcUaQuickStart
 
 # Edge OPC UA quick start
 
-This topic is a quick tour of setting up the Edge OPC UA component. It is possible to add a single EDS OPC UA adapter during Edge Data Store installation named OpcUa1. If multiple EDS OPC UA adapters are desired, please reference [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) on how to add a new component to Edge Data Store. The example below covers configuring the adapter added during installation. If another adapter has been installed, please substitute the name of the installed adapter in the below example for OpcUa1.
+This topic provides a quick start for setting up the Edge OPC UA adapter. It is possible to add a single EDS OPC UA adapter during Edge Data Store installation named OpcUa1. If multiple EDS OPC UA adapters are desired, please reference [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) on how to add a new component to Edge Data Store. The example below depicts configuration of the adapter added during installation. If another adapter has been installed, please substitute the name of the installed adapter in the below example for OpcUa1.
 
 ![EDS Opc Ua](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOpcUA.jpg "EDS Opc Ua")
 
@@ -36,9 +36,10 @@ When this command completes successfully (a 204 is returned by curl), your OPC U
 
 ## Configure OPC UA data selection
 
-Select the OPC UA data you want to store in Edge Data Store by configuring OPC UA data selection. The following is a sample JSON for five OPC UA values.
+When you create the data source file, the OPC UA adapter auto generates the data selection file, which lists all available streams in the designated data source.  To configure the data selection file, complete the following:
 
-1. Modify the values as appropriate for your environment.
+1. Save the data selection to your local device for editing.
+2. All steams listed in the auto generated data selection file are initially set to deselect.  Select each of the streams you want to ingress to Edge Data Store.
 
 ```json
 [{
@@ -60,22 +61,21 @@ Select the OPC UA data you want to store in Edge Data Store by configuring OPC U
         "StreamId": null
     },
     {
-        "Selected": true,
+        "Selected": false,
         "Name": "Cold Side Inlet Temperature",
         "NodeId": "ns=2;s=Line1.HeatExchanger1002.ColdSideInletTemperature",
         "StreamId": null
     },
     {
-        "Selected": true,
+        "Selected": false,
         "Name": "Hot Side Outlet Temperature",
         "NodeId": "ns=2;s=Line1.HeatExchanger1002.HotSideOutletTemperature",
         "StreamId": null
     }
 ]
 ```
-
-1. Save the JSON content above in a text file and name it OpcUa1Dataselection.json. 
-1. Run the following curl script so the system will be configured to collect Opc Ua data values.
+3. Save the preceding JSON content in a text file and name it OpcUa1Dataselection.json.
+4. Run the following curl script to configure Edge Data Store to collect Opc Ua data values:
 
 ```bash
 curl -i -d "@OpcUa1Dataselection.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection

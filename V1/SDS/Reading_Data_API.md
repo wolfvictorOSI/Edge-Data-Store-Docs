@@ -4,11 +4,11 @@ uid: sdsReadingDataApi
 
 # API calls for reading data
 
-## Example Type, Stream, and Data
+## Example type, stream, and data
 
 Many of the API methods described below contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples.
 
-**Example Type**  
+**Example type**  
 ``SimpleType`` is an SdsType with a single index. This type is defined in Python and Javascript:
 
 ###### Python
@@ -56,10 +56,10 @@ var SimpleType = function () {
 }
 ```
 
-**Example Stream**  
+**Example stream**  
 ``Simple`` is an SdsStream of type ``SimpleType``.
 
-**Example Data**  
+**Example data**  
 ``Simple`` has stored values as follows:
     11/23/2017 12:00:00 PM: Ok  0
     11/23/2017  1:00:00 PM: Ok 10
@@ -1250,7 +1250,7 @@ Content-Type: application/json
 
 The following are responses for various Joins request options:
 
-##### Inner Join Example
+##### Inner join example
 
 ```text
 GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
@@ -1283,7 +1283,7 @@ Content-Type: application/json
 ]
 ```
 
-##### Outer Join Example
+##### Outer join example
 
 ```text
 GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
@@ -1364,7 +1364,7 @@ Content-Type: application/json
 ]
 ```
 
-##### Interpolated Join Example
+##### Interpolated join example
 
 ```text
 GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
@@ -1469,7 +1469,7 @@ Content-Type: application/json
 ]
 ```
 
-##### MergeLeft Join Example
+##### MergeLeft join example
 
 ```text
 GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
@@ -1525,7 +1525,7 @@ Content-Type: application/json
 ]
 ```
 
-##### MergeRight Join Example
+##### MergeRight join example
 
 ```text
 GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
@@ -1583,7 +1583,7 @@ Content-Type: application/json
 
 <a name="postjoin"></a>
 
-### POST Request
+### POST request
 
 ```text
 POST api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
@@ -1597,7 +1597,7 @@ default or diagnostics
 ``SdsJoinMode joinMode``  
 Type of join, that is inner, outer, and so on.
 
-**Request Body**  
+**Request body**  
 Read options specific to each stream.
 
 **Response**  

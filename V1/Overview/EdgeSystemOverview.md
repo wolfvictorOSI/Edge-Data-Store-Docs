@@ -2,10 +2,10 @@
 uid: EdgeDataStoreOverview
 ---
 
-# Edge Data Store overview
+# Overview
+
 
 Edge Data Store is an embedded data server that runs on Linux and Windows. It is designed for small devices, and you can install and run it on 64-bit Intel/AMD compatible and 32-bit ARM v7/v8 compatible chips. It offers REST programming, configuration, administrative interfaces, and a command line tool that can be used for configuring and administering EDS.
-
 EDS is a supplement to existing OSIsoft products. In this release, it does not offer any built-in visualization or analytic support. However, if you use the REST programming capabilities built into EDS, you can write analytics or visualization programs on either Linux, Windows, or both in a variety of programming languages.
 
 ## Edge Data Store architecture
@@ -22,9 +22,10 @@ EDS is a supplement to existing OSIsoft products. In this release, it does not o
 
 ## Edge Data Store installation
 
-The Edge Data Store can be installed on both Linux and Windows: [Edge Data Store Installation Overview](xref:installationOverview).
+You can install Edge Data Store on both Linux and Windows. For more information see [Installation](xref:installationOverview).
 
 ## Data ingress to Edge Data Store
+
 
 Edge Data Store can ingress data in a number of ways. There are two built-in adapters: [EDS Modbus TCP](xref:modbusQuickStart) and [EDS OPC UA](xref:opcUaQuickStart). Data can also be ingressed using OSIsoft Message Format [(OMF)](xref:omfQuickStart) and the Sequential Data Store [SDS](xref:sdsWritingData) REST APIs.
 
@@ -34,9 +35,10 @@ During installation of Edge Data Store, options are presented to install either 
 
 Edge Data Store is composed of components, and is designed to allow the addition at a later date of additional EDS adapters.
 
+
 ## Local data read and write access
 
-You can access all data in Edge Data Store by using the Sequential Data Store [SDS](xref:sdsQuickStart) REST API. You can use this data for local applications that perform analytics or visualization. 
+You can access all data in Edge Data Store by using the Sequential Data Store [SDS Read/Write quick start](xref:sdsQuickStart) REST API. You can use this data for local applications that perform analytics or visualization. 
 
 ### Example EDS visualization application
 
@@ -48,6 +50,6 @@ You can access all data in Edge Data Store by using the Sequential Data Store [S
 
 ## Data egress from Edge Data Store
 
-The Edge Data Store can send data to both PI Data Archive (using [PI Web API](xref:piEgressQuickStart)) and OSIsoft Cloud Services ([OCS](xref:ocsEgressQuickStart)).
+Edge Data Store can send data to both PI Data Archive using PI Web API and OSIsoft Cloud Services. For more information, see [PI egress quick start](xref:piEgressQuickStart) and [OCS egress quick start](xref:ocsEgressQuickStart).
 
-Additional configuration is necessary to send data to both OCS and PI Web API after Edge Data Store is installed.
+After Edge Data Store is installed, additional configuration is necessary to send data to both OCS and PI Web API.
