@@ -37,9 +37,9 @@ The following table shows the required and optional SdsUomQuantity fields.
 | BaseUom    | SdsUom  | Required    | The base unit of measure for this quantity. All other Uom's measuring this quantity will have ConversionFactor's and ConversionOffsets relative to the BaseUom  | SdsUom representing "meters per second" |
 | Dimensions | short[] | Optional    | Reserved for internal use. Represents the seven base SI dimensions: Length, Mass, Time, Electric Current, Thermodynamic Temperature, Amount of Substance, and Luminous Density. | [1,0,-1,0,0,0,0] |
 
-## Supported Quantities
+## Supported quantities
 
-A list of the supported quantities and their base unit of measures is below. Supported quantities are read-only.
+A list of the supported quantities and their base unit of measures follows. Supported quantities are read-only.
 
 | Quantity Id                                 | Base Uom Id               |
 | ------------------------------------------- | ------------------------- |
@@ -78,9 +78,9 @@ A list of the supported quantities and their base unit of measures is below. Sup
 | Volume                                      | cubic meter               |
 | Volume Flow Rate                            | cubic meter per second    |
 
-## Supported Units of Measure
+## Supported units of measure
 
-A list of the supported units of measure is below. Supported units of measure are read-only.
+A list of the supported units of measure follows. Supported units of measure are read-only.
 
 | Uom Id                                           | Abbreviation | Quantity Id                                 | Conversion Factor | Conversion Offset |
 | ------------------------------------------------ | ------------ | ------------------------------------------- | ----------------- | ----------------- |
@@ -296,7 +296,7 @@ The REST APIs provide programmatic access to read and write SDS data. The APIs i
 
 ## `Get Quantity`
 
-Returns the quantity corresponding to the specified quantityId within a given namespace.
+Returns the quantity corresponding to the specified quantity Id within a given namespace.
 
 **Request**
 

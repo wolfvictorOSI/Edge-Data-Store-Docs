@@ -8,11 +8,9 @@ Edge Data Store uses JSON configuration files in a protected directory on Window
 
 **Note:** You can edit any single component or facet of the system using REST, but also configure the system as a whole with a single REST call.
 
-## Edge Data Store configuration
-
 Edge Data Store hosts other components. While the initial release of the Edge Data Store includes Modbus TCP, OPC UA, and Storage components, they are only active if you configure the system to use them. The system itself has a relatively small configuration surface area - the list of components and the HTTP Port used for REST calls.
 
-### Configure Edge Data Store port
+## Configure Edge Data Store port
 
 _System_Port.json_ specifies the port on which the System is listening for REST API calls. The same port is used for configuration and for writing data to OMF and SDS. The default configuration port is 5590. The default _System_Port.json_ file installed is:
 
@@ -34,7 +32,7 @@ curl -i -d "@EdgePort.json" -H "Content-Type: application/json" -X PUT http://lo
 
 2. After the REST command completes, restart Edge Data Store for the change to take effect.
 
-### Configure Edge Data Store components
+## Configure Edge Data Store components
 
 The default _System_Components.json_ file for the System component is the following. The Storage component is required for this initial release for Edge Data Store to run. With later releases of Edge Data Store, the storage component may not be required.
 
@@ -76,7 +74,7 @@ After the curl command completes successfully, you can configure or use the new 
 The following JSON file represents minimal configuration of an Edge Data Store. There are no Modbus TCP or OPC UA components, and the Storage component configurations are set to the default. If you configure a system with this JSON file, any existing Modbus TCP or OPC UA components will be disabled and removed. No storage data will be deleted or modified, and OMF and SDS data access will not be impacted.
 
 ```json
-{{
+{
   "Storage": {
     "PeriodicEgressEndpoints": [],
     "Runtime": {
@@ -113,7 +111,7 @@ The following JSON file represents minimal configuration of an Edge Data Store. 
 }
 ```
 
-- Save or copy the JSON in a file named _EdgeMinimumConfiguration.json_ in any directory on a device with Edge Data Store installed. 
+- Save or copy the JSON in a file named _EdgeMinimumConfiguration.json_ in any directory on a device with Edge Data Store installed.
 
 When you run the following curl command from the directory where the file exists, this will be set as the configuration of a running Edge Data Store (run the command from the directory where the file is located):
 
@@ -123,11 +121,12 @@ curl -i -d "@EdgeMinimumConfiguration.json" -H "Content-Type: application/json" 
 
 The configuration takes effect immediately after the command completes.
 
-The above example results in a minimal configuration of Edge Data Store. It only supports [OMF](xref:omfQuickStart) and [SDS](xref:sdsQuickStart) operations using REST. No egress is configured, so no data will be forwarded to either [OCS](xref:ocsEgressQuickStart) or [PI Web API](xref:piEgressQuickStart).
+The previous example results in a minimal configuration of Edge Data Store. It only supports [OMF](xref:omfQuickStart) and [SDS](xref:sdsQuickStart) operations using REST. No egress is configured, so no data will be forwarded to either [OCS](xref:ocsEgressQuickStart) or [PI Web API](xref:piEgressQuickStart).
 
-### Configure maximum Edge Data Store
+## Configure maximum Edge Data Store
 
 The following JSON file represents maximal configuration of an Edge Data Store. There are Modbus TCP and OPC UA components, and egress is configured to send to both PI Web API and OCS from both the default (operational data) and diagnostics (diagnostic data) namespace.
+
 ```json
 {
     "Modbus1": {

@@ -2,7 +2,7 @@
 uid: ModbusTCPAdapterSecurity
 ---
 
-# Modbus TCP EDS adapter security
+# Adapter security
 
 
 

@@ -1,7 +1,7 @@
 ---
 uid: opcUaDataSelection
 ---
-# Generate a template OPC UA data selection configuration file
+# Template OPC UA data selection configuration file
 
 When a data source is added, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a .json file for data selection. Data is collected automatically based upon user demands.  OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).
 
