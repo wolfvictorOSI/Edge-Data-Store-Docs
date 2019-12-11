@@ -6,7 +6,7 @@ uid: VerifyInstallation
 
 You can verify that Edge Data Store is correctly installed.
 
-- Run the following script from the terminal window.
+1. Run the following script from the terminal window:
 
     ```bash
     curl http://localhost:5590/api/v1/configuration
@@ -54,4 +54,6 @@ You can verify that Edge Data Store is correctly installed.
         }
     ```
 
-    If you receive an error, wait a few seconds and try it again. On a device with limited processor, memory, and slow storage, it may take some time before the Edge Data Store is fully initialized and running for the first time.
+2. If you receive an error, wait a few seconds and try it again. 
+
+    On a device with limited processor, memory, and slow storage, it may take some time before the Edge Data Store is fully initialized and running for the first time.
