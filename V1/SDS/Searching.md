@@ -7,7 +7,7 @@ Searching
 
 Search in SDS provides a way to search text, fields, and so on across the Sequential Data Store. This topic covers the searching for SdsStreams, SdsTypes, and SdsStreamViews.
 
-Searching for Streams
+Searching for streams
 =====================
 
 The search functionality for streams is exposed through the REST API.
@@ -33,9 +33,11 @@ Searching for streams is possible using the REST API and specifying the optional
 GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query={query}&skip={skip}&count={count}
 ```
 
-The Stream fields valid for search are identified in the fields table located on the [Streams](xref:sdsStreams) page. **Note:** Stream Metadata has unique syntax rules. For more information, see [How Searching Works: Stream Metadata](#Stream_Metadata_search_topic).
+The Stream fields valid for search are identified in the fields table located on the [Streams](xref:sdsStreams) page. 
 
-Searching for Types
+**Note:** Stream Metadata has unique syntax rules. For more information, see [How Searching Works: Stream Metadata](#Stream_Metadata_search_topic).
+
+Searching for types
 =====================
 
 Similarly, the search functionality for types is also exposed through REST API. The query syntax and the request parameters are the same. The only difference is the resource you're searching on. You can search on different properties for types than for streams. The searchable properties are below. For more information, see [Types](xref:sdsTypes).
@@ -56,9 +58,9 @@ Searching for types is also possible using the REST API and specifying the optio
 GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types?query={query}&skip={skip}&count={count}
 ```
 
-The Type fields valid for search are identified in the fields table located on the [Types](xref:sdsTypes) page. The Properties field is identified as being searchable but with limitations: Each SdsTypeProperty of a given SdsType has its Name and Id included in the Properties field. This includes nested SdsTypes of the given SdsType. Therefore, the searching of Properties will distinguish SdsTypes by their respective lists of relevant SdsTypeProperty Ids and Names.
+The Type fields valid for search are identified in the fields table located on the [Types](xref:sdsTypes) page. The Properties field is identified as being searchable but with limitations: Each SdsTypeProperty of a given SdsType has its name and Id included in the Properties field. This includes nested SdsTypes of the given SdsType. Therefore, the searching of properties will distinguish SdsTypes by their respective lists of relevant SdsTypeProperty Ids and names.
 
-Searching for Stream Views
+Searching for stream views
 =====================
 
 Similarly, the search functionality for stream views is also exposed through REST API. The query syntax and the request parameters are the same. The only difference is the resource you are searching on. You can match on different properties for stream views than for streams and types. The searchable properties are below. For more information, see [Stream Views](xref:sdsStreamViews).
@@ -80,12 +82,12 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews?query={query}&sk
 
 The Stream View fields valid for search are identified in the fields table located on the [Stream Views](xref:sdsStreamViews) page. The Properties field is identified as being searchable with limitations because SdsStreamViewProperty objects are not searchable. Only the SdsStreamViewProperty's SdsStreamView is searchable by its Id, SourceTypeId, and TargetTypeId, which are used to return the top level SdsStreamView object when searching. This includes nested SdsStreamViewProperties.
 
-How Searching Works
+How searching works
 =====================
 
 The query parameter will be applied across all searchable fields of objects that are searched on by default.
 
-For example, you can assume that a namespace contains the following Streams:
+For example, you can assume that a namespace contains the following streams:
 
 **streamId** | **Name**  | **Description**
 ------------ | --------- | ----------------
@@ -184,7 +186,7 @@ Other operators examples
 
 ## <a name="Stream_Metadata_search_topic">How Searching Works: Stream Metadata</a>
 
-[Stream Metadata](xref:sdsStreamExtra) modifies the aforementioned search syntax rules and each operator's behavior is described below. For example, assume that a namespace contains the following Streams and the respective Metadata Key-Value pair(s) for each stream.
+[Stream Metadata](xref:sdsStreamExtra) modifies the aforementioned search syntax rules and each operator's behavior is described below. For example, assume that a namespace contains the following streams and the respective metadata key-value pair(s) for each stream.
 
 **streamId** | **Metadata**
 ------------ | ---------
@@ -195,13 +197,13 @@ stream3      | { status, active }<br>{ second key, second value }
 : Operator
 -------------------
 
-A Stream Metadata key is only searchable in association with a Stream Metadata value. This pairing is defined using the same  field scoping ``':'`` operator, like
+A stream metadata key is only searchable in association with a stream metadata value. This pairing is defined using the same field scoping ``':'`` operator, like
 
 ```text
 myStreamMetadataKey:streamMetadataValue
 ```
 
-If the ``':'`` operator is not used within an individual search clause, Metadata Keys are not searched against.Instead, Metadata values are searched against (along with the other searchable Stream fields).
+If the ``':'`` operator is not used within an individual search clause, metadata keys are not searched against.Instead, metadata values are searched against (along with the other searchable Stream fields).
 
 **QueryString**     | **Streams returned**
 ------------------  | ----------------------------------------
@@ -218,8 +220,8 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query=manufacturer:c
 \* Operator
 -------------------
 
-For searching on Metadata values, the ``'*'`` character is again used as a wildcard to specify an incomplete string. Additionally,
-you can use this wildcard character with the Metadata key as well. This is not supported for any other "fields". By including a wildcard in a field (defined as a value to the immediate left of a ``':'`` operator), the query will only be valid against Stream Metadata.
+For searching on metadata values, the ``'*'`` character is again used as a wildcard to specify an incomplete string. Additionally,
+you can use this wildcard character with the metadata key as well. This is not supported for any other "fields". If you include a wildcard in a field (defined as a value to the immediate left of a ``':'`` operator), the query will only be valid against stream metadata.
 
 **QueryString**     | **Streams returned**
 ------------------  | ----------------------------------------
@@ -229,7 +231,7 @@ you can use this wildcard character with the Metadata key as well. This is not s
 ``Id:stream*``  |  All three streams returned.
 ``Id*:stream*``  | Nothing returned.
 
-**Note:** In the final example nothing matches on a Stream's Id value because including ``'*'`` in a search clause's field prevents non-Stream Metadata fields from being searched.
+**Note:** In the final example nothing matches on a stream's Id value because including ``'*'`` in a search clause's field prevents non-stream metadata fields from being searched.
 
 **Request**
 

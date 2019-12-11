@@ -2,13 +2,15 @@
 uid: Storage_Logging_schema
 ---
 
-# Storage logging schema
+# Storage logging configuration schema
+
+The Storage logging configuration schema specifies how to formally describe the logging parameters for Storage.
 
 | Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- |
 | Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
 
-# StorageLoggerConfiguration Properties
+# Storage logging configuration properties
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
@@ -16,49 +18,14 @@ uid: Storage_Logging_schema
 | [LogFileSizeLimitBytes](#logfilesizelimitbytes) | `integer` | Optional | Yes      | EdgeLoggerConfiguration (this schema) |
 | [LogLevel](#loglevel)                           | reference | Optional | No       | EdgeLoggerConfiguration (this schema) |
 
-## LogFileCountLimit
 
-`LogFileCountLimit`
+**Note:** All of the following _requirements_ need to be fulfilled.
 
-- is optional
-- type: `integer`
-- defined in this schema
-
-### LogFileCountLimit type
-
-`integer`, nullable
-
-## LogFileSizeLimitBytes
-
-`LogFileSizeLimitBytes`
-
-- is optional
-- type: `integer`
-- defined in this schema
-
-### LogFileSizeLimitBytes type
-
-`integer`, nullable
-
-## LogLevel
-
-`LogLevel`
-
-- is optional
-- type: reference
-- defined in this schema
-
-### LogLevel type
-
-- []() – `#/definitions/EdgeLogLevel`
-
-**All** of the following _requirements_ need to be fulfilled.
-
-#### Requirement 1
+## Requirement 1
 
 - []() – `#/definitions/EdgeConfigurationBase`
 
-#### Requirement 2
+## Requirement 2
 
 `object` with following properties:
 

@@ -4,11 +4,16 @@ uid: omfQuickStart
 
 # Edge Storage OMF Quick Start
 
+
 This topic provides a quick start for getting data into the Edge Storage component using the OSisoft Message Format (OMF), and then retrieving that data using the Sequential Data Store (SDS) API. Both OMF data ingress and SDS data retrieval are accomplished using REST APIs. This topic assumes the Edge Data Store has been installed, and is accessible via a REST API using the default installed port (5590). This topic will demonstrate the use of both curl, a commonly available tool on both Windows and Linux, and command line commands. The same operations can be used with any programming language or tool that supports making REST calls. In addition, data retrieval steps (GET commands) can be accomplished using a browser if one is available on the device.
+
 
 ## Create an OMF Type
 
-The first step in OMF data ingress is to create an OMF type that describes the format of the data to be stored in a container. In our example, the data to be written is a timestamp and a numeric value, so the OMF JSON describing the type is:
+The first step in OMF data ingress is to create an OMF type that describes the format of the data to be stored in a container. In this example the data to be written is a timestamp and a numeric value.
+
+1. Create an OMF JSON file describing the type as follows:
+
 
 ```json
 [{
@@ -29,7 +34,12 @@ The first step in OMF data ingress is to create an OMF type that describes the f
 }]
 ```
 
-The value is indexed by a timestamp, and the numeric value that will be stored is a 32 bit floating point value. In order to create the OMF type in the Edge Storage, store the JSON file with the name OmfCreateType.json, and run the following curl script:
+
+The value is indexed by a timestamp and the numeric value that will be stored is a 32 bit floating point value.
+
+2. In order to create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json to the local device.
+3. Run the following curl script:
+
 
 ```bash
 curl -i -d "@OmfCreateType.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: type" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
@@ -41,6 +51,8 @@ When this command completes successfully, an SDS type with the same name will ha
 
 The next step in writing OMF data is to create a container. As with an OMF Type, this only needs to be done once before sending data events, and resending the same definition repeatedly does not cause an error.
 
+1. Create an OMF JSON file as follows:
+
 ```json
 [{
     "id": "MyCustomContainer",
@@ -48,7 +60,12 @@ The next step in writing OMF data is to create a container. As with an OMF Type,
 }]
 ```
 
-This container references the type that was created in the last step. An error will occur if the type does not exist when the container is created. In order to create the OMF container in the Edge Storage, store the JSON file with the name OmfCreateContainer.json, and run the following curl script:
+
+This container references the type that was created in the last step, and an error will occur if the type does not exist when the container is created. 
+
+2. In order to create the OMF container in the Edge Storage, store the JSON file with the name OmfCreateContainer.json to the local device.
+3. Run the following curl script:
+
 
 ```bash
 curl -i -d "@OmfCreateContainer.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: container" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
@@ -58,7 +75,7 @@ When this command completes successfully, an SDS stream will have been created t
 
 ## Write Data Events to the OMF Container
 
-Now that the type and container have been created, we can write data using OMF:
+1. Create an OMF JSON file as in the following example:
 
 ```json
 [{
@@ -75,7 +92,11 @@ Now that the type and container have been created, we can write data using OMF:
 }]
 ```
 
-The preceding example includes two data events that will be stored in the SDS Stream that was created in the previous steps. It is generally a best practice to batch OMF values when writing them for the best performance. In order to write the data to the Edge Storage  component, the store the JSON file with the name OmfCreateDataEvents.json, and run the following curl script:
+The preceding example includes two data events that will be stored in the SDS Stream created in the previous steps. It is generally a best practice to batch OMF values when writing them for the best performance. 
+
+2. In order to write the data in the Edge Storage, store the JSON file with the name OmfCreateDataEvents.json to the local device.
+3. Run the following curl script:
+
 
 ```bash
 curl -i -d "@OmfCreateDataEvents.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: data" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
@@ -85,7 +106,9 @@ When this command completes successfully, two values will have been written to t
 
 ## Read Last Data written using SDS
 
-In order to read the data back from the server that has been written, you can use the SDS REST API. The following is an example curl script that reads back the last value entered:
+
+Use the SDS REST API to read back the data written to the server. Run the following example curl script that reads back the last value entered:
+
 
 ```bash
 curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data/Last
@@ -99,7 +122,9 @@ The following GET command will return the last value written:
 
 ## Read a range of data events written using SDS
 
-In order to read the data back from the server that has been written, you can use the SDS REST API. The following is an example curl script that reads back a time range of values that have been written:
+
+Use the SDS REST API to read back the data written to the server. Run the following example curl script that reads back a time range of values:
+
 
 ```bash
 curl "http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data?startIndex=2017-07-08T13:00:00Z&count=100"
