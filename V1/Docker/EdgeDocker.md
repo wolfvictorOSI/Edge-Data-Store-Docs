@@ -4,13 +4,13 @@ uid: edgeDocker
 
 # Docker
 
-Docker is a set of tools that can be used on Linux to manage application deployments. If you want to use Docker, you must be familiar with the underlying technology and have determined it is appropriate for your planned use of the Edge Data Store.
+Docker is a set of tools that can be used on Linux to manage application deployments. If you want to use Docker, you must be familiar with the underlying technology and have determined that it is appropriate for your planned use of the Edge Data Store.
 
-The objective of this document is to provide examples of how to successfully create a Docker container with the Edge Data Store if you decide that you want Docker. Docker is not a requirement to use Edge Data Store.
+The objective of this topic is to provide examples of how to successfully create a Docker container with the Edge Data Store. Docker is not a requirement to use Edge Data Store.
 
 ## Create a Docker container containing the Edge Data Store
 
-1. Create the following Dockerfile in the directory where you want to create and/or run the container:
+1. Create the following Dockerfile in the directory where you want to create and run the container:
 
     ### [ARM32](#tab/tabid-1)
 
@@ -56,28 +56,28 @@ The objective of this document is to provide examples of how to successfully cre
 
 ### REST access from the local machine from Docker
 
-To run the container you can use the command line (sudo may be necessary):
+- To run the container, type the following in the command line (sudo may be necessary):
 
    ```bash
    docker run -d --network host edgedatastore
    ```
    
-Port 5590 will be accessible from the host and REST calls can be made to Edge Data Store from applications on the local host computer. With this configuration, all data stored by the Edge Data Store is stored in the container itself, and when the container is deleted the data stored will also be deleted.
+Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data stored by the Edge Data Store is stored in the container itself, and when the container is deleted the data stored will also be deleted.
 
 ### Persistent storage on the local file system from Docker
 
-To run the container you can use the command line (sudo may be necessary):
+- To run the container, type the following in the command line (sudo may be necessary):
 
    ```bash
    docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ edgedatastore
    ```
    
-Port 5590 will be accessible from the host and REST calls can be made to Edge Data Store from applications on the local host computer. In addition, in this example, all data that would be written to the container is instead written to the host directory /edgeds. This directory can be anything you want - this example just uses a simple directory on the local machine.
+Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data that would be written to the container is instead written to the host directory /edgeds. This directory can be anything you want. The example just uses a simple directory on the local machine.
 
-### Changing port number from Docker
+### Port number change
 
-If you want a port other than 5590, see the section regarding [Port configuration](#EdgeDataStoreConfiguration) of Edge Data Store. Changing the configuration of the Edge Data Store running in the container will change the port exposed to the local machine.
+If you want a port other than 5590, see [System port configuration](xref:SystemPortConfiguration). Changing the configuration of the Edge Data Store running in the container will change the port exposed to the local machine.
 
 ### Limiting local host access to Docker
 
-If the `--network host` option is removed from the docker run command, no REST access is possible from outside the container. This may be of value where you want to host an application in the same container as Edge Data Store, and does not want to have external REST access enabled.
+If you remove the `--network host` option from the docker run command, no REST access is possible from outside the container. This may be of value where you want to host an application in the same container as Edge Data Store, and do not want to have external REST access enabled.
