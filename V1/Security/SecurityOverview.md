@@ -15,8 +15,9 @@ REST access is through HTTP. The default port is 5590. The port number can be ch
 ## Data egress
 Writing data to OSIsoft Cloud Services or OSIsoft PI Web API is not limited to the local machine. You can write data to either of these destinations using HTTPS.
 
-### EDS adapters
-Modbus TCP and OPC UA are not limited to the local machine. Both are enabled to access remote data sources through binary protocols.
+
+## EDS Adapters
+Modbus and Opc Ua are not limited to the local machine. Both are enabled to access remote data sources through binary protocols.
 
 ## Secure storage
 Sensitive information, such as passwords and client secrets, are saved in configuration files in an encrypted form. Only the Edge Data Store runtime can properly store and retrieve these protected data items. 
