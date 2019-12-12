@@ -54,6 +54,7 @@ uid: index
   - [Health endpoints configuration](xref:SystemHealthEndpointsConfiguration)
   - [Logging configuration](xref:loggingConfiguration)
 - [Administration](xref:EdgeDataStoreAdministration)
+  - [Retrieve product version information](xref:RetrieveProductVersionInformation)
   - [Reset Edge Data Store](xref:ResetEdgeDataStore)
   - [Reset the Storage component](xref:ResetTheStorageComponent)
   - [Stop and start an EDS adapter](xref:StopAndStartAnEDSAdapter)
