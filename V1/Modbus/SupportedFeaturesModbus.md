@@ -16,7 +16,7 @@ The Modbus TCP EDS adatper supports 6 register types, corresponding to 4 functio
 | Input16          | 6                 |Read 16-bit Input Registers |4|
 | Input32          | 7                 |Read 32-bit Input Registers |4|
 
-When reading from function codes **1** and **2** the adapter expects these to be returned as single bits. For function codes **3** and **4**, the adapter expects 16 bits to be returned from devices that contain 16-bit registers and 32 bits to be returned from devices that contain 32-bit registers.
+When reading from function codes **1** and **2**, the adapter expects these to be returned as single bits. For function codes **3** and **4**, the adapter expects 16 bits to be returned from devices that contain 16-bit registers and 32 bits to be returned from devices that contain 32-bit registers.
 
 ## Data types
 The Modbus TCP EDS adapter converts readings from single or multiple registers into the data types specified by the data type code and populates the value into streams created in the Edge Data Store.
