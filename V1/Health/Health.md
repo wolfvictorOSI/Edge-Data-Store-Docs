@@ -4,13 +4,13 @@ uid: EdgeDataStoreHealth
 
 # Edge Data Store health
 
-Insight into the health of the Edge Data Store and the components that make it up can be critical for ensuring that your needs for data collection are being met. To that end, Edge Data Store and its components produce health information. When configured, Edge Data Store transfers health information to OSIsoft OMF endpoints, including the types and containers that represent available health information.
+Insight into the health of the Edge Data Store and the components that make it up can be critical for ensuring that your needs for data collection are being met. To that end, Edge Data Store and its components produce health information. When configured, Edge Data Store transfers health information to OMF endpoints, including the types and containers that represent available health information.
 
 ## Configure Edge Data Store health endpoints
 
 Edge Data Store has the ability to report system health to one or more OMF endpoints capable of receiving health messages. To enable this functionality, you must configure one or more health endpoints.
 
-Table 1. Configuration parameters for Edge Data Store health endpoints
+**Configuration parameters for Edge Data Store health endpoints**
 
 | Parameter         | Required | Description                      |
 |-------------------|----------------------------------|-------------|
