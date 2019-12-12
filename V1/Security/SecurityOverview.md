@@ -20,7 +20,7 @@ Writing data to OSIsoft Cloud Services or OSIsoft PI Web API is not limited to t
 Modbus and Opc Ua are not limited to the local machine. Both are enabled to access remote data sources through binary protocols.
 
 ## Secure storage
-Sensitive information, such as passwords and client secrets, are saved in configuration files in an encrypted form. Only the Edge Data Store runtime can properly store and retrieve these protected data items. 
+Sensitive information such as passwords and client secrets, are saved in configuration files in an encrypted form. Only the Edge Data Store runtime can properly store and retrieve these protected data items. 
 
 **Note:** Do not manually edit configuration files. Altering encrypted values will cause failures.
 
