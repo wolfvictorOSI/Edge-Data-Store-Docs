@@ -12,7 +12,7 @@ Allowable ports are in the range of 1024-65535.
 
 Before you change the default, ensure that no other service or application on the computer running the EdgeDataStore is using that port - only one application or service can use a port. If you change the port number through the REST API, you must restart Edge Data Store.
 
-1. Save the JSON containing the new port number in the JSON format above to a file named _EdgePort.json_ and run the following script:
+1. Save the JSON containing the new port number in JSON format to a file named _EdgePort.json_ and run the following script:
 
     ```bash
     curl -i -d "@EdgePort.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/system/port
