@@ -2,11 +2,11 @@
 uid: opcUaQuickStart
 ---
 
-# Edge OPC UA quick start
+# OPC UA EDS adapter quick start
 
-This topic provides a quick start for setting up the Edge OPC UA adapter. You can add a single EDS OPC UA adapter during Edge Data Store installation. If multiple EDS OPC UA adapters are desired, please reference [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) for adding a new component to Edge Data Store. 
+This topic provides a quick start for setting up the OPC UA EDS adapter. You can add a single OPC UA EDS adapter during Edge Data Store installation. If you want multiple OPC UA EDS adapters, see [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) for adding a new component to Edge Data Store. 
 
-The following diagram depicts the data flow of a single OPC UA adapter:
+The following diagram depicts the data flow of a single OPC UA EDS adapter:
 
 ![EDS Opc Ua](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOpcUA.jpg "EDS Opc Ua")
 
@@ -77,7 +77,7 @@ When you create the data source file, the OPC UA adapter auto generates the data
    ]
    ```
 3. Save the preceding JSON content in a text file and name it OpcUa1Dataselection.json.
-4. Run the following curl script to configure Edge Data Store to collect Opc Ua data values:
+4. Run the following curl script to configure Edge Data Store to collect OPC UA data values:
 
    ```bash
    curl -i -d "@OpcUa1Dataselection.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection
