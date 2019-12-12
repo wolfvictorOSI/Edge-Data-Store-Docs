@@ -21,6 +21,7 @@ uid: index
   - [Command Line quick start - Windows](xref:commandLineWindowsQuickStart)
 - [Installation](xref:installationOverview)
   - [System requirements](xref:SystemRequirements)
+    - [Linux and Windows platform differences](xref:linuxWindows)
   - [Install Edge Data Store](xref:InstallEdgeDataStore)
     - [Docker](xref:edgeDocker)
   - [Verify installation](xref:VerifyInstallation)
