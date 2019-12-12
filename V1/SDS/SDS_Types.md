@@ -24,7 +24,7 @@ Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be add
 
 The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use.
 
-For search limitations, see the [Searching](xref:sdsSearching).
+For search limitations, see [Searching](xref:sdsSearching).
 
 | Property          | Type                   | Optionality | Searchable | Details |
 |-------------------|------------------------|-------------|---------|---------|
@@ -161,7 +161,10 @@ Interpolation determines how a stream behaves when asked to return an event at a
 
 Note that ``Continuous`` cannot return events for values that cannot be interpolated, such as when the type is not numeric.
 
-The table below describes how the **Continuous InterpolationMode** affects indexes that occur between data in a stream: **InterpolationMode = Continuous or Default**  
+The table below describes how the **Continuous InterpolationMode** affects indexes that occur between data in a stream:
+
+**InterpolationMode = Continuous or Default**
+
 | Type                      | Result for an index between data in a stream  | Comment |
 |---------------------------|-----------------------------------------------|---------|
 |Numeric Types              |Interpolated*                   |Rounding is done as needed for integer types |
@@ -188,7 +191,8 @@ Extrapolation defines how a stream responds to requests with indexes that preced
 
 ExtrapolationMode works with the InterpolationMode to determine how a stream responds. The following tables show how ExtrapolationMode affects returned values for each InterpolationMode value:
 
-**ExtrapolationMode with InterpolationMode = Default or Continuous**  
+**ExtrapolationMode with InterpolationMode = Default or Continuous** 
+
 | ExtrapolationMode   | Enumeration value   | Index before data          | Index after data          |
 |---------------------|---------------------|----------------------------|---------------------------|
 | All                 | 0                   | Returns first data value   | Returns last data value   |
@@ -197,6 +201,7 @@ ExtrapolationMode works with the InterpolationMode to determine how a stream res
 | Backward            | 3                   | Returns first data value   | No event is returned      |
 
 **ExtrapolationMode with InterpolationMode = Discrete**  
+
 | ExtrapolationMode   | Enumeration value   | Index before data   | Index after data    |
 |---------------------|---------------------|---------------------|---------------------|
 | All                 | 0                   | No event is returned| No event is returned|
