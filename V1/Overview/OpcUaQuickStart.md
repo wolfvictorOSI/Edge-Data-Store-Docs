@@ -6,7 +6,7 @@ uid: opcUaQuickStart
 
 This topic provides a quick start for setting up the Edge OPC UA adapter. You can add a single EDS OPC UA adapter during Edge Data Store installation. If multiple EDS OPC UA adapters are desired, please reference [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) for adding a new component to Edge Data Store. 
 
-The following diagram configuration of a single adapter added during installation:
+The following diagram depicts the configuration of a single adapter added during installation:
 
 ![EDS Opc Ua](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOpcUA.jpg "EDS Opc Ua")
 
