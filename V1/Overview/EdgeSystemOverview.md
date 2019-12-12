@@ -10,14 +10,17 @@ Edge Data Store (EDS) is an embedded data server that runs on Linux and Windows.
 EDS is a supplement to existing OSIsoft products. In this release, it does not offer any built-in visualization or analytic support. However, if you use the REST programming capabilities built into EDS, you can write analytics or visualization programs on either Linux, Windows, or both in a variety of programming languages.
 
 ## Edge Data Store architecture
+The following diagram depicts the relationships of architectural components to one another in the Edge Data Store:
 
 ![EDS architecture](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSArchitecture.jpg "EDS architecture")
 
 ## Edge Data Store data flow
+The following diagram depicts the flow of data in the Edge Data Store:
 
 ![EDS data flow](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOverview1.jpg "EDS data flow")
 
 ## Edge Data Store components
+The following diagram depicts the relationship of key functions to relevant components of the Edge Data Store:
 
 ![EDS components](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOverview2.jpg "EDS components")
 
@@ -27,8 +30,9 @@ You can install Edge Data Store on both Linux and Windows. For more information 
 
 ## Data ingress to Edge Data Store
 
-
 Edge Data Store can ingress data in a number of ways. There are two built-in adapters: [EDS Modbus TCP](xref:modbusQuickStart) and [EDS OPC UA](xref:opcUaQuickStart). Data can also be ingressed using OSIsoft Message Format [(OMF)](xref:omfQuickStart) and the Sequential Data Store [SDS](xref:sdsWritingData) REST APIs.
+
+The following diagram depicts an OMF data ingress scenario in the Edge Data Store:
 
 ![EDS OMF Ingress](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOMFIngress.jpg "EDS OMF Ingress")
 
@@ -42,10 +46,12 @@ Edge Data Store is composed of components, and is designed to allow additional E
 You can access all data in Edge Data Store by using the Sequential Data Store [SDS Read/Write quick start](xref:sdsQuickStart) REST API. You can use this data for local applications that perform analytics or visualization. 
 
 ### Example EDS visualization application
+The following diagram depicts the flow of data from a customer visualization application into Edge Data Store, via either OMF or SDS REST calls:
 
 ![EDS Visualization](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSVisualization.jpg "EDS Visualization")
 
 ### Example EDS analytics application
+The following diagram depicts the flow of data from a customer analytics application into Edge Data Store, via either OMF or SDS REST calls:
 
 ![EDS Analytics](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSAnalytics.jpg "EDS Analytics")
 
