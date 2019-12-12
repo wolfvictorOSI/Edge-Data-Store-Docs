@@ -4,10 +4,10 @@ uid: RestCommands
 
 # REST commands
 
-The following tables give an overview of available REST commands that you can use with components of Edge Data Store.
+The following tables provide an overview of available REST commands that you can use with components of Edge Data Store.
 
-**Note:** The difference between the POST and the PUT method is that POST allows to create a
-configuration and PUT replaces a configuration. If you use POST on an existing
+**Note:** The difference between the POST and PUT methods is that POST enables you to create a
+configuration, while PUT replaces a configuration. If you use POST on an existing
 configuration, the request will fail.
 
 ## Administration
