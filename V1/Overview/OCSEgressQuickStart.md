@@ -8,7 +8,7 @@ This topic provides a quick start for getting data stored in the Edge Data Store
 
 ## Create a periodic egress configuration
 
-Configure Edge Storage periodic egress for the Osisoft Cloud Services (OCS) endpoint and credentials:
+The following is an example JSON file to configure Edge Storage periodic egress for the Osisoft Cloud Services (OCS) endpoint and credentials:
 
 ```json
 [{
