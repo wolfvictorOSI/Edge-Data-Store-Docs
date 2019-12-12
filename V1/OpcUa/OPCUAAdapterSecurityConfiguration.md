@@ -10,9 +10,9 @@ EDS adapter for OPC UA generates a self-signed certificate when the first secure
 
 ## Configure OPC UA EDS adapter security
 
-1. Configure the data source to use secure connection (Set UseSecureConnection as true).
+1. Configure the data source to use secure connection and set UseSecureConnection as true.
 2. Add server's certificate to the adapter's trust store.
-3. Add adapter's certificate to the server's trust store.
+3. Add [adapter's certificate](#adapter-certificate-store-location) to the server's trust store.
 
 ### Data source configuration
 
@@ -57,7 +57,7 @@ The adapter verifies whether the server certificate is present in the adapter tr
 ~~2019-09-08 11:45:48.093 +01:00~~ [Warning] Rejected Certificate: "DC=MyServer.MyDomain.int, O=Prosys OPC, CN=Simulation
 ```
 
-After the certificate is reviewed and approved, it can be manually moved from the “RejectedCertificates\certs” folder to the “Trusted\certs" folder using a file explorer or command-line interpreter.
+After the certificate is reviewed and approved, you can manually move it from the “RejectedCertificates\certs” folder to the “Trusted\certs" folder using a file explorer or command-line interpreter.
 
 - Linux example using command-line:
 
@@ -67,7 +67,7 @@ After the certificate is reviewed and approved, it can be manually moved from th
 
 > **Note:** Administrator or root privileges are required to perform this operation.
 
-When the certificate is in the adapter trust store, the adapter trusts the server and the connection attempt proceeds in making the  connection call to the configured server. Connection succeeds only when the adapter certificate is trusted on the server side. See your OPC UA server documentation for more details on how to make a client certificate trusted. In general, servers work in a similar fashion to the clients; hence a similar approach for making the server certificate trusted on the client side can be taken on the server.
+When the certificate is in the adapter trust store, the adapter trusts the server and the connection attempt proceeds in making the  connection call to the configured server. Connection succeeds only when the adapter certificate is trusted on the server side. For more details on how to make a client certificate trusted, see your OPC UA server documentation. In general, servers work in a similar fashion to the clients; hence you can take a similar approach for making the server certificate trusted on the client side.
 
 When certificates are mutually trusted, the connection attempt succeeds and the adapter is connected to the most secure endpoint provided by the server.
 
