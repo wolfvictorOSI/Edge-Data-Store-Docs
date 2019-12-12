@@ -36,11 +36,11 @@ The following table shows the required and optional SdsStream fields. Fields not
 
 ## Indexes
 
-The Key or Primary Index is defined at the SdsType. Secondary Indexes are defined at the SdsStream.
+* The Key or Primary Index is defined at the SdsType. Secondary Indexes are defined at the SdsStream.
 
-Secondary indexes are applied to a single property; there are no compound secondary indexes. Only SdsTypeCodes that can be ordered are supported for use in a secondary index.
+* Secondary indexes are applied to a single property; there are no compound secondary indexes. Only SdsTypeCodes that can be ordered are supported for use in a secondary index.
 
-Indexes are discussed in greater detail here: [Indexes](xref:sdsIndexes)
+* Indexes are discussed in greater detail here: [Indexes](xref:sdsIndexes)
 
 ## Interpolation and extrapolation
 
