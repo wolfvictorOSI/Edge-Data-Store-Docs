@@ -2,40 +2,44 @@
 uid: modbusQuickStart
 ---
 
-# Edge Modbus TCP quick start
+# Modbus TCP EDS adapter quick start
 
-This topic provides a quick start to setting up the Edge Modbus TCP component.  It is possible to add a single EDS Modbus TCP adapter during installation named Modbus1. If multiple EDS Modbus TcP adapters are desired, please reference [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) on how to add a new component to Edge Data Store. The examples below will change if a different adapter is being configured - please replace Modbus1 with the name of the component you have added.
+This topic provides a quick start for setting up the Modbus TCP EDS adapter. You can add a single Modbus TCP EDS adapter during Edge Data Store installation. If multiple Modbus TCP EDS adapters are desired, please reference [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) for adding a new component to Edge Data Store. 
+
+The following diagram depicts the data flow of a single Modbus TCP EDS adapter:
+
 
 ![EDS Modbus TCP](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSModbusTCP.jpg "EDS Modbus TCP")
 
 ## Configure a Modbus TCP data source
 
-Create a file in JSON format describing the location of the Modbus data source. The timeouts are in milliseconds.
+1. Create a file in JSON format describing the location of the Modbus TCP data source. The adapter installed during installation is named Modbus1 in this example. Modify the following values to match your environment.
 
-```json
-{
-    "IpAddress": "<Modbus IP Address>",
-    "Port": <Port - usually 502>,
-    "ConnectTimeout": 15000,
-    "ReconnectInterval": 5000,
-    "RequestTimeout": 9000,
-    "DelayBetweenRequests": 0,
-    "MaxResponseDataLength": 250
-}
-```
+   ```json
+   {
+       "IpAddress": "<Modbus IP Address>",
+       "Port": <Port - usually 502>,
+       "ConnectTimeout": 15000,
+       "ReconnectInterval": 5000,
+       "RequestTimeout": 9000,
+       "DelayBetweenRequests": 0,
+       "MaxResponseDataLength": 250
+   }
+   ```
 
-1. Enter the correct IP address and port for your Modbus data source.
-2. Save the file with the name Modbus1DataSource.json. 
-3. Run the following curl script from the same directory where the file is located. 
+2. Enter the correct IP address and port for your Modbus data source.
+3. Save the file with the name Modbus1DataSource.json. 
+4. Run the following curl script from the same directory where the file is located. 
+
 **Note:** You should run the script on the same computer where the Edge Data Store is installed:
 
-```bash
-curl -i -d "@Modbus1Datasource.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Datasource
-```
+   ```bash
+   curl -i -d "@Modbus1Datasource.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Datasource
+   ```
 
 When this command completes successfully (a 204 is returned by curl), your Modbus TCP data source has been created. If you get a 400 error, check your JSON file for errors. If you get a 404 or 500 error, check to make sure Edge Data Store is running on your computer.
 
-## Configure Modbus data selection
+## Configure Modbus TCP data selection
 
 Select the Modbus TCP data you want to store in Edge Data Store by configuring Modbus data selection. The following is a sample JSON for 5 Modbus values.
 
