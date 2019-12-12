@@ -6,11 +6,11 @@ uid: storage
 
 The EDS storage component provides Sequential Data Store (SDS) storage, with a rich array of functionality available through REST APIs. The storage component has three configurable facets:
 
-- [Storage Runtime](xref:storage_Runtime_schema)
+- Storage Runtime
 
-- [Storage Periodic Egress Endpoints](xref:storage_PeriodicEgressEndpoints_schema)
+- [Storage periodic gress endpoints](xref:egress)
 
-- [Logging](xref:Storage_Logging_schema)
+- [Logging](xref:LoggingConfiguration)
 
 For more information, see [Sequential Data Store](xref:sdsOverview).
 
