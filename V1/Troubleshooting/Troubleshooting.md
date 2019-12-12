@@ -61,7 +61,7 @@ In order to troubleshoot problems between Edge Data Store and the destination, e
 
 - Set an appropriate value for the *DebugExpiration* property in an egress configuration.
 
-Debugging for that destination will be enabled, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to *null*.
+    Debugging for that destination will be enabled, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to *null*.
 
 Examples of valid strings representing date and time:
 
