@@ -5,7 +5,7 @@ uid: sdsSearching
 Searching
 =====================
 
-Search in SDS provides a way to search text, fields, and so on across the Sequential Data Store. This topic covers the searching for SdsStreams, SdsTypes, and SdsStreamViews.
+You can search text and fields across the Sequential Data Store. This topic covers searching for SdsStreams, SdsTypes, and SdsStreamViews.
 
 Searching for streams
 =====================
@@ -40,7 +40,7 @@ The Stream fields valid for search are identified in the fields table located on
 Searching for types
 =====================
 
-Similarly, the search functionality for types is also exposed through REST API. The query syntax and the request parameters are the same. The only difference is the resource you're searching on. You can search on different properties for types than for streams. The searchable properties are below. For more information, see [Types](xref:sdsTypes).
+Similarly, the search functionality for types is also exposed through REST API. The query syntax and request parameters are the same. The only difference is the searchable properties differ for types as opposed to streams. Searchable properties are listed below. For more information, see [Types](xref:sdsTypes).
 
 | Property          | Searchable |
 |-------------------|------------|
