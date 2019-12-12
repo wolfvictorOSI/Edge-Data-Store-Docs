@@ -4,7 +4,7 @@ uid: modbusQuickStart
 
 # Modbus TCP EDS adapter quick start
 
-This topic provides a quick start for setting up the Modbus TCP EDS adapter. You can add a single Modbus TCP EDS adapter during Edge Data Store installation. If multiple Modbus TCP EDS adapters are desired, please reference [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) for adding a new component to Edge Data Store. 
+This topic provides a quick start for setting up the Modbus TCP EDS adapter. You can add a single Modbus TCP EDS adapter during Edge Data Store installation. If you want multiple Modbus TCP EDS adapters, see [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) for adding a new component to Edge Data Store. 
 
 The following diagram depicts the data flow of a single Modbus TCP EDS adapter:
 
@@ -112,7 +112,7 @@ Select the Modbus TCP data you want to store in Edge Data Store by configuring M
    curl -i -d "@Modbus1Dataselection.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Dataselection
    ```
 
-To see the streams that have been created in Edge Storage to store the data you are writing, you can run the following curl script:
+* To see the streams that have been created in Edge Storage to store the data you are writing, you can run the following curl script:
 
    ```bash
    curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
