@@ -10,11 +10,12 @@ Diagnostics data is stored within the 'diagnostics' namespace of Edge Storage.  
 
 ## Egress diagnostics data through PeriodicEgressEndpoints
 
-To egress diagnositcs related data, configure a periodic egress endpoint and specify ```diagnostics``` as the NamespaceId in the periodic egress endpoint configuration.
+To egress diagnositcs related data:
 
-## Diagnostics produced by Edge Data Store
+1. Configure a periodic egress endpoint.
+2. Specify ```diagnostics``` as the NamespaceId in the periodic egress endpoint configuration.
 
-Edge Data Store produces the following diagnostics streams:
+## Edge Data Store diagnostics
 
 The Diagnostics.System dynamic type includes these values which are logged in a stream with the id System.Diagnostics.
 This diagnostic stream contains system level information related to the host platform that Edge Data Store is running on.
