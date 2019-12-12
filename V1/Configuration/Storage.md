@@ -14,9 +14,9 @@ The EDS storage component provides Sequential Data Store (SDS) storage, with a r
 
 See the following topics for SDS and storage component reference:
 
-[Storage Component Schema](xref:storage_schema)
-
 [Sequential Data Store](xref:sdsOverview)
+
+[Storage Component Schema](xref:storage_schema)
 
 The following diagram depicts the relationships between Edge Data Store functions and the EDS Storage component:
 
