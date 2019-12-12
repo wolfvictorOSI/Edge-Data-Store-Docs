@@ -11,6 +11,7 @@ Edge Data Store is supported on a variety of platforms and processors. OSIsoft p
 * Windows 10 x64 - EdgeDataStore.msi (Intel/AMD 64 bit processors)
 * Debian 9 or later x64/AMD64 - EdgeDataStore_linux-x64.deb (Intel/AMD 64 bit processors)
 * Debian 9 or later ARM32 - EdgeDataStore_linux-arm.deb (Raspberry PI 2,3,4, BeagleBone devices, other ARM v7 and ARM v8 32 bit processors)
+* Debian 9 or later arm64 - EdgeDataStore_linux-arm64.deb (Raspberry PI 3,4 (Ubuntu ARM64 Server), Google Coral Dev Board, Nvidia Nano Jetson
 
 In addition to ready to use install kits, OSIsoft also provides examples of how to create Docker containers in a separate file. tar.gz files are provided with binaries for customers who want to build their own custom installers or containers for Linux.
 
