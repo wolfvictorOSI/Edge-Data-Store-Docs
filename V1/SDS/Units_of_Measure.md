@@ -10,7 +10,7 @@ Since a unit of measurement (that is meter) defines the magnitude of a quantity 
 
 ## SdsUom
 
-A SdsUom represents a single unit of measure, such as 'meter'.
+An SdsUom represents a single unit of measure, such as 'meter'.
 
 The following table shows the required and optional SdsUom fields.
 
