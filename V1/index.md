@@ -18,7 +18,7 @@ uid: index
   - [PI egress quick start](xref:piEgressQuickStart)
   - [SDS Read/Write quick start](xref:sdsQuickStart)
   - [Command line quick start - Linux](xref:commandLineLinuxQuickStart)
-  - [Command Line quick start - Windows](xref:commandLineWindowsQuickStart)
+  - [Command line quick start - Windows](xref:commandLineWindowsQuickStart)
 - [Installation](xref:installationOverview)
   - [System requirements](xref:SystemRequirements)
     - [Linux and Windows platform differences](xref:linuxWindows)
