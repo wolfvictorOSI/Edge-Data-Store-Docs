@@ -6,28 +6,26 @@ uid: PrinciplesOfOperationOPCUA.md
 
 This topic provides an operational overview of the OPC UA EDS adapter, focusing on streams creation and error handling.
 
-## Operational overview
-
-### Adapter configuration
+## Adapter configuration
 
 In order for the OPC UA EDS adapter to start data collection, you need to configure the adapter. For more information, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration) and [OPC UA data selection configuration](xref:OPCUADataSelectionConfiguration). To configure the adapter, you must define the following:
 
 - Data source: Provide the data source from which the adapter should collect data.
 - Data selection: Perform selection of OPC UA items to which the adapter should subscribe for data.
 
-### Connection
+## Connection
 
 The OPC UA EDS adapter uses binary opc.tcp protocol to communicate with the OPC UA servers. The X.509-type client and server certificates are exchanged and verified (when security is enabled) and the connection to the configured OPC UA server is established.
 
-### Stream creation
+## Stream creation
 
 The OPC UA EDS adapter creates types upon receiving the value update for a stream. One stream is created in Edge Data Store for every selected OPC UA item in the data selection configuration.
 
-### Data collection
+## Data collection
 
 OPC UA EDS adapter is collecting time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). This version of adapter supports Data Access (DA) part of OPC UA specification.
 
-## Streams by OPC UA EDS adapter
+# Streams by OPC UA EDS adapter
 
 The OPC UA EDS adapter creates a stream with two properties per selected OPC UA item. The properties are defined in the following table:
 
