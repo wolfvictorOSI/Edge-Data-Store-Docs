@@ -5,10 +5,10 @@ uid: omfQuickStart
 # Edge Storage OMF Quick Start
 
 
-This topic provides a quick start for getting data into the Edge Storage component using the OSisoft Message Format (OMF), and then retrieving that data using the Sequential Data Store (SDS) API. Both OMF data ingress and SDS data retrieval are accomplished using REST APIs. This topic assumes the Edge Data Store has been installed, and is accessible via a REST API using the default installed port (5590). This topic will demonstrate the use of both curl, a commonly available tool on both Windows and Linux, and command line commands. The same operations can be used with any programming language or tool that supports making REST calls. In addition, data retrieval steps (GET commands) can be accomplished using a browser if one is available on the device.
+This topic provides a quick start for getting data into the Edge Storage component using the OSisoft Message Format (OMF), and then retrieving that data using the Sequential Data Store (SDS) API. Both OMF data ingress and SDS data retrieval are accomplished using REST APIs. This topic assumes the Edge Data Store has been installed, and is accessible through a REST API using the default installed port (5590). This topic will demonstrate the use of both curl, a commonly available tool on both Windows and Linux, and command line commands. You can use the same operations with any programming language or tool that supports making REST calls. In addition, you can accomplish data retrieval steps (GET commands) using a browser if one is available on the device.
 
 
-## Create an OMF Type
+## Create an OMF type
 
 The first step in OMF data ingress is to create an OMF type that describes the format of the data to be stored in a container. In this example the data to be written is a timestamp and a numeric value.
 
@@ -46,9 +46,9 @@ The first step in OMF data ingress is to create an OMF type that describes the f
 
 When this command completes successfully, an SDS type with the same name will have been created on the server. Any number of containers can be created from the type, as long as they use a timestamp as an index and a 32 bit floating point value. Type creation only needs to be done the first time you send using a custom application, but it does not cause an error if you resend the same definition at a later time.
 
-## Create an OMF Container
+## Create an OMF container
 
-The next step in writing OMF data is to create a container. As with an OMF Type, this only needs to be done once before sending data events, and resending the same definition repeatedly does not cause an error.
+The next step in writing OMF data is to create a container. As with an OMF type, this only needs to be done once before sending data events, and resending the same definition repeatedly does not cause an error.
 
 1. Create an OMF JSON file as follows:
 
@@ -71,7 +71,7 @@ This container references the type that was created in the last step, and an err
 
 When this command completes successfully, an SDS stream will have been created to store data defined by the type.
 
-## Write Data Events to the OMF Container
+## Write data events to the OMF container
 
 1. Create an OMF JSON file as in the following example:
 
