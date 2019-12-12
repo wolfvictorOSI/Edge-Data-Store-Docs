@@ -14,7 +14,7 @@ One tenant and two namespaces are supported in the Edge Data Store. The tenant i
 
 ## Configure data egress
 
-Prior to configuring egress on the Edge Data Store, follow [Destination Preparation](#destination-preparation) steps to make available one or more OMF destinations.
+Prior to configuring egress on the Edge Data Store, see [Prepare egress destinations](xref:PrepareEgressDestinations) to make available one or more OMF destinations.
 
 > **Note:** You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see [REST Urls](#rest-urls).
 
@@ -26,7 +26,7 @@ Complete the following to create new egress endpoints:
 2. Save the file.
 3. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints/`
 
-- Example using cURL:
+Example using cURL:
 
 ```bash
 curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
