@@ -15,7 +15,7 @@ In order for the OPC UA EDS adapter to start data collection, you need to config
 
 ## Connection
 
-The OPC UA EDS adapter uses binary opc.tcp protocol to communicate with the OPC UA servers. The X.509-type client and server certificates are exchanged and verified (when security is enabled) and the connection to the configured OPC UA server is established.
+The OPC UA EDS adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. The X.509-type client and server certificates are exchanged and verified (when security is enabled) and the connection to the configured OPC UA server is established.
 
 ## Stream creation
 
@@ -23,9 +23,9 @@ The OPC UA EDS adapter creates types upon receiving the value update for a strea
 
 ## Data collection
 
-OPC UA EDS adapter is collecting time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). This version of adapter supports Data Access (DA) part of OPC UA specification.
+OPC UA EDS adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). This version of adapter supports Data Access (DA) part of OPC UA specification.
 
-# Streams by OPC UA EDS adapter
+## Streams by OPC UA EDS adapter
 
 The OPC UA EDS adapter creates a stream with two properties per selected OPC UA item. The properties are defined in the following table:
 
@@ -40,4 +40,4 @@ Stream ID is a unique identifier of each stream created by the adapter for a giv
 <Adapter Component ID>.<Namespace>.<Identifier>
 ```
 
-> **Note:** Naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more informaton, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration).
+> **Note:** The naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more informaton, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration).
