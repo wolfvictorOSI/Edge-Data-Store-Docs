@@ -4,7 +4,7 @@ uid: OPCUADataSourceConfiguration
 
 # Data source configuration
 
-To use the OPC UA EDS adapter, you must configure from which OPC UA data source it will be receiving data.
+In order to use the OPC UA EDS adapter, you must configure the data source from which it will be receiving data.
 
 ## Configure OPC UA data source
 
@@ -16,9 +16,9 @@ Complete the following to configure the OPC UA data source:
     - For content structure, see [OPC UA data source example](#opc-ua-data-source-example).
     - For a table of all available parameters, see [Parameters for OPC UA data source](#parameters-for-opc-ua-data-source).
 2. Save the file as _DataSource.config.json_.
-3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`. 
+3. Use any [Configuration tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`. 
 
-> **Note:** During installation, it is possible to add a single OPC UA EDS adapter which is named OpcUa1. The following example uses this component name.
+> **Note:** During installation, you can add a single OPC UA EDS adapter named OpcUa1. The following example uses this component name.
 
 Example using cURL (run this command from the same directory where the file is located):
 
