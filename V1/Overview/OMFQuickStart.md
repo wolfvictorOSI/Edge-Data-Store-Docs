@@ -15,25 +15,24 @@ The first step in OMF data ingress is to create an OMF type that describes the f
 1. Create an OMF JSON file describing the type as follows:
 
 
-```json
-[{
-    "id": "MyCustomType",
-    "classification": "dynamic",
-    "type": "object",
-    "properties": {
-        "Timestamp": {
-            "type": "string",
-            "format": "date-time",
-            "isindex": true
-        },
-        "Value": {
-            "type": "number",
-            "format": "float32"
-        }
-    }
-}]
-```
-
+   ```json
+   [{
+       "id": "MyCustomType",
+       "classification": "dynamic",
+       "type": "object",
+       "properties": {
+           "Timestamp": {
+               "type": "string",
+               "format": "date-time",
+               "isindex": true
+           },
+           "Value": {
+               "type": "number",
+               "format": "float32"
+           }
+       }
+   }]
+   ```
 
 The value is indexed by a timestamp and the numeric value that will be stored is a 32 bit floating point value.
 
