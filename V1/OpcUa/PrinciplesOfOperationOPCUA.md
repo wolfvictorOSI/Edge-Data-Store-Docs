@@ -4,7 +4,7 @@ uid: PrinciplesOfOperationOPCUA.md
 
 # Principles of operation
 
-The following topics provide and operational overview of the OPC UA EDS adapter, focusing on streams creation and error handling.
+This topic provides an operational overview of the OPC UA EDS adapter, focusing on streams creation and error handling.
 
 ## Operational overview
 
