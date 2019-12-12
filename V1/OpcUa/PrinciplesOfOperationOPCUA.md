@@ -10,7 +10,7 @@ This topic provides an operational overview of the OPC UA EDS adapter, focusing 
 
 ### Adapter configuration
 
-In order for the OPC UA EDS adapter to start data collection, you need to configure the adapter. For more information, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration) and [OPC UA data selection configuration](xref:OPCUADataSelectionConfiguration). To configure the adapter, configure the following:
+In order for the OPC UA EDS adapter to start data collection, you need to configure the adapter. For more information, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration) and [OPC UA data selection configuration](xref:OPCUADataSelectionConfiguration). To configure the adapter, you must define the following:
 
 - Data source: Provide the information of the data source from where the adapter should collect data.
 - Data selection: Perform selection of OPC UA items that adapter should should subscribe for data.
@@ -21,7 +21,7 @@ The OPC UA EDS adapter uses binary opc.tcp protocol to communicate with the OPC 
 
 ### Stream creation
 
-The OPC UA EDS adapter creates types upon receiving the value update for a stream from OPC UA subscription per stream and streams are created for selected OPC UA items in the data selection configuration. One stream is going to be created in Edge Data Store for every selected OPC UA item in data selection configuration.
+The OPC UA EDS adapter creates types upon receiving the value update for a stream. One stream is created in Edge Data Store for every selected OPC UA item in the data selection configuration.
 
 ### Data collection
 
@@ -29,7 +29,7 @@ OPC UA EDS adapter is collecting time-series data from selected OPC UA dynamic v
 
 ## Streams by OPC UA EDS adapter
 
-OPC UA EDS adapter creates a stream with two properties per selected OPC UA item. The properties are defined in the following table:
+The OPC UA EDS adapter creates a stream with two properties per selected OPC UA item. The properties are defined in the following table:
 
 | Property name | Data type | Description |
 |---------------|-----------|-------------|
