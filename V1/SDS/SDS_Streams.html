@@ -167,9 +167,14 @@
 <li>Can contain a maximum of 100 characters</li>
 </ol>
 <h2 id="indexes">Indexes</h2>
-<p>The Key or Primary Index is defined at the SdsType. Secondary Indexes are defined at the SdsStream.</p>
-<p>Secondary indexes are applied to a single property; there are no compound secondary indexes. Only SdsTypeCodes that can be ordered are supported for use in a secondary index.</p>
-<p>Indexes are discussed in greater detail here: <a class="xref" href="indexes.html">Indexes</a></p>
+<ul>
+<li><p>The Key or Primary Index is defined at the SdsType. Secondary Indexes are defined at the SdsStream.</p>
+</li>
+<li><p>Secondary indexes are applied to a single property; there are no compound secondary indexes. Only SdsTypeCodes that can be ordered are supported for use in a secondary index.</p>
+</li>
+<li><p>Indexes are discussed in greater detail here: <a class="xref" href="indexes.html">Indexes</a></p>
+</li>
+</ul>
 <h2 id="interpolation-and-extrapolation">Interpolation and extrapolation</h2>
 <p>The InterpolationMode, ExtrapolationMode, and <a href="#propertyoverrides">PropertyOverrides</a> can be used to determine how a specific stream reads data. These read characteristics are inherited from the type if they are not defined at the stream level. For more information about type read characteristics and how these characteristics dictate how events are read see <a class="xref" href="SDS_Types.html">Types</a>.</p>
 <h2 id="propertyoverrides">PropertyOverrides</h2>

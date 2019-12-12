@@ -72,22 +72,20 @@
 <h1 id="principles-of-operation">Principles of operation</h1>
 
 <p>The following topics provide an operational overview of the Modbus TCP EDS adapter, focusing on streams creation and error handling. </p>
-<h2 id="operational-overview">Operational overview</h2>
-<h3 id="adapter-configuration">Adapter configuration</h3>
-<p>In order to provide the necessary information for the Modbus TCP EDS adapter to be ready for data collection, you need to configure the adapter. For more details, see <a class="xref" href="ModbusTCPDataSourceConfiguration.html">Modbus TCP data source configuration</a> and <a class="xref" href="ModbusTCPDataSelectionConfiguration.html">Modbus TCP data selection configuration</a>. To configure the adapter, do the following:</p>
+<h2 id="adapter-configuration">Adapter configuration</h2>
+<p>In order to provide the necessary information for the Modbus TCP EDS adapter to be ready for data collection, you need to configure the adapter. For more details, see <a class="xref" href="ModbusTCPDataSourceConfiguration.html">Modbus TCP data source configuration</a> and <a class="xref" href="ModbusTCPDataSelectionConfiguration.html">Modbus TCP data selection configuration</a>. To configure the adapter, you must define the following:</p>
 <ul>
-<li>Data source: Provide the information of the data sources from which the connector pulls data</li>
-<li>Data selection: Provide the selected measurements for which the adapter collects data from the data source</li>
-<li>Logging: Set up the logging attributes to manage the adapter logging behavior</li>
+<li>Data source: Provide the information of the data sources from which the connector pulls data.</li>
+<li>Data selection: Provide the selected measurements for which the adapter collects data from the data source.</li>
+<li>Logging: Set up the logging attributes to manage the adapter logging behavior.</li>
 </ul>
-<h3 id="network-communication">Network communication</h3>
+<h2 id="connection">Connection</h2>
 <p>The Modbus TCP EDS adapter communicates with the Modbus TCP devices through the TCP/IP network by sending request packets that are constructed based on the data selection configurations, and collects the response packets returned by the devices. </p>
-<h3 id="stream-creation">Stream creation</h3>
+<h2 id="stream-creation">Stream creation</h2>
 <p>From the parsed data selection configurations, the Modbus TCP EDS adapter creates types, streams and data based on the information provided. For each measurement in the data selection configuration, a stream is created in the Edge Data Store to store time series data.</p>
-<h3 id="connection">Connection</h3>
-<h3 id="data-collection">Data collection</h3>
+<h2 id="data-collection">Data collection</h2>
 <p>The Modbus TCP EDS adapter collects data from the Modbus TCP devices at the polling rates that you specify. The rates are set in each of the data selection configurations and can range from 0 milliseconds (as fast as possible) up to 1 day per polling. The adapter automatically optimizes the data collection process by grouping the requests to reduce the I/O load imposed to the Modbus TCP networks.</p>
-<h2 id="streams-by-modbus-tcp-eds-adapter">Streams by Modbus TCP EDS adapter</h2>
+<h1 id="streams-by-modbus-tcp-eds-adapter">Streams by Modbus TCP EDS adapter</h1>
 <p>For each data selection configuration, the Modbus TCP EDS adapter creates a stream with two properties. The properties are defined in the following table:</p>
 <table>
 <thead>

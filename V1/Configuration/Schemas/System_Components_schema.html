@@ -85,7 +85,7 @@
    &quot;ComponentType&quot;: &quot;EDS.Component&quot;
  }
 ]
-</code></pre><h1 id="edge-data-store-components-schema">Edge Data Store components schema</h1>
+</code></pre><h1 id="edge-data-store-components-configuration-schema">Edge Data Store components configuration schema</h1>
 <table>
 <thead>
 <tr>
@@ -110,12 +110,14 @@
 </tr>
 </tbody>
 </table>
-<h1 id="edgedatastoreconfig-definitions">EdgeDataStoreConfig definitions</h1>
+<h1 id="edge-data-store-components-configuration-properties">Edge Data Store components configuration properties</h1>
 <table>
 <thead>
 <tr>
 <th>Property</th>
 <th>Type</th>
+<th>Required</th>
+<th>Nullable</th>
 <th>Group</th>
 </tr>
 </thead>
@@ -123,34 +125,20 @@
 <tr>
 <td><a href="#componentid">ComponentId</a></td>
 <td><code>string</code></td>
+<td>Optional</td>
+<td>Yes</td>
 <td><code>#/definitions/EdgeComponentConfig</code></td>
 </tr>
 <tr>
 <td><a href="#componenttype">ComponentType</a></td>
 <td><code>string</code></td>
+<td>Optional</td>
+<td>Yes</td>
 <td><code>#/definitions/EdgeComponentConfig</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="componentid">ComponentId</h2>
-<p><code>ComponentId</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="componentid-type">ComponentId type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="componenttype">ComponentType</h2>
-<p><code>ComponentType</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="componenttype-type">ComponentType type</h3>
-<p><code>string</code>, nullable</p>
-<h1 id="edgedatastoreconfig-properties">EdgeDataStoreConfig properties</h1>
+<h1 id="edge-data-store-configuration-properties">Edge Data Store configuration properties</h1>
 <table>
 <thead>
 <tr>
@@ -164,32 +152,19 @@
 <tbody>
 <tr>
 <td><a href="#componentconfigurations">ComponentConfigurations</a></td>
-<td>reference</td>
+<td>reference <br> <code>#/definitions/EdgeComponentConfig</code></td>
 <td>Optional</td>
 <td>Yes</td>
 <td>EdgeDataStoreConfig (this schema)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="componentconfigurations">ComponentConfigurations</h2>
-<p><code>ComponentConfigurations</code></p>
-<ul>
-<li>is optional</li>
-<li>type: reference</li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="componentconfigurations-type">ComponentConfigurations type</h3>
-<p>Array type: reference</p>
-<p>All items must be of the type:</p>
-<ul>
-<li><a href=""></a> – <code>#/definitions/EdgeComponentConfig</code></li>
-</ul>
-<p><strong>All</strong> of the following <em>requirements</em> need to be fulfilled.</p>
-<h4 id="requirement-1">Requirement 1</h4>
+<p><strong>Note:</strong> All of the following <em>requirements</em> need to be fulfilled.</p>
+<h2 id="requirement-1">Requirement 1</h2>
 <ul>
 <li><a href=""></a> – <code>#/definitions/EdgeConfigurationBase</code></li>
 </ul>
-<h4 id="requirement-2">Requirement 2</h4>
+<h2 id="requirement-2">Requirement 2</h2>
 <p><code>object</code> with following properties:</p>
 <table>
 <thead>
@@ -202,23 +177,11 @@
 <tbody>
 <tr>
 <td><code>ComponentConfigurations</code></td>
-<td>array</td>
+<td>reference <br> <code>#/definitions/EdgeComponentConfig</code></td>
 <td>Optional</td>
 </tr>
 </tbody>
 </table>
-<h4 id="componentconfigurations-1">ComponentConfigurations</h4>
-<p><code>ComponentConfigurations</code></p>
-<ul>
-<li>is optional</li>
-<li>type: reference</li>
-</ul>
-<h5 id="componentconfigurations-type-1">ComponentConfigurations type</h5>
-<p>Array type: reference</p>
-<p>All items must be of the type:</p>
-<ul>
-<li><a href=""></a> – <code>#/definitions/EdgeComponentConfig</code></li>
-</ul>
 </article>
           </div>
           

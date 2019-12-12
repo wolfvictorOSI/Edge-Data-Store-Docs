@@ -96,7 +96,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="edgeloggerconfiguration-properties">EdgeLoggerConfiguration properties</h1>
+<h1 id="system-logging-configuration-properties">System logging configuration properties</h1>
 <table>
 <thead>
 <tr>
@@ -124,48 +124,19 @@
 </tr>
 <tr>
 <td><a href="#loglevel">LogLevel</a></td>
-<td>reference</td>
+<td>reference <br> <code>#/definitions/EdgeLogLevel</code></td>
 <td>Optional</td>
 <td>No</td>
 <td>EdgeLoggerConfiguration (this schema)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="logfilecountlimit">LogFileCountLimit</h2>
-<p><code>LogFileCountLimit</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>integer</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="logfilecountlimit-type">LogFileCountLimit type</h3>
-<p><code>integer</code>, nullable</p>
-<h2 id="logfilesizelimitbytes">LogFileSizeLimitBytes</h2>
-<p><code>LogFileSizeLimitBytes</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>integer</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="logfilesizelimitbytes-type">LogFileSizeLimitBytes type</h3>
-<p><code>integer</code>, nullable</p>
-<h2 id="loglevel">LogLevel</h2>
-<p><code>LogLevel</code></p>
-<ul>
-<li>is optional</li>
-<li>type: reference</li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="loglevel-type">LogLevel type</h3>
-<ul>
-<li><a href=""></a> – <code>#/definitions/EdgeLogLevel</code></li>
-</ul>
-<p><strong>All</strong> of the following <em>requirements</em> need to be fulfilled.</p>
-<h4 id="requirement-1">Requirement 1</h4>
+<p><strong>Note:</strong> All of the following <em>requirements</em> need to be fulfilled.</p>
+<h2 id="requirement-1">Requirement 1</h2>
 <ul>
 <li><a href=""></a> – <code>#/definitions/EdgeConfigurationBase</code></li>
 </ul>
-<h4 id="requirement-2">Requirement 2</h4>
+<h2 id="requirement-2">Requirement 2</h2>
 <p><code>object</code> with following properties:</p>
 <table>
 <thead>
@@ -188,37 +159,11 @@
 </tr>
 <tr>
 <td><code>LogLevel</code></td>
-<td></td>
+<td>reference <br> <code>#/definitions/EdgeLogLevel</code></td>
 <td>Optional</td>
 </tr>
 </tbody>
 </table>
-<h4 id="logfilecountlimit-1">LogFileCountLimit</h4>
-<p><code>LogFileCountLimit</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>integer</code></li>
-</ul>
-<h5 id="logfilecountlimit-type-1">LogFileCountLimit type</h5>
-<p><code>integer</code>, nullable</p>
-<h4 id="logfilesizelimitbytes-1">LogFileSizeLimitBytes</h4>
-<p><code>LogFileSizeLimitBytes</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>integer</code></li>
-</ul>
-<h5 id="logfilesizelimitbytes-type-1">LogFileSizeLimitBytes type</h5>
-<p><code>integer</code>, nullable</p>
-<h4 id="loglevel-1">LogLevel</h4>
-<p><code>LogLevel</code></p>
-<ul>
-<li>is optional</li>
-<li>type: reference</li>
-</ul>
-<h5 id="loglevel-type-1">LogLevel type</h5>
-<ul>
-<li><a href=""></a> – <code>#/definitions/EdgeLogLevel</code></li>
-</ul>
 </article>
           </div>
           

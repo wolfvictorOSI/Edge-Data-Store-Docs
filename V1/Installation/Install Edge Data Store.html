@@ -75,7 +75,7 @@
 <h2 id="windows-windows-10-x64">Windows (Windows 10 x64)</h2>
 <p>You must have administrative privileges to run the installer.</p>
 <ol>
-<li>To use any of the installers, copy the appropriate file to the file system of the device.</li>
+<li>Copy the <em>EdgeDataStore.msi</em> file to the file system of the device.</li>
 <li><p>To start the installer UI, double-click the <em>EdgeDataStore.msi</em> file in Windows Explorer.</p>
 <p> Alternatively, you can start the installer from the command line with the following command:</p>
 <pre><code class="lang-bash">msiexec /i EdgeDataStore.msi PORT=5590 INSTALLFOLDER=&quot;C:\otherdir&quot;
@@ -89,10 +89,11 @@
 </blockquote>
 <p> If you omit PORT=nnnn, the default will be used. The UI will start with the port pre-set to the value specified; validity will be checked as mentioned previously, with the install proceeding only when a valid port number is provided. If, however,the &quot;quiet&quot; or &quot;no ui&quot; flag for msiexec is specified, and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.</p>
 </li>
-<li><p>Click <strong>Next</strong> &gt; <strong>Install</strong>.
-When the install finishes, Edge Data Store will be installed and running on the port specified.</p>
+<li><p>Click <strong>Next</strong> &gt; <strong>Install</strong>.</p>
+<p> When the install finishes, Edge Data Store will be installed and running on the port specified.</p>
 </li>
-<li>Click <strong>Finish</strong>.</li>
+<li><p>Click <strong>Finish</strong>.</p>
+</li>
 </ol>
 <h2 id="linux">Linux</h2>
 <p>You must have administrative privileges to install the software, for example root or sudo privilege. The following examples assume a user with permission to use sudo.</p>

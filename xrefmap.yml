@@ -101,7 +101,7 @@ references:
   name: Modbus TCP EDS adapter
   href: V1/Modbus/ModbusOverview.html
 - uid: modbusQuickStart
-  name: Edge Modbus TCP quick start
+  name: Modbus TCP EDS adapter quick start
   href: V1/Overview/ModbusQuickStart.html
 - uid: ModbusTCPAdapterSecurity
   name: Adapter security
@@ -137,7 +137,7 @@ references:
   name: Adapter security
   href: V1/OpcUa/OPCUAAdapterSecurityConfiguration.html
 - uid: opcUaDataSelection
-  name: Template OPC UA data selection configuration file
+  name: Generate template OPC UA data selection configuration file
   href: V1/OpcUa/OpcUaDataSelection.html
 - uid: OPCUADataSelectionConfiguration
   name: Data selection configuration
@@ -251,7 +251,7 @@ references:
   name: Sample storage runtime configuration
   href: V1/Configuration/Schemas/Storage_Runtime_schema.html
 - uid: storage_schema
-  name: StorageConfiguration schema
+  name: Sample Storage configuration
   href: V1/Configuration/Schemas/Storage_schema.html
 - uid: SupportedFeaturesModbus
   name: Supported features
@@ -266,16 +266,16 @@ references:
   name: Sample Edge Data Store components configuration
   href: V1/Configuration/Schemas/System_Components_schema.html
 - uid: system_HealthEndpoints_schema
-  name: OMF health endpoint configuration schema
+  name: Sample OMF health endpoint configuration
   href: V1/Configuration/Schemas/System_HealthEndpoints_schema.html
 - uid: system_Logging_schema
   name: System logging configuration schema
   href: V1/Configuration/Schemas/System_Logging_schema.html
 - uid: system_Port_schema
-  name: Sample system port configuration file
+  name: Sample system port configuration
   href: V1/Configuration/Schemas/System_Port_schema.html
 - uid: system_schema
-  name: SystemConfiguration schema
+  name: Sample system configuration
   href: V1/Configuration/Schemas/System_schema.html
 - uid: SystemComponentsConfiguration
   name: System components configuration

@@ -101,7 +101,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="storageruntimeconfiguration-properties">StorageRuntimeConfiguration properties</h1>
+<h1 id="storage-runtime-configuration-properties">Storage runtime configuration properties</h1>
 <table>
 <thead>
 <tr>
@@ -137,12 +137,6 @@
 </tbody>
 </table>
 <h2 id="ingressdebugexpiration">IngressDebugExpiration</h2>
-<p><code>IngressDebugExpiration</code></p>
-<ul>
-<li>is <strong>required</strong></li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
 <p>Ingress Debug Expiration is a property that can be used when debugging OMF. If the date and time is the future incoming OMF messages will be logged until the date and time specified. Once the configured time is past OMF messages will no longer be logged for debugging purposes.</p>
 <h3 id="ingressdebugexpiration-type">IngressDebugExpiration type</h3>
 <p><code>string</code></p>
@@ -151,34 +145,22 @@
 <li>minimum length: 1 characters</li>
 </ul>
 <h2 id="streamstoragelimitmb">StreamStorageLimitMb</h2>
-<p><code>StreamStorageLimitMb</code></p>
-<ul>
-<li>is <strong>required</strong></li>
-<li>type: <code>integer</code></li>
-<li>defined in this schema</li>
-</ul>
+<p>StreamStorageLimitMb is the maximum size in megabytes that a stream can reach. When a stream exceeds the size specified, older data will be deleted from the file. Data will be removed from the stream until the stream is at or below the StreamStorageTargetMb value. It is recommended that the target value be smaller than the limit since trimming can be an expensive operation and should be done infrequently.</p>
 <h3 id="streamstoragelimitmb-type">StreamStorageLimitMb type</h3>
 <p><code>integer</code></p>
 <ul>
 <li>minimum value: <code>2</code></li>
 <li>maximum value: <code>2147483647</code></li>
 </ul>
-<p>StreamStorageLimitMb is the maximum size in megabytes that a stream can reach. When a stream exceeds the size specified, older data will be deleted from the file. Data will be removed from the stream until the stream is at or below the StreamStorageTargetMb value. It is recommended that the target value be smaller than the limit since trimming can be an expensive operation and should be done infrequently.</p>
 <h2 id="streamstoragetargetmb">StreamStorageTargetMb</h2>
-<p><code>StreamStorageTargetMb</code></p>
-<ul>
-<li>is <strong>required</strong></li>
-<li>type: <code>integer</code></li>
-<li>defined in this schema</li>
-</ul>
+<p>StreamStorageTargetMb is the size in megabytes that a stream will be reduced to after StreamStorageLimitMb size is reached for a single stream. When a stream exceeds the size specified, older data will be deleted from the file. Data will be removed from the stream until the stream is at or below the StreamStorageTargetMb value. It is recommended that the target value be smaller than the limit since trimming can be an expensive operation and should be done infrequently.</p>
 <h3 id="streamstoragetargetmb-type">StreamStorageTargetMb type</h3>
 <p><code>integer</code></p>
 <ul>
 <li>minimum value: <code>1</code></li>
 <li>maximum value: <code>2147483647</code></li>
 </ul>
-<p>StreamStorageTargetMb is the size in megabytes that a stream will be reduced to after StreamStorageLimitMb size is reached for a single stream. When a stream exceeds the size specified, older data will be deleted from the file. Data will be removed from the stream until the stream is at or below the StreamStorageTargetMb value. It is recommended that the target value be smaller than the limit since trimming can be an expensive operation and should be done infrequently.</p>
-<p><strong>All</strong> of the following <em>requirements</em> need to be fulfilled.</p>
+<p><strong>Note:</strong> All of the following <em>requirements</em> need to be fulfilled.</p>
 <h4 id="requirement-1">Requirement 1</h4>
 <ul>
 <li><a href=""></a> – <code>#/definitions/EdgeConfigurationBase</code></li>

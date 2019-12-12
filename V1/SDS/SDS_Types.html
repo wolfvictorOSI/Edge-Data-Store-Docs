@@ -71,7 +71,7 @@
             <article class="content wrap" id="_content" data-uid="sdsTypes">
 <h1 id="types">Types</h1>
 
-<p>The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate events. Events are stored in streams, called SdsStreams. An SdsType defines the shape or structure of the event and how to associate events within the SdsStream.</p>
+<p>The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate events. Events are stored in SdsStreams. An SdsType defines the shape or structure of the event and how to associate events within the SdsStream.</p>
 <p>SdsTypes can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries. They can also define complex types using SdsTypes. You can define complex, nested types using the Properties collection of an SdsType.</p>
 <p>An SdsType used to define an SdsStream must have a key. A key is a property, or a combination of properties that constitute an ordered, unique identity. The key is ordered, so it functions as an index. It is known as the primary index. While a timestamp (DateTime) is a very common type of key, any type that can be ordered is permitted. Other indexes (secondary indexes), are defined in the SdsStream. For more details on indexes, see <a class="xref" href="indexes.html">Indexes</a>.</p>
 <p>When you define a type, consider how the events will be represented in a stream. The SdsType defines each event in the stream. An event is a single unit whose properties have values that relate to the index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.</p>

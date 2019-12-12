@@ -72,7 +72,31 @@
 <h1 id="periodic-egress-configuration-schema">Periodic egress configuration schema</h1>
 
 <p>This schema is used to configure data egress from Edge Data Store to a PI Server or to OCS.</p>
-<h2 id="sample-periodic-egress-configuration-file">Sample periodic egress configuration file</h2>
+<table>
+<thead>
+<tr>
+<th>Abstract</th>
+<th>Extensible</th>
+<th>Status</th>
+<th>Identifiable</th>
+<th>Custom properties</th>
+<th>Additional properties</th>
+<th>Defined in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can be instantiated</td>
+<td>Yes</td>
+<td>Experimental</td>
+<td>No</td>
+<td>Forbidden</td>
+<td>Forbidden</td>
+<td><a href="Storage_PeriodicEgressEndpoints_schema.json">Storage_PeriodicEgressEndpoints_schema.json</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="sample-periodic-egress-configuration">Sample periodic egress configuration</h2>
 <pre><code class="lang-json">[{
         &quot;Id&quot;: &quot;OCS Data&quot;,
         &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
@@ -154,31 +178,7 @@
         &quot;ValidateEndpointCertificate&quot;: true
     }
 ]
-</code></pre><table>
-<thead>
-<tr>
-<th>Abstract</th>
-<th>Extensible</th>
-<th>Status</th>
-<th>Identifiable</th>
-<th>Custom properties</th>
-<th>Additional properties</th>
-<th>Defined Ii</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Can be instantiated</td>
-<td>Yes</td>
-<td>Experimental</td>
-<td>No</td>
-<td>Forbidden</td>
-<td>Forbidden</td>
-<td><a href="Storage_PeriodicEgressEndpoints_schema.json">Storage_PeriodicEgressEndpoints_schema.json</a></td>
-</tr>
-</tbody>
-</table>
-<h1 id="periodicegressconfiguration-properties">PeriodicEgressConfiguration properties</h1>
+</code></pre><h2 id="periodic-egress-configuration-properties">Periodic egress configuration properties</h2>
 <table>
 <thead>
 <tr>
@@ -318,183 +318,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="backfill">Backfill</h2>
-<p><code>Backfill</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>boolean</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="backfill-type">Backfill type</h3>
-<p><code>boolean</code></p>
-<h2 id="clientid">ClientId</h2>
-<p><code>ClientId</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="clientid-type">ClientId type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="clientsecret">ClientSecret</h2>
-<p><code>ClientSecret</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="clientsecret-type">ClientSecret type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="debugexpiration">DebugExpiration</h2>
-<p><code>DebugExpiration</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="debugexpiration-type">DebugExpiration type</h3>
-<p><code>string</code>, nullable</p>
-<ul>
-<li>format: <code>date-time</code> – date and time (according to <a href="http://tools.ietf.org/html/rfc3339">RFC 3339, section 5.6</a>)</li>
-</ul>
-<h2 id="description">Description</h2>
-<p><code>Description</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="description-type">Description type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="egressfilter">EgressFilter</h2>
-<p><code>EgressFilter</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="egressfilter-type">EgressFilter type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="enabled">Enabled</h2>
-<p><code>Enabled</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>boolean</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="enabled-type">Enabled type</h3>
-<p><code>boolean</code></p>
-<h2 id="endpoint">Endpoint</h2>
-<p><code>Endpoint</code></p>
-<ul>
-<li>is <strong>required</strong></li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="endpoint-type">Endpoint type</h3>
-<p><code>string</code></p>
-<ul>
-<li>minimum length: 1 characters</li>
-</ul>
-<h2 id="executionperiod">ExecutionPeriod</h2>
-<p><code>ExecutionPeriod</code></p>
-<ul>
-<li>is <strong>required</strong></li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="executionperiod-type">ExecutionPeriod type</h3>
-<p><code>string</code></p>
-<ul>
-<li>minimum length: 1 characters</li>
-</ul>
-<h2 id="id">Id</h2>
-<p><code>Id</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="id-type">Id type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="name">Name</h2>
-<p><code>Name</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="name-type">Name type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="namespaceid">NamespaceId</h2>
-<p><code>NamespaceId</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="namespaceid-type">NamespaceId type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="password">Password</h2>
-<p><code>Password</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="password-type">Password type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="streamprefix">StreamPrefix</h2>
-<p><code>StreamPrefix</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="streamprefix-type">StreamPrefix type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="tokenendpoint">TokenEndpoint</h2>
-<p><code>TokenEndpoint</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="tokenendpoint-type">TokenEndpoint type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="typeprefix">TypePrefix</h2>
-<p><code>TypePrefix</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="typeprefix-type">TypePrefix type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="username">UserName</h2>
-<p><code>UserName</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="username-type">UserName type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="validateendpointcertificate">ValidateEndpointCertificate</h2>
-<p><code>ValidateEndpointCertificate</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>boolean</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="validateendpointcertificate-type">ValidateEndpointCertificate type</h3>
-<p><code>boolean</code></p>
-<p><strong>All</strong> of the following <em>requirements</em> need to be fulfilled.</p>
-<h4 id="requirement-1">Requirement 1</h4>
+<p><strong>Note:</strong> All of the following <em>requirements</em> need to be fulfilled.</p>
+<h3 id="requirement-1">Requirement 1</h3>
 <ul>
 <li><a href=""></a> – <code>#/definitions/EdgeConfigurationBase</code></li>
 </ul>
-<h4 id="requirement-2">Requirement 2</h4>
+<h3 id="requirement-2">Requirement 2</h3>
 <p><code>object</code> with following properties:</p>
 <table>
 <thead>
@@ -597,159 +426,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="backfill-1">Backfill</h4>
-<p><code>Backfill</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>boolean</code></li>
-</ul>
-<h5 id="backfill-type-1">Backfill type</h5>
-<p><code>boolean</code></p>
-<h4 id="clientid-1">ClientId</h4>
-<p><code>ClientId</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="clientid-type-1">ClientId type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="clientsecret-1">ClientSecret</h4>
-<p><code>ClientSecret</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="clientsecret-type-1">ClientSecret type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="debugexpiration-1">DebugExpiration</h4>
-<p><code>DebugExpiration</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="debugexpiration-type-1">DebugExpiration type</h5>
-<p><code>string</code>, nullable</p>
-<ul>
-<li>format: <code>date-time</code> – date and time (according to <a href="http://tools.ietf.org/html/rfc3339">RFC 3339, section 5.6</a>)</li>
-</ul>
-<h4 id="description-1">Description</h4>
-<p><code>Description</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="description-type-1">Description type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="egressfilter-1">EgressFilter</h4>
-<p><code>EgressFilter</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="egressfilter-type-1">EgressFilter type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="enabled-1">Enabled</h4>
-<p><code>Enabled</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>boolean</code></li>
-</ul>
-<h5 id="enabled-type-1">Enabled type</h5>
-<p><code>boolean</code></p>
-<h4 id="endpoint-1">Endpoint</h4>
-<p><code>Endpoint</code></p>
-<ul>
-<li>is <strong>required</strong></li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="endpoint-type-1">Endpoint type</h5>
-<p><code>string</code></p>
-<ul>
-<li>minimum length: 1 characters</li>
-</ul>
-<h4 id="executionperiod-1">ExecutionPeriod</h4>
-<p><code>ExecutionPeriod</code></p>
-<ul>
-<li>is <strong>required</strong></li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="executionperiod-type-1">ExecutionPeriod type</h5>
-<p><code>string</code></p>
-<ul>
-<li>minimum length: 1 characters</li>
-</ul>
-<h4 id="id-1">Id</h4>
-<p><code>Id</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="id-type-1">Id type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="name-1">Name</h4>
-<p><code>Name</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="name-type-1">Name type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="namespaceid-1">NamespaceId</h4>
-<p><code>NamespaceId</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="namespaceid-type-1">NamespaceId type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="password-1">Password</h4>
-<p><code>Password</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="password-type-1">Password type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="streamprefix-1">StreamPrefix</h4>
-<p><code>StreamPrefix</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="streamprefix-type-1">StreamPrefix type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="tokenendpoint-1">TokenEndpoint</h4>
-<p><code>TokenEndpoint</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="tokenendpoint-type-1">TokenEndpoint type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="typeprefix-1">TypePrefix</h4>
-<p><code>TypePrefix</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="typeprefix-type-1">TypePrefix type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="username-1">UserName</h4>
-<p><code>UserName</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="username-type-1">UserName type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="validateendpointcertificate-1">ValidateEndpointCertificate</h4>
-<p><code>ValidateEndpointCertificate</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>boolean</code></li>
-</ul>
-<h5 id="validateendpointcertificate-type-1">ValidateEndpointCertificate type</h5>
-<p><code>boolean</code></p>
 </article>
           </div>
           

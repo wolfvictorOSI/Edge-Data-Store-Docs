@@ -72,7 +72,14 @@
 <h1 id="edge-data-store-administration">Edge Data Store administration</h1>
 
 <p>Edge Data Store provides the following administration level functions:</p>
-<ul>
+<h2 id="retrieve-product-version-information">Retrieve Product Version Information</h2>
+<p>To retrieve the product version of the Edge Data Store, use any REST client ane make a request using the following:</p>
+<pre><code class="lang-http">Method: GET
+Endpoint: http://localhost:5590/api/v1/diagnostics/productinformation
+Header: Content-Type application/json
+</code></pre><p>Example using cURL:</p>
+<pre><code class="lang-bash">curl -v -d &quot;&quot; -X POST http://localhost:5590/api/v1/Diagnostics/ProductInformation
+</code></pre><ul>
 <li><a class="xref" href="Reset%20Edge%20Data%20Store.html">Reset Edge Data Store</a></li>
 <li><a class="xref" href="Reset%20the%20Storage%20component.html">Reset the Storage component</a></li>
 <li><a class="xref" href="Stop%20and%20start%20an%20EDS%20adapter.html">Stop and start and EDS adapter</a></li>

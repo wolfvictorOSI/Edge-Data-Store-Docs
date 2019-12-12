@@ -77,7 +77,7 @@
 </blockquote>
 <p>One tenant and two namespaces are supported in the Edge Data Store. The tenant is default, and the two namespaces are default (where adapter and OMF data is written) and diagnostics. Diagnostics is where the system and its components write information that can be used locally or egressed to a remote PI server or OCS for monitoring. To egress both namespaces two egress definitions are required.</p>
 <h2 id="configure-data-egress">Configure data egress</h2>
-<p>Prior to configuring egress on the Edge Data Store, follow <a href="#destination-preparation">Destination Preparation</a> steps to make available one or more OMF destinations.</p>
+<p>Prior to configuring egress on the Edge Data Store, see <a href="xref:PrepareEgressDestinations">Prepare egress destinations</a> to make available one or more OMF destinations.</p>
 <blockquote><p><strong>Note:</strong> You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see <a href="#rest-urls">REST Urls</a>.</p>
 </blockquote>
 <p>Complete the following to create new egress endpoints:</p>
@@ -90,9 +90,7 @@
 <li>Save the file.</li>
 <li>Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints/</code></li>
 </ol>
-<ul>
-<li>Example using cURL:</li>
-</ul>
+<p>Example using cURL:</p>
 <pre><code class="lang-bash">curl -v -d &quot;@Storage_PeriodicEgressEndspoints.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints&quot;
 </code></pre><blockquote><p><strong>Note</strong> The @ symbol is a required prefix for the above command.</p>
 </blockquote>

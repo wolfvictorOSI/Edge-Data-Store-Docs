@@ -76,7 +76,7 @@
 <h2 id="configure-system-port">Configure system port</h2>
 <p>Before you change the default, ensure that no other service or application on the computer running the EdgeDataStore is using that port - only one application or service can use a port. If you change the port number through the REST API, you must restart Edge Data Store.</p>
 <ol>
-<li><p>Save the JSON containing the new port number in the JSON format above to a file named <em>EdgePort.json</em> and run the following script:</p>
+<li><p>Save the JSON containing the new port number in JSON format to a file named <em>EdgePort.json</em> and run the following script:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@EdgePort.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/system/port
 </code></pre></li>
 <li><p>After the REST command completes, restart Edge Data Store for the change to take effect.</p>

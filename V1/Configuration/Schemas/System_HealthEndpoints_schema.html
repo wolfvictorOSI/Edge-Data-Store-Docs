@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OMF health endpoint configuration schema </title>
+    <title>Sample OMF health endpoint configuration </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="OMF health endpoint configuration schema ">
+    <meta name="title" content="Sample OMF health endpoint configuration ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -69,7 +69,7 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="system_HealthEndpoints_schema">
-<h1 id="omf-health-endpoint-configuration-schema">OMF health endpoint configuration schema</h1>
+<h1 id="sample-omf-health-endpoint-configuration">Sample OMF health endpoint configuration</h1>
 
 <p>The OMF health endpoint configuration schema specifies how to formally describe the OMF health endpoint parameters.</p>
 <pre><code class="lang-json">[{
@@ -87,7 +87,8 @@
         &quot;maxBufferSizeMB&quot;: 0
     }
 ]
-</code></pre><table>
+</code></pre><h1 id="omf-health-endpoint-configuration-schema">OMF health endpoint configuration schema</h1>
+<table>
 <thead>
 <tr>
 <th>Abstract</th>
@@ -111,7 +112,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="omfhealthendpointconfiguration-properties">OmfHealthEndpointConfiguration properties</h1>
+<h1 id="omf-health-endpoint-configuration-properties">OMF health endpoint configuration properties</h1>
 <table>
 <thead>
 <tr>
@@ -125,7 +126,7 @@
 <tbody>
 <tr>
 <td><a href="#buffering">Buffering</a></td>
-<td>reference</td>
+<td>reference <br> <code>#/definitions/BufferType</code></td>
 <td>Optional</td>
 <td>No</td>
 <td>OmfHealthEndpointConfiguration (this schema)</td>
@@ -188,95 +189,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="buffering">Buffering</h2>
-<p><code>Buffering</code></p>
-<ul>
-<li>is optional</li>
-<li>type: reference</li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="buffering-type">Buffering type</h3>
-<ul>
-<li><a href=""></a> – <code>#/definitions/BufferType</code></li>
-</ul>
-<h2 id="clientid">ClientId</h2>
-<p><code>ClientId</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="clientid-type">ClientId type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="clientsecret">ClientSecret</h2>
-<p><code>ClientSecret</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="clientsecret-type">ClientSecret type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="endpoint">Endpoint</h2>
-<p><code>Endpoint</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="endpoint-type">Endpoint type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="id">Id</h2>
-<p><code>Id</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="id-type">Id type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="maxbuffersizemb">MaxBufferSizeMB</h2>
-<p><code>MaxBufferSizeMB</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>integer</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="maxbuffersizemb-type">MaxBufferSizeMB type</h3>
-<p><code>integer</code></p>
-<h2 id="password">Password</h2>
-<p><code>Password</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="password-type">Password type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="username">UserName</h2>
-<p><code>UserName</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="username-type">UserName type</h3>
-<p><code>string</code>, nullable</p>
-<h2 id="validateendpointcertificate">ValidateEndpointCertificate</h2>
-<p><code>ValidateEndpointCertificate</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>boolean</code></li>
-<li>defined in this schema</li>
-</ul>
-<h3 id="validateendpointcertificate-type">ValidateEndpointCertificate type</h3>
-<p><code>boolean</code></p>
-<p><strong>All</strong> of the following <em>requirements</em> need to be fulfilled.</p>
-<h4 id="requirement-1">Requirement 1</h4>
+<p><strong>Note:</strong> All of the following <em>requirements</em> need to be fulfilled.</p>
+<h2 id="requirement-1">Requirement 1</h2>
 <ul>
 <li><a href=""></a> – <code>#/definitions/EdgeConfigurationBase</code></li>
 </ul>
-<h4 id="requirement-2">Requirement 2</h4>
+<h2 id="requirement-2">Requirement 2</h2>
 <p><code>object</code> with following properties:</p>
 <table>
 <thead>
@@ -289,7 +207,7 @@
 <tbody>
 <tr>
 <td><code>Buffering</code></td>
-<td></td>
+<td>reference <br> <code>#/definitions/BufferType</code></td>
 <td>Optional</td>
 </tr>
 <tr>
@@ -334,80 +252,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="buffering-1">Buffering</h4>
-<p><code>Buffering</code></p>
-<ul>
-<li>is optional</li>
-<li>type: reference</li>
-</ul>
-<h5 id="buffering-type-1">Buffering type</h5>
-<ul>
-<li><a href=""></a> – <code>#/definitions/BufferType</code></li>
-</ul>
-<h4 id="clientid-1">ClientId</h4>
-<p><code>ClientId</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="clientid-type-1">ClientId type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="clientsecret-1">ClientSecret</h4>
-<p><code>ClientSecret</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="clientsecret-type-1">ClientSecret type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="endpoint-1">Endpoint</h4>
-<p><code>Endpoint</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="endpoint-type-1">Endpoint type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="id-1">Id</h4>
-<p><code>Id</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="id-type-1">Id type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="maxbuffersizemb-1">MaxBufferSizeMB</h4>
-<p><code>MaxBufferSizeMB</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>integer</code></li>
-</ul>
-<h5 id="maxbuffersizemb-type-1">MaxBufferSizeMB type</h5>
-<p><code>integer</code></p>
-<h4 id="password-1">Password</h4>
-<p><code>Password</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="password-type-1">Password type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="username-1">UserName</h4>
-<p><code>UserName</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>string</code></li>
-</ul>
-<h5 id="username-type-1">UserName type</h5>
-<p><code>string</code>, nullable</p>
-<h4 id="validateendpointcertificate-1">ValidateEndpointCertificate</h4>
-<p><code>ValidateEndpointCertificate</code></p>
-<ul>
-<li>is optional</li>
-<li>type: <code>boolean</code></li>
-</ul>
-<h5 id="validateendpointcertificate-type-1">ValidateEndpointCertificate type</h5>
-<p><code>boolean</code></p>
 </article>
           </div>
           

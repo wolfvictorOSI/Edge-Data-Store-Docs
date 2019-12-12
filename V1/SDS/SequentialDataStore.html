@@ -71,22 +71,37 @@
             <article class="content wrap" id="_content" data-uid="sdsOverview">
 <h1 id="sequential-data-store-sds">Sequential Data Store (SDS)</h1>
 
-<p>The Edge Data Store includes the Sequential Data Store (SDS) REST APIs for <a class="xref" href="Reading_Data.html">reading</a> and <a class="xref" href="Writing_Data.html">writing</a> data stored locally on the device where the Edge Data Store is running. SDS is the same technology that is used in OCS for storing data, so the usage of the REST APIs is very similar to OCS for reading and writing data.</p>
+<p>The Edge Data Store includes the Sequential Data Store (SDS) REST APIs for <a class="xref" href="Reading_Data.html">reading</a> and <a class="xref" href="Writing_Data.html">writing</a> data stored locally on the device where the Edge Data Store is running. SDS is the same technology used in OCS for storing data, so the usage of the REST APIs is very similar to OCS for reading and writing data.</p>
 <p>All data from all sources on the Edge Data Store (Modbus, OPC UA, OMF, SDS) can be read using the SDS REST APIs on the local device, in the default tenant and the default namespace. In addition, the default tenant has a diagnostics namespace where diagnostic data are written by the Edge Data Store and installed components that can be read to monitor the health of a running system using the SDS REST APIs.</p>
 <p>The SDS instance running in EDS is an advanced storage engine that is also used in OCS. While it works very well for storing OMF compatible data in EDS, it can also be used for advanced scenarios where data stored in SDS cannot be converted to OMF. All data egress from EDS to both OCS and the PI System uses OMF in this release of EDS, so for streams that will be egressed to the PI System or OCS, it is recommended that they have only a single time based index. Multiple values are supported in a single stream, but for successful egress there is a limitation in this release of a single time based index only.</p>
-<p><a class="xref" href="Reading_Data_API.html">SDS Reading Data APIs</a></p>
-<p><a class="xref" href="Reading_Data.html">SDS Reading Data</a></p>
-<p><a class="xref" href="Writing_Data.html">SDS Writing Data</a></p>
-<p><a class="xref" href="Writing_Data_API.html">SDS Writing Data APIs</a></p>
-<p><a class="xref" href="Compression.html">Compression</a></p>
-<p><a class="xref" href="Filter_Expressions.html">SDS Filter Expressions</a></p>
-<p><a class="xref" href="SDS_Streams.html">SDS Streams</a></p>
-<p><a class="xref" href="SDS_Types.html">SDS Types</a></p>
-<p><a class="xref" href="SDS_Views.html">SDS Views</a></p>
-<p><a class="xref" href="SdsStreamExtra.html">SDS Stream Metadata</a></p>
-<p><a class="xref" href="table_format.html">SDS Table Format</a></p>
-<p><a class="xref" href="Searching.html">SDS Searching</a></p>
-<p><a class="xref" href="Units_of_Measure.html">SDS Units of Measure</a></p>
+<ul>
+<li><p><a class="xref" href="Reading_Data_API.html">SDS Reading Data APIs</a></p>
+</li>
+<li><p><a class="xref" href="Reading_Data.html">SDS Reading Data</a></p>
+</li>
+<li><p><a class="xref" href="Writing_Data.html">SDS Writing Data</a></p>
+</li>
+<li><p><a class="xref" href="Writing_Data_API.html">SDS Writing Data APIs</a></p>
+</li>
+<li><p><a class="xref" href="Compression.html">Compression</a></p>
+</li>
+<li><p><a class="xref" href="Filter_Expressions.html">SDS Filter Expressions</a></p>
+</li>
+<li><p><a class="xref" href="SDS_Streams.html">SDS Streams</a></p>
+</li>
+<li><p><a class="xref" href="SDS_Types.html">SDS Types</a></p>
+</li>
+<li><p><a class="xref" href="SDS_Views.html">SDS Views</a></p>
+</li>
+<li><p><a class="xref" href="SdsStreamExtra.html">SDS Stream Metadata</a></p>
+</li>
+<li><p><a class="xref" href="table_format.html">SDS Table Format</a></p>
+</li>
+<li><p><a class="xref" href="Searching.html">SDS Searching</a></p>
+</li>
+<li><p><a class="xref" href="Units_of_Measure.html">SDS Units of Measure</a></p>
+</li>
+</ul>
 </article>
           </div>
           
