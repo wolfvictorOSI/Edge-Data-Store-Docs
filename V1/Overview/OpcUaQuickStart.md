@@ -12,7 +12,7 @@ The following diagram depicts the data flow of a single OPC UA adapter:
 
 ## Configure an OPC UA data source
 
-1. Create a file in JSON format describing the location of the data source. The adapter installed during installation is named OpcUa1 in this example. Modify the following values to match your environment.
+1. Create a file in JSON format describing the location of the OPC UA data source. The adapter installed during installation is named OpcUa1 in this example. Modify the following values to match your environment.
 
    ```json
    {
