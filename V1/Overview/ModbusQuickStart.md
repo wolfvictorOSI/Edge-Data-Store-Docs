@@ -41,79 +41,79 @@ Select the Modbus TCP data you want to store in Edge Data Store by configuring M
 
 1. Modify the values as appropriate for your Modbus environment.
 
-```json
-[{
-        "Selected": "true",
-        "UnitId": 1,
-        "RegisterType": 3,
-        "RegisterOffset": 1,
-        "DataTypeCode": 20,
-        "BitMap": "16151413",
-        "ConversionFactor": 2,
-        "ConversionOffset": 3.4,
-        "ScanRate": 500
-    },
-    {
-        "Selected": "true",
-        "UnitId": 1,
-        "RegisterType": 3,
-        "RegisterOffset": 2,
-        "DataTypeCode": 20,
-        "BitMap": "16151413",
-        "ConversionFactor": 2,
-        "ConversionOffset": 3.4,
-        "ScanRate": 500
-    },
-    {
-        "Selected": "true",
-        "UnitId": 1,
-        "RegisterType": 3,
-        "RegisterOffset": 3,
-        "DataTypeCode": 20,
-        "BitMap": "16151413",
-        "ConversionFactor": 2,
-        "ConversionOffset": 3.4,
-        "ScanRate": 500
-    },
-    {
-        "Selected": "true",
-        "UnitId": 1,
-        "RegisterType": 3,
-        "RegisterOffset": 4,
-        "DataTypeCode": 20,
-        "BitMap": "16151413",
-        "ConversionFactor": 2,
-        "ConversionOffset": 3.4,
-        "ScanRate": 500
-    },
-    {
-        "Selected": "true",
-        "UnitId": 1,
-        "RegisterType": 3,
-        "RegisterOffset": 5,
-        "DataTypeCode": 20,
-        "BitMap": "16151413",
-        "ConversionFactor": 2,
-        "ConversionOffset": 3.4,
-        "ScanRate": 500
-    }
-]
-```
+   ```json
+   [{
+           "Selected": "true",
+           "UnitId": 1,
+           "RegisterType": 3,
+           "RegisterOffset": 1,
+           "DataTypeCode": 20,
+           "BitMap": "16151413",
+           "ConversionFactor": 2,
+           "ConversionOffset": 3.4,
+           "ScanRate": 500
+       },
+       {
+           "Selected": "true",
+           "UnitId": 1,
+           "RegisterType": 3,
+           "RegisterOffset": 2,
+           "DataTypeCode": 20,
+           "BitMap": "16151413",
+           "ConversionFactor": 2,
+           "ConversionOffset": 3.4,
+           "ScanRate": 500
+       },
+       {
+           "Selected": "true",
+           "UnitId": 1,
+           "RegisterType": 3,
+           "RegisterOffset": 3,
+           "DataTypeCode": 20,
+           "BitMap": "16151413",
+           "ConversionFactor": 2,
+           "ConversionOffset": 3.4,
+           "ScanRate": 500
+       },
+       {
+           "Selected": "true",
+           "UnitId": 1,
+           "RegisterType": 3,
+           "RegisterOffset": 4,
+           "DataTypeCode": 20,
+           "BitMap": "16151413",
+           "ConversionFactor": 2,
+           "ConversionOffset": 3.4,
+           "ScanRate": 500
+       },
+       {
+           "Selected": "true",
+           "UnitId": 1,
+           "RegisterType": 3,
+           "RegisterOffset": 5,
+           "DataTypeCode": 20,
+           "BitMap": "16151413",
+           "ConversionFactor": 2,
+           "ConversionOffset": 3.4,
+           "ScanRate": 500
+       }
+   ]
+   ```
 
 2. Save the JSON content above in a text file and name it Modbus1Dataselection.json. 
 
 **Note:** When you run the following curl script, the system will be configured to collect Modbus data values.
 
-```bash
-curl -i -d "@Modbus1Dataselection.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Dataselection
-```
+   ```bash
+   curl -i -d "@Modbus1Dataselection.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Dataselection
+   ```
 
 To see the streams that have been created in Edge Storage to store the data you are writing, you can run the following curl script:
 
-```bash
-curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
-```
+   ```bash
+   curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
+   ```
 
-To view the data in the streams being written by Modbus, you can refer to the SDS part of this documentation. 
+* To view the data in the streams being written by Modbus, you can refer to the SDS part of this documentation. 
 
-To egress the data to OSIsoft Cloud Services or the PI System, see the egress documentation or quick starts.
+* To egress the data to OSIsoft Cloud Services or the PI System, see the egress documentation or quick starts.
