@@ -2,7 +2,7 @@
 uid: sdsQuickStart
 ---
 
-# Edge Storage SDS quick start
+# SDS quick start
 
 This quick start gives an overview on how to get data into the Edge Storage component using the Sequential Data Store (SDS) REST API. 
 
