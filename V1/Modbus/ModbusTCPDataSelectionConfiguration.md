@@ -17,11 +17,12 @@ Complete the following to configure Modbus TCP data selection:
     - For a table of all available parameters, see [Parameters for Modbus TCP data selection](#parameters-for-modbus-tcp-data-selection). 
 2. Save the file as _DataSelection.config.json_.
 3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`.
-Example using cURL (run this command from the same directory where the file is located):
 
-```bash
-curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection"
-```
+    Example using cURL (run this command from the same directory where the file is located):
+
+    ```bash
+    curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection"
+    ```
 
 ## Modbus TCP data selection schema
 
