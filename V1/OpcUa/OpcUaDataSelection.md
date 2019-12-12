@@ -15,13 +15,13 @@ Complete the following steps in order for this template data selection to be gen
   
 2. Configure a valid [OPC UA Data Source](xref:opcUaOverview).
 
-  Once these steps are taken, a template OPC UA data selection will be generated in the **Configuration** directory for the corresponding platform, see [Linux and Windows platform differences](xref:linuxWindows). The following are example locations of the file created - in this example it is assumed that the ComponentId of the OPC UA component is the default OpcUa1:
+  Once these steps are taken, a template OPC UA data selection will be generated in the **Configuration** directory for the corresponding platform. (See [Linux and Windows platform differences](xref:linuxWindows).) The following are example locations of the file created. In this example, it is assumed that the ComponentId of the OPC UA component is the default OpcUa1:
 
-```bash
-Windows: %programdata%\OSIsoft\EdgeDataStore\Configuration\OpcUa1_DataSelection.json
-
-Linux: /usr/share/OSIsoft/EdgeDataStore/Configuration/OpcUa1_DataSelection.json
-```
+   ```bash
+   Windows: %programdata%\OSIsoft\EdgeDataStore\Configuration\OpcUa1_DataSelection.json
+   
+   Linux: /usr/share/OSIsoft/EdgeDataStore/Configuration/OpcUa1_DataSelection.json
+   ```
 
 3. Copy the file to a different directory to edit it. 
 
