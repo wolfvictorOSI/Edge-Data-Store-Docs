@@ -35,7 +35,7 @@ Complete the following to access edgecmd on Linux:
    Example of getting System help output: ./edgecmd Help System
    Example of configuring System Logging level: ./edgecmd Configuration System logging LogLevel=Warning
    debian@beaglebone:~$
-```
+   ```
 
 * Most configurations options that can be done using REST can also be done using the edgecmd utility and command line arguments.
 * Generally the configuration and administrative REST interfaces are exposed via the command line. 
