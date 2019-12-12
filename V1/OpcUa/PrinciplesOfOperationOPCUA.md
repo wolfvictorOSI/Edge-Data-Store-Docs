@@ -15,17 +15,13 @@ In order for the OPC UA EDS adapter to start data collection, you need to config
 - Data source: Provide the information of the data source from where the adapter should collect data.
 - Data selection: Perform selection of OPC UA items that adapter should should subscribe for data.
 
-### Network communication
+### Connection
 
-The OPC UA EDS adapter communicates with the OPC UA server through TCP/IP network using opc.tcp binary protocol.
+The OPC UA EDS adapter uses binary opc.tcp protocol to communicate with the OPC UA servers. The X.509-type client and server certificates are exchanged and verified (when security is enabled) and the connection to the configured OPC UA server is established.
 
 ### Stream creation
 
 The OPC UA EDS adapter creates types upon receiving the value update for a stream from OPC UA subscription per stream and streams are created for selected OPC UA items in the data selection configuration. One stream is going to be created in Edge Data Store for every selected OPC UA item in data selection configuration.
-
-### Connection
-
-The OPC UA EDS adapter uses binary opc.tcp protocol to communicate with the OPC UA servers. The X.509-type client and server certificates are exchanged and verified (when security is enabled) and the connection to the configured OPC UA server is established.
 
 ### Data collection
 
