@@ -2,9 +2,9 @@
 uid: commandLineWindowsQuickStart
 ---
 
-# Edge Data Store command line quick start - Windows
+# Command line quick start - Windows
 
-You can also configure Edge Data Store with the edgecmd.exe command line tool, in addition to curl commands and REST calls. 
+You can configure Edge Data Store with the edgecmd.exe command line tool, in addition to curl commands and REST calls. 
 
 Complete the following to access edgecmd on Windows:
 
@@ -45,5 +45,5 @@ Complete the following to access edgecmd on Windows:
    ```
 
 * Most configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments. 
-* Generally the configuration and administrative REST interfaces are exposed via the command line. 
+* Generally the configuration and administrative REST interfaces are exposed through the command line. 
 * Access to reading and writing data to the Edge Data Store Storage Component - OMF Ingress and SDS Read/Write capabilities are only available using the REST API.
