@@ -2,7 +2,7 @@
 uid: storage
 ---
 
-# Edge Data Store storage component
+# Storage
 
 The EDS storage component provides Sequential Data Store (SDS) storage, with a rich array of functionality available through REST APIs. The storage component has three configurable facets:
 
