@@ -2,7 +2,7 @@
 uid: disasterRecovery
 ---
 
-# Disaster Recovery
+# Disaster recovery
 
 This topic provides procedures for creating a backup of Edge Data Store stream data and configuration files, moving them to a new system, and then restoring the back up files onto the new system. Procedures are provided for Windows and Linux systems.
  
@@ -14,7 +14,7 @@ This topic provides procedures for creating a backup of Edge Data Store stream d
 	The new edge device will be running as the previous device, and will contain all the data up to the point the previous device went down.
 
 
-## Windows Recovery
+## Windows recovery
 
 ### Create a backup
 
@@ -50,7 +50,7 @@ Once the new hardware has replaced the previous system and has been installed wi
 2. To restart the Edge Data Store service, use the Windows Service Manager or Task Manager .
 
 
-# Linux Recovery
+# Linux recovery
 
 ### Create a backup
 
