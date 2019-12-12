@@ -2,7 +2,7 @@
 uid: omfQuickStart
 ---
 
-# Edge Storage OMF Quick Start
+# OMF quick start
 
 
 This topic provides a quick start for getting data into the Edge Storage component using the OSisoft Message Format (OMF), and then retrieving that data using the Sequential Data Store (SDS) API. Both OMF data ingress and SDS data retrieval are accomplished using REST APIs. This topic assumes the Edge Data Store has been installed, and is accessible through a REST API using the default installed port (5590). This topic will demonstrate the use of both curl, a commonly available tool on both Windows and Linux, and command line commands. You can use the same operations with any programming language or tool that supports making REST calls. In addition, you can accomplish data retrieval steps (GET commands) using a browser if one is available on the device.
