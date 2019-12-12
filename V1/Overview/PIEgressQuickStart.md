@@ -2,9 +2,9 @@
 uid: piEgressQuickStart
 ---
 
-# PI System (PI Web API) egress quick start
+# PI egress quick start
 
-This document is a quick start for egressing data stored in the Edge Data Store into a remote PI System. This is accomplished using PI Web API which is configured for Basic authentication.
+This document is a quick start for egressing data stored in the Edge Data Store into a remote PI System. This is accomplished using PI Web API which is configured for basic authentication.
 
 ## Create a periodic egress configuration
 
@@ -42,7 +42,7 @@ Complete the following to configure Edge Storage periodic egress for the PI Web 
 3. Save the JSON with the file name PeriodicEgressEndpoints.json.
 4. Run the following curl script, from the same directory where you saved the JSON file, to configure Edge Storage to send data to the PI System. 
 
-**Note:** The file and curl script can be run from any directory on the device as long as the file and the curl script are run from the same directory:
+**Note:** You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory:
 
 ```bash
 curl -i -d "@PeriodicEgressEndpoints.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
