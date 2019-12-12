@@ -58,9 +58,9 @@ Once the new hardware has replaced the previous system and has been installed wi
 
 1. If your device is still able to boot, verify that Edge Data Store service has stopped, using the following command: 
 
-  ```
-  sudo systemctl stop osisoft.edgedatastore
-  ```
+	  ```
+	  sudo systemctl stop osisoft.edgedatastore
+	  ```
 
 2. Locate the storage and configuration files.
 
@@ -80,9 +80,9 @@ Once the new hardware has replaced the previous system and has been installed wi
 
 1. Stop the Edge Data Store service using the following command:
 
-  ```
-  sudo systemctl stop osisoft.edgedatastore
-  ```
+	  ```
+	  sudo systemctl stop osisoft.edgedatastore
+	  ```
 
 2. Once that service has stopped, navigate to the _/usr/share/OSIsoft/EdgeDataStore_ directory and extract your zip or tar file in that directory again using WinSCP, SFTP, or external device.
 
@@ -93,14 +93,14 @@ Once the new hardware has replaced the previous system and has been installed wi
 3. If the ownership of the two directories does not match, update it to _edgedatastore_ for the user and group. 
 4. Start the Edge Data Store service with the following command:
 
-  ```
-  sudo systemctl start osisoft.edgedatastore
-  ```
+	  ```
+	  sudo systemctl start osisoft.edgedatastore
+	  ```
 
 5. Verify that Edge Data Store is running with the following command:
 
-  ```
-  sudo systemctl status osisoft.edgedatastore
-  ```
+	  ```
+	  sudo systemctl status osisoft.edgedatastore
+	  ```
 
   **Note:** Default directory permissions are set to 755, and each subsequent file is 644. If you do not use tar it is possible to have permission issues with the recovery files. Tar matches via string name rather than the account ID/UID.
