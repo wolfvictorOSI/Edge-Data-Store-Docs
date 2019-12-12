@@ -12,6 +12,7 @@ In order for the OPC UA EDS adapter to start data collection, you need to config
 
 - Data source: Provide the data source from which the adapter should collect data.
 - Data selection: Perform selection of OPC UA items to which the adapter should subscribe for data.
+- Logging: Set up the logging attributes to manage the adapter logging behavior.
 
 ## Connection
 
