@@ -20,7 +20,7 @@ From the parsed data selection configurations, the Modbus TCP EDS adapter create
 ## Data collection
 The Modbus TCP EDS adapter collects data from the Modbus TCP devices at the polling rates that you specify. The rates are set in each of the data selection configurations and can range from 0 milliseconds (as fast as possible) up to 1 day per polling. The adapter automatically optimizes the data collection process by grouping the requests to reduce the I/O load imposed to the Modbus TCP networks.
 
-### Streams by Modbus TCP EDS adapter
+# Streams by Modbus TCP EDS adapter
 For each data selection configuration, the Modbus TCP EDS adapter creates a stream with two properties. The properties are defined in the following table:
 
 | Property name | Data type | Description |
