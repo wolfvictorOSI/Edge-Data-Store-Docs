@@ -76,6 +76,5 @@ uid: index
     - [Compression](xref:sdsCompression)
     - [Searching](xref:sdsSearching)
     - [Stream metadata and tags](xref:sdsStreamExtra)
-  - [REST commands](xref:RestCommands)
-    - [Edgecmd commands](xref:EdgecmdCommands)
+  - [Edgecmd commands](xref:EdgecmdCommands)
   - [Release Notes](xref:releaseNotes)
