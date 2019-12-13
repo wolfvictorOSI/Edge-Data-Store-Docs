@@ -8,10 +8,10 @@ references:
   name: Command line configuration of Edge Data Store
   href: V1/CommandLine/CommandLine.html
 - uid: commandLineLinuxQuickStart
-  name: Edge Data Store command line quick start - Linux
+  name: Command line quick start - Linux
   href: V1/Overview/CommandLineLinuxQuickStart.html
 - uid: commandLineWindowsQuickStart
-  name: Edge Data Store command line quick start - Windows
+  name: Command line quick start - Windows
   href: V1/Overview/CommandLineQuickStartWindows.html
 - uid: Configuration
   name: Configuration
@@ -20,7 +20,7 @@ references:
   name: Configuration schemas
   href: V1/Configuration/Schemas/ConfigurationSchemaList.html
 - uid: disasterRecovery
-  name: Disaster Recovery
+  name: Disaster recovery
   href: V1/Troubleshooting/DisasterRecovery.html
 - uid: edge_system_schema
   name: Sample Edge Data Store configuration
@@ -113,13 +113,13 @@ references:
   name: Data source configuration
   href: V1/Modbus/ModbusTCPDataSourceConfiguration.html
 - uid: ocsEgressQuickStart
-  name: OSIsoft Cloud Services (OCS) egress quick start
+  name: OCS egress quick start
   href: V1/Overview/OCSEgressQuickStart.html
 - uid: omfOverview
   name: OSIsoft Message Format (OMF)
   href: V1/OMF/OMFOverview.html
 - uid: omfQuickStart
-  name: Edge Storage OMF Quick Start
+  name: OMF quick start
   href: V1/Overview/OMFQuickStart.html
 - uid: opcUa_DataSelection_schema
   name: Sample OPC UA data selection configuration
@@ -149,13 +149,13 @@ references:
   name: OPC UA EDS adapter
   href: V1/OpcUa/OpcUaOverview.html
 - uid: opcUaQuickStart
-  name: Edge OPC UA quick start
+  name: OPC UA EDS adapter quick start
   href: V1/Overview/OpcUaQuickStart.html
 - uid: Performance
   name: Performance
   href: V1/Overview/Performance.html
 - uid: piEgressQuickStart
-  name: PI System (PI Web API) egress quick start
+  name: PI egress quick start
   href: V1/Overview/PIEgressQuickStart.html
 - uid: Prepare egress destinations
   name: Prepare egress destinations
@@ -184,6 +184,9 @@ references:
 - uid: RestCommands
   name: REST commands
   href: V1/Reference/REST%20commands.html
+- uid: RetrieveProductVersionInformation
+  name: Retrieve product version information
+  href: V1/Administration/Retrieve%20product%20version%20information.html
 - uid: scalePerformance
   name: Design considerations
   href: V1/Design/ScalePerformance.html
@@ -200,7 +203,7 @@ references:
   name: Sequential Data Store (SDS)
   href: V1/SDS/SequentialDataStore.html
 - uid: sdsQuickStart
-  name: Edge Storage SDS quick start
+  name: SDS quick start
   href: V1/Overview/SDSQuickStart.html
 - uid: sdsReadingData
   name: Reading data
@@ -239,7 +242,7 @@ references:
   name: Stop and start an EDS adapter
   href: V1/Administration/Stop%20and%20start%20an%20EDS%20adapter.html
 - uid: storage
-  name: Edge Data Store storage component
+  name: Storage
   href: V1/Configuration/Storage.html
 - uid: Storage_Logging_schema
   name: Storage logging configuration schema

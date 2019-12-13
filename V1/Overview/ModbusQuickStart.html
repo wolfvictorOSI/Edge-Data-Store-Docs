@@ -71,7 +71,7 @@
             <article class="content wrap" id="_content" data-uid="modbusQuickStart">
 <h1 id="modbus-tcp-eds-adapter-quick-start">Modbus TCP EDS adapter quick start</h1>
 
-<p>This topic provides a quick start for setting up the Modbus TCP EDS adapter. You can add a single Modbus TCP EDS adapter during Edge Data Store installation. If multiple Modbus TCP EDS adapters are desired, please reference <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> for adding a new component to Edge Data Store. </p>
+<p>This topic provides a quick start for setting up the Modbus TCP EDS adapter. You can add a single Modbus TCP EDS adapter during Edge Data Store installation. If you want multiple Modbus TCP EDS adapters, see <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> for adding a new component to Edge Data Store. </p>
 <p>The following diagram depicts the data flow of a single Modbus TCP EDS adapter:</p>
 <p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSModbusTCP.jpg" alt="EDS Modbus TCP" title="EDS Modbus TCP"></p>
 <h2 id="configure-a-modbus-tcp-data-source">Configure a Modbus TCP data source</h2>
@@ -161,9 +161,10 @@
 </ol>
 <p><strong>Note:</strong> When you run the following curl script, the system will be configured to collect Modbus data values.</p>
 <pre><code class="lang-bash">curl -i -d &quot;@Modbus1Dataselection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Dataselection
-</code></pre><p>To see the streams that have been created in Edge Storage to store the data you are writing, you can run the following curl script:</p>
-<pre><code class="lang-bash">curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
 </code></pre><ul>
+<li><p>To see the streams that have been created in Edge Storage to store the data you are writing, you can run the following curl script:</p>
+<pre><code class="lang-bash">curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
+</code></pre></li>
 <li><p>To view the data in the streams being written by Modbus, you can refer to the SDS part of this documentation. </p>
 </li>
 <li><p>To egress the data to OSIsoft Cloud Services or the PI System, see the egress documentation or quick starts.</p>

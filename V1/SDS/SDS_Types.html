@@ -81,7 +81,7 @@
 <p>SdsTypes are immutable. After you create an SdsType, you cannot change its definition. If the definition of an SdsType is incorrect, you must delete and recreate it. In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.</p>
 <p>Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential data store. SdsTypes that define properties or base types are contained within the parent SdsType and are not required to be added to the Data Store independently.</p>
 <p>The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use.</p>
-<p>For search limitations, see the <a class="xref" href="Searching.html">Searching</a>.</p>
+<p>For search limitations, see <a class="xref" href="Searching.html">Searching</a>.</p>
 <table>
 <thead>
 <tr>
@@ -565,7 +565,8 @@
 </tbody>
 </table>
 <p>Note that <code>Continuous</code> cannot return events for values that cannot be interpolated, such as when the type is not numeric.</p>
-<p>The table below describes how the <strong>Continuous InterpolationMode</strong> affects indexes that occur between data in a stream: <strong>InterpolationMode = Continuous or Default</strong>  </p>
+<p>The table below describes how the <strong>Continuous InterpolationMode</strong> affects indexes that occur between data in a stream:</p>
+<p><strong>InterpolationMode = Continuous or Default</strong></p>
 <table>
 <thead>
 <tr>
@@ -634,7 +635,7 @@ Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 <h2 id="extrapolation">Extrapolation</h2>
 <p>Extrapolation defines how a stream responds to requests with indexes that precede or follow all data in the steam. ExtrapolationMode acts as a master switch to determine whether extrapolation occurs and at which end of the data.</p>
 <p>ExtrapolationMode works with the InterpolationMode to determine how a stream responds. The following tables show how ExtrapolationMode affects returned values for each InterpolationMode value:</p>
-<p><strong>ExtrapolationMode with InterpolationMode = Default or Continuous</strong>  </p>
+<p><strong>ExtrapolationMode with InterpolationMode = Default or Continuous</strong> </p>
 <table>
 <thead>
 <tr>

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Edge OPC UA quick start </title>
+    <title>OPC UA EDS adapter quick start </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Edge OPC UA quick start ">
+    <meta name="title" content="OPC UA EDS adapter quick start ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -69,10 +69,10 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="opcUaQuickStart">
-<h1 id="edge-opc-ua-quick-start">Edge OPC UA quick start</h1>
+<h1 id="opc-ua-eds-adapter-quick-start">OPC UA EDS adapter quick start</h1>
 
-<p>This topic provides a quick start for setting up the Edge OPC UA adapter. You can add a single EDS OPC UA adapter during Edge Data Store installation. If multiple EDS OPC UA adapters are desired, please reference <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> for adding a new component to Edge Data Store. </p>
-<p>The following diagram depicts the data flow of a single OPC UA adapter:</p>
+<p>This topic provides a quick start for setting up the OPC UA EDS adapter. You can add a single OPC UA EDS adapter during Edge Data Store installation. If you want multiple OPC UA EDS adapters, see <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> for adding a new component to Edge Data Store. </p>
+<p>The following diagram depicts the data flow of a single OPC UA EDS adapter:</p>
 <p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOpcUA.jpg" alt="EDS Opc Ua" title="EDS Opc Ua"></p>
 <h2 id="configure-an-opc-ua-data-source">Configure an OPC UA data source</h2>
 <ol>
@@ -132,7 +132,7 @@
 ]
 </code></pre></li>
 <li>Save the preceding JSON content in a text file and name it OpcUa1Dataselection.json.</li>
-<li><p>Run the following curl script to configure Edge Data Store to collect Opc Ua data values:</p>
+<li><p>Run the following curl script to configure Edge Data Store to collect OPC UA data values:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OpcUa1Dataselection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection
 </code></pre></li>
 </ol>
