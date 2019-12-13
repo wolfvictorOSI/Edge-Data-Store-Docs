@@ -11,7 +11,7 @@ uid: InstallEdgeDataStore
 You must have administrative privileges to run the installer.
 
 1. Copy the _EdgeDataStore.msi_ file to the file system of the device.
-2. To start the installer UI, double-click the _EdgeDataStore.msi_ file in Windows Explorer.
+2. To start the installer, double-click the _EdgeDataStore.msi_ file in Windows Explorer.
 
     Alternatively, you can start the installer from the command line with the following command:
 
@@ -19,14 +19,14 @@ You must have administrative privileges to run the installer.
     msiexec /i EdgeDataStore.msi PORT=5590 INSTALLFOLDER="C:\otherdir"
     ```
 
-    > **Note:** The INSTALLFOLDER (must be all caps) is optional. You can specify an alternate location for Edge Data Store's binary components. The default value is "C:\Program Files\OSISoft\EdgeDataStore". OSIsoft recommends you use the default value.
+    > **Note:** You can use the optional INSTALLFOLDER parameter (must be in all caps) to specify an alternate location for Edge Data Store's binary components. The default value is "C:\Program Files\OSISoft\EdgeDataStore". OSIsoft recommends you use the default value.
 
 3. In the OSIsoft Edge Data Store Setup window, click **Next**.
 4. Optional: Change the install folder and port number (default 5590) and select the Modbus or OpcUa component or both.
 
-   > **Note:** The optional PORT must be in all caps. It can be changed to a valid value in the range of 1024 to 65535. Any other characters or values will be considered invalid. You should select a port not already in use by another program on the host because the installer will not check for this case.
+   > **Note:** Valid values are in the range of 1024 to 65535. Select a port not already in use on the host because the installer will not check for this case. In the command line, use the optional PORT parameter (must be in all caps) to specify the port. 
 
-    If you omit PORT=nnnn, the default will be used. The UI will start with the port pre-set to the value specified; validity will be checked as mentioned previously, with the install proceeding only when a valid port number is provided. If, however,the "quiet" or "no ui" flag for msiexec is specified, and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
+    If you omit PORT=nnnn, the default port will be used. The UI will start with the port pre-set to the value specified; validity will be checked as mentioned previously, with the install proceeding only when a valid port number is provided. However, if the "quiet" or "no ui" flag for msiexec is specified and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
 
 5. Click **Next** > **Install**.
 
