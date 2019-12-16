@@ -13,4 +13,4 @@ The following quick start guides will help you get started with Edge Data Store,
 - [PI egress quick start](xref:piEgressQuickStart)
 - [SDS Read/Write quick start](xref:sdsQuickStart)
 - [Command line quick start - Linux](xref:commandLineLinuxQuickStart)
-- [Command Line quick start - Windows](xref:commandLineWindowsQuickStart)
+- [Command line quick start - Windows](xref:commandLineWindowsQuickStart)
