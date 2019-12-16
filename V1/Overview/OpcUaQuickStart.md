@@ -34,14 +34,14 @@ The following diagram depicts the data flow of a single OPC UA EDS adapter:
 curl -i -d "@OpcUa1Datasource.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Datasource
 ```
 
-When the command completes successfully (a 204 is returned by curl), your OPC UA data source has been created. If you receive a 400 error, check your JSON file for errors. If you receive a 404 or 500 error, check to make sure Edge Data Store is running on your computer.
+When the command completes successfully (a 204 is returned by curl), your OPC UA data source has been created. If you receive a 400 error, check the JSON file for errors. If you receive a 404 or 500 error, check to make sure Edge Data Store is running on your computer.
 
 ## Configure OPC UA data selection
 
 When you create the data source file, the OPC UA adapter auto generates the data selection file, which lists all available streams in the designated data source.  To configure the data selection file, complete the following:
 
 1. Save the data selection to your local device for editing.
-2. All steams listed in the auto generated data selection file are initially set to deselect.  Select each of the streams you want to ingress to Edge Data Store.
+2. Select each of the streams you want to ingress to Edge Data Store. All steams listed in the auto generated data selection file are initially set to deselect.
 
    ```json
    [{
@@ -89,6 +89,6 @@ When you create the data source file, the OPC UA adapter auto generates the data
    curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
    ```
 
-* To view the data in the streams being written, you can refer to the SDS part of this documentation.
+* To view the data in the streams being written, refer to the SDS part of this documentation.
 
 * To egress the data to OSIsoft Cloud Services or the PI System, see the egress documentation or quick starts.
