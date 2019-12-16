@@ -2,6 +2,7 @@
 uid: security
 ---
 # Security
+NEEDS INTRO TEXT HERE
 
 ## REST APIs
 Edge Data Store supports REST APIs for configuration, data reading (through SDS), and data writing (through OMF and SDS). Edge Data Store provides only localhost access to REST APIs. Any code that reads or writes to the REST APIs must reside on the computer or device on which Edge Data Store is running. 
@@ -17,7 +18,7 @@ Writing data to OSIsoft Cloud Services or OSIsoft PI Web API is not limited to t
 
 
 ## EDS Adapters
-Modbus and Opc Ua are not limited to the local machine. Both are enabled to access remote data sources through binary protocols.
+Modbus and OPC UA are not limited to the local machine. Both are enabled to access remote data sources through binary protocols.
 
 ## Secure storage
 Sensitive information such as passwords and client secrets are saved in configuration files in an encrypted form. Only the Edge Data Store runtime can properly store and retrieve these protected data items. 
