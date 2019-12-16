@@ -43,6 +43,8 @@ When you create the data source file, the OPC UA adapter auto generates the data
 1. Save the data selection to your local device for editing.
 2. Select each of the streams you want to ingress to Edge Data Store. All steams listed in the auto generated data selection file are initially set to deselect.
 
+3. Save the following JSON content in a text file and name it OpcUa1Dataselection.json.
+
    ```json
    [{
            "Selected": true,
@@ -76,14 +78,14 @@ When you create the data source file, the OPC UA adapter auto generates the data
        }
    ]
    ```
-3. Save the preceding JSON content in a text file and name it OpcUa1Dataselection.json.
+   
 4. Run the following curl script to configure Edge Data Store to collect OPC UA data values:
 
    ```bash
    curl -i -d "@OpcUa1Dataselection.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection
    ```
 
-* To see the streams that have been created in Edge Storage to store the data you are writing, you can run the following curl script:
+* To see the streams that have been created in Edge Storage to store the data you are writing, run the following curl script:
 
    ```bash
    curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
