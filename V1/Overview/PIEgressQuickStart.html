@@ -71,7 +71,7 @@
             <article class="content wrap" id="_content" data-uid="piEgressQuickStart">
 <h1 id="pi-egress-quick-start">PI egress quick start</h1>
 
-<p>This document is a quick start for egressing data stored in the Edge Data Store into a remote PI System. This is accomplished using PI Web API which is configured for basic authentication.</p>
+<p>This topic provides quick start instructions for egressing data stored in the Edge Data Store into a remote PI System. This is accomplished using PI Web API which is configured for basic authentication.</p>
 <h2 id="create-a-periodic-egress-configuration">Create a periodic egress configuration</h2>
 <p>Complete the following to configure Edge Storage periodic egress for the PI Web API endpoint and credentials:</p>
 <ol>
@@ -98,14 +98,14 @@
     &quot;TokenEndpoint&quot;: null
 }]
 </code></pre><ol>
-<li>Add the server name, username and password of your PI Web API server into the &quot;Endpoint&quot; definition.  You must specify a valid user account that can write data via PI Web API using Basic authentication.</li>
+<li>Add the server name, username, and password of your PI Web API server into the &quot;Endpoint&quot; definition.  You must specify a valid user account that can write data via PI Web API using Basic authentication.</li>
 </ol>
-<p><strong>Note:</strong> StreamPrefix and TypePrefix values can be used to ensure uniqueness on the destination system, if required. The StreamPrefix value will create unique PI Points on the PI System. If you wish to only send specific streams, edit the &quot;EgressFilter&quot; value. Examples of more advanced scenarios are in the Egress section of this documentation.</p>
+<p><strong>Note:</strong> StreamPrefix and TypePrefix values can be used to ensure uniqueness on the destination system, if required. The StreamPrefix value will create unique PI Points on the PI System. If you want to only send specific streams, edit the &quot;EgressFilter&quot; value. Examples of more advanced scenarios are in the Egress section of this documentation.</p>
 <ol>
-<li>Save the JSON with the file name PeriodicEgressEndpoints.json.</li>
-<li>Run the following curl script, from the same directory where you saved the JSON file, to configure Edge Storage to send data to the PI System. </li>
+<li>Save the JSON file with the name PeriodicEgressEndpoints.json.</li>
+<li>To configure Edge Storage to send data to the PI System, run the following curl script from the same directory where you saved the JSON file. </li>
 </ol>
-<p><strong>Note:</strong> You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory:</p>
+<p><strong>Note:</strong> You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory.</p>
 <pre><code class="lang-bash">curl -i -d &quot;@PeriodicEgressEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
 </code></pre><p>When the command completes successfully, data will start being sent to the PI System.</p>
 </article>

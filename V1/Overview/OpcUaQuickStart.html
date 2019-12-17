@@ -71,7 +71,7 @@
             <article class="content wrap" id="_content" data-uid="opcUaQuickStart">
 <h1 id="opc-ua-eds-adapter-quick-start">OPC UA EDS adapter quick start</h1>
 
-<p>This topic provides a quick start for setting up the OPC UA EDS adapter. You can add a single OPC UA EDS adapter during Edge Data Store installation. If you want multiple OPC UA EDS adapters, see <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> for adding a new component to Edge Data Store. </p>
+<p>This topic provides quick start instructions for setting up the OPC UA EDS adapter. You can add a single OPC UA EDS adapter during Edge Data Store installation. If you want multiple OPC UA EDS adapters, see <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> for adding a new component to Edge Data Store. </p>
 <p>The following diagram depicts the data flow of a single OPC UA EDS adapter:</p>
 <p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOpcUA.jpg" alt="EDS Opc Ua" title="EDS Opc Ua"></p>
 <h2 id="configure-an-opc-ua-data-source">Configure an OPC UA data source</h2>
@@ -93,12 +93,13 @@
 <li>Run the following curl script from the same directory where the file is located. You should run the script on the same computer where the Edge Data Store is installed:</li>
 </ol>
 <pre><code class="lang-bash">curl -i -d &quot;@OpcUa1Datasource.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Datasource
-</code></pre><p>When the command completes successfully (a 204 is returned by curl), your OPC UA data source has been created. If you receive a 400 error, check your JSON file for errors. If you receive a 404 or 500 error, check to make sure Edge Data Store is running on your computer.</p>
+</code></pre><p>When the command completes successfully (a 204 is returned by curl), your OPC UA data source has been created. If you receive a 400 error, check the data source JSON file for errors. If you receive a 404 or 500 error, check to make sure Edge Data Store is running on your computer.</p>
 <h2 id="configure-opc-ua-data-selection">Configure OPC UA data selection</h2>
 <p>When you create the data source file, the OPC UA adapter auto generates the data selection file, which lists all available streams in the designated data source.  To configure the data selection file, complete the following:</p>
 <ol>
 <li>Save the data selection to your local device for editing.</li>
-<li><p>All steams listed in the auto generated data selection file are initially set to deselect.  Select each of the streams you want to ingress to Edge Data Store.</p>
+<li>Select each of the streams you want to ingress to Edge Data Store. All steams listed in the auto generated data selection file are initially set to deselect.</li>
+<li><p>Save the following JSON content in a text file and name it OpcUa1Dataselection.json.</p>
 <pre><code class="lang-json">[{
         &quot;Selected&quot;: true,
         &quot;Name&quot;: &quot;Cold Side Inlet Temperature&quot;,
@@ -131,18 +132,17 @@
     }
 ]
 </code></pre></li>
-<li>Save the preceding JSON content in a text file and name it OpcUa1Dataselection.json.</li>
 <li><p>Run the following curl script to configure Edge Data Store to collect OPC UA data values:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OpcUa1Dataselection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection
 </code></pre></li>
 </ol>
 <ul>
-<li><p>To see the streams that have been created in Edge Storage to store the data you are writing, you can run the following curl script:</p>
+<li><p>To see the streams that have been created in Edge Storage to store the data you are writing, run the following curl script:</p>
 <pre><code class="lang-bash">curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
 </code></pre></li>
-<li><p>To view the data in the streams being written, you can refer to the SDS part of this documentation.</p>
+<li><p>To view the data in the streams being written, refer to the SDS part of this documentation.</p>
 </li>
-<li><p>To egress the data to OSIsoft Cloud Services or the PI System, see the egress documentation or quick starts.</p>
+<li><p>To egress the data to OSIsoft Cloud Services or the PI System, see the <a class="xref" href="../Egress/Egress.html">Data egress configuration</a> part of this documentation.</p>
 </li>
 </ul>
 </article>
