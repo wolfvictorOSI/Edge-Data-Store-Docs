@@ -4,9 +4,9 @@ uid: edgeDocker
 
 # Docker
 
-Docker is a set of tools that can be used on Linux to manage application deployments. If you want to use Docker, you must be familiar with the underlying technology and have determined that it is appropriate for your planned use of the Edge Data Store.
+Docker is a set of tools that can be used on Linux to manage application deployments. If you want to use Docker, you must be familiar with the underlying technology and have determined that it is appropriate for your planned use of the Edge Data Store. Docker is not a requirement to use Edge Data Store.
 
-The objective of this topic is to provide examples of how to successfully create a Docker container with the Edge Data Store. Docker is not a requirement to use Edge Data Store.
+This topic provides examples of how to create a Docker container with the Edge Data Store. 
 
 ## Create a Docker container containing the Edge Data Store
 
@@ -62,7 +62,7 @@ The objective of this topic is to provide examples of how to successfully create
    docker run -d --network host edgedatastore
    ```
    
-Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data stored by the Edge Data Store is stored in the container itself, and when the container is deleted the data stored will also be deleted.
+Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data stored by the Edge Data Store is stored in the container itself. When the container is deleted, the data stored is also deleted.
 
 ### Persistent storage on the local file system from Docker
 
@@ -72,11 +72,11 @@ Port 5590 is accessible from the host and you can make REST calls to Edge Data S
    docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ edgedatastore
    ```
    
-Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data that would be written to the container is instead written to the host directory /edgeds. This directory can be anything you want. The example just uses a simple directory on the local machine.
+Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data that would be written to the container is instead written to the host directory. In this example the host directory is a simple directory on the local machine, /edgeds. You can specify any directory you want. 
 
 ### Port number change
 
-If you want a port other than 5590, see [System port configuration](xref:SystemPortConfiguration). Changing the configuration of the Edge Data Store running in the container will change the port exposed to the local machine.
+To use a different port other than 5590, see [System port configuration](xref:SystemPortConfiguration). Changing the configuration of the Edge Data Store running in the container changes the port exposed to the local machine.
 
 ### Limiting local host access to Docker
 
