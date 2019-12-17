@@ -2,7 +2,7 @@
 uid: security
 ---
 # Security
-NEEDS INTRO TEXT HERE
+The following topics discuss basic Edge Data Store security practices.
 
 ## REST APIs
 Edge Data Store supports REST APIs for configuration, data reading (through SDS), and data writing (through OMF and SDS). Edge Data Store provides only localhost access to REST APIs. Any code that reads or writes to the REST APIs must reside on the computer or device on which Edge Data Store is running. 
