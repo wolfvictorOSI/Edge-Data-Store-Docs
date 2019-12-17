@@ -39,5 +39,5 @@ The following tables provide an overview of available edgecmd commands that you 
 ## Configuration with JSON files
 | edgecmd command | Description | Examples |
 |-----------------|-------------|----------|
-| `edgecmd Configuration file=<PathToJsonFile>` | Import a bulk configuration through JSON file. | `edgecmd Configuration file="~/Bulk_Storage_Runtime.json"`|
+| `edgecmd Configuration file=<PathToJsonFile>` | Import a bulk configuration through a JSON file. | `edgecmd Configuration file="~/Bulk_Storage_Runtime.json"`|
 | `edgecmd Configuration <componentId> <facetName> file=<PathToJsonFile>` | Import a facet specific configuration file for a component. | `edgecmd Configuration Modbus1 DataSource file="~/Modbus_DataSource.json"`|
