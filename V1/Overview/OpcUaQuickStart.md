@@ -4,7 +4,7 @@ uid: opcUaQuickStart
 
 # OPC UA EDS adapter quick start
 
-This topic provides a quick start instructions for setting up the OPC UA EDS adapter. You can add a single OPC UA EDS adapter during Edge Data Store installation. If you want multiple OPC UA EDS adapters, see [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) for adding a new component to Edge Data Store. 
+This topic provides quick start instructions for setting up the OPC UA EDS adapter. You can add a single OPC UA EDS adapter during Edge Data Store installation. If you want multiple OPC UA EDS adapters, see [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) for adding a new component to Edge Data Store. 
 
 The following diagram depicts the data flow of a single OPC UA EDS adapter:
 
@@ -34,8 +34,7 @@ The following diagram depicts the data flow of a single OPC UA EDS adapter:
 curl -i -d "@OpcUa1Datasource.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Datasource
 ```
 
-When the command completes successfully (a 204 is returned by curl), your OPC UA data source has been created. If you receive a 400 error, check the JSON file for errors. If you receive a 404 or 500 error, check to make sure Edge Data Store is running on your computer.
-WHICH JSON FILE? THE ONE FROM STEP 3?
+When the command completes successfully (a 204 is returned by curl), your OPC UA data source has been created. If you receive a 400 error, check the data source JSON file for errors. If you receive a 404 or 500 error, check to make sure Edge Data Store is running on your computer.
 
 ## Configure OPC UA data selection
 
@@ -93,5 +92,5 @@ When you create the data source file, the OPC UA adapter auto generates the data
 
 * To view the data in the streams being written, refer to the SDS part of this documentation.
 
-* To egress the data to OSIsoft Cloud Services or the PI System, see the egress part of this documentation.
-LINKS WOULD BE NICE IN THE LAST TWO NOTES.
+* To egress the data to OSIsoft Cloud Services or the PI System, see the [Data egress configuration](xref:egress) part of this documentation.
+
