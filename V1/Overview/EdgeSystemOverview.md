@@ -3,9 +3,8 @@ uid: EdgeDataStoreOverview
 ---
 
 # Overview
-PLEASE REVIEW NEEDS EXPLANATION OF WHY/BENEFIT - for example at the end of the first paragraph, something like - it is designed to run in locations that standard PI Systems cannot such as remote locations with little conductivity and minimal staff. Alos if that is the use case - how do get that data back to your main PI System? Or do you?
 
-Edge Data Store (EDS) is an embedded data server that runs on Linux and Windows. EDS is a supplement to existing OSIsoft products. It is designed for small devices, and you can install and run it on 64-bit Intel/AMD compatible and 32-bit ARM v7/v8 compatible chips. It offers REST programming, configuration, administrative interfaces, and a command line tool that you use to configure and administer EDS.
+Edge Data Store (EDS) is an embedded data server that runs on Linux and Windows. EDS is a supplement to existing OSIsoft products. It is designed for small devices, and you can install and run it on 64-bit Intel/AMD compatible and 32-bit ARM v7/v8 compatible chips. It offers REST programming, configuration, administrative interfaces, and a command line tool that you use to configure and administer EDS. EDS provides a means of ingressing data from a variety of devices and applications into the PI System or OCS.
 
 In this release, it does not offer any built-in visualization or analytic support. However, if you use the REST programming capabilities built into EDS, you can write analytics or visualization programs on either Linux, Windows, or both in a variety of programming languages.
 
@@ -36,7 +35,7 @@ The following diagram depicts an OMF data ingress scenario in the Edge Data Stor
 
 ![EDS OMF Ingress](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOMFIngress.jpg "EDS OMF Ingress")
 
-During installation of Edge Data Store, you can choose to install either an EDS Modbus TCP adapter or an EDS OPC UA adapter, or both. The EDS Modbus and EDS OPC UA adapters require additional configuration before they can collect data in Edge Data Store. You can use OMF data ingress once Edge Data Store is installed, with no further configuration steps.
+During installation of Edge Data Store, you can choose to install either an EDS Modbus TCP adapter or an EDS OPC UA adapter, or both. The EDS Modbus and EDS OPC UA adapters require configuration of data source and data selection before they can collect data in Edge Data Store. You can use OMF data ingress once Edge Data Store is installed, with no further configuration steps.
 
 Edge Data Store is composed of components, and is designed to allow additional EDS adapters at a later point.
 
