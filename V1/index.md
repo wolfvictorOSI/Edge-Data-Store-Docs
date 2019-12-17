@@ -8,7 +8,6 @@ uid: index
 
 - [Overview](xref:EdgeDataStoreOverview)
   - [Design considerations](xref:scalePerformance)
-  - [Performance](xref:Performance)
   - [Security](xref:security)
 - [Quick start guides](xref:QuickStartGuides)
   - [OPC UA EDS adapter quick start](xref:opcUaQuickStart)
