@@ -14,7 +14,7 @@ The following tools are available to facilitate the execution of REST calls.
 
 ### curl
 
-Edge Data Store documentation displays curl commands for configuration and management examples. curl is a command line tool supported on Windows and Linux, used to make HTTP calls. curl has a large range of capabilitie. You can accomplish any Edge Data Store administrative or programming task with curl. curl is also easily scripted, using Bash or Powershell on either Linux or Windows. OSIsoft recommends this tool for managing Edge Data Store. Any system that can run Edge Data Store supports curl.
+Edge Data Store documentation displays curl commands for configuration and management examples. curl is a command line tool supported on Windows and Linux that is used to make HTTP calls. curl has a large range of capabilities. You can accomplish any Edge Data Store administrative or programming task with curl. curl is also easily scripted, using Bash or Powershell on either Linux or Windows. OSIsoft recommends this tool for managing Edge Data Store. Any system that can run Edge Data Store supports curl.
 
 ### Postman
 
@@ -22,7 +22,7 @@ Postman is an effective REST tool for systems with GUI components. Edge Data Sto
 
 ### C#, Python, Go
 
-You can use any modern programming language to make REST calls to administer and write programs for Edge Data Store. Since the administrative and programming interfaces are unified in using REST, you can write applications that both manage Edge Data Store and read and write data. If you want you can, for example, access the Diagnostics namespace locally to monitor and act upon the local system state.
+You can use any modern programming language to make REST calls to administer and write programs for Edge Data Store. Since the administrative and programming interfaces are unified in using REST, you can write applications that both manage Edge Data Store and read and write data. For example, you can access the Diagnostics namespace locally to monitor and act upon the local system state.
 
 ### System Tools
 
