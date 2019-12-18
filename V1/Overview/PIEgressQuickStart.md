@@ -6,6 +6,8 @@ uid: piEgressQuickStart
 
 This topic provides quick start instructions for egressing data stored in the Edge Data Store into a remote PI System. This is accomplished using PI Web API which is configured for basic authentication.
 
+The examples here use curl, a commonly available tool on both Windows and Linux, and command line commands. You can use the same operations with any programming language or tool that supports making REST calls. You can also accomplish data retrieval steps (GET commands) using a browser, if available on your device.
+
 ## Create a periodic egress configuration
 
 Complete the following to configure Edge Storage periodic egress for the PI Web API endpoint and credentials:
