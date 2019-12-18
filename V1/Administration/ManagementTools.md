@@ -1,5 +1,5 @@
 ---
-uid: managementTools
+uid: ConfigurationTools
 ---
 
 # Configuration tools
