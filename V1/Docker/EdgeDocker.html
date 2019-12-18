@@ -71,8 +71,8 @@
             <article class="content wrap" id="_content" data-uid="edgeDocker">
 <h1 id="docker">Docker</h1>
 
-<p>Docker is a set of tools that can be used on Linux to manage application deployments. If you want to use Docker, you must be familiar with the underlying technology and have determined that it is appropriate for your planned use of the Edge Data Store.</p>
-<p>The objective of this topic is to provide examples of how to successfully create a Docker container with the Edge Data Store. Docker is not a requirement to use Edge Data Store.</p>
+<p>Docker is a set of tools that can be used on Linux to manage application deployments. If you want to use Docker, you must be familiar with the underlying technology and have determined that it is appropriate for your planned use of the Edge Data Store. Docker is not a requirement to use Edge Data Store.</p>
+<p>This topic provides examples of how to create a Docker container with the Edge Data Store. </p>
 <h2 id="create-a-docker-container-containing-the-edge-data-store">Create a Docker container containing the Edge Data Store</h2>
 <ol>
 <li><p>Create the following Dockerfile in the directory where you want to create and run the container:</p>
@@ -127,16 +127,16 @@ ENTRYPOINT [&quot;./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host&quot;]
 <pre><code class="lang-bash">docker run -d --network host edgedatastore
 </code></pre></li>
 </ul>
-<p>Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data stored by the Edge Data Store is stored in the container itself, and when the container is deleted the data stored will also be deleted.</p>
+<p>Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data stored by the Edge Data Store is stored in the container itself. When the container is deleted, the data stored is also deleted.</p>
 <h3 id="persistent-storage-on-the-local-file-system-from-docker">Persistent storage on the local file system from Docker</h3>
 <ul>
 <li><p>To run the container, type the following in the command line (sudo may be necessary):</p>
 <pre><code class="lang-bash">docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ edgedatastore
 </code></pre></li>
 </ul>
-<p>Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data that would be written to the container is instead written to the host directory /edgeds. This directory can be anything you want. The example just uses a simple directory on the local machine.</p>
+<p>Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data that would be written to the container is instead written to the host directory. In this example the host directory is a simple directory on the local machine, /edgeds. You can specify any directory you want. </p>
 <h3 id="port-number-change">Port number change</h3>
-<p>If you want a port other than 5590, see <a class="xref" href="../Configuration/System%20port%20configuration.html">System port configuration</a>. Changing the configuration of the Edge Data Store running in the container will change the port exposed to the local machine.</p>
+<p>To use a different port other than 5590, see <a class="xref" href="../Configuration/System%20port%20configuration.html">System port configuration</a>. Changing the configuration of the Edge Data Store running in the container changes the port exposed to the local machine.</p>
 <h3 id="limiting-local-host-access-to-docker">Limiting local host access to Docker</h3>
 <p>If you remove the <code>--network host</code> option from the docker run command, no REST access is possible from outside the container. This may be of value where you want to host an application in the same container as Edge Data Store, and do not want to have external REST access enabled.</p>
 </article>

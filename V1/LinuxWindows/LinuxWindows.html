@@ -71,23 +71,23 @@
             <article class="content wrap" id="_content" data-uid="linuxWindows">
 <h1 id="linux-and-windows-platform-differences">Linux and Windows platform differences</h1>
 
-<p>When developing applications to work with the Edge Data Store, there is no difference between Linux and Windows installations in expected behavior. Edge Data Store installation best practices differ between Linux and Windows, as described in the following sections:</p>
+<p>When developing applications to work with the Edge Data Store, there is no difference between Linux and Windows installations. Edge Data Store installation best practices differ between Linux and Windows, as described in the following sections.</p>
 <h2 id="file-locations">File locations</h2>
 <h3 id="windows">Windows</h3>
 <p>Program binaries are placed in the <em>C:\Program Files\OSIsoft\EdgeDataStore</em> directory by default. For information about changing this location, see the <a href="#installationOverview">installation</a> documentation. </p>
-<p>Configuration, log, and data files are placed under <em>C:\ProgramData\OSIsoft\EdgeDataStore</em> This is not configurable. This folder structure will not be automatically removed during uninstallation.  For information about clearing these files, see the <a href="#installationOverview">installation</a> documentation.</p>
+<p>Configuration, log, and data files are placed under <em>C:\ProgramData\OSIsoft\EdgeDataStore</em> This is not configurable. This folder structure will not be automatically removed if you uninstall EDS.  For information about clearing these files, see the <a href="#installationOverview">installation</a> documentation.</p>
 <p>Key material for configuration files&#39; encrypted secrets is stored using the Windows DPAPI in a secure Windows store. This is not configurable.</p>
 <h3 id="linux">Linux</h3>
-<p>Program binaries are placed in the <em>/opt/EdgeDataStore</em> directory.  Configuration, log, and data files are placed under <em>/usr/share/OSIsoft/EdgeDataStore</em>. This folder structure will not be automatically removed during uninstallation. For information about clearing these files, see the <a href="#installationOverview">installation</a> documentation.</p>
+<p>Program binaries are placed in the <em>/opt/EdgeDataStore</em> directory.  Configuration, log, and data files are placed under <em>/usr/share/OSIsoft/EdgeDataStore</em>. This folder structure will not be automatically removed if you unistall EDS. For information about clearing these files, see the <a href="#installationOverview">installation</a> documentation.</p>
 <p>Key material for configuration files&#39; encrypted secrets are stored using limited access files under <em>/usr/share/OSIsoft/EdgeDataStore</em>. You cannot configure file locations for Linux.</p>
-<p>When the Debian installer is used, Edge Data Store is installed using the service identity osisoft.edgedatastore.service. If you need to restart the service from the Linux command line, you can use the following command:</p>
+<p>When the Debian installer is used, Edge Data Store is installed using the service identity osisoft.edgedatastore.service. If you need to restart the service from the Linux command line, use the following command:</p>
 <pre><code class="lang-bash">sudo systemctl restart osisoft.edgedatastore.service
 </code></pre><h2 id="file-descriptors-handles">File descriptors (handles)</h2>
 <p>When installed on a Linux operating system, EDS is configured with a file descriptor limit that may be higher than the corresponding limit for most processes. The limit is controlled by the <em>LimitNOFILE</em> variable in the file <em>/lib/systemd/system/osisoft.edgedatastore.service</em>.</p>
-<p>Linux operating systems impose a limit on the number of file descriptors used in a process. The number of open file descriptors is directly related to the number of streams used in EDS (e.g. data ingress). Overall, every stream utilizes two file descriptors. EDS will no longer function properly when it reaches the limit of available file descriptors. To prevent this, it is necessary to either limit the number of streams used in EDS or increase the maximum allowed file descriptors per process.</p>
+<p>Linux operating systems impose a limit on the number of file descriptors used in a process. The number of open file descriptors is directly related to the number of streams used in EDS (for example, data ingress). Overall, every stream uses two file descriptors. EDS will no longer function properly when it reaches the limit of available file descriptors. To prevent this, it is necessary to either limit the number of streams used in EDS or increase the maximum allowed file descriptors per process.</p>
 <p>The following figures were identified on a Raspberry Pi 3 Model B+ using a Raspbian operating system. An installation of EDS with no user-defined streams had an average of 424 open file descriptors. The same installation with 250 streams had an average of 932 open file descriptors. The file descriptor limit per process for the operating system used was 1024.</p>
-<p><strong>Note</strong>  Figures will differ on other Linux operating systems and devices, and may differ slightly from execution to execution, so it&#39;s important to understand the system you are using.</p>
-<p>Windows has an object called a handle that is used in much the same way that Linux uses file descriptors. However, Windows does not have the same sort of limitation just described.</p>
+<p><strong>Note</strong>  Figures will differ on other Linux operating systems and devices, and may differ slightly from execution to execution, so it is important to understand your system.</p>
+<p>Windows has an object called a handle that is used in much the same way that Linux uses file descriptors. However, Windows does not have a limitation on the number of handles.</p>
 </article>
           </div>
           

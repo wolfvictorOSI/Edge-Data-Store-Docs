@@ -58,7 +58,7 @@ references:
 - uid: egress
   name: Data egress configuration
   href: V1/Egress/Egress.html
-- uid: Egress execution details
+- uid: EgressExecutionDetails
   name: Egress execution details
   href: V1/Egress/Egress%20execution%20details.html
 - uid: HealthEndpointsConfiguration
@@ -157,7 +157,7 @@ references:
 - uid: piEgressQuickStart
   name: PI egress quick start
   href: V1/Overview/PIEgressQuickStart.html
-- uid: Prepare egress destinations
+- uid: PrepareEgressDestinations
   name: Prepare egress destinations
   href: V1/Egress/Prepare%20egress%20destinations.html
 - uid: PrinciplesOfOperationModbus

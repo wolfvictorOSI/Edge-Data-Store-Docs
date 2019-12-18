@@ -71,12 +71,11 @@
             <article class="content wrap" id="_content" data-uid="VerifyInstallation">
 <h1 id="verify-installation">Verify installation</h1>
 
-<p>You can verify that Edge Data Store is correctly installed.</p>
+<p>On a device with limited processor, memory, and slow storage, it may take some time before the Edge Data Store is fully initialized and running for the first time. After allowing time for start up, use the following steps to verify that Edge Data Store is correctly installed. </p>
 <ol>
-<li><p>Run the following script from the terminal window:</p>
+<li><p>Run the following script from a terminal window:</p>
 <pre><code class="lang-bash">curl http://localhost:5590/api/v1/configuration
-</code></pre><p> Depending upon the processor, memory, and storage, it may take the system a few seconds to start up.</p>
-<p> If the installation was successful, a JSON copy of the default system configuration will be returned:</p>
+</code></pre><p> If the installation was successful, a JSON copy of the default system configuration is returned:</p>
 <pre><code class="lang-json">    {
     &quot;Storage&quot;: {
         &quot;PeriodicEgressEndpoints&quot;: [],
@@ -113,8 +112,7 @@
     }
     }
 </code></pre></li>
-<li><p>If you receive an error, wait a few seconds and try it again. </p>
-<p> On a device with limited processor, memory, and slow storage, it may take some time before the Edge Data Store is fully initialized and running for the first time.</p>
+<li><p>If you receive an error, wait a few seconds and try the script again. </p>
 </li>
 </ol>
 </article>
