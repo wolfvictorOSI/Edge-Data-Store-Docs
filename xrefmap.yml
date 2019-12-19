@@ -19,6 +19,9 @@ references:
 - uid: configurationSchemaList
   name: Configuration schemas
   href: V1/Configuration/Schemas/ConfigurationSchemaList.html
+- uid: ConfigurationTools
+  name: Configuration tools
+  href: V1/Administration/ManagementTools.html
 - uid: disasterRecovery
   name: Disaster recovery
   href: V1/Troubleshooting/DisasterRecovery.html
@@ -82,9 +85,6 @@ references:
 - uid: LoggingConfiguration
   name: Logging configuration
   href: V1/Configuration/Logging%20configuration.html
-- uid: managementTools
-  name: Configuration tools
-  href: V1/Administration/ManagementTools.html
 - uid: modbus_DataSelection_schema
   name: Sample Modbus TCP data selection configuration
   href: V1/Configuration/Schemas/Modbus_DataSelection_schema.html
