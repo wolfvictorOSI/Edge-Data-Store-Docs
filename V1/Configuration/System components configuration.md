@@ -4,12 +4,11 @@ uid: SystemComponentsConfiguration
 
 # System components configuration
 
-The initial release of Edge Data Store includes Modbus TCP EDS adapter, OPC UA EDS adapter, and the Storage component. They are only active if you configure the system to use them. The system itself has a relatively small configuration surface area - the list of components and the HTTP Port used for REST calls.
+Edge Data Store includes Modbus TCP EDS adapter, OPC UA EDS adapter, and the Storage component. These components are only active if you configure the system to use them. EDS itself needs only a small amount of configuration - the list of components and the HTTP Port used for REST calls.
 
 ## Configure system components
 
-The default _System_Components.json_ file for the System component is the following. The Storage component is required for this initial release for Edge Data Store to run. With later releases of Edge Data Store, the storage component may not be required.
-
+The default _System_Components.json_ file for the System component contains the following information. 
 ```json
 [
   {
@@ -19,9 +18,9 @@ The default _System_Components.json_ file for the System component is the follow
 ]
 ```
 
- You can add additional Modbus TCP EDS adapter and OPC UA EDS adapter components if you want, but only a single Storage component is supported. 
+The Storage component is required for Edge Data Store to run. Only a single Storage component is supported. You can add additional Modbus TCP EDS adapter and OPC UA EDS adapter components if you want.  
 
-1. To add a new component, in this example a Modbus TCP EDS adapter, create the following JSON. 
+1. To add a new component a JSON file with the ComponentId and ComponentType. The following example adds a Modbus TCP EDS adapter. 
 
     ```json
       {
@@ -31,7 +30,7 @@ The default _System_Components.json_ file for the System component is the follow
     ```
     > **Note:** A unique ComponentId is necessary for each component in the system. This example uses the ComponentId Modbus1 since it is the first Modbus TCP EDS adapter.
 
-2. Save the JSON in a file named _AddComponent.json_. 
+2. Save the JSON file with the name _AddComponent.json_. 
 3. From the same directory where the file exists, run the following curl script:
 
     ```bash
