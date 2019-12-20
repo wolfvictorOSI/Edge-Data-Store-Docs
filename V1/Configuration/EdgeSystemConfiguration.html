@@ -71,7 +71,7 @@
             <article class="content wrap" id="_content" data-uid="EdgeDataStoreConfiguration">
 <h1 id="edge-data-store-configuration">Edge Data Store configuration</h1>
 
-<p>This topic gives examples of a minimum and a maximum Edge Data Store configuration.</p>
+<p>This topic gives examples of a minimum and a maximum Edge Data Store configuration. </p>
 <h2 id="configure-minimum-edge-data-store">Configure minimum Edge Data Store</h2>
 <p>The following JSON file represents minimal configuration of an Edge Data Store. There are no Modbus TCP EDS adapter or OPC UA EDS adapter components, and the Storage component configurations are set to the default. If you configure a system with this JSON file, any existing Modbus TCP EDS adapter or OPC UA EDS adapter components will be disabled and removed. No storage data will be deleted or modified, and OMF and SDS data access will not be impacted.</p>
 <pre><code class="lang-json">{
@@ -110,16 +110,16 @@
   }
 }
 </code></pre><ol>
-<li><p>Save or copy the JSON in a file named <em>EdgeMinimumConfiguration.json</em> in any directory on a device with Edge Data Store installed.</p>
+<li><p>Save or copy the example JSON in a file named <em>EdgeMinimumConfiguration.json</em> in any directory on a device with Edge Data Store installed.</p>
 </li>
 <li><p>Run the following curl command from the directory where the file is located: </p>
 <pre><code class="lang-bash">curl -i -d &quot;@EdgeMinimumConfiguration.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration
 </code></pre><p>This will be set as the configuration of a running Edge Data Store. The configuration takes effect immediately after the command completes.</p>
 </li>
 </ol>
-<p>The previous example results in a minimal configuration of Edge Data Store. It only supports <a class="xref" href="../Overview/OMFQuickStart.html">OMF</a> and <a class="xref" href="../Overview/SDSQuickStart.html">SDS</a> operations using REST. No egress is configured, so no data will be forwarded to either <a class="xref" href="../Overview/OCSEgressQuickStart.html">OCS</a> or <a class="xref" href="../Overview/PIEgressQuickStart.html">PI Web API</a>.</p>
+<p>This example results in a minimal configuration of Edge Data Store. It only supports <a class="xref" href="../Overview/OMFQuickStart.html">OMF</a> and <a class="xref" href="../Overview/SDSQuickStart.html">SDS</a> operations using REST. No egress is configured, so no data will be forwarded to either <a class="xref" href="../Overview/OCSEgressQuickStart.html">OCS</a> or <a class="xref" href="../Overview/PIEgressQuickStart.html">PI Web API</a>.</p>
 <h2 id="configure-maximum-edge-data-store">Configure maximum Edge Data Store</h2>
-<p>The following JSON file represents maximal configuration of an Edge Data Store. There are Modbus TCP EDS adapter components and OPC UA EDS adapter components, and egress is configured to send to both PI Web API and OCS from both the default (operational data) and diagnostics (diagnostic data) namespace.</p>
+<p>The following JSON file represents maximum configuration of an Edge Data Store. There are Modbus TCP EDS adapter components and OPC UA EDS adapter components, and egress is configured to send to both PI Web API and OCS from both the default (operational data) and diagnostics (diagnostic data) namespace.</p>
 <pre><code class="lang-json">{
     &quot;Modbus1&quot;: {
         &quot;Logging&quot;: {
@@ -445,7 +445,7 @@
 <li>Save the edited version of the previous JSON in a file named <em>EdgeMaximumConfiguration.json</em> in any directory. </li>
 <li><p>Run the following curl command from the same directory where the file is located:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@EdgeMaximumConfiguration.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration
-</code></pre><p>This will be set as the configuration of a running Edge Data Store. The configuration takes effect immediately after the command completes.</p>
+</code></pre><p>This will be set as the configuration for the running Edge Data Store. The configuration takes effect immediately after the command completes.</p>
 </li>
 </ol>
 </article>
