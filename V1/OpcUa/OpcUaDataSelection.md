@@ -3,9 +3,9 @@ uid: opcUaDataSelection
 ---
 # Generate template OPC UA data selection configuration file
 
-When you add a data source, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a .json file for data selection. Data is collected automatically based upon user demands.  OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).
+When you add a data source, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a .json file for data selection. Data is collected automatically based upon user demands. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).
 
-A default OPC UA data source template file will be created if there is no OPC UA data selection configuration but a valid OPC UA data source exists.
+A default OPC UA data source template file will be created if there is no OPC UA data selection configuration, but a valid OPC UA data source exists.
 
 Complete the following steps in order for this template data selection to be generated:
 
@@ -45,7 +45,7 @@ Complete the following steps in order for this template data selection to be gen
   ```
 
 4. In a text editor, edit the file and change the value of any Selected key from false to true in order to transfer the OPC UA data to be stored in Edge Data Store. 
-5. In the same directory where you edited the generated file, run the following curl command:
+5. In the same directory where you edited the file, run the following curl command:
 
   ```bash
   curl -i -d "@OpcUa1_DataSelection.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection
