@@ -26,6 +26,6 @@ The following table lists OPC UA variable types that the OPC UA EDS adapter supp
 
 ## Export operation
 
-The OPC UA EDS adapter is able to export available OPC UA dynamic variables by browsing the OPC UA hierarchies or sub-hierarchies. You can limit browse by specifying comma separated collection of nodeIds in data source configuration (RootNodeIds) which are treated as a roots from where the adapter starts the browse operation. The adapter triggers export operation after successful connection to the OPC UA server when the data selection file doesn't exist in configuration directory. You can copy the exported data selection JSON file from the directory or retrieve through REST API call.
+The OPC UA EDS adapter is able to export available OPC UA dynamic variables by browsing the OPC UA hierarchies or sub-hierarchies. You can limit browsing by specifying a comma-separated collection of nodeIds in data source configuration (RootNodeIds) which are treated as a roots from where the adapter starts the browse operation. The adapter triggers an export operation after a successful connection to the OPC UA server when the data selection file does not exist in configuration directory. You can copy the exported data selection JSON file from the directory or retrieve it uisng a REST API call.
 
-You can also create the data selection file manually in order to avoid potentially long and expensive browse operation and configure it before you configure data source or push in one configuration call with data source configuration.
+You can also create the data selection file manually in order to avoid a potentially long and expensive browse operation and configure it before you configure data source or push in one configuration call with data source configuration.
