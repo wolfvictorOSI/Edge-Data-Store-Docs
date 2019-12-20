@@ -8,7 +8,7 @@ The EDS storage component provides Sequential Data Store (SDS) storage, with a r
 
 - Storage Runtime
 
-- [Storage periodic gress endpoints](xref:egress)
+- [Storage periodic egress endpoints](xref:egress)
 
 - [Logging](xref:LoggingConfiguration)
 
