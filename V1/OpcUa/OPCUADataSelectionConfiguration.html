@@ -88,7 +88,7 @@
 <p>Example using cURL (run this command from the same directory where the file is located):</p>
 <pre><code class="lang-bash">curl -v -d &quot;@DataSelection.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection&quot;
 </code></pre><h2 id="opc-ua-data-selection-schema">OPC UA data selection schema</h2>
-<p>The following table defines the basic behavior of the <em>OpcUa_DataSelection_schema.json</em> file.</p>
+<p>The following table shows the basic behavior of the <em>OpcUa_DataSelection_schema.json</em> file.</p>
 <table>
 <thead>
 <tr>
@@ -112,6 +112,7 @@
 </tbody>
 </table>
 <h2 id="parameters-for-opc-ua-data-selection">Parameters for OPC UA data selection</h2>
+<p>The following parameters can be used to configure OPC UA data selection:</p>
 <table>
 <thead>
 <tr>
@@ -128,7 +129,7 @@
 <td>Optional</td>
 <td><code>boolean</code></td>
 <td>No</td>
-<td>This field is used to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is false.</td>
+<td>Use this field to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is false.</td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
@@ -149,7 +150,7 @@
 <td>Optional</td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>The custom stream ID that will be used to create the streams. If not specified, the OPC UA EDS adapter will generate a default stream ID based on the measurement configuration. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores (&quot;__&quot;).<br>Can contain a maximum of 260 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.</td>
+<td>The custom stream ID used to create the streams. If not specified, the OPC UA EDS adapter will generate a default stream ID based on the measurement configuration. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores (&quot;__&quot;).<br>Can contain a maximum of 260 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.</td>
 </tr>
 </tbody>
 </table>

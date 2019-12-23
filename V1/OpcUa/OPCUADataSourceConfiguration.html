@@ -71,7 +71,7 @@
             <article class="content wrap" id="_content" data-uid="OPCUADataSourceConfiguration">
 <h1 id="data-source-configuration">Data source configuration</h1>
 
-<p>In order to use the OPC UA EDS adapter, you must configure the data source from which it will be receiving data.</p>
+<p>In order to use the OPC UA EDS adapter, you must configure the data source from which it will receive data.</p>
 <h2 id="configure-opc-ua-data-source">Configure OPC UA data source</h2>
 <blockquote><p><strong>Note:</strong> You cannot modify OPC UA data source configurations manually. You must use the REST endpoints to add or edit the configuration.</p>
 </blockquote>
@@ -87,10 +87,10 @@
 </ol>
 <blockquote><p><strong>Note:</strong> During installation, you can add a single OPC UA EDS adapter named OpcUa1. The following example uses this component name.</p>
 </blockquote>
-<p>Example using cURL (run this command from the same directory where the file is located):</p>
+<p>The following example shows the HTTPS request using cURL (run this command from the same directory where the file is located):</p>
 <pre><code class="lang-bash">curl -v -d &quot;@DataSource.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/OpcUa1/DataSource&quot;
 </code></pre><h2 id="opc-ua-data-source-schema">OPC UA data source schema</h2>
-<p>The following table defines the basic behavior of the <em>OpcUa_DataSource_schema.json</em> file.</p>
+<p>The following table shows the basic behavior of the <em>OpcUa_DataSource_schema.json</em> file.</p>
 <table>
 <thead>
 <tr>
@@ -114,7 +114,7 @@
 </tbody>
 </table>
 <h2 id="parameters-for-opc-ua-data-source">Parameters for OPC UA data source</h2>
-<p>The following parameters are available for configuring an OPC UA data source.</p>
+<p>The following parameters can be used to configure an OPC UA data source:</p>
 <table>
 <thead>
 <tr>
@@ -131,7 +131,7 @@
 <td>Required</td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>The endpoint URL of the OPC UA server. The following is an example of the URL format: opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer<br><br><strong>Note:</strong> If you change the EndpointURL on a configured OPC UA EDS adapter that has ComponentID_DataSelection.json file exported, you will need to relocate the ComponentID_DataSelection.json file from the configuration directory to trigger a new browse (export).</td>
+<td>The endpoint URL of the OPC UA server. The following is an example of the URL format: opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer<br><br><strong>Note:</strong> If you change the EndpointURL on a configured OPC UA EDS adapter that has ComponentID_DataSelection.json file exported, you need to relocate the ComponentID_DataSelection.json file from the configuration directory to trigger a new browse (export).</td>
 </tr>
 <tr>
 <td><strong>UseSecureConnection</strong></td>
@@ -173,7 +173,7 @@
 <td>Optional</td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>Specifies what prefix is used for Stream IDs. Naming convention is StreamIdPrefixNodeId. <strong>Note:</strong> An empty string means no prefix will be added to the Stream IDs. Null value means ComponentID followed by dot character will be added to the stream IDs (example: OpcUa1.NodeId).</td>
+<td>Specifies what prefix is used for Stream IDs. Naming convention is StreamIdPrefixNodeId. <strong>Note:</strong> An empty string means no prefix will be added to the Stream IDs. Null value means ComponentID followed by dot character will be added to the stream IDs (for example, OpcUa1.NodeId).</td>
 </tr>
 <tr>
 <td><strong>ApplyPrefixToStreamId</strong></td>

@@ -71,8 +71,8 @@
             <article class="content wrap" id="_content" data-uid="opcUaDataSelection">
 <h1 id="generate-template-opc-ua-data-selection-configuration-file">Generate template OPC UA data selection configuration file</h1>
 
-<p>When you add a data source, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a .json file for data selection. Data is collected automatically based upon user demands.  OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).</p>
-<p>A default OPC UA data source template file will be created if there is no OPC UA data selection configuration but a valid OPC UA data source exists.</p>
+<p>When you add a data source, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a .json file for data selection. Data is collected automatically based upon user demands. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).</p>
+<p>A default OPC UA data source template file will be created if there is no OPC UA data selection configuration, but a valid OPC UA data source exists.</p>
 <p>Complete the following steps in order for this template data selection to be generated:</p>
 <ol>
 <li><p>Add an <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">OPC UA EDS adapter</a> with a unique ComponentId. </p>
@@ -103,7 +103,7 @@ Linux: /usr/share/OSIsoft/EdgeDataStore/Configuration/OpcUa1_DataSelection.json
 </code></pre></li>
 <li><p>In a text editor, edit the file and change the value of any Selected key from false to true in order to transfer the OPC UA data to be stored in Edge Data Store. </p>
 </li>
-<li><p>In the same directory where you edited the generated file, run the following curl command:</p>
+<li><p>In the same directory where you edited the file, run the following curl command:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OpcUa1_DataSelection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection
 </code></pre></li>
 </ol>
