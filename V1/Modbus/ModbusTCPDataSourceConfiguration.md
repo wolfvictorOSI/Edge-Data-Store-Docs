@@ -4,7 +4,7 @@ uid: ModbusTCPDataSourceConfiguration
 
 # Data source configuration
 
-To use the Modbus TCP EDS adapter, you must configure it for the Modbus TCP data source from which it will be polling data.
+To use the Modbus TCP EDS adapter, you must configure it for the Modbus TCP data source from which it will polling data.
 
 ## Configure Modbus TCP data source
 
@@ -29,7 +29,7 @@ You can create or copy this file to any directory on a device with Edge Data Sto
 
 ## Modbus TCP data source schema
 
-The following table defines the basic behavior of the _Modbus_DataSource_schema.json_ file.
+The following table describes the basic behavior of the _Modbus_DataSource_schema.json_ file.
 
 | Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- |
@@ -44,7 +44,7 @@ The following parameters are available for configuring a Modbus TCP data source.
 | **IpAddress**             | Required  | `string` | Yes | The IP address of the device from which the data is to be collected using the Modbus TCP protocol. Host name is not supported. |
 | **Port**                  | Optional  | number | No | The TCP port of the target device that listens for and responds to Modbus TCP requests. The value ranges from 0 to 65535. If not configured, the default TCP port is 502 (which is the default port for Modbus TCP protocol). |
 | **StreamIdPrefix**        | Optional          | number | Yes | Parameter applied to all data items collected from the data source. If not configured, the default value is the ID of the Modbus TCP EDS adapter. The custom StreamIdPrefix has the highest priority.|
-| **ApplyPrefixToStreamId** | Optional          | `boolean` | No | Parameter applied to all data items collected from the data source that have custom stream ID configured. If configured, the adapter will apply the StreamIdPrefix property to all the streams with custom ID configured. The property does not affect any streams with default ID configured|
+| **ApplyPrefixToStreamId** | Optional          | `Boolean` | No | Parameter applied to all data items collected from the data source that have custom stream ID configured. If configured, the adapter will apply the StreamIdPrefix property to all the streams with custom ID configured. The property does not affect any streams with default ID configured|
 | **ConnectTimeout**        | Optional          | number | No | Parameter to specify the time (in milliseconds) to wait when Modbus TCP EDS adapter is trying to connect to the data source. The value ranges from 1000 ms to 30000 ms. The default value is 5000 ms.|
 | **ReconnectInterval**     | Optional          | number | No | Parameter to specify the time (in milliseconds) to wait before retrying to connect to the data source when the data source is offline. The value ranges from 100 ms to 30000 ms. The default value is 1000 ms. |
 |**RequestTimeout**         | Optional          | number | No | Parameter to specify the time (in milliseconds) that Modbus TCP EDS adapter waits for a pending request before marking it as timeout and dropping the request. The default value is 10000 ms. The value must be a positive integer, there is no value range.|
