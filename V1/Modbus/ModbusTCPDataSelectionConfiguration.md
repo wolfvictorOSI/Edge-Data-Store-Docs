@@ -26,7 +26,7 @@ Complete the following to configure Modbus TCP data selection:
 
 ## Modbus TCP data selection schema
 
-The following table defines the basic behavior of the _Modbus_DataSelection_schema.json_ file.
+The following table describes the basic behavior of the _Modbus_DataSelection_schema.json_ file.
 
 | Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | 
@@ -39,7 +39,7 @@ The following parameters are available for configuring Modbus TCP data selection
 | Parameter | Required | Type | Nullable | Description |
 |-----------|----------|------|----------|-------------|
 | **Id** | Optional | `string` | Yes | This field is used to update an existing measurement. The ID automatically updates when there are changes to the measurement and will follow the format of `<UnitId`>.`<RegisterType`>.`<RegisterOffset`>.
-| **Selected** | Optional | `boolean` | No | This field is used to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is true.|
+| **Selected** | Optional | `Boolean` | No | This field is used to select or clear a measurement. To select an item, set to true. To remove an item, leave the field empty or set to false.  If not configured, the default value is true.|
 | **Name** | Optional | `string` | Yes | The optional friendly name of the data item collected from the data source. If not configured, the default value will be the stream ID. |
 | **UnitId** | Required | number | No | Modbus TCP slave device unit ID. This must be a value between 0 and 247, inclusively. |
 | **RegisterType** | Required | number or `string` | No | Modbus TCP register type. Supported types are Coil, Discrete, Input16, Input32, Holding16 and Holding32.<br><br>Input16 and Holding16 are used to read registers that have a size of 16 bits. For registers that have a size of 32 bits, use the Input32 and Holding32 register types. To represent the types, you can type in the register type ID or the exact name: <br><br>1 or Coil (Read Coil Status)<br>2 or Discrete (Read Discrete Input Status)<br>3 or Holding16 (Read 16-bit Holding Registers)<br>4 or Holding32 (Read 32-bit Holding Registers)<br>6 or Input16 (Read 16-bit Input Registers)<br>7 or Input32 (Read 32-bit Input Registers) |
