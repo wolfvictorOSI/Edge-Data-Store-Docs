@@ -71,7 +71,7 @@
             <article class="content wrap" id="_content" data-uid="ModbusTCPDataSourceConfiguration">
 <h1 id="data-source-configuration">Data source configuration</h1>
 
-<p>To use the Modbus TCP EDS adapter, you must configure it for the Modbus TCP data source from which it will be polling data.</p>
+<p>To use the Modbus TCP EDS adapter, you must configure it for the Modbus TCP data source from which it will polling data.</p>
 <h2 id="configure-modbus-tcp-data-source">Configure Modbus TCP data source</h2>
 <blockquote><p><strong>Note:</strong> You cannot modify Modbus TCP data source configurations manually. You must use the REST endpoints to add or edit the configuration.</p>
 </blockquote>
@@ -93,7 +93,7 @@ You can create or copy this file to any directory on a device with Edge Data Sto
   curl -v -d &quot;@DataSource.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/Modbus1/DataSource&quot;
   ```
 </code></pre><h2 id="modbus-tcp-data-source-schema">Modbus TCP data source schema</h2>
-<p>The following table defines the basic behavior of the <em>Modbus_DataSource_schema.json</em> file.</p>
+<p>The following table describes the basic behavior of the <em>Modbus_DataSource_schema.json</em> file.</p>
 <table>
 <thead>
 <tr>
@@ -153,7 +153,7 @@ You can create or copy this file to any directory on a device with Edge Data Sto
 <tr>
 <td><strong>ApplyPrefixToStreamId</strong></td>
 <td>Optional</td>
-<td><code>boolean</code></td>
+<td><code>Boolean</code></td>
 <td>No</td>
 <td>Parameter applied to all data items collected from the data source that have custom stream ID configured. If configured, the adapter will apply the StreamIdPrefix property to all the streams with custom ID configured. The property does not affect any streams with default ID configured</td>
 </tr>

@@ -72,7 +72,7 @@
 <h1 id="supported-features">Supported features</h1>
 
 <h2 id="register-types">Register types</h2>
-<p>The Modbus TCP EDS adatper supports 6 register types, corresponding to 4 function codes (1-4). Since one function code can return two types of registers, either 16-bit or 32-bit register depending on the device, either the register type, or the register type code, intead of the function code, is required when configuring the data selection for the adapter. The following table lists all the register types supported in the Modbus TCP EDS adatper.</p>
+<p>The Modbus TCP EDS adatper supports 6 register types, corresponding to 4 function codes (1-4). Since one function code can return two types of registers, either 16-bit or 32-bit depending on the device, either the register type or the register type code is required when configuring the data selection for the adapter. The following table lists all the register types supported in the Modbus TCP EDS adatper.</p>
 <table>
 <thead>
 <tr>
@@ -223,10 +223,12 @@
 <li>UInt16 (Data type code 20)</li>
 <li><p>Int32 (Data type code 30 and 31) </p>
 <h2 id="apply-data-conversion">Apply data conversion</h2>
-<p>The Modbus TCP EDS adapter supports applying data conversion to the value converted from reading from the Modbus TCP devices. A conversion factor and conversion offset can be specified. The conversion factor is used for scaling up or down the value, and the conversion offset is used for shifting the value. The mathematical equation used in conversion is the following: </p>
-<pre><code>&lt;After Conversion&gt; = &lt;Before Conversion&gt; / Factor - Offset 
-</code></pre><p>Not all data types support applying data conversion. The data types supporting data conversion are: </p>
 </li>
+</ul>
+<p>The Modbus TCP EDS adapter supports applying data conversion to the value converted from reading the Modbus TCP devices. A conversion factor and conversion offset can be specified. The conversion factor is used for scaling the value up or down, and the conversion offset is used for shifting the value. The mathematical equation used in conversion is the following: </p>
+<pre><code>&lt;After Conversion&gt; = &lt;Before Conversion&gt; / Factor - Offset 
+</code></pre><p> Not all data types support applying data conversion. Data types that support data conversion are: </p>
+<ul>
 <li>Int16 (Data type code 10) </li>
 <li>UInt16 (Data type code 20) </li>
 <li>Int32 (Data type code 30 and 31) </li>
