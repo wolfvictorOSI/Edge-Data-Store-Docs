@@ -14,11 +14,11 @@ One tenant and two namespaces are supported in the Edge Data Store. The tenant i
 
 ## Configure data egress
 
-Prior to configuring egress on the Edge Data Store, see [Prepare egress destinations](xref:PrepareEgressDestinations) to make available one or more OMF destinations.
+Prior to configuring egress on the Edge Data Store, see [Prepare egress destinations](xref:PrepareEgressDestinations) to make one or more OMF destinations available.
 
 > **Note:** You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see [REST Urls](#rest-urls).
 
-Complete the following to create new egress endpoints:
+Complete the following procedure to create new egress endpoints:
 
 1. Using any text editor, create a file that contains one or more egress endpoints in JSON form
     - For content structure, see the following [Examples](#examples). 
@@ -46,15 +46,15 @@ curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: app
 | **EgressFilter**                | Optional                  | string    | A filter used to determine which streams and types are egressed. For more information on valid filters, see [Searching](../Sds/Searching.md). |
 | **Enabled**                     | Optional                  | bool      | An indicator of whether egress is enabled when the egress endpoint is loaded. Defaults to true. |
 | **Endpoint**                    | Required                  | string    | Destination that accepts OMF v1.1 messages. Supported destinations include OCS and PI. |
-| **ExecutionPeriod**             | Required                  | string    | Frequency of time between each egress action. Must be a string in the following format d.hh:mm:ss.## |
+| **ExecutionPeriod**             | Required                  | string    | Frequency of time between each egress action. Must be a string in the format d.hh:mm:ss.##. |
 | **Id**                          | Optional                  | string    | Unique identifier |
 | **Name**                        | Optional                  | string    | Friendly name |
-| **NamespaceId**                 | Optional                  | string    | Represents the namespace that will be egressed. There are two available namespaces: default; diagnostics. Default namespace is “default”. |
+| **NamespaceId**                 | Optional                  | string    | Represents the namespace that will be egressed. There are two available namespaces: default and diagnostics. Default namespace is “default”. |
 | **Password**                    | Required for PI endpoint  | string    | Used for Basic authentication to the PI Web API OMF endpoint. |
 | **StreamPrefix**                | Optional                  | string    | Prefix applied to any streams that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters will not be allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
 | **TokenEndpoint**               | Optional for OCS endpoint | string    | Used to retrieve an OCS token from an alternative endpoint. *This is not normally necessary with OCS. Only use if directed to do so by customer support*. |
 | **TypePrefix**                  | Optional                  | string    | Prefix applied to any types that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters will not be allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
-| **Username**                    | Required for PI endpoint  | string    | Used for Basic authentication to the PI Web API OMF endpoint. If domain is required the backslash must be escaped (i.e. *domain*\\\\*username*).  |
+| **Username**                    | Required for PI endpoint  | string    | Used for Basic authentication to the PI Web API OMF endpoint. If domain is required, the backslash must be escaped (i.e., *domain*\\\\*username*).  |
 | **ValidateEndpointCertificate** | Optional                  | bool      | Used to disable verification of destination certificate. Use for testing only with self-signed certificates. Defaults to true. |
 
 ### Examples
@@ -169,10 +169,10 @@ The following are valid egress configuration examples.
 |-----------------------------------------------------------|-----------|----------------------|
 | api/v1/configuration/storage/periodicegressendpoints      | GET       | Gets all configured egress endpoints |
 | api/v1/configuration/storage/periodicegressendpoints      | DELETE    | Deletes all configured egress endpoints |
-| api/v1/configuration/storage/periodicegressendpoints      | POST      | Add an array of egress endpoints, will fail if any endpoint already exists |
-| api/v1/configuration/storage/periodicegressendpoints      | POST      | Add a single egress endpoints, will fail if endpoint already exists |
-| api/v1/configuration/storage/periodicegressendpoints      | PUT       | Replace all egress endpoints |
-| api/v1/configuration/storage/periodicegressendpoints/{id} | GET       | Get configured endpoint with *id* |
-| api/v1/configuration/storage/periodicegressendpoints/{id} | DELETE    | Delete configured endpoint with *id* |
-| api/v1/configuration/storage/periodicegressendpoints/{id} | PUT       | Replace egress endpoint with *id*, will fail if endpoint doesn't exist |
+| api/v1/configuration/storage/periodicegressendpoints      | POST      | Adds an array of egress endpoints, will fail if any endpoint already exists |
+| api/v1/configuration/storage/periodicegressendpoints      | POST      | Adds a single egress endpoints, will fail if endpoint already exists |
+| api/v1/configuration/storage/periodicegressendpoints      | PUT       | Replaces all egress endpoints |
+| api/v1/configuration/storage/periodicegressendpoints/{id} | GET       | Gets configured endpoint with *id* |
+| api/v1/configuration/storage/periodicegressendpoints/{id} | DELETE    | Deletes configured endpoint with *id* |
+| api/v1/configuration/storage/periodicegressendpoints/{id} | PUT       | Replaces egress endpoint with *id*, will fail if endpoint doesn't exist |
 | api/v1/configuration/storage/periodicegressendpoints/{id} | PATCH     | Allows partial updating of configured endpoint with *id* |
