@@ -23,10 +23,10 @@ To prepare OCS to receive OMF messages from EDS, add an OMF connection. Creating
 
 To prepare a PI Server to receive OMF messages from EDS, a PI Web API OMF endpoint must be available. Complete the following steps:
 
-1. Install PI Web API and enable the **OSIsoft Message Format (OMF) Services** feature
-    - During configuration, choose an AF database and a PI Data Archive where metadata and data will be stored
-    - Account used in an egress configuration needs permissions to create AF elements and element templates, as well as PI points
-2. Configure PI Web API to use *Basic* authentication
+1. Install PI Web API and enable the **OSIsoft Message Format (OMF) Services** feature.
+    - During configuration, choose an AF database and PI Data Archive where metadata and data will be stored.
+    - The account used in an egress configuration needs permissions to create AF elements, element templates, and PI points.
+2. Configure PI Web API to use *Basic* authentication.
 
  See the PI Web API documentation for complete steps, as well as best practices and recommendations.
 
