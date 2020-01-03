@@ -24,7 +24,7 @@ The following is an example JSON file to configure Edge Storage periodic egress 
     "EgressFilter": "",
     "StreamPrefix": "ChangeMe",
     "TypePrefix": "ChangeMe",
-    "Endpoint": "https://<your OCS OMF endpoint endpoint>",
+    "Endpoint": "https://<your OCS OMF endpoint>",
     "ClientId": "<your OCS ClientId>",
     "ClientSecret": "<your OCS ClientSecret>",
     "UserName": null,
