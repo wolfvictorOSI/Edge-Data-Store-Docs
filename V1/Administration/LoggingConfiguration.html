@@ -77,7 +77,7 @@
 <p>Each message in the log displays the message severity level, timestamp, and the message itself.</p>
 <h2 id="default-logging-configuration-and-schema">Default logging configuration and schema</h2>
 <p>By default, logging captures Information, Warning, Error, and Critical messages in the message logs.
-The default logging configuration for a component on install is the following</p>
+The following logging configuration is the default for a component on install:</p>
 <pre><code class="lang-json">{
   &quot;logLevel&quot;: &quot;Information&quot;,
   &quot;logFileSizeLimitBytes&quot;: 34636833,
@@ -104,15 +104,15 @@ It is located in:</p>
 </tr>
 <tr>
 <td>Debug</td>
-<td>Logs that can be used to troubleshoot data flow issues by logging metrics and detailed flow related information.</td>
+<td>Logs that can be used to troubleshoot data flow issues by recording metrics and detailed flow related information.</td>
 </tr>
 <tr>
 <td>Information</td>
-<td>Logs that track the general flow of the application. Any non-repetitive general information (like version information relating to the software at startup, what external services are being used, data source connection string, number of measurements, egress URL, change of state “Starting”, “Stopping” or configuration) can be useful for diagnosing potential application errors.</td>
+<td>Logs that track the general flow of the application. Any non-repetitive general information (like version information relating to the software at startup, what external services are being used, data source connection string, number of measurements, egress URL, change of state “Starting”, “Stopping”, or configuration) can be useful for diagnosing potential application errors.</td>
 </tr>
 <tr>
 <td>Warning</td>
-<td>Logs that highlight an abnormal or unexpected event in the application flow, but do not otherwise cause the application execution to stop. This can be used to react on unconfigured data source state, message that communication with backup failover instance has been lost, use of insecure communication channel, or any other event that could require attention, but isn’t directly impacting the flow.</td>
+<td>Logs that highlight an abnormal or unexpected event in the application flow, but does not otherwise cause the application execution to stop. This can be used to react on unconfigured data source state, message that communication with backup failover instance has been lost, use of insecure communication channel, or any other event that could require attention, but isn’t directly impacting the flow.</td>
 </tr>
 <tr>
 <td>Error</td>
@@ -125,9 +125,9 @@ It is located in:</p>
 </tbody>
 </table>
 <h3 id="log-file-count-limit">Log file count limit</h3>
-<p>The logFileCountLimit controls the number of days the log files are persisted before they are deleted for creation of new log files. </p>
-<h2 id="changing-logging-configuration">Changing logging configuration</h2>
-<p>To change the logging configuration you can </p>
+<p>The logFileCountLimit controls the number of days the log files are stored before they are deleted for creation of new log files. </p>
+<h2 id="change-logging-configuration">Change logging configuration</h2>
+<p>To change the logging configuration complete the following steps: </p>
 <ol>
 <li>Save the new configuration information in a JSON file format.</li>
 <li>Run the following script (or make an equivalent REST API call):</li>
@@ -141,7 +141,7 @@ It is located in:</p>
 </code></pre><pre><code class="lang-bash">curl -i -d &quot;@Component_Logging.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging
 </code></pre><p>&lt;ComponentId&gt; is the ComponentId of the adapter or Storage.</p>
 <p>On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. </p>
-<p><strong>Note:</strong>  If you do not specify all the parameters while changing the configuration, the specified parameters will be updated while the unspecified parameters will revert to the default schema values.</p>
+<p><strong>Note:</strong>  If you do not specify all the parameters in the configuration file, the specified parameters will be updated while the unspecified parameters will revert to the default schema values.</p>
 </article>
           </div>
           

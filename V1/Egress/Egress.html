@@ -77,10 +77,10 @@
 </blockquote>
 <p>One tenant and two namespaces are supported in the Edge Data Store. The tenant is default, and the two namespaces are default (where adapter and OMF data is written) and diagnostics. Diagnostics is where the system and its components write information that can be used locally or egressed to a remote PI server or OCS for monitoring. To egress both namespaces two egress definitions are required.</p>
 <h2 id="configure-data-egress">Configure data egress</h2>
-<p>Prior to configuring egress on the Edge Data Store, see <a class="xref" href="Prepare%20egress%20destinations.html">Prepare egress destinations</a> to make available one or more OMF destinations.</p>
+<p>Prior to configuring egress on the Edge Data Store, see <a class="xref" href="Prepare%20egress%20destinations.html">Prepare egress destinations</a> to make one or more OMF destinations available.</p>
 <blockquote><p><strong>Note:</strong> You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see <a href="#rest-urls">REST Urls</a>.</p>
 </blockquote>
-<p>Complete the following to create new egress endpoints:</p>
+<p>Complete the following procedure to create new egress endpoints:</p>
 <ol>
 <li>Using any text editor, create a file that contains one or more egress endpoints in JSON form<ul>
 <li>For content structure, see the following <a href="#examples">Examples</a>. </li>
@@ -157,7 +157,7 @@
 <td><strong>ExecutionPeriod</strong></td>
 <td>Required</td>
 <td>string</td>
-<td>Frequency of time between each egress action. Must be a string in the following format d.hh:mm:ss.##</td>
+<td>Frequency of time between each egress action. Must be a string in the format d.hh:mm:ss.##.</td>
 </tr>
 <tr>
 <td><strong>Id</strong></td>
@@ -175,7 +175,7 @@
 <td><strong>NamespaceId</strong></td>
 <td>Optional</td>
 <td>string</td>
-<td>Represents the namespace that will be egressed. There are two available namespaces: default; diagnostics. Default namespace is “default”.</td>
+<td>Represents the namespace that will be egressed. There are two available namespaces: default and diagnostics. Default namespace is “default”.</td>
 </tr>
 <tr>
 <td><strong>Password</strong></td>
@@ -205,7 +205,7 @@
 <td><strong>Username</strong></td>
 <td>Required for PI endpoint</td>
 <td>string</td>
-<td>Used for Basic authentication to the PI Web API OMF endpoint. If domain is required the backslash must be escaped (i.e. <em>domain</em>\\<em>username</em>).</td>
+<td>Used for Basic authentication to the PI Web API OMF endpoint. If domain is required, the backslash must be escaped (i.e., <em>domain</em>\\<em>username</em>).</td>
 </tr>
 <tr>
 <td><strong>ValidateEndpointCertificate</strong></td>
@@ -314,32 +314,32 @@
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints</td>
 <td>POST</td>
-<td>Add an array of egress endpoints, will fail if any endpoint already exists</td>
+<td>Adds an array of egress endpoints, will fail if any endpoint already exists</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints</td>
 <td>POST</td>
-<td>Add a single egress endpoints, will fail if endpoint already exists</td>
+<td>Adds a single egress endpoints, will fail if endpoint already exists</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints</td>
 <td>PUT</td>
-<td>Replace all egress endpoints</td>
+<td>Replaces all egress endpoints</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints/{id}</td>
 <td>GET</td>
-<td>Get configured endpoint with <em>id</em></td>
+<td>Gets configured endpoint with <em>id</em></td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints/{id}</td>
 <td>DELETE</td>
-<td>Delete configured endpoint with <em>id</em></td>
+<td>Deletes configured endpoint with <em>id</em></td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints/{id}</td>
 <td>PUT</td>
-<td>Replace egress endpoint with <em>id</em>, will fail if endpoint doesn&#39;t exist</td>
+<td>Replaces egress endpoint with <em>id</em>, will fail if endpoint doesn&#39;t exist</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints/{id}</td>
