@@ -67,7 +67,7 @@ The following are valid egress configuration examples.
 [{
     "Id": "OCS",
     "ExecutionPeriod" : "00:00:15",
-    "Endpoint" : " https://{OcsLocation}/api/Tenants/{tenantId}/Namespaces/{namespaceId}/omf",
+    "Endpoint" : "https://{OcsLocation}/api/Tenants/{tenantId}/Namespaces/{namespaceId}/omf",
     "ClientId" : "{clientId}",
     "ClientSecret" : "{clientSecret}"
 }]
@@ -80,7 +80,7 @@ The following are valid egress configuration examples.
     "Id": "OCS",
     "ExecutionPeriod" : "00:00:15",
     "EgressFilter" : "TypeId:myType",
-    "Endpoint" : " https://{OcsLocation}/api/Tenants/{tenantId}/Namespaces/{namespaceId}/omf",
+    "Endpoint" : "https://{OcsLocation}/api/Tenants/{tenantId}/Namespaces/{namespaceId}/omf",
     "ClientId" : "{clientId}",
     "ClientSecret" : "{clientSecret}"
 }]
@@ -93,7 +93,7 @@ The following are valid egress configuration examples.
     "Id": "OCS",
     "ExecutionPeriod" : "00:00:15",
     "Backfill" : true,
-    "Endpoint" : " https://{OcsLocation}/api/Tenants/{tenantId}/Namespaces/{namespaceId}/omf",
+    "Endpoint" : "https://{OcsLocation}/api/Tenants/{tenantId}/Namespaces/{namespaceId}/omf",
     "ClientId" : "{clientId}",
     "ClientSecret" : "{clientSecret}"
 }]
@@ -105,7 +105,7 @@ The following are valid egress configuration examples.
 [{
     "Id": "OCS",
     "ExecutionPeriod" : "01:00:00",
-    "Endpoint" : " https://{OcsLocation}/api/Tenants/{tenantId}/Namespaces/{namespaceId}/omf",
+    "Endpoint" : "https://{OcsLocation}/api/Tenants/{tenantId}/Namespaces/{namespaceId}/omf",
     "ClientId" : "{clientId}",
     "ClientSecret" : "{clientSecret}",
     "NamespaceId" : "diagnostics"
