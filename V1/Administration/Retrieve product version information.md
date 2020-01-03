@@ -4,7 +4,7 @@ uid: RetrieveProductVersionInformation
 
 # Retrieve product version information
 
-- To retrieve the product version of the Edge Data Store, use any REST client ane make a request using the following:
+- To retrieve the product version of the Edge Data Store, use any REST client to make a request using the following syntax:
 
   ```http
   Method: GET
