@@ -22,7 +22,7 @@ You can stop and start EDS adapters. By default, when Edge Data Store starts, al
     curl -v -d "" http://localhost:5590/api/v1/Administration/EDS adapterId/Stop
     ```
 
-    **Note:** Replace _EDS adapterId_ with the id of the EDS adapter you want to stop.
+    **Note:** Replace _EDS adapterId_ with the ID of the EDS adapter you want to stop.
 
     An HTTP status 204 message indicates success.
 
@@ -42,6 +42,6 @@ You can stop and start EDS adapters. By default, when Edge Data Store starts, al
     curl -v -d "" http://localhost:5590/api/v1/Administration/EDS adapterId/Start
     ```
 
-    **Note:** Replace _EDS adapterId_ with the id of the EDS adapter you want to start.
+    **Note:** Replace _EDS adapterId_ with the ID of the EDS adapter you want to start.
 
     An HTTP status 204 message indicates success.
