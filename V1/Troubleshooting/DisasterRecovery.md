@@ -30,7 +30,7 @@ This topic provides procedures for creating a backup of Edge Data Store stream d
 			  _C:\ProgramData\OSIsoft\EdgeDataStore\Storage_
 			  The ProgramData folder is typically hidden, so if it is not visible, go to the **View** tab in **Windows Explorer** and check **Hidden**.
 
-3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB or other safe location. 
+3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. 
 	 
 	 File transfer can be done with WinSCP, SFTP, or external device.
 
@@ -45,16 +45,16 @@ Once the new hardware has replaced the previous system and has been installed wi
 
 1. Copy or unzip the backup storage and configuration files into the _C:\ProgramData\OSIsoft\EdgeDataStore_ directory.
 
-	> **Note:** The C: drive may not be your systems default drive letter. Refer to My Computer, This PC, or simply open a command prompt to verify your systems drive letter.
+	> **Note:** The C: drive may not be your systems default drive letter. Refer to My Computer, This PC, or open a command prompt to verify your systems drive letter.
 
-2. To restart the Edge Data Store service, use the Windows Service Manager or Task Manager .
+2. Restart the Edge Data Store service using the Windows Service Manager or Task Manager service tab.
 
 
 # Linux recovery
 
 ### Create a backup
 
-**Prerequisite:** Root access on the Linux device
+**Prerequisite:** Root access on the Linux device is required.
 
 1. If your device is still able to boot, verify that Edge Data Store service has stopped, using the following command: 
 
@@ -68,7 +68,7 @@ Once the new hardware has replaced the previous system and has been installed wi
 			_/usr/share/OSIsoft/EdgeDataStore/Configuration_
 			_/usr/share/OSIsoft/EdgeDataStore /Storage_
 
-3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB or other safe location. 
+3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. 
 
 	File transfer can be done with WinSCP, SFTP, or external device.
 
