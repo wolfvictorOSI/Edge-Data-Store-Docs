@@ -4,7 +4,7 @@ uid: StopAndStartAnEDSAdapter
 
 # Stop and start an EDS adapter
 
-Edge Data Store provides the ability to stop and start EDS adapters. By default, when Edge Data Store starts, all currently configured EDS adapters are started and remain running until the product shuts down.
+You can stop and start EDS adapters. By default, when Edge Data Store starts, all currently configured EDS adapters are started and remain running until the product shuts down.
 
 ## Stop an EDS adapter
 
