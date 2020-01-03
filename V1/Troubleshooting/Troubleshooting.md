@@ -21,11 +21,11 @@ OMF ingress troubleshooting useful when a custom application is not writing stre
 
 You can find log messages related to egress in the Storage logs. 
 
-- To output most information for troubleshooting, temporarily set the the log level to **Trace**.
+To output most information for troubleshooting, you should temporarily set the the log level to **Trace**.
 
 ### OMF ingress message debugging
 
-In order to troubleshoot problems between an OMF application and Edge Storage, enable debugging. 
+In order to troubleshoot problems between an OMF application and Edge Storage, you should enable debugging. 
 
 - Set an appropriate value for the *IngressDebugExpiration* property in a storage runtime configuration. 
 
@@ -37,15 +37,15 @@ Examples of valid strings representing date and time:
 
     Local: “mm-dd-yyyy hh:mm:ss”
 
-The content of the OMF message, including the headers will be written to the Logs directory. For an active application this can become quite large. As a result, debug information is stored to disk in a separate format that usual log messages. A single file will be written to the usual Logs directory for every incoming OMF Type, Container, and data message.
+The content of the OMF message, including the headers will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in a separate format than usual log messages. A single file is written to the usual Logs directory for every incoming OMF Type, Container, and data message.
 
 ## Periodic egress
 
-EDS periodic egress extracts data from SDS streams and will send the appropriate sequences of type, container, and data OMF messages on startup.
+EDS periodic egress extracts data from SDS streams and sends the appropriate sequences of type, container, and data OMF messages on startup.
 
-- If you see unexpected data in an OCS or PI System, check if multiple devices may be writing to the same stream. 
+- If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same stream. 
 
-Careful use of stream prefixes in the [periodic egress endpoint configuration](xref:egress) will ensure output data streams will be logically separated in the systems of record.
+Careful use of stream prefixes in the [periodic egress endpoint configuration](xref:egress) ensures that output data streams are logically separated in the systems of record.
 
 Type prefixes may be helpful if you have a case where you have changed a stream type definitions on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.
 
@@ -53,11 +53,11 @@ Type prefixes may be helpful if you have a case where you have changed a stream 
 
 You can find log messages related to egress in the Storage logs. 
 
-- To output most information for troubleshooting, temporarily set the the log level to **Trace**.
+To output most information for troubleshooting, you can temporarily set the the log level to **Trace**.
 
 ### Periodic egress debugging
 
-In order to troubleshoot problems between Edge Data Store and the destination, enable debugging. 
+In order to troubleshoot problems between Edge Data Store and the destination, you should enable debugging. 
 
 - Set an appropriate value for the *DebugExpiration* property in an egress configuration.
 
