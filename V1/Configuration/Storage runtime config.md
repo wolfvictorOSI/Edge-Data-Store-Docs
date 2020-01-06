@@ -50,7 +50,8 @@ The following is a valid runtime configuration example.
   "checkpointRateInSec": 30,
   "transactionLogLimitMB": 250,
   "enableTransactionLog": true
-}```
+}
+```
 
 
 ## Storage runtime schema
