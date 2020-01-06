@@ -42,7 +42,7 @@ curl -i -d "@Storage_Runtime.config.json" -H "Content-Type: application/json" -X
 
 The following is a valid runtime configuration example.
 
-```json
+```
 {
   "streamStorageLimitMb": 2,
   "streamStorageTargetMb": 1,
@@ -51,6 +51,7 @@ The following is a valid runtime configuration example.
   "transactionLogLimitMB": 250,
   "enableTransactionLog": true
 }```
+
 
 ## Storage runtime schema
 
