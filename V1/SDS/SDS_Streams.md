@@ -14,25 +14,25 @@ The following table shows the required and optional SdsStream fields. Fields not
 
 | Property          | Type                             | Optionality | Searchability | Details |
 |-------------------|----------------------------------|-------------|------------|---------|
-| Id                | String                           | Required    | Yes        | An identifier for referencing the stream |
-| TypeId            | String                           | Required    | Yes        | The SdsType identifier of the type to be used for this stream |
-| Name              | String                           | Optional    | Yes        | Friendly name |
-| Description       | String                           | Optional    | Yes        | Description text |
-| Indexes           | IList\<SdsStreamIndex\>          | Optional    | No         | Used to define secondary indexes for stream |
+| Id                | String                           | Required    | Yes        | An identifier for referencing the stream. |
+| TypeId            | String                           | Required    | Yes        | The SdsType identifier of the type to be used for this stream. |
+| Name              | String                           | Optional    | Yes        | Friendly name. |
+| Description       | String                           | Optional    | Yes        | Description text. |
+| Indexes           | IList\<SdsStreamIndex\>          | Optional    | No         | Used to define secondary indexes for stream. |
 | InterpolationMode | SdsInterpolationMode             | Optional    | No         | Interpolation setting of the stream. Default is null. |
 | ExtrapolationMode | SdsExtrapolationMode             | Optional    | No         | Extrapolation setting of the stream. Default is null. |
 | PropertyOverrides | IList\<SdsStreamPropertyOverride\> | Optional    | No   | Used to define unit of measure and interpolation mode overrides for a stream. |
-| [Tags](xref:sdsStreamExtra)* | IList\<String\>       | Optional    | Yes        | A list of tags denoting special attributes or categories.|
-| [Metadata](xref:sdsStreamExtra)* | IDictionary\<String, String\> | Optional    | Yes   | A dictionary of string keys and associated string values.  |
+| [Tags](xref:sdsStreamExtra)* | IList\<String\>       | Optional    | Yes        | A list of tags denoting special attributes or categories. |
+| [Metadata](xref:sdsStreamExtra)* | IDictionary\<String, String\> | Optional    | Yes   | A dictionary of string keys and associated string values. |
 
 **Note:** Stream tags and metadata are accessed via the Tags API And Metadata API, respectively. However, they are associated with SdsStream objects and can be used as search criteria.
 
 **Rules for the stream identifier (SdsStream.Id)**
 
-1. Is not case sensitive
-2. Can contain spaces
-3. Cannot contain forward slash ("/")
-4. Can contain a maximum of 100 characters
+1. Is not case sensitive.
+2. Can contain spaces.
+3. Cannot contain forward slash ("/").
+4. Can contain a maximum of 100 characters.
 
 ## Indexes
 
@@ -54,13 +54,13 @@ The ``SdsStreamPropertyOverride`` object has the following structure:
 
 | Property          | Type                 | Optionality | Details |
 |-------------------|----------------------|-------------|---------|
-| SdsTypePropertyId | String               | Required    | SdsTypeProperty identifier |
-| InterpolationMode | SdsInterpolationMode | Optional    | Interpolation setting. Default is null |
-| Uom               | String               | Optional    | Unit of measure |
+| SdsTypePropertyId | String               | Required    | SdsTypeProperty identifier. |
+| InterpolationMode | SdsInterpolationMode | Optional    | Interpolation setting. Default is null. |
+| Uom               | String               | Optional    | Unit of measure. |
 
-The unit of measure can be overridden for any type property defined by the stream type, including primary keys and secondary indexes. For more information about type property units of measure see [Types](xref:sdsTypes).
+The unit of measure can be overridden for any type property defined by the stream type, including primary keys and secondary indexes. For more information about type property units of measure, see [Types](xref:sdsTypes).
 
-Read characteristics of the stream are determined by the type and the PropertyOverrides of the stream. The interpolation mode for non-index properties can be defined and overridden at the stream level. For more information about type read characteristics see [Types](xref:sdsTypes).
+Read characteristics of the stream are determined by the type and the PropertyOverrides of the stream. The interpolation mode for non-index properties can be defined and overridden at the stream level. For more information about type read characteristics, see [Types](xref:sdsTypes).
 
 When specifying property interpolation overrides, if the SdsType InterpolationMode is ``Discrete``, it cannot be overridden at any level. When InterpolationMode is set to ``Discrete`` and an event it not defined for that index, a null value is returned for the entire event.
 
@@ -81,10 +81,10 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+THe namespace; either default or diagnostics.
 
 `string streamId`  
-The stream identifier
+The stream identifier.
 
 **Response**  
 The response includes a status code and a response body.
@@ -119,7 +119,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query={query}&skip={
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string query`  
 An optional parameter representing a string search. For information about specifying the search parameter, see [Searching](xref:sdsSearching).
@@ -178,10 +178,10 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Type
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 **Response**  
 The response includes a status code and a response body.
@@ -206,7 +206,7 @@ POST api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string streamId`  
 The stream identifier. The stream identifier must match the identifier in content.
@@ -246,10 +246,10 @@ PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; eitehr default or diagnostics.
 
 `string streamId`  
-The stream identifier
+The stream identifier.
 
 **Request body**  
 The request content is the serialized SdsStream.
@@ -270,13 +270,13 @@ Updates a stream’s type. The type is modified to match the specified stream vi
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string streamId`  
-The stream identifier
+The stream identifier.
 
 `string streamViewId`  
-The stream view identifier  
+The stream view identifier.  
 
 **Request body**  
 The request content is the serialized SdsStream.
@@ -300,10 +300,10 @@ Deletes a stream.
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string streamId`  
-The stream identifier
+The stream identifier.
 
 **Response**  
 The response includes a status code.
