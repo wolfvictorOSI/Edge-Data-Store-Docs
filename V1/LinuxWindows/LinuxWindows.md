@@ -14,13 +14,13 @@ Program binaries are placed in the _C:\Program Files\OSIsoft\EdgeDataStore_ dire
 
 Configuration, log, and data files are placed under _C:\ProgramData\OSIsoft\EdgeDataStore_ This is not configurable. This folder structure will not be automatically removed if you uninstall EDS.  For information about clearing these files, see the [installation](#installationOverview) documentation.
 
-Key material for configuration files' encrypted secrets is stored using the Windows DPAPI in a secure Windows store. This is not configurable.
+Key material for encrypted secrets of configuration files is stored using the Windows DPAPI in a secure Windows store. This is not configurable.
 
 ### Linux
 
 Program binaries are placed in the _/opt/EdgeDataStore_ directory.  Configuration, log, and data files are placed under _/usr/share/OSIsoft/EdgeDataStore_. This folder structure will not be automatically removed if you unistall EDS. For information about clearing these files, see the [installation](#installationOverview) documentation.
 
-Key material for configuration files' encrypted secrets are stored using limited access files under _/usr/share/OSIsoft/EdgeDataStore_. You cannot configure file locations for Linux.
+Key material for encrypted secrets of configuration files is stored using limited access files under _/usr/share/OSIsoft/EdgeDataStore_. You cannot configure file locations for Linux.
 
 When the Debian installer is used, Edge Data Store is installed using the service identity osisoft.edgedatastore.service. If you need to restart the service from the Linux command line, use the following command:
 
