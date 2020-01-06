@@ -58,7 +58,7 @@ uid: index
   - [Reset Edge Data Store](xref:ResetEdgeDataStore)
   - [Reset the Storage component](xref:ResetTheStorageComponent)
   - [Stop and start an EDS adapter](xref:StopAndStartAnEDSAdapter)
-- [Troubleshooting](xref:troubleShooting)
+- [Troubleshoot Edge Data Store](xref:troubleShooting)
   - [Disaster recovery](xref:disasterRecovery)
 - [Reference](xref:Reference)
   - [Sequential Data Store (SDS)](xref:sdsOverview)
