@@ -20,7 +20,7 @@ The default _System_Components.json_ file for the System component contains the 
 
 The Storage component is required for Edge Data Store to run. Only a single Storage component is supported. You can add additional Modbus TCP EDS adapter and OPC UA EDS adapter components if you want.  
 
-1. To add a new component a JSON file with the ComponentId and ComponentType. The following example adds a Modbus TCP EDS adapter. 
+1. To add a new component, create a JSON file with the ComponentId and ComponentType. The following example adds a Modbus TCP EDS adapter. 
 
     ```json
       {
