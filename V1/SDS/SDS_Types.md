@@ -28,26 +28,26 @@ For search limitations, see [Searching](xref:sdsSearching).
 
 | Property          | Type                   | Optionality | Searchable | Details |
 |-------------------|------------------------|-------------|---------|---------|
-| Id                | String                 | Required    | Yes | Identifier for referencing the type |
-| Name              | String                 | Optional    | Yes | Friendly name |
-| Description       | String                 | Optional    | Yes | Description text |
-| SdsTypeCode       | SdsTypeCode            | Required    | No | Numeric code identifying the base SdsType |
+| Id                | String                 | Required    | Yes | Identifier for referencing the type. |
+| Name              | String                 | Optional    | Yes | Friendly name. |
+| Description       | String                 | Optional    | Yes | Description text. |
+| SdsTypeCode       | SdsTypeCode            | Required    | No | Numeric code identifying the base SdsType. |
 | InterpolationMode | SdsInterpolationMode   | Optional    | No | Interpolation setting of the type. Default is Continuous. |
 | ExtrapolationMode | SdsExtrapolationMode   | Optional    | No | Extrapolation setting of the type. Default is All. |
-| Properties        | IList\<SdsTypeProperty\> | Required    | Yes, with limitations | List of SdsTypeProperty items |
+| Properties        | IList\<SdsTypeProperty\> | Required    | Yes, with limitations | List of SdsTypeProperty items. |
 
 **Rules for the type identifier (SdsType.Id)**
 
-1. Is not case sensitive
-2. Can contain spaces
-3. Cannot contain forward slash ("/")
-4. Can contain a maximum of 100 characters  
+1. Is not case sensitive.
+2. Can contain spaces.
+3. Cannot contain forward slash ("/").
+4. Can contain a maximum of 100 characters. 
 
 ## SdsTypeCode
 
 The SdsTypeCode is a numeric identifier used by the Data Store to identify SdsTypes. A SdsTypeCode exists for every supported type.
 
-Atomic types, such as strings, floats and arrays, are defined entirely by the SdsTypeCode. Atomic types do not need fields to define the type.
+Atomic types, such as strings, floats, and arrays, are defined entirely by the SdsTypeCode. Atomic types do not need fields to define the type.
 
 Types requiring additional definition, such as enums and objects, are identified using a generic SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus additional SdsProperty fields.
 
@@ -143,13 +143,13 @@ The following table shows the required and optional SdsTypeProperty fields. Fiel
 
 |          Property         | Type                    | Optionality | Details |
 |---------------------------|-------------------------|-------------|---------|
-| Id                        | String                  | Required    | Identifier for referencing the type |
-| Name                      | String                  | Optional    | Friendly name |
-| Description               | String                  | Optional    | Description text |
-| SdsType                   | SdsType                 | Required    | Field defining the property's Type |
-| IsKey                     | Boolean                 | Required    | Identifies the property as the Key (Primary Index) |
-| Value                     | Object                  | Optional    | Value of the property |
-| Order                     | Int                     | Optional    | Order of comparison within a compound index |
+| Id                        | String                  | Required    | Identifier for referencing the type. |
+| Name                      | String                  | Optional    | Friendly name. |
+| Description               | String                  | Optional    | Description text. |
+| SdsType                   | SdsType                 | Required    | Field defining the property's Type. |
+| IsKey                     | Boolean                 | Required    | Identifies the property as the Key (Primary Index). |
+| Value                     | Object                  | Optional    | Value of the property. |
+| Order                     | Int                     | Optional    | Order of comparison within a compound index. |
 | InterpolationMode         | SdsInterpolationMode    | Optional    | Interpolation setting of the property. Default is null. |
 | Uom                       | String                  | Optional    | Unit of Measure of the property |
 
@@ -632,16 +632,16 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types/{typeId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string typeId`  
-The type identifier
+The type identifier.
 
 **Response**  
 The response includes a status code and a response body.
 
 **Response body**  
-The requested SdsType
+The requested SdsType.
 
 Example response body:
 
@@ -714,10 +714,10 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCoun
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string typeId`  
-The type identifier
+The type identifier.
 
 **Response**  
 The response includes a status code and a response body.
@@ -753,7 +753,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types?query={query}&skip={sk
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; eitehr default or diagnostics.
 
 `string query`  
 An optional query string to match which SdsTypes will be returned. For information about specifying the query parameter, see the [Searching](xref:sdsSearching) topic.
@@ -771,7 +771,7 @@ An optional parameter representing sorted order which SdsTypes will be returned.
 The response includes a status code and a response body.
 
 **Response body**  
-A collection of zero or more SdsTypes
+A collection of zero or more SdsTypes.
 
 Example response body:
 
@@ -854,7 +854,7 @@ POST api/v1/Tenants/default/Namespaces/{namespaceId}/Types/{typeId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string typeId`  
 The type identifier. The identifier must match the `SdsType.Id` field in the request body.
@@ -1071,10 +1071,10 @@ DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Types/{typeId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string typeId`  
-The type identifier
+The type identifier.
 
 **Response**  
 The response includes a status code.
