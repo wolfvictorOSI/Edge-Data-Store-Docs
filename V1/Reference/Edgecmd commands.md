@@ -10,9 +10,9 @@ The following tables provide an overview of available edgecmd commands that you 
 
 | edgecmd command | Description | Examples |
 |-----------------|-------------|----------|
-|`edgecmd Help`| Display general instructions on how to use  the edgecmd utility | 
-|`edgecmd Help <componentName>`| Display help for a specific Edge Data Store component | `edgecmd Help System`|
-|`edgecmd Help <componentName> <facetName>`| Display help for a specific facet of an Edge Data store component | `edgecmd Help System Port`|
+|`edgecmd Help`| Display general instructions on how to use  the edgecmd utility. | 
+|`edgecmd Help <componentName>`| Display help for a specific Edge Data Store component. | `edgecmd Help System`|
+|`edgecmd Help <componentName> <facetName>`| Display help for a specific facet of an Edge Data store component. | `edgecmd Help System Port`|
 
 
 ## Configuration
@@ -32,9 +32,9 @@ The following tables provide an overview of available edgecmd commands that you 
 |`edgecmd Configuration <componentId>` | Display component specific configuration. | `edgecmd Configuration System`<br>or<br>`edgecmd  Configuration OpcUa1`|
 |`edgecmd Configuration <componentId> <facetName>` | Display facet specific configuration of an Edge Data Store component. |  `edgecmd Configuration Storage Logging`|
 |`edgecmd Configuration <componentId> <facetName> id=<IndexToRetrieve>`| Display the configuration of specific entry of a facet. | `edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint1` |
-|`edgecmd Configuration <componentId> DataSource` | Configure the data source for either the Modbus TCP EDS adapter or the OPC UA EDS adapter. | For examples, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration) and [Modbus TCP data source configuration](xref:ModbusTCPDataSourceConfiguration)|
-|`edgecmd Configuration <componentId> DataSelection` | Configure the data selection for either the Modbus TCP EDS adapter or the OPC UA EDS adapter. | For examples, see [OPC UA data selection configuration](xref:OPCUADataSelectionConfiguration) and [Modbus TCP data selection configuration](xref:ModbusTCPDataSelectionConfiguration)|
-|`edgecmd Configuration <componentId> Logging` | Configure logging for either the Modbus TCP EDS adapter or the OPC UA EDS adapter. | For examples, see [Logging configuration](xref:LoggingConfiguration)|
+|`edgecmd Configuration <componentId> DataSource` | Configure the data source for either the Modbus TCP EDS adapter or the OPC UA EDS adapter. | For examples, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration) and [Modbus TCP data source configuration](xref:ModbusTCPDataSourceConfiguration).|
+|`edgecmd Configuration <componentId> DataSelection` | Configure the data selection for either the Modbus TCP EDS adapter or the OPC UA EDS adapter. | For examples, see [OPC UA data selection configuration](xref:OPCUADataSelectionConfiguration) and [Modbus TCP data selection configuration](xref:ModbusTCPDataSelectionConfiguration).|
+|`edgecmd Configuration <componentId> Logging` | Configure logging for either the Modbus TCP EDS adapter or the OPC UA EDS adapter. | For examples, see [Logging configuration](xref:LoggingConfiguration).|
 
 ## Configuration with JSON files
 | edgecmd command | Description | Examples |
