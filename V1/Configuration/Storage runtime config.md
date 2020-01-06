@@ -4,7 +4,7 @@ uid: storageruntime
 
 # Storage runtime configuration
 
-The Edge Data Store provides a mechanism for configuring runtime characteristics of the storage component.  
+Edge Data Store provides a mechanism for configuring runtime characteristics of the storage component.  
 
 > **Note:** The configured defaults are sufficent for most scenarios.  You should modify these values  only after consultation with OSIsoft Support personnel.
 
