@@ -256,6 +256,9 @@ references:
 - uid: storage_schema
   name: Sample Storage configuration
   href: V1/Configuration/Schemas/Storage_schema.html
+- uid: storageruntime
+  name: Storage runtime configuration
+  href: V1/Configuration/Storage%20runtime%20config.html
 - uid: SupportedFeaturesModbus
   name: Supported features
   href: V1/Modbus/SupportedFeaturesModbus.html
@@ -293,7 +296,7 @@ references:
   name: System requirements
   href: V1/Installation/System%20Requirements.html
 - uid: troubleShooting
-  name: Troubleshooting
+  name: Troubleshoot Edge Data Store
   href: V1/Troubleshooting/Troubleshooting.html
 - uid: UninstallEdgeDataStore
   name: Uninstall Edge Data Store

@@ -93,7 +93,7 @@
            The ProgramData folder is typically hidden, so if it is not visible, go to the <strong>View</strong> tab in <strong>Windows Explorer</strong> and check <strong>Hidden</strong>.</p>
 </blockquote>
 </li>
-<li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB or other safe location. </p>
+<li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. </p>
 <p>  File transfer can be done with WinSCP, SFTP, or external device.</p>
 </li>
 </ol>
@@ -106,15 +106,15 @@
 <h3 id="restore-data-files">Restore data files</h3>
 <ol>
 <li><p>Copy or unzip the backup storage and configuration files into the <em>C:\ProgramData\OSIsoft\EdgeDataStore</em> directory.</p>
-<blockquote><p><strong>Note:</strong> The C: drive may not be your systems default drive letter. Refer to My Computer, This PC, or simply open a command prompt to verify your systems drive letter.</p>
+<blockquote><p><strong>Note:</strong> The C: drive may not be your systems default drive letter. Refer to My Computer, This PC, or open a command prompt to verify your systems drive letter.</p>
 </blockquote>
 </li>
-<li><p>To restart the Edge Data Store service, use the Windows Service Manager or Task Manager .</p>
+<li><p>Restart the Edge Data Store service using the Windows Service Manager or Task Manager service tab.</p>
 </li>
 </ol>
 <h1 id="linux-recovery">Linux recovery</h1>
 <h3 id="create-a-backup-1">Create a backup</h3>
-<p><strong>Prerequisite:</strong> Root access on the Linux device</p>
+<p><strong>Prerequisite:</strong> Root access on the Linux device is required.</p>
 <ol>
 <li><p>If your device is still able to boot, verify that Edge Data Store service has stopped, using the following command: </p>
 <pre><code>sudo systemctl stop osisoft.edgedatastore
@@ -125,7 +125,7 @@
          <em>/usr/share/OSIsoft/EdgeDataStore /Storage</em></p>
 </blockquote>
 </li>
-<li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB or other safe location. </p>
+<li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. </p>
 <p> File transfer can be done with WinSCP, SFTP, or external device.</p>
 <blockquote><p><strong>Note:</strong> Using the <em>cp</em> command may result in a change in file ownership to the current user. </p>
 </blockquote>

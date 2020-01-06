@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Troubleshooting </title>
+    <title>Troubleshoot Edge Data Store </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Troubleshooting ">
+    <meta name="title" content="Troubleshoot Edge Data Store ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -69,7 +69,7 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="troubleShooting">
-<h1 id="troubleshooting">Troubleshooting</h1>
+<h1 id="troubleshoot-edge-data-store">Troubleshoot Edge Data Store</h1>
 
 <p>If you encounter errors while using or developing against Edge Data Store, you have both local and remote means of diagnosing issues.</p>
 <p>Edge Data Store supports a diagnostics namespace that is used to store streams containing <a class="xref" href="../Diagnostics/Diagnostics.html">diagnostic</a> information from Edge Data Store itself. As with any other stream data stored in the Edge Storage component, you can egress this to either PI Web API or OSIsoft Cloud Services to monitor the state of a system remotely.</p>
@@ -82,11 +82,9 @@
 </ul>
 <h3 id="omf-ingress-logging">OMF ingress logging</h3>
 <p>You can find log messages related to egress in the Storage logs. </p>
-<ul>
-<li>To output most information for troubleshooting, temporarily set the the log level to <strong>Trace</strong>.</li>
-</ul>
+<p>To output most information for troubleshooting, you should temporarily set the the log level to <strong>Trace</strong>.</p>
 <h3 id="omf-ingress-message-debugging">OMF ingress message debugging</h3>
-<p>In order to troubleshoot problems between an OMF application and Edge Storage, enable debugging. </p>
+<p>In order to troubleshoot problems between an OMF application and Edge Storage, you should enable debugging. </p>
 <ul>
 <li><p>Set an appropriate value for the <em>IngressDebugExpiration</em> property in a storage runtime configuration. </p>
 <p>  Debugging will be enabled for all incoming OMF messages, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to <em>null</em>.</p>
@@ -96,21 +94,19 @@
 <pre><code>Utc: “yyyy-mm-ddThh:mm:ssZ”
 
 Local: “mm-dd-yyyy hh:mm:ss”
-</code></pre><p>The content of the OMF message, including the headers will be written to the Logs directory. For an active application this can become quite large. As a result, debug information is stored to disk in a separate format that usual log messages. A single file will be written to the usual Logs directory for every incoming OMF Type, Container, and data message.</p>
+</code></pre><p>The content of the OMF message, including the headers will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in a separate format than usual log messages. A single file is written to the usual Logs directory for every incoming OMF Type, Container, and data message.</p>
 <h2 id="periodic-egress">Periodic egress</h2>
-<p>EDS periodic egress extracts data from SDS streams and will send the appropriate sequences of type, container, and data OMF messages on startup.</p>
+<p>EDS periodic egress extracts data from SDS streams and sends the appropriate sequences of type, container, and data OMF messages on startup.</p>
 <ul>
-<li>If you see unexpected data in an OCS or PI System, check if multiple devices may be writing to the same stream. </li>
+<li>If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same stream. </li>
 </ul>
-<p>Careful use of stream prefixes in the <a class="xref" href="../Egress/Egress.html">periodic egress endpoint configuration</a> will ensure output data streams will be logically separated in the systems of record.</p>
+<p>Careful use of stream prefixes in the <a class="xref" href="../Egress/Egress.html">periodic egress endpoint configuration</a> ensures that output data streams are logically separated in the systems of record.</p>
 <p>Type prefixes may be helpful if you have a case where you have changed a stream type definitions on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.</p>
 <h3 id="periodic-egress-logging">Periodic egress logging</h3>
 <p>You can find log messages related to egress in the Storage logs. </p>
-<ul>
-<li>To output most information for troubleshooting, temporarily set the the log level to <strong>Trace</strong>.</li>
-</ul>
+<p>To output most information for troubleshooting, you can temporarily set the the log level to <strong>Trace</strong>.</p>
 <h3 id="periodic-egress-debugging">Periodic egress debugging</h3>
-<p>In order to troubleshoot problems between Edge Data Store and the destination, enable debugging. </p>
+<p>In order to troubleshoot problems between Edge Data Store and the destination, you should enable debugging. </p>
 <ul>
 <li><p>Set an appropriate value for the <em>DebugExpiration</em> property in an egress configuration.</p>
 <p>  Debugging for that destination will be enabled, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to <em>null</em>.</p>

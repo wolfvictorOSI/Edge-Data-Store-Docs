@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>OCS egress quick start </title>
+    <title>Storage runtime configuration </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="OCS egress quick start ">
+    <meta name="title" content="Storage runtime configuration ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -68,46 +68,86 @@
       <div role="main" class="container body-content hide-when-search">
         <div class="article row grid">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="ocsEgressQuickStart">
-<h1 id="ocs-egress-quick-start">OCS egress quick start</h1>
+            <article class="content wrap" id="_content" data-uid="storageruntime">
+<h1 id="storage-runtime-configuration">Storage runtime configuration</h1>
 
-<p>This topic provides quick start instructions for getting data stored in the Edge Data Store into OCS. You can accomplish this by using the OCS OMF endpoint which is configured for OCS authentication.</p>
-<p>The examples here use curl, a commonly available tool on both Windows and Linux, and command line commands. You can use the same operations with any programming language or tool that supports making REST calls. You can also accomplish data retrieval steps (GET commands) using a browser, if available on your device.</p>
-<h2 id="create-a-periodic-egress-configuration">Create a periodic egress configuration</h2>
-<p>The following is an example JSON file to configure Edge Storage periodic egress for the Osisoft Cloud Services (OCS) endpoint and credentials:</p>
-<pre><code class="lang-json">[{
-    &quot;Id&quot;: &quot;OCS&quot;,
-    &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
-    &quot;Name&quot;: null,
-    &quot;NamespaceId&quot;: &quot;default&quot;,
-    &quot;Description&quot;: null,
-    &quot;Enabled&quot;: true,
-    &quot;Backfill&quot;: false,
-    &quot;EgressFilter&quot;: &quot;&quot;,
-    &quot;StreamPrefix&quot;: &quot;ChangeMe&quot;,
-    &quot;TypePrefix&quot;: &quot;ChangeMe&quot;,
-    &quot;Endpoint&quot;: &quot;https://&lt;your OCS OMF endpoint&gt;&quot;,
-    &quot;ClientId&quot;: &quot;&lt;your OCS ClientId&gt;&quot;,
-    &quot;ClientSecret&quot;: &quot;&lt;your OCS ClientSecret&gt;&quot;,
-    &quot;UserName&quot;: null,
-    &quot;Password&quot;: null,
-    &quot;DebugExpiration&quot;: null,
-    &quot;ValidateEndpointCertificate&quot;: true,
-    &quot;TokenEndpoint&quot;: null
-}]
-</code></pre><ol>
-<li>Type the URL of your OCS OMF endpoint into the &quot;Endpoint&quot;: value in the preceding JSON file.</li>
-<li><p>Type a ClientId and ClientSecret that can write data to your OCS tenant and namespace in the &quot;ClientId&quot;: and &quot;ClientSecret&quot;: values in the preceding JSON file.</p>
-<p> <strong>Note:</strong> If required, use the StreamPrefix and TypePrefix to ensure uniqueness on the destination system. If a StreamPrefix is specified, it is used to create a unique stream id on OCS. This configuration is set up to send all stream data to OCS. If you want to only send specific streams, edit the EgressFilter value. For examples of more advanced scenarios, see <a class="xref" href="../Egress/Egress.html">Data egress configuration</a>.</p>
-</li>
-<li><p>Save the JSON file with the name PeriodicEgressEndpoints.json.</p>
-</li>
-<li><p>Run the following curl script to configure the Edge Storage component to send data to OCS. Run the script from the same directory where the file exists on the device with Edge Data Store installed. You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory:</p>
-<pre><code class="lang-bash">curl -i -d &quot;@PeriodicEgressEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
-</code></pre></li>
+<p>Edge Data Store provides a mechanism for configuring runtime characteristics of the storage component.  </p>
+<blockquote><p><strong>Note:</strong> The configured defaults are sufficent for most scenarios.  You should modify these values  only after consultation with OSIsoft Support personnel.</p>
+</blockquote>
+<h2 id="configure-storage-runtime">Configure storage runtime</h2>
+<p>To update the storage runtime configuration, complete the following:</p>
+<ol>
+<li>Create a JSON file with the storage runtime configuration.</li>
 </ol>
-<p>When this command completes successfully, data will start being egressed to OCS.</p>
-</article>
+<p><strong>Note:</strong> See the following <em>Parameters</em> table for all available runtime parameters to define.
+          See the following <em>Examples</em> section for an example of a valid runtime configuration file.</p>
+<ol>
+<li>Save the JSON file with the name Storage_Runtime.config.json.</li>
+<li>From the same directory where the file exists, run the following curl script:</li>
+</ol>
+<pre><code class="lang-bash">curl -i -d &quot;@Storage_Runtime.config.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/storage/Runtime
+</code></pre><blockquote><p><strong>Note:</strong> The @ symbol is a required prefix for the above command.</p>
+</blockquote>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IngressDebugExpiration</strong></td>
+<td>Required</td>
+<td>string</td>
+<td>If set, defines how long OMF ingress debug files should be produced.</td>
+</tr>
+<tr>
+<td><strong>StreamStorageLimitMb</strong></td>
+<td>Required</td>
+<td>integer</td>
+<td>The maximum size in megabytes that a stream can reach.</td>
+</tr>
+<tr>
+<td><strong>StreamStorageTargetMb</strong></td>
+<td>Required</td>
+<td>integer</td>
+<td>The size in megabytes that a stream will be reduced to after StreamStorageLimitMb size is reached for a single stream.</td>
+</tr>
+<tr>
+<td><strong>EnableTransactionLog</strong></td>
+<td>No</td>
+<td>bool</td>
+<td>Enables or disables the transaction log.  The transaction log helps to ensure no data is lost should a device lose power.</td>
+</tr>
+<tr>
+<td><strong>TransactionLogLimitMB</strong></td>
+<td>No</td>
+<td>integer</td>
+<td>Maximum size for transaction log file.  Transaction log files larger than this size will be deleted, resulting is loss of data should the device lose power.</td>
+</tr>
+<tr>
+<td><strong>CheckpointRateInSec</strong></td>
+<td>No</td>
+<td>integer</td>
+<td>How often to flush new data to store.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<p>The following is a valid runtime configuration example.</p>
+<pre><code class="lang-json">{
+  &quot;streamStorageLimitMb&quot;: 2,
+  &quot;streamStorageTargetMb&quot;: 1,
+  &quot;ingressDebugExpiration&quot;: &quot;0001-01-01T00:00:00&quot;,
+  &quot;checkpointRateInSec&quot;: 30,
+  &quot;transactionLogLimitMB&quot;: 250,
+  &quot;enableTransactionLog&quot;: true
+}```
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
@@ -115,7 +155,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/Overview/OCSEgressQuickStart.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/Configuration/Storage runtime config.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

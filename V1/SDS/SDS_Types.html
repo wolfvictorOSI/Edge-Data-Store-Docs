@@ -98,28 +98,28 @@
 <td>String</td>
 <td>Required</td>
 <td>Yes</td>
-<td>Identifier for referencing the type</td>
+<td>Identifier for referencing the type.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
 <td>Optional</td>
 <td>Yes</td>
-<td>Friendly name</td>
+<td>Friendly name.</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
 <td>Optional</td>
 <td>Yes</td>
-<td>Description text</td>
+<td>Description text.</td>
 </tr>
 <tr>
 <td>SdsTypeCode</td>
 <td>SdsTypeCode</td>
 <td>Required</td>
 <td>No</td>
-<td>Numeric code identifying the base SdsType</td>
+<td>Numeric code identifying the base SdsType.</td>
 </tr>
 <tr>
 <td>InterpolationMode</td>
@@ -140,20 +140,20 @@
 <td>IList&lt;SdsTypeProperty></td>
 <td>Required</td>
 <td>Yes, with limitations</td>
-<td>List of SdsTypeProperty items</td>
+<td>List of SdsTypeProperty items.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Rules for the type identifier (SdsType.Id)</strong></p>
 <ol>
-<li>Is not case sensitive</li>
-<li>Can contain spaces</li>
-<li>Cannot contain forward slash (&quot;/&quot;)</li>
-<li>Can contain a maximum of 100 characters  </li>
+<li>Is not case sensitive.</li>
+<li>Can contain spaces.</li>
+<li>Cannot contain forward slash (&quot;/&quot;).</li>
+<li>Can contain a maximum of 100 characters. </li>
 </ol>
 <h2 id="sdstypecode">SdsTypeCode</h2>
 <p>The SdsTypeCode is a numeric identifier used by the Data Store to identify SdsTypes. A SdsTypeCode exists for every supported type.</p>
-<p>Atomic types, such as strings, floats and arrays, are defined entirely by the SdsTypeCode. Atomic types do not need fields to define the type.</p>
+<p>Atomic types, such as strings, floats, and arrays, are defined entirely by the SdsTypeCode. Atomic types do not need fields to define the type.</p>
 <p>Types requiring additional definition, such as enums and objects, are identified using a generic SdsTypeCode, such as ByteEnum, Int32Enum, NullableInt32Enum, or Object, plus additional SdsProperty fields.</p>
 <p><strong>Supported Types</strong><br>The following types are supported and defined by the SdsTypeCode:</p>
 <table>
@@ -495,43 +495,43 @@
 <td>Id</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier for referencing the type</td>
+<td>Identifier for referencing the type.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
 <td>Optional</td>
-<td>Friendly name</td>
+<td>Friendly name.</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
 <td>Optional</td>
-<td>Description text</td>
+<td>Description text.</td>
 </tr>
 <tr>
 <td>SdsType</td>
 <td>SdsType</td>
 <td>Required</td>
-<td>Field defining the property&#39;s Type</td>
+<td>Field defining the property&#39;s Type.</td>
 </tr>
 <tr>
 <td>IsKey</td>
 <td>Boolean</td>
 <td>Required</td>
-<td>Identifies the property as the Key (Primary Index)</td>
+<td>Identifies the property as the Key (Primary Index).</td>
 </tr>
 <tr>
 <td>Value</td>
 <td>Object</td>
 <td>Optional</td>
-<td>Value of the property</td>
+<td>Value of the property.</td>
 </tr>
 <tr>
 <td>Order</td>
 <td>Int</td>
 <td>Optional</td>
-<td>Order of comparison within a compound index</td>
+<td>Order of comparison within a compound index.</td>
 </tr>
 <tr>
 <td>InterpolationMode</td>
@@ -949,10 +949,10 @@ interact with SdsTypes. See <a href="#types">Types</a> for general SdsType infor
 <p>Returns the type corresponding to the specified typeId within a given namespace.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types/{typeId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string typeId</code><br>The type identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string typeId</code><br>The type identifier.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
-<p><strong>Response body</strong><br>The requested SdsType</p>
+<p><strong>Response body</strong><br>The requested SdsType.</p>
 <p>Example response body:</p>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
@@ -1011,8 +1011,8 @@ Content-Type: application/json
 <p>Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. For more information on the use of types to define streams and stream views, see <a href="xref:sdsstreams">Streams</a> and <a class="xref" href="SDS_Views.html">Steam Views</a>. For further details about type referencing, see: <a href="#type-reusability">Type Reusability</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string typeId</code><br>The type identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string typeId</code><br>The type identifier.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>A dictionary mapping object name to number of references.</p>
 <p>Example response body:</p>
@@ -1028,13 +1028,13 @@ Content-Type: application/json
 <p><strong>Note:</strong> The results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing, see: <a href="#type-reusability">Type Reusability</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; eitehr default or diagnostics.</p>
 <p><code>string query</code><br>An optional query string to match which SdsTypes will be returned. For information about specifying the query parameter, see the <a class="xref" href="Searching.html">Searching</a> topic.</p>
 <p><code>int skip</code><br>An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, a default value of 0 is used.</p>
 <p><code>int count</code><br>An optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.</p>
 <p><code>string orderby</code><br>An optional parameter representing sorted order which SdsTypes will be returned. A field name is required. The sorting is based on the stored values for the given field (of type string). For example, <code>orderby=name</code> would sort the returned results by the <code>name</code> values (ascending by default). Additionally, a value can be provided along with the field name to identify whether to sort ascending or descending, by using values <code>asc</code> or <code>desc</code>, respectively. For example, <code>orderby=name desc</code> would sort the returned results by the <code>name</code> values, descending. If no value is specified, there is no sorting of results.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
-<p><strong>Response body</strong><br>A collection of zero or more SdsTypes</p>
+<p><strong>Response body</strong><br>A collection of zero or more SdsTypes.</p>
 <p>Example response body:</p>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
@@ -1099,7 +1099,7 @@ Content-Type: application/json
 <p>When a client performs a redirect and strips the authorization header, SDS cannot authorize the request and returns <code>Unauthorized</code> (401). For this reason, OSIsoft recommends that when using clients that do not redirect with the authorization header, you should disable automatic redirect and perform the redirect manually.</p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">POST api/v1/Tenants/default/Namespaces/{namespaceId}/Types/{typeId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>string typeId</code><br>The type identifier. The identifier must match the <code>SdsType.Id</code> field in the request body.</p>
 <p><strong>Request body</strong><br>The request content is the serialized SdsType.</p>
 <p>Example SdsType content:</p>
@@ -1290,8 +1290,8 @@ Content-Type: application/json
 <p>Deletes a type from the specified tenant and namespace. Note that a type cannot be deleted if any streams, stream views, or other types reference it.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Types/{typeId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string typeId</code><br>The type identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string typeId</code><br>The type identifier.</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <hr>
 </article>
