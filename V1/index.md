@@ -46,6 +46,7 @@ uid: index
       - [Data selection configuration](xref:ModbusTCPDataSelectionConfiguration)
     - [OSIsoft Message Format (OMF)](xref:omfOverview)
   - [Storage](xref:storage)
+    - [Storage runtime configuration](xref:storageruntime)
   - [Data egress configuration](xref:egress)
     - [Prepare egress destinations](xref:PrepareEgressDestinations)
     - [Egress execution details](xref:EgressExecutionDetails)
