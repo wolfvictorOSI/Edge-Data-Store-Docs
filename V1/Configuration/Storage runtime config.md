@@ -13,17 +13,16 @@ The Edge Data Store provides a mechanism for configuring runtime characteristics
 To update the storage runtime configuration, complete the following:
 
 1. Create a JSON file with the storage runtime configuration.
-2. Refer to the following Parameters table for all available runtime parameters to define.
-3. Refer to the following Examples section for an example of a runtime configuration JSON file.
-4. Save the JSON file with the name Storage_Runtime.config.json.
-5. From the same directory where the file exists, run the following curl script:
+**Note:** See the following *Parameters* table for all available runtime parameters to define.
+          See the following *Examples* section for an example of a valid runtime configuration file.
+2. Save the JSON file with the name Storage_Runtime.config.json.
+3. From the same directory where the file exists, run the following curl script:
 
 ```bash
 curl -i -d "@Storage_Runtime.config.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/storage/Runtime
 ```
 
 > **Note:** The @ symbol is a required prefix for the above command.
-
 
 ### Parameters
 
