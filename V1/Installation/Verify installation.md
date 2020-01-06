@@ -6,13 +6,13 @@ uid: VerifyInstallation
 
 On a device with limited processor, memory, and slow storage, it may take some time before the Edge Data Store is fully initialized and running for the first time. After allowing time for start up, use the following steps to verify that Edge Data Store is correctly installed. 
 
-1. Run the following script from a terminal window:
+1. Run the following script:
 
     ```bash
     curl http://localhost:5590/api/v1/configuration
     ```
 
-    If the installation was successful, a JSON copy of the default system configuration is returned:
+If the installation was successful, a JSON copy of the default system configuration is returned:
 
     ```json
         {
