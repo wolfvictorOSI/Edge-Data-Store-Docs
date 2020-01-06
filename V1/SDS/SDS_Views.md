@@ -16,19 +16,19 @@ The following table shows the required and optional SdsStreamView fields. Fields
 
 | Property     | Type                   | Optionality | Searchability | Details |
 |--------------|------------------------|-------------|------------|---------|
-| Id           | String                 | Required    | Yes        |Identifier for referencing the stream view |
-| Name         | String                 | Optional    | Yes        |Friendly name |
-| Description  | String                 | Optional    | Yes        |Description text |
-| SourceTypeId | String                 | Required    | Yes        |Identifier of the SdsType of the SdsStream |
-| TargetTypeId | String                 | Required    | Yes        |Identifier of the SdsType to convert events to |
-| Properties   | IList\<SdsStreamViewProperty\> | Optional    | Yes, with limitations  |Property level mapping |
+| Id           | String                 | Required    | Yes        |Identifier for referencing the stream view. |
+| Name         | String                 | Optional    | Yes        |Friendly name. |
+| Description  | String                 | Optional    | Yes        |Description text. |
+| SourceTypeId | String                 | Required    | Yes        |Identifier of the SdsType of the SdsStream. |
+| TargetTypeId | String                 | Required    | Yes        |Identifier of the SdsType to convert events to. |
+| Properties   | IList\<SdsStreamViewProperty\> | Optional    | Yes, with limitations  |Property level mapping. |
 
 **Rules for the stream view identifier (SdsStreamView.Id)**
 
-1. Is not case sensitive
-2. Can contain spaces
-3. Cannot contain forward slash ("/")
-4. Can contain a maximum of 100 characters
+1. Is not case sensitive.
+2. Can contain spaces.
+3. Cannot contain forward slash ("/").
+4. Can contain a maximum of 100 characters.
 
 ## Properties / SdsStreamViewProperty
 
@@ -38,9 +38,9 @@ The following table shows the required and optional SdsStreamViewProperty fields
 
 | Property | Type    | Optionality | Details |
 |----------|---------|-------------|---------|
-| SourceId | String  | Required    | Identifier of the SdsTypeProperty from the source SdsType Properties list |
-| TargetId | String  | Required    | Identifier of the SdsTypeProperty from the target SdsType Properties list |
-| SdsStreamView  | SdsStreamView | Optional    | Additional mapping instructions for derived types |
+| SourceId | String  | Required    | Identifier of the SdsTypeProperty from the source SdsType Properties list. |
+| TargetId | String  | Required    | Identifier of the SdsTypeProperty from the target SdsType Properties list. |
+| SdsStreamView  | SdsStreamView | Optional    | Additional mapping instructions for derived types. |
 
 The SdsStreamView field supports nested properties.
 
@@ -52,9 +52,9 @@ The following table shows the SdsStreamViewMap fields. The SdsStreamViewMap cann
 
 | Property     | Type                     | Optionality  | Details |
 |--------------|--------------------------|--------------|---------|
-| SourceTypeId | String                   | Required     | Identifier of the SdsType of the SdsStream |
-| TargetTypeId | String                   | Required     | Identifier of the SdsType to convert events to |
-| Properties   | IList\<SdsStreamViewMapProperty\>| Optional     | Property level mapping |
+| SourceTypeId | String                   | Required     | Identifier of the SdsType of the SdsStream. |
+| TargetTypeId | String                   | Required     | Identifier of the SdsType to convert events to. |
+| Properties   | IList\<SdsStreamViewMapProperty\>| Optional     | Property level mapping. |
 
 ### Properties / SdsStreamViewMapProperty
 
@@ -66,22 +66,22 @@ retrieved from SDS, so required and optional have no meaning.
 
 | Property     | Type        | Details |
 |--------------|-------------|---------|
-| SourceTypeId | String      | Identifier of the SdsType of the SdsStream |
-| TargetTypeId | String      | Identifier of the SdsType to convert events to |
-| Mode         | SdsStreamViewMode | Aggregate of actions applied to the properties. SdsStreamViewModes are combined via binary arithmetic |
-| SdsStreamViewMap   | SdsStreamViewMap  | Mapping for derived types |
+| SourceTypeId | String      | Identifier of the SdsType of the SdsStream. |
+| TargetTypeId | String      | Identifier of the SdsType to convert events to. |
+| Mode         | SdsStreamViewMode | Aggregate of actions applied to the properties. SdsStreamViewModes are combined via binary arithmetic. |
+| SdsStreamViewMap   | SdsStreamViewMap  | Mapping for derived types. |
 
 The available SdsStreamViewModes are shown in the following table.
 
 | Name                   | Value  | Description |
 |------------------------|--------|-------------|
-| None                   | 0x0000 | No action   |
-| FieldAdd               | 0x0001 | Add a property matching the specified SdsTypeProperty |
-| FieldRemove            | 0x0002 | Remove the property matching the specified SdsTypeProperty |
-| FieldRename            | 0x0004 | Rename the property matching the source SdsTypeProperty to the target SdsTypeProperty |
-| FieldMove              | 0x0008 | Move the property from the location in the source to the location in the target|
-| FieldConversion        | 0x0016 | Converts the source property to the target type |
-| InvalidFieldConversion | 0x0032 | Cannot perform the specified mapping |
+| None                   | 0x0000 | No action.   |
+| FieldAdd               | 0x0001 | Add a property matching the specified SdsTypeProperty. |
+| FieldRemove            | 0x0002 | Remove the property matching the specified SdsTypeProperty. |
+| FieldRename            | 0x0004 | Rename the property matching the source SdsTypeProperty to the target SdsTypeProperty. |
+| FieldMove              | 0x0008 | Move the property from the location in the source to the location in the target. |
+| FieldConversion        | 0x0016 | Converts the source property to the target type. |
+| InvalidFieldConversion | 0x0032 | Cannot perform the specified mapping. |
 
 ## Changing stream type
 
@@ -151,10 +151,10 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string streamViewId`  
-The stream view identifier  
+The stream view identifier.  
 
 **Response**  
 The response includes a status code and a response body.
@@ -203,10 +203,10 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews/{streamViewId}/M
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string streamViewId`  
-The stream view identifier  
+The stream view identifier.  
 
 **Response**  
  The response includes a status code and a response body.
@@ -263,7 +263,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews?query={query}&sk
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string query`  
 An optional parameter representing a string search. For information about specifying the search parameter, see [Searching](xref:sdsSearching).
@@ -334,7 +334,7 @@ POST api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string streamViewId`  
 The stream view identifier. The identifier must match the ``SdsStreamView.Id`` field.
@@ -361,10 +361,10 @@ PUT api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews/{streamViewId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string streamViewId`  
-The stream view identifier
+The stream view identifier.
 
 **Request body**  
 The request content is the serialized SdsStreamView.
@@ -388,10 +388,10 @@ DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews/{streamViewId
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string streamViewId`  
-The stream view identifier
+The stream view identifier.
 
 **Response**  
 The response includes a status code.
