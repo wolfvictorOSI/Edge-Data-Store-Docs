@@ -9,7 +9,7 @@ You can configure and administer Edge Data Store on Linux and Windows by using t
 Location on Windows:
 
 ```cmd
-C:\Program Files\OSIsoft\EdgeDataStore\edgecmd.exe
+C:\Program Files\OSIsoft\EdgeCmd\edgecmd.exe
 ```
 
 **Note:** Specify the full path when you use it on Windows.
@@ -17,7 +17,7 @@ C:\Program Files\OSIsoft\EdgeDataStore\edgecmd.exe
 Location on Linux:
 
 ```bash
- /opt/OSIsoft/EdgeDataStore/edgecmd
+ /opt/OSIsoft/EdgeCmd/edgecmd
 ```
 
 **Note:** You can access it without using the full path on Linux. 
