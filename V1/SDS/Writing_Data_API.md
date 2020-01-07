@@ -6,7 +6,7 @@ uid: sdsWritingDataApi
 
 #### Example type, stream, and data
 
-Many of the following API methods descriptions following contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples:
+Many of the following API methods descriptions contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples:
 
 **Example type**  
 ``SimpleType`` is an SdsType with a single index and two additional properties. This type is defined in Python and Javascript:
@@ -82,16 +82,16 @@ POST api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier. 
 
 **Request body**  
-A serialized list of one or more events of the stream type  
+A serialized list of one or more events of the stream type.  
 
 **Response**  
-The response includes a status code
+The response includes a status code.
 
 **Note:**  
 This request will return an error if an event already exists for any index in the request. If any individual index encounters a problem, the entire operation is rolled back and no insertions are made. The `streamId` and `index` that caused the issue are included in the error response.
@@ -135,21 +135,21 @@ PATCH api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 ``string selectExpression``  
-Comma-separated list of strings that indicates the event fields to be changed in stream events  
+Comma-separated list of strings that indicates the event fields to be changed in stream events.  
 
 **Request body**  
-A serialized collection of one or more patch property events
+A serialized collection of one or more patch property events.
 
 **Response**  
-The response includes a status code
+The response includes a status code.
 
-Consider you have a stream `Simple` of `SimpleType`, to change one property, `Measurement`, for one event specify the following request
+Consider you have a stream `Simple` of `SimpleType`, to change one property, `Measurement`, for one event specify the following request:
 
 ```text
 PATCH api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data
@@ -195,16 +195,16 @@ DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 ``string index``  
-One or more indexes of events to remove
+One or more indexes of events to remove.
 
 **Response**  
-The response includes a status code
+The response includes a status code.
 
 **Note:**  
 If any individual event fails to be removed, the entire operation is rolled back and no events are removed. The streamId and index that caused the issue are included in the error response. If you attempt to remove events at indexes that have no events, an error is returned. If this occurs, you can use [Window](#removewindow) request format to remove any events from a specified ‘window’ of indexes, which will not return an error if no data is found.
@@ -224,19 +224,19 @@ DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 ``string startIndex``  
-The index defining the beginning of the window
+The index defining the beginning of the window.
 
 ``string endIndex``  
-The index defining the end of the window  
+The index defining the end of the window.  
 
 **Response**  
-The response includes a status code
+The response includes a status code.
 
 **Note:**  
 If any individual event fails to be removed, the entire operation is rolled back and no removes are done.
@@ -255,16 +255,16 @@ PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 **Request body**
-A serialized list of one or more events of the stream type
+A serialized list of one or more events of the stream type..
 
 **Response**  
-The response includes a status code
+The response includes a status code.
 
 **Note:**  
 This request returns an error if the stream does not have an event to be replaced at the specified index. If any individual event fails to be replaced, the entire operation is rolled back and no replaces are performed. The index that caused the issue and the streamId are included in the error response.
@@ -282,16 +282,16 @@ PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 **Request body**  
-A serialized list of one or more events of the stream type
+A serialized list of one or more events of the stream type.
 
 **Response**  
-The response includes a status code
+The response includes a status code.
 
 **Note:**  
 This request performs an insert or a replace depending on whether an event already exists at the event indexes. If any item fails to write, the entire operation is rolled back and no events are written to the stream. The index that caused the issue is included in the error response.
