@@ -91,35 +91,35 @@
 <td>String</td>
 <td>Required</td>
 <td>Yes</td>
-<td>An identifier for referencing the stream</td>
+<td>An identifier for referencing the stream.</td>
 </tr>
 <tr>
 <td>TypeId</td>
 <td>String</td>
 <td>Required</td>
 <td>Yes</td>
-<td>The SdsType identifier of the type to be used for this stream</td>
+<td>The SdsType identifier of the type to be used for this stream.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
 <td>Optional</td>
 <td>Yes</td>
-<td>Friendly name</td>
+<td>Friendly name.</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
 <td>Optional</td>
 <td>Yes</td>
-<td>Description text</td>
+<td>Description text.</td>
 </tr>
 <tr>
 <td>Indexes</td>
 <td>IList&lt;SdsStreamIndex></td>
 <td>Optional</td>
 <td>No</td>
-<td>Used to define secondary indexes for stream</td>
+<td>Used to define secondary indexes for stream.</td>
 </tr>
 <tr>
 <td>InterpolationMode</td>
@@ -161,10 +161,10 @@
 <p><strong>Note:</strong> Stream tags and metadata are accessed via the Tags API And Metadata API, respectively. However, they are associated with SdsStream objects and can be used as search criteria.</p>
 <p><strong>Rules for the stream identifier (SdsStream.Id)</strong></p>
 <ol>
-<li>Is not case sensitive</li>
-<li>Can contain spaces</li>
-<li>Cannot contain forward slash (&quot;/&quot;)</li>
-<li>Can contain a maximum of 100 characters</li>
+<li>Is not case sensitive.</li>
+<li>Can contain spaces.</li>
+<li>Cannot contain forward slash (&quot;/&quot;).</li>
+<li>Can contain a maximum of 100 characters.</li>
 </ol>
 <h2 id="indexes">Indexes</h2>
 <ul>
@@ -194,24 +194,24 @@
 <td>SdsTypePropertyId</td>
 <td>String</td>
 <td>Required</td>
-<td>SdsTypeProperty identifier</td>
+<td>SdsTypeProperty identifier.</td>
 </tr>
 <tr>
 <td>InterpolationMode</td>
 <td>SdsInterpolationMode</td>
 <td>Optional</td>
-<td>Interpolation setting. Default is null</td>
+<td>Interpolation setting. Default is null.</td>
 </tr>
 <tr>
 <td>Uom</td>
 <td>String</td>
 <td>Optional</td>
-<td>Unit of measure</td>
+<td>Unit of measure.</td>
 </tr>
 </tbody>
 </table>
-<p>The unit of measure can be overridden for any type property defined by the stream type, including primary keys and secondary indexes. For more information about type property units of measure see <a class="xref" href="SDS_Types.html">Types</a>.</p>
-<p>Read characteristics of the stream are determined by the type and the PropertyOverrides of the stream. The interpolation mode for non-index properties can be defined and overridden at the stream level. For more information about type read characteristics see <a class="xref" href="SDS_Types.html">Types</a>.</p>
+<p>The unit of measure can be overridden for any type property defined by the stream type, including primary keys and secondary indexes. For more information about type property units of measure, see <a class="xref" href="SDS_Types.html">Types</a>.</p>
+<p>Read characteristics of the stream are determined by the type and the PropertyOverrides of the stream. The interpolation mode for non-index properties can be defined and overridden at the stream level. For more information about type read characteristics, see <a class="xref" href="SDS_Types.html">Types</a>.</p>
 <p>When specifying property interpolation overrides, if the SdsType InterpolationMode is <code>Discrete</code>, it cannot be overridden at any level. When InterpolationMode is set to <code>Discrete</code> and an event it not defined for that index, a null value is returned for the entire event.</p>
 <h1 id="sdsstream-api">SdsStream API</h1>
 <p>The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsStreams. See <a href="#streams">Streams</a> for general SdsStream information.</p>
@@ -220,8 +220,8 @@
 <p>Returns the specified stream.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>THe namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The requested SdsStream. Example response body:</p>
 <pre><code class="lang-json">HTTP/1.1 200
@@ -238,7 +238,7 @@ Content-Type: application/json
 <p>If the optional search query parameter is specified, the list of streams returned will match the search criteria. If the search query parameter is not specified, the list will include all streams in the namespace. See <a class="xref" href="Searching.html">Searching</a> for information about specifying those respective parameters.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>string query</code><br>An optional parameter representing a string search. For information about specifying the search parameter, see <a class="xref" href="Searching.html">Searching</a>.</p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsStream to retrieve. If not specified, a default value of 0 is used.</p>
 <p><code>int count</code><br>An optional parameter representing the maximum number of SdsStreams to retrieve. If not specified, a default value of 100 is used.</p>
@@ -272,8 +272,8 @@ Content-Type: application/json
 <p>Returns the type definition that is associated with a given stream.</p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Type
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The requested SdsType.</p>
 <hr>
@@ -283,7 +283,7 @@ Content-Type: application/json
 <p>When a client performs a redirect and strips the authorization header, SDS cannot authorize the request and returns <code>Unauthorized</code> (401). For this reason, it is recommended that when using clients that do not redirect with the authorization header, you should disable automatic redirect.</p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">POST api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>string streamId</code><br>The stream identifier. The stream identifier must match the identifier in content.</p>
 <p><strong>Request body</strong><br>The request content is the serialized SdsStream.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
@@ -304,8 +304,8 @@ Content-Type: application/json
 <p>Unpermitted changes result in an error.</p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; eitehr default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
 <p><strong>Request body</strong><br>The request content is the serialized SdsStream.</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <hr>
@@ -313,9 +313,9 @@ Content-Type: application/json
 <p>Updates a stream’s type. The type is modified to match the specified stream view. Defined Indexes and PropertyOverrides are removed when updating a stream type.</p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">  PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
-<p><code>string streamViewId</code><br>The stream view identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
+<p><code>string streamViewId</code><br>The stream view identifier.  </p>
 <p><strong>Request body</strong><br>The request content is the serialized SdsStream.</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>Response body</strong><br>On failure, the content contains a message describing the issue.</p>
@@ -324,8 +324,8 @@ Content-Type: application/json
 <p>Deletes a stream.</p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">  DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <hr>
 </article>

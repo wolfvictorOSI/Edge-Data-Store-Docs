@@ -72,7 +72,7 @@
 <h1 id="api-calls-for-reading-data">API calls for reading data</h1>
 
 <h4 id="example-type-stream-and-data">Example type, stream, and data</h4>
-<p>Many of the following API methods descriptions following contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples:</p>
+<p>Many of the following API methods descriptions contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples:</p>
 <p><strong>Example type</strong><br><code>SimpleType</code> is an SdsType with a single index and two additional properties. This type is defined in Python and Javascript:</p>
 <h6 id="python">Python</h6>
 <pre><code class="lang-python">class State(Enum):
@@ -124,10 +124,10 @@ var SimpleType = function () {
 <p>Inserts data into the specified stream. Returns an error if data is already present at the index of any event.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">POST api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
-<p><strong>Request body</strong><br>A serialized list of one or more events of the stream type  </p>
-<p><strong>Response</strong><br>The response includes a status code</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier. </p>
+<p><strong>Request body</strong><br>A serialized list of one or more events of the stream type.  </p>
+<p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>Note:</strong><br>This request will return an error if an event already exists for any index in the request. If any individual index encounters a problem, the entire operation is rolled back and no insertions are made. The <code>streamId</code> and <code>index</code> that caused the issue are included in the error response.</p>
 <p><strong>Example</strong><br>The following request is used to insert events into stream <code>Simple</code> of <code>SimpleType</code>,</p>
 <pre><code class="lang-text">POST api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
@@ -150,12 +150,12 @@ var SimpleType = function () {
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">PATCH api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
   ?select={selectExpression}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
-<p><code>string selectExpression</code><br>Comma-separated list of strings that indicates the event fields to be changed in stream events  </p>
-<p><strong>Request body</strong><br>A serialized collection of one or more patch property events</p>
-<p><strong>Response</strong><br>The response includes a status code</p>
-<p>Consider you have a stream <code>Simple</code> of <code>SimpleType</code>, to change one property, <code>Measurement</code>, for one event specify the following request</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
+<p><code>string selectExpression</code><br>Comma-separated list of strings that indicates the event fields to be changed in stream events.  </p>
+<p><strong>Request body</strong><br>A serialized collection of one or more patch property events.</p>
+<p><strong>Response</strong><br>The response includes a status code.</p>
+<p>Consider you have a stream <code>Simple</code> of <code>SimpleType</code>, to change one property, <code>Measurement</code>, for one event specify the following request:</p>
 <pre><code class="lang-text">PATCH api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data
   ?select=measurement
 </code></pre><p>With the following request body,</p>
@@ -180,10 +180,10 @@ var SimpleType = function () {
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
   ?index={index}[&amp;index={index}…]
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
-<p><code>string index</code><br>One or more indexes of events to remove</p>
-<p><strong>Response</strong><br>The response includes a status code</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
+<p><code>string index</code><br>One or more indexes of events to remove.</p>
+<p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>Note:</strong><br>If any individual event fails to be removed, the entire operation is rolled back and no events are removed. The streamId and index that caused the issue are included in the error response. If you attempt to remove events at indexes that have no events, an error is returned. If this occurs, you can use <a href="#removewindow">Window</a> request format to remove any events from a specified ‘window’ of indexes, which will not return an error if no data is found.</p>
 <p><a name="removewindow"></a></p>
 <h3 id="window"><code>Window</code></h3>
@@ -191,11 +191,11 @@ var SimpleType = function () {
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
   ?startIndex={startIndex}&amp;endIndex={endIndex}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
-<p><code>string startIndex</code><br>The index defining the beginning of the window</p>
-<p><code>string endIndex</code><br>The index defining the end of the window  </p>
-<p><strong>Response</strong><br>The response includes a status code</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
+<p><code>string startIndex</code><br>The index defining the beginning of the window.</p>
+<p><code>string endIndex</code><br>The index defining the end of the window.  </p>
+<p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>Note:</strong><br>If any individual event fails to be removed, the entire operation is rolled back and no removes are done.</p>
 <hr>
 <h2 id="replace-values"><code>Replace Values</code></h2>
@@ -203,21 +203,21 @@ var SimpleType = function () {
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
   ?allowCreate=false
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
 <p><strong>Request body</strong>
-A serialized list of one or more events of the stream type</p>
-<p><strong>Response</strong><br>The response includes a status code</p>
+A serialized list of one or more events of the stream type..</p>
+<p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>Note:</strong><br>This request returns an error if the stream does not have an event to be replaced at the specified index. If any individual event fails to be replaced, the entire operation is rolled back and no replaces are performed. The index that caused the issue and the streamId are included in the error response.</p>
 <hr>
 <h2 id="update-values"><code>Update Values</code></h2>
 <p>Writes one or more events to the specified stream.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
-<p><strong>Request body</strong><br>A serialized list of one or more events of the stream type</p>
-<p><strong>Response</strong><br>The response includes a status code</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
+<p><strong>Request body</strong><br>A serialized list of one or more events of the stream type.</p>
+<p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>Note:</strong><br>This request performs an insert or a replace depending on whether an event already exists at the event indexes. If any item fails to write, the entire operation is rolled back and no events are written to the stream. The index that caused the issue is included in the error response.</p>
 <hr>
 </article>

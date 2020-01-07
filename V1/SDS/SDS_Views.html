@@ -92,51 +92,51 @@
 <td>String</td>
 <td>Required</td>
 <td>Yes</td>
-<td>Identifier for referencing the stream view</td>
+<td>Identifier for referencing the stream view.</td>
 </tr>
 <tr>
 <td>Name</td>
 <td>String</td>
 <td>Optional</td>
 <td>Yes</td>
-<td>Friendly name</td>
+<td>Friendly name.</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>String</td>
 <td>Optional</td>
 <td>Yes</td>
-<td>Description text</td>
+<td>Description text.</td>
 </tr>
 <tr>
 <td>SourceTypeId</td>
 <td>String</td>
 <td>Required</td>
 <td>Yes</td>
-<td>Identifier of the SdsType of the SdsStream</td>
+<td>Identifier of the SdsType of the SdsStream.</td>
 </tr>
 <tr>
 <td>TargetTypeId</td>
 <td>String</td>
 <td>Required</td>
 <td>Yes</td>
-<td>Identifier of the SdsType to convert events to</td>
+<td>Identifier of the SdsType to convert events to.</td>
 </tr>
 <tr>
 <td>Properties</td>
 <td>IList&lt;SdsStreamViewProperty></td>
 <td>Optional</td>
 <td>Yes, with limitations</td>
-<td>Property level mapping</td>
+<td>Property level mapping.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Rules for the stream view identifier (SdsStreamView.Id)</strong></p>
 <ol>
-<li>Is not case sensitive</li>
-<li>Can contain spaces</li>
-<li>Cannot contain forward slash (&quot;/&quot;)</li>
-<li>Can contain a maximum of 100 characters</li>
+<li>Is not case sensitive.</li>
+<li>Can contain spaces.</li>
+<li>Cannot contain forward slash (&quot;/&quot;).</li>
+<li>Can contain a maximum of 100 characters.</li>
 </ol>
 <h2 id="properties--sdsstreamviewproperty">Properties / SdsStreamViewProperty</h2>
 <p>The SdsStreamView Properties collection provides detailed instructions for specifying the mapping of event properties. Each SdsStreamViewProperty in the properties collection defines the mapping of an event’s property. SdsStreamView properties are required only when property mapping is not straightforward. Additionally, if you do not want a type property mapped, it is not necessary to create an SdsStreamView property for it.</p>
@@ -155,19 +155,19 @@
 <td>SourceId</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier of the SdsTypeProperty from the source SdsType Properties list</td>
+<td>Identifier of the SdsTypeProperty from the source SdsType Properties list.</td>
 </tr>
 <tr>
 <td>TargetId</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier of the SdsTypeProperty from the target SdsType Properties list</td>
+<td>Identifier of the SdsTypeProperty from the target SdsType Properties list.</td>
 </tr>
 <tr>
 <td>SdsStreamView</td>
 <td>SdsStreamView</td>
 <td>Optional</td>
-<td>Additional mapping instructions for derived types</td>
+<td>Additional mapping instructions for derived types.</td>
 </tr>
 </tbody>
 </table>
@@ -189,19 +189,19 @@
 <td>SourceTypeId</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier of the SdsType of the SdsStream</td>
+<td>Identifier of the SdsType of the SdsStream.</td>
 </tr>
 <tr>
 <td>TargetTypeId</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier of the SdsType to convert events to</td>
+<td>Identifier of the SdsType to convert events to.</td>
 </tr>
 <tr>
 <td>Properties</td>
 <td>IList&lt;SdsStreamViewMapProperty></td>
 <td>Optional</td>
-<td>Property level mapping</td>
+<td>Property level mapping.</td>
 </tr>
 </tbody>
 </table>
@@ -222,22 +222,22 @@ retrieved from SDS, so required and optional have no meaning.</p>
 <tr>
 <td>SourceTypeId</td>
 <td>String</td>
-<td>Identifier of the SdsType of the SdsStream</td>
+<td>Identifier of the SdsType of the SdsStream.</td>
 </tr>
 <tr>
 <td>TargetTypeId</td>
 <td>String</td>
-<td>Identifier of the SdsType to convert events to</td>
+<td>Identifier of the SdsType to convert events to.</td>
 </tr>
 <tr>
 <td>Mode</td>
 <td>SdsStreamViewMode</td>
-<td>Aggregate of actions applied to the properties. SdsStreamViewModes are combined via binary arithmetic</td>
+<td>Aggregate of actions applied to the properties. SdsStreamViewModes are combined via binary arithmetic.</td>
 </tr>
 <tr>
 <td>SdsStreamViewMap</td>
 <td>SdsStreamViewMap</td>
-<td>Mapping for derived types</td>
+<td>Mapping for derived types.</td>
 </tr>
 </tbody>
 </table>
@@ -254,37 +254,37 @@ retrieved from SDS, so required and optional have no meaning.</p>
 <tr>
 <td>None</td>
 <td>0x0000</td>
-<td>No action</td>
+<td>No action.</td>
 </tr>
 <tr>
 <td>FieldAdd</td>
 <td>0x0001</td>
-<td>Add a property matching the specified SdsTypeProperty</td>
+<td>Add a property matching the specified SdsTypeProperty.</td>
 </tr>
 <tr>
 <td>FieldRemove</td>
 <td>0x0002</td>
-<td>Remove the property matching the specified SdsTypeProperty</td>
+<td>Remove the property matching the specified SdsTypeProperty.</td>
 </tr>
 <tr>
 <td>FieldRename</td>
 <td>0x0004</td>
-<td>Rename the property matching the source SdsTypeProperty to the target SdsTypeProperty</td>
+<td>Rename the property matching the source SdsTypeProperty to the target SdsTypeProperty.</td>
 </tr>
 <tr>
 <td>FieldMove</td>
 <td>0x0008</td>
-<td>Move the property from the location in the source to the location in the target</td>
+<td>Move the property from the location in the source to the location in the target.</td>
 </tr>
 <tr>
 <td>FieldConversion</td>
 <td>0x0016</td>
-<td>Converts the source property to the target type</td>
+<td>Converts the source property to the target type.</td>
 </tr>
 <tr>
 <td>InvalidFieldConversion</td>
 <td>0x0032</td>
-<td>Cannot perform the specified mapping</td>
+<td>Cannot perform the specified mapping.</td>
 </tr>
 </tbody>
 </table>
@@ -329,8 +329,8 @@ retrieved from SDS, so required and optional have no meaning.</p>
 <p>Returns the stream view corresponding to the specified streamViewId within a given namespace.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews/{streamViewId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamViewId</code><br>The stream view identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamViewId</code><br>The stream view identifier.  </p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The requested SdsStreamView.</p>
 <p>Example response body:</p>
@@ -361,8 +361,8 @@ Content-Type: application/json
 <p>Returns the stream view map corresponding to the specified streamViewId within a given namespace.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews/{streamViewId}/Map
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamViewId</code><br>The stream view identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamViewId</code><br>The stream view identifier.  </p>
 <p><strong>Response</strong><br> The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The requested SdsStreamView.</p>
 <p>Example response body:</p>
@@ -400,7 +400,7 @@ the search criteria. If the search query parameter is not specified, the list wi
 all stream views in the Namespace. See <a class="xref" href="Searching.html">Searching</a> for information about specifying those respective parameters.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>string query</code><br>An optional parameter representing a string search. For information about specifying the search parameter, see <a class="xref" href="Searching.html">Searching</a>.</p>
 <p><code>int skip</code><br>An optional parameter representing the zero-based offset of the first SdsStreamView to retrieve. If not specified, a default value of 0 is used.</p>
 <p><code>int count</code><br>An optional parameter representing the maximum number of SdsStreamViews to retrieve. If not specified, a default value of 100 is used.</p>
@@ -444,7 +444,7 @@ Content-Type: application/json
 <p>If no matching identifier is found, the specified stream view is created.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">POST api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews/{streamViewId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>string streamViewId</code><br>The stream view identifier. The identifier must match the <code>SdsStreamView.Id</code> field.</p>
 <p><strong>Request body</strong><br>The request content is the serialized SdsStreamView.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
@@ -454,8 +454,8 @@ Content-Type: application/json
 <p>Creates or updates the definition of a stream view.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">PUT api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews/{streamViewId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamViewId</code><br>The stream view identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamViewId</code><br>The stream view identifier.</p>
 <p><strong>Request body</strong><br>The request content is the serialized SdsStreamView.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The newly created or updated SdsStreamView.</p>
@@ -464,8 +464,8 @@ Content-Type: application/json
 <p>Deletes a stream view from the specified tenant and namespace.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews/{streamViewId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamViewId</code><br>The stream view identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamViewId</code><br>The stream view identifier.</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <hr>
 </article>

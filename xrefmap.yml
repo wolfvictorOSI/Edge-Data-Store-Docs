@@ -256,9 +256,6 @@ references:
 - uid: storage_schema
   name: Sample Storage configuration
   href: V1/Configuration/Schemas/Storage_schema.html
-- uid: storageruntime
-  name: Storage runtime configuration
-  href: V1/Configuration/Storage%20runtime%20config.html
 - uid: SupportedFeaturesModbus
   name: Supported features
   href: V1/Modbus/SupportedFeaturesModbus.html

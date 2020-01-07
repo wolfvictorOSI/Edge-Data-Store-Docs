@@ -84,8 +84,8 @@
 </ul>
 <p>The base URI for writing SDS data to a single stream is:</p>
 <pre><code class="lang-text">api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data  
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
 <h2 id="request-body-format">Request body format</h2>
 <p>With the exception of Remove Values, all single stream write calls require a request body containing the events to insert or modify.
 The events must be formatted as a serialized JSON array of the stream&#39;s type. JSON arrays are comma-delimited lists of a type enclosed within square brackets. The following code shows a list of three WaveData events that are properly formatted for insertion. For the complete example, see the <a href="https://github.com/osisoft/OCS-Samples">OCS-Samples</a>.</p>

@@ -76,10 +76,10 @@
 <h3 id="windows">Windows</h3>
 <p>Program binaries are placed in the <em>C:\Program Files\OSIsoft\EdgeDataStore</em> directory by default. For information about changing this location, see the <a href="#installationOverview">installation</a> documentation. </p>
 <p>Configuration, log, and data files are placed under <em>C:\ProgramData\OSIsoft\EdgeDataStore</em> This is not configurable. This folder structure will not be automatically removed if you uninstall EDS.  For information about clearing these files, see the <a href="#installationOverview">installation</a> documentation.</p>
-<p>Key material for configuration files&#39; encrypted secrets is stored using the Windows DPAPI in a secure Windows store. This is not configurable.</p>
+<p>Key material for encrypted secrets of configuration files is stored using the Windows DPAPI in a secure Windows store. This is not configurable.</p>
 <h3 id="linux">Linux</h3>
 <p>Program binaries are placed in the <em>/opt/EdgeDataStore</em> directory.  Configuration, log, and data files are placed under <em>/usr/share/OSIsoft/EdgeDataStore</em>. This folder structure will not be automatically removed if you unistall EDS. For information about clearing these files, see the <a href="#installationOverview">installation</a> documentation.</p>
-<p>Key material for configuration files&#39; encrypted secrets are stored using limited access files under <em>/usr/share/OSIsoft/EdgeDataStore</em>. You cannot configure file locations for Linux.</p>
+<p>Key material for encrypted secrets of configuration files is stored using limited access files under <em>/usr/share/OSIsoft/EdgeDataStore</em>. You cannot configure file locations for Linux.</p>
 <p>When the Debian installer is used, Edge Data Store is installed using the service identity osisoft.edgedatastore.service. If you need to restart the service from the Linux command line, use the following command:</p>
 <pre><code class="lang-bash">sudo systemctl restart osisoft.edgedatastore.service
 </code></pre><h2 id="file-descriptors-handles">File descriptors (handles)</h2>
