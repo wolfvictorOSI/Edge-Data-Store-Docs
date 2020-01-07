@@ -6,7 +6,7 @@ uid: unitsOfMeasure
 
 The Sequential Data Store (SDS) provides a collection of built-in units of measure (Uom). These units of measure can be [associated](#associating-a-unit-of-measure-with-a-sdstype) with SdsStreams and SdsTypes in order to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. For more information, see [Reading data](xref:sdsReadingData).
 
-Since a unit of measurement (that is meter) defines the magnitude of a quantity (that is Length), SDS represents this through two objects: SdsUom and SdsUomQuantity.
+Since a unit of measurement (such as meter) defines the magnitude of a quantity (such as Length), SDS represents this through two objects: SdsUom and SdsUomQuantity.
 
 ## SdsUom
 
@@ -20,13 +20,13 @@ The following table shows the required and optional SdsUom fields.
 | Abbreviation     | String | Optional    | Abbreviation for the unit of measure  | m/s |
 | Name             | String | Optional    | Full name for the unit of measure | Meters per second |
 | DisplayName      | String | Optional    | Friendly display name for the unit of measure | meters per second |
-| QuantityId       | String | Required    | The identifier associated with the quantity that this unit is a measure of | Velocity|
+| QuantityId       | String | Required    | The identifier for the quantity that this unit of measure quantifies| Velocity|
 | ConversionFactor | Double | Required    | Used for unit conversions.  When a value of this unit is multiplied by the ConversionFactor and then incremented by the ConversionOffset, the value in terms of the base unit of the corresponding quantity is returned. | 1.0 |
-| ConversionOffset | Double | Required    | Used for unit conversions. See details for ConversionFactor | 0.0  |
+| ConversionOffset | Double | Required    | Used for unit conversions. See details for ConversionFactor. | 0.0  |
 
 ## SdsUomQuantity
 
-Represents a single measurable quantity (i.e. Length)
+Represents a single measurable quantity, such as length).
 
 The following table shows the required and optional SdsUomQuantity fields.
 
@@ -34,7 +34,7 @@ The following table shows the required and optional SdsUomQuantity fields.
 | ---------- | ------- | ----------- | ------- | ---------|
 | Id         | String  | Required    | Unique identifier for the quantity | Velocity |
 | Name       | String  | Optional    | Full name for the quantity | Velocity |
-| BaseUom    | SdsUom  | Required    | The base unit of measure for this quantity. All other Uom's measuring this quantity will have ConversionFactor's and ConversionOffsets relative to the BaseUom  | SdsUom representing "meters per second" |
+| BaseUom    | SdsUom  | Required    | The base unit of measure for this quantity. All other Uoms measuring this quantity will have ConversionFactors and ConversionOffsets relative to the BaseUom.  | SdsUom representing "meters per second" |
 | Dimensions | short[] | Optional    | Reserved for internal use. Represents the seven base SI dimensions: Length, Mass, Time, Electric Current, Thermodynamic Temperature, Amount of Substance, and Luminous Density. | [1,0,-1,0,0,0,0] |
 
 ## Supported quantities
@@ -291,7 +291,7 @@ A list of the supported units of measure follows. Supported units of measure are
 
 # SdsUomQuantity API
 
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUomQuantitys. For general [SdsUomQuantity](#sdsuomquantity) information, see [Units of Measure](#units-of-measure) .
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUomQuantitys. For general [SdsUomQuantity](#sdsuomquantity) information, see [Units of Measure](#units-of-measure).
 *****
 
 ## `Get Quantity`
@@ -306,10 +306,10 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Quantities/{quantityId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+THe namspace; either default or diagnostics.
 
 `string quantityId`  
-The quantity identifier
+The quantity identifier.
 
 **Response**  
 The response includes a status code and a response body.
@@ -360,7 +360,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Quantities?skip={skip}&count
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `int skip`  
 An optional parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used.
@@ -372,7 +372,7 @@ An optional parameter representing the maximum number of SdsUomQuantity to retri
 The response includes a status code and a response body.
 
 **Response body**  
-A list of SdsUomQuantity objects
+A list of SdsUomQuantity objects.
 
 Example response body:
   
@@ -440,13 +440,13 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Quantities/{quantityId}/Unit
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string quantityId`  
-The quantity identifier
+The quantity identifier.
 
 `string uomId`  
-The unit of measure identifier
+The unit of measure identifier.
 
 **Response**  
 The response includes a status code and a response body.
@@ -484,16 +484,16 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Quantities/{quantityId}/Unit
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string quantityId`  
-The quantity identifier
+The quantity identifier.
 
 **Response**  
 The response includes a status code and a response body.
 
 **Response body**  
-A collection of SdsUom objects for the specified quantity
+A collection of SdsUom objects for the specified quantity.
 
 Example response for quantityId = "Electric Current":
 
@@ -540,16 +540,16 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Units/{uomId}
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 `string uomId`  
-The unit of measure identifier
+The unit of measure identifier.
 
 **Response**  
 The response includes a status code and a response body.
 
 **Response body**  
-The requested SdsUom
+The requested SdsUom.
 
 Example response body for uomId = "ounce":
 
@@ -581,7 +581,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Units?skip={skip}&count={cou
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``int skip``  
 An optional parameter representing the zero-based offset of the first SdsUomQuantity to retrieve. If not specified, a default value of 0 is used.
@@ -593,7 +593,7 @@ An optional parameter representing the maximum number of SdsUomQuantity to retri
 The response includes a status code and a response body.
 
 **Response body**  
-A list of SdsUom objects
+A list of SdsUom objects.
 
 Example response body:
 
