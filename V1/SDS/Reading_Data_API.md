@@ -82,10 +82,10 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/Firs
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 **Response**  
 The response includes a status code and a response body containing a serialized event.
@@ -103,10 +103,10 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/Last
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 **Response**  
 The response includes a status code and a response body containing a serialized event.
@@ -125,16 +125,16 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 ``string index``  
-The index
+The index.
 
 ``string searchMode``  
-The [SdsSearchMode](xref:sdsReadingData#sdssearchmode), the default is ``exact``
+The [SdsSearchMode](xref:sdsReadingData#sdssearchmode), the default is ``exact``.
 
 **Response**  
 The response includes a status code and a response body containing a serialized collection with one event. Depending on the request `index` and `searchMode`, it is possible to have an empty collection returned.
@@ -213,10 +213,10 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 ``string filter``  
 The filter expression (see [Filter expressions](xref:sdsFilterExpressions))
@@ -273,28 +273,28 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 ``string startIndex``  
-Index identifying the beginning of the series of events to return
+Index identifying the beginning of the series of events to return.
 
 ``int count``  
-The number of events to return
+The number of events to return.
 
 ``int skip``  
-Optional value specifying the number of events to skip at the beginning of the result
+Optional value specifying the number of events to skip at the beginning of the result.
 
 ``bool reversed``  
 Optional specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex from the stream. A reversed request will collect events before startIndex from the stream.
 
 ``SdsBoundaryType boundaryType``  
-Optional SdsBoundaryType specifies the handling of events at or near startIndex
+Optional SdsBoundaryType specifies the handling of events at or near startIndex.
 
 ``string filter``  
-Optional filter expression
+Optional filter expression.
 
 **Response**  
 The response includes a status code and a response body containing a serialized collection of events.
@@ -458,22 +458,22 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data?
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 ``string startIndex``  
-Index bounding the beginning of the series of events to return
+Index bounding the beginning of the series of events to return.
 
 ``string endIndex``  
-Index bounding the end of the series of events to return
+Index bounding the end of the series of events to return.
 
 ``int count``  
 Optional maximum number of events to return. If `count` is specified, a `continuationToken` must also be specified.
 
 ``SdsBoundaryType boundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies handling of events at or near the start and end indexes
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies handling of events at or near the start and end indexes.
 
 ``SdsBoundaryType startBoundaryType``  
 Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
@@ -685,13 +685,13 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 ``string index``  
-One or more indexes
+One or more indexes.
 
 **Response**  
 The response includes a status code and a response body containing a serialized collection of events. Depending on the specified indexes and read characteristics of the stream, it is possible to have less events returned than specified indexes. An empty collection can also be returned.
@@ -789,16 +789,16 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 ``string startIndex``  
-The index defining the beginning of the window
+The index defining the beginning of the window.
 
 ``string endIndex``  
-The index defining the end of the window  
+The index defining the end of the window.  
 
 ``int count``  
 The number of events to return. Read characteristics of the stream determine how the events are constructed.
@@ -874,25 +874,25 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 ``string startIndex``  
-The start index for the intervals
+The start index for the intervals.
 
 ``string endIndex``  
-The end index for the intervals
+The end index for the intervals.
 
 ``int count``  
-The number of intervals requested
+The number of intervals requested.
 
 ``string filter``  
-Optional filter expression
+Optional filter expression.
 
 ``string streamViewId``  
-Optional stream view identifier
+Optional stream view identifier.
 
 **Response**  
 The response includes a status code and a response body containing a serialized collection of SdsIntervals.
@@ -1048,34 +1048,34 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier
+The stream identifier.
 
 ``string startIndex``  
-The start index for the intervals
+The start index for the intervals.
 
 ``string endIndex``  
-The end index for the intervals
+The end index for the intervals.
 
 ``int intervals``  
-The number of intervals requested
+The number of intervals requested.
 
 ``string sampleBy``  
-Property or properties to use when sampling
+Property or properties to use when sampling.
 
 ``SdsBoundaryType boundaryType``  
-Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex
+Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex.
 
 ``SdsBoundaryType startBoundaryType``  
-Optional SdsBoundaryType specifies the handling of events at or near the startIndex
+Optional SdsBoundaryType specifies the handling of events at or near the startIndex.
 
 ``SdsBoundaryType endBoundaryType``  
-Optional SdsBoundaryType specifies the handling of events at or near the endIndex
+Optional SdsBoundaryType specifies the handling of events at or near the endIndex.
 
 ``string filter``  
-Optional filter expression
+Optional filter expression.
 
 **Response**  
 The response includes a status code and a response body containing a serialized collection of events.
@@ -1169,19 +1169,19 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streams``  
-Commas separated list of stream identifiers
+Commas separated list of stream identifiers.
 
 ``SdsJoinMode joinMode``  
 Type of join, that is inner, outer, and so on.
 
 ``string startIndex``  
-Index identifying the beginning of the series of events to return
+Index identifying the beginning of the series of events to return.
 
 ``string endIndex``  
-Index identifying the end of the series of events to return
+Index identifying the end of the series of events to return.
 
 **Response**  
 The response includes a status code and a response body containing multiple serialized events. See examples for specifics.
@@ -1592,7 +1592,7 @@ POST api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``SdsJoinMode joinMode``  
 Type of join, that is inner, outer, and so on.
@@ -1603,14 +1603,14 @@ Read options specific to each stream.
 **Response**  
 The response includes a status code and a response body containing multiple serialized events.
 
-Consider the following outer join request,
+Consider the following outer join request:
 
 ```text
     POST api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
         ?joinMode=outer
  ```
 
-where in the request body, different start indexes and end indexes are specified per stream,
+where in the request body, different start indexes and end indexes are specified per stream:
 
 ```json
 [  
@@ -1641,7 +1641,7 @@ where in the request body, different start indexes and end indexes are specified
 ]
 ```
 
-Only events within the stream's specified index boundaries are considered for the outer join operation
+Only events within the stream's specified index boundaries are considered for the outer join operation.
 
 **Response body**
 
