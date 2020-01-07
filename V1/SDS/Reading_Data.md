@@ -30,14 +30,14 @@ All single stream reads are HTTP GET actions. Reading data involves getting even
 
 **Parameters**  
 **string namespaceId**  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 **string streamId**  
-The stream identifier
+The stream identifier.
 
 ### Bulk reads
 
-SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:
+SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available.
 
 [Join Values](xref:sdsReadingDataApi#join-values) retrieves a collection of events across multiple streams and joins the results based on the request parameters.
 
@@ -49,7 +49,7 @@ Multi-stream reads can be HTTP GET or POST actions. The base reading URI for rea
 
 **Parameters**  
 **string namespaceId**  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ### Response format
 
@@ -69,11 +69,11 @@ Interpolation determines how a stream behaves when asked to return an event at a
 
 |Mode                       |Enumeration value |Operation |
 |---------------------------|------------------|----------|
-|Default                    |0                 |The default InterpolationMode is Continuous |
-|Continuous                 |0                 |Interpolates the data using previous and next index values |
-|StepwiseContinuousLeading  |1                 |Returns the data from the previous index  |
-|StepwiseContinuousTrailing |2                 |Returns the data from the next index |
-|Discrete                   |3                 |Returns ‘null’ |
+|Default                    |0                 |The default InterpolationMode is Continuous. |
+|Continuous                 |0                 |Interpolates the data using previous and next index values. |
+|StepwiseContinuousLeading  |1                 |Returns the data from the previous index.  |
+|StepwiseContinuousTrailing |2                 |Returns the data from the next index. |
+|Discrete                   |3                 |Returns ‘null’. |
 
 Note that ``Continuous`` cannot return events for values that cannot be interpolated, such as when the type is not numeric.
 
@@ -83,18 +83,18 @@ The table below describes how the **Continuous InterpolationMode** affects index
 
 | Type                      | Result for an index between data in a stream  | Comment |
 |---------------------------|-----------------------------------------------|---------|
-|Numeric Types              |Interpolated*                   |Rounding is done as needed for integer types |
+|Numeric Types              |Interpolated*                   |Rounding is done as needed for integer types. |
 |Time related Types         |Interpolated                    |DateTime, DateTimeOffset, TimeSpan |
-|Nullable Types             |Interpolated**                  |Limited support for nullable numeric types |
+|Nullable Types             |Interpolated**                  |Limited support for nullable numeric types. |
 |Array and List Types       |No event is returned            |         |
 |String Type                |No event is returned            |         |
 |Boolean Type               |Returns value of nearest index  |         |
-|Enumeration Types          |Returns Enum value at 0         |This may have a value for the enumeration |
+|Enumeration Types          |Returns Enum value at 0         |This may have a value for the enumeration. |
 |GUID                       |No event is returned            |         |
 |Version                    |No event is returned            |         |
 |IDictionary or IEnumerable |No event is returned            |Dictionary, Array, List, and so on. |
 
-*When extreme values are involved in an interpolation (for example
+*When extreme values are involved in an interpolation (for example,
 Decimal.MaxValue) the call might result in a BadRequest exception.
 
 \**Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.
@@ -111,19 +111,19 @@ ExtrapolationMode works with the InterpolationMode to determine how a stream res
 
 | ExtrapolationMode   | Enumeration value   | Index before data          | Index after data          |
 |---------------------|---------------------|----------------------------|---------------------------|
-| All                 | 0                   | Returns first data value   | Returns last data value   |
-| None                | 1                   | No event is returned       | No event is returned      |
-| Forward             | 2                   | No event is returned       | Returns last data value   |
-| Backward            | 3                   | Returns first data value   | No event is returned      |
+| All                 | 0                   | Returns first data value   | Returns last data value.  |
+| None                | 1                   | No event is returned       | No event is returned.     |
+| Forward             | 2                   | No event is returned       | Returns last data value.  |
+| Backward            | 3                   | Returns first data value   | No event is returned.     |
 
 **ExtrapolationMode with InterpolationMode = Discrete**  
 
-| ExtrapolationMode   | Enumeration value   | Index before data   | Index after data    |
-|---------------------|---------------------|---------------------|---------------------|
-| All                 | 0                   | No event is returned| No event is returned|
-| None                | 1                   | No event is returned| No event is returned|
-| Forward             | 2                   | No event is returned| No event is returned|
-| Backward            | 3                   | No event is returned| No event is returned|
+| ExtrapolationMode   | Enumeration value   | Index before data    | Index after data     |
+|---------------------|---------------------|----------------------|----------------------|
+| All                 | 0                   | No event is returned.| No event is returned.|
+| None                | 1                   | No event is returned.| No event is returned.|
+| Forward             | 2                   | No event is returned.| No event is returned.|
+| Backward            | 3                   | No event is returned.| No event is returned.|
 
 If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream, see [Sds Streams](xref:sdsStreams).
 
@@ -156,7 +156,7 @@ The `SdsBoundaryType` enum defines how data on the boundary of queries is handle
 | Boundary | Enumeration value | Operation |
 | -------  | ----------------- | --------- |
 | Exact    | 0                 | Results include the event at the specified index boundary if a stored event exists at that index. |
-| Inside   | 1                 | Results include only events within the index boundaries |
+| Inside   | 1                 | Results include only events within the index boundaries. |
 | Outside  | 2                 | Results include up to one event that falls immediately outside of the specified index boundary. |
 | ExactOrCalculated | 3        | Results include the event at the specified index boundary. If no stored event exists at that index, one is calculated based on the index type and interpolation and extrapolation settings. |
 
@@ -209,11 +209,11 @@ When you request data with an SdsStreamView, the read characteristics defined by
 
 SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (UOM) to stream data. If stream data has UOM information associated, SDS supports reading data with unit conversions applied. On each read data request, unit conversions are specified by a user defined collection of `SdsStreamPropertyOverride` objects in read requests. The `SdsStreamPropertyOverride` object has the following structure:
 
-| Property          | Type                 | Optionality | Description                                           |
-| ----------------- | -------------------- | ----------- | ----------------------------------------------------  |
-| SdsTypePropertyId | String               | Required    | Identifier for an SdsTypeProperty with a UOM assigned |
-| Uom               | String               | Required    | Target unit of measure                                |
-| InterpolationMode | SdsInterpolationMode | N/A         | Currently not supported in context of data reads      |
+| Property          | Type                 | Optionality | Description                                            |
+| ----------------- | -------------------- | ----------- | -----------------------------------------------------  |
+| SdsTypePropertyId | String               | Required    | Identifier for an SdsTypeProperty with a UOM assigned. |
+| Uom               | String               | Required    | Target unit of measure.                                |
+| InterpolationMode | SdsInterpolationMode | N/A         | Currently not supported in context of data reads.      |
 
 This is supported in the REST API through HTTP POST calls with a request body containing a collection of `SdsStreamPropertyOverride` objects.  
 
