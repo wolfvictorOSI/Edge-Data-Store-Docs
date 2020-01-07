@@ -26,10 +26,10 @@ api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.
 
 ## Request body format
 
