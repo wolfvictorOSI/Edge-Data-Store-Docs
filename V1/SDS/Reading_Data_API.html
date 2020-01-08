@@ -124,16 +124,16 @@ var SimpleType = function () {
 <p>Returns the first value in the stream. If no values exist in the stream, null is returned.</p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/First
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized event.</p>
 <hr>
 <h2 id="get-last-value"><code>Get Last Value</code></h2>
 <p>Returns the last value in the stream. If no values exist in the stream, null is returned.</p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/Last
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized event.</p>
 <hr>
 <h2 id="find-distinct-value"><code>Find Distinct Value</code></h2>
@@ -141,10 +141,10 @@ var SimpleType = function () {
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
     ?index={index}&amp;searchMode={searchMode}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
-<p><code>string index</code><br>The index</p>
-<p><code>string searchMode</code><br>The <a class="xref" href="Reading_Data.html#sdssearchmode">SdsSearchMode</a>, the default is <code>exact</code></p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
+<p><code>string index</code><br>The index.</p>
+<p><code>string searchMode</code><br>The <a class="xref" href="Reading_Data.html#sdssearchmode">SdsSearchMode</a>, the default is <code>exact</code>.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection with one event. Depending on the request <code>index</code> and <code>searchMode</code>, it is possible to have an empty collection returned.</p>
 <p><strong>Example</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data
@@ -191,8 +191,8 @@ SDS supports three ways of specifying which stored events to return:</p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
     ?filter={filter}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
 <p><code>string filter</code><br>The filter expression (see <a class="xref" href="Filter_Expressions.html">Filter expressions</a>)</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
 <p><strong>Example</strong>  </p>
@@ -225,14 +225,14 @@ Content-Type: application/json
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
     ?startIndex={startIndex}&amp;count={count}[&amp;skip={skip}&amp;reversed={reversed}
     &amp;boundaryType={boundaryType}&amp;filter={filter}]
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
-<p><code>string startIndex</code><br>Index identifying the beginning of the series of events to return</p>
-<p><code>int count</code><br>The number of events to return</p>
-<p><code>int skip</code><br>Optional value specifying the number of events to skip at the beginning of the result</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
+<p><code>string startIndex</code><br>Index identifying the beginning of the series of events to return.</p>
+<p><code>int count</code><br>The number of events to return.</p>
+<p><code>int skip</code><br>Optional value specifying the number of events to skip at the beginning of the result.</p>
 <p><code>bool reversed</code><br>Optional specification of the direction of the request. By default, range requests move forward from startIndex, collecting events after startIndex from the stream. A reversed request will collect events before startIndex from the stream.</p>
-<p><code>SdsBoundaryType boundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near startIndex</p>
-<p><code>string filter</code><br>Optional filter expression</p>
+<p><code>SdsBoundaryType boundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near startIndex.</p>
+<p><code>string filter</code><br>Optional filter expression.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
 <p><strong>Example</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data
@@ -343,12 +343,12 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data?
     ?startIndex={startIndex}&amp;startBoundaryType={startBoundaryType}
     &amp;endIndex={endIndex}&amp;endBoundaryType={endBoundaryType}&amp;filter={filter}&amp;count={count}
     &amp;continuationToken={continuationToken}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
-<p><code>string startIndex</code><br>Index bounding the beginning of the series of events to return</p>
-<p><code>string endIndex</code><br>Index bounding the end of the series of events to return</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
+<p><code>string startIndex</code><br>Index bounding the beginning of the series of events to return.</p>
+<p><code>string endIndex</code><br>Index bounding the end of the series of events to return.</p>
 <p><code>int count</code><br>Optional maximum number of events to return. If <code>count</code> is specified, a <code>continuationToken</code> must also be specified.</p>
-<p><code>SdsBoundaryType boundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundaryType">SdsBoundaryType</a> specifies handling of events at or near the start and end indexes</p>
+<p><code>SdsBoundaryType boundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundaryType">SdsBoundaryType</a> specifies handling of events at or near the start and end indexes.</p>
 <p><code>SdsBoundaryType startBoundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundaryType">SdsBoundaryType</a> specifies the first value in the result in relation to the start index. If <code>startBoundaryType</code> is specified, <code>endBoundaryType</code> must be specified.</p>
 <p><code>SdsBoundaryType endBoundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundaryType">SdsBoundaryType</a> specifies the last value in the result in relation to the end index. If <code>startBoundaryType</code> is specified, <code>endBoundaryType</code> must be specified.</p>
 <p><code>string filter</code><br>Optional <a class="xref" href="Filter_Expressions.html">filter expression</a></p>
@@ -493,9 +493,9 @@ SDS supports two ways of specifying which interpolated events to return:  </p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/
     Interpolated?index={index}[&amp;index={index}...]
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
-<p><code>string index</code><br>One or more indexes</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
+<p><code>string index</code><br>One or more indexes.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events. Depending on the specified indexes and read characteristics of the stream, it is possible to have less events returned than specified indexes. An empty collection can also be returned.</p>
 <p><strong>Example</strong><br>Consider a stream of type <code>Simple</code> with the default <code>InterpolationMode</code> of <code>Continuous</code> and <code>ExtrapolationMode</code> of <code>All</code>. In the following request, the specified index matches an existing stored event:</p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data/
@@ -553,10 +553,10 @@ Content-Type: application/json
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/
     Interpolated?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
-<p><code>string startIndex</code><br>The index defining the beginning of the window</p>
-<p><code>string endIndex</code><br>The index defining the end of the window  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
+<p><code>string startIndex</code><br>The index defining the beginning of the window.</p>
+<p><code>string endIndex</code><br>The index defining the end of the window.  </p>
 <p><code>int count</code><br>The number of events to return. Read characteristics of the stream determine how the events are constructed.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events. Depending on the read characteristics and input parameters, it is possible for a collection to be returned with less events than specified in the count.</p>
 <p>For a stream, named Simple, of type <code>Simple</code> for the following request:</p>
@@ -650,13 +650,13 @@ Content-Type: application/json
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/
     Summaries?startIndex={startIndex}&amp;endIndex={endIndex}&amp;count={count}&amp;filter={filter}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
-<p><code>string startIndex</code><br>The start index for the intervals</p>
-<p><code>string endIndex</code><br>The end index for the intervals</p>
-<p><code>int count</code><br>The number of intervals requested</p>
-<p><code>string filter</code><br>Optional filter expression</p>
-<p><code>string streamViewId</code><br>Optional stream view identifier</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
+<p><code>string startIndex</code><br>The start index for the intervals.</p>
+<p><code>string endIndex</code><br>The end index for the intervals.</p>
+<p><code>int count</code><br>The number of intervals requested.</p>
+<p><code>string filter</code><br>Optional filter expression.</p>
+<p><code>string streamViewId</code><br>Optional stream view identifier.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of SdsIntervals.</p>
 <p>Each SdsInterval has a start, end, and collection of summary values.</p>
 <table>
@@ -805,16 +805,16 @@ Content-Type: application/json
     Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;sampleBy={sampleBy}
     &amp;boundaryType={boundaryType}&amp;startBoundaryType={startBoundaryType}
     &amp;endBoundaryType={endBoundaryType}&amp;filter={filter}&amp;streamViewId={streamViewId}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier</p>
-<p><code>string startIndex</code><br>The start index for the intervals</p>
-<p><code>string endIndex</code><br>The end index for the intervals</p>
-<p><code>int intervals</code><br>The number of intervals requested</p>
-<p><code>string sampleBy</code><br>Property or properties to use when sampling</p>
-<p><code>SdsBoundaryType boundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex</p>
-<p><code>SdsBoundaryType startBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex</p>
-<p><code>SdsBoundaryType endBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the endIndex</p>
-<p><code>string filter</code><br>Optional filter expression</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.</p>
+<p><code>string startIndex</code><br>The start index for the intervals.</p>
+<p><code>string endIndex</code><br>The end index for the intervals.</p>
+<p><code>int intervals</code><br>The number of intervals requested.</p>
+<p><code>string sampleBy</code><br>Property or properties to use when sampling.</p>
+<p><code>SdsBoundaryType boundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex.</p>
+<p><code>SdsBoundaryType startBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex.</p>
+<p><code>SdsBoundaryType endBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the endIndex.</p>
+<p><code>string filter</code><br>Optional filter expression.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
 <p><strong>Example</strong><br>The following request returns two sample intervals between the <code>startIndex</code> and <code>endIndex</code>:</p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data/
@@ -913,11 +913,11 @@ Content-Type: application/json
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
     ?streams={streams}&amp;joinMode={joinMode}
     &amp;startIndex={startIndex}&amp;endIndex={endIndex}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streams</code><br>Commas separated list of stream identifiers</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streams</code><br>Commas separated list of stream identifiers.</p>
 <p><code>SdsJoinMode joinMode</code><br>Type of join, that is inner, outer, and so on.</p>
-<p><code>string startIndex</code><br>Index identifying the beginning of the series of events to return</p>
-<p><code>string endIndex</code><br>Index identifying the end of the series of events to return</p>
+<p><code>string startIndex</code><br>Index identifying the beginning of the series of events to return.</p>
+<p><code>string endIndex</code><br>Index identifying the end of the series of events to return.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing multiple serialized events. See examples for specifics.</p>
 <h4 id="examples">Examples</h4>
 <p>To join multiple streams, for example Simple1 and Simple2, assume that Simple1 presents the following data:</p>
@@ -1258,14 +1258,14 @@ Content-Type: application/json
 <h3 id="post-request">POST request</h3>
 <pre><code class="lang-text">POST api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
     ?joinMode={joinMode}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>SdsJoinMode joinMode</code><br>Type of join, that is inner, outer, and so on.</p>
 <p><strong>Request body</strong><br>Read options specific to each stream.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing multiple serialized events.</p>
-<p>Consider the following outer join request,</p>
+<p>Consider the following outer join request:</p>
 <pre><code class="lang-text">    POST api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
         ?joinMode=outer
-</code></pre><p>where in the request body, different start indexes and end indexes are specified per stream,</p>
+</code></pre><p>where in the request body, different start indexes and end indexes are specified per stream:</p>
 <pre><code class="lang-json">[  
     {  
         &quot;StreamId&quot;: &quot;Simple1&quot;,
@@ -1292,7 +1292,7 @@ Content-Type: application/json
         }
     }
 ]
-</code></pre><p>Only events within the stream&#39;s specified index boundaries are considered for the outer join operation</p>
+</code></pre><p>Only events within the stream&#39;s specified index boundaries are considered for the outer join operation.</p>
 <p><strong>Response body</strong></p>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json

@@ -89,14 +89,14 @@ and specified start and end indexes.</li>
 </ul>
 <p>All single stream reads are HTTP GET actions. Reading data involves getting events from streams. The base reading URI from a single stream is as follows:</p>
 <pre><code class="lang-text">  api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
-</code></pre><p><strong>Parameters</strong><br><strong>string namespaceId</strong><br>default or diagnostics</p>
-<p><strong>string streamId</strong><br>The stream identifier</p>
+</code></pre><p><strong>Parameters</strong><br><strong>string namespaceId</strong><br>The namespace; either default or diagnostics.</p>
+<p><strong>string streamId</strong><br>The stream identifier.</p>
 <h3 id="bulk-reads">Bulk reads</h3>
-<p>SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available:</p>
+<p>SDS supports reading from multiple streams in one request. The following method for reading data from multiple streams is available.</p>
 <p><a class="xref" href="Reading_Data_API.html#join-values">Join Values</a> retrieves a collection of events across multiple streams and joins the results based on the request parameters.</p>
 <p>Multi-stream reads can be HTTP GET or POST actions. The base reading URI for reading from multiple streams is the following:</p>
 <pre><code class="lang-text">  api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data
-</code></pre><p><strong>Parameters</strong><br><strong>string namespaceId</strong><br>default or diagnostics</p>
+</code></pre><p><strong>Parameters</strong><br><strong>string namespaceId</strong><br>The namespace; either default or diagnostics.</p>
 <h3 id="response-format">Response format</h3>
 <p>Supported response formats include JSON, verbose JSON, and SDS.</p>
 <ul>
@@ -120,27 +120,27 @@ and specified start and end indexes.</li>
 <tr>
 <td>Default</td>
 <td>0</td>
-<td>The default InterpolationMode is Continuous</td>
+<td>The default InterpolationMode is Continuous.</td>
 </tr>
 <tr>
 <td>Continuous</td>
 <td>0</td>
-<td>Interpolates the data using previous and next index values</td>
+<td>Interpolates the data using previous and next index values.</td>
 </tr>
 <tr>
 <td>StepwiseContinuousLeading</td>
 <td>1</td>
-<td>Returns the data from the previous index</td>
+<td>Returns the data from the previous index.</td>
 </tr>
 <tr>
 <td>StepwiseContinuousTrailing</td>
 <td>2</td>
-<td>Returns the data from the next index</td>
+<td>Returns the data from the next index.</td>
 </tr>
 <tr>
 <td>Discrete</td>
 <td>3</td>
-<td>Returns ‘null’</td>
+<td>Returns ‘null’.</td>
 </tr>
 </tbody>
 </table>
@@ -159,7 +159,7 @@ and specified start and end indexes.</li>
 <tr>
 <td>Numeric Types</td>
 <td>Interpolated*</td>
-<td>Rounding is done as needed for integer types</td>
+<td>Rounding is done as needed for integer types.</td>
 </tr>
 <tr>
 <td>Time related Types</td>
@@ -169,7 +169,7 @@ and specified start and end indexes.</li>
 <tr>
 <td>Nullable Types</td>
 <td>Interpolated**</td>
-<td>Limited support for nullable numeric types</td>
+<td>Limited support for nullable numeric types.</td>
 </tr>
 <tr>
 <td>Array and List Types</td>
@@ -189,7 +189,7 @@ and specified start and end indexes.</li>
 <tr>
 <td>Enumeration Types</td>
 <td>Returns Enum value at 0</td>
-<td>This may have a value for the enumeration</td>
+<td>This may have a value for the enumeration.</td>
 </tr>
 <tr>
 <td>GUID</td>
@@ -208,7 +208,7 @@ and specified start and end indexes.</li>
 </tr>
 </tbody>
 </table>
-<p>*When extreme values are involved in an interpolation (for example
+<p>*When extreme values are involved in an interpolation (for example,
 Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 <p>**Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.</p>
 <p>If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property, see <a href="#sdstypeproperty">SdsTypeProperty</a>. For more information on overriding the interpolation mode for a specific stream, see <a class="xref" href="SDS_Streams.html">Sds Streams</a>.</p>
@@ -230,25 +230,25 @@ Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 <td>All</td>
 <td>0</td>
 <td>Returns first data value</td>
-<td>Returns last data value</td>
+<td>Returns last data value.</td>
 </tr>
 <tr>
 <td>None</td>
 <td>1</td>
 <td>No event is returned</td>
-<td>No event is returned</td>
+<td>No event is returned.</td>
 </tr>
 <tr>
 <td>Forward</td>
 <td>2</td>
 <td>No event is returned</td>
-<td>Returns last data value</td>
+<td>Returns last data value.</td>
 </tr>
 <tr>
 <td>Backward</td>
 <td>3</td>
 <td>Returns first data value</td>
-<td>No event is returned</td>
+<td>No event is returned.</td>
 </tr>
 </tbody>
 </table>
@@ -266,26 +266,26 @@ Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 <tr>
 <td>All</td>
 <td>0</td>
-<td>No event is returned</td>
-<td>No event is returned</td>
+<td>No event is returned.</td>
+<td>No event is returned.</td>
 </tr>
 <tr>
 <td>None</td>
 <td>1</td>
-<td>No event is returned</td>
-<td>No event is returned</td>
+<td>No event is returned.</td>
+<td>No event is returned.</td>
 </tr>
 <tr>
 <td>Forward</td>
 <td>2</td>
-<td>No event is returned</td>
-<td>No event is returned</td>
+<td>No event is returned.</td>
+<td>No event is returned.</td>
 </tr>
 <tr>
 <td>Backward</td>
 <td>3</td>
-<td>No event is returned</td>
-<td>No event is returned</td>
+<td>No event is returned.</td>
+<td>No event is returned.</td>
 </tr>
 </tbody>
 </table>
@@ -320,7 +320,7 @@ Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 <tr>
 <td>Inside</td>
 <td>1</td>
-<td>Results include only events within the index boundaries</td>
+<td>Results include only events within the index boundaries.</td>
 </tr>
 <tr>
 <td>Outside</td>
@@ -408,19 +408,19 @@ Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 <td>SdsTypePropertyId</td>
 <td>String</td>
 <td>Required</td>
-<td>Identifier for an SdsTypeProperty with a UOM assigned</td>
+<td>Identifier for an SdsTypeProperty with a UOM assigned.</td>
 </tr>
 <tr>
 <td>Uom</td>
 <td>String</td>
 <td>Required</td>
-<td>Target unit of measure</td>
+<td>Target unit of measure.</td>
 </tr>
 <tr>
 <td>InterpolationMode</td>
 <td>SdsInterpolationMode</td>
 <td>N/A</td>
-<td>Currently not supported in context of data reads</td>
+<td>Currently not supported in context of data reads.</td>
 </tr>
 </tbody>
 </table>
