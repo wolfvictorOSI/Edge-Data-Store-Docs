@@ -2,7 +2,7 @@
 uid: commandLine
 ---
 
-# Command line configuration of Edge Data Store
+# EdgeCmd configuration of Edge Data Store
 
 You can configure and administer Edge Data Store on Linux and Windows by using the edgecmd command line utility. This document will be referred to as edgecmd, even though it is named edgecmd.exe on Windows and edgecmd on Linux.
 
