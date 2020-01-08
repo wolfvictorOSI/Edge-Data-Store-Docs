@@ -25,6 +25,8 @@ uid: index
     - [Docker](xref:edgeDocker)
   - [Verify installation](xref:VerifyInstallation)
   - [Uninstall Edge Data Store](xref:UninstallEdgeDataStore)
+- [EdgeCmd utility](xref:commandLine)
+  - [Install EdgeCmd utility](xref:Installedgecmd)
 - [Configuration](xref:Configuration)
   - [Configuration tools](xref:managementTools)
   - [System configuration](xref:SystemConfiguration)
