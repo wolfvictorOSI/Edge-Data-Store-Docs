@@ -8,7 +8,7 @@ Edge Data Store uses JSON configuration files in a protected directory on Window
 
 As part of making Edge Data Store as secure as possible, any passwords or secrets that you configure are stored in encrypted form (with cryptographic key material stored separately in a secure location.) If you edit the files directly, the system may not work as expected.
 
-> **Note:** You can edit any single component or facet of the system using REST, but also configure the system as a whole with a single REST call.
+**Note:** You can edit any single component or facet of the system using REST, but also configure the system as a whole with a single REST call.
 
 The system configuration includes the configuration of the following:
 
