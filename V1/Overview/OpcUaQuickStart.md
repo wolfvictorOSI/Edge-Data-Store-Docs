@@ -85,14 +85,3 @@ When you create the data source file, the OPC UA adapter auto generates the data
    ```bash
    curl -i -d "@OpcUa1Dataselection.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection
    ```
-
-* To see the streams that have been created in Edge Storage to store the data you are writing, run the following curl script:
-
-   ```bash
-   curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
-   ```
-
-* To view the data in the streams being written, refer to the SDS part of this documentation.
-
-* To egress the data to OSIsoft Cloud Services or the PI System, see the [Data egress configuration](xref:egress) part of this documentation.
-
