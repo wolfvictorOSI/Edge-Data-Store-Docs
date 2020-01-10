@@ -11,8 +11,7 @@ On a device with limited processor, memory, and slow storage, it may take some t
     ```bash
     curl http://localhost:5590/api/v1/configuration
     ```
-
-If the installation was successful, a JSON copy of the default system configuration is returned:
+2. If you receive an error, wait a few seconds and try the script again. If the installation was successful, a JSON copy of the default system configuration is returned:
 
     ```json
         {
@@ -51,5 +50,3 @@ If the installation was successful, a JSON copy of the default system configurat
         }
         }
     ```
-
-2. If you receive an error, wait a few seconds and try the script again. 
