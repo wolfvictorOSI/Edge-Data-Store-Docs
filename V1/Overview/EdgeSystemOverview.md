@@ -14,7 +14,7 @@ EDS provides the following capabilities:
 - Edge connectivity through Modbus TCP and OPC UA
 - Configurable data storage
 - Data egress to PI Web API and OCS
-- REST API - to enable custom applications for visualization and analytics on Edge Data Store on either Linux, Windows, or both in a variety of programming languages
+- REST API to enable custom applications for visualization and analytics on Edge Data Store on either Linux, Windows, or both in a variety of programming languages
 
 ## Edge Data Store architecture
 The following diagram depicts the relationships of architectural components to one another in the Edge Data Store:
