@@ -14,28 +14,28 @@ Complete the following to configure Edge Storage periodic egress for the PI Web 
 
 1. Create a JSON file containing one or more egress endpoints, based on the following example:
 
-```json
-[{
-    "Id": "PWA",
-    "ExecutionPeriod": "00:00:50",
-    "Name": null,
-    "NamespaceId": "default",
-    "Description": null,
-    "Enabled": true,
-    "Backfill": false,
-    "EgressFilter": "",
-    "StreamPrefix": "<unique stream prefix>",
-    "TypePrefix": "<unique type prefix>",
-    "Endpoint": "https://<your PI Web API Server>/piwebapi/omf/",
-    "ClientId": null,
-    "ClientSecret": null,
-    "UserName": "<username>",
-    "Password": "<password>",
-    "DebugExpiration": null,
-    "ValidateEndpointCertificate": true,
-    "TokenEndpoint": null
-}]
-```
+   ```json
+   [{
+       "Id": "PWA",
+       "ExecutionPeriod": "00:00:50",
+       "Name": null,
+       "NamespaceId": "default",
+       "Description": null,
+       "Enabled": true,
+       "Backfill": false,
+       "EgressFilter": "",
+       "StreamPrefix": "<unique stream prefix>",
+       "TypePrefix": "<unique type prefix>",
+       "Endpoint": "https://<your PI Web API Server>/piwebapi/omf/",
+       "ClientId": null,
+       "ClientSecret": null,
+       "UserName": "<username>",
+       "Password": "<password>",
+       "DebugExpiration": null,
+       "ValidateEndpointCertificate": true,
+       "TokenEndpoint": null
+   }]
+   ```
 
 2. Add the server name, username, and password of your PI Web API server into the "Endpoint" definition.  You must specify a valid user account that can write data via PI Web API using Basic authentication.  See [Data egress configuration](xref:egress) for examples.
 
