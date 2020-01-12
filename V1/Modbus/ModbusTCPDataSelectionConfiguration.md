@@ -8,8 +8,6 @@ Once a data source is configured for a Modbus TCP instance, you must configure w
 
 ## Configure Modbus TCP data selection
 
-> **Note:** You cannot modify Modbus TCP data selection configurations manually. You must use the REST endpoints to add or edit the configuration.
-
 Complete the following to configure Modbus TCP data selection:
 
 1. Using any text editor, create a file that contains a Modbus TCP data selection in JSON form. This file can be created or copied to any directory on a device with Edge Data Store installed.
