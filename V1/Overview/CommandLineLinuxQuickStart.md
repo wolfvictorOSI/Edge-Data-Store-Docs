@@ -4,9 +4,9 @@ uid: commandLineLinuxQuickStart
 
 # Command line quick start - Linux
 
-This topic provides quick start instructions for using EdgeCmd in the Linux environment. You can install EdgeCmd from the Linux command prompt. You can configure Edge Data Store with the edgecmd.exe command line tool, in addition to curl commands and REST calls. 
+This topic provides quick start instructions for using EdgeCmd in the Linux environment. You can utilize the the edgecmd.exe command line tool to configure Edge Data Store, in addition to curl commands and REST calls. 
 
-Complete the following to access edgecmd on Linux:
+You can install EdgeCmd from the Linux command prompt. Complete the following to access edgecmd on Linux:
 
 1. Open a command prompt. The utility is available to use in any directory on Linux.
 
