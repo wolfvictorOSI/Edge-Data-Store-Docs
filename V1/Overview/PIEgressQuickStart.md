@@ -12,7 +12,7 @@ The examples here use curl, a commonly available tool on both Windows and Linux,
 
 Complete the following to configure Edge Storage periodic egress for the PI Web API endpoint and credentials:
 
-1. Use the following example to create a JSON file.
+1. Create a JSON file containing one or more egress endpoints, based on the following example:
 
 ```json
 [{
