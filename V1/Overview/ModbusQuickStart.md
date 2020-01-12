@@ -42,7 +42,7 @@ When this script completes successfully (a 204 is returned by curl), your Modbus
 
 ## Configure Modbus TCP data selection
 
-Select the Modbus TCP data you want to store in Edge Data Store by configuring Modbus data selection. The following is sample JSON for 5 Modbus values.
+Select the Modbus TCP data you want to store in Edge Data Store by configuring Modbus data selection. The following is an example JSON file for 5 Modbus values.
 
 1. Modify the values as appropriate for your Modbus environment.
 
