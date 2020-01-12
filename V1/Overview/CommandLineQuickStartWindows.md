@@ -44,4 +44,3 @@ Complete the following to access edgecmd on Windows:
    C:\Users\John>
    ```
 
-   Most configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.
