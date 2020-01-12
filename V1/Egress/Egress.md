@@ -20,7 +20,7 @@ Prior to configuring egress on the Edge Data Store, see [Prepare egress destinat
 
 Complete the following procedure to create new egress endpoints:
 
-1. Using any text editor, create a file that contains one or more egress endpoints in JSON form
+1. Create a JSON file containing one or more egress endpoints.
     - For content structure, see the following [Examples](#examples). 
     - For a table of all available egress parameters, see [Parameters](#parameters).
 2. Save the file.
