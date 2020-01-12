@@ -12,7 +12,7 @@ Location on Windows:
 C:\Program Files\OSIsoft\EdgeCmd\edgecmd.exe
 ```
 
-**Note:** Specify the full path when you use it on Windows.
+**Note:** Specify the full path when you use EdgeCmd on Windows.
 
 Location on Linux:
 
@@ -20,9 +20,9 @@ Location on Linux:
  /opt/OSIsoft/EdgeCmd/edgecmd
 ```
 
-**Note:** You can access it without using the full path on Linux. 
+**Note:** You can access EdgeCmd without using the full path on Linux. 
 
-Most options that you can configure using REST, you can also configure using the edgecmd utility and command line arguments. Generally, the configuration and administrative REST interfaces are exposed through the command line. Access to reading and writing data to the Edge Data Store Storage Component, OMF Ingress, and SDS Read/Write capabilities are only available through using the REST API.
+Most configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.
 
 Example: View system configuration using edgecmd:
 
