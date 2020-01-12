@@ -4,7 +4,10 @@ uid: commandLineWindowsQuickStart
 
 # Command line quick start - Windows
 
-You can configure Edge Data Store with the edgecmd.exe command line tool, in addition to curl commands and REST calls. 
+This topic provides quick start instructions for using EdgeCmd in the Windows environment. You can utilize the the edgecmd.exe command line tool to configure Edge Data Store, in addition to curl commands and REST calls. 
+
+You can install EdgeCmd from a Windows command prompt. Complete the following to access edgecmd on Windows:
+
 
 Complete the following to access edgecmd on Windows:
 
