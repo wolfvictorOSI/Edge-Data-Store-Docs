@@ -44,7 +44,7 @@ Complete the following to configure Edge Storage periodic egress for the PI Web 
 3. Save the JSON file with the name PeriodicEgressEndpoints.json.
 4. To configure Edge Storage to send data to the PI System, run the following curl script from the same directory where you saved the JSON file. 
 
-**Note:** You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory.
+   **Note:** You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory.
 
 ```bash
 curl -i -d "@PeriodicEgressEndpoints.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
