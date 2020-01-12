@@ -8,13 +8,15 @@ You can configure Edge Data Store with the edgecmd.exe command line tool, in add
 
 Complete the following to access edgecmd on Linux:
 
-* Open a command prompt. The utility is available to use in any directory on Linux.
+1. Open a command prompt. The utility is available to use in any directory on Linux.
 
    ```bash
    debian@beaglebone:~$ edgecmd help
    ```
    
-   The edgecmd utility launches, displaying the following introductory material and a command prompt at the end:
+ 2. Type help and press Enter.
+ 
+ The edgecmd utility launches, displaying the following introductory material and a command prompt at the end:
    
    ```
    ************************************************************************************************************************
@@ -36,7 +38,3 @@ Complete the following to access edgecmd on Linux:
    Example of configuring System Logging level: ./edgecmd Configuration System logging LogLevel=Warning
    debian@beaglebone:~$
    ```
-
-* Most configurations options that can be done using REST can also be done using the edgecmd utility and command line arguments.
-* Generally the configuration and administrative REST interfaces are exposed through the command line. 
-* Access to reading and writing data to the Edge Data Store Storage Component - OMF Ingress and SDS Read/Write capabilities are only available using the REST API.
