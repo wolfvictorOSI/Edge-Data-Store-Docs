@@ -22,7 +22,7 @@ Complete the following to configure Modbus TCP data selection:
     curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection"
     ```
 
-To see the streams that have been created in Edge Storage to store the data you are writing, run the following curl script:
+To see the streams that have been created in EDS storage to store the data you are writing, run the following curl script:
 
    ```bash
    curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
