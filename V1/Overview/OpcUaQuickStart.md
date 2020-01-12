@@ -30,7 +30,9 @@ The following diagram depicts the data flow of a single OPC UA EDS adapter:
 
 2. Enter the correct IP address and port for your OPC UA data source.
 3. Save the file with the name OpcUa1Datasource.json.
-4. Run the following curl script from the same directory where the file is located. You should run the script on the same computer where the Edge Data Store is installed:
+4. Run the following curl script from the same directory where the file is located. 
+
+**Note:** You should run the script on the same computer where the Edge Data Store is installed.
 
 ```bash
 curl -i -d "@OpcUa1Datasource.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Datasource
