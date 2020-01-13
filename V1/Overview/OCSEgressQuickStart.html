@@ -72,9 +72,9 @@
 <h1 id="ocs-egress-quick-start">OCS egress quick start</h1>
 
 <p>This topic provides quick start instructions for getting data stored in the Edge Data Store into OCS. You can accomplish this by using the OCS OMF endpoint which is configured for OCS authentication.</p>
-<p>The examples here use curl, a commonly available tool on both Windows and Linux, and command line commands. You can use the same operations with any programming language or tool that supports making REST calls. You can also accomplish data retrieval steps (GET commands) using a browser, if available on your device.</p>
 <h2 id="create-a-periodic-egress-configuration">Create a periodic egress configuration</h2>
-<p>The following is an example JSON file to configure Edge Storage periodic egress for the Osisoft Cloud Services (OCS) endpoint and credentials:</p>
+<ol>
+<li><p>Create a JSON file containing one or more egress endpoints, based on the following example:</p>
 <pre><code class="lang-json">[{
     &quot;Id&quot;: &quot;OCS&quot;,
     &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
@@ -95,8 +95,9 @@
     &quot;ValidateEndpointCertificate&quot;: true,
     &quot;TokenEndpoint&quot;: null
 }]
-</code></pre><ol>
-<li>Type the URL of your OCS OMF endpoint into the &quot;Endpoint&quot;: value in the preceding JSON file.</li>
+</code></pre></li>
+<li><p>Type the URL of your OCS OMF endpoint into the &quot;Endpoint&quot;: value in the preceding JSON file.</p>
+</li>
 <li><p>Type a ClientId and ClientSecret that can write data to your OCS tenant and namespace in the &quot;ClientId&quot;: and &quot;ClientSecret&quot;: values in the preceding JSON file.</p>
 <p> <strong>Note:</strong> If required, use the StreamPrefix and TypePrefix to ensure uniqueness on the destination system. If a StreamPrefix is specified, it is used to create a unique stream id on OCS. This configuration is set up to send all stream data to OCS. If you want to only send specific streams, edit the EgressFilter value. For examples of more advanced scenarios, see <a class="xref" href="../Egress/Egress.html">Data egress configuration</a>.</p>
 </li>
@@ -104,9 +105,9 @@
 </li>
 <li><p>Run the following curl script to configure the Edge Storage component to send data to OCS. Run the script from the same directory where the file exists on the device with Edge Data Store installed. You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@PeriodicEgressEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
-</code></pre></li>
+</code></pre><p>When this command completes successfully, data will start being egressed to OCS.</p>
+</li>
 </ol>
-<p>When this command completes successfully, data will start being egressed to OCS.</p>
 </article>
           </div>
           

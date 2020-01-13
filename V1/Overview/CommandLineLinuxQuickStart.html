@@ -71,12 +71,15 @@
             <article class="content wrap" id="_content" data-uid="commandLineLinuxQuickStart">
 <h1 id="command-line-quick-start---linux">Command line quick start - Linux</h1>
 
-<p>You can configure Edge Data Store with the edgecmd.exe command line tool, in addition to curl commands and REST calls. </p>
-<p>Complete the following to access edgecmd on Linux:</p>
-<ul>
+<p>This topic provides quick start instructions for using EdgeCmd in the Linux environment. You can utilize the edgecmd.exe command line tool to configure Edge Data Store, in addition to curl commands and REST calls. </p>
+<p>You can install EdgeCmd from the Linux command prompt. Complete the following to access edgecmd on Linux:</p>
+<ol>
 <li><p>Open a command prompt. The utility is available to use in any directory on Linux.</p>
 <pre><code class="lang-bash">debian@beaglebone:~$ edgecmd help
-</code></pre><p> The edgecmd utility launches, displaying the following introductory material and a command prompt at the end:</p>
+</code></pre><ol>
+<li>Type edgecmd help and press Enter.</li>
+</ol>
+<p>The edgecmd utility launches, displaying the following introductory material and a command prompt at the end:</p>
 <pre><code>************************************************************************************************************************
   Welcome to OSIsoft Edge Data Store configuration utility. Utility version: 1.0.0.148
 
@@ -96,11 +99,7 @@ Example of getting System help output: ./edgecmd Help System
 Example of configuring System Logging level: ./edgecmd Configuration System logging LogLevel=Warning
 debian@beaglebone:~$
 </code></pre></li>
-<li><p>Most configurations options that can be done using REST can also be done using the edgecmd utility and command line arguments.</p>
-</li>
-<li>Generally the configuration and administrative REST interfaces are exposed through the command line. </li>
-<li>Access to reading and writing data to the Edge Data Store Storage Component - OMF Ingress and SDS Read/Write capabilities are only available using the REST API.</li>
-</ul>
+</ol>
 </article>
           </div>
           

@@ -71,8 +71,7 @@
             <article class="content wrap" id="_content" data-uid="opcUaQuickStart">
 <h1 id="opc-ua-eds-adapter-quick-start">OPC UA EDS adapter quick start</h1>
 
-<p>This topic provides quick start instructions for setting up the OPC UA EDS adapter. You can add a single OPC UA EDS adapter during Edge Data Store installation. If you want multiple OPC UA EDS adapters, see <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store Configuration</a> for adding a new component to Edge Data Store. </p>
-<p>The examples here use curl, a commonly available tool on both Windows and Linux, and command line commands. You can use the same operations with any programming language or tool that supports making REST calls. You can also accomplish data retrieval steps (GET commands) using a browser, if available on your device.</p>
+<p>This topic provides quick start instructions for setting up an EDS OPC UA adapter. You can add a single EDS OPC UA adapter during <a class="xref" href="../Installation/Install%20Edge%20Data%20Store.html">Edge Data Store installation</a>.  </p>
 <p>The following diagram depicts the data flow of a single OPC UA EDS adapter:</p>
 <p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOpcUA.jpg" alt="EDS Opc Ua" title="EDS Opc Ua"></p>
 <h2 id="configure-an-opc-ua-data-source">Configure an OPC UA data source</h2>
@@ -91,8 +90,9 @@
 <li><p>Enter the correct IP address and port for your OPC UA data source.</p>
 </li>
 <li>Save the file with the name OpcUa1Datasource.json.</li>
-<li>Run the following curl script from the same directory where the file is located. You should run the script on the same computer where the Edge Data Store is installed:</li>
+<li>Run the following curl script from the same directory where the file is located. </li>
 </ol>
+<p><strong>Note:</strong> You should run the script on the same computer where the Edge Data Store is installed.</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OpcUa1Datasource.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Datasource
 </code></pre><p>When the command completes successfully (a 204 is returned by curl), your OPC UA data source has been created. If you receive a 400 error, check the data source JSON file for errors. If you receive a 404 or 500 error, check to make sure Edge Data Store is running on your computer.</p>
 <h2 id="configure-opc-ua-data-selection">Configure OPC UA data selection</h2>
@@ -137,15 +137,6 @@
 <pre><code class="lang-bash">curl -i -d &quot;@OpcUa1Dataselection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection
 </code></pre></li>
 </ol>
-<ul>
-<li><p>To see the streams that have been created in Edge Storage to store the data you are writing, run the following curl script:</p>
-<pre><code class="lang-bash">curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
-</code></pre></li>
-<li><p>To view the data in the streams being written, refer to the SDS part of this documentation.</p>
-</li>
-<li><p>To egress the data to OSIsoft Cloud Services or the PI System, see the <a class="xref" href="../Egress/Egress.html">Data egress configuration</a> part of this documentation.</p>
-</li>
-</ul>
 </article>
           </div>
           

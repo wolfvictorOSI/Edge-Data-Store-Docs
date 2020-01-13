@@ -71,8 +71,7 @@
             <article class="content wrap" id="_content" data-uid="omfQuickStart">
 <h1 id="omf-quick-start">OMF quick start</h1>
 
-<p>This topic provides quick start instructions for getting data into the Edge Storage component using the OSisoft Message Format (OMF), and then retrieving that data using the Sequential Data Store (SDS) API. Both OMF data ingress and SDS data retrieval are accomplished using REST APIs. This topic assumes the Edge Data Store has been installed, and is accessible through a REST API using the default installed port (5590). </p>
-<p>The examples here use curl, a commonly available tool on both Windows and Linux, and command line commands. You can use the same operations with any programming language or tool that supports making REST calls. You can also accomplish data retrieval steps (GET commands) using a browser, if available on your device.</p>
+<p>This topic provides quick start instructions for getting data into the Edge Storage component using the OSisoft Message Format (OMF), and then retrieving that data using the Sequential Data Store (SDS) API. Both OMF data ingress and SDS data retrieval are accomplished using REST APIs.  </p>
 <h2 id="create-an-omf-type">Create an OMF type</h2>
 <p>The first step in OMF data ingress is to create an OMF type that describes the format of the data to be stored in a container. In this example, the data to be written is a timestamp and a numeric value.</p>
 <ol>
@@ -109,17 +108,16 @@
     &quot;id&quot;: &quot;MyCustomContainer&quot;,
     &quot;typeid&quot;: &quot;MyCustomType&quot;
 }]
-</code></pre></li>
-</ol>
-<p>This container references the OMF type that was created earlier, and an error will occur if the type does not exist when the container is created. </p>
-<ol>
-<li>To create the OMF container in the Edge Storage, store the JSON file with the name OmfCreateContainer.json on the local device.</li>
+</code></pre><p>This container references the OMF type that was created earlier, and an error will occur if the type does not exist when the container is created. </p>
+</li>
+<li><p>To create the OMF container in the Edge Storage, store the JSON file with the name OmfCreateContainer.json on the local device.</p>
+</li>
 <li>To create the SDS stream to store data defined by the type, run the following curl script:</li>
 </ol>
 <pre><code class="lang-bash">curl -i -d &quot;@OmfCreateContainer.json&quot; -H &quot;Content-Type: application/json&quot; -H &quot;producertoken: x &quot; -H &quot;omfversion: 1.1&quot; -H &quot;action: create&quot; -H &quot;messageformat: json&quot; -H &quot;messagetype: container&quot; -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
 </code></pre><h2 id="write-data-events-to-the-omf-container">Write data events to the OMF container</h2>
 <ol>
-<li><p>Create an OMF JSON file as in the following example:</p>
+<li><p>Create an OMF JSON file to define data events to be stored in the SDS Stream created in the previous steps. For best performance, you should batch OMF values together, as in the following example: </p>
 <pre><code class="lang-json">[{
     &quot;containerid&quot;: &quot;MyCustomContainer&quot;,
     &quot;values&quot;: [{
@@ -133,27 +131,33 @@
     ]
 }]
 </code></pre></li>
-</ol>
-<p>The preceding example includes two data events that will be stored in the SDS Stream created in the previous steps. For the best performance, batch OMF values when writing them. </p>
-<ol>
-<li>To write the data in the Edge Storage, store the JSON file with the name OmfCreateDataEvents.json on the local device.</li>
-<li><p>To write values to the SDS stream, run the following curl script:</p>
+<li><p>To write the data in the Edge Storage, store the JSON file with the name OmfCreateDataEvents.json on the local device.</p>
+</li>
+<li><p>To write data values to the SDS stream, run the following curl script:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OmfCreateDataEvents.json&quot; -H &quot;Content-Type: application/json&quot; -H &quot;producertoken: x &quot; -H &quot;omfversion: 1.1&quot; -H &quot;action: create&quot; -H &quot;messageformat: json&quot; -H &quot;messagetype: data&quot; -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
 </code></pre></li>
 </ol>
-<p>In this example, two values are written to the SDS stream.</p>
 <h2 id="read-last-data-written-using-sds">Read Last Data written using SDS</h2>
-<p>Use the SDS REST API to read back the data written to the server. Run the following example curl script to read the last value entered:</p>
+<p>Complete the following to use the SDS REST API to read back the data written to the server. </p>
+<ol>
+<li><p>Run the following example curl script to read the last value entered:</p>
 <pre><code class="lang-bash">curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data/Last
-</code></pre><p>The following GET command returns the last value written:</p>
+</code></pre></li>
+<li><p>Run the following GET command to return the last value written:</p>
 <pre><code class="lang-json">{&quot;Time&quot;:&quot;2017-11-23T18:00:00Z&quot;,&quot;Measurement&quot;:60.0}
-</code></pre><h2 id="read-a-range-of-data-events-written-using-sds">Read a range of data events written using SDS</h2>
-<p>Use the SDS REST API to read back the data written to the server. The following example curl script reads back a time range of values:</p>
+</code></pre></li>
+</ol>
+<h2 id="read-a-range-of-data-events-written-using-sds">Read a range of data events written using SDS</h2>
+<p>You can use the SDS REST API to read back the data written to the server. </p>
+<ol>
+<li><p>Run the following example curl script to read back a time range of values:</p>
 <pre><code class="lang-bash">curl &quot;http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data?startIndex=2017-07-08T13:00:00Z&amp;count=100&quot;
-</code></pre><p>The following command returns up to 100 values after the startIndex specified:</p>
+</code></pre></li>
+<li><p>Run the following command to return up to 100 values after the startIndex specified:</p>
 <pre><code class="lang-json">[{&quot;Time&quot;:&quot;2017-11-23T17:00:00Z&quot;,&quot;Measurement&quot;:50.0},{&quot;Time&quot;:&quot;2017-11-23T18:00:00Z&quot;,&quot;Measurement&quot;:60.0}]
-</code></pre><p>Both values that were entered are returned. This command returns up to 100 values after the specified timestamp.</p>
-<p>For more information on SDS APIs see the <a class="xref" href="SDSQuickStart.html">SDS</a> section of this documentation.</p>
+</code></pre></li>
+</ol>
+<p>Both values that were entered are returned. This command returns up to 100 values after the specified timestamp.</p>
 </article>
           </div>
           

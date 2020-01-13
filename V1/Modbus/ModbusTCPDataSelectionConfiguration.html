@@ -71,10 +71,8 @@
             <article class="content wrap" id="_content" data-uid="ModbusTCPDataSelectionConfiguration">
 <h1 id="data-selection-configuration">Data selection configuration</h1>
 
-<p>Once a data source is configured for a Modbus TCP instance, you must configure which data is to be collected from the Modbus TCP slave device.</p>
+<p>Once a data source is configured for a Modbus TCP instance, you must configure which data is to be collected from the designated source  device.</p>
 <h2 id="configure-modbus-tcp-data-selection">Configure Modbus TCP data selection</h2>
-<blockquote><p><strong>Note:</strong> You cannot modify Modbus TCP data selection configurations manually. You must use the REST endpoints to add or edit the configuration.</p>
-</blockquote>
 <p>Complete the following to configure Modbus TCP data selection:</p>
 <ol>
 <li>Using any text editor, create a file that contains a Modbus TCP data selection in JSON form. This file can be created or copied to any directory on a device with Edge Data Store installed.<ul>
@@ -88,7 +86,9 @@
 <pre><code class="lang-bash">curl -v -d &quot;@DataSelection.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection&quot;
 </code></pre></li>
 </ol>
-<h2 id="modbus-tcp-data-selection-schema">Modbus TCP data selection schema</h2>
+<p>To see the streams that have been created in EDS storage to store the data you are writing, run the following curl script:</p>
+<pre><code class="lang-bash">curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
+</code></pre><h2 id="modbus-tcp-data-selection-schema">Modbus TCP data selection schema</h2>
 <p>The following table describes the basic behavior of the <em>Modbus_DataSelection_schema.json</em> file.</p>
 <table>
 <thead>
