@@ -1,0 +1,24 @@
+- name: Overview
+  href: Design/toc.yml
+  topicHref: Overview/EdgeSystemOverview.md
+- name: Quick start guides
+  href: Overview/toc.yml
+  topicHref: Overview/Quick start guides.md
+- name: Installation
+  href: Installation/toc.yml
+  topicHref: Installation/InstallationOverview.md
+- name: EdgeCmd utility
+  href: CommandLine/toc.yml
+  topicHref: CommandLine/CommandLine.md
+- name: Configuration
+  href: Configuration/toc.yml
+  topicHref: Configuration/Configuration.md
+- name: Administration
+  href: Administration/toc.yml
+  topicHref: Administration/Administration.md
+- name: Troubleshoot Edge Data Store
+  href: Troubleshooting/toc.yml
+  topicHref: Troubleshooting/Troubleshooting.md
+- name: Reference
+  href: Reference/toc.yml
+  topicHref: Reference/Reference.md
