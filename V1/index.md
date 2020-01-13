@@ -28,7 +28,7 @@ uid: index
 - [EdgeCmd utility](xref:commandLine)
   - [Install EdgeCmd utility](xref:Installedgecmd)
 - [Configuration](xref:Configuration)
-  - [Configuration tools](xref:managementTools)
+  - [Configuration tools](xref:ConfigurationTools)
   - [System configuration](xref:SystemConfiguration)
     - [System components configuration](xref:SystemComponentsConfiguration)
     - [System port configuration](xref:SystemPortConfiguration)
