@@ -56,11 +56,11 @@ Complete the following steps to create an SDS stream.
 1. Create a JSON file using the example below:
 
    ```json
-{
-    "Id": "Simple",
-    "Name": "Simple",
-    "TypeId": "Simple"
-}
+   {
+       "Id": "Simple",
+       "Name": "Simple",
+       "TypeId": "Simple"
+   }
    ```
 
    **Note:** This stream references the type you created earlier.  An error will occur if the type does not exist when the stream is created. As with an SDS type, you only need to create a stream once before sending data events. Resending the same definition repeatedly does not cause an error.
@@ -81,14 +81,14 @@ After you have created a type and container, you can write data using SDS. Compl
 1. Create a JSON file using the example below:
 
    ```json
-[{
-    "Time": "2017-11-23T17:00:00Z",
-    "Measurement": 50.0
-},
-{
-    "Time": "2017-11-23T18:00:00Z",
-    "Measurement": 60.0
-}]
+   [{
+       "Time": "2017-11-23T17:00:00Z",
+       "Measurement": 50.0
+   },
+   {
+       "Time": "2017-11-23T18:00:00Z",
+       "Measurement": 60.0
+   }]
    ```
 
    **Note:** This example includes two data events that will be stored in the SDS Stream you created in the previous steps. For optimal performance, you should batch SDS values when writing them.
