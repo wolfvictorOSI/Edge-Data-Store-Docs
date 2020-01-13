@@ -1,8 +1,8 @@
 - name: System requirements
-  href: SystemRequirementsToc.yml
+  href: ../LinuxWindows/toc.yml
   topicHref: System Requirements.md
 - name: Install Edge Data Store
-  href: InstallEdgeDataStoreToc.yml
+  href: ../Docker/toc.yml
   topicHref: Install Edge Data Store.md
 - name: Verify installation
   href: Verify installation.md
