@@ -1,0 +1,10 @@
+- name: System requirements
+  href: SystemRequirementsToc.yml
+  topicHref: System Requirements.md
+- name: Install Edge Data Store
+  href: InstallEdgeDataStoreToc.yml
+  topicHref: Install Edge Data Store.md
+- name: Verify installation
+  href: Verify installation.md
+- name: Uninstall Edge Data Store
+  href: Uninstall Edge Data Store.md
