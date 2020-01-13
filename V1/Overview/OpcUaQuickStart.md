@@ -6,8 +6,6 @@ uid: opcUaQuickStart
 
 This topic provides quick start instructions for setting up an EDS OPC UA adapter. You can add a single EDS OPC UA adapter during [Edge Data Store installation](xref:InstallEdgeDataStore).  
 
-The examples here use curl, a commonly available tool on both Windows and Linux, and command line commands. You can use the same operations with any programming language or tool that supports making REST calls. You can also accomplish data retrieval steps (GET commands) using a browser, if available on your device.
-
 The following diagram depicts the data flow of a single OPC UA EDS adapter:
 
 ![EDS Opc Ua](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOpcUA.jpg "EDS Opc Ua")
