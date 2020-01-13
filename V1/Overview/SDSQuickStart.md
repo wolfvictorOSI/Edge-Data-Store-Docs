@@ -4,7 +4,7 @@ uid: sdsQuickStart
 
 # SDS quick start
 
-This topic provides quick start instructions to get data into the EDS storage component using the Sequential Data Store (SDS) REST API. 
+This topic provides quick start instructions to get data into the EDS storage component using the Sequential Data Store (SDS) REST API. SDS is the same technology used in OCS for storing data, so the usage of the REST APIs is very similar to OCS for reading and writing data. All data from all sources on Edge Data Store (Modbus TCP, OPC UA, OMF, SDS) can be read using the SDS REST APIs on the local device, in the default tenant and the default namespace.  
 
 ## Create an SDS type
 
