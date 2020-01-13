@@ -4,11 +4,7 @@ uid: sdsQuickStart
 
 # SDS quick start
 
-This topic provides quick start instructions to get data into the Edge Storage component using the Sequential Data Store (SDS) REST API. 
-
-Prerequisites:
-  * Edge Data Store installed
-  * Edge Data Store accessible through a REST API using the default installed port (5590)
+This topic provides quick start instructions to get data into the EDS storage component using the Sequential Data Store (SDS) REST API. 
 
 ## Create an SDS type
 
