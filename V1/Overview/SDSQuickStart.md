@@ -68,9 +68,8 @@ Complete the following steps to create an SDS stream.
 3. Run the following curl script:
 
    ```bash
-curl -i -d "@SDSCreateStream.json" -H "Content-Type: application/json"  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple
-
-   ```
+curl -i -d "@SDSCreateStream.json" -H "Content-Type: application/json"  -X POSThttp://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple
+```
 
    When this script completes successfully, an SDS stream is created on the server to store data defined by the specified type.
 
