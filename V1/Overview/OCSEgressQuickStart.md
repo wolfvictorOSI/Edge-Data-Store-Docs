@@ -6,8 +6,6 @@ uid: ocsEgressQuickStart
 
 This topic provides quick start instructions for getting data stored in the Edge Data Store into OCS. You can accomplish this by using the OCS OMF endpoint which is configured for OCS authentication.
 
-The examples here use curl, a commonly available tool on both Windows and Linux, and command line commands. You can use the same operations with any programming language or tool that supports making REST calls. You can also accomplish data retrieval steps (GET commands) using a browser, if available on your device.
-
 ## Create a periodic egress configuration
 
 1. Create a JSON file containing one or more egress endpoints, based on the following example:
