@@ -96,7 +96,7 @@ After you have created a type and container, you can write data using SDS. Compl
 3. Run the following curl script:
 
    ```bash
-curl -i -d "@SDSWriteData.json" -H "Content-Type: application/json"  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple/Data
+   curl -i -d "@SDSWriteData.json" -H "Content-Type: application/json"  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple/Data
    ```
 
    When this script completes successfully, two values are written to the SDS stream.
