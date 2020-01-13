@@ -1,0 +1,11 @@
+- name: Supported features
+  href: SupportedFeaturesOPCUA.md
+- name: Principles of operation
+  href: PrinciplesOfOperationOPCUA.md
+- name: Data source configuration
+  href: OPCUADataSourceConfiguration.md
+- name: Data selection configuration
+  href: DataSelectionConfigurationToc.yml
+  topicHref: OPCUADataSelectionConfiguration.md
+- name: Adapter security
+  href: OPCUAAdapterSecurityConfiguration.md
