@@ -39,7 +39,6 @@ uid: index
       - [Principles of operation](xref:PrinciplesOfOperationOPCUA.md)
       - [Data source configuration](xref:OPCUADataSourceConfiguration)
       - [Data selection configuration](xref:OPCUADataSelectionConfiguration)
-        - [Generate template OPC UA data selection configuration file](xref:opcUaDataSelection)
       - [Adapter security](xref:OPCUAAdapterSecurityConfiguration)
     - [Modbus TCP EDS adapter](xref:modbusOverview)
       - [Supported features](xref:SupportedFeaturesModbus)
