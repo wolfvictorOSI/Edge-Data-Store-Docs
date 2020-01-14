@@ -2,7 +2,7 @@
 uid: EdgeDataStoreOverview
 ---
 
-# Overview
+# Edge Data Store
 
 Edge Data Store (EDS) is an embedded data server that runs on Linux and Windows. EDS provides a lightweight data collection and storage application designed to enable the capturing of data for historical storage and analysis at the edge of networks. A storage component based on sequential data storage technology is provided. You can configure and administer EDS through REST programming, configuration, administrative interfaces, and the EdgeCmd command line tool. EDS complements existing OSIsoft products, and is designed for small devices. You can install and run it on 64-bit Intel/AMD compatible and 32-bit ARM v7/v8 compatible chips. 
 
