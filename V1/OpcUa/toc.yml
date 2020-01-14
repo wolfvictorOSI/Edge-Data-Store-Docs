@@ -5,7 +5,6 @@
 - name: Data source configuration
   href: OPCUADataSourceConfiguration.md
 - name: Data selection configuration
-  href: DataSelectionConfigurationToc.yml
-  topicHref: OPCUADataSelectionConfiguration.md
+  href: OPCUADataSelectionConfiguration.md 
 - name: Adapter security
   href: OPCUAAdapterSecurityConfiguration.md
