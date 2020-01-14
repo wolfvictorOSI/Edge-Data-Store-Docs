@@ -73,6 +73,9 @@ references:
 - uid: installationOverview
   name: Installation
   href: V1/Installation/InstallationOverview.html
+- uid: Installedgecmd
+  name: Install the EdgeCmd utility
+  href: V1/CommandLine/Install%20EdgeCmd%20utility.html
 - uid: InstallEdgeDataStore
   name: Install Edge Data Store
   href: V1/Installation/Install%20Edge%20Data%20Store.html
@@ -103,9 +106,6 @@ references:
 - uid: modbusQuickStart
   name: Modbus TCP EDS adapter quick start
   href: V1/Overview/ModbusQuickStart.html
-- uid: ModbusTCPAdapterSecurity
-  name: Adapter security
-  href: V1/Modbus/ModbusTCPAdapterSecurity.html
 - uid: ModbusTCPDataSelectionConfiguration
   name: Data selection configuration
   href: V1/Modbus/ModbusTCPDataSelectionConfiguration.html
