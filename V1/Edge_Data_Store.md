@@ -1,5 +1,5 @@
 ---
-uid: EdgeDataStoreOverview
+uid: EdgeDataStore
 ---
 
 # Edge Data Store
