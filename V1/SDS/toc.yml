@@ -7,10 +7,10 @@
 - name: Indexes
   href: indexes.md
 - name: Writing data
-  href: WritingDataToc.yml
+  href: Writing data/toc.yml
   topicHref: Writing_Data.md
 - name: Reading data
-  href: ReadingDataToc.yml
+  href: Reading data/toc.yml
   topicHref: Reading_Data.md
 - name: Units of measure
   href: Units_of_Measure.md
