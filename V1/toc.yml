@@ -1,8 +1,8 @@
 - name: Overview
-  href: Design/toc.yml
+  href: Overview/toc.yml
   topicHref: Overview/EdgeSystemOverview.md
 - name: Quick start guides
-  href: Overview/toc.yml
+  href: Overview/Quick start guides/toc.yml
   topicHref: Overview/Quick start guides.md
 - name: Installation
   href: Installation/toc.yml
