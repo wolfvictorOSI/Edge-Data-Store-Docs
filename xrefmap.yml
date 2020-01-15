@@ -31,6 +31,9 @@ references:
 - uid: EdgecmdCommands
   name: Edgecmd commands
   href: V1/Reference/Edgecmd%20commands.html
+- uid: EdgeDataStore
+  name: Edge Data Store
+  href: V1/Edge_Data_Store.html
 - uid: EdgeDataStoreAdministration
   name: Edge Data Store administration
   href: V1/Administration/Administration.html
@@ -44,7 +47,7 @@ references:
   name: Edge Data Store health
   href: V1/Health/Health.html
 - uid: EdgeDataStoreOverview
-  name: Overview
+  name: Edge Data Store
   href: V1/Overview/EdgeSystemOverview.html
 - uid: edgeDocker
   name: Docker
