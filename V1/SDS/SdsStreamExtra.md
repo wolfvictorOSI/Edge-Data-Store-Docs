@@ -23,7 +23,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Metadata
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
 The stream identifier  
@@ -62,13 +62,13 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Metadata/
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 ``string key``  
-The key specifying the metadata value of interest  
+The key specifying the metadata value of interest. 
 
 **Response**  
 The response includes a status code and a response body.
@@ -87,7 +87,7 @@ Content-Type: application/json
 ```
 
 **Security**  
-Allowed for administrator and user accounts
+Allowed for administrator and user accounts.
 *****
 
 ``Update stream metadata``
@@ -103,16 +103,16 @@ PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Metadata
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 **Response**  
 The response includes a status code.
 
 **Security**  
-Allowed for administrator accounts
+Allowed for administrator accounts.
 *****
 
 ``Delete stream metadata``
@@ -128,16 +128,16 @@ DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Metada
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 **Response**  
 The response includes a status code.
 
 **Security**  
-Allowed for administrator accounts
+Allowed for administrator accounts.
 *****
 
 SdsStream Tags API
@@ -156,10 +156,10 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 **Response**  
 The response includes a status code and a response body.
@@ -179,7 +179,7 @@ Content-Type: application/json
 ```
 
 **Security**  
-Allowed for administrator and user accounts
+Allowed for administrator and user accounts.
 *****
 
 ``Update stream tags``
@@ -195,10 +195,10 @@ PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 The request content is the serialized list of tags.
 
@@ -222,10 +222,10 @@ DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Tags
 
 **Parameters**  
 ``string namespaceId``  
-default or diagnostics
+The namespace; either default or diagnostics.
 
 ``string streamId``  
-The stream identifier  
+The stream identifier.  
 
 **Response**  
 The response includes a status code.
