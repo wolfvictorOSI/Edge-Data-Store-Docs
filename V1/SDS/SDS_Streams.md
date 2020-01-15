@@ -81,7 +81,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}
 
 **Parameters**  
 ``string namespaceId``  
-THe namespace; either default or diagnostics.
+The namespace; either default or diagnostics.
 
 `string streamId`  
 The stream identifier.
