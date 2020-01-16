@@ -84,7 +84,7 @@
 <p>Returns the metadata dictionary for the specified stream.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Metadata
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>string streamId</code><br>The stream identifier  </p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The metadata for the specified SdsStream.</p>
@@ -101,9 +101,9 @@ Content-Type: application/json
 <p>Returns the value for the specified key in the metadata dictionary of the specified stream.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Metadata/{key}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
-<p><code>string key</code><br>The key specifying the metadata value of interest  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
+<p><code>string key</code><br>The key specifying the metadata value of interest. </p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The metadata for the specified SdsStream.</p>
 <p><strong>Sample response body</strong> </p>
@@ -112,33 +112,33 @@ Content-Type: application/json
 {
   &quot;a metadata value”
 }
-</code></pre><p><strong>Security</strong><br>Allowed for administrator and user accounts</p>
+</code></pre><p><strong>Security</strong><br>Allowed for administrator and user accounts.</p>
 <hr>
 <h2 id="update-stream-metadata"><code>Update stream metadata</code></h2>
 <p>Replaces the metadata for the specified stream with the metadata in the request body. Overwrites any existing metadata; does not merge.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Metadata
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>Security</strong><br>Allowed for administrator accounts</p>
+<p><strong>Security</strong><br>Allowed for administrator accounts.</p>
 <hr>
 <h2 id="delete-stream-metadata"><code>Delete stream metadata</code></h2>
 <p>Deletes the metadata for the specified stream.  </p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Metadata
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>Security</strong><br>Allowed for administrator accounts</p>
+<p><strong>Security</strong><br>Allowed for administrator accounts.</p>
 <hr>
 <h2 id="sdsstream-tags-api">SdsStream Tags API</h2>
 <h2 id="get-stream-tags"><code>Get stream tags</code></h2>
 <p>Returns the tag list for the specified stream.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Tags
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
 <p><strong>Response</strong><br>The response includes a status code and a response body.</p>
 <p><strong>Response body</strong><br>The tags for the specified SdsStream.</p>
 <p><strong>Sample response body</strong></p>
@@ -148,14 +148,14 @@ Content-Type: application/json
   &quot;a tag&quot;,
   &quot;another tag&quot;
 ]
-</code></pre><p><strong>Security</strong><br>Allowed for administrator and user accounts</p>
+</code></pre><p><strong>Security</strong><br>Allowed for administrator and user accounts.</p>
 <hr>
 <h2 id="update-stream-tags"><code>Update stream tags</code></h2>
 <p>Replaces the tag list for the specified stream with the tags listed in the request body. Overwrites any existing tags; does not merge.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Tags
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
 <p>The request content is the serialized list of tags.</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>Security</strong><br>Allowed by administrator accounts.</p>
@@ -164,8 +164,8 @@ Content-Type: application/json
 <p>Deletes the tag list for the specified stream.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">DELETE api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Tags
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>default or diagnostics</p>
-<p><code>string streamId</code><br>The stream identifier  </p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
+<p><code>string streamId</code><br>The stream identifier.  </p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>Security</strong><br>Allowed for administrator accounts.</p>
 <hr>
