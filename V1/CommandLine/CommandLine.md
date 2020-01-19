@@ -4,7 +4,7 @@ uid: commandLine
 
 # EdgeCmd configuration of Edge Data Store
 
-Use the edgecmd command line utility to configure and administer Edge Data Store on Linux and Windows. This document will be referred to as edgecmd, even though it is named edgecmd.exe on Windows and edgecmd on Linux.
+Use the EdgeCmd command line utility to configure and administer Edge Data Store on Linux and Windows. You can accomplish the same operations with EdgeCmd that you can accomplish with REST calls.
 
 Location on Windows:
 
