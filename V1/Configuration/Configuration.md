@@ -4,6 +4,6 @@ uid: Configuration
 
 # Configuration
 
-You can configure for production the functional areas of Edge Data Store contained in this section. You can configure each area of Edge Data Store for your particular use case. You can upload configuration files for each functional area by using REST calls or the EdgeCmd command line utility. 
+You configure each functional area of Edge Data Store to define connectivity and system behavior appropriate to your particular use case. The topics contained in this section provide instructions for each configurable area. You can use either REST calls or the EdgeCmd command line utility to upload configuration files for each functional area of Edge Data Store. 
 
 For more information on tools for Edge Data Store configuration, see [Configuration tools](xref:managementTools).
