@@ -4,13 +4,6 @@ uid: Configuration
 
 # Configuration
 
-You can configure the following facets of Edge Data Store:
+You can configure the following areas of Edge Data Store for production. You can configure each functional area of Edge Data Store for your particular use case. You can upload configuration files for each area by using REST calls or the EdgeCmd command line utility. 
 
-- [System](xref:EdgeDataStoreConfiguration) - includes configuration of components, port, and EDS.
-- [Data ingress](xref:EDSDataIngress) - includes configuration of data source and data selection for either EDS adapter.
-- [Data egress](xref:egress)  
-- [Diagnostics](xref:EdgeDataStoreDiagnostics)
-- [Health endpoints](xref:SystemHealthEndpointsConfiguration)
-- [Logging](xref:loggingConfiguration)
-
-For more information on which tools to use to configure EDS facets, see [Configuration tools](xref:managementTools).
+For more information on tools for Edge Data Store configuration, see [Configuration tools](xref:managementTools).
