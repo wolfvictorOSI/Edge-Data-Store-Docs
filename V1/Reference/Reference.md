@@ -4,8 +4,7 @@ uid: Reference
 
 # Reference
 
-This reference includes information regarding:
+This topic provides documentation of Sequential Data Store functions.  It also provides a listing of available REST commands, including EdgeCmd command line utility commands.
 
-- [Sequential Data Store (SDS)](xref:sdsOverview)
-- [REST commands](xref:RestCommands) with the Edgecmd as a subset of commands
-- [Release Notes](xref:releaseNotes)
+The Reference topic also includes current Release Notes for the Edge Data Store.
+
