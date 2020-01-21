@@ -10,18 +10,20 @@ In addition to the data source configuration, you need to provide a data selecti
 
 > **Note:** You cannot modify OPC UA data selection configurations manually. You must use the REST endpoints to add or edit the configuration.
 
-Complete the following to configure OPC UA data selection:
+Complete the following to configure the OPC UA data selection:
 
 1. Using any text editor, create a file that contains an OPC UA data selection in JSON form.
     - For content structure, see [OPC UA data selection example](#opc-ua-data-selection-example).
     - For a table of all available parameters, see [Parameters for OPC UA data selection](#parameters-for-opc-ua-data-selection).
 2. Save the file as _DataSelection.config.json_.
-3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`
+3. Use any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`
 
-Example using cURL (run this command from the same directory where the file is located):
+The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):
+
+> **Note:** During installation, you can add a single OPC UA EDS adapter named OpcUA1. The following example uses this component name.
 
 ```bash
-curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection"
+curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/OpcUa1/DataSelection"
 ```
 
 ## OPC UA data selection schema
@@ -45,7 +47,7 @@ The following parameters can be used to configure OPC UA data selection:
 
 ## OPC UA data selection example
 
-The following is an example of valid OPC UA Data Selection configuration:
+The following is an example of valid OPC UA data selection configuration:
 
 ```json
 [
