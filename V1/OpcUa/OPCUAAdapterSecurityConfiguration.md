@@ -10,24 +10,9 @@ EDS adapter for OPC UA generates a self-signed certificate when the first secure
 
 ## Configure OPC UA EDS adapter security
 
-1. Configure the data source to use secure connection and set UseSecureConnection as true.
+1. [Configure the data source](xref:OPCUADataSourceConfiguration) to use secure connection and set UseSecureConnection as true.
 2. Add server's certificate to the adapter's trust store.
 3. Add [adapter's certificate](#adapter-certificate-store-location) to the server's trust store.
-
-### Data source configuration
-
-```json
-{
-"EndpointUrl": "opc.tcp://IP-Address/TestOPCUAServer",
-"UseSecureConnection": true,
-"UserName": null,
-"Password": null,
-"RootNodeIds": null,
-"IncomingTimestamp": "Source"
-}
-```
-
-> **Note:** OSIsoft strongly recommends using secure connections in production environment(s).
 
 ### Adapter Certificate store
 
