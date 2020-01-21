@@ -18,7 +18,7 @@ For more information, see [OPC UA data source configuration](xref:OPCUADataSourc
 
 ## Connection
 
-The OPC UA EDS adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. The X.509-type client and server certificates are exchanged and verified (when security is enabled) and the connection to the configured OPC UA server is established.
+The OPC UA EDS adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. When security is enabled, the X.509-type client and server certificates are exchanged and verified and the connection to the configured OPC UA server is established.
 
 ## Stream creation
 
@@ -26,7 +26,7 @@ The OPC UA EDS adapter creates types upon receiving the value update for a strea
 
 ## Data collection
 
-OPC UA EDS adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) part of OPC UA specification.
+The OPC UA EDS adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) part of OPC UA specification.
 
 ## Streams by OPC UA EDS adapter
 
@@ -35,7 +35,7 @@ The OPC UA EDS adapter creates a stream with two properties per selected OPC UA 
 | Property name | Data type | Description |
 |---------------|-----------|-------------|
 | Timestamp     | DateTime  | Timestamp of the given OPC UA item value update. |
-| Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item value update. |
+| Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item update. |
 
 Stream ID is a unique identifier for each stream created by the adapter for a given OPC UA item. If the Custom Stream ID is specified for the OPC UA item in data selection configuration, the OPC UA EDS adapter uses that as a stream ID for the stream. Otherwise, the adapter constructs the stream ID using the following format constructed from the OPC UA item node ID:
 
