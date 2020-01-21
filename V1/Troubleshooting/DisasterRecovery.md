@@ -16,43 +16,38 @@ This topic provides procedures for creating a backup of Edge Data Store stream d
 
 ## Windows recovery
 
-### Create a backup
+### Create a backup from the failed system
 
 **Prerequisite:** Administrative access on the device to successfully restore on Windows system.
 
-1. If your device is still able to boot, verify that Edge Data Store service has stopped. 
-	
-	This can be done through the Windows Service Manager or Task Manager Services tab.
+1. If your device is still able to boot, verify that Edge Data Store service has stopped. Use the Windows Service Manager or Task Manager Services tab to stop the Edge Data Store service.
 2. Locate the storage and configuration files.
 
-	> **Note:** Windows storage and configuration files should be in the following locations:
-			  _C:\ProgramData\OSIsoft\EdgeDataStore\Configuration_
-			  _C:\ProgramData\OSIsoft\EdgeDataStore\Storage_
-			  The ProgramData folder is typically hidden, so if it is not visible, go to the **View** tab in **Windows Explorer** and check **Hidden**.
+   **Note:** Windows storage and configuration files should be in the following locations:
+	     _C:\ProgramData\OSIsoft\EdgeDataStore\Configuration_
+	     _C:\ProgramData\OSIsoft\EdgeDataStore\Storage_
+	     The ProgramData folder is typically hidden, so if it is not visible, go to the **View** tab in **Windows Explorer** and check **Hidden**.
 
-3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. 
-	 
-	 File transfer can be done with WinSCP, SFTP, or external device.
+3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.
 
 ### Move the files to the new hardware
 
-Once the new hardware has replaced the previous system and has been installed with Edge Data Store, the new system will have a default configuration. 
+When the new hardware has been installed with Edge Data Store, the new system will have a default configuration. 
 
 1. Stop the Edge Data Store service using the Windows Service Manager or Task Manager service tab.
-2. Once that service has stopped, navigate to the _C:\ProgramData\OSIsoft\EdgeDataStore_ directory, and delete the default storage and configuration folders from the new device.
+2. Once the service has stopped, navigate to the _C:\ProgramData\OSIsoft\EdgeDataStore_ directory, and delete the default storage and configuration folders from the new device.
 
-### Restore data files
+### Restore backed up data files
 
 1. Copy or unzip the backup storage and configuration files into the _C:\ProgramData\OSIsoft\EdgeDataStore_ directory.
 
-	> **Note:** The C: drive may not be your systems default drive letter. Refer to My Computer, This PC, or open a command prompt to verify your systems drive letter.
+   **Note:** The C: drive may not be the default drive letter of your system. Refer to My Computer, This PC, or open a command prompt to verify the default drive letter.
 
 2. Restart the Edge Data Store service using the Windows Service Manager or Task Manager service tab.
 
-
 # Linux recovery
 
-### Create a backup
+### Create a backup from the failed system
 
 **Prerequisite:** Root access on the Linux device is required.
 
@@ -64,7 +59,7 @@ Once the new hardware has replaced the previous system and has been installed wi
 
 2. Locate the storage and configuration files.
 
-	> **Note:** Linux storage and configuration files should be in the following locations:
+   **Note:** Linux storage and configuration files should be in the following locations:
 			_/usr/share/OSIsoft/EdgeDataStore/Configuration_
 			_/usr/share/OSIsoft/EdgeDataStore /Storage_
 
@@ -72,11 +67,11 @@ Once the new hardware has replaced the previous system and has been installed wi
 
 	File transfer can be done with WinSCP, SFTP, or external device.
 
-	> **Note:** Using the _cp_ command may result in a change in file ownership to the current user. 
+   **Note:** Using the _cp_ command may result in a change in file ownership to the current user. 
 
 ### Move the files to the new hardware
 
-Once the new hardware has replaced the previous system and has been installed with Edge Data Store, the new system will have a default configuration. 
+When the new hardware has been installed with Edge Data Store, the new system will have a default configuration. 
 
 1. Stop the Edge Data Store service using the following command:
 
@@ -84,9 +79,9 @@ Once the new hardware has replaced the previous system and has been installed wi
 	  sudo systemctl stop osisoft.edgedatastore
 	  ```
 
-2. Once that service has stopped, navigate to the _/usr/share/OSIsoft/EdgeDataStore_ directory and extract your zip or tar file in that directory again using WinSCP, SFTP, or external device.
+2. Once the service has stopped, navigate to the _/usr/share/OSIsoft/EdgeDataStore_ directory and extract your zip or tar file in that directory again using WinSCP, SFTP, or external device.
 
-### Restore data files
+### Restore backed up data files
 
 1. Delete the default storage and configuration folders from the _/usr/share/OSIsoft/EdgeDataStore_ directory.
 2. Copy or unzip the backup storage and configuration files into the EdgeDataStore directory.
@@ -103,4 +98,4 @@ Once the new hardware has replaced the previous system and has been installed wi
 	  sudo systemctl status osisoft.edgedatastore
 	  ```
 
-  **Note:** Default directory permissions are set to 755, and each subsequent file is 644. If you do not use tar it is possible to have permission issues with the recovery files. Tar matches via string name rather than the account ID/UID.
+   **Note:** Default directory permissions are set to 755, and each subsequent file is 644. If you do not use tar it is possible to have permission issues with the recovery files. Tar matches via string name rather than the account ID/UID.
