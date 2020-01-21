@@ -8,13 +8,14 @@ This topic provides quick start instructions for using EdgeCmd in the Linux envi
 
 You can install EdgeCmd from the Linux command prompt. Complete the following to access edgecmd on Linux:
 
-1. Open a command prompt. The utility is available to use in any directory on Linux.
+1. Open a command prompt. 
+2. Enter the following command to start the edgecmd.exe tool from any directory.
 
    ```bash
    debian@beaglebone:~$ edgecmd help
    ```
    
- 2. Type edgecmd help and press Enter.
+ 3. Type edgecmd help and press Enter.
  
  The edgecmd utility launches, displaying the following introductory material and a command prompt at the end:
    
