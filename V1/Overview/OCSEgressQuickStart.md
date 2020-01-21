@@ -8,7 +8,7 @@ This topic provides quick start instructions for getting data stored in the Edge
 
 ## Create a periodic egress configuration
 
-1. Create a JSON file describing one or more egress endpoints as follows:
+1. Create a JSON file containing one or more egress endpoints, based on the following example:
 
    ```json
    [{
