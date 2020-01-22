@@ -28,7 +28,7 @@ The Storage component is required for Edge Data Store to run. Only a single Stor
         "ComponentType": "Modbus"
       }
     ```
-    > **Note:** A unique ComponentId is necessary for each component in the system. This example uses the ComponentId Modbus1 since it is the first Modbus TCP EDS adapter.
+   **Note:** A unique ComponentId is necessary for each component in the system. This example uses the ComponentId Modbus1 since it is the first Modbus TCP EDS adapter.
 
 2. Save the JSON file with the name _AddComponent.json_. 
 3. From the same directory where the file exists, run the following curl script:
