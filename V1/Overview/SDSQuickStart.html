@@ -111,7 +111,7 @@
 </li>
 <li><p>Run the following curl script:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@SDSCreateType.json&quot; -H &quot;Content-Type: application/json&quot;  -X POST   http://localhost:5590/api/v1/tenants/default/namespaces/default/types/Simple
-</code></pre><p>When this script completes successfully, an SDS type with the same name is created on the server. You can create any number of containers from a single type, as long as they use a timestamp as an index and a 32-bit floating point value. You only need to create a type the first time you send data with a custom application. It does not cause an error to resend the same definition at a later time.</p>
+</code></pre><p>When this script completes successfully, an SDS type with the same name is created on the server. You can create any number of containers from a single type, as long as they use a timestamp as an index and a 64-bit floating point value. You only need to create a type the first time you send data with a custom application. It does not cause an error to resend the same definition at a later time.</p>
 </li>
 </ol>
 <h2 id="create-an-sds-stream">Create an SDS stream</h2>

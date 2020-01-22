@@ -80,9 +80,8 @@
 
 <p>In addition to the data source configuration, you need to provide a data selection configuration to specify the data you want the OPC UA EDS adapter to collect from the data sources.</p>
 <h2 id="configure-opc-ua-data-selection">Configure OPC UA data selection</h2>
-<blockquote><p><strong>Note:</strong> You cannot modify OPC UA data selection configurations manually. You must use the REST endpoints to add or edit the configuration.</p>
-</blockquote>
-<p>Complete the following to configure OPC UA data selection:</p>
+<p><strong>Note:</strong> You cannot modify OPC UA data selection configurations manually. You must use the REST endpoints to add or edit the configuration.</p>
+<p>Complete the following to configure the OPC UA data selection:</p>
 <ol>
 <li>Using any text editor, create a file that contains an OPC UA data selection in JSON form.<ul>
 <li>For content structure, see <a href="#opc-ua-data-selection-example">OPC UA data selection example</a>.</li>
@@ -90,10 +89,11 @@
 </ul>
 </li>
 <li>Save the file as <em>DataSelection.config.json</em>.</li>
-<li>Use any <a href="xref:managementTools">tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection/</code></li>
+<li>Use any <a class="xref" href="../Administration/ManagementTools.html">Configuration tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection/</code></li>
 </ol>
-<p>Example using cURL (run this command from the same directory where the file is located):</p>
-<pre><code class="lang-bash">curl -v -d &quot;@DataSelection.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection&quot;
+<p>The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):</p>
+<p><strong>Note:</strong> During installation, you can add a single OPC UA EDS adapter named OpcUA1. The following example uses this component name.</p>
+<pre><code class="lang-bash">curl -v -d &quot;@DataSelection.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/OpcUa1/DataSelection&quot;
 </code></pre><h2 id="opc-ua-data-selection-schema">OPC UA data selection schema</h2>
 <p>The following table shows the basic behavior of the <em>OpcUa_DataSelection_schema.json</em> file.</p>
 <table>
@@ -157,12 +157,12 @@
 <td>Optional</td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>The custom stream ID used to create the streams. If not specified, the OPC UA EDS adapter will generate a default stream ID based on the measurement configuration. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores (&quot;__&quot;).<br>Can contain a maximum of 260 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.</td>
+<td>The custom stream ID used to create the streams. If not specified, the OPC UA EDS adapter will generate a default stream ID based on the measurement configuration. A properly configured custom stream ID follows these rules:<br><br>Is not case-sensitive.<br>Can contain spaces.<br>Cannot start with two underscores (&quot;__&quot;).<br>Can contain a maximum of 100 characters.<br>Cannot use the following characters: / : ? # [ ] @ ! $ &amp; &#39; ( ) \ * + , ; = % &lt; &gt; &#124;<br>Cannot start or end with a period.<br>Cannot contain consecutive periods.<br>Cannot consist of only periods.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="opc-ua-data-selection-example">OPC UA data selection example</h2>
-<p>The following is an example of valid OPC UA Data Selection configuration:</p>
+<p>The following is an example of valid OPC UA data selection configuration:</p>
 <pre><code class="lang-json">[
  {
     &quot;Selected&quot;: true,
@@ -184,7 +184,7 @@
   }
 ]
 </code></pre><h2 id="generate-template-opc-ua-data-selection-configuration-file">Generate template OPC UA data selection configuration file</h2>
-<p>When you add a data source, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a .json file for data selection. Data is collected automatically based upon user demands. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).</p>
+<p>When you add a data source, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a JSON file for data selection. Data is collected automatically based upon user demands. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).</p>
 <p>A default OPC UA data source template file will be created if there is no OPC UA data selection configuration, but a valid OPC UA data source exists.</p>
 <p>Complete the following steps in order for this template data selection to be generated:</p>
 <ol>
