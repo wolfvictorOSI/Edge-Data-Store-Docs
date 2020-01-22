@@ -5,7 +5,7 @@
 - name: Data source configuration
   href: OPCUADataSourceConfiguration.md
 - name: Generate default OPC UA data selection configuration file
-  href: Generate default OPC UA data selection configuration file.md
+  href: OpcUaDataSelection.md
 - name: Data selection configuration
   href: OPCUADataSelectionConfiguration.md 
 - name: Adapter security
