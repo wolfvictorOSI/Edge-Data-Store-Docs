@@ -46,7 +46,7 @@ Complete the following steps to create an SDS type that describes the format of 
    curl -i -d "@SDSCreateType.json" -H "Content-Type: application/json"  -X POST   http://localhost:5590/api/v1/tenants/default/namespaces/default/types/Simple
    ```
 
-   When this script completes successfully, an SDS type with the same name is created on the server. You can create any number of containers from a single type, as long as they use a timestamp as an index and a 32-bit floating point value. You only need to create a type the first time you send data with a custom application. It does not cause an error to resend the same definition at a later time.
+   When this script completes successfully, an SDS type with the same name is created on the server. You can create any number of containers from a single type, as long as they use a timestamp as an index and a 64-bit floating point value. You only need to create a type the first time you send data with a custom application. It does not cause an error to resend the same definition at a later time.
 
 ## Create an SDS stream
 
