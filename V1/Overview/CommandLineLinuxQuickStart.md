@@ -15,7 +15,7 @@ You can install EdgeCmd from the Linux command prompt. Complete the following to
    debian@beaglebone:~$ edgecmd help
    ```
    
- 3. Type edgecmd help and press Enter.
+3. Type edgecmd help and press Enter.
  
  The edgecmd utility launches, displaying the following introductory material and a command prompt at the end:
    
