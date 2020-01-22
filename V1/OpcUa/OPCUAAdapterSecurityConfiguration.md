@@ -50,7 +50,7 @@ After the certificate is reviewed and approved, you can manually move it from th
  mv /usr/share/OSIsoft/EdgeDataStore/OpcUa1/Certificates/RejectedCertificates/certsSimulationServer\ \[F9823DCF607063DBCECCF6F8F39FD2584F46AEBB\].der /usr/share/OSIsoft/EdgeDataStore/OpcUa1/Certificates/Trusted/certs/
 ```
 
-> **Note:** Administrator or root privileges are required to perform this operation.
+**Note:** Administrator or root privileges are required to perform this operation.
 
 When the certificate is in the adapter trust store, the adapter trusts the server and the connection attempt proceeds in making the  connection call to the configured server. Connection succeeds only when the adapter certificate is trusted on the server side. For more details on how to make a client certificate trusted, see your OPC UA server documentation. In general, servers work in a similar fashion to the clients; hence you can take a similar approach for making the server certificate trusted on the client side.
 
