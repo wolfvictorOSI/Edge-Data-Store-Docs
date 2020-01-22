@@ -11,13 +11,13 @@ You must have administrative privileges to run the installer.
 1. Copy the _EdgeCmd.msi_ file to the file system of the device.
 2. To start the installer, double-click the _EdgeCmd.msi_ file in Windows Explorer.
 
-    > **Note:** You can choose an install path other than the default path of C:\Program Files\OSIsoft\EdgeCmd by entering the following command from the command prompt. OSIsoft recommends you use the default value.
+   **Note:** You can choose an install path other than the default path of C:\Program Files\OSIsoft\EdgeCmd by entering the following command from the command prompt. OSIsoft recommends you use the default value.
     
     ```bash
     msiexec /i EdgeCmd.msi INSTALLFOLDER=<path_to_desired_location>
     ```
 
-    > **Note:** INSTALLFOLDER must be in all caps as shown in the preceding example.
+   **Note:** INSTALLFOLDER must be in all caps as shown in the preceding example.
 
 The EdgeCmd utility is installed on your device.
 
