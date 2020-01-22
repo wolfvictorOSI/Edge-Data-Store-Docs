@@ -74,7 +74,7 @@ The following is an example of valid OPC UA data selection configuration:
 
 ## Generate template OPC UA data selection configuration file
 
-When you add a data source, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a .json file for data selection. Data is collected automatically based upon user demands. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).
+When you add a data source, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a JSON file for data selection. Data is collected automatically based upon user demands. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).
 
 A default OPC UA data source template file will be created if there is no OPC UA data selection configuration, but a valid OPC UA data source exists.
 
