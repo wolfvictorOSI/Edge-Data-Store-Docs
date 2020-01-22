@@ -8,7 +8,7 @@ In order to use the OPC UA EDS adapter, you must configure the data source from 
 
 ## Configure OPC UA data source
 
-> **Note:** You cannot modify OPC UA data source configurations manually. You must use the REST endpoints to add or edit the configuration.
+**Note:** You cannot modify OPC UA data source configurations manually. You must use the REST endpoints to add or edit the configuration.
 
 Complete the following to configure the OPC UA data source:
 
@@ -20,7 +20,7 @@ Complete the following to configure the OPC UA data source:
 
 The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):
 
-> **Note:** During installation, you can add a single OPC UA EDS adapter named OpcUa1. The following example uses this component name.
+**Note:** During installation, you can add a single OPC UA EDS adapter named OpcUa1. The following example uses this component name.
 
 ```bash
 curl -v -d "@DataSource.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/OpcUa1/DataSource"
