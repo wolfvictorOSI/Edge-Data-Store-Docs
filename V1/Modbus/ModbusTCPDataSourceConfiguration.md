@@ -8,7 +8,7 @@ To use the Modbus TCP EDS adapter, you must configure it for the Modbus TCP data
 
 ## Configure Modbus TCP data source
 
-> **Note:** You cannot modify Modbus TCP data source configurations manually. You must use the REST endpoints to add or edit the configuration.
+**Note:** You cannot modify Modbus TCP data source configurations manually. You must use the REST endpoints to add or edit the configuration.
 
 Complete the following to configure the Modbus TCP data source:
 
@@ -19,7 +19,7 @@ You can create or copy this file to any directory on a device with Edge Data Sto
 2. Save the file as _DataSource.config.json_.
 3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`.
 
-> **Note:** During installation, it is possible to add a single Modbus TCP EDS adapter which is named Modbus1. The following example uses this component name.
+**Note:** During installation, it is possible to add a single Modbus TCP EDS adapter which is named Modbus1. The following example uses this component name.
 
    Example using cURL (run this command from the same directory where the file is located):
 
