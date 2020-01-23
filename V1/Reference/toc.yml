@@ -1,7 +1,5 @@
 - name: Sequential Data Store (SDS)
   href: ../SDS/toc.yml
   topicHref: ../SDS/SequentialDataStore.md
-- name: EdgeCmd commands
-  href: Edgecmd commands.md
 - name: Release Notes
   href: ../ReleaseNotes/ReleaseNotes.md
