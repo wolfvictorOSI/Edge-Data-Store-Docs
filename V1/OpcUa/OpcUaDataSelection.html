@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Generate template OPC UA data selection configuration file </title>
+    <title>Generate default OPC UA data selection configuration file </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Generate template OPC UA data selection configuration file ">
+    <meta name="title" content="Generate default OPC UA data selection configuration file ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -76,22 +76,25 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="opcUaDataSelection">
-<h1 id="generate-template-opc-ua-data-selection-configuration-file">Generate template OPC UA data selection configuration file</h1>
+<h1 id="generate-default-opc-ua-data-selection-configuration-file">Generate default OPC UA data selection configuration file</h1>
 
-<p>When you add a data source, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a .json file for data selection. Data is collected automatically based upon user demands. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).</p>
-<p>A default OPC UA data source template file will be created if there is no OPC UA data selection configuration, but a valid OPC UA data source exists.</p>
-<p>Complete the following steps in order for this template data selection to be generated:</p>
+<p>When you add a data source, the OPC UA EDS adapter browses the entire OPC UA server address space and exports the available OPC UA variables into a JSON file for data selection. Data is collected automatically based upon user demands. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).</p>
+<p>A default OPC UA data selection file will be created if there is no OPC UA data selection configuration, but a valid OPC UA data source exists.</p>
+<blockquote><p><strong>Note:</strong> To avoid possibly expensive browse operations, OSIsoft recommends that you manually create a data selection file instead of generating the default data selection file. For more information, see <a class="xref" href="OPCUADataSelectionConfiguration.html">Data selection configuration</a>.</p>
+</blockquote>
+<p>Complete the following steps in order for this default data selection file to be generated:</p>
 <ol>
 <li><p>Add an <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">OPC UA EDS adapter</a> with a unique ComponentId. </p>
-<p>During the installation of Edge Data Store, enabling the OPC UA adapter results in addition of a unique component that also satisfies this condition.</p>
+<p>During the installation of Edge Data Store, enabling the OPC UA EDS adapter results in addition of a unique component that also satisfies this condition.</p>
 </li>
-<li><p>Configure a valid <a class="xref" href="OpcUaOverview.html">OPC UA Data Source</a>.</p>
-<p>Once you complete these steps, a template OPC UA data selection will be generated in the Configuration directory for the corresponding platform. Also see <a class="xref" href="../LinuxWindows/LinuxWindows.html">Linux and Windows platform differences</a>. The following are example locations of the file created. In this example, it is assumed that the ComponentId of the OPC UA component is the default OpcUa1:</p>
+<li><p>Configure a valid <a class="xref" href="OpcUaOverview.html">OPC UA data source</a>.</p>
+<p>Once you complete these steps, a default OPC UA data selection configuration file will be generated in the configuration directory for the corresponding platform.</p>
+<p>The following are example locations of the file created. In this example, it is assumed that the ComponentId of the OPC UA component is the default OpcUa1:</p>
 <pre><code class="lang-bash">Windows: %programdata%\OSIsoft\EdgeDataStore\Configuration\OpcUa1_DataSelection.json
 
 Linux: /usr/share/OSIsoft/EdgeDataStore/Configuration/OpcUa1_DataSelection.json
 </code></pre></li>
-<li><p>Copy the file to a different directory to edit it. </p>
+<li><p>Copy the file to a different directory.</p>
 <p>The contents of the file will look something like:</p>
 <pre><code class="lang-json">[
 {
@@ -114,10 +117,6 @@ Linux: /usr/share/OSIsoft/EdgeDataStore/Configuration/OpcUa1_DataSelection.json
 <pre><code class="lang-bash">curl -i -d &quot;@OpcUa1_DataSelection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection
 </code></pre></li>
 </ol>
-<p>To see the streams that have been created in Edge Storage to store the data you are writing, run the following curl script:</p>
-<pre><code class="lang-bash">curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/
-</code></pre><p>To view the data in the streams being written, refer to <a class="xref" href="../SDS/SequentialDataStore.html">Sequential Data Store (SDS)</a>.</p>
-<p>To egress the data to OSIsoft Cloud Services or the PI System, see <a class="xref" href="../Egress/Egress.html">Data egress configuration</a>.</p>
 </article>
           </div>
           

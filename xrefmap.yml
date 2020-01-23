@@ -140,7 +140,7 @@ references:
   name: Adapter security
   href: V1/OpcUa/OPCUAAdapterSecurityConfiguration.html
 - uid: opcUaDataSelection
-  name: Generate template OPC UA data selection configuration file
+  name: Generate default OPC UA data selection configuration file
   href: V1/OpcUa/OpcUaDataSelection.html
 - uid: OPCUADataSelectionConfiguration
   name: Data selection configuration
