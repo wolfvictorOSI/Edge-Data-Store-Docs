@@ -1,2 +1,4 @@
 - name: Install EdgeCmd utility
   href: Install EdgeCmd utility.md
+- name: EdgeCmd commands
+  href: ../Reference/Edgecmd commands.md
