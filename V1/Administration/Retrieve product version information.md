@@ -4,6 +4,8 @@ uid: RetrieveProductVersionInformation
 
 # Retrieve product version information
 
+The first thing you should verify after you have Edge Data Store installed is the product version information. It includes the Edge Data Store version number, the .NET Core version, the Core CLR version, and the operating system. This information can be useful for troubleshooting purposes.
+
 - To retrieve the product version of the Edge Data Store, use any tool capable of making HTTP requests to execute a POST command to the following endpoint:
 
   ```http
