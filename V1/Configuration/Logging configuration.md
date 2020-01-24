@@ -2,7 +2,7 @@
 uid: LoggingConfiguration
 ---
 
-# Logging configuration
+# Message logging configuration
 
 Each message in the log displays the message severity level, timestamp, and the message itself. By default, Edge Data Store captures Information, Warning and Error messages in the message log.
 
