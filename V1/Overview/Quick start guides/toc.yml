@@ -8,7 +8,7 @@
   href: ../OCSEgressQuickStart.md
 - name: PI egress quick start
   href: ../PIEgressQuickStart.md
-- name: SDS Read/Write quick start
+- name: SDS quick start
   href: ../SDSQuickStart.md
 - name: Command line quick start - Linux
   href: ../CommandLineLinuxQuickStart.md
