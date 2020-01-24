@@ -4,9 +4,9 @@
   href: PrinciplesOfOperationOPCUA.md
 - name: Data source configuration
   href: OPCUADataSourceConfiguration.md
+- name: Adapter security
+  href: OPCUAAdapterSecurityConfiguration.md
 - name: Generate default OPC UA data selection configuration file
   href: OpcUaDataSelection.md
 - name: Data selection configuration
   href: OPCUADataSelectionConfiguration.md 
-- name: Adapter security
-  href: OPCUAAdapterSecurityConfiguration.md
