@@ -9,7 +9,7 @@ You can delete and reset all event and configuration data related to the Storage
 - To reset the Storage component, use any tool capable of making HTTP requests to execute a POST command to the following endpoint:
 
     ```http
-    Endpoint: http://localhost:5590/api/v1/administration/Storage/Reset
+    http://localhost:5590/api/v1/administration/Storage/Reset
     ```
 
     Example using curl:
