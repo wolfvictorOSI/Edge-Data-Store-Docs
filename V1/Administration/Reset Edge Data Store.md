@@ -14,7 +14,7 @@ Edge Data Store provides a method of performing a complete reset of the product.
   http://localhost:5590/api/v1/administration/System/Reset
   ```
 
-  Example using cURL:
+  Example using curl:
 
   ```bash
   curl -v -d "" http://localhost:5590/api/v1/Administration/System/Reset
