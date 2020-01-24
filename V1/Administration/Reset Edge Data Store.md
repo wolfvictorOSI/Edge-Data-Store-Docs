@@ -6,14 +6,12 @@ uid: ResetEdgeDataStore
 
 Edge Data Store provides a method of performing a complete reset of the product. When you perform a reset, all event data and Edge Data Store configuration is deleted, and the product is restarted.
 
-> **Note:** All configuration and stored data will be lost as a result of performing this action.
+**Note:** All configuration and stored data will be lost as a result of performing this action.
 
-- To reset Edge Data Store, use any REST client and make a request using the following:
+- To reset Edge Data Store, use any tool capable of making HTTP requests to execute a POST command to the following endpoint:
 
   ```http
-  Method: POST
-  Endpoint: http://localhost:5590/api/v1/administration/System/Reset
-  Header: Content-Type application/json
+  http://localhost:5590/api/v1/administration/System/Reset
   ```
 
   Example using cURL:
