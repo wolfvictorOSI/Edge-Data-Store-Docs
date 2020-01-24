@@ -2,7 +2,7 @@
 uid: Installedgecmd
 ---
 
-# Install the EdgeCmd utility
+# Install EdgeCmd utility
 
 ## Windows
 
