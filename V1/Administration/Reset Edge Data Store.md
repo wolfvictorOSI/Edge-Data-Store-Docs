@@ -4,7 +4,7 @@ uid: ResetEdgeDataStore
 
 # Reset Edge Data Store
 
-Edge Data Store provides a method of performing a complete reset of the product. When you perform a reset, all event data and Edge Data Store configuration is deleted, and the product is restarted.
+Edge Data Store provides a method by which you can perform a complete reset of the product. When you perform a reset, all event data and Edge Data Store configuration is deleted, and the product is restarted.
 
 **Note:** All configuration and stored data will be lost as a result of performing this action.
 
