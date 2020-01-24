@@ -2,7 +2,7 @@
 uid: EdgecmdCommands
 ---
 
-# Edgecmd commands
+# EdgeCmd commands
 
 The following tables provide an overview of available edgecmd commands that you can use with components of Edge Data Store. Every command that you use with the edgecmd utility has to be preceded by `edgecmd`.
 
