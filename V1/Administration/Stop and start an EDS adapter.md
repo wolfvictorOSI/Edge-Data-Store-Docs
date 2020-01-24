@@ -4,22 +4,20 @@ uid: StopAndStartAnEDSAdapter
 
 # Stop and start an EDS adapter
 
-You can stop and start EDS adapters. By default, when Edge Data Store starts, all currently configured EDS adapters are started and remain running until the product shuts down.
+By default, when Edge Data Store starts, all currently configured EDS adapters are started and remain running until the product shuts down.
 
 ## Stop an EDS adapter
 
-- To stop an individual EDS adapter, use any REST client and make a request using the following:
+- To stop an EDS adapter, use any tool capable of making HTTP requests to execute a POST command to the following endpoint:
 
     ```http
-    Method: POST
-    Endpoint: http://localhost:5590/api/v1/administration/EDS adapterId/Stop
-    Header: Content-Type application/json
+    http://localhost:5590/api/v1/administration/EDS adapterId/Stop
     ```
 
-    Example using cURL:
+    Example using curl:
 
     ```bash
-    curl -v -d "" http://localhost:5590/api/v1/Administration/EDS adapterId/Stop
+    curl -v -d "" http://localhost:5590/api/v1/Administration/OpcUa1/Stop
     ```
 
     **Note:** Replace _EDS adapterId_ with the ID of the EDS adapter you want to stop.
@@ -28,18 +26,16 @@ You can stop and start EDS adapters. By default, when Edge Data Store starts, al
 
 ## Start an EDS adapter
 
-- To start an individual EDS adapter, use any REST client and make a request using the following:
+- To start an EDS adapter, use any tool capable of making HTTP requests to execute a POST command to the following endpoint:
 
     ```http
-    Method: POST
-    Endpoint: http://localhost:5590/api/v1/administration/EDS adapterId/Start
-    Header: Content-Type application/json
+    http://localhost:5590/api/v1/administration/EDS adapterId/Start
     ```
 
-    Example using cURL:
+    Example using curl:
 
     ```bash
-    curl -v -d "" http://localhost:5590/api/v1/Administration/EDS adapterId/Start
+    curl -v -d "" http://localhost:5590/api/v1/Administration/Modbus1/Start
     ```
 
     **Note:** Replace _EDS adapterId_ with the ID of the EDS adapter you want to start.
