@@ -2,3 +2,5 @@
   href: Prepare egress destinations.md
 - name: Egress execution details
   href: Egress execution details.md
+- name: Diagnostics configuration
+  href: ../Diagnostics/Diagnostics.md
