@@ -12,8 +12,6 @@
 - name: Data egress configuration
   href: ../Egress/toc.yml
   topicHref: ../Egress/Egress.md
-- name: Diagnostics configuration
-  href: ../Diagnostics/Diagnostics.md
 - name: Health endpoints configuration
   href: System health endpoints configuration.md
 - name: Logging configuration
