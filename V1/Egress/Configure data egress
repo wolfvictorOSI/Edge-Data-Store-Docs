@@ -1,3 +1,7 @@
+---
+uid: configureEgress
+---
+
 ## Configure data egress
 
 Prior to configuring egress on the Edge Data Store, see [Prepare egress destinations](xref:PrepareEgressDestinations) to make one or more OMF destinations available.
