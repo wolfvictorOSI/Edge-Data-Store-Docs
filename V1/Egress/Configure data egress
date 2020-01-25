@@ -2,11 +2,12 @@
 uid: configureEgress
 ---
 
-## Configure data egress
+# Configure data egress
 
-Prior to configuring egress on the Edge Data Store, see [Prepare egress destinations](xref:PrepareEgressDestinations) to make one or more OMF destinations available.
+Now that you have configured one or more OMF destinations, you can figure data egress.
+**Note:** You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see [REST Urls](#rest-urls).
 
-> **Note:** You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see [REST Urls](#rest-urls).
+## Create egress endpoints
 
 Complete the following procedure to create new egress endpoints:
 
