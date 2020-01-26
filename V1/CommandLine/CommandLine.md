@@ -28,37 +28,6 @@ Location on Linux:
 
 Most configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.
 
-Example: View system configuration using edgecmd:
-
-```bash
-edgecmd Configuration System
-{
-  "Logging": {
-    "logLevel": "Information",
-    "logFileSizeLimitBytes": 34636833,
-    "logFileCountLimit": 31
-  },
-  "HealthEndpoints": [],
-  "Port": {
-    "port": 5590
-  },
-  "Components": [
-    {
-      "componentId": "OpcUa1",
-      "componentType": "OpcUa"
-    },
-    {
-      "componentId": "Modbus1",
-      "componentType": "Modbus"
-    },
-    {
-      "componentId": "Storage",
-      "componentType": "EDS.Component"
-    }
-  ]
-}
-```
-
 ## Get help
 
 The Edgecmd application provides a 'Help' utility. For general instructions on how to use the Edgecmd application, type:
@@ -211,6 +180,38 @@ edgecmd Configuration componentId facetName id=IndexToRetrieve
 ```
 
 ### Examples
+
+- View the configuration of Edge Data Store using edgecmd:
+
+```bash
+edgecmd Configuration System
+{
+  "Logging": {
+    "logLevel": "Information",
+    "logFileSizeLimitBytes": 34636833,
+    "logFileCountLimit": 31
+  },
+  "HealthEndpoints": [],
+  "Port": {
+    "port": 5590
+  },
+  "Components": [
+    {
+      "componentId": "OpcUa1",
+      "componentType": "OpcUa"
+    },
+    {
+      "componentId": "Modbus1",
+      "componentType": "Modbus"
+    },
+    {
+      "componentId": "Storage",
+      "componentType": "EDS.Component"
+    }
+  ]
+}
+```
+
 - View the configuration of the 'System' component
 ```bash
 edgecmd Configuration System
