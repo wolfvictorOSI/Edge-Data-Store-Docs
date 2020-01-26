@@ -33,7 +33,7 @@ The new Edge device will be running as the previous device, and will contain all
    **Note:** Windows storage and configuration files should be in the following locations:
 	     _C:\ProgramData\OSIsoft\EdgeDataStore\Configuration_
 	     _C:\ProgramData\OSIsoft\EdgeDataStore\Storage_
-	     The ProgramData folder is typically hidden, so if it is not visible, go to the **View** tab in **Windows Explorer** and check **Hidden**.
+	     The ProgramData folder is typically hidden, so if it is not visible, go to the **View** tab in **Windows Explorer** and select the **Hidden Items** check box.
 
 3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.
 
@@ -41,7 +41,7 @@ The new Edge device will be running as the previous device, and will contain all
 
 When the new hardware has been installed with Edge Data Store, the new system will have a default configuration. 
 
-1. Stop the Edge Data Store service using the Windows Service Manager or Task Manager service tab.
+1. Use the Windows Task Manager to stop the Edge Data Store service.	
 2. Once the service has stopped, navigate to the _C:\ProgramData\OSIsoft\EdgeDataStore_ directory, and delete the default storage and configuration folders from the new device.
 
 ### Restore backed up data files
@@ -50,7 +50,7 @@ When the new hardware has been installed with Edge Data Store, the new system wi
 
    **Note:** The C: drive may not be the default drive letter of your system. Refer to My Computer, This PC, or open a command prompt to verify the default drive letter.
 
-2. Restart the Edge Data Store service using the Windows Service Manager or Task Manager service tab.
+2. Use the Windows Task Manager to restart the Edge Data Store service.
 
 ## Linux recovery
 
@@ -58,7 +58,7 @@ When the new hardware has been installed with Edge Data Store, the new system wi
 
 **Prerequisite:** Root access on the Linux device is required.
 
-1. If your device is still able to boot, verify that Edge Data Store service has stopped, using the following command: 
+1. If your device is still able to boot, verify from a terminal window that Edge Data Store service has stopped, using the following command: 
 
 	  ```
 	  sudo systemctl stop osisoft.edgedatastore
@@ -80,7 +80,7 @@ When the new hardware has been installed with Edge Data Store, the new system wi
 
 When the new hardware has been installed with Edge Data Store, the new system will have a default configuration. 
 
-1. Stop the Edge Data Store service using the following command:
+1. From a terminal window, stop the Edge Data Store service using the following command:
 
 	  ```
 	  sudo systemctl stop osisoft.edgedatastore
