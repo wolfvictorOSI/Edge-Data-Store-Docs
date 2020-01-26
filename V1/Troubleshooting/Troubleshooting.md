@@ -37,7 +37,7 @@ Examples of valid strings representing date and time:
 
     Local: “mm-dd-yyyy hh:mm:ss”
 
-The content of the OMF message, including the headers will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in a separate format than usual log messages. A single file is written to the usual Logs directory for every incoming OMF Type, Container, and data message.
+The content of an incoming OMF message, including the headers, will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in another format than usual log messages. A single file is written to the usual Logs directory for every incoming OMF type, container, and data message.
 
 ## Periodic egress
 
