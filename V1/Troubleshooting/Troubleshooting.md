@@ -43,7 +43,7 @@ The content of the OMF message, including the headers will be written to a file 
 
 EDS periodic egress extracts data from SDS streams and sends the appropriate sequences of type, container, and data OMF messages on startup.  
 
-**Note:** If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same stream. 
+**Note:** If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same SDS stream. 
 
 Careful use of stream prefixes in the [periodic egress endpoint configuration](xref:egress) ensures that output data streams are logically separated in the systems of record.
 
