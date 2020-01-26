@@ -41,9 +41,9 @@ The content of the OMF message, including the headers will be written to a file 
 
 ## Periodic egress
 
-EDS periodic egress extracts data from SDS streams and sends the appropriate sequences of type, container, and data OMF messages on startup.
+EDS periodic egress extracts data from SDS streams and sends the appropriate sequences of type, container, and data OMF messages on startup.  
 
-- If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same stream. 
+**Note:** If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same stream. 
 
 Careful use of stream prefixes in the [periodic egress endpoint configuration](xref:egress) ensures that output data streams are logically separated in the systems of record.
 
@@ -53,15 +53,12 @@ Type prefixes may be helpful if you have a case where you have changed a stream 
 
 You can find log messages related to egress in the Storage logs. 
 
-To output most information for troubleshooting, you can temporarily set the the log level to **Trace**.
+To output most information for troubleshooting, you can temporarily set the the log level to **Trace**.  For instructions on logging configuration, see [Message logging configuration](xref:LoggingConfiguration).
 
 ### Periodic egress debugging
 
-In order to troubleshoot problems between Edge Data Store and the destination, you should enable debugging. 
-
-- Set an appropriate value for the *DebugExpiration* property in an egress configuration.
-
-    Debugging for that destination will be enabled, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to *null*.
+In order to troubleshoot problems between Edge Data Store and the destination, you should enable debugging in [Data egress configuration](xref:egress). Debugging for that destination will be enabled, and HTTP request and response content will be stored to disk for review. 
+The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to *null*.
 
 Examples of valid strings representing date and time:
 
