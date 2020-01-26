@@ -29,16 +29,6 @@ In order to troubleshoot problems between an OMF application and Edge Storage, y
 
 - Set an appropriate value for the *IngressDebugExpiration* property in a [storage runtime configuration](xref:storageruntime). 
 
-    Debugging will be enabled for all incoming OMF messages, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to *null*.
-
-Examples of valid strings representing date and time:
-
-    Utc: “yyyy-mm-ddThh:mm:ssZ”
-
-    Local: “mm-dd-yyyy hh:mm:ss”
-
-The content of an incoming OMF message, including the headers, will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in another format than usual log messages. A single file is written to the usual Logs directory for every incoming OMF type, container, and data message.
-
 ## Periodic egress
 
 EDS periodic egress extracts data from SDS streams and sends the appropriate sequences of type, container, and data OMF messages on startup.  
