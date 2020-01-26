@@ -4,19 +4,26 @@ uid: disasterRecovery
 
 # Disaster recovery
 
-This topic provides procedures for creating a backup of Edge Data Store stream data and configuration files, moving them to a new system, and then restoring the back up files onto the new system. Procedures are provided for Windows and Linux systems.
+This topic provides procedures for recovery from the failure of a device which has Edge Data Store installed.  The disaster recovery process includes the following steps:
+
+- Back up the Edge Data Store data from the failed device to another location
+- Install Edge Data Store on a new device
+- Move a .zip file of the backed up data to the new device
+- Restore the backed up data files to the new device
+
+Procedures are provided for Windows and Linux systems.
  
 **Prequisite:**  This topic does not provide instruction for backing up or restoring credentials. All credentials are encrypted for security purposes, so they cannot be copied or transferred. After the new system has had the storage and configuration files copied over, and the service has started, do the following:
 
 1. Re-enter the credentials for the system using API calls. 
 2. After updating, restart the Edge Data Store service. 
 	
-	The new edge device will be running as the previous device, and will contain all the data up to the point the previous device went down.
+The new Edge device will be running as the previous device, and will contain all the data up to the point the previous device went down.
 
 
 ## Windows recovery
 
-### Create a backup from the failed system
+### Create a backup of Edge Data Store data from the failed device
 
 **Prerequisite:** Administrative access on the device to successfully restore on Windows system.
 
@@ -45,9 +52,9 @@ When the new hardware has been installed with Edge Data Store, the new system wi
 
 2. Restart the Edge Data Store service using the Windows Service Manager or Task Manager service tab.
 
-# Linux recovery
+## Linux recovery
 
-### Create a backup from the failed system
+### Create a backup of Edge Data Store data from the failed device
 
 **Prerequisite:** Root access on the Linux device is required.
 
