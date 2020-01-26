@@ -27,7 +27,7 @@ To output most information for troubleshooting, you should temporarily [set the 
 
 In order to troubleshoot problems between an OMF application and Edge Storage, you should enable debugging. 
 
-- Set an appropriate value for the *IngressDebugExpiration* property in a storage runtime configuration. 
+- Set an appropriate value for the *IngressDebugExpiration* property in a [storage runtime configuration](xref:storageruntime). 
 
     Debugging will be enabled for all incoming OMF messages, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to *null*.
 
