@@ -76,6 +76,6 @@ The content length of each request/response and the overall number of requests/r
     Linux: /usr/share/OSIsoft/EdgeDataStore/Storage/egressdump/{tenantId}/{namespaceId}/{egressId}/{omfType}/{Ticks}-{Guid}-{Req/Res}.txt
 
 *omfType* represents Type/Container/Data;
-*Ticks* represents the tick count for the Utc DateTime when it was decided that the message would be written to disk;
+*Ticks* represents the tick count for the UTC DateTime when it was decided that the message would be written to disk;
 *Guid* represents a unique Guid for each request/response pair;
 *Req/Res* whether it was the HTTP request or response.
