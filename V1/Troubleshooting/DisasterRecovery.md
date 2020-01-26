@@ -27,7 +27,7 @@ The new Edge device will be running as the previous device, and will contain all
 
 **Prerequisite:** Administrative access on the device to successfully restore on Windows system.
 
-1. If your device is still able to boot, verify that Edge Data Store service has stopped. Use the Windows Service Manager or Task Manager Services tab to stop the Edge Data Store service.
+1. If your device is still able to boot, verify that Edge Data Store service has stopped. Use the Windows Task Manager to stop the Edge Data Store service.
 2. Locate the storage and configuration files.
 
    **Note:** Windows storage and configuration files should be in the following locations:
