@@ -6,7 +6,7 @@ uid: LoggingConfiguration
 
 Each message in the log displays the message severity level, timestamp, and the message itself. By default, Edge Data Store captures Information, Warning and Error messages in the message log.
 
-> **Note:** The individual logging files of Edge Data Store and the components are the following:<br>
+**Note:** The individual logging files of Edge Data Store and the components are the following:<br>
 > - Edge Data Store: _System_Logging.json_
 > - Storage: _Storage_Logging.json_
 > - OSIsoft Adapter for OPC UA: _OpcUa1_Logging.json_
@@ -19,7 +19,7 @@ To adjust the message logging behavior, complete the following:
 
 1. Using any text editor, open the _componentId_Logging.json_ file that you want.
 2. Change the values as needed, so it looks similar to the [Logging example](#logging-example).
-3. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the respective endpoint. <br><br> Example using cURL for the Edge Data Store logging endpoint (run this command from the same directory where the file is located):
+3. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the respective endpoint. <br><br> Example using curl for the Edge Data Store logging endpoint (run this command from the same directory where the file is located):
 
 ```bash
 curl -v -d "@System_Logging.json" -H "Content-Type application/json" http://localhost:5590/api/v1/configuration/System/Logging
