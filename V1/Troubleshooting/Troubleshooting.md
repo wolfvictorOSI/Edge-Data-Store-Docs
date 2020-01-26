@@ -19,9 +19,9 @@ OMF ingress troubleshooting useful when a custom application is not writing stre
 
 ### OMF ingress logging
 
-You can find log messages related to ingress in the Storage logs. 
+You can find log messages related to ingress in the storage logs. 
 
-To output most information for troubleshooting, you should temporarily set the the log level to **Trace**.
+To output most information for troubleshooting, you should temporarily [set the the log level](xref:LoggingConfiguration) to **Trace**.
 
 ### OMF ingress message debugging
 
