@@ -7,11 +7,11 @@ uid: LoggingConfiguration
 Each message in the log displays the message severity level, timestamp, and the message itself. By default, Edge Data Store captures Information, Warning and Error messages in the message log.
 
 **Note:** The individual logging files of Edge Data Store and the components are the following:<br>
-> - Edge Data Store: _System_Logging.json_
-> - Storage: _Storage_Logging.json_
-> - OSIsoft Adapter for OPC UA: _OpcUa1_Logging.json_
-> - OSIsoft Adapter for Modbus TCP: _Modbus1_Logging.json_ <br><br>
-> If you have more than one OSIsoft Adapter of the same kind configured, the default file name will incrementally change, for example _OpcUa2_Logging.json_
+  - Edge Data Store: _System_Logging.json_
+  - Storage: _Storage_Logging.json_
+  - OSIsoft Adapter for OPC UA: _OpcUa1_Logging.json_
+  - OSIsoft Adapter for Modbus TCP: _Modbus1_Logging.json_ <br><br>
+If you have more than one OSIsoft Adapter of the same kind configured, the default file name will incrementally change, for example _OpcUa2_Logging.json_
 
 ## Configure logging
 
@@ -25,11 +25,11 @@ To adjust the message logging behavior, complete the following:
 curl -v -d "@System_Logging.json" -H "Content-Type application/json" http://localhost:5590/api/v1/configuration/System/Logging
 ```
 
-> **Note:** The other endpoints are the following:<br>
-> - Edge Data Store: `http://localhost:5590/api/v1/configuration/System/Logging`
-> - Storage: `http://localhost:5590/api/v1/configuration/Storage/Logging`
-> - OSIsoft Adapter for OPC UA: `http://localhost:5590/api/v1/configuration/OpcUa1/Logging`
-> - OSIsoft Adapter for Modbus TCP: `http://localhost:5590/api/v1/configuration/Modbus1/Logging`
+**Note:** The other endpoints are the following:<br>
+  - Edge Data Store: `http://localhost:5590/api/v1/configuration/System/Logging`
+  - Storage: `http://localhost:5590/api/v1/configuration/Storage/Logging`
+  - OSIsoft Adapter for OPC UA: `http://localhost:5590/api/v1/configuration/OpcUa1/Logging`
+  - OSIsoft Adapter for Modbus TCP: `http://localhost:5590/api/v1/configuration/Modbus1/Logging`
 
 ## Logging schema
 
