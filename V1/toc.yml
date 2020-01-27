@@ -8,8 +8,8 @@
   href: Installation/toc.yml
   topicHref: Installation/InstallationOverview.md
 - name: EdgeCmd utility
-- href: CommandLine/Install EdgeCmd utility/toc.yml
-- topicHref: CommandLine/Install EdgeCmd utility.md  
+  href: CommandLine/toc.yml
+  topicHref: CommandLine/Install EdgeCmd utility.md  
 - name: Configuration
   href: Configuration/toc.yml
   topicHref: Configuration/Configuration.md
