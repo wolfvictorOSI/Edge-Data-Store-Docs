@@ -73,7 +73,7 @@ You must have administrative privileges to install the software, for example roo
 
 3. Optional: Type the port value you want and press Enter. If 5590 is acceptable, press Enter.
 
-   **Note** If you specify an invalid value for the port, the install will proceed with the default value of 5590.
+   **Note:** If you specify an invalid value for the port, the install will proceed with the default value of 5590.
 
     You will then be prompted if you want to install a Modbus TCP or OPC UA EDS adapter in addition to the default Storage component. The default is not to install them. You can add them after the installation is complete if you want.
 
