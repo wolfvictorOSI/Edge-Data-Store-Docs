@@ -93,8 +93,7 @@ A serialized list of one or more events of the stream type.
 **Response**  
 The response includes a status code.
 
-**Note:**  
-This request will return an error if an event already exists for any index in the request. If any individual index encounters a problem, the entire operation is rolled back and no insertions are made. The `streamId` and `index` that caused the issue are included in the error response.
+**Note:** This request will return an error if an event already exists for any index in the request. If any individual index encounters a problem, the entire operation is rolled back and no insertions are made. The `streamId` and `index` that caused the issue are included in the error response.
 
 **Example**  
 The following request is used to insert events into stream `Simple` of `SimpleType`,
@@ -238,8 +237,7 @@ The index defining the end of the window.
 **Response**  
 The response includes a status code.
 
-**Note:**  
-If any individual event fails to be removed, the entire operation is rolled back and no removes are done.
+**Note:** If any individual event fails to be removed, the entire operation is rolled back and no removes are done.
 *****
 
 ## ``Replace Values``
@@ -266,8 +264,7 @@ A serialized list of one or more events of the stream type..
 **Response**  
 The response includes a status code.
 
-**Note:**  
-This request returns an error if the stream does not have an event to be replaced at the specified index. If any individual event fails to be replaced, the entire operation is rolled back and no replaces are performed. The index that caused the issue and the streamId are included in the error response.
+**Note:** This request returns an error if the stream does not have an event to be replaced at the specified index. If any individual event fails to be replaced, the entire operation is rolled back and no replaces are performed. The index that caused the issue and the streamId are included in the error response.
 *****
 
 ## `Update Values`
@@ -293,7 +290,6 @@ A serialized list of one or more events of the stream type.
 **Response**  
 The response includes a status code.
 
-**Note:**  
-This request performs an insert or a replace depending on whether an event already exists at the event indexes. If any item fails to write, the entire operation is rolled back and no events are written to the stream. The index that caused the issue is included in the error response.
+**Note:** This request performs an insert or a replace depending on whether an event already exists at the event indexes. If any item fails to write, the entire operation is rolled back and no events are written to the stream. The index that caused the issue is included in the error response.
 *****
   
