@@ -12,11 +12,11 @@ Complete the following to configure Modbus TCP data selection:
 
 1. Using any text editor, create a file that contains a Modbus TCP data selection in JSON form. This file can be created or copied to any directory on a device with Edge Data Store installed.
     - For content structure, see [Modbus TCP data selection examples](#modbus-tcp-data-selection-examples). 
-    - For a table of all available parameters, see [Parameters for Modbus TCP data selection](#parameters-for-modbus-tcp-data-selection). 
-2. Save the file as _DataSelection.config.json_.
-3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`.
+2. Update the parameters as needed. For a table of all available parameters, see [Parameters for Modbus TCP data selection](#parameters-for-modbus-tcp-data-selection). 
+3. Save the file as _DataSelection.config.json_.
+4. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`.
 
-    Example using cURL (run this command from the same directory where the file is located):
+    The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):
 
     ```bash
     curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection"
