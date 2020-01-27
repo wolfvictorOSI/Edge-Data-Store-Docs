@@ -3,10 +3,9 @@ uid: commandLine
 ---
 
 # Configure EdgeCmd utility
+The following sections provide instructions for the configuration of EdgeCmd utility for Windows or Linux.
 
-Use the EdgeCmd command line utility to configure and administer Edge Data Store on Linux and Windows. You can accomplish the same operations with EdgeCmd that you can accomplish with REST calls.
-
-**Note:** The following EdgeCmd utility locations are based on the installation instructions in [Install EdgeCmd utility](xref:Installedgecmd).
+**Note:** The following EdgeCmd utility locations are based on the installation instructions in [EdgeCmd utility](xref:Installedgecmd).
 
 Location on Windows:
 
