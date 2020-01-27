@@ -86,7 +86,7 @@
 <p><strong>Note:</strong> Docker users must use the &quot;host&quot; networking mode for the container. For an example of running a container using this mode, see the section pertaining to <a class="xref" href="../Docker/EdgeDocker.html">Docker containers</a>.</p>
 <h2 id="data-egress">Data egress</h2>
 <p>Writing data to OSIsoft Cloud Services or OSIsoft PI Web API is not limited to the local machine. You can write data to either of these destinations using HTTPS.</p>
-<h2 id="eds-adapters">EDS Adapters</h2>
+<h2 id="eds-adapters">EDS adapters</h2>
 <p>Modbus and OPC UA are not limited to the local machine. Both are enabled to access remote data sources through binary protocols.</p>
 <h2 id="secure-storage">Secure storage</h2>
 <p>Sensitive information such as passwords and client secrets are saved in configuration files in an encrypted form. Only the Edge Data Store runtime can properly store and retrieve these protected data items. </p>
@@ -95,7 +95,7 @@
 <p>You should use caution when you submit sensitive data items. For example, remove any temporary file containing unencrypted credentials used to submit configuration to the REST API from the system.</p>
 <h2 id="service-and-file-system-security">Service and file system security</h2>
 <p>The installer creates a specific user account that the Edge Data Store service runs under. You can only use this account for running the service.  For example, you cannot use it for interactive sessions. You cannot typically configure this service account. Modifying the service configuration in this respect could cause system failure.</p>
-<p>The Edge Data Store binary files, configuration files, and data files are configured by the installer and runtime to allow appropriate access by the service account. You do not normally need to modify the permission and ownership assignments for these files, and should not as failures could occur.</p>
+<p>The Edge Data Store binary files, configuration files, and data files are configured by the installer and runtime to allow appropriate access by the service account. You do not normally need to modify the permission and ownership assignments for these files, and should not modify them as failures could occur.</p>
 </article>
           </div>
           

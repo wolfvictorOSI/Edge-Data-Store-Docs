@@ -88,7 +88,7 @@
 </ul>
 <p>For more information, see <a class="xref" href="OPCUADataSourceConfiguration.html">OPC UA data source configuration</a> and <a class="xref" href="OPCUADataSelectionConfiguration.html">OPC UA data selection configuration</a>. </p>
 <h2 id="connection">Connection</h2>
-<p>The OPC UA EDS adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. When a secured connection is enabled, the X.509-type client and server certificates are exchanged and verified and the connection between the OPC UA EDS adapter and the configured OPC UA server is established.</p>
+<p>The OPC UA EDS adapter uses the binary opc.tcp protocol to communicate with the OPC UA servers. A secured connection is enabled by default where the X.509-type client and server certificates are exchanged and verified and the connection between the OPC UA EDS adapter and the configured OPC UA server is established.</p>
 <h2 id="stream-creation">Stream creation</h2>
 <p>The OPC UA EDS adapter creates types upon receiving the value update for a stream. One stream is created in Edge Data Store for every selected OPC UA item in the data selection configuration.</p>
 <h2 id="data-collection">Data collection</h2>

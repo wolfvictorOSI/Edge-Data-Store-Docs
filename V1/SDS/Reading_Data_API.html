@@ -413,7 +413,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 40
     }
 ]
-</code></pre><p>Note that <code>State</code> is not included in the JSON as its value is the default value. Further, <code>Measurement</code> is not included in the second, 12:00:00, event as zero is the default value for numbers.</p>
+</code></pre><p><strong>Note:</strong> <code>State</code> is not included in the JSON as its value is the default value. Further, <code>Measurement</code> is not included in the second, 12:00:00, event as zero is the default value for numbers.</p>
 <p>If instead a start boundary of Inside, only values inside the start boundary (after 13:30) are included in the result. With an end boundary of Outside one value outside the end index (after 15:30) is included:</p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data
     ?startIndex=2017-11-23T12:30:00Z&amp;&amp;startBoundaryType=1

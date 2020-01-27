@@ -228,10 +228,9 @@
 <ul>
 <li>Int16 (Data type code 10) </li>
 <li>UInt16 (Data type code 20)</li>
-<li><p>Int32 (Data type code 30 and 31) </p>
-<h2 id="apply-data-conversion">Apply data conversion</h2>
-</li>
+<li>Int32 (Data type code 30 and 31) </li>
 </ul>
+<h2 id="apply-data-conversion">Apply data conversion</h2>
 <p>The Modbus TCP EDS adapter supports applying data conversion to the value converted from reading the Modbus TCP devices. A conversion factor and conversion offset can be specified. The conversion factor is used for scaling the value up or down, and the conversion offset is used for shifting the value. The mathematical equation used in conversion is the following: </p>
 <pre><code>&lt;After Conversion&gt; = &lt;Before Conversion&gt; / Factor - Offset 
 </code></pre><p> Not all data types support applying data conversion. Data types that support data conversion are: </p>

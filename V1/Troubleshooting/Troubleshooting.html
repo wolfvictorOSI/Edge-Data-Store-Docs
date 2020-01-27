@@ -88,37 +88,24 @@
   No data will be present until messages are received and processed in that order. Logging of warnings, errors, and message can help with resolving these issues.</li>
 </ul>
 <h3 id="omf-ingress-logging">OMF ingress logging</h3>
-<p>You can find log messages related to egress in the Storage logs. </p>
-<p>To output most information for troubleshooting, you should temporarily set the the log level to <strong>Trace</strong>.</p>
+<p>You can find log messages related to ingress in the storage logs. </p>
+<p>To output most information for troubleshooting, you should temporarily <a class="xref" href="../Configuration/Logging%20configuration.html">set the the log level</a> to <strong>Trace</strong>.</p>
 <h3 id="omf-ingress-message-debugging">OMF ingress message debugging</h3>
 <p>In order to troubleshoot problems between an OMF application and Edge Storage, you should enable debugging. </p>
 <ul>
-<li><p>Set an appropriate value for the <em>IngressDebugExpiration</em> property in a storage runtime configuration. </p>
-<p>  Debugging will be enabled for all incoming OMF messages, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to <em>null</em>.</p>
-</li>
+<li>Set an appropriate value for the <em>IngressDebugExpiration</em> property in a <a class="xref" href="../Configuration/Storage%20runtime%20config.html">storage runtime configuration</a>. </li>
 </ul>
-<p>Examples of valid strings representing date and time:</p>
-<pre><code>Utc: “yyyy-mm-ddThh:mm:ssZ”
-
-Local: “mm-dd-yyyy hh:mm:ss”
-</code></pre><p>The content of the OMF message, including the headers will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in a separate format than usual log messages. A single file is written to the usual Logs directory for every incoming OMF Type, Container, and data message.</p>
 <h2 id="periodic-egress">Periodic egress</h2>
-<p>EDS periodic egress extracts data from SDS streams and sends the appropriate sequences of type, container, and data OMF messages on startup.</p>
-<ul>
-<li>If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same stream. </li>
-</ul>
+<p>EDS periodic egress extracts data from SDS streams and sends the appropriate sequences of type, container, and data OMF messages on startup.  </p>
+<p><strong>Note:</strong> If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same SDS stream. </p>
 <p>Careful use of stream prefixes in the <a class="xref" href="../Egress/Egress.html">periodic egress endpoint configuration</a> ensures that output data streams are logically separated in the systems of record.</p>
 <p>Type prefixes may be helpful if you have a case where you have changed a stream type definitions on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.</p>
 <h3 id="periodic-egress-logging">Periodic egress logging</h3>
 <p>You can find log messages related to egress in the Storage logs. </p>
-<p>To output most information for troubleshooting, you can temporarily set the the log level to <strong>Trace</strong>.</p>
+<p>To output most information for troubleshooting, you can temporarily set the the log level to <strong>Trace</strong>.  For instructions on logging configuration, see <a class="xref" href="../Configuration/Logging%20configuration.html">Message logging configuration</a>.</p>
 <h3 id="periodic-egress-debugging">Periodic egress debugging</h3>
-<p>In order to troubleshoot problems between Edge Data Store and the destination, you should enable debugging. </p>
-<ul>
-<li><p>Set an appropriate value for the <em>DebugExpiration</em> property in an egress configuration.</p>
-<p>  Debugging for that destination will be enabled, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to <em>null</em>.</p>
-</li>
-</ul>
+<p>In order to troubleshoot problems between Edge Data Store and the destination, you should enable debugging in <a class="xref" href="../Egress/Egress.html">Data egress configuration</a>. Debugging for that destination will be enabled, and HTTP request and response content will be stored to disk for review. 
+The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to <em>null</em>.</p>
 <p>Examples of valid strings representing date and time:</p>
 <pre><code>Utc: “yyyy-mm-ddThh:mm:ssZ”
 
@@ -128,7 +115,7 @@ Local: “mm-dd-yyyy hh:mm:ss”
 
 Linux: /usr/share/OSIsoft/EdgeDataStore/Storage/egressdump/{tenantId}/{namespaceId}/{egressId}/{omfType}/{Ticks}-{Guid}-{Req/Res}.txt
 </code></pre><p><em>omfType</em> represents Type/Container/Data;
-<em>Ticks</em> represents the tick count for the Utc DateTime when it was decided that the message would be written to disk;
+<em>Ticks</em> represents the tick count for the UTC DateTime when it was decided that the message would be written to disk;
 <em>Guid</em> represents a unique Guid for each request/response pair;
 <em>Req/Res</em> whether it was the HTTP request or response.</p>
 </article>

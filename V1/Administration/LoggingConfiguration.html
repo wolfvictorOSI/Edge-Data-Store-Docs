@@ -95,7 +95,7 @@ It is located in:</p>
 <p>• Windows: <em>%ProgramFiles%/OSIsoft/EdgeDataStore/Schema</em></p>
 <p>• Linux: <em>/opt/EdgeDataStore/Schema</em></p>
 <h3 id="log-levels">Log levels</h3>
-<p>Changing the logLevel leads to captures of logs in severity including and above the specified log level. The log levels in their increasing order of severity are as follows: Trace, Debug, Information, Warning, Error, Critical.</p>
+<p>The logLevel sets the minimum severity for messages to be included in the logs. Messages with a severity below the level set are not included. The log levels in their increasing order of severity are as follows: Trace, Debug, Information, Warning, Error, Critical.</p>
 <p>Table: General guidelines for setting the log level.</p>
 <table>
 <thead>
@@ -107,7 +107,7 @@ It is located in:</p>
 <tbody>
 <tr>
 <td>Trace</td>
-<td>Logs that contain the most detailed messages. These messages may contain sensitive application data like actual received values. Generally, these messages shouldn’t be enabled in production environment.</td>
+<td>Logs that contain the most detailed messages. These messages may contain sensitive application data like actual received values, which is why these messages shouldn’t be enabled in production environment.</td>
 </tr>
 <tr>
 <td>Debug</td>
@@ -119,36 +119,40 @@ It is located in:</p>
 </tr>
 <tr>
 <td>Warning</td>
-<td>Logs that highlight an abnormal or unexpected event in the application flow, but does not otherwise cause the application execution to stop. This can be used to react on unconfigured data source state, message that communication with backup failover instance has been lost, use of insecure communication channel, or any other event that could require attention, but isn’t directly impacting the flow.</td>
+<td>Logs that highlight an abnormal or unexpected event in the application flow, but does not otherwise cause the application execution to stop. Warning messages can indicate an unconfigured data source state, that a communication with backup failover instance has been lost, an insecure communication channel in use, or any other event that could require attention, but that does not impact data flow.</td>
 </tr>
 <tr>
 <td>Error</td>
-<td>Logs that highlight when the current flow of execution is stopped due to a failure. These should indicate a failure in the current activity, not an application-wide failure. This can be used to react on invalid configuration, unavailable external endpoint, internal flow error, etc.</td>
+<td>Logs that highlight when the current flow of execution is stopped due to a failure. These should indicate a failure in the current activity, not an application-wide failure. This can indicate an invalid configuration, unavailable external endpoint, internal flow error, and so on.</td>
 </tr>
 <tr>
 <td>Critical</td>
-<td>Logs that describe an unrecoverable application or system crash, or a catastrophic failure that requires immediate attention. This can be used to react on application wide failures like beta timeout expired, unable to start self-hosted endpoint, unable to access vital resource (Data Protection key file for example).</td>
+<td>Logs that describe an unrecoverable application or system crash, or a catastrophic failure that requires immediate attention. This can indicate application wide failures like beta timeout expired, unable to start self-hosted endpoint, unable to access vital resource (for example, Data Protection key file), and so on.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="log-file-count-limit">Log file count limit</h3>
-<p>The logFileCountLimit controls the number of days the log files are stored before they are deleted for creation of new log files. </p>
+<p>The logFileCountLimit controls the number of days the log files are stored before they are deleted. </p>
 <h2 id="change-logging-configuration">Change logging configuration</h2>
 <p>To change the logging configuration complete the following steps: </p>
 <ol>
-<li>Save the new configuration information in a JSON file format.</li>
-<li>Run the following script (or make an equivalent REST API call):</li>
-</ol>
-<p>For example, Component_Logging.json:</p>
+<li><p>Update the parameters of the message logging configuration JSON file that you want as needed. For example, the <em>Component_Logging.json</em> file:</p>
 <pre><code class="lang-json">{
   &quot;logLevel&quot;: &quot;Warning&quot;,
   &quot;logFileSizeLimitBytes&quot;: 16777216,
   &quot;logFileCountLimit&quot;: 30   
 }
-</code></pre><pre><code class="lang-bash">curl -i -d &quot;@Component_Logging.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging
-</code></pre><p>&lt;ComponentId&gt; is the ComponentId of the adapter or Storage.</p>
+</code></pre></li>
+<li><p>Save the file.</p>
+</li>
+<li><p>Use any tool capable of making HTTP requests to execute a PUT command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging</code>.</p>
+<p> Example using curl (run this command from the same directory where the file is located):</p>
+<pre><code class="lang-bash">curl -i -d &quot;@Component_Logging.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging
+</code></pre></li>
+</ol>
+<p><strong>Note:</strong>  Replace <em>&lt;ComponentId&gt;</em> with the ComponentId of the adapter or Storage, for example <em>OpcUa1</em>.</p>
 <p>On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. </p>
-<p><strong>Note:</strong>  If you do not specify all the parameters in the configuration file, the specified parameters will be updated while the unspecified parameters will revert to the default schema values.</p>
+<p><strong>Note:</strong>  Any parameter not specified in the updated configuration file will revert to the default schema value.</p>
 </article>
           </div>
           

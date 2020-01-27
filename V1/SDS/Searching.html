@@ -322,7 +322,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query=name:pump name
 </tr>
 </tbody>
 </table>
-<p><strong>Notes regarding wildcard operator <code>*</code>:</strong> You can use the wildcard <code>*</code> only once for each search term, except for the case of a Contains type query clause. In that case, two wildcards are allowed: one as prefix and one as suffix for example, <code>*Tank*</code> is valid but <code>*Ta*nk</code>, <code>Ta*nk*</code>, and <code>*Ta*nk*</code> are not supported. The wildcard <code>*</code> only works when specifying a single search term. For example, you can search for <code>Tank*</code>, <code>*Tank</code>, <code>Ta*nk</code> but not <code>Tank Meter*</code>.</p>
+<p><strong>Note:</strong> Regarding wildcard operator <code>*</code>, you can use the wildcard <code>*</code> only once for each search term, except for the case of a Contains type query clause. In that case, two wildcards are allowed: one as prefix and one as suffix for example, <code>*Tank*</code> is valid but <code>*Ta*nk</code>, <code>Ta*nk*</code>, and <code>*Ta*nk*</code> are not supported. The wildcard <code>*</code> only works when specifying a single search term. For example, you can search for <code>Tank*</code>, <code>*Tank</code>, <code>Ta*nk</code> but not <code>Tank Meter*</code>.</p>
 <h2 id="-operator"><strong>: Operator</strong></h2>
 <p>You can determine which fields are searched by using the following syntax:</p>
 <pre><code class="lang-text">fieldname:fieldvalue

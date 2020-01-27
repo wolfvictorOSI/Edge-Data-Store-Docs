@@ -105,11 +105,10 @@
 }]
 </code></pre></li>
 <li><p>Add the server name, username, and password of your PI Web API server into the &quot;Endpoint&quot; definition.  You must specify a valid user account that can write data via PI Web API using Basic authentication.  See <a class="xref" href="../Egress/Egress.html">Data egress configuration</a> for examples.</p>
-</li>
-</ol>
 <p><strong>Note:</strong> StreamPrefix and TypePrefix values can be used to ensure uniqueness on the destination system, if required. The StreamPrefix value will create unique PI Points on the PI System. If you want to only send specific streams, edit the &quot;EgressFilter&quot; value. Examples of more advanced scenarios are in the Egress section of this documentation.</p>
-<ol>
-<li>Save the JSON file with the name PeriodicEgressEndpoints.json.</li>
+</li>
+<li><p>Save the JSON file with the name PeriodicEgressEndpoints.json.</p>
+</li>
 <li><p>To configure Edge Storage to send data to the PI System, run the following curl script from the same directory where you saved the JSON file. </p>
 <p><strong>Note:</strong> You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory.</p>
 </li>

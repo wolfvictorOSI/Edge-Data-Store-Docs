@@ -147,7 +147,8 @@ sudo apt upgrade
 </code></pre><ol>
 <li>After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.</li>
 </ol>
-<p>The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. <strong>Note:</strong> Depending on the processor, memory, and storage, it may take the system a few seconds to start up.</p>
+<p>The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. 
+<strong>Note:</strong> Depending on the processor, memory, and storage, it may take the system a few seconds to start up.</p>
 <pre><code class="lang-bash">curl http://localhost:5590/api/v1/configuration
 </code></pre><p>If the installation was successful, you will get back a JSON copy of the default system configuration:</p>
 <pre><code class="lang-json">{

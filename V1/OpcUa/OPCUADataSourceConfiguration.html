@@ -85,16 +85,17 @@
 <ol>
 <li>Using any text editor, create a file that contains an OPC UA data source in JSON form.<ul>
 <li>For content structure, see <a href="#opc-ua-data-source-example">OPC UA data source example</a>.</li>
-<li>For a table of all available parameters, see <a href="#parameters-for-opc-ua-data-source">Parameters for OPC UA data source</a>.</li>
 </ul>
 </li>
+<li>Update the parameters as needed. For a table of all available parameters, see <a href="#parameters-for-opc-ua-data-source">Parameters for OPC UA data source</a>.</li>
 <li>Save the file as <em>DataSource.config.json</em>.</li>
 <li>Use any <a class="xref" href="../Administration/ManagementTools.html">Configuration tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSource/</code>. </li>
 </ol>
 <p>The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):</p>
 <p><strong>Note:</strong> During installation, you can add a single OPC UA EDS adapter named OpcUa1. The following example uses this component name.</p>
 <pre><code class="lang-bash">curl -v -d &quot;@DataSource.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/OpcUa1/DataSource&quot;
-</code></pre><h2 id="opc-ua-data-source-schema">OPC UA data source schema</h2>
+</code></pre><p><strong>Note:</strong> After you have completed data source configuration, the next step is to configure data selection. You can either have a default data selection file generated or you can create the data selection file yourself. For more information, see <a class="xref" href="OPCUADataSelectionConfiguration.html">Data selection configuration</a>.</p>
+<h2 id="opc-ua-data-source-schema">OPC UA data source schema</h2>
 <p>The following table shows the basic behavior of the <em>OpcUa_DataSource_schema.json</em> file.</p>
 <table>
 <thead>
@@ -143,7 +144,7 @@
 <td>Optional</td>
 <td><code>Boolean</code></td>
 <td>No</td>
-<td>When set to true, the OPC UA EDS adapter connects to a secure endpoint using OPC UA certificate exchange operation. The default is true. When set to false, the OPC UA EDS adapter connects to an unsecured endpoint of the server and certificate exchange operation is not required.<br><br><strong>Note:</strong> OSIsoft recommends setting this option to false for testing purposes only.</td>
+<td>When set to true, the OPC UA EDS adapter connects to a secure endpoint using OPC UA certificate exchange operation. The default is true. When set to false, the OPC UA EDS adapter connects to an unsecured endpoint of the server and certificate exchange operation is not required.<br><br><strong>Note:</strong> OSIsoft recommends setting this option to false for testing purposes only. For more information on how to configure security, see <a class="xref" href="OPCUAAdapterSecurityConfiguration.html">Adapter security</a>.</td>
 </tr>
 <tr>
 <td><strong>UserName</strong></td>

@@ -79,8 +79,7 @@
 <h1 id="storage-runtime-configuration">Storage runtime configuration</h1>
 
 <p>Edge Data Store provides a mechanism for configuring runtime characteristics of the storage component.  </p>
-<blockquote><p><strong>Note:</strong> The configured defaults are sufficent for most scenarios.  You should modify these values  only after consultation with OSIsoft Support personnel.</p>
-</blockquote>
+<p><strong>Note:</strong> The configured defaults are sufficent for most scenarios.  You should modify these values  only after consultation with OSIsoft Support personnel.</p>
 <h2 id="configure-storage-runtime">Configure storage runtime</h2>
 <p>To update the storage runtime configuration, complete the following:</p>
 <ol>
@@ -93,8 +92,7 @@
 <li>From the same directory where the file exists, run the following curl script:</li>
 </ol>
 <pre><code class="lang-bash">curl -i -d &quot;@Storage_Runtime.config.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/storage/Runtime
-</code></pre><blockquote><p><strong>Note:</strong> The @ symbol is a required prefix for the above command.</p>
-</blockquote>
+</code></pre><p><strong>Note:</strong> The @ symbol is a required prefix for the above command.</p>
 <h3 id="parameters">Parameters</h3>
 <table>
 <thead>
@@ -236,7 +234,12 @@
 </tbody>
 </table>
 <h3 id="ingressdebugexpiration">IngressDebugExpiration</h3>
-<p>Ingress Debug Expiration is a property that can be used when debugging OMF. If the date and time is the future incoming OMF messages will be logged until the date and time specified. Once the configured time is past OMF messages will no longer be logged for debugging purposes.</p>
+<p>Ingress Debug Expiration is a property that can be used when debugging OMF. If the date and time is the future incoming OMF messages will be logged until the date and time specified. Once the configured time is past OMF messages will no longer be logged for debugging purposes.  Debugging will be enabled for all incoming OMF messages, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to <em>null</em>.</p>
+<p>Examples of valid strings representing date and time:</p>
+<pre><code>Utc: “yyyy-mm-ddThh:mm:ssZ”
+
+Local: “mm-dd-yyyy hh:mm:ss”
+</code></pre><p>The content of an incoming OMF message, including the headers, will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in another format than usual log messages. A single file is written to the usual Logs directory for every incoming OMF type, container, and data message.</p>
 <h4 id="ingressdebugexpiration-type">IngressDebugExpiration type</h4>
 <p><code>string</code></p>
 <ul>

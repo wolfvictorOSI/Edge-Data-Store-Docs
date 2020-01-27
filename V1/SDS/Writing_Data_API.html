@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>API calls for reading data </title>
+    <title>API calls for writing data </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="API calls for reading data ">
+    <meta name="title" content="API calls for writing data ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -76,7 +76,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="sdsWritingDataApi">
-<h1 id="api-calls-for-reading-data">API calls for reading data</h1>
+<h1 id="api-calls-for-writing-data">API calls for writing data</h1>
 
 <h4 id="example-type-stream-and-data">Example type, stream, and data</h4>
 <p>Many of the following API methods descriptions contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples:</p>
@@ -135,7 +135,7 @@ var SimpleType = function () {
 <p><code>string streamId</code><br>The stream identifier. </p>
 <p><strong>Request body</strong><br>A serialized list of one or more events of the stream type.  </p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>Note:</strong><br>This request will return an error if an event already exists for any index in the request. If any individual index encounters a problem, the entire operation is rolled back and no insertions are made. The <code>streamId</code> and <code>index</code> that caused the issue are included in the error response.</p>
+<p><strong>Note:</strong> This request will return an error if an event already exists for any index in the request. If any individual index encounters a problem, the entire operation is rolled back and no insertions are made. The <code>streamId</code> and <code>index</code> that caused the issue are included in the error response.</p>
 <p><strong>Example</strong><br>The following request is used to insert events into stream <code>Simple</code> of <code>SimpleType</code>,</p>
 <pre><code class="lang-text">POST api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
 </code></pre><p>The request body specifies the values to insert:</p>
@@ -203,7 +203,7 @@ var SimpleType = function () {
 <p><code>string startIndex</code><br>The index defining the beginning of the window.</p>
 <p><code>string endIndex</code><br>The index defining the end of the window.  </p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>Note:</strong><br>If any individual event fails to be removed, the entire operation is rolled back and no removes are done.</p>
+<p><strong>Note:</strong> If any individual event fails to be removed, the entire operation is rolled back and no removes are done.</p>
 <hr>
 <h2 id="replace-values"><code>Replace Values</code></h2>
 <p>Writes one or more events over existing events in the specified stream.</p>
@@ -215,7 +215,7 @@ var SimpleType = function () {
 <p><strong>Request body</strong>
 A serialized list of one or more events of the stream type..</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>Note:</strong><br>This request returns an error if the stream does not have an event to be replaced at the specified index. If any individual event fails to be replaced, the entire operation is rolled back and no replaces are performed. The index that caused the issue and the streamId are included in the error response.</p>
+<p><strong>Note:</strong> This request returns an error if the stream does not have an event to be replaced at the specified index. If any individual event fails to be replaced, the entire operation is rolled back and no replaces are performed. The index that caused the issue and the streamId are included in the error response.</p>
 <hr>
 <h2 id="update-values"><code>Update Values</code></h2>
 <p>Writes one or more events to the specified stream.</p>
@@ -225,7 +225,7 @@ A serialized list of one or more events of the stream type..</p>
 <p><code>string streamId</code><br>The stream identifier.  </p>
 <p><strong>Request body</strong><br>A serialized list of one or more events of the stream type.</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
-<p><strong>Note:</strong><br>This request performs an insert or a replace depending on whether an event already exists at the event indexes. If any item fails to write, the entire operation is rolled back and no events are written to the stream. The index that caused the issue is included in the error response.</p>
+<p><strong>Note:</strong> This request performs an insert or a replace depending on whether an event already exists at the event indexes. If any item fails to write, the entire operation is rolled back and no events are written to the stream. The index that caused the issue is included in the error response.</p>
 <hr>
 </article>
           </div>

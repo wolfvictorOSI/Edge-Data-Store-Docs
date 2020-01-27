@@ -78,24 +78,30 @@
             <article class="content wrap" id="_content" data-uid="disasterRecovery">
 <h1 id="disaster-recovery">Disaster recovery</h1>
 
-<p>This topic provides procedures for creating a backup of Edge Data Store stream data and configuration files, moving them to a new system, and then restoring the back up files onto the new system. Procedures are provided for Windows and Linux systems.</p>
+<p>This topic provides procedures for recovery from the failure of a device which has Edge Data Store installed.  The disaster recovery process includes the following steps:</p>
+<ul>
+<li>Back up the Edge Data Store data from the failed device to another location</li>
+<li>Install Edge Data Store on a new device</li>
+<li>Move a .zip file of the backed up data to the new device</li>
+<li>Restore the backed up data files to the new device</li>
+</ul>
+<p>Procedures are provided for Windows and Linux systems.</p>
 <p><strong>Prequisite:</strong>  This topic does not provide instruction for backing up or restoring credentials. All credentials are encrypted for security purposes, so they cannot be copied or transferred. After the new system has had the storage and configuration files copied over, and the service has started, do the following:</p>
 <ol>
 <li>Re-enter the credentials for the system using API calls. </li>
-<li><p>After updating, restart the Edge Data Store service. </p>
-<p> The new edge device will be running as the previous device, and will contain all the data up to the point the previous device went down.</p>
-</li>
+<li>After updating, restart the Edge Data Store service. </li>
 </ol>
+<p>The new Edge device will be running as the previous device, and will contain all the data up to the point the previous device went down.</p>
 <h2 id="windows-recovery">Windows recovery</h2>
-<h3 id="create-a-backup-from-the-failed-system">Create a backup from the failed system</h3>
+<h3 id="create-a-backup-of-edge-data-store-data-from-the-failed-device">Create a backup of Edge Data Store data from the failed device</h3>
 <p><strong>Prerequisite:</strong> Administrative access on the device to successfully restore on Windows system.</p>
 <ol>
-<li>If your device is still able to boot, verify that Edge Data Store service has stopped. Use the Windows Service Manager or Task Manager Services tab to stop the Edge Data Store service.</li>
+<li>If your device is still able to boot, verify that Edge Data Store service has stopped. Use the Windows Task Manager to stop the Edge Data Store service.</li>
 <li><p>Locate the storage and configuration files.</p>
 <p><strong>Note:</strong> Windows storage and configuration files should be in the following locations:
       <em>C:\ProgramData\OSIsoft\EdgeDataStore\Configuration</em>
       <em>C:\ProgramData\OSIsoft\EdgeDataStore\Storage</em>
-      The ProgramData folder is typically hidden, so if it is not visible, go to the <strong>View</strong> tab in <strong>Windows Explorer</strong> and check <strong>Hidden</strong>.</p>
+      The ProgramData folder is typically hidden, so if it is not visible, go to the <strong>View</strong> tab in <strong>Windows Explorer</strong> and select the <strong>Hidden Items</strong> check box.</p>
 </li>
 <li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.</p>
 </li>
@@ -103,7 +109,7 @@
 <h3 id="move-the-files-to-the-new-hardware">Move the files to the new hardware</h3>
 <p>When the new hardware has been installed with Edge Data Store, the new system will have a default configuration. </p>
 <ol>
-<li>Stop the Edge Data Store service using the Windows Service Manager or Task Manager service tab.</li>
+<li>Use the Windows Task Manager to stop the Edge Data Store service.    </li>
 <li>Once the service has stopped, navigate to the <em>C:\ProgramData\OSIsoft\EdgeDataStore</em> directory, and delete the default storage and configuration folders from the new device.</li>
 </ol>
 <h3 id="restore-backed-up-data-files">Restore backed up data files</h3>
@@ -111,14 +117,14 @@
 <li><p>Copy or unzip the backup storage and configuration files into the <em>C:\ProgramData\OSIsoft\EdgeDataStore</em> directory.</p>
 <p><strong>Note:</strong> The C: drive may not be the default drive letter of your system. Refer to My Computer, This PC, or open a command prompt to verify the default drive letter.</p>
 </li>
-<li><p>Restart the Edge Data Store service using the Windows Service Manager or Task Manager service tab.</p>
+<li><p>Use the Windows Task Manager to restart the Edge Data Store service.</p>
 </li>
 </ol>
-<h1 id="linux-recovery">Linux recovery</h1>
-<h3 id="create-a-backup-from-the-failed-system-1">Create a backup from the failed system</h3>
+<h2 id="linux-recovery">Linux recovery</h2>
+<h3 id="create-a-backup-of-edge-data-store-data-from-the-failed-device-1">Create a backup of Edge Data Store data from the failed device</h3>
 <p><strong>Prerequisite:</strong> Root access on the Linux device is required.</p>
 <ol>
-<li><p>If your device is still able to boot, verify that Edge Data Store service has stopped, using the following command: </p>
+<li><p>If your device is still able to boot, verify from a terminal window that Edge Data Store service has stopped, using the following command: </p>
 <pre><code>sudo systemctl stop osisoft.edgedatastore
 </code></pre></li>
 <li><p>Locate the storage and configuration files.</p>
@@ -134,7 +140,7 @@
 <h3 id="move-the-files-to-the-new-hardware-1">Move the files to the new hardware</h3>
 <p>When the new hardware has been installed with Edge Data Store, the new system will have a default configuration. </p>
 <ol>
-<li><p>Stop the Edge Data Store service using the following command:</p>
+<li><p>From a terminal window, stop the Edge Data Store service using the following command:</p>
 <pre><code>sudo systemctl stop osisoft.edgedatastore
 </code></pre></li>
 <li><p>Once the service has stopped, navigate to the <em>/usr/share/OSIsoft/EdgeDataStore</em> directory and extract your zip or tar file in that directory again using WinSCP, SFTP, or external device.</p>
