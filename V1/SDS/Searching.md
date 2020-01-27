@@ -136,7 +136,7 @@ Operators | Description
 ``:``   | Field-scoped query.  For example, ``id:stream*`` will search for streams where the ``id`` field starts with "stream", but will not search on other fields like ``name`` or ``description``.  **Note:** Field names are camel case and are case sensitive.
 ``( )`` | Precedence operator. For example, ``motel AND (wifi OR luxury)`` searches for streams containing motel and either wifi or luxury (or both).
 
-**Notes regarding wildcard operator ``*``:** You can use the wildcard ``*`` only once for each search term, except for the case of a Contains type query clause. In that case, two wildcards are allowed: one as prefix and one as suffix for example, ``*Tank*`` is valid but ``*Ta*nk``, ``Ta*nk*``, and ``*Ta*nk*`` are not supported. The wildcard ``*`` only works when specifying a single search term. For example, you can search for ``Tank*``, ``*Tank``, ``Ta*nk`` but not ``Tank Meter*``.
+**Note:** Regarding wildcard operator ``*``, you can use the wildcard ``*`` only once for each search term, except for the case of a Contains type query clause. In that case, two wildcards are allowed: one as prefix and one as suffix for example, ``*Tank*`` is valid but ``*Ta*nk``, ``Ta*nk*``, and ``*Ta*nk*`` are not supported. The wildcard ``*`` only works when specifying a single search term. For example, you can search for ``Tank*``, ``*Tank``, ``Ta*nk`` but not ``Tank Meter*``.
 
 **: Operator**
 ---------------
