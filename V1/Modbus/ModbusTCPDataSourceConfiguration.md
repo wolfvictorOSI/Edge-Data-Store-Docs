@@ -15,13 +15,13 @@ Complete the following to configure the Modbus TCP data source:
 1. Using any text editor, create a file that contains a Modbus TCP data source in JSON form. 
 You can create or copy this file to any directory on a device with Edge Data Store installed.
     - For content structure, see [Modbus TCP data source examples](#modbus-tcp-data-source-examples). 
-    - For a table of all available parameters, see [Parameters for Modbus TCP data source](#parameters-for-modbus-tcp-data-source). 
-2. Save the file as _DataSource.config.json_.
-3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`.
+2. Update the parameters as needed. For a table of all available parameters, see [Parameters for Modbus TCP data source](#parameters-for-modbus-tcp-data-source). 
+3. Save the file as _DataSource.config.json_.
+4. Use any [Configuration tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`.
 
 **Note:** During installation, it is possible to add a single Modbus TCP EDS adapter which is named Modbus1. The following example uses this component name.
 
-   Example using cURL (run this command from the same directory where the file is located):
+   The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):
 
       ```bash
       curl -v -d "@DataSource.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/Modbus1/DataSource"
