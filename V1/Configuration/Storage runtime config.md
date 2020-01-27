@@ -6,7 +6,7 @@ uid: storageruntime
 
 Edge Data Store provides a mechanism for configuring runtime characteristics of the storage component.  
 
-> **Note:** The configured defaults are sufficent for most scenarios.  You should modify these values  only after consultation with OSIsoft Support personnel.
+**Note:** The configured defaults are sufficent for most scenarios.  You should modify these values  only after consultation with OSIsoft Support personnel.
 
 ## Configure storage runtime
 
@@ -24,7 +24,7 @@ To update the storage runtime configuration, complete the following:
 curl -i -d "@Storage_Runtime.config.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/storage/Runtime
 ```
 
-> **Note:** The @ symbol is a required prefix for the above command.
+**Note:** The @ symbol is a required prefix for the above command.
 
 ### Parameters
 
