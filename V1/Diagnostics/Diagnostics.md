@@ -10,10 +10,7 @@ Diagnostics data is stored within the 'diagnostics' namespace of Edge Storage.  
 
 ## Egress diagnostics data through PeriodicEgressEndpoints
 
-To egress diagnositcs related data:
-
-1. Configure a periodic egress endpoint.
-2. Specify ```diagnostics``` as the NamespaceId in the periodic egress endpoint configuration.
+To egress diagnostics related data, you must specify `diagnostics` as the NamespaceId in the periodic egress endpoint configuration. For details and instructions, see [Data egress configuration](xref:egress).
 
 ## Edge Data Store diagnostics
 
