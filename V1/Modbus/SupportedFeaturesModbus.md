@@ -45,7 +45,7 @@ Not all data types support applying bitmap. The data types supporting bitmap are
  - UInt16 (Data type code 20)
  - Int32 (Data type code 30 and 31) 
  
- ## Apply data conversion 
+## Apply data conversion 
  
 The Modbus TCP EDS adapter supports applying data conversion to the value converted from reading the Modbus TCP devices. A conversion factor and conversion offset can be specified. The conversion factor is used for scaling the value up or down, and the conversion offset is used for shifting the value. The mathematical equation used in conversion is the following: 
 
