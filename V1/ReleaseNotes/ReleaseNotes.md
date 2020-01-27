@@ -84,7 +84,8 @@ A check will be done for prerequisites. If the Linux operating system is up to d
 
 2. After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.
 
-The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
+The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. 
+**Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
 
   ```bash
   curl http://localhost:5590/api/v1/configuration
