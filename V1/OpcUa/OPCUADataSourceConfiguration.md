@@ -14,9 +14,9 @@ Complete the following to configure the OPC UA data source:
 
 1. Using any text editor, create a file that contains an OPC UA data source in JSON form.
     - For content structure, see [OPC UA data source example](#opc-ua-data-source-example).
-    - For a table of all available parameters, see [Parameters for OPC UA data source](#parameters-for-opc-ua-data-source).
-2. Save the file as _DataSource.config.json_.
-3. Use any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`. 
+2. Update the parameters as needed. For a table of all available parameters, see [Parameters for OPC UA data source](#parameters-for-opc-ua-data-source).
+3. Save the file as _DataSource.config.json_.
+4. Use any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`. 
 
 The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):
 
@@ -42,7 +42,7 @@ The following parameters can be used to configure an OPC UA data source:
 | Parameter | Required | Type | Nullable | Description |
 |-----------|----------|------|----------|-------------|
 | **EndpointURL** | Required | `string` | Yes | The endpoint URL of the OPC UA server. The following is an example of the URL format: opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer<br><br>**Note:** If you change the EndpointURL on a configured OPC UA EDS adapter that has ComponentID_DataSelection.json file exported, you need to remove the _ComponentID_DataSelection.json_ file from the configuration directory to trigger a new browse (export).|
-| **UseSecureConnection**|Optional | `Boolean` | No | When set to true, the OPC UA EDS adapter connects to a secure endpoint using OPC UA certificate exchange operation. The default is true. When set to false, the OPC UA EDS adapter connects to an unsecured endpoint of the server and certificate exchange operation is not required.<br><br>**Note:** OSIsoft recommends setting this option to false for testing purposes only.|
+| **UseSecureConnection**|Optional | `Boolean` | No | When set to true, the OPC UA EDS adapter connects to a secure endpoint using OPC UA certificate exchange operation. The default is true. When set to false, the OPC UA EDS adapter connects to an unsecured endpoint of the server and certificate exchange operation is not required.<br><br>**Note:** OSIsoft recommends setting this option to false for testing purposes only. For more information on how to configure security, see [Adapter security](xref:OPCUAAdapterSecurityConfiguration).|
 | **UserName** | Optional | `string` | Yes | User name for accessing the OPC UA server. |
 | **Password** | Optional | `string` | Yes | Password for accessing the OPC UA server.<br><br>**Note:** OSIsoft recommends using REST to configure the data source when the password must be specified.|
 | **RootNodeIds** | Optional | `string` | Yes |List of comma-separated NodeIds of those objects from which the OPC UA EDS adapter browses the OPC UA server address space. This option allows selecting only subsets of the OPC UA address by explicitly listing one or more NodeIds which are used to start the initial browse. For example: ns=5;s=85/0:Simulation, ns=3;s=DataItems. If not specified, it means that the whole address space will be browsed.|
