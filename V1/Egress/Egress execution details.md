@@ -23,4 +23,4 @@ Certain HTTP failures during egress will result in a retry. Edge Data Store will
 
 For data collection and egress, in-memory and on-disk storage are used to track the last successfully-egressed data event, per stream. Data is egressed in order and includes future events.
 
-**Note**  When an event with a future timestamp is successfully egressed, only values after the associated timestamp of that event will be egressed.
+**Note:**  When an event with a future timestamp is successfully egressed, only values after the associated timestamp of that event will be egressed.
