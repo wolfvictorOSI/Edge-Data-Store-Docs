@@ -12,7 +12,6 @@ The first step in OMF data ingress is to create an OMF type that describes the f
 
 1. Create an OMF JSON file describing the type as follows:
 
-
    ```json
    [{
        "id": "MyCustomType",
@@ -33,10 +32,9 @@ The first step in OMF data ingress is to create an OMF type that describes the f
    ```
 
    The value is indexed by a timestamp, and the numeric value that will be stored is a 32-bit floating point value.
-
+   
 2. In order to create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json on the local device.
 3. Run the following curl script:
-
 
    ```bash
    curl -i -d "@OmfCreateType.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: type" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
@@ -58,10 +56,9 @@ The next step in writing OMF data is to create a container. As with an OMF type,
    ```
 
    This container references the OMF type that was created earlier, and an error will occur if the type does not exist when the container is created. 
-
+   
 2. To create the OMF container in the Edge Storage, store the JSON file with the name OmfCreateContainer.json on the local device.
 3. To create the SDS stream to store data defined by the type, run the following curl script:
-
 
    ```bash
    curl -i -d "@OmfCreateContainer.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: container" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
