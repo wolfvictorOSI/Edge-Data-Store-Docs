@@ -151,11 +151,11 @@ edgecmd Configuration System Components id=<componentId> delete
 **Note:** You can't delete the "Storage" component because it is required for Edge Data Store to operate.
 
 
-## Retrieve existing Edge Data Store configurations
+## Retrieve existing system configuration
 
 You can use the edgecmd utility to view the configuration for each part of Edge Data Store.
 
-To view the entire configuration for every Edge Data Store component, run the following command:
+To view the entire configuration for every system component, run the following command:
 
 ```bash
 edgecmd Configuration
