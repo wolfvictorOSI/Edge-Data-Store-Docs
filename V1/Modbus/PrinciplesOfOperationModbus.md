@@ -35,4 +35,4 @@ There is a unique identifier (Stream ID) for each stream created for the selecte
 ```
 <Adapter Component ID>.<Unit ID>.<Register Type>.<Register Offset> 
 ```
-> **Note:** Naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more information, see [Modbus TCP data source configuration](xref:ModbusTCPDataSourceConfiguration).
+**Note:** Naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more information, see [Modbus TCP data source configuration](xref:ModbusTCPDataSourceConfiguration).
