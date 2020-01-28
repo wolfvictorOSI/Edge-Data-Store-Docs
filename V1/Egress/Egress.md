@@ -10,7 +10,7 @@ Configuration of egress includes specifying zero or more endpoints. An egress en
 
 **Note:** Some types, and consequently containers and data, cannot be egressed. For more information, see [Egress Execution Details](#egress-execution-details).
 
-One tenant and two namespaces are supported in the Edge Data Store. The tenant is default, and the two namespaces are default (where adapter and OMF data is written) and diagnostics. Diagnostics is where the system and its components write information that can be used locally or egressed to a remote PI server or OCS for monitoring. To egress both namespaces two egress definitions are required.
+Edge Data Store supports one tenant and two namespaces. The EDS tenant name is default, and the two namespaces are default (where adapter and OMF data is written) and diagnostics. Diagnostics is where the system and its components write information that can be used locally or egressed to a remote PI server or OCS for monitoring. You must create a separate egress definition for each namespace from which you want to egress data.
 
 The other topics in this section provide instructions for the sequential steps required to egress EDS data to a PI server or OCS:
 
