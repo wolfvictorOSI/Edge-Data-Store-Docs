@@ -13,7 +13,7 @@ Complete the following to access EdgeCmd on Windows:
 2. Type the following at the prompt and press Enter:
 
    ```cmd
-C:\Program Files\OSIsoft\EdgeCmd\edgecmd.exe
+   C:\Program Files\OSIsoft\EdgeCmd\edgecmd.exe
    ```
 
    **Note:** Specify the full path when you use EdgeCmd on Windows.
@@ -24,7 +24,7 @@ Complete the following to access EdgeCmd on Linux:
 2. Type the following and press Enter.
 
    ```bash
- /opt/OSIsoft/EdgeCmd/edgecmd
+   /opt/OSIsoft/EdgeCmd/edgecmd
    ```
 
 **Note:** You can access EdgeCmd without using the full path on Linux. 
