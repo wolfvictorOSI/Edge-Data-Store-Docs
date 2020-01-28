@@ -7,19 +7,25 @@ The following sections provide instructions for the configuration of EdgeCmd uti
 
 **Note:** The following EdgeCmd utility locations are based on the installation instructions in [EdgeCmd utility](xref:Installedgecmd).
 
-Location on Windows:
+Complete the following to access EdgeCmd on Windows:
 
-```cmd
+1. Open a command prompt.
+2. Type the following at the prompt and press Enter:
+
+   ```cmd
 C:\Program Files\OSIsoft\EdgeCmd\edgecmd.exe
-```
+   ```
 
-**Note:** Specify the full path when you use EdgeCmd on Windows.
+   **Note:** Specify the full path when you use EdgeCmd on Windows.
 
-Location on Linux:
+Complete the following to access EdgeCmd on Linux:
 
-```bash
+1. Open a terminal window.
+2. Type the following and press Enter.
+
+   ```bash
  /opt/OSIsoft/EdgeCmd/edgecmd
-```
+   ```
 
 **Note:** You can access EdgeCmd without using the full path on Linux. 
 
