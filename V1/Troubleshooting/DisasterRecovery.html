@@ -88,13 +88,13 @@
 <p>Procedures are provided for Windows and Linux systems.</p>
 <p><strong>Prequisite:</strong>  This topic does not provide instruction for backing up or restoring credentials. All credentials are encrypted for security purposes, so they cannot be copied or transferred. After the new system has had the storage and configuration files copied over, and the service has started, do the following:</p>
 <ol>
-<li>Re-enter the credentials for the system using API calls. </li>
+<li>Re-enter the credentials for the operating system using API calls. </li>
 <li>After updating, restart the Edge Data Store service. </li>
 </ol>
 <p>The new Edge device will be running as the previous device, and will contain all the data up to the point the previous device went down.</p>
 <h2 id="windows-recovery">Windows recovery</h2>
 <h3 id="create-a-backup-of-edge-data-store-data-from-the-failed-device">Create a backup of Edge Data Store data from the failed device</h3>
-<p><strong>Prerequisite:</strong> Administrative access on the device to successfully restore on Windows system.</p>
+<p><strong>Prerequisite:</strong> Administrative access on the device to successfully restore on Windows system</p>
 <ol>
 <li>If your device is still able to boot, verify that Edge Data Store service has stopped. Use the Windows Task Manager to stop the Edge Data Store service.</li>
 <li><p>Locate the storage and configuration files.</p>
@@ -106,8 +106,8 @@
 <li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.</p>
 </li>
 </ol>
-<h3 id="move-the-files-to-the-new-hardware">Move the files to the new hardware</h3>
-<p>When the new hardware has been installed with Edge Data Store, the new system will have a default configuration. </p>
+<h3 id="move-the-files-to-the-new-device">Move the files to the new device</h3>
+<p>When you have first installed Edge Data Store on the new device, the new system will have a default configuration. </p>
 <ol>
 <li>Use the Windows Task Manager to stop the Edge Data Store service.    </li>
 <li>Once the service has stopped, navigate to the <em>C:\ProgramData\OSIsoft\EdgeDataStore</em> directory, and delete the default storage and configuration folders from the new device.</li>
@@ -137,8 +137,8 @@
 <p><strong>Note:</strong> Using the <em>cp</em> command may result in a change in file ownership to the current user. </p>
 </li>
 </ol>
-<h3 id="move-the-files-to-the-new-hardware-1">Move the files to the new hardware</h3>
-<p>When the new hardware has been installed with Edge Data Store, the new system will have a default configuration. </p>
+<h3 id="move-the-files-to-the-new-device-1">Move the files to the new device</h3>
+<p>When you have first installed Edge Data Store on the new device, the new system will have a default configuration. </p>
 <ol>
 <li><p>From a terminal window, stop the Edge Data Store service using the following command:</p>
 <pre><code>sudo systemctl stop osisoft.edgedatastore

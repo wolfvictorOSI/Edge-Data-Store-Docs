@@ -82,8 +82,7 @@
 <h2 id="create-an-omf-type">Create an OMF type</h2>
 <p>The first step in OMF data ingress is to create an OMF type that describes the format of the data to be stored in a container. In this example, the data to be written is a timestamp and a numeric value.</p>
 <ol>
-<li>Create an OMF JSON file describing the type as follows:</li>
-</ol>
+<li><p>Create an OMF JSON file describing the type as follows:</p>
 <pre><code class="lang-json">[{
     &quot;id&quot;: &quot;MyCustomType&quot;,
     &quot;classification&quot;: &quot;dynamic&quot;,
@@ -100,13 +99,15 @@
         }
     }
 }]
-</code></pre><p>   The value is indexed by a timestamp, and the numeric value that will be stored is a 32-bit floating point value.</p>
-<ol>
-<li>In order to create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json on the local device.</li>
-<li>Run the following curl script:</li>
-</ol>
+</code></pre><p>The value is indexed by a timestamp, and the numeric value that will be stored is a 32-bit floating point value.</p>
+</li>
+<li><p>In order to create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json on the local device.</p>
+</li>
+<li><p>Run the following curl script:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OmfCreateType.json&quot; -H &quot;Content-Type: application/json&quot; -H &quot;producertoken: x &quot; -H &quot;omfversion: 1.1&quot; -H &quot;action: create&quot; -H &quot;messageformat: json&quot; -H &quot;messagetype: type&quot; -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
-</code></pre><p>When this command completes successfully, an SDS type with the same name will have been created on the server. Any number of containers can be created from the type, as long as they use a timestamp as an index and have a 32-bit floating point value. You only need to send the Type definition the first time you send data, but it does not cause an error if you resend the same definition at a later time.</p>
+</code></pre></li>
+</ol>
+<p>When this command completes successfully, an SDS type with the same name will have been created on the server. Any number of containers can be created from the type, as long as they use a timestamp as an index and have a 32-bit floating point value. You only need to send the Type definition the first time you send data, but it does not cause an error if you resend the same definition at a later time.</p>
 <h2 id="create-an-omf-container">Create an OMF container</h2>
 <p>The next step in writing OMF data is to create a container. As with an OMF type, this only needs to be done once before sending data events, and resending the same definition repeatedly does not cause an error.</p>
 <ol>
@@ -119,10 +120,11 @@
 </li>
 <li><p>To create the OMF container in the Edge Storage, store the JSON file with the name OmfCreateContainer.json on the local device.</p>
 </li>
-<li>To create the SDS stream to store data defined by the type, run the following curl script:</li>
-</ol>
+<li><p>To create the SDS stream to store data defined by the type, run the following curl script:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OmfCreateContainer.json&quot; -H &quot;Content-Type: application/json&quot; -H &quot;producertoken: x &quot; -H &quot;omfversion: 1.1&quot; -H &quot;action: create&quot; -H &quot;messageformat: json&quot; -H &quot;messagetype: container&quot; -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
-</code></pre><h2 id="write-data-events-to-the-omf-container">Write data events to the OMF container</h2>
+</code></pre></li>
+</ol>
+<h2 id="write-data-events-to-the-omf-container">Write data events to the OMF container</h2>
 <ol>
 <li><p>Create an OMF JSON file to define data events to be stored in the SDS Stream created in the previous steps. For best performance, you should batch OMF values together, as in the following example: </p>
 <pre><code class="lang-json">[{
