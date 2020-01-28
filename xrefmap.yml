@@ -22,6 +22,9 @@ references:
 - uid: ConfigurationTools
   name: Configuration tools
   href: V1/Administration/ManagementTools.html
+- uid: configureEgress
+  name: Configure data egress
+  href: V1/Egress/Configure%20data%20egress.html
 - uid: disasterRecovery
   name: Disaster recovery
   href: V1/Troubleshooting/DisasterRecovery.html
