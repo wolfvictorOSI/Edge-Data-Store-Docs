@@ -13,9 +13,9 @@ Complete the following procedure to create new egress endpoints:
 
 1. Create a JSON file containing one or more egress endpoints.
     - For content structure, see the following [Examples](#examples). 
-    - For a table of all available egress parameters, see [Parameters](#parameters).
-2. Save the file.
-3. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints/`
+2. Update the parameters as needed. For a table of all available parameters, see [Parameters](#parameters).
+3. Save the file.
+4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints/`
 
 Example using cURL:
 
