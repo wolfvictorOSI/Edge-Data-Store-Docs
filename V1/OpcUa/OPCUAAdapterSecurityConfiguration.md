@@ -20,7 +20,7 @@ OPC UA EDS adapter generates a self-signed certificate when the first secure con
 
 2. Manually move the server certificate from the [_RejectedCertificates\certs_](#adapter-rejected-certificates) folder to the [_Trusted\certs_](#adapter-trusted-certificates) folder using a file explorer or command-line interpreter.
 
-   - Linux example using command-line:
+   Linux example using command-line:
 
    ```bash
    mv /usr/share/OSIsoft/EdgeDataStore/OpcUa1/Certificates/RejectedCertificates/certsSimulationServer\ \[F9823DCF607063DBCECCF6F8F39FD2584F46AEBB\].der /usr/share/OSIsoft/EdgeDataStore/OpcUa1/Certificates/Trusted/certs/
