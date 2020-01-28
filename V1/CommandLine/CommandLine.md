@@ -7,6 +7,8 @@ The following sections provide instructions for the configuration of EdgeCmd uti
 
 **Note:** The following EdgeCmd utility locations are based on the installation instructions in [EdgeCmd utility](xref:Installedgecmd).
 
+## Access EdgeCmd on Windows
+
 Complete the following to access EdgeCmd on Windows:
 
 1. Open a command prompt.
@@ -17,6 +19,8 @@ Complete the following to access EdgeCmd on Windows:
    ```
 
    **Note:** Specify the full path when you use EdgeCmd on Windows.
+
+## Access EdgeCmd on Linux
 
 Complete the following to access EdgeCmd on Linux:
 
