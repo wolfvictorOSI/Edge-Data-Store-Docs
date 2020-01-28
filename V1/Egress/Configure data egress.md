@@ -4,7 +4,7 @@ uid: configureEgress
 
 # Configure data egress
 
-Now that you have configured one or more OMF destinations, you can figure data egress.
+After you have configured one or more OMF destinations, you can figure data egress.
 **Note:** You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see [REST Urls](#rest-urls).
 
 ## Create egress endpoints
