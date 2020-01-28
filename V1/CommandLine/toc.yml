@@ -1,4 +1,4 @@
 - name: Configure EdgeCmd utility
-  href: CommandLine/CommandLine.md
+  href: CommandLine.md
 - name: EdgeCmd commands
   href: ../Reference/Edgecmd commands.md
