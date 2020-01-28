@@ -25,7 +25,6 @@ In addition to ready to use install kits, OSIsoft also provides examples of how 
 * The "System Reset" and "Storage Reset" features of the Edge Data Store are more resilient.
 * The installation kits for the Edge Data Store were updated to create a better experience when upgrading installed instances.
 * The installation kits have been updated to ensure only necessary files are included. 
-=======
 * The "OSIsoft Edge System" product was renamed to "OSIsoft Edge Data Store".
 * The edgecmd command line utility is now provided to allow access to and modification of Edge Data Store configuration.  This utility supercedes the command line functionality that was previously available via OSIsoft.Data.System.Host.
 * Improvements were made to ensure component health status updates may not be lost when the product is shutdown.  
