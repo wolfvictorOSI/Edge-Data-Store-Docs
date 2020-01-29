@@ -98,15 +98,17 @@
 <ol>
 <li>If your device is still able to boot, verify that Edge Data Store service has stopped. Use the Windows Task Manager to stop the Edge Data Store service.</li>
 <li><p>Locate the storage and configuration files.</p>
-<p><strong>Note:</strong> Windows storage and configuration files should be in the following locations:
-      <em>C:\ProgramData\OSIsoft\EdgeDataStore\Configuration</em>
-      <em>C:\ProgramData\OSIsoft\EdgeDataStore\Storage</em>
-      The ProgramData folder is typically hidden, so if it is not visible, go to the <strong>View</strong> tab in <strong>Windows Explorer</strong> and select the <strong>Hidden Items</strong> check box.</p>
-</li>
+<p><strong>Note:</strong> Windows storage and configuration files should be in the following locations:</p>
+<pre><code> _C:\ProgramData\OSIsoft\EdgeDataStore\Configuration_
+
+ _C:\ProgramData\OSIsoft\EdgeDataStore\Storage_
+
+ The ProgramData folder is typically hidden, so if it is not visible, go to the **View** tab in **Windows Explorer** and select the **Hidden Items** check box.
+</code></pre></li>
 <li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.</p>
 </li>
 </ol>
-<h3 id="move-the-files-to-the-new-device">Move the files to the new device</h3>
+<h3 id="delete-default-storage-and-configuration-folders">Delete default storage and configuration folders</h3>
 <p>When you have first installed Edge Data Store on the new device, the new system will have a default configuration. </p>
 <ol>
 <li>Use the Windows Task Manager to stop the Edge Data Store service.    </li>
@@ -132,12 +134,11 @@
          <em>/usr/share/OSIsoft/EdgeDataStore/Configuration</em>
          <em>/usr/share/OSIsoft/EdgeDataStore /Storage</em></p>
 </li>
-<li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. </p>
-<p> File transfer can be done with WinSCP, SFTP, or external device.</p>
+<li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.</p>
 <p><strong>Note:</strong> Using the <em>cp</em> command may result in a change in file ownership to the current user. </p>
 </li>
 </ol>
-<h3 id="move-the-files-to-the-new-device-1">Move the files to the new device</h3>
+<h3 id="move-the-files-to-the-new-device">Move the files to the new device</h3>
 <p>When you have first installed Edge Data Store on the new device, the new system will have a default configuration. </p>
 <ol>
 <li><p>From a terminal window, stop the Edge Data Store service using the following command:</p>

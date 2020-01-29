@@ -95,11 +95,11 @@
 <li>Open a terminal window.</li>
 <li><p>Type the following and press Enter.</p>
 <pre><code class="lang-bash">/opt/OSIsoft/EdgeCmd/edgecmd
-</code></pre></li>
+</code></pre><p><strong>Note:</strong> You can access EdgeCmd without using the full path on Linux. </p>
+</li>
 </ol>
-<p><strong>Note:</strong> You can access EdgeCmd without using the full path on Linux. </p>
-<h2 id="edge-data-store-configuration-with-edgecmd">Edge Data Store configuration with EdgeCmd</h2>
-<p>Most configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.</p>
+<h2 id="configure-edge-data-store-with-edgecmd">Configure Edge Data Store with EdgeCmd</h2>
+<p>All configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.</p>
 <h2 id="get-help">Get help</h2>
 <p>The Edgecmd application provides a &#39;Help&#39; utility. For general instructions on how to use the Edgecmd application, type:</p>
 <pre><code class="lang-bash">edgecmd Help
@@ -163,10 +163,11 @@ Port                        [Required] The tcp port to bind this application hos
 Example: ./edgecmd Configuration System Port Port=5590
 </code></pre><h2 id="edge-data-store-components">Edge Data Store components</h2>
 <p>The EdgeCmd utility enables you to add, configure, and delete Edge Data Store components.</p>
-<h3 id="add-components">Add components</h3>
+<h3 id="view-components">View components</h3>
 <p>With the following command, you can view which components are currently configured on Edge Data Store:</p>
 <pre><code class="lang-bash">edgecmd Configuration System Components
-</code></pre><p>To register a new component, use the following command:</p>
+</code></pre><h3 id="add-components">Add components</h3>
+<p>To register a new component, use the following command:</p>
 <pre><code class="lang-bash">edgecmd Configuration System Components componentId=&lt;componentId&gt; componentType=&lt;componentType&gt;
 </code></pre><p>Valid component types are &quot;Modbus&quot; and &quot;OpcUa&quot;. If you are trying to register a Modbus EDS adapter, use &quot;Modbus&quot; and if you are trying to register an OPC UA adapter, use &quot;OpcUa&quot;. </p>
 <p>Example: Modbus adapter component registration:</p>
@@ -179,7 +180,7 @@ Example: ./edgecmd Configuration System Port Port=5590
 <h3 id="delete-components">Delete components</h3>
 <p>You can delete components from the Edge Data Store by using the following command:</p>
 <pre><code class="lang-bash">edgecmd Configuration System Components id=&lt;componentId&gt; delete
-</code></pre><p><strong>Note:</strong> You can&#39;t delete the &quot;Storage&quot; component because it is required for Edge Data Store to operate.</p>
+</code></pre><p><strong>Note:</strong> You cannot delete the &quot;Storage&quot; component because it is required for Edge Data Store to operate.</p>
 <h2 id="retrieve-existing-system-configuration">Retrieve existing system configuration</h2>
 <p>You can use the edgecmd utility to view the configuration for each part of Edge Data Store.</p>
 <p>To view the entire configuration for every system component, run the following command:</p>
@@ -191,9 +192,7 @@ Example: ./edgecmd Configuration System Port Port=5590
 </code></pre><p>For facets that contain multiple entries, you can retrieve the configuration for a specific entry by its Id:</p>
 <pre><code class="lang-bash">edgecmd Configuration componentId facetName id=IndexToRetrieve
 </code></pre><h3 id="examples">Examples</h3>
-<ul>
-<li>View the configuration of Edge Data Store using edgecmd:</li>
-</ul>
+<p><strong>View the configuration of the &#39;System&#39; component</strong></p>
 <pre><code class="lang-bash">edgecmd Configuration System
 {
   &quot;Logging&quot;: {
@@ -207,73 +206,41 @@ Example: ./edgecmd Configuration System Port Port=5590
   },
   &quot;Components&quot;: [
     {
-      &quot;componentId&quot;: &quot;OpcUa1&quot;,
-      &quot;componentType&quot;: &quot;OpcUa&quot;
-    },
-    {
-      &quot;componentId&quot;: &quot;Modbus1&quot;,
-      &quot;componentType&quot;: &quot;Modbus&quot;
-    },
-    {
       &quot;componentId&quot;: &quot;Storage&quot;,
       &quot;componentType&quot;: &quot;EDS.Component&quot;
     }
   ]
 }
-</code></pre><ul>
-<li><p>View the configuration of the &#39;System&#39; component</p>
-<pre><code class="lang-bash">edgecmd Configuration System
+</code></pre><p><strong>View the configuration for the &#39;Logging&#39; facet within the &#39;Storage&#39; component</strong></p>
+<pre><code class="lang-bash">edgecmd Configuration Storage Logging
 {
-&quot;Logging&quot;: {
   &quot;logLevel&quot;: &quot;Information&quot;,
   &quot;logFileSizeLimitBytes&quot;: 34636833,
   &quot;logFileCountLimit&quot;: 31
-},
-&quot;HealthEndpoints&quot;: [],
-&quot;Port&quot;: {
-  &quot;port&quot;: 5590
-},
-&quot;Components&quot;: [
-  {
-    &quot;componentId&quot;: &quot;Storage&quot;,
-    &quot;componentType&quot;: &quot;EDS.Component&quot;
-  }
-]
 }
-</code></pre></li>
-<li><p>View the configuration for the &#39;Logging&#39; facet within the &#39;Storage&#39; component</p>
-<pre><code class="lang-bash">edgecmd Configuration Storage Logging
-{
-&quot;logLevel&quot;: &quot;Information&quot;,
-&quot;logFileSizeLimitBytes&quot;: 34636833,
-&quot;logFileCountLimit&quot;: 31
-}
-</code></pre></li>
-<li><p>View the configuration of a specific entry in the &#39;PeriodicEgressEndpoint&#39; facet within the &#39;Storage&#39; component</p>
+</code></pre><p><strong>View the configuration of a specific entry in the &#39;PeriodicEgressEndpoint&#39; facet within the &#39;Storage&#39; component</strong></p>
 <pre><code class="lang-bash">edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 {
-&quot;id&quot;: &quot;Endpoint_1&quot;,
-&quot;executionPeriod&quot;: &quot;2.00:00:00&quot;,
-&quot;name&quot;: null,
-&quot;description&quot;: null,
-&quot;enabled&quot;: true,
-&quot;endpoint&quot;: &quot;http://localhost:5590&quot;,
-&quot;clientId&quot;: null,
-&quot;clientSecret&quot;: null,
-&quot;userName&quot;: &quot;user_54&quot;,
-&quot;password&quot;: &quot;***************&quot;,
-&quot;validateEndpointCertificate&quot;: true,
-&quot;tokenEndpoint&quot;: null,
-&quot;debugExpiration&quot;: null,
-&quot;namespaceId&quot;: &quot;default&quot;,
-&quot;backfill&quot;: false,
-&quot;egressFilter&quot;: null,
-&quot;streamPrefix&quot;: null,
-&quot;typePrefix&quot;: null
+  &quot;id&quot;: &quot;Endpoint_1&quot;,
+  &quot;executionPeriod&quot;: &quot;2.00:00:00&quot;,
+  &quot;name&quot;: null,
+  &quot;description&quot;: null,
+  &quot;enabled&quot;: true,
+  &quot;endpoint&quot;: &quot;http://localhost:5590&quot;,
+  &quot;clientId&quot;: null,
+  &quot;clientSecret&quot;: null,
+  &quot;userName&quot;: &quot;user_54&quot;,
+  &quot;password&quot;: &quot;***************&quot;,
+  &quot;validateEndpointCertificate&quot;: true,
+  &quot;tokenEndpoint&quot;: null,
+  &quot;debugExpiration&quot;: null,
+  &quot;namespaceId&quot;: &quot;default&quot;,
+  &quot;backfill&quot;: false,
+  &quot;egressFilter&quot;: null,
+  &quot;streamPrefix&quot;: null,
+  &quot;typePrefix&quot;: null
 }
-</code></pre></li>
-</ul>
-<h2 id="configure-edge-data-store">Configure Edge Data Store</h2>
+</code></pre><h2 id="configure-edge-data-store">Configure Edge Data Store</h2>
 <p>To create a configuration, you must enter the component and facet where the configuration payload should go, followed by key=value pairs to specify which values are to be changed. </p>
 <p>Example: Change all values in the &#39;Logging&#39; facet:</p>
 <pre><code class="lang-bash">edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
@@ -314,13 +281,21 @@ Example: ./edgecmd Configuration System Port Port=5590
         }
     }
 }
-</code></pre><h2 id="delete-configuration-data">Delete configuration data</h2>
-<p>You can use the edgecmd application to delete configuration data from Edge Data Store.
-To delete a configuration entry from a collection configuration (for example, &#39;HealthEndpoints&#39; facet within the &#39;System&#39; component), you must specify the component ID, facet, and ID of the entry to remove followed by the &#39;delete&#39; keyword.
-Example:</p>
+</code></pre><h2 id="delete-configuration-entry">Delete configuration entry</h2>
+<p>You can use the edgecmd utility to delete a configuration entry from a collection configuration (for example a single health endpoint of the &#39;HealthEndpoints&#39; facet within the &#39;System&#39; component) from Edge Data Store.</p>
+<ol>
+<li>Specify the component ID, facet, and ID of the entry to be removed</li>
+<li>Add the &#39;delete&#39; keyword.</li>
+</ol>
+<p>Example using edgecmd utility:</p>
 <pre><code class="lang-bash">edgecmd Configuration System HealthEndpoints Id=endpoint_1 delete
-</code></pre><p>To delete an entire configuration file, you must specify the component ID and facet followed by the &#39;delete&#39; keyword.
-Example:</p>
+</code></pre><h2 id="delete-configuration-file">Delete configuration file</h2>
+<p>You can use the edgecmd utility to delete an entire configuration file with all its entries (for example the configuration file of the &#39;HealthEndpoints&#39; facet within the &#39;System&#39; component) from Edge Data Store.</p>
+<ol>
+<li>Specify the component ID and facet.</li>
+<li>Add the &#39;delete&#39; keyword.</li>
+</ol>
+<p>Example using edgecmd utility:</p>
 <pre><code class="lang-bash">edgecmd Configuration System HealthEndpoints delete
 </code></pre></article>
           </div>

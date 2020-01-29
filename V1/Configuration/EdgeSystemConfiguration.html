@@ -127,6 +127,13 @@
 <p>This example results in a minimal configuration of Edge Data Store. It only supports <a class="xref" href="../Overview/OMFQuickStart.html">OMF</a> and <a class="xref" href="../Overview/SDSQuickStart.html">SDS</a> operations using REST. No egress is configured, so no data will be forwarded to either <a class="xref" href="../Overview/OCSEgressQuickStart.html">OCS</a> or <a class="xref" href="../Overview/PIEgressQuickStart.html">PI Web API</a>.</p>
 <h2 id="configure-maximum-edge-data-store">Configure maximum Edge Data Store</h2>
 <p>The following JSON file represents maximum configuration of an Edge Data Store. There are Modbus TCP EDS adapter components and OPC UA EDS adapter components, and egress is configured to send to both PI Web API and OCS from both the default (operational data) and diagnostics (diagnostic data) namespace.</p>
+<ol>
+<li>Fill in any credentials or IP addresses with appropriate values for your environment.</li>
+<li>Save the edited version of the previous JSON in a file named <em>EdgeMaximumConfiguration.json</em> in any directory. </li>
+<li><p>Run the following curl command from the same directory where the file is located:</p>
+<pre><code class="lang-bash">curl -i -d &quot;@EdgeMaximumConfiguration.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration
+</code></pre></li>
+</ol>
 <pre><code class="lang-json">{
     &quot;Modbus1&quot;: {
         &quot;Logging&quot;: {
@@ -447,14 +454,7 @@
         }
     }
 }
-</code></pre><ol>
-<li>Fill in any credentials or IP addresses with appropriate values for your environment.</li>
-<li>Save the edited version of the previous JSON in a file named <em>EdgeMaximumConfiguration.json</em> in any directory. </li>
-<li><p>Run the following curl command from the same directory where the file is located:</p>
-<pre><code class="lang-bash">curl -i -d &quot;@EdgeMaximumConfiguration.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration
-</code></pre><p>This will be set as the configuration for the running Edge Data Store. The configuration takes effect immediately after the command completes.</p>
-</li>
-</ol>
+</code></pre><p>  This will be set as the configuration for the running Edge Data Store. The configuration takes effect immediately after the command completes.</p>
 </article>
           </div>
           

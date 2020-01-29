@@ -78,16 +78,16 @@
             <article class="content wrap" id="_content" data-uid="configureEgress">
 <h1 id="configure-data-egress">Configure data egress</h1>
 
-<p>Now that you have configured one or more OMF destinations, you can figure data egress.
-<strong>Note:</strong> You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see <a href="#rest-urls">REST Urls</a>.</p>
+<p>After you have configured one or more OMF destinations, you can configure data egress.</p>
+<p><strong>Note:</strong> You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see <a href="#rest-urls">REST Urls</a>.</p>
 <h2 id="create-egress-endpoints">Create egress endpoints</h2>
 <p>Complete the following procedure to create new egress endpoints:</p>
 <ol>
 <li>Create a JSON file containing one or more egress endpoints.<ul>
 <li>For content structure, see the following <a href="#examples">Examples</a>. </li>
-<li>For a table of all available egress parameters, see <a href="#parameters">Parameters</a>.</li>
 </ul>
 </li>
+<li>Update the parameters as needed. For a table of all available parameters, see <a href="#parameters">Parameters</a>.</li>
 <li>Save the file.</li>
 <li>Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints/</code></li>
 </ol>
