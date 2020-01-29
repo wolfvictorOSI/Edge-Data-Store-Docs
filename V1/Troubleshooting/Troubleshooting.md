@@ -15,7 +15,9 @@ In addition to diagnostics data, all components in Edge Data Store support OMF h
 Complete the following when a custom application fails to write stream data to EDS:
 
 1. Verify the custom application is sending OMF messages in the correct order: 1) OMF type, 2) OMF container, 3) OMF data.
+
    **Note:** No OMF Messages will be ingressed into Edge Data Store if they are not sent in correct order.
+   
 2. Refer to logging of warnings, errors, and messages for help with diagnosing these issues.
 
 ### OMF ingress logging
