@@ -2,7 +2,7 @@
 uid: sdsOverview
 ---
 
-# Sequential Data Store (SDS)
+# SDS reference
 
 Edge Data Store includes the Sequential Data Store (SDS) REST APIs for [reading](xref:sdsReadingData) and [writing](xref:sdsWritingData) data stored locally on the device where the Edge Data Store is running. SDS is the same technology used in OCS for storing data, so the usage of the REST APIs is very similar to OCS for reading and writing data.
 
