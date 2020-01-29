@@ -62,4 +62,4 @@ You must have administrative privileges to install the software, for example roo
 
     After the check for prerequisites succeeds, you will be prompted if you want to change the default port (5590).
 
-The install will complete and the EdgeCmd utility will be running on your device.
+    The install will complete and the EdgeCmd utility will be running on your device.
