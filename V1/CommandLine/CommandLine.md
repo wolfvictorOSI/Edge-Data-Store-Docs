@@ -116,13 +116,14 @@ Example: ./edgecmd Configuration System Port Port=5590
 ## Edge Data Store components
 The EdgeCmd utility enables you to add, configure, and delete Edge Data Store components.
 
-### Add components
+### View components
 With the following command, you can view which components are currently configured on Edge Data Store:
 
 ```bash
 edgecmd Configuration System Components
 ```
 
+### Add components
 To register a new component, use the following command:
 
 ```bash
@@ -350,8 +351,6 @@ The command will only affect the 'Runtime' facet in the 'Storage' component, it 
 	}
 }
 ```
-
-
 
 ## Delete configuration data
 
