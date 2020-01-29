@@ -324,17 +324,27 @@ The command will only affect the 'Runtime' facet in the 'Storage' component, it 
 }
 ```
 
-## Delete configuration data
+## Delete configuration entry
 
-You can use the edgecmd application to delete configuration data from Edge Data Store.
-To delete a configuration entry from a collection configuration (for example, 'HealthEndpoints' facet within the 'System' component), you must specify the component ID, facet, and ID of the entry to remove followed by the 'delete' keyword.
-Example:
+You can use the edgecmd utility to delete a configuration entry from a collection configuration (for example a single health endpoint of the 'HealthEndpoints' facet within the 'System' component) from Edge Data Store.
+
+1. Specify the component ID, facet, and ID of the entry to be removed
+2. Add the 'delete' keyword.
+
+Example using edgecmd utility:
 ```bash
 edgecmd Configuration System HealthEndpoints Id=endpoint_1 delete
 ```
 
-To delete an entire configuration file, you must specify the component ID and facet followed by the 'delete' keyword.
-Example:
+## Delete configuration file
+
+You can use the edgecmd utility to delete an entire configuration file with all its entries (for example the configuration file of the 'HealthEndpoints' facet within the 'System' component) from Edge Data Store.
+
+1. Specify the component ID and facet.
+2. Add the 'delete' keyword.
+
+Example using edgecmd utility:
+
 ```bash
 edgecmd Configuration System HealthEndpoints delete
 ```
