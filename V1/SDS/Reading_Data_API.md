@@ -473,13 +473,13 @@ Index bounding the end of the series of events to return.
 Optional maximum number of events to return. If `count` is specified, a `continuationToken` must also be specified.
 
 ``SdsBoundaryType boundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies handling of events at or near the start and end indexes.
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies handling of events at or near the start and end indexes.
 
 ``SdsBoundaryType startBoundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 ``SdsBoundaryType endBoundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundaryType) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 ``string filter``  
 Optional [filter expression](xref:sdsFilterExpressions)
@@ -1035,7 +1035,7 @@ Content-Type: application/json
 
 Returns data sampled by intervals between a specified start and end index.
 
-Sampling is driven by a specified property or properties of the stream's Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information see [Interpolation.](xref:sdsTypes#interpolation)
+Sampling is driven by a specified property or properties of the stream's Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information see [Interpolation.](xref:sdsReadingData#interpolation)
 
 **Request**  
 
@@ -1478,7 +1478,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
  ```
 
 **Response**  
-This is similar to [OuterJoin](#outerjoin-request), but the value at each index is the first available value at that index when iterating the given list of streams from left to right.
+This is similar to [OuterJoin](#outer-join-example), but the value at each index is the first available value at that index when iterating the given list of streams from left to right.
 
 **Response body**
 
@@ -1534,7 +1534,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
  ```
 
 **Response**  
-This is similar to [OuterJoin](#outerjoin-request), but the value at each index is the first available value at that index when iterating the given list of streams from right to left.
+This is similar to [OuterJoin](#outer-join-example), but the value at each index is the first available value at that index when iterating the given list of streams from right to left.
 
 **Response body**
 
