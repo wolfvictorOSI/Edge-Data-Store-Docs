@@ -191,7 +191,8 @@ edgecmd Configuration componentId facetName id=IndexToRetrieve
 
 ### Examples
 
-- View the configuration of the 'System' component
+**View the configuration of the 'System' component**
+
 ```bash
 edgecmd Configuration System
 {
@@ -213,7 +214,8 @@ edgecmd Configuration System
 }
 ```
 
-- View the configuration for the 'Logging' facet within the 'Storage' component
+**View the configuration for the 'Logging' facet within the 'Storage' component**
+
 ```bash
 edgecmd Configuration Storage Logging
 {
@@ -223,7 +225,8 @@ edgecmd Configuration Storage Logging
 }
 ```
 
-- View the configuration of a specific entry in the 'PeriodicEgressEndpoint' facet within the 'Storage' component
+**View the configuration of a specific entry in the 'PeriodicEgressEndpoint' facet within the 'Storage' component**
+
 ```bash
 edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 {
