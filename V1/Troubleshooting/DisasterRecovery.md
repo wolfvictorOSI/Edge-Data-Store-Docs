@@ -31,9 +31,9 @@ The new Edge device will be running as the previous device, and will contain all
 2. Locate the storage and configuration files.
 
    **Note:** Windows storage and configuration files should be in the following locations:
-	     _C:\ProgramData\OSIsoft\EdgeDataStore\Configuration_
-	     _C:\ProgramData\OSIsoft\EdgeDataStore\Storage_
-	     The ProgramData folder is typically hidden, so if it is not visible, go to the **View** tab in **Windows Explorer** and select the **Hidden Items** check box.
+   _C:\ProgramData\OSIsoft\EdgeDataStore\Configuration_
+   _C:\ProgramData\OSIsoft\EdgeDataStore\Storage_
+   The ProgramData folder is typically hidden, so if it is not visible, go to the **View** tab in **Windows Explorer** and select the **Hidden Items** check box.
 
 3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.
 
