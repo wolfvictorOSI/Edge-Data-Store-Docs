@@ -40,9 +40,9 @@ You must have administrative privileges to run the installer. Complete the follo
 
 ## Linux
 
-You must have administrative privileges to install the software, for example root or sudo privilege. The following examples assume a user with permission to use sudo.
+You must have administrative privileges to install the software, for example root or sudo privilege. Complete the following to install Edge Data Store on Linux:
 
-1. Open a terminal window and type the sudo command for the installation kit appropriate to your operating system and processor. The examples in this section assume a user with permission to use sudo. Complete the following to install Edge Data Store on Linux:
+1. Open a terminal window and type the sudo command for the installation kit appropriate to your operating system and processor. 
 
     **Debian 9 or later (Intel/AMD 64 bit processors)**
 
