@@ -8,7 +8,7 @@ Edge Data Store provides a method by which you can perform a complete reset of t
 
 **Note:** All configuration and stored data will be lost as a result of performing this action.
 
-- To reset Edge Data Store, use any tool capable of making HTTP requests to execute a POST command to the following endpoint:
+To reset Edge Data Store, use any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command to the following endpoint:
 
   ```http
   http://localhost:5590/api/v1/administration/System/Reset
