@@ -31,7 +31,7 @@ Complete the following to access EdgeCmd on Linux:
    /opt/OSIsoft/EdgeCmd/edgecmd
    ```
 
-**Note:** You can access EdgeCmd without using the full path on Linux. 
+   **Note:** You can access EdgeCmd without using the full path on Linux. 
 
 ## Configure Edge Data Store with EdgeCmd
 
