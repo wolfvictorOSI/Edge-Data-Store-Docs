@@ -22,7 +22,9 @@ The following diagram depicts the relationships of architectural components to o
 ![EDS architecture](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSArchitecture.jpg "EDS architecture")
 
 ## Edge Data Store data flow
-The following diagram depicts the flow of data in the Edge Data Store:
+Edge Data Store can egress data to both PI Data Archive and OSIsoft Cloud Services. For more information, see [PI egress quick start](xref:piEgressQuickStart) and [OCS egress quick start](xref:ocsEgressQuickStart).
+
+The following diagram depicts the flow of data in Edge Data Store:
 
 ![EDS data flow](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOverview1.jpg "EDS data flow")
 
@@ -58,8 +60,3 @@ The following diagram depicts the flow of data from a customer analytics applica
 
 ![EDS Analytics](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSAnalytics.jpg "EDS Analytics")
 
-## Data egress from Edge Data Store
-
-Edge Data Store can send data to both PI Data Archive using PI Web API and OSIsoft Cloud Services. For more information, see [PI egress quick start](xref:piEgressQuickStart) and [OCS egress quick start](xref:ocsEgressQuickStart).
-
-After Edge Data Store is installed, additional configuration is necessary to send data to both OCS and PI Web API.
