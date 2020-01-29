@@ -40,7 +40,7 @@ The new Edge device will be running as the previous device, and will contain all
 
 3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.
 
-### Move the files to the new device
+### Delete default storage and configuration folders
 
 When you have first installed Edge Data Store on the new device, the new system will have a default configuration. 
 
@@ -73,9 +73,7 @@ When you have first installed Edge Data Store on the new device, the new system 
 			_/usr/share/OSIsoft/EdgeDataStore/Configuration_
 			_/usr/share/OSIsoft/EdgeDataStore /Storage_
 
-3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. 
-
-	File transfer can be done with WinSCP, SFTP, or external device.
+3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.
 
    **Note:** Using the _cp_ command may result in a change in file ownership to the current user. 
 
