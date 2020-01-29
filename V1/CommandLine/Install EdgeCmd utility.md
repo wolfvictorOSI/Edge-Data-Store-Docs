@@ -27,7 +27,7 @@ The EdgeCmd utility is installed on your device.
 
 ## Linux
 
-You must have administrative privileges to install the software, for example root or sudo privilege. The examples in this section assume a user with permission to use sudo. Complete the following to install the EdgeCmd utility on Linux:
+You must have administrative privileges to install the software, for example root or sudo privilege. Complete the following to install the EdgeCmd utility on Linux:
 
 1. Open a terminal window and type the sudo command for the appropriate EdgeCmd deb file for your processor:
 
