@@ -191,37 +191,6 @@ edgecmd Configuration componentId facetName id=IndexToRetrieve
 
 ### Examples
 
-- View the configuration of Edge Data Store using edgecmd:
-
-```bash
-edgecmd Configuration System
-{
-  "Logging": {
-    "logLevel": "Information",
-    "logFileSizeLimitBytes": 34636833,
-    "logFileCountLimit": 31
-  },
-  "HealthEndpoints": [],
-  "Port": {
-    "port": 5590
-  },
-  "Components": [
-    {
-      "componentId": "OpcUa1",
-      "componentType": "OpcUa"
-    },
-    {
-      "componentId": "Modbus1",
-      "componentType": "Modbus"
-    },
-    {
-      "componentId": "Storage",
-      "componentType": "EDS.Component"
-    }
-  ]
-}
-```
-
 - View the configuration of the 'System' component
 ```bash
 edgecmd Configuration System
