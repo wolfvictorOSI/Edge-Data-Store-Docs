@@ -2,7 +2,7 @@
 uid: edgeDocker
 ---
 
-# Docker
+# Install Edge Data Store using Docker
 
 Docker is a set of tools that can be used on Linux to manage application deployments. If you want to use Docker, you must be familiar with the underlying technology and have determined that it is appropriate for your planned use of the Edge Data Store. Docker is not a requirement to use Edge Data Store.
 
