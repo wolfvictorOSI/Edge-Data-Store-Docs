@@ -22,10 +22,6 @@ The following table shows the required and optional SdsStream fields. Fields not
 | InterpolationMode | SdsInterpolationMode             | Optional    | No         | Interpolation setting of the stream. Default is null. |
 | ExtrapolationMode | SdsExtrapolationMode             | Optional    | No         | Extrapolation setting of the stream. Default is null. |
 | PropertyOverrides | IList\<SdsStreamPropertyOverride\> | Optional    | No   | Used to define unit of measure and interpolation mode overrides for a stream. |
-| [Tags](xref:sdsStreamExtra)* | IList\<String\>       | Optional    | Yes        | A list of tags denoting special attributes or categories. |
-| [Metadata](xref:sdsStreamExtra)* | IDictionary\<String, String\> | Optional    | Yes   | A dictionary of string keys and associated string values. |
-
-**Note:** Stream tags and metadata are accessed via the Tags API And Metadata API, respectively. However, they are associated with SdsStream objects and can be used as search criteria.
 
 **Rules for the stream identifier (SdsStream.Id)**
 
