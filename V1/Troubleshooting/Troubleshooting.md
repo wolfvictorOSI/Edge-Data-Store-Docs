@@ -8,7 +8,7 @@ You have both local and remote means of diagnosing any issues you encounter whil
 
 Edge Data Store supports a diagnostics namespace that is used to store streams containing [diagnostic](xref:EdgeDataStoreDiagnostics) information from Edge Data Store itself. As with any other stream data stored in the Edge Storage component, you can egress this to either a PI Web Server or OSIsoft Cloud Services to monitor the state of a system remotely.
 
-In addition to diagnostics data, all components in Edge Data Store support OMF Health messages. You configure Health messages with the [Health Endpoint configuration](xref:SystemHealthEndpointsConfiguration), to send Health data to either PI Web Server or OSIsoft Cloud Service endpoints for remote monitoring of devices.
+In addition to diagnostics data, all components in Edge Data Store support OMF health messages. You configure health messages with the [Health endpoint configuration](xref:SystemHealthEndpointsConfiguration), to send health data to either PI Web Server or OSIsoft Cloud Service endpoints for remote monitoring of devices.
 
 ## OMF ingress
 
