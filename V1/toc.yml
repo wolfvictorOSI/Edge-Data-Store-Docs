@@ -4,10 +4,10 @@
 - name: Quick start guides
   href: Overview/Quick start guides/toc.yml
   topicHref: Overview/Quick start guides.md
-- name: Installation
+- name: Install Edge Data Store
   href: Installation/toc.yml
-  topicHref: Installation/InstallationOverview.md
-- name: EdgeCmd utility
+  topicHref: Installation/Install Edge Data Store.md
+- name: Install EdgeCmd utility
   href: CommandLine/toc.yml
   topicHref: CommandLine/Install EdgeCmd utility.md  
 - name: Configuration
