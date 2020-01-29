@@ -12,7 +12,7 @@ For a list of supported platforms and processors, see [System requirements](xref
 
 ## Windows (Windows 10 x64)
 
-You must have administrative privileges to run the installer.
+You must have administrative privileges to run the installer. Complete the following to install Edge Data Store on Windows:
 
 1. Copy the _EdgeDataStore.msi_ file to the file system of the device.
 2. To start the installer, double-click the _EdgeDataStore.msi_ file in Windows Explorer.
@@ -42,7 +42,7 @@ You must have administrative privileges to run the installer.
 
 You must have administrative privileges to install the software, for example root or sudo privilege. The following examples assume a user with permission to use sudo.
 
-1. Open a terminal window and type the sudo command for the installation kit appropriate to your operating system and processor:
+1. Open a terminal window and type the sudo command for the installation kit appropriate to your operating system and processor. The examples in this section assume a user with permission to use sudo. Complete the following to install Edge Data Store on Linux:
 
     **Debian 9 or later (Intel/AMD 64 bit processors)**
 
