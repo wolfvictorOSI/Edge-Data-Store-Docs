@@ -22,5 +22,5 @@
 - name: SDS reference
   href: SDS/toc.yml
   topicHref: SDS/SequentialDataStore.md
-- name: Release notes
+- name: Edge Data Store Release notes
   href: ReleaseNotes/ReleaseNotes.md
