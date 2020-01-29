@@ -6,11 +6,11 @@ uid: Installedgecmd
 
 You can use the EdgeCmd command line utility to configure and administer Edge Data Store on Linux and Windows. You can accomplish the same operations with EdgeCmd that you can accomplish with REST calls.
 
-Complete the following to install EdgeCmd utility on Windows or Linux.
+The following sections provide instructions to install the EdgeCmd utility on Windows or Linux.
 
 ## Windows
 
-You must have administrative privileges to run the installer.
+You must have administrative privileges to run the installer. Complete the following to install the EdgeCmd utility on Windows:
 
 1. Copy the _EdgeCmd.msi_ file to the file system of the device.
 2. To start the installer, double-click the _EdgeCmd.msi_ file in Windows Explorer.
@@ -27,7 +27,7 @@ The EdgeCmd utility is installed on your device.
 
 ## Linux
 
-You must have administrative privileges to install the software, for example root or sudo privilege. The following examples assume a user with permission to use sudo.
+You must have administrative privileges to install the software, for example root or sudo privilege. The examples in this section assume a user with permission to use sudo. Complete the following to install the EdgeCmd utility on Linux:
 
 1. Open a terminal window and type the sudo command for the appropriate EdgeCmd deb file for your processor:
 
