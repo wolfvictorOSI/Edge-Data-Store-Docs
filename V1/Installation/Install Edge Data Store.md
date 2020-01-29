@@ -4,6 +4,10 @@ uid: InstallEdgeDataStore
 
 # Install Edge Data Store
 
+You can install Edge Data Store using an install kit, as described in this section, or by using Docker containers. For more information, see [Docker](xref:edgeDocker).
+
+For a list of supported platforms and processors, see [System requirements](xref:SystemRequirements).
+
 **Note:**  You can change the port assignment either during or after installation. For more information on how to change the port number, see [System port configuration](xref:SystemPortConfiguration).
 
 ## Windows (Windows 10 x64)
