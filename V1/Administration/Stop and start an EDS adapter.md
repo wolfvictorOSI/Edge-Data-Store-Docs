@@ -8,7 +8,7 @@ By default, when Edge Data Store starts, all currently configured EDS adapters a
 
 ## Stop an EDS adapter
 
-- To stop an EDS adapter, use any tool capable of making HTTP requests to execute a POST command to the following endpoint:
+To stop an EDS adapter, use any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command to the following endpoint:
 
     ```http
     http://localhost:5590/api/v1/administration/EDS adapterId/Stop
@@ -26,7 +26,7 @@ By default, when Edge Data Store starts, all currently configured EDS adapters a
 
 ## Start an EDS adapter
 
-- To start an EDS adapter, use any tool capable of making HTTP requests to execute a POST command to the following endpoint:
+To start an EDS adapter, use any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command to the following endpoint:
 
     ```http
     http://localhost:5590/api/v1/administration/EDS adapterId/Start
