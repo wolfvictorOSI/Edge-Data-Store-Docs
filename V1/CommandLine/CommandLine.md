@@ -33,9 +33,9 @@ Complete the following to access EdgeCmd on Linux:
 
 **Note:** You can access EdgeCmd without using the full path on Linux. 
 
-## Edge Data Store configuration with EdgeCmd
+## Configure Edge Data Store with EdgeCmd
 
-Most configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.
+All configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.
 
 ## Get help
 
