@@ -158,7 +158,7 @@ You can delete components from the Edge Data Store by using the following comman
 edgecmd Configuration System Components id=<componentId> delete
 ```
 
-**Note:** You can't delete the "Storage" component because it is required for Edge Data Store to operate.
+**Note:** You cannot delete the "Storage" component because it is required for Edge Data Store to operate.
 
 
 ## Retrieve existing system configuration
