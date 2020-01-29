@@ -19,6 +19,8 @@
 - name: Troubleshoot Edge Data Store
   href: Troubleshooting/toc.yml
   topicHref: Troubleshooting/Troubleshooting.md
-- name: Reference
-  href: Reference/toc.yml
-  topicHref: Reference/Reference.md
+- name: SDS reference
+  href: SDS/toc.yml
+  topicHref: SDS/SequentialDataStore.md
+- name: Release notes
+  href: ReleaseNotes/ReleaseNotes.md
