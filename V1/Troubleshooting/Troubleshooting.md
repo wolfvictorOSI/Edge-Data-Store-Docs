@@ -4,30 +4,40 @@ uid: troubleShooting
 
 # Troubleshoot Edge Data Store
 
-If you encounter errors while using or developing against Edge Data Store, you have both local and remote means of diagnosing issues.
+You have both local and remote means of diagnosing any issues you encounter while using or developing against Edge Data Store.
 
-Edge Data Store supports a diagnostics namespace that is used to store streams containing [diagnostic](xref:EdgeDataStoreDiagnostics) information from Edge Data Store itself. As with any other stream data stored in the Edge Storage component, you can egress this to either PI Web API or OSIsoft Cloud Services to monitor the state of a system remotely.
+Edge Data Store supports a diagnostics namespace that is used to store streams containing [diagnostic](xref:EdgeDataStoreDiagnostics) information from Edge Data Store itself. As with any other stream data stored in the Edge Storage component, you can egress this to either a PI Web Server or OSIsoft Cloud Services to monitor the state of a system remotely.
 
-In addition, all components in Edge Data Store support OMF Health messages that can be configured using the [Health Endpoint configuration](xref:SystemHealthEndpointsConfiguration) so that OMF Health messages are sent to remote PI Web API or OSIsoft Cloud Service endpoints to support remote monitoring of devices.
+In addition to diagnostics data, all components in Edge Data Store support OMF Health messages. You configure Health messages with the [Health Endpoint configuration](xref:SystemHealthEndpointsConfiguration), to send Health data to either PI Web Server or OSIsoft Cloud Service endpoints for remote monitoring of devices.
 
 ## OMF ingress
 
-OMF ingress troubleshooting useful when a custom application is not writing stream data to EDS.
+Complete the following when a custom application fails to write stream data to EDS:
 
-- Make sure the OMF messages are sent in the correct order (OMF type, OMF container, OMF data). 
-    No data will be present until messages are received and processed in that order. Logging of warnings, errors, and message can help with resolving these issues.
+1. Verify the custom application is sending OMF messages in the correct order: 1) OMF type, 2) OMF container, 3) OMF data.
+   **Note:** No OMF Messages will be ingressed into Edge Data Store if they are not sent in correct order.
+2. Refer to logging of warnings, errors, and messages for help with diagnosing these issues.
 
 ### OMF ingress logging
 
-You can find log messages related to ingress in the storage logs. 
+Ingress logging messages provide a record of ingress events. Complete the following to capture maximum information for troubleshooting:
 
-To output most information for troubleshooting, you should temporarily [set the the log level](xref:LoggingConfiguration) to **Trace**.
+1. Refer to [Logging Configuration](xref:LoggingConfiguration) to set logging parameters.
+2. For maximum message logging information, set the log level to **Trace**.
 
 ### OMF ingress message debugging
 
-In order to troubleshoot problems between an OMF application and Edge Storage, you should enable debugging. 
+Debugging helps to troubleshoot problems between an OMF application and Edge Data Store.  Complete the following to enable debugging:
 
-- Set an appropriate value for the *IngressDebugExpiration* property in a [storage runtime configuration](xref:storageruntime). 
+1. Refer to [Storage Runtime Configuration](xref:storageruntime) to enable debugging.
+2. Set an appropriate time value for the *IngressDebugExpiration* property. 
+
+   **Note:** You can also disable debugging by setting the expiration value to *null*.
+
+Examples of valid strings representing date and time:
+
+    Utc: “yyyy-mm-ddThh:mm:ssZ”
+    Local: “mm-dd-yyyy hh:mm:ss”
 
 ## Periodic egress
 
@@ -35,32 +45,43 @@ EDS periodic egress extracts data from SDS streams and sends the appropriate seq
 
 **Note:** If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same SDS stream. 
 
-Careful use of stream prefixes in the [periodic egress endpoint configuration](xref:egress) ensures that output data streams are logically separated in the systems of record.
+1. Check all egress configuration files in Edge Data Store to verify whether any endpoints are duplicated. A duplicate endpoint means that more than one device is egressing data to it, resulting in unexpected data.
+2. Assign stream prefixes in the [periodic egress endpoint configuration](xref:egress) to ensure that output data streams are logically separated in the systems of record.
 
-Type prefixes may be helpful if you have a case where you have changed a stream type definitions on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.
+   **Note:** Type prefixes may be helpful if you have changed a stream type definitions on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.
 
 ### Periodic egress logging
 
-You can find log messages related to egress in the Storage logs. 
+Egress logging messages provide a record of egress events. Complete the following to capture maximum information for troubleshooting:
 
-To output most information for troubleshooting, you can temporarily set the the log level to **Trace**.  For instructions on logging configuration, see [Message logging configuration](xref:LoggingConfiguration).
+1. Refer to [Logging Configuration](xref:LoggingConfiguration) to set logging parameters.
+2. For maximum message logging information, set the log level to **Trace**.
 
 ### Periodic egress debugging
 
-In order to troubleshoot problems between Edge Data Store and the destination, you should enable debugging in [Data egress configuration](xref:egress). Debugging for that destination will be enabled, and HTTP request and response content will be stored to disk for review. 
-The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to *null*.
+Debugging helps to troubleshoot problems between Edge Data Store and the egress destination.  Complete the following to enable debugging:
+
+1. Refer to [Data egress configuration](xref:egress) to enable debugging.
+2. Set an appropriate time value for the *IngressDebugExpiration* property. 
+
+   **Note:** You can also disable debugging by setting the expiration value to *null*.
 
 Examples of valid strings representing date and time:
 
     Utc: “yyyy-mm-ddThh:mm:ssZ”
-
     Local: “mm-dd-yyyy hh:mm:ss”
 
-The content length of each request/response and the overall number of requests/responses, can be quite large. As a result, debug information is stored to disk in a separate location than the typical log messages. Debug folders/files will be created under the Edge Data Store data folder. The debug folder/file structure is:
+### Debugging folder/file structure
+
+The overall number and content length of each request/response pair can be quite large. Debug information is therefore stored to disk in a separate location from the typical log messages. Debug folders and files will be created under the Edge Data Store data folder. 
+
+The following displays the debugging folder/file structure:
 
     Windows: %programdata%\OSIsoft\EdgeDataStore\Storage\egressdump\{tenantId}\{namespaceId}\{egressId}\{omfType}\{Ticks}-{Guid}-{Req/Res}.txt
 
     Linux: /usr/share/OSIsoft/EdgeDataStore/Storage/egressdump/{tenantId}/{namespaceId}/{egressId}/{omfType}/{Ticks}-{Guid}-{Req/Res}.txt
+
+The following table displays the information represented by the non-intuitive elements of the file structure:
 
 | Element    | Represents                       |
 |------------|----------------------------------|
