@@ -293,36 +293,36 @@ edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 
 Complete the following to change all values of a facet:
 
-	1. Open command line.
-	2. Type the `componentId` and `facetName`, followed by key=value pairs that you want to change. Then press Enter.
+1. Open command line.
+2. Type the `componentId` and `facetName`, followed by key=value pairs that you want to change. Then press Enter.
 
-	Example: Change all values in the 'Logging' facet:
+   Example: Change all values in the 'Logging' facet:
 
-	```bash
-	edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
-	```
+   ```bash
+      edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
+   ```
 
 Complete the following to configure any number of valid key=value pairs in a facet:
 
-	1. Open command line.
-	2. Type the `componentId` and `facetName` followed by the key=value pairs that you want to change, and press Enter.
+1. Open command line.
+2. Type the `componentId` and `facetName` followed by the key=value pairs that you want to change, and press Enter.
 
-	Example: Change a single value in the 'Logging' facet:
+   Example: Change a single value in the 'Logging' facet:
 
-	```bash
-	edgecmd Configuration Storage Logging LogFileCountLimit=5
-	```
+   ```bash
+      edgecmd Configuration Storage Logging LogFileCountLimit=5
+   ```
 
 Complete the following to add an entry to a collection configuration:
 
-	1. Open command line.
-	2. Type the `componentId` and `facetName` followed by the key=value pairs, and press Enter.
+1. Open command line.
+2. Type the `componentId` and `facetName` followed by the key=value pairs, and press Enter.
 
-	Example: Add the 'Health Endpoints' facet to the 'System' component:
+   Example: Add the 'Health Endpoints' facet to the 'System' component:
 
-	```bash
-	edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
-	```
+   ```bash
+      edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
+   ```
 	**Note:** If an entry with the specified ID already exists, it will be updated based on the new key=value pairs.
 
 ### Configure with JSON Files
@@ -330,36 +330,35 @@ You can also configure Edge Data Store by a JSON file input into the EdgeCmd app
 
 Complete the following to import a bulk configuration:
 	
-	1. Open command line.
-	2. Type the following in the command line, replacing `PathToJsonFile` with the path to the file, and press Enter.
+1. Open command line.
+2. Type the following in the command line, replacing `PathToJsonFile` with the path to the file, and press Enter.
 
-		```bash
-		edgecmd Configuration file=PathToJsonFile
-		```
+   ```bash
+   edgecmd Configuration file=PathToJsonFile
+   ```
 
 Complete the following to import a facet specific configuration file for a component:
 	
-	1. Open command line.
-	2. Type the following in the command line, replacing the `componentId` with the ID of the component, `facetName` with the name of the facet, and `PathToJsonFile` with the path to the file. Then press Enter.
+1. Open command line.
+2. Type the following in the command line, replacing the `componentId` with the ID of the component, `facetName` with the name of the facet, and `PathToJsonFile` with the path to the file. Then press Enter.
 
-		```bash
-		edgecmd Configuration componentId facetName file=PathToJsonFile
-		```
+   ```bash
+      edgecmd Configuration componentId facetName file=PathToJsonFile
+   ```
 
 Complete the following to import a file with configuration for individual facets as a bulk file import operation:
 	**Note:** The file must contain only information for the given component ID. 
 	
-	1. Open command line.
-	2. Type the file name as shown in the following example and press Enter.
+1. Open command line.
+2. Type the file name as shown in the following example and press Enter.
 
-	Example command:
+   ```bash
+      edgecmd Configuration file="~/Bulk_Storage_Runtime.json"
+   ```
 
-	```bash
-	edgecmd Configuration file="~/Bulk_Storage_Runtime.json"
-	```
+The file 'Bulk_Storage_Runtime.json' contains:
 
-	The file 'Bulk_Storage_Runtime.json' contains:
-	```JSON
+        ```JSON
 	{
 		"Storage": {
 			"Runtime": {
@@ -373,7 +372,8 @@ Complete the following to import a file with configuration for individual facets
 		}
 	}
 	```
-	**Note:** The command only affects the specified key-value pairs for the 'Runtime' facet in the 'Storage' component, it does not change any other components or facets; however, import affects all key-value pairs in the facet. If you import the following example JSON file, the 'StreamStorageLimitMb' and 'StreamStorageTargetMb' values will be modified and the remaining values in the 'Runtime' facet will be reset to their default values (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog).
+
+**Note:** The command only affects the specified key-value pairs for the 'Runtime' facet in the 'Storage' component, it does not change any other components or facets; however, import affects all key-value pairs in the facet. If you import the following example JSON file, the 'StreamStorageLimitMb' and 'StreamStorageTargetMb' values will be modified and the remaining values in the 'Runtime' facet will be reset to their default values (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog).
 
 	```JSON
 	{
@@ -392,13 +392,13 @@ Complete the following to delete a configuration entry from a collection configu
 
 1. Open command line. 
 2. Type the `componentId` and `facetName` followed by the ID of the entry to be removed.
-2. Add the `delete` keyword and press Enter.
+3. Add the `delete` keyword and press Enter.
 
-Example deleting endpoint_1 of the HealthEndpoints facet from the System:
+   Example deleting endpoint_1 of the HealthEndpoints facet from the System:
 
-```bash
-edgecmd Configuration System HealthEndpoints Id=endpoint_1 delete
-```
+   ```bash
+      edgecmd Configuration System HealthEndpoints Id=endpoint_1 delete
+   ```
 
 ### Delete configuration file
 
@@ -406,13 +406,13 @@ Complete the following to delete a configuration file from Edge Data Store. For 
 
 1. Open command line. 
 2. Type the `componentId` and `facetName`.
-2. Add the `delete` keyword and press Enter.
+3. Add the `delete` keyword and press Enter.
 
-Example deleting HealthEndpoints facet configuration file:
+   Example deleting HealthEndpoints facet configuration file:
 
-```bash
-edgecmd Configuration System HealthEndpoints delete
-```
+   ```bash
+      edgecmd Configuration System HealthEndpoints delete
+   ```
 
 
 
