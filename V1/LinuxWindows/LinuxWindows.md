@@ -18,7 +18,7 @@ Key material for encrypted secrets of configuration files is stored using the Wi
 
 ### Linux
 
-Program binaries are placed in the _/opt/EdgeDataStore_ directory.  Configuration, log, and data files are placed under _/usr/share/OSIsoft/EdgeDataStore_. This folder structure will not be automatically removed if you unistall EDS. For information about clearing these files, see the [installation](#installationOverview) documentation.
+Program binaries are placed in the _/opt/EdgeDataStore_ directory.  Configuration, log, and data files are placed under _/usr/share/OSIsoft/EdgeDataStore_. This folder structure will not be automatically removed if you uninstall EDS. For information about clearing these files, see the [installation](#installationOverview) documentation.
 
 Key material for encrypted secrets of configuration files is stored using limited access files under _/usr/share/OSIsoft/EdgeDataStore_. You cannot configure file locations for Linux.
 
