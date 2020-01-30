@@ -200,31 +200,32 @@ Complete the following to view the entire configuration for every component in E
 
 Complete the following to retrieve component specific configuration:
 
-	1. Open command line.
-	2. Type the following in the command line, replacing `<componentId>` with the ID of the component, and press Enter.
+1. Open command line.
+2. Type the following in the command line, replacing `<componentId>` with the ID of the component, and press Enter.
 
-		```bash
-		edgecmd Configuration <componentId>
-		```
+   ```bash
+      edgecmd Configuration <componentId>
+   ```
 
 Complete the following to retrieve facet specific configuration of an Edge Data Store component:
 
-	1. Open command line.
-	2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name, and press Enter.
+1. Open command line.
+2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name, and press Enter.
 
-		```bash
-		edgecmd Configuration <componentId> <facetName>
-		```
+   ```bash
+      edgecmd Configuration <componentId> <facetName>
+   ```
 
 Complete the following to retrieve the configuration for a specific facet entry:
 
-	1. Open command line.
-	2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name.
+1. Open command line.
+2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name.
 
-		```bash
-		edgecmd Configuration <componentId> <facetName> id=IndexToRetrieve
-		```
-	3. Add the parameters and their values for the facet to configure and press Enter.
+   ```bash
+      edgecmd Configuration <componentId> <facetName> id=IndexToRetrieve
+   ```
+
+3. Add the parameters and their values for the facet to configure and press Enter.
 
 #### Examples
 
