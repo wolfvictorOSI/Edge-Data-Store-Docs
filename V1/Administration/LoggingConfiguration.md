@@ -52,7 +52,7 @@ The logFileCountLimit controls the number of days the log files are stored befor
 
 ## Change logging configuration
 
-To change the logging configuration, complete the following steps: 
+Complete the following to change the logging configuration:
 
 1. Update the parameters of the message logging configuration JSON file that you want as needed. For example, the _Component_Logging.json_ file:
 
