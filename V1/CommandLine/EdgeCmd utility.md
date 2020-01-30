@@ -4,7 +4,9 @@ uid: Installedgecmd
 
 # EdgeCmd utility
 
-You can use the EdgeCmd command line utility to configure and administer Edge Data Store on Linux and Windows. You can accomplish the same operations with EdgeCmd that you can accomplish with REST calls.
+With EdgeCmd utility, you can configure and administer Edge Data Store on Linux and Windows just like with REST and command line arguments.
+
+**Note:** Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.
 
 ## Install EdgeCmd utility
 
