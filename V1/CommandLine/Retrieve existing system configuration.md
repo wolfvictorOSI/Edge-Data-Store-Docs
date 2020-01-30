@@ -4,45 +4,52 @@ uid: RetreiveExistingSystemConfiguration
 
 # Retrieve existing system configuration
 
-You can use the edgecmd utility to view the configuration for each part of Edge Data Store.
+You can use the EdgeCmd utility to view the configuration for each part of Edge Data Store.
 
-Complete the following to view the entire configuration for every component in Edge Data Store:
+## View components configuration
+
+Complete the following to view the configuration of every component in Edge Data Store:
 
 1. Open command line.
 2. Type the following in the command line and press Enter.
 
    ```bash
-      edgecmd Configuration
+   edgecmd Configuration
    ```
+## View a specific component configuration
 
-Complete the following to retrieve component specific configuration:
+Complete the following to view the configuration of a specific component:
 
 1. Open command line.
 2. Type the following in the command line, replacing `<componentId>` with the ID of the component, and press Enter.
 
    ```bash
-      edgecmd Configuration <componentId>
+   edgecmd Configuration <componentId>
    ```
 
-Complete the following to retrieve facet specific configuration of an Edge Data Store component:
+## View a specific facet of a component
+
+Complete the following to view the configuration of a specific facet of an Edge Data Store component:
 
 1. Open command line.
 2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name, and press Enter.
 
    ```bash
-      edgecmd Configuration <componentId> <facetName>
+   edgecmd Configuration <componentId> <facetName>
    ```
+   
+## View a specific facet entry of a component
 
-Complete the following to retrieve the configuration for a specific facet entry:
+Complete the following to view the configuration of  a specific facet entry:
 
 1. Open command line.
 2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name.
 
    ```bash
-      edgecmd Configuration <componentId> <facetName> id=IndexToRetrieve
+   edgecmd Configuration <componentId> <facetName> id=IndexToRetrieve
    ```
 
-3. Add the parameters and their values for the facet to configure and press Enter.
+3. Add the key=value pairs for the facet to configure, for example `id=IndexToRetrieve`, and press Enter.
 
 #### Examples
 
