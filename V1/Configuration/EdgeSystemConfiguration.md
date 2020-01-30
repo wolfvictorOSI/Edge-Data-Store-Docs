@@ -18,7 +18,7 @@ The following JSON file represents minimal configuration of an Edge Data Store. 
   curl -i -d "@EdgeMinimumConfiguration.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration
   ```
 
-  This will be set as the configuration of a running Edge Data Store. The configuration takes effect immediately after the command completes.
+  The following will be set as the configuration of a running Edge Data Store. The configuration takes effect immediately after the command completes.
 
 ```json
 {
