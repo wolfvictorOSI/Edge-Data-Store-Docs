@@ -4,7 +4,7 @@ uid: OPCUADataSourceConfiguration
 
 # Data source configuration
 
-In order to use the OPC UA EDS adapter, you must configure the data source from which it will receive data.
+To use the OPC UA EDS adapter, you must configure the data source from which it will receive data.
 
 ## Configure OPC UA data source
 
