@@ -6,7 +6,7 @@ uid: PrinciplesOfOperationModbus
 This topic provides an operational overview of the Modbus TCP EDS adapter, focusing on streams creation and error handling. 
 
 ## Adapter configuration
-In order for the Modbus TCP EDS adapter to be ready for data collection, you need to configure the adapter by defining the following:
+For the Modbus TCP EDS adapter to be ready for data collection, you need to configure the adapter by defining the following:
 
 - Data source: Provide the data source from which the adapter should collect data.
 - Data selection: Perform selection of Modbus TCP items to which the adapter should subscribe for data.
