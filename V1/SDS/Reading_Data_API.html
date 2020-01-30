@@ -355,9 +355,9 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data?
 <p><code>string startIndex</code><br>Index bounding the beginning of the series of events to return.</p>
 <p><code>string endIndex</code><br>Index bounding the end of the series of events to return.</p>
 <p><code>int count</code><br>Optional maximum number of events to return. If <code>count</code> is specified, a <code>continuationToken</code> must also be specified.</p>
-<p><code>SdsBoundaryType boundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundaryType">SdsBoundaryType</a> specifies handling of events at or near the start and end indexes.</p>
-<p><code>SdsBoundaryType startBoundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundaryType">SdsBoundaryType</a> specifies the first value in the result in relation to the start index. If <code>startBoundaryType</code> is specified, <code>endBoundaryType</code> must be specified.</p>
-<p><code>SdsBoundaryType endBoundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundaryType">SdsBoundaryType</a> specifies the last value in the result in relation to the end index. If <code>startBoundaryType</code> is specified, <code>endBoundaryType</code> must be specified.</p>
+<p><code>SdsBoundaryType boundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundarytype">SdsBoundaryType</a> specifies handling of events at or near the start and end indexes.</p>
+<p><code>SdsBoundaryType startBoundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundarytype">SdsBoundaryType</a> specifies the first value in the result in relation to the start index. If <code>startBoundaryType</code> is specified, <code>endBoundaryType</code> must be specified.</p>
+<p><code>SdsBoundaryType endBoundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundarytype">SdsBoundaryType</a> specifies the last value in the result in relation to the end index. If <code>startBoundaryType</code> is specified, <code>endBoundaryType</code> must be specified.</p>
 <p><code>string filter</code><br>Optional <a class="xref" href="Filter_Expressions.html">filter expression</a></p>
 <p><code>string continuationToken</code><br>Optional token used to retrieve the next page of data. If <code>count</code> is specified, a <code>continuationToken</code> must also be specified.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events. A continuation token can be returned if specified in the request.</p>
@@ -806,7 +806,7 @@ Content-Type: application/json
 </code></pre><hr>
 <h2 id="get-sampled-values"><code>Get Sampled Values</code></h2>
 <p>Returns data sampled by intervals between a specified start and end index.</p>
-<p>Sampling is driven by a specified property or properties of the stream&#39;s Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information see <a class="xref" href="SDS_Types.html#interpolation">Interpolation.</a></p>
+<p>Sampling is driven by a specified property or properties of the stream&#39;s Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information see <a class="xref" href="Reading_Data.html#interpolation">Interpolation.</a></p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/
     Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;sampleBy={sampleBy}
@@ -1173,7 +1173,7 @@ Content-Type: application/json
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
     ?streams=Simple1,Simple2&amp;joinMode=mergeleft
     &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><p><strong>Response</strong><br>This is similar to <a href="#outerjoin-request">OuterJoin</a>, but the value at each index is the first available value at that index when iterating the given list of streams from left to right.</p>
+</code></pre><p><strong>Response</strong><br>This is similar to <a href="#outer-join-example">OuterJoin</a>, but the value at each index is the first available value at that index when iterating the given list of streams from left to right.</p>
 <p><strong>Response body</strong></p>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
@@ -1219,7 +1219,7 @@ Content-Type: application/json
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Bulk/Streams/Data/Joins
     ?streams=Simple1,Simple2&amp;joinMode=mergeright
     &amp;startIndex=0001-01-01T00:00:00.0000000&amp;endIndex=9999-12-31T23:59:59.9999999
-</code></pre><p><strong>Response</strong><br>This is similar to <a href="#outerjoin-request">OuterJoin</a>, but the value at each index is the first available value at that index when iterating the given list of streams from right to left.</p>
+</code></pre><p><strong>Response</strong><br>This is similar to <a href="#outer-join-example">OuterJoin</a>, but the value at each index is the first available value at that index when iterating the given list of streams from right to left.</p>
 <p><strong>Response body</strong></p>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json

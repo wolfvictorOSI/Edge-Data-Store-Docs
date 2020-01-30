@@ -84,7 +84,7 @@
 <p>Complete the following to access EdgeCmd on Windows:</p>
 <ol>
 <li>Open a command prompt.</li>
-<li><p>Type the following at the prompt and press Enter:</p>
+<li><p>Type the following in the prompt and press Enter:</p>
 <pre><code class="lang-cmd">C:\Program Files\OSIsoft\EdgeCmd\edgecmd.exe
 </code></pre><p><strong>Note:</strong> Specify the full path when you use EdgeCmd on Windows.</p>
 </li>
@@ -93,18 +93,28 @@
 <p>Complete the following to access EdgeCmd on Linux:</p>
 <ol>
 <li>Open a terminal window.</li>
-<li><p>Type the following and press Enter.</p>
+<li><p>Type the following in the terminal and press Enter.</p>
 <pre><code class="lang-bash">/opt/OSIsoft/EdgeCmd/edgecmd
 </code></pre><p><strong>Note:</strong> You can access EdgeCmd without using the full path on Linux. </p>
 </li>
 </ol>
 <h2 id="configure-edge-data-store-with-edgecmd">Configure Edge Data Store with EdgeCmd</h2>
-<p>All configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.</p>
-<h2 id="get-help">Get help</h2>
-<p>The Edgecmd application provides a &#39;Help&#39; utility. For general instructions on how to use the Edgecmd application, type:</p>
+<p>All configuration options that can be done using REST can also be done using the EdgeCmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.</p>
+<h3 id="get-help">Get help</h3>
+<p>The Edgecmd utility provides a &#39;Help&#39; utility. Complete the following to view general instructions on how to use the Edgecmd utility:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line and press Enter.</p>
 <pre><code class="lang-bash">edgecmd Help
-</code></pre><p>You can also use the utility to get help for any registered component in Edge Data Store. If you add a specific component ID to the end of the previous command, you receive help output for every configuration facet that the component supports, along with examples of commands that you can run to configure the component.</p>
-<p>Example: View help for the &#39;System&#39; component:</p>
+</code></pre></li>
+<li><p>Optional: To receive help output for every configuration facet that a registered component supports, add a specific component ID to the end of the previous command. See example <a href="#help-for-the-system-component">Help for the System component</a>.</p>
+<p> <strong>Note:</strong> The help output also provides examples of commands that you can run to configure the component.</p>
+</li>
+<li><p>Optional: To view help for a specific facet within a component, add the facet name after the component ID. See the example <a href="#help-for-the-port-facet-within-the-system-component">Help for the Port facet within the System component</a>.</p>
+</li>
+</ol>
+<h4 id="examples">Examples</h4>
+<h5 id="help-for-the-system-component">Help for the System component:</h5>
 <pre><code class="lang-bash">edgecmd Help System
 
 ---------------------------------------------------------------------------------------------------------
@@ -151,8 +161,7 @@ ComponentId                        [Required] ID of the hosted component.
 ComponentType                      [Required] Type of the hosted component.
 
 Example: ./edgecmd Configuration System Components ComponentId=Modus1 ComponentType=Modbus
-</code></pre><p>For help regarding a specific facet within a component, add the facet name after the component ID.</p>
-<p>Example: Help for the &#39;Port&#39; facet within the &#39;System&#39; component:</p>
+</code></pre><h5 id="help-for-the-port-facet-within-the-system-component">Help for the Port facet within the System component</h5>
 <pre><code class="lang-bash">edgecmd Help System Port
 
 ---------------------------------------------------------------------------------------------------------
@@ -161,38 +170,83 @@ Component System command-line options =&gt; &#39;Port&#39;
 Port                        [Required] The tcp port to bind this application host to (Range [1024,65535])
 
 Example: ./edgecmd Configuration System Port Port=5590
-</code></pre><h2 id="edge-data-store-components">Edge Data Store components</h2>
+</code></pre><h3 id="edge-data-store-components">Edge Data Store components</h3>
 <p>The EdgeCmd utility enables you to add, configure, and delete Edge Data Store components.</p>
-<h3 id="view-components">View components</h3>
-<p>With the following command, you can view which components are currently configured on Edge Data Store:</p>
+<h4 id="view-components">View components</h4>
+<p>Complete the following to view which components are currently configured on Edge Data Store.</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line and press Enter.</p>
 <pre><code class="lang-bash">edgecmd Configuration System Components
-</code></pre><h3 id="add-components">Add components</h3>
-<p>To register a new component, use the following command:</p>
+</code></pre></li>
+</ol>
+<h4 id="add-components">Add components</h4>
+<p>Complete the following to register a new component.</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line, replacing <code>&lt;componentId&gt;</code> and <code>&lt;componentType&gt;</code> with the values that you want and press Enter.</p>
+<p> <strong>Note:</strong> Valid component types are &quot;Modbus&quot; and &quot;OpcUa&quot;. If you are trying to register a Modbus EDS adapter, use &quot;Modbus&quot; and if you are trying to register an OPC UA adapter, use &quot;OpcUa&quot;.</p>
 <pre><code class="lang-bash">edgecmd Configuration System Components componentId=&lt;componentId&gt; componentType=&lt;componentType&gt;
-</code></pre><p>Valid component types are &quot;Modbus&quot; and &quot;OpcUa&quot;. If you are trying to register a Modbus EDS adapter, use &quot;Modbus&quot; and if you are trying to register an OPC UA adapter, use &quot;OpcUa&quot;. </p>
-<p>Example: Modbus adapter component registration:</p>
+</code></pre><p> Example: Modbus adapter component registration:</p>
 <pre><code class="lang-bash">edgecmd Configuration System Components componentId=Modbus1 componentType=Modbus
-</code></pre><h3 id="configure-components">Configure components</h3>
-<p>The EDS Modbus adapter and OPC UA adapter each have three configurable facets: data source, data selection, and logging. You can configure these with edgecmd by specifying a component ID and facet name. </p>
-<p>Example: Configuration of the data source facet of a Modbus adapter:</p>
+</code></pre></li>
+</ol>
+<h4 id="configure-components">Configure components</h4>
+<p>The EDS Modbus adapter and OPC UA adapter each have three configurable facets: data source, data selection, and logging. Complete the following to configure a facet.</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line, replacing <code>&lt;componentId&gt;</code> and <code>&lt;facetName&gt;</code> with the values that you want.</p>
+<pre><code class="lang-bash">edgecmd Configuration &lt;componentId&gt; &lt;facetName&gt;
+</code></pre></li>
+<li><p>Add key-value pairs to specify which values of the facet that you want to configure are to be changed and press Enter.</p>
+<p> Example: Configuration of the data source facet of a Modbus adapter:</p>
 <pre><code class="lang-bash">edgecmd Configuration Modbus1 DataSource IpAddress=117.23.45.110 port=502 ConnectTimeout=15000 StreamIdPrefix=&quot;DataSource1&quot;
-</code></pre><p>For detailed information on how to configure each adapter, see the <a class="xref" href="../Configuration/Schemas/Modbus_schema.html">Modbus</a> and <a class="xref" href="../Configuration/Schemas/OpcUa_schema.html">OPC UA</a> schemas.</p>
-<h3 id="delete-components">Delete components</h3>
-<p>You can delete components from the Edge Data Store by using the following command:</p>
+</code></pre></li>
+</ol>
+<p>For detailed information on how to configure each adapter, see <a class="xref" href="../OpcUa/OpcUaOverview.html">OPC UA EDS adapter</a> and <a class="xref" href="../Modbus/ModbusOverview.html">Modbus TCP EDS adapter</a> schemas.</p>
+<h4 id="delete-components">Delete components</h4>
+<p>Complete the following to delete components from the Edge Data Store.</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line, replacing <code>&lt;componentId&gt;</code> with the ID of the component that you want to delete, and press Enter.</p>
 <pre><code class="lang-bash">edgecmd Configuration System Components id=&lt;componentId&gt; delete
-</code></pre><p><strong>Note:</strong> You cannot delete the &quot;Storage&quot; component because it is required for Edge Data Store to operate.</p>
-<h2 id="retrieve-existing-system-configuration">Retrieve existing system configuration</h2>
+</code></pre></li>
+</ol>
+<p><strong>Note:</strong> You cannot delete the Storage component because it is required for Edge Data Store to operate.</p>
+<h3 id="retrieve-existing-system-configuration">Retrieve existing system configuration</h3>
 <p>You can use the edgecmd utility to view the configuration for each part of Edge Data Store.</p>
-<p>To view the entire configuration for every system component, run the following command:</p>
-<pre><code class="lang-bash">edgecmd Configuration
-</code></pre><p>To retrieve component specific configuration:</p>
-<pre><code class="lang-bash">edgecmd Configuration componentId
-</code></pre><p>To retrieve facet specific configuration of an Edge Data Store component:</p>
-<pre><code class="lang-bash">edgecmd Configuration componentId facetName
-</code></pre><p>For facets that contain multiple entries, you can retrieve the configuration for a specific entry by its Id:</p>
-<pre><code class="lang-bash">edgecmd Configuration componentId facetName id=IndexToRetrieve
-</code></pre><h3 id="examples">Examples</h3>
-<p><strong>View the configuration of the &#39;System&#39; component</strong></p>
+<p>Complete the following to view the entire configuration for every component in Edge Data Store:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line and press Enter.</p>
+<pre><code class="lang-bash">   edgecmd Configuration
+</code></pre></li>
+</ol>
+<p>Complete the following to retrieve component specific configuration:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line, replacing <code>&lt;componentId&gt;</code> with the ID of the component, and press Enter.</p>
+<pre><code class="lang-bash">   edgecmd Configuration &lt;componentId&gt;
+</code></pre></li>
+</ol>
+<p>Complete the following to retrieve facet specific configuration of an Edge Data Store component:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line, replacing <code>&lt;componentId&gt;</code> and <code>&lt;facetName&gt;</code> with the ID of the component and the facet name, and press Enter.</p>
+<pre><code class="lang-bash">   edgecmd Configuration &lt;componentId&gt; &lt;facetName&gt;
+</code></pre></li>
+</ol>
+<p>Complete the following to retrieve the configuration for a specific facet entry:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line, replacing <code>&lt;componentId&gt;</code> and <code>&lt;facetName&gt;</code> with the ID of the component and the facet name.</p>
+<pre><code class="lang-bash">   edgecmd Configuration &lt;componentId&gt; &lt;facetName&gt; id=IndexToRetrieve
+</code></pre></li>
+<li><p>Add the parameters and their values for the facet to configure and press Enter.</p>
+</li>
+</ol>
+<h4 id="examples-1">Examples</h4>
+<h5 id="view-the-configuration-of-the-system-component">View the configuration of the &#39;System&#39; component</h5>
 <pre><code class="lang-bash">edgecmd Configuration System
 {
   &quot;Logging&quot;: {
@@ -211,14 +265,14 @@ Example: ./edgecmd Configuration System Port Port=5590
     }
   ]
 }
-</code></pre><p><strong>View the configuration for the &#39;Logging&#39; facet within the &#39;Storage&#39; component</strong></p>
+</code></pre><h5 id="view-the-configuration-for-the-logging-facet-within-the-storage-component">View the configuration for the &#39;Logging&#39; facet within the &#39;Storage&#39; component</h5>
 <pre><code class="lang-bash">edgecmd Configuration Storage Logging
 {
   &quot;logLevel&quot;: &quot;Information&quot;,
   &quot;logFileSizeLimitBytes&quot;: 34636833,
   &quot;logFileCountLimit&quot;: 31
 }
-</code></pre><p><strong>View the configuration of a specific entry in the &#39;PeriodicEgressEndpoint&#39; facet within the &#39;Storage&#39; component</strong></p>
+</code></pre><h5 id="view-the-configuration-of-a-specific-entry-in-the-periodicegressendpoint-facet-within-the-storage-component">View the configuration of a specific entry in the &#39;PeriodicEgressEndpoint&#39; facet within the &#39;Storage&#39; component</h5>
 <pre><code class="lang-bash">edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 {
   &quot;id&quot;: &quot;Endpoint_1&quot;,
@@ -240,27 +294,59 @@ Example: ./edgecmd Configuration System Port Port=5590
   &quot;streamPrefix&quot;: null,
   &quot;typePrefix&quot;: null
 }
-</code></pre><h2 id="configure-edge-data-store">Configure Edge Data Store</h2>
-<p>To create a configuration, you must enter the component and facet where the configuration payload should go, followed by key=value pairs to specify which values are to be changed. </p>
+</code></pre><h3 id="configure-edge-data-store">Configure Edge Data Store</h3>
+<p>Complete the following to change all values of a facet:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the <code>componentId</code> and <code>facetName</code>, followed by key=value pairs that you want to change. Then press Enter.</p>
 <p>Example: Change all values in the &#39;Logging&#39; facet:</p>
-<pre><code class="lang-bash">edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
-</code></pre><p>You can use this to configure any number of valid key=value pairs in a facet.</p>
+<pre><code class="lang-bash">   edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
+</code></pre></li>
+</ol>
+<p>Complete the following to configure any number of valid key=value pairs in a facet:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the <code>componentId</code> and <code>facetName</code> followed by the key=value pairs that you want to change, and press Enter.</p>
 <p>Example: Change a single value in the &#39;Logging&#39; facet:</p>
-<pre><code class="lang-bash">edgecmd Configuration Storage Logging LogFileCountLimit=5
-</code></pre><p>You can also use it to add an entry to a collection configuration, for example, the &#39;Health Endpoints&#39; facet in the &#39;System&#39; component:</p>
-<pre><code class="lang-bash">edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
-</code></pre><p><strong>Note:</strong> If an entry with the specified id already exists, it will be updated based on the new key=value pairs.</p>
+<pre><code class="lang-bash">   edgecmd Configuration Storage Logging LogFileCountLimit=5
+</code></pre></li>
+</ol>
+<p>Complete the following to add an entry to a collection configuration:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the <code>componentId</code> and <code>facetName</code> followed by the key=value pairs, and press Enter.</p>
+<p>Example: Add the &#39;Health Endpoints&#39; facet to the &#39;System&#39; component:</p>
+<pre><code class="lang-bash">   edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
+</code></pre><p> <strong>Note:</strong> If an entry with the specified ID already exists, it will be updated based on the new key=value pairs.</p>
+</li>
+</ol>
 <h3 id="configure-with-json-files">Configure with JSON Files</h3>
-<p>You can also configure Edge Data Store by a JSON file input into the edgecmd application. File imports will completely replace the existing configurations that you are attempting to change. Therefore, it cannot be used to change individual values in a facet without modifying others.</p>
-<p>To import a bulk configuration:</p>
+<p>You can also configure Edge Data Store by a JSON file input into the EdgeCmd application. A file import completely replaces the existing configurations; therefore, you cannot use it to change individual values in a facet without modifying others.</p>
+<p>Complete the following to import a bulk configuration:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line, replacing <code>PathToJsonFile</code> with the path to the file, and press Enter.</p>
 <pre><code class="lang-bash">edgecmd Configuration file=PathToJsonFile
-</code></pre><p>To import a facet specific configuration file for a component:</p>
-<pre><code>edgecmd Configuration componentId facetName file=PathToJsonFile
-</code></pre><p>To import a file with configuration for individual facets, you can use a bulk file import operation. The file must contain just payload for the given component ID. </p>
-<p>Example command:</p>
-<pre><code class="lang-bash">edgecmd Configuration file=&quot;~/Bulk_Storage_Runtime.json&quot;
-</code></pre><p>The file &#39;Bulk_Storage_Runtime.json&#39; contains:</p>
-<pre><code class="lang-JSON">{
+</code></pre></li>
+</ol>
+<p>Complete the following to import a facet specific configuration file for a component:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line, replacing the <code>componentId</code> with the ID of the component, <code>facetName</code> with the name of the facet, and <code>PathToJsonFile</code> with the path to the file. Then press Enter.</p>
+<pre><code class="lang-bash">   edgecmd Configuration componentId facetName file=PathToJsonFile
+</code></pre></li>
+</ol>
+<p>Complete the following to import a file with configuration for individual facets as a bulk file import operation:
+    <strong>Note:</strong> The file must contain only information for the given component ID. </p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the file name as shown in the following example and press Enter.</p>
+<pre><code class="lang-bash">   edgecmd Configuration file=&quot;~/Bulk_Storage_Runtime.json&quot;
+</code></pre></li>
+</ol>
+<p>The file &#39;Bulk_Storage_Runtime.json&#39; contains:</p>
+<pre><code>    ```JSON
+{
     &quot;Storage&quot;: {
         &quot;Runtime&quot;: {
             &quot;StreamStorageLimitMb&quot;: 66,
@@ -272,8 +358,10 @@ Example: ./edgecmd Configuration System Port Port=5590
         }
     }
 }
-</code></pre><p>The command will only affect the &#39;Runtime&#39; facet in the &#39;Storage&#39; component, it will not change any other components or facets. However, if you import a file containing the following, the &#39;StreamStorageLimitMb&#39; and &#39;StreamStorageTargetMb&#39; values would be modified, resetting the remaining values in the facet (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog) to their default values:</p>
-<pre><code class="lang-JSON">{
+```
+</code></pre><p><strong>Note:</strong> The command only affects the specified key-value pairs for the &#39;Runtime&#39; facet in the &#39;Storage&#39; component, it does not change any other components or facets; however, import affects all key-value pairs in the facet. If you import the following example JSON file, the &#39;StreamStorageLimitMb&#39; and &#39;StreamStorageTargetMb&#39; values will be modified and the remaining values in the &#39;Runtime&#39; facet will be reset to their default values (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog).</p>
+<pre><code>```JSON
+{
     &quot;Storage&quot;: {
         &quot;Runtime&quot;: {
             &quot;StreamStorageLimitMb&quot;: 66,
@@ -281,23 +369,28 @@ Example: ./edgecmd Configuration System Port Port=5590
         }
     }
 }
-</code></pre><h2 id="delete-configuration-entry">Delete configuration entry</h2>
-<p>You can use the edgecmd utility to delete a configuration entry from a collection configuration (for example a single health endpoint of the &#39;HealthEndpoints&#39; facet within the &#39;System&#39; component) from Edge Data Store.</p>
+```
+</code></pre><h3 id="delete-configuration-entry">Delete configuration entry</h3>
+<p>Complete the following to delete a configuration entry from a collection configuration in Edge Data Store. For example, you could delete a single health endpoint of the &#39;HealthEndpoints&#39; facet within the &#39;System&#39; component.</p>
 <ol>
-<li>Specify the component ID, facet, and ID of the entry to be removed</li>
-<li>Add the &#39;delete&#39; keyword.</li>
+<li>Open command line. </li>
+<li>Type the <code>componentId</code> and <code>facetName</code> followed by the ID of the entry to be removed.</li>
+<li><p>Add the <code>delete</code> keyword and press Enter.</p>
+<p>Example deleting endpoint_1 of the HealthEndpoints facet from the System:</p>
+<pre><code class="lang-bash">   edgecmd Configuration System HealthEndpoints Id=endpoint_1 delete
+</code></pre></li>
 </ol>
-<p>Example using edgecmd utility:</p>
-<pre><code class="lang-bash">edgecmd Configuration System HealthEndpoints Id=endpoint_1 delete
-</code></pre><h2 id="delete-configuration-file">Delete configuration file</h2>
-<p>You can use the edgecmd utility to delete an entire configuration file with all its entries (for example the configuration file of the &#39;HealthEndpoints&#39; facet within the &#39;System&#39; component) from Edge Data Store.</p>
+<h3 id="delete-configuration-file">Delete configuration file</h3>
+<p>Complete the following to delete a configuration file from Edge Data Store. For example, you could delete the configuration file of the &#39;HealthEndpoints&#39; facet within the &#39;System&#39; component.</p>
 <ol>
-<li>Specify the component ID and facet.</li>
-<li>Add the &#39;delete&#39; keyword.</li>
+<li>Open command line. </li>
+<li>Type the <code>componentId</code> and <code>facetName</code>.</li>
+<li><p>Add the <code>delete</code> keyword and press Enter.</p>
+<p>Example deleting HealthEndpoints facet configuration file:</p>
+<pre><code class="lang-bash">   edgecmd Configuration System HealthEndpoints delete
+</code></pre></li>
 </ol>
-<p>Example using edgecmd utility:</p>
-<pre><code class="lang-bash">edgecmd Configuration System HealthEndpoints delete
-</code></pre></article>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

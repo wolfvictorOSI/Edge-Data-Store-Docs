@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Docker </title>
+    <title>Install Edge Data Store using Docker </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Docker ">
+    <meta name="title" content="Install Edge Data Store using Docker ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -76,7 +76,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="edgeDocker">
-<h1 id="docker">Docker</h1>
+<h1 id="install-edge-data-store-using-docker">Install Edge Data Store using Docker</h1>
 
 <p>Docker is a set of tools that can be used on Linux to manage application deployments. If you want to use Docker, you must be familiar with the underlying technology and have determined that it is appropriate for your planned use of the Edge Data Store. Docker is not a requirement to use Edge Data Store.</p>
 <p>This topic provides examples of how to create a Docker container with the Edge Data Store. </p>
@@ -96,24 +96,21 @@
 </li>
 </ul>
 <section id="tabpanel_g8gKmViDy-_tabid-1" role="tabpanel" data-tab="tabid-1">
-<pre><code>docker
-FROM ubuntu
+<pre><code>FROM ubuntu
 WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-arm.tar.gz .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host&quot;]
 </code></pre></section>
 <section id="tabpanel_g8gKmViDy-_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
-<pre><code>docker
-FROM ubuntu
+<pre><code>FROM ubuntu
 WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-arm64.tar.gz .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-arm64/OSIsoft.Data.System.Host&quot;]
 </code></pre></section>
 <section id="tabpanel_g8gKmViDy-_tabid-3" role="tabpanel" data-tab="tabid-3" aria-hidden="true" hidden="hidden">
-<pre><code>docker
-FROM ubuntu
+<pre><code>FROM ubuntu
 WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-x64.tar.gz .

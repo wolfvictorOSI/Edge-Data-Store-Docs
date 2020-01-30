@@ -122,20 +122,11 @@
 <td>PropertyOverrides</td>
 <td>No</td>
 </tr>
-<tr>
-<td><a class="xref" href="SdsStreamExtra.html">Tags</a>*</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td><a class="xref" href="SdsStreamExtra.html">Metadata</a>*</td>
-<td>Yes</td>
-</tr>
 </tbody>
 </table>
 <p>Searching for streams is possible using the REST API and specifying the optional <code>query</code> parameter, as shown here:</p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query={query}&amp;skip={skip}&amp;count={count}
 </code></pre><p>The Stream fields valid for search are identified in the fields table located on the <a class="xref" href="SDS_Streams.html">Streams</a> page. </p>
-<p><strong>Note:</strong> Stream Metadata has unique syntax rules. For more information, see <a href="#Stream_Metadata_search_topic">How Searching Works: Stream Metadata</a>.</p>
 <h1 id="searching-for-types">Searching for types</h1>
 <p>Similarly, the search functionality for types is exposed through REST API. The query syntax and request parameters are the same. The only difference is the searchable properties differ for types as opposed to streams. Searchable properties are listed in the following table. For more information, see <a class="xref" href="SDS_Types.html">Types</a>.</p>
 <table>
@@ -416,97 +407,7 @@ The following examples shows the <code>&#39;*&#39;</code> operator.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="a-namestreammetadatasearchtopichow-searching-works-stream-metadataa"><a name="Stream_Metadata_search_topic">How Searching Works: Stream Metadata</a></h2>
-<p><a class="xref" href="SdsStreamExtra.html">Stream Metadata</a> modifies the aforementioned search syntax rules and each operator&#39;s behavior is described below. For example, assume that a namespace contains the following streams and the respective metadata key-value pair(s) for each stream.</p>
-<table>
-<thead>
-<tr>
-<th><strong>streamId</strong></th>
-<th><strong>Metadata</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>stream1</td>
-<td>{ manufacturer, company }<br>{ serial, abc }</td>
-</tr>
-<tr>
-<td>stream2</td>
-<td>{ serial, a1 }</td>
-</tr>
-<tr>
-<td>stream3</td>
-<td>{ status, active }<br>{ second key, second value }</td>
-</tr>
-</tbody>
-</table>
-<h2 id="-operator-2">: Operator</h2>
-<p>A stream metadata key is only searchable in association with a stream metadata value. This pairing is defined using the same field scoping <code>&#39;:&#39;</code> operator, like</p>
-<pre><code class="lang-text">myStreamMetadataKey:streamMetadataValue
-</code></pre><p>If the <code>&#39;:&#39;</code> operator is not used within an individual search clause, metadata keys are not searched against. Instead, metadata values are searched against (along with the other searchable Stream fields).</p>
-<table>
-<thead>
-<tr>
-<th><strong>QueryString</strong></th>
-<th><strong>Streams returned</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>manufacturer:company</code></td>
-<td>Only stream1 returned.</td>
-</tr>
-<tr>
-<td><code>company</code></td>
-<td>Only stream1 returned.</td>
-</tr>
-<tr>
-<td><code>a*</code></td>
-<td>All three streams returned.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Request</strong>
-The following examples shows the <code>&#39;:&#39;</code> operator.</p>
-<pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query=manufacturer:company
-</code></pre><h2 id="-operator-3">* Operator</h2>
-<p>For searching on metadata values, the <code>&#39;*&#39;</code> character is again used as a wildcard to specify an incomplete string. Additionally,
-you can use this wildcard character with the metadata key as well. This is not supported for any other &quot;fields&quot;. If you include a wildcard in a field (defined as a value to the immediate left of a <code>&#39;:&#39;</code> operator), the query will only be valid against stream metadata.</p>
-<table>
-<thead>
-<tr>
-<th><strong>QueryString</strong></th>
-<th><strong>Streams returned</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>manufa*turer:compan*</code></td>
-<td>Only stream1 returned.</td>
-</tr>
-<tr>
-<td><code>ser*al:a*</code></td>
-<td>Stream1 and stream2 are returned.</td>
-</tr>
-<tr>
-<td><code>s*:a*</code></td>
-<td>All three streams returned.</td>
-</tr>
-<tr>
-<td><code>Id:stream*</code></td>
-<td>All three streams returned.</td>
-</tr>
-<tr>
-<td><code>Id*:stream*</code></td>
-<td>Nothing returned.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Note:</strong> In the final example nothing matches on a stream&#39;s Id value because including <code>&#39;*&#39;</code> in a search clause&#39;s field prevents non-stream metadata fields from being searched.</p>
-<p><strong>Request</strong>
-The following examples shows the <code>&#39;*&#39;</code> operator.</p>
-<pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query=manufa*turer:compan*
-</code></pre></article>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

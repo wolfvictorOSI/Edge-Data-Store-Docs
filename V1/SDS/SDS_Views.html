@@ -299,7 +299,7 @@ retrieved from SDS, so required and optional have no meaning.</p>
 <p>Stream Views can be used to change the type defining a stream. You cannot modify the SdsType; types are immutable. But you can map a stream from its current type to a new type.</p>
 <p>To update a stream&#39;s type, define an SdsStreamView and PUT the stream view to the following:</p>
 <pre><code class="lang-text">PUT api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Type?streamViewId={streamViewId}
-</code></pre><p>For details, see <a href="xref:sdsStreams-update-stream-type">Update Stream Type</a>.</p>
+</code></pre><p>For details, see <a class="xref" href="SDS_Streams.html#update-stream-type">Update Stream Type</a>.</p>
 <h2 id="working-with-sdsstreamviews">Working with SdsStreamViews</h2>
 <p>When working with Stream Views either invoke HTTP directly or use some of the sample code. Both Python and JavaScript samples have SdsStreamView definitions.</p>
 <p>The JSON for a simple mapping between a source type with identifier Sample and a target type with identifier Sample1 would appear as follows.</p>

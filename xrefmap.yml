@@ -53,7 +53,7 @@ references:
   name: Edge Data Store
   href: V1/Overview/EdgeSystemOverview.html
 - uid: edgeDocker
-  name: Docker
+  name: Install Edge Data Store using Docker
   href: V1/Docker/EdgeDocker.html
 - uid: EDSDataIngress
   name: Data ingress configuration
@@ -80,7 +80,7 @@ references:
   name: Installation
   href: V1/Installation/InstallationOverview.html
 - uid: Installedgecmd
-  name: EdgeCmd utility
+  name: Install EdgeCmd utility
   href: V1/CommandLine/Install%20EdgeCmd%20utility.html
 - uid: InstallEdgeDataStore
   name: Install Edge Data Store
@@ -92,7 +92,7 @@ references:
   name: Message logging configuration
   href: V1/Administration/LoggingConfiguration.html
 - uid: LoggingConfiguration
-  name: Message logging configuration
+  name: Logging configuration
   href: V1/Configuration/Logging%20configuration.html
 - uid: modbus_DataSelection_schema
   name: Sample Modbus TCP data selection configuration
@@ -206,7 +206,7 @@ references:
   name: Indexes
   href: V1/SDS/indexes.html
 - uid: sdsOverview
-  name: Sequential Data Store (SDS)
+  name: SDS reference
   href: V1/SDS/SequentialDataStore.html
 - uid: sdsQuickStart
   name: SDS quick start
@@ -220,9 +220,6 @@ references:
 - uid: sdsSearching
   name: Searching
   href: V1/SDS/Searching.html
-- uid: sdsStreamExtra
-  name: Stream metadata and tags
-  href: V1/SDS/SdsStreamExtra.html
 - uid: sdsStreams
   name: Streams
   href: V1/SDS/SDS_Streams.html
