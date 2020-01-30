@@ -34,7 +34,7 @@ The following parameters are available for configuring system port.
 
 | Parameter      | Required    | Type   | Nullable | Description                      |
 | ------------- | --------- | -------- | -------- | ------------------------------- |
-| **Port** | Required | `integer` | No       | The tcp port to bind Edge Data Store to. (Range [1024,65535]) Example: 5590 | 
+| **Port** | Required | `integer` | No       | The TCP port to bind Edge Data Store to. (Range [1024,65535]) Example: 5590 | 
 
 
 ## System port example
