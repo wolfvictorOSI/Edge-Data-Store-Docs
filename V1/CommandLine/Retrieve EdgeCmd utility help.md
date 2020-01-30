@@ -28,7 +28,7 @@ Complete the following to view help instructions for a configuration facet that 
 	edgecmd Help <componentId>
 	```
 
-	See example [Help for the System component](#help-for-the-system-component).
+	See the example [Help for the System component](#help-for-the-system-component).
 	
 	**Note:** The help output also provides examples of commands that you can run to configure the component.
 	
