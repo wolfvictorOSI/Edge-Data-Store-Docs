@@ -193,7 +193,7 @@ Complete the following to view the entire configuration for every component in E
 
 	1. Open command line.
 	2. Type the following in the command line and press Enter.
-
+	
 		```bash
 		edgecmd Configuration
 		```
