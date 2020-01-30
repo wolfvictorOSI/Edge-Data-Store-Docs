@@ -53,7 +53,10 @@ This topic provides examples of how to create a Docker container with the Edge D
 
 ### REST access from the local machine from Docker
 
-- To run the container, type the following in the command line (sudo may be necessary):
+Complete the following to run the container:
+
+1. Open command line.
+2. Type the following in the command line (sudo may be necessary):
 
    ```bash
    docker run -d --network host edgedatastore
@@ -63,7 +66,10 @@ Port 5590 is accessible from the host and you can make REST calls to Edge Data S
 
 ### Persistent storage on the local file system from Docker
 
-- To run the container, type the following in the command line (sudo may be necessary):
+Complete the following to run the container:
+
+1. Open command line.
+2. Type the following in the command line (sudo may be necessary):
 
    ```bash
    docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ edgedatastore
