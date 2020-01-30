@@ -44,7 +44,7 @@ The following parameters are available for configuring system health endpoints.
 | **MaxBufferSizeMB**                                             | Optional  | `integer`| No       | The limit on the maximum megabytes of data to buffer for messages to this endpoint if an integer is > 0. This parameter is useful if you want to limit memory or disk usage growth in the event of disconnection to the endpoint. If the buffer is full, old messages will be discarded for new messages. The default is 0. |
 | **Password**                                                    | Optional  | `string` | Yes      | The password used for authentication to PI Web API OMF endpoint. |
 | **UserName**                                                    | Optional  | `string` | Yes      | The user name used for authentication to PI Web API OMF endpoint. |
-| **ValidateEndpointCertificate**                                 | Optional  | `boolean`| No       | The OSIsoft Adapter validates the endpoint certificate if set to true (recommended). If set to false, the OSIsoft Adapter accepts any endpoint certificate. OSIsoft strongly recommends using disabled endpoint certificate validation for testing purposes only. |
+| **ValidateEndpointCertificate**                                 | Optional  | `Boolean`| No       | The OSIsoft Adapter validates the endpoint certificate if set to true (recommended). If set to false, the OSIsoft Adapter accepts any endpoint certificate. OSIsoft strongly recommends using disabled endpoint certificate validation for testing purposes only. |
 
 ## System health endpoints example
 
