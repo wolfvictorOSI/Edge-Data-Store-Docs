@@ -4,7 +4,7 @@ uid: RetrieveEdgeCmdUtilityHelp
 
 # Retrieve EdgeCmd utility help
 
-The Edgecmd utility provides a 'Help' utility. 
+The EdgeCmd utility provides a 'Help' utility with instructions on how to use EdgeCmd utility. 
 
 ## View general help instructions
 
