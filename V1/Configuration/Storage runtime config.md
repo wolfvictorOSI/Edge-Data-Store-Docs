@@ -6,7 +6,7 @@ uid: storageruntime
 
 Edge Data Store provides a mechanism for configuring runtime characteristics of the storage component.  
 
-**Note:** The configured defaults are sufficent for most scenarios.  You should modify these values  only after consultation with OSIsoft Support personnel.
+**Note:** The configured defaults are sufficient for most scenarios.  You should modify these values only after consultation with OSIsoft Support personnel.
 
 ## Configure storage runtime
 
@@ -18,7 +18,7 @@ To update the storage runtime configuration, complete the following:
           See the following *Examples* section for an example of a valid runtime configuration file.
           
 2. Save the JSON file with the name Storage_Runtime.config.json.
-3. From the same directory where the file exists, run the following curl script:
+3. From the same directory where the file exists, run the following cURL script:
 
 ```bash
 curl -i -d "@Storage_Runtime.config.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/storage/Runtime
@@ -33,7 +33,7 @@ curl -i -d "@Storage_Runtime.config.json" -H "Content-Type: application/json" -X
 | **IngressDebugExpiration**      | Required | string   | If set, defines how long OMF ingress debug files should be produced. |
 | **StreamStorageLimitMb**        | Required | integer  | The maximum size in megabytes that a stream can reach. |
 | **StreamStorageTargetMb**       | Required | integer  | The size in megabytes that a stream will be reduced to after StreamStorageLimitMb size is reached for a single stream. |
-| **EnableTransactionLog**        | No       | bool     | Enables or disables the transaction log.  The transaction log helps to ensure no data is lost should a device lose power. |
+| **EnableTransactionLog**        | No       | Boolean     | Enables or disables the transaction log.  The transaction log helps to ensure no data is lost should a device lose power. |
 | **TransactionLogLimitMB**       | No       | integer  | Maximum size for transaction log file.  Transaction log files larger than this size will be deleted, resulting is loss of data should the device lose power. |
 | **CheckpointRateInSec**         | No       | integer  | How often to flush new data to store.  |
 
@@ -77,11 +77,11 @@ Ingress Debug Expiration is a property that can be used when debugging OMF. If t
 
 Examples of valid strings representing date and time:
 
-    Utc: “yyyy-mm-ddThh:mm:ssZ”
+    UTC: “yyyy-mm-ddThh:mm:ssZ”
 
     Local: “mm-dd-yyyy hh:mm:ss”
 
-The content of an incoming OMF message, including the headers, will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in another format than usual log messages. A single file is written to the usual Logs directory for every incoming OMF type, container, and data message.
+The content of an incoming OMF message, including the headers, will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in another format than usual log messages. A single file is written to the usual logs directory for every incoming OMF type, container, and data message.
 
 
 #### IngressDebugExpiration type
@@ -89,7 +89,7 @@ The content of an incoming OMF message, including the headers, will be written t
 `string`
 
 - format: `date-time` � date and time (according to [RFC 3339, section 5.6](http://tools.ietf.org/html/rfc3339))
-- minimum length: 1 characters
+- minimum length: 1 character
 
 ### StreamStorageLimitMb
 
