@@ -10,6 +10,16 @@ This topic gives examples of a minimum and a maximum Edge Data Store configurati
 
 The following JSON file represents minimal configuration of an Edge Data Store. There are no Modbus TCP EDS adapter or OPC UA EDS adapter components, and the Storage component configurations are set to the default. If you configure a system with this JSON file, any existing Modbus TCP EDS adapter or OPC UA EDS adapter components will be disabled and removed. No storage data will be deleted or modified, and OMF and SDS data access will not be impacted.
 
+1. Save or copy the example JSON in a file named _EdgeMinimumConfiguration.json_ in any directory on a device with Edge Data Store installed.
+
+2. Run the following curl command from the directory where the file is located: 
+
+  ```bash
+  curl -i -d "@EdgeMinimumConfiguration.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration
+  ```
+
+  This will be set as the configuration of a running Edge Data Store. The configuration takes effect immediately after the command completes.
+
 ```json
 {
   "Storage": {
@@ -48,15 +58,7 @@ The following JSON file represents minimal configuration of an Edge Data Store. 
 }
 ```
 
-1. Save or copy the example JSON in a file named _EdgeMinimumConfiguration.json_ in any directory on a device with Edge Data Store installed.
 
-2. Run the following curl command from the directory where the file is located: 
-
-  ```bash
-  curl -i -d "@EdgeMinimumConfiguration.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration
-  ```
-
-  This will be set as the configuration of a running Edge Data Store. The configuration takes effect immediately after the command completes.
 
 This example results in a minimal configuration of Edge Data Store. It only supports [OMF](xref:omfQuickStart) and [SDS](xref:sdsQuickStart) operations using REST. No egress is configured, so no data will be forwarded to either [OCS](xref:ocsEgressQuickStart) or [PI Web API](xref:piEgressQuickStart).
 
@@ -72,6 +74,7 @@ The following JSON file represents maximum configuration of an Edge Data Store. 
   curl -i -d "@EdgeMaximumConfiguration.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration
   ```
 
+  The following will be set as the configuration for the running Edge Data Store. The configuration takes effect immediately after the command completes.
 
 ```json
 {
@@ -395,5 +398,3 @@ The following JSON file represents maximum configuration of an Edge Data Store. 
     }
 }
 ```
-
-  This will be set as the configuration for the running Edge Data Store. The configuration takes effect immediately after the command completes.
