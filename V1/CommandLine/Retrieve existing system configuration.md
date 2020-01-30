@@ -16,6 +16,8 @@ Complete the following to view the configuration of every component in Edge Data
    ```bash
    edgecmd Configuration
    ```
+  
+  
 ## View a specific component configuration
 
 Complete the following to view the configuration of a specific component:
@@ -26,6 +28,8 @@ Complete the following to view the configuration of a specific component:
    ```bash
    edgecmd Configuration <componentId>
    ```
+   
+   See example [View the configuration of the System component](#view-the-configuration-of-the-system-component).
 
 ## View a specific facet configuration
 
@@ -37,6 +41,7 @@ Complete the following to view the configuration of a specific facet of a compon
    ```bash
    edgecmd Configuration <componentId> <facetName>
    ```
+   See example [View the configuration of the Logging facet within the Storage component](#view-the-configuration-of-the-logging-facet-within-the-storage-component).
    
 ## View a specific facet entry configuration
 
@@ -51,9 +56,11 @@ Complete the following to view the configuration of a specific facet entry of a 
 
 3. Add the key=value pairs for the facet to configure, for example `id=IndexToRetrieve`, and press Enter.
 
-#### Examples
+   See example [View the configuration of a specific entry in the PeriodicEgressEndpoint facet within the Storage component](#view-the-configuration-of-a-specific-entry-in-the-periodicegressendpoint-facet-within-the-storage-component).
 
-##### View the configuration of the 'System' component
+### Examples
+
+#### View the configuration of the System component
 
 ```bash
 edgecmd Configuration System
@@ -76,7 +83,7 @@ edgecmd Configuration System
 }
 ```
 
-##### View the configuration for the 'Logging' facet within the 'Storage' component
+#### View the configuration of the Logging facet within the Storage component
 
 ```bash
 edgecmd Configuration Storage Logging
@@ -87,7 +94,7 @@ edgecmd Configuration Storage Logging
 }
 ```
 
-##### View the configuration of a specific entry in the 'PeriodicEgressEndpoint' facet within the 'Storage' component
+#### View the configuration of a specific entry in the PeriodicEgressEndpoint facet within the Storage component
 
 ```bash
 edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
