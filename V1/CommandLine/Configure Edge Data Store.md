@@ -11,7 +11,7 @@ Complete the following to change all values of a facet:
 1. Open command line.
 2. Type the `componentId` and `facetName`, followed by key=value pairs that you want to change. Then press Enter.
 
-   Example: Change all values in the 'Logging' facet:
+   **Example:** Change all values in the 'Logging' facet:
 
    ```bash
       edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
@@ -23,7 +23,7 @@ Complete the following to configure any number of valid key=value pairs in a fac
 1. Open command line.
 2. Type the `componentId` and `facetName` followed by the key=value pairs that you want to change, and press Enter.
 
-   Example: Change a single value in the 'Logging' facet:
+   **Example:** Change a single value in the 'Logging' facet:
 
    ```bash
       edgecmd Configuration Storage Logging LogFileCountLimit=5
@@ -35,7 +35,7 @@ Complete the following to add an entry to a collection configuration:
 1. Open command line.
 2. Type the `componentId` and `facetName` followed by the key=value pairs, and press Enter.
 
-   Example: Add the 'Health Endpoints' facet to the 'System' component:
+   **Example:** Add the 'Health Endpoints' facet to the 'System' component:
 
    ```bash
       edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
@@ -76,14 +76,14 @@ Complete the following to import a file with configuration for individual facets
 2. Type the file name as shown in the _Bulk_Storage_Runtime.json_ example and press Enter.
 
    ```bash
-      edgecmd Configuration file="~/Bulk_Storage_Runtime.json"
+   edgecmd Configuration file="~/Bulk_Storage_Runtime.json"
    ```
 
-	Example:
+   **Example:**
 
-        ```JSON
-	{
-		"Storage": {
+   ```JSON
+   {
+      "Storage": {
 			"Runtime": {
 				"StreamStorageLimitMb": 66,
 				"StreamStorageTargetMb": 33,
