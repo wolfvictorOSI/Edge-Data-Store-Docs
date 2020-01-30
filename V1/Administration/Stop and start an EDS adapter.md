@@ -8,36 +8,38 @@ By default, when Edge Data Store starts, all currently configured EDS adapters a
 
 ## Stop an EDS adapter
 
-To stop an EDS adapter, use any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command to the following endpoint:
+Complete the follwing to stop an EDS adapter:
+
+1. Start any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests.
+2. Execute a POST command to the following endpoint, replacing `<adapterId>` with the adapter that you want to stop:
 
     ```http
-    http://localhost:5590/api/v1/administration/EDS adapterId/Stop
+    http://localhost:5590/api/v1/administration/<adapterId>/Stop
     ```
 
-    Example using curl:
+    Example **Stop the OpcUa1 adapter** using curl 
 
     ```bash
     curl -v -d "" http://localhost:5590/api/v1/Administration/OpcUa1/Stop
     ```
 
-    **Note:** Replace _EDS adapterId_ with the ID of the EDS adapter you want to stop.
-
     An HTTP status 204 message indicates success.
 
 ## Start an EDS adapter
 
-To start an EDS adapter, use any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command to the following endpoint:
+Complete the following to start an EDS adapter:
+
+1. Start any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests.
+2. Execute a POST command to the following endpoint, replacing `<adapterId>` with the adapter that you want to start:
 
     ```http
-    http://localhost:5590/api/v1/administration/EDS adapterId/Start
+    http://localhost:5590/api/v1/administration/<adapterId>/Start
     ```
 
-    Example using curl:
+    Example **Stop the Modbus1 adapter** using curl
 
     ```bash
     curl -v -d "" http://localhost:5590/api/v1/Administration/Modbus1/Start
     ```
-
-    **Note:** Replace _EDS adapterId_ with the ID of the EDS adapter you want to start.
 
     An HTTP status 204 message indicates success.
