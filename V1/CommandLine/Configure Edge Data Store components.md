@@ -24,7 +24,7 @@ Complete the following to add a new component.
 1. Open command line.
 2. Type the following in the command line, replacing `<componentId>` and `<componentType>` with the values that you want and press Enter.
 
-	**Note:** Valid component types are "Modbus" and "OpcUa". If you are trying to register a Modbus EDS adapter, use "Modbus" and if you are trying to register an OPC UA adapter, use "OpcUa".
+	**Note:** Valid component types are `Modbus` and `OpcUa`. If you are trying to register a Modbus EDS adapter, use `Modbus` and if you are trying to register an OPC UA adapter, use `OpcUa`.
 	
 	```bash
 	edgecmd Configuration System Components componentId=<componentId> componentType=<componentType>
