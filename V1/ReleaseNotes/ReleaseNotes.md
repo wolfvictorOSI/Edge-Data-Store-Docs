@@ -8,9 +8,9 @@ uid: releaseNotes
 
 Edge Data Store is supported on a variety of platforms and processors. OSIsoft provides ready to use install kits for the following platforms:
 
-* Windows 10 x64 - EdgeDataStore.msi (Intel/AMD 64 bit processors)
-* Debian 9 or later x64/AMD64 - EdgeDataStore_linux-x64.deb (Intel/AMD 64 bit processors)
-* Debian 9 or later ARM32 - EdgeDataStore_linux-arm.deb (Raspberry PI 2,3,4, BeagleBone devices, other ARM v7 and ARM v8 32 bit processors)
+* Windows 10 x64 - EdgeDataStore.msi (Intel/AMD 64-bit processors)
+* Debian 9 or later x64/AMD64 - EdgeDataStore_linux-x64.deb (Intel/AMD 64-bit processors)
+* Debian 9 or later ARM32 - EdgeDataStore_linux-arm.deb (Raspberry PI 2,3,4, BeagleBone devices, other ARM v7 and ARM v8 32-bit processors)
 * Debian 9 or later arm64 - EdgeDataStore_linux-arm64.deb (Raspberry PI 3,4 (Ubuntu ARM64 Server), Google Coral Dev Board, Nvidia Nano Jetson
 
 In addition to ready to use install kits, OSIsoft also provides examples of how to create Docker containers in a separate file. tar.gz files are provided with binaries for customers who want to build their own custom installers or containers for Linux.
@@ -26,21 +26,21 @@ In addition to ready to use install kits, OSIsoft also provides examples of how 
 * The installation kits for the Edge Data Store were updated to create a better experience when upgrading installed instances.
 * The installation kits have been updated to ensure only necessary files are included. 
 * The "OSIsoft Edge System" product was renamed to "OSIsoft Edge Data Store".
-* The edgecmd command line utility is now provided to allow access to and modification of Edge Data Store configuration.  This utility supercedes the command line functionality that was previously available via OSIsoft.Data.System.Host.
+* The EdgeCmd command line utility is now provided to allow access to and modification of Edge Data Store configuration.  This utility supersedes the command line functionality that was previously available via OSIsoft.Data.System.Host.
 * Improvements were made to ensure component health status updates may not be lost when the product is shutdown.  
 * When the reset functionality for the entire product or the storage component is invoked, the product now properly restarts.
 * The OPCUA and Modbus adapters may now be enabled at install time of the product.
 * The structure for health streams produced by the product has been updated.
 * Adapter components may be added or removed at runtime and no longer require a restart of the product.
 * Changes to the Health Endpoints configuration are now applied at runtime and no longer require a restart of the product.
-* All endpoint configurations related to transfering data and configuration to PI Web API or OSIsoft Cloud Services have the following new properties:
+* All endpoint configurations related to transferring data and configuration to PI Web API or OSIsoft Cloud Services have the following new properties:
    * ValidateEndpointCertificate - Enable/Disable validation of endpoint certificate. Any endpoint certificate is accepted if set to false.
    * TokenEndpoint - For use with OSIsoft Cloud Services endpoints only.  Allows for alternative endpoint for retrieval of an OCS access token.
 
 ### Modbus Adapter
 
 *	Improved Modbus adapter performance when large data points are selected for data collection.
-* Modbus data selection can be deselected via edgecmd, which wasn't supported in RC2.
+* Modbus data selection can be deselected via EdgeCmd, which was not supported in RC2.
 * Modbus logs the data source and data selection configuration in verbose mode instead of information mode.
 
 ### OPC UA Adapter
@@ -62,7 +62,7 @@ To use any of the installers, first copy the appropriate file to the file system
 
 ### Windows (Windows 10 x64)
 
-Double click the EdgeDataStore.msi file in Windows Explorer or execute the file from a command prompt. You will be prompted for install location and default port, and when the install finishes, the EdgeDataStore will be installed and running on either the default port 5590 or the port you specified during the install.
+Double click the EdgeDataStore.msi file in Windows Explorer or execute the file from a command prompt. You will be prompted for install location and default port, and when the install finishes, Edge Data Store will be installed and running on either the default port 5590 or the port you specified during the install.
 
 ### Debian 9 or later Linux (Ubuntu  Raspberry PI, BeagleBone, other Debian based Linux distros)
 
@@ -83,7 +83,7 @@ A check will be done for prerequisites. If the Linux operating system is up to d
 
 2. After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.
 
-The install will complete and EdgeDataStore will be running on your device. You can verify that EdgeDataStore is correctly installed by running the following script from the terminal window. 
+The install will complete, and Edge Data Store will be running on your device. You can verify that Edge Data Store is correctly installed by running the following script from the terminal window. 
 **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
 
   ```bash
