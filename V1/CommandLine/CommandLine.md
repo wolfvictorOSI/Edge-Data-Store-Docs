@@ -191,12 +191,12 @@ You can use the edgecmd utility to view the configuration for each part of Edge 
 
 Complete the following to view the entire configuration for every component in Edge Data Store:
 
-	1. Open command line.
-	2. Type the following in the command line and press Enter.
-	
-		```bash
-		edgecmd Configuration
-		```
+1. Open command line.
+2. Type the following in the command line and press Enter.
+
+   ```bash
+      edgecmd Configuration
+   ```
 
 Complete the following to retrieve component specific configuration:
 
