@@ -4,9 +4,9 @@ uid: ConfigurationTools
 
 # Configuration tools
 
-## Command Line configuration
+## EdgeCmd utility
 
-You can use the [EdgeCmd](xref:commandLine) utility on both Linux and Windows to configure and manage Edge Data Store.
+You can use the [EdgeCmd](xref:Installedgecmd) utility on both Linux and Windows to configure and manage Edge Data Store.
 
 ## REST tools
 
