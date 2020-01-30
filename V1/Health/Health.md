@@ -14,7 +14,7 @@ Edge Data Store has the ability to report system health to one or more OMF endpo
 
 | Parameter         | Required | Description                      |
 |-------------------|----------------------------------|-------------|
-| Id | Optional    | The ID can be any alphanumeric string, for example Endpoint1. If you do not specify an ID, Edge Data Store generates one automatically. |
+| Id | Optional    | The ID can be any alphanumeric string; for example, Endpoint1. If you do not specify an ID, Edge Data Store generates one automatically. |
 | Endpoint | Required    | The URL of the ingress endpoint which accepts OMF health messages. |
 | UserName | Required for PI Web API endpoints  | The user name used for authentication to PI Web API OMF endpoint.  |
 | Password | Required for PI Web API endpoints | The password used for authentication to PI Web API OMF endpoint.  |
@@ -28,7 +28,7 @@ Edge Data Store has the ability to report system health to one or more OMF endpo
 
 The following health types and streams are created to reflect the health of EDS adapters.
 
-The Connectors static type includes these properties and servers as a root AF element with the id Connectors.
+The Connectors static type includes these properties and servers as a root AF element with the ID Connectors.
 
 | Type         | Property | Description      |
 |--------------|----------|------------------|
@@ -37,7 +37,7 @@ The Connectors static type includes these properties and servers as a root AF el
 
 ### EDS adapter health
 
-The Connector Health static type includes the following properties, which are logged in a stream with the id {machinename}.{componentid}. The stream is linked to root AF element (Connectors).
+The Connector Health static type includes the following properties, which are logged in a stream with the ID {machinename}.{componentid}. The stream is linked to root AF element (Connectors).
 
 | Type         | Property | Description      |
 |--------------|----------|------------------|
@@ -48,7 +48,7 @@ The Connector Health static type includes the following properties, which are lo
 
 ### Device status
 
-The DeviceStatus dynamic type includes the following values, which are logged in a stream with the id Connectors.{machinename}.{componentid}.DeviceStatus. The stream is linked to {machinename}.{componentid} static stream.
+The DeviceStatus dynamic type includes the following values, which are logged in a stream with the ID Connectors.{machinename}.{componentid}.DeviceStatus. The stream is linked to {machinename}.{componentid} static stream.
 
 | Type         | Property | Description      |
 |--------------|----------|------------------|
@@ -57,7 +57,7 @@ The DeviceStatus dynamic type includes the following values, which are logged in
 
 ### Next health message expected
 
-The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the id Connectors.{machinename}.{componentid}.NextHealthMessageExpected. The stream is linked to {machinename}.{componentid} static stream. Heard beat message is expected once a minute.
+The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Connectors.{machinename}.{componentid}.NextHealthMessageExpected. The stream is linked to {machinename}.{componentid} static stream. Heard beat message is expected once a minute.
 
 | Type         | Property | Description      |
 |--------------|----------|------------------|
@@ -68,7 +68,7 @@ The NextHealthMessageExpected dynamic type includes the following values, which 
 
 The following health types and streams are created to reflect the health of the Storage component.
 
-The Storage static type includes the following properties and servers as a root AF element with the id Storage.
+The Storage static type includes the following properties and servers as a root AF element with the ID Storage.
 
 | Type         | Property | Description      |
 |--------------|----------|------------------|
@@ -77,7 +77,7 @@ The Storage static type includes the following properties and servers as a root 
 
 ### Storage health
 
-The Storage Health static type includes the following properties, which are logged in a stream with the id {machinename}.Storage. The stream is linked to root AF element (Storage).
+The Storage Health static type includes the following properties, which are logged in a stream with the ID {machinename}.Storage. The stream is linked to root AF element (Storage).
 
 | Type         | Property | Description      |
 |--------------|----------|------------------|
@@ -88,7 +88,7 @@ The Storage Health static type includes the following properties, which are logg
 
 ### Storage device status
 
-The DeviceStatus dynamic type includes the following values, which are logged in a stream with the id Storage.{machinename}.DeviceStatus. The stream is linked to {machinename}.Storage static stream.
+The DeviceStatus dynamic type includes the following values, which are logged in a stream with the ID Storage.{machinename}.DeviceStatus. The stream is linked to {machinename}.Storage static stream.
 
 | Type         | Property | Description      |
 |--------------|----------|------------------|
@@ -97,7 +97,7 @@ The DeviceStatus dynamic type includes the following values, which are logged in
 
 ### Storage next health message expected
 
-The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the id Storage.{machinename}.NextHealthMessageExpected. The stream is linked to {machinename}.Storage static stream. Heard beat message is expected once a minute.
+The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Storage.{machinename}.NextHealthMessageExpected. The stream is linked to {machinename}.Storage static stream. Heard beat message is expected once a minute.
 
 | Type         | Property | Description      |
 |--------------|----------|------------------|
