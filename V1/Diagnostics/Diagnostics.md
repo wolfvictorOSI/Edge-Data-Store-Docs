@@ -4,9 +4,9 @@ uid: EdgeDataStoreDiagnostics
 
 # Diagnostics configuration
 
-Edge Data Store and its components produce diagnostics data which is stored locally in the Storage component, and may be queried locally or egressed to PI Web API endpoints or the OSIsoft Cloud Services or both. Diagnostic data is always produced and saved - it cannot be disabled.
+Edge Data Store and its components produce diagnostic data which is stored locally in the Storage component, and may be queried locally or egressed to PI Web API endpoints or the OSIsoft Cloud Services or both. Diagnostic data is always produced and saved - it cannot be disabled.
 
-Diagnostics data is stored within the 'diagnostics' namespace of Edge Storage.  Local access to this data is available through the [Sds](xref:sdsReadingData) methods.
+Diagnostic data is stored within the 'diagnostics' namespace of Edge Storage.  Local access to this data is available through the [Sds](xref:sdsReadingData) methods.
 
 ## Egress diagnostics data through PeriodicEgressEndpoints
 
