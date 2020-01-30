@@ -4,7 +4,11 @@ uid: RetrieveEdgeCmdUtilityHelp
 
 # Retrieve EdgeCmd utility help
 
-The Edgecmd utility provides a 'Help' utility. Complete the following to view general instructions on how to use the Edgecmd utility:
+The Edgecmd utility provides a 'Help' utility. 
+
+## View general help instructions
+
+Complete the following to view general instructions on how to use the Edgecmd utility:
 
 1. Open command line.
 2. Type the following in the command line and press Enter.
@@ -12,16 +16,35 @@ The Edgecmd utility provides a 'Help' utility. Complete the following to view ge
 	```bash
 	edgecmd Help
 	```
-	
-3. Optional: To receive help output for every configuration facet that a registered component supports, add a specific component ID to the end of the previous command. See example [Help for the System component](#help-for-the-system-component).
+
+## View configuration facet help instructions
+
+1. Open command line.
+2. Type the following in the command line, replacing `<componentId>` with the value that you want, and press Enter.
+
+	```bash
+	edgecmd Help <componentId>
+	```
+
+	See example [Help for the System component](#help-for-the-system-component).
 	
 	**Note:** The help output also provides examples of commands that you can run to configure the component.
 	
-4. Optional: To view help for a specific facet within a component, add the facet name after the component ID. See the example [Help for the Port facet within the System component](#help-for-the-port-facet-within-the-system-component).
+	
+## View specific configuration facet help instructions
 
-## Examples
+1. Open command line.
+2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the value that you want, and press Enter.
 
-### Help for the System component:
+	```bash
+	edgecmd Help <componentId> <facetName>
+	```
+	
+	See the example [Help for the Port facet within the System component](#help-for-the-port-facet-within-the-system-component).
+
+### Examples
+
+#### Help for the System component:
 
 ```bash
 edgecmd Help System
@@ -72,7 +95,7 @@ ComponentType                      [Required] Type of the hosted component.
 Example: ./edgecmd Configuration System Components ComponentId=Modus1 ComponentType=Modbus
 ```
 
-### Help for the Port facet within the System component
+#### Help for the Port facet within the System component
 
 ```bash
 edgecmd Help System Port
