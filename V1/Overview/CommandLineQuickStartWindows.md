@@ -6,10 +6,10 @@ uid: commandLineWindowsQuickStart
 
 This topic provides quick start instructions for using EdgeCmd in the Windows environment. You can utilize the edgecmd.exe command line tool to configure Edge Data Store, in addition to curl commands and REST calls. 
 
-You can install EdgeCmd from a Windows command prompt. Complete the following to access edgecmd on Windows:
+You can install EdgeCmd from a Windows command prompt. Complete the following to access EdgeCmd on Windows:
 
 
-Complete the following to access edgecmd on Windows:
+Complete the following to access EdgeCmd on Windows:
 
 1. Open a command prompt.
 2. Navigate to the directory where Edge Data Store is installed. This is usually in the following location:
@@ -23,7 +23,7 @@ Complete the following to access edgecmd on Windows:
    ```cmd
    C:\Users\John>"C:\Program Files\OSIsoft\EdgeDataStore\edgecmd.exe" Help
    ```
-   The edgecmd utility launches, displaying the following introductory material and a command prompt at the end:
+   The EdgeCmd utility launches, displaying the following introductory material and a command prompt at the end:
    
    ```
    ************************************************************************************************************************
