@@ -45,7 +45,7 @@ This topic provides examples of how to create a Docker container with the Edge D
 3. Run the following command line (sudo may be necessary):
 
     ```
-    docker build -t edgedatastore .
+    docker build -t edgedatastore
     ```
 
 
