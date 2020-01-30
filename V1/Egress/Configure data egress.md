@@ -159,12 +159,12 @@ The following are valid egress configuration examples.
 
 | Relative URL                                              | HTTP verb | Action               |
 |-----------------------------------------------------------|-----------|----------------------|
-| api/v1/configuration/storage/periodicegressendpoints      | GET       | Gets all configured egress endpoints |
-| api/v1/configuration/storage/periodicegressendpoints      | DELETE    | Deletes all configured egress endpoints |
-| api/v1/configuration/storage/periodicegressendpoints      | POST      | Adds an array of egress endpoints, will fail if any endpoint already exists |
-| api/v1/configuration/storage/periodicegressendpoints      | POST      | Adds a single egress endpoints, will fail if endpoint already exists |
-| api/v1/configuration/storage/periodicegressendpoints      | PUT       | Replaces all egress endpoints |
-| api/v1/configuration/storage/periodicegressendpoints/{id} | GET       | Gets configured endpoint with *id* |
-| api/v1/configuration/storage/periodicegressendpoints/{id} | DELETE    | Deletes configured endpoint with *id* |
-| api/v1/configuration/storage/periodicegressendpoints/{id} | PUT       | Replaces egress endpoint with *id*, will fail if endpoint doesn't exist |
-| api/v1/configuration/storage/periodicegressendpoints/{id} | PATCH     | Allows partial updating of configured endpoint with *id* |
+| api/v1/configuration/storage/periodicegressendpoints      | GET       | Gets all configured egress endpoints. |
+| api/v1/configuration/storage/periodicegressendpoints      | DELETE    | Deletes all configured egress endpoints. |
+| api/v1/configuration/storage/periodicegressendpoints      | POST      | Adds an array of egress endpoints, fails if any endpoint already exists. |
+| api/v1/configuration/storage/periodicegressendpoints      | POST      | Adds a single egress endpoint, fails if endpoint already exists. |
+| api/v1/configuration/storage/periodicegressendpoints      | PUT       | Replaces all egress endpoints. |
+| api/v1/configuration/storage/periodicegressendpoints/{id} | GET       | Gets configured endpoint with *id*. |
+| api/v1/configuration/storage/periodicegressendpoints/{id} | DELETE    | Deletes configured endpoint with *id*. |
+| api/v1/configuration/storage/periodicegressendpoints/{id} | PUT       | Replaces egress endpoint with *id*, fails if endpoint does not exist. |
+| api/v1/configuration/storage/periodicegressendpoints/{id} | PATCH     | Allows partial updating of configured endpoint with *id*. |
