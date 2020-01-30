@@ -98,21 +98,21 @@
 <section id="tabpanel_g8gKmViDy-_tabid-1" role="tabpanel" data-tab="tabid-1">
 <pre><code>FROM ubuntu
 WORKDIR /
-RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
+RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-arm.tar.gz .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host&quot;]
 </code></pre></section>
 <section id="tabpanel_g8gKmViDy-_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
 <pre><code>FROM ubuntu
 WORKDIR /
-RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
+RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-arm64.tar.gz .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-arm64/OSIsoft.Data.System.Host&quot;]
 </code></pre></section>
 <section id="tabpanel_g8gKmViDy-_tabid-3" role="tabpanel" data-tab="tabid-3" aria-hidden="true" hidden="hidden">
 <pre><code>FROM ubuntu
 WORKDIR /
-RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
+RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-x64.tar.gz .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host&quot;]
 </code></pre></section>
