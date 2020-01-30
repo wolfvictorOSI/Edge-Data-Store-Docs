@@ -39,7 +39,7 @@ Table: General guidelines for setting the log level.
 
 | **Level**                | **Description**|      
 |--------------------------|-----------|
-|Trace         | Logs that contain the most detailed messages. These messages may contain sensitive application data like actual received values, which is why these messages shouldn’t be enabled in production environment. |
+|Trace         | Logs that contain the most detailed messages. These messages may contain sensitive application data like actual received values and should not be enabled in a production environment. |
 | Debug | Logs that can be used to troubleshoot data flow issues by recording metrics and detailed flow related information. |
 | Information | Logs that track the general flow of the application. Any non-repetitive general information (like version information relating to the software at startup, what external services are being used, data source connection string, number of measurements, egress URL, change of state “Starting”, “Stopping”, or configuration) can be useful for diagnosing potential application errors.  |
 | Warning | Logs that highlight an abnormal or unexpected event in the application flow, but does not otherwise cause the application execution to stop. Warning messages can indicate an unconfigured data source state, that a communication with backup failover instance has been lost, an insecure communication channel in use, or any other event that could require attention, but that does not impact data flow. |
@@ -52,7 +52,7 @@ The logFileCountLimit controls the number of days the log files are stored befor
 
 ## Change logging configuration
 
-To change the logging configuration complete the following steps: 
+To change the logging configuration, complete the following steps: 
 
 1. Update the parameters of the message logging configuration JSON file that you want as needed. For example, the _Component_Logging.json_ file:
 
