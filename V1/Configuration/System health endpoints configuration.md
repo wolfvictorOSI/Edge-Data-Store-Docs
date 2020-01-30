@@ -11,16 +11,17 @@ receiving health messages. To enable this functionality, you must configure Heal
 
 Complete the following to configure system health endpoints
 
-1. Using any text editor, create a file that contains system health endpoints in JSON form. This file can be created or copied to any directory on a device with Edge Data Store installed.
-    - For content structure, see [System health endpoints example](#system-health-endpoints-example). 
-    - For a table of all available parameters, see [Parameters for system health endpoints](#parameters-for-system-health-endpoints). 
-2. Save the file as _System_HealthEndpoints.config.json_.
-3. Use any [tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/System/HealthEndpoints`.
-Example using cURL (run this command from the same directory where the file is located):
+1. Create a JSON file containing system health endpoints.
+    - For content structure, see [System health endpoints example](#system-health-endpoints-example).  
+2. Update the parameters as needed. For a table of all available parameters, see [Parameters](#parameters).
+3. Save the file as _System_HealthEndpoints.config.json_.
+4. Use any [Configuration tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/System/HealthEndpoints`.
 
-```bash
-curl -v -d "@System_HealthEndpoints.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/System/HealthEndpoints
-```
+    Example using curl (run this command from the same directory where the file is located):
+
+    ```bash
+    curl -v -d "@System_HealthEndpoints.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/System/HealthEndpoints
+    ```
 
 ## System health endpoints schema
 
@@ -30,7 +31,7 @@ The following table defines the basic behavior of the _System_HealthEndpoints.co
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | 
 | Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | 
 
-## Parameters for system health endpoints
+## Parameters
 
 The following parameters are available for configuring system health endpoints.
 
