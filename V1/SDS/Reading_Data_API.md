@@ -602,7 +602,7 @@ Content-Type: application/json
 ]
 ```
 
-In order to page the results of the request, a continuation token may be specified. This requests the first page of the first two stored events between start index and end index by indicating count is 2 and continuationToken is an empty string:
+To page the results of the request, a continuation token may be specified. This requests the first page of the first two stored events between start index and end index by indicating count is 2 and continuationToken is an empty string:
 
 ```text
 GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data
@@ -667,7 +667,7 @@ In this case, the results contain the final event. The returned continuation tok
 Returns a collection of values based on request parameters. The stream's read characteristics determine how events are calculated for indexes at which no stored event exists. Interpolation is not supported for streams with compound indexes.
 SDS supports two ways of specifying which interpolated events to return:  
 
-* [Index Collection](#getvaluesindexcollection): One or more indexes can be passed to the request in order to retrieve events at specific indexes.
+* [Index Collection](#getvaluesindexcollection): One or more indexes can be passed to the request to retrieve events at specific indexes.
 * [Interval](#getvaluesinterpolatedinterval): An interval can be specified with a start index, end index, and count. This will return the specified count of events evenly spaced from start index to end index.
 
 <a name="getvaluesindexcollection"></a>
