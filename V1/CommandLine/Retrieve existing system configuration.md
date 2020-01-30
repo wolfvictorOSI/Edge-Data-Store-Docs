@@ -27,9 +27,9 @@ Complete the following to view the configuration of a specific component:
    edgecmd Configuration <componentId>
    ```
 
-## View a specific facet of a component
+## View a specific facet configuration
 
-Complete the following to view the configuration of a specific facet of an Edge Data Store component:
+Complete the following to view the configuration of a specific facet of a component:
 
 1. Open command line.
 2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name, and press Enter.
@@ -38,9 +38,9 @@ Complete the following to view the configuration of a specific facet of an Edge 
    edgecmd Configuration <componentId> <facetName>
    ```
    
-## View a specific facet entry of a component
+## View a specific facet entry configuration
 
-Complete the following to view the configuration of  a specific facet entry:
+Complete the following to view the configuration of a specific facet entry of a component:
 
 1. Open command line.
 2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name.
