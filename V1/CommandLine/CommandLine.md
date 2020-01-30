@@ -325,73 +325,89 @@ edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 	**Note:** If an entry with the specified id already exists, it will be updated based on the new key=value pairs.
 
 ### Configure with JSON Files
-You can also configure Edge Data Store by a JSON file input into the edgecmd application. File imports will completely replace the existing configurations that you are attempting to change. Therefore, it cannot be used to change individual values in a facet without modifying others.
+You can also configure Edge Data Store by a JSON file input into the EdgeCmd application. File imports will completely replace the existing configurations that you are attempting to change. Therefore, you cannot use it to change individual values in a facet without modifying others.
 
-To import a bulk configuration:
-```bash
-edgecmd Configuration file=PathToJsonFile
-```
+- Complete the following to import a bulk configuration.
+	
+	1. Open command line.
+	2. Type the following in the command line, replacing `PathToJsonFile` with the path to the file. Then press enter.
 
-To import a facet specific configuration file for a component:
-```
-edgecmd Configuration componentId facetName file=PathToJsonFile
-```
+	```bash
+	edgecmd Configuration file=PathToJsonFile
+	```
 
-To import a file with configuration for individual facets, you can use a bulk file import operation. The file must contain just payload for the given component ID. 
+- Complete the following to import a facet specific configuration file for a component.
+	
+	1. Open command line.
+	2. Type the following in the command line, replacing the `componentId`,`facetName` with the values that you want, and `PathToJsonFile` with the path to the file. Then press enter.
 
-Example command:
+	```
+	edgecmd Configuration componentId facetName file=PathToJsonFile
+	```
 
-```bash
-edgecmd Configuration file="~/Bulk_Storage_Runtime.json"
-```
+- Complete the following to import a file with configuration for individual facets as a bulk file import operation. 
+	**Note:** The file must contain just payload for the given component ID. 
+	
+	1. Open command line.
+	2. Type the file name in the command line as shown in the example command and then press Enter.
 
-The file 'Bulk_Storage_Runtime.json' contains:
-```JSON
-{
-	"Storage": {
-		"Runtime": {
-			"StreamStorageLimitMb": 66,
-			"StreamStorageTargetMb": 33,
-			"IngressDebugExpiration": "2020-07-08T01:00:00",
-			"CheckpointRateInSec": 6,
-			"TransactionLogLimitMB": 350,
-			"EnableTransactionLog": true
+	Example command:
+
+	```bash
+	edgecmd Configuration file="~/Bulk_Storage_Runtime.json"
+	```
+
+	The file 'Bulk_Storage_Runtime.json' contains:
+	```JSON
+	{
+		"Storage": {
+			"Runtime": {
+				"StreamStorageLimitMb": 66,
+				"StreamStorageTargetMb": 33,
+				"IngressDebugExpiration": "2020-07-08T01:00:00",
+				"CheckpointRateInSec": 6,
+				"TransactionLogLimitMB": 350,
+				"EnableTransactionLog": true
+			}
 		}
 	}
-}
-```
-The command will only affect the 'Runtime' facet in the 'Storage' component, it will not change any other components or facets. However, if you import a file containing the following, the 'StreamStorageLimitMb' and 'StreamStorageTargetMb' values would be modified, resetting the remaining values in the facet (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog) to their default values:
-```JSON
-{
-	"Storage": {
-		"Runtime": {
-			"StreamStorageLimitMb": 66,
-			"StreamStorageTargetMb": 33,
+	```
+	**Note:** The command will only affect the 'Runtime' facet in the 'Storage' component, it will not change any other components or facets. However, if you import a file containing the following, the 'StreamStorageLimitMb' and 'StreamStorageTargetMb' values would be modified, resetting the remaining values in the facet (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog) to their default values:
+
+	```JSON
+	{
+		"Storage": {
+			"Runtime": {
+				"StreamStorageLimitMb": 66,
+				"StreamStorageTargetMb": 33,
+			}
 		}
 	}
-}
-```
+	```
 
 ## Delete configuration entry
 
-You can use the edgecmd utility to delete a configuration entry from a collection configuration (for example a single health endpoint of the 'HealthEndpoints' facet within the 'System' component) from Edge Data Store.
+Complete the following to delete a configuration entry from a collection configuration in Edge Data Store. An example is a single health endpoint of the 'HealthEndpoints' facet within the 'System' component.
 
-1. Specify the component ID, facet, and ID of the entry to be removed
-2. Add the 'delete' keyword.
+1. Open command line. 
+2. Type the `componentId` and `facetName` followed by the ID of the entry to be removed
+2. Add the `delete` keyword and then press Enter.
 
-Example using edgecmd utility:
+Example: Delete endpoint_1 of the HealthEndpoints facet from the System.
+
 ```bash
 edgecmd Configuration System HealthEndpoints Id=endpoint_1 delete
 ```
 
 ## Delete configuration file
 
-You can use the edgecmd utility to delete an entire configuration file with all its entries (for example the configuration file of the 'HealthEndpoints' facet within the 'System' component) from Edge Data Store.
+Complete the following to delete a configuration file from Edge Data Store. An example is the configuration file of the 'HealthEndpoints' facet within the 'System' component.
 
-1. Specify the component ID and facet.
-2. Add the 'delete' keyword.
+1. Open command line. 
+2. Type the `componentId` and `facetName`.
+2. Add the `delete` keyword and then press Enter.
 
-Example using edgecmd utility:
+Example: Delete HealthEndpoints facet configuration file
 
 ```bash
 edgecmd Configuration System HealthEndpoints delete
