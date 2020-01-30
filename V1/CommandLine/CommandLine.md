@@ -332,18 +332,18 @@ You can also configure Edge Data Store by a JSON file input into the EdgeCmd app
 	1. Open command line.
 	2. Type the following in the command line, replacing `PathToJsonFile` with the path to the file. Then press Enter.
 
-	```bash
-	edgecmd Configuration file=PathToJsonFile
-	```
+		```bash
+		edgecmd Configuration file=PathToJsonFile
+		```
 
 - Complete the following to import a facet specific configuration file for a component.
 	
 	1. Open command line.
 	2. Type the following in the command line, replacing the `componentId`,`facetName` with the values that you want, and `PathToJsonFile` with the path to the file. Then press Enter.
 
-	```bash
-	edgecmd Configuration componentId facetName file=PathToJsonFile
-	```
+		```bash
+		edgecmd Configuration componentId facetName file=PathToJsonFile
+		```
 
 - Complete the following to import a file with configuration for individual facets as a bulk file import operation. 
 	**Note:** The file must contain just payload for the given component ID. 
