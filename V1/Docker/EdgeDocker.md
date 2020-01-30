@@ -15,7 +15,6 @@ This topic provides examples of how to create a Docker container with the Edge D
     ### [ARM32](#tab/tabid-1)
 
     ```
-    docker
     FROM ubuntu
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
@@ -24,7 +23,6 @@ This topic provides examples of how to create a Docker container with the Edge D
     ```
     ### [ARM64](#tab/tabid-2)
     ```
-    docker
     FROM ubuntu
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
@@ -35,7 +33,6 @@ This topic provides examples of how to create a Docker container with the Edge D
     ### [AMD64 (x64)](#tab/tabid-3)
 
     ```
-    docker
     FROM ubuntu
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get    install -y --no-install-recommends libicu60 libssl1.0.0
