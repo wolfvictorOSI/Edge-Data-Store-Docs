@@ -4,7 +4,7 @@ uid: sdsWritingDataApi
 
 # API calls for writing data
 
-#### Example type, stream, and data
+## Example type, stream, and data
 
 Many of the following API methods descriptions contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples:
 
