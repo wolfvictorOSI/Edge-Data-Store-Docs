@@ -14,7 +14,7 @@ Complete the following to change all values of a facet:
    **Example:** Change all values in the 'Logging' facet:
 
    ```bash
-      edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
+   edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
    ```
 ## Configure key=value pairs in a facet
 
@@ -26,7 +26,7 @@ Complete the following to configure any number of valid key=value pairs in a fac
    **Example:** Change a single value in the 'Logging' facet:
 
    ```bash
-      edgecmd Configuration Storage Logging LogFileCountLimit=5
+   edgecmd Configuration Storage Logging LogFileCountLimit=5
    ```
 ## Add an entry to a collection configuration
 
@@ -38,7 +38,7 @@ Complete the following to add an entry to a collection configuration:
    **Example:** Add the 'Health Endpoints' facet to the 'System' component:
 
    ```bash
-      edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
+   edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
    ```
 	**Note:** If an entry with the specified ID already exists, it will be updated based on the new key=value pairs.
 
@@ -64,7 +64,7 @@ Complete the following to import a facet specific configuration file for a compo
 2. Type the following in the command line, replacing `<componentId>` with the ID of the component, `<facetName>` with the name of the facet, and `<PathToJsonFile>` with the path to the file. Then press Enter.
 
    ```bash
-      edgecmd Configuration <componentId> <facetName> file=<PathToJsonFile>
+   edgecmd Configuration <componentId> <facetName> file=<PathToJsonFile>
    ```
    
 ### Import facets configuration in bulk
@@ -83,7 +83,7 @@ Complete the following to import a file with configuration for individual facets
 
    ```JSON
    {
-      "Storage": {
+      		"Storage": {
 			"Runtime": {
 				"StreamStorageLimitMb": 66,
 				"StreamStorageTargetMb": 33,
