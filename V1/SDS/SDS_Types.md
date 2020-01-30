@@ -14,7 +14,7 @@ When you define a type, consider how the events will be represented in a stream.
 
 An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace.
 
-An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability. Nested types and base types are automatically created as separate types. For further information, see [Type Reusability](#type-reusability)
+An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability. Nested types and base types are automatically created as separate types. For further information, see [Type Reusability](#type-reusability)
 
 SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
 
@@ -153,15 +153,15 @@ The following table shows the required and optional SdsTypeProperty fields. Fiel
 | InterpolationMode         | SdsInterpolationMode    | Optional    | Interpolation setting of the property. Default is null. |
 | Uom                       | String                  | Optional    | Unit of Measure of the property |
 
-The SdsTypeProperty’s identifier follows the same rules as the SdsType’s identifier.
+The SdsTypeProperty identifier follows the same rules as the SdsType identifier.
 
-IsKey is a Boolean value used to identify the SdsType’s Key. A key defined by more than one property is called a compound key. The maximum number of properties that can define a compound key is three.
+IsKey is a Boolean value used to identify the SdsType Key. A key defined by more than one property is called a compound key. The maximum number of properties that can define a compound key is three.
 
 In a compound key, each property that is included in the key is specified as IsKey. The Order field defines the precedence of fields applied to the index.
 
-The Value field is used for properties that represent a value. An example of a property with a value is an enum’s named constant. When representing an enum in a SdsType, the SdsType’s properties collection defines the enum’s constant list. The SdsTypeProperty’s Identifier represents the constant’s name and the SdsTypeProperty’s value represents the constant’s value (see the enum State definitions below).
+The Value field is used for properties that represent a value. An example of a property with a value is an enum’s named constant. When representing an enum in a SdsType, the SdsType properties collection defines the enum’s constant list. The SdsTypeProperty Identifier represents the name of the constant and the SdsTypeProperty value represents the value of the constant (see the enum State definitions below).
 
-InterpolationMode is assigned when the property of the event should be interpolated in a specific way that differs from the InterpolationMode of the SdsType. InterpolationMode is only applied to a property that is not part of the Index. If the InterpolationMode is not set, the property is are interpolated in the manner defined by the SdsType’s IntepolationMode.
+InterpolationMode is assigned when the property of the event should be interpolated in a specific way that differs from the InterpolationMode of the SdsType. InterpolationMode is only applied to a property that is not part of the Index. If the InterpolationMode is not set, the property is are interpolated in the manner defined by the IntepolationMode of the SdsType.
 
 An SdsType with the InterpolationMode set to ``Discrete`` cannot have a property with an InteroplationMode. For more information on interpolation of events, see [Interpolation](xref:sdsReadingData#interpolation).
 
@@ -497,7 +497,7 @@ derived.Properties = [ observation ]
 **JavaScript**
 
 ```javascript
-var observationProprety = new SdsObjects.SdsTypeProperty({
+var observationProperty = new SdsObjects.SdsTypeProperty({
     "Id": "Observation",
     "SdsType": new SdsObjects.SdsType({
         "Id": "strType",
@@ -511,13 +511,13 @@ var derivedType = new SdsObjects.SdsType({
     "Description": " Derived sample type",
     "BaseType": simpleType,
     "SdsTypeCode": SdsObjects.SdsTypeCodeMap.Object,
-    "Properties": [ observationProprety ]
+    "Properties": [ observationProperty ]
 });
 ```
 
 ## Type reusability
 
-An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability.
+An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability.
 
 For example, if there is a common index and value property for a group of types that may have additional properties, a base type can be created with those properties.
 
@@ -753,7 +753,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types?query={query}&skip={sk
 
 **Parameters**  
 ``string namespaceId``  
-The namespace; eitehr default or diagnostics.
+The namespace; either default or diagnostics.
 
 `string query`  
 An optional query string to match which SdsTypes will be returned. For information about specifying the query parameter, see the [Searching](xref:sdsSearching) topic.
