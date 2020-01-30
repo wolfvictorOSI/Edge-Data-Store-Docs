@@ -37,7 +37,7 @@ Complete the following to access EdgeCmd on Linux:
 
 All configuration options that can be done using REST can also be done using the EdgeCmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.
 
-## Get help
+### Get help
 
 The Edgecmd utility provides a 'Help' utility. Complete the following to view general instructions on how to use the Edgecmd utility:
 
@@ -54,9 +54,9 @@ The Edgecmd utility provides a 'Help' utility. Complete the following to view ge
 	
 4. Optional: To receive help output for a specific facet within a component, add the facet name after the component ID. See example [Help for the Port facet within the System component](#help-for-the-port-facet-within-the-system-component).
 
-### Examples
+#### Examples
 
-#### Help for the System component:
+##### Help for the System component:
 
 ```bash
 edgecmd Help System
@@ -107,7 +107,7 @@ ComponentType                      [Required] Type of the hosted component.
 Example: ./edgecmd Configuration System Components ComponentId=Modus1 ComponentType=Modbus
 ```
 
-#### Help for the Port facet within the System component
+##### Help for the Port facet within the System component
 
 ```bash
 edgecmd Help System Port
@@ -120,10 +120,10 @@ Port                        [Required] The tcp port to bind this application hos
 Example: ./edgecmd Configuration System Port Port=5590
 ```
 
-## Edge Data Store components
+### Edge Data Store components
 The EdgeCmd utility enables you to add, configure, and delete Edge Data Store components.
 
-### View components
+#### View components
 Complete the following to view which components are currently configured on Edge Data Store.
 
 1. Open command line.
@@ -133,7 +133,7 @@ Complete the following to view which components are currently configured on Edge
 	edgecmd Configuration System Components
 	```
 
-### Add components
+#### Add components
 Complete the following to register a new component.
 
 1. Open command line.
@@ -151,7 +151,7 @@ Complete the following to register a new component.
 	edgecmd Configuration System Components componentId=Modbus1 componentType=Modbus
 	```
 
-### Configure components
+#### Configure components
 
 The EDS Modbus adapter and OPC UA adapter each have three configurable facets: data source, data selection, and logging. Complete the following to configure a facet.
 
@@ -171,7 +171,7 @@ The EDS Modbus adapter and OPC UA adapter each have three configurable facets: d
 
 For detailed information on how to configure each adapter, see [OPC UA EDS adapter](xref:opcUaOverview) and [Modbus TCP EDS adapter](xref:modbusOverview) schemas.
 
-### Delete components
+#### Delete components
 
 Complete the following to delete components from the Edge Data Store.
 
@@ -185,7 +185,7 @@ Complete the following to delete components from the Edge Data Store.
 **Note:** You cannot delete the Storage component because it is required for Edge Data Store to operate.
 
 
-## Retrieve existing system configuration
+### Retrieve existing system configuration
 
 You can use the edgecmd utility to view the configuration for each part of Edge Data Store.
 
@@ -226,9 +226,9 @@ You can use the edgecmd utility to view the configuration for each part of Edge 
 		```
 	3. Add the parameters and their values of the facet that you want to configure and press Enter.
 
-### Examples
+#### Examples
 
-**View the configuration of the 'System' component**
+##### View the configuration of the 'System' component
 
 ```bash
 edgecmd Configuration System
@@ -251,7 +251,7 @@ edgecmd Configuration System
 }
 ```
 
-**View the configuration for the 'Logging' facet within the 'Storage' component**
+##### View the configuration for the 'Logging' facet within the 'Storage' component
 
 ```bash
 edgecmd Configuration Storage Logging
@@ -262,7 +262,7 @@ edgecmd Configuration Storage Logging
 }
 ```
 
-**View the configuration of a specific entry in the 'PeriodicEgressEndpoint' facet within the 'Storage' component**
+##### View the configuration of a specific entry in the 'PeriodicEgressEndpoint' facet within the 'Storage' component
 
 ```bash
 edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
@@ -288,7 +288,7 @@ edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 }
 ```
 
-## Configure Edge Data Store
+### Configure Edge Data Store
 
 - Complete the following to change all values of a facet.
 
@@ -385,7 +385,7 @@ You can also configure Edge Data Store by a JSON file input into the EdgeCmd app
 	}
 	```
 
-## Delete configuration entry
+### Delete configuration entry
 
 Complete the following to delete a configuration entry from a collection configuration in Edge Data Store. An example is a single health endpoint of the 'HealthEndpoints' facet within the 'System' component.
 
@@ -399,7 +399,7 @@ Example: Delete endpoint_1 of the HealthEndpoints facet from the System.
 edgecmd Configuration System HealthEndpoints Id=endpoint_1 delete
 ```
 
-## Delete configuration file
+### Delete configuration file
 
 Complete the following to delete a configuration file from Edge Data Store. An example is the configuration file of the 'HealthEndpoints' facet within the 'System' component.
 
