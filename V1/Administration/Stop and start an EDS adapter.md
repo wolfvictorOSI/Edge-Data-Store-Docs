@@ -17,7 +17,7 @@ Complete the follwing to stop an EDS adapter:
     http://localhost:5590/api/v1/administration/<adapterId>/Stop
     ```
 
-    Example **Stop the OpcUa1 adapter** using curl 
+    Example **Stop the OpcUa1 adapter** using curl: 
 
     ```bash
     curl -v -d "" http://localhost:5590/api/v1/Administration/OpcUa1/Stop
@@ -36,7 +36,7 @@ Complete the following to start an EDS adapter:
     http://localhost:5590/api/v1/administration/<adapterId>/Start
     ```
 
-    Example **Stop the Modbus1 adapter** using curl
+    Example **Stop the Modbus1 adapter** using curl:
 
     ```bash
     curl -v -d "" http://localhost:5590/api/v1/Administration/Modbus1/Start
