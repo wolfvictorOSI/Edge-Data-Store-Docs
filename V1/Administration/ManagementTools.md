@@ -6,7 +6,7 @@ uid: ConfigurationTools
 
 ## Command Line configuration
 
-You can use the [edgecmd](xref:commandLine) utility on both Linux and Windows to configure and manage Edge Data Store.
+You can use the [EdgeCmd](xref:commandLine) utility on both Linux and Windows to configure and manage Edge Data Store.
 
 ## REST tools
 
@@ -14,7 +14,7 @@ The following tools are available to facilitate the execution of REST calls.
 
 ### curl
 
-Edge Data Store documentation displays curl commands for configuration and management examples. curl is a command line tool supported on Windows and Linux that is used to make HTTP calls. curl has a large range of capabilities. You can accomplish any Edge Data Store administrative or programming task with curl. curl is also easily scripted, using Bash or Powershell on either Linux or Windows. OSIsoft recommends this tool for managing Edge Data Store. Any system that can run Edge Data Store supports curl.
+Edge Data Store documentation displays curl commands for configuration and management examples. curl is a command line tool supported on Windows and Linux that is used to make HTTP calls. curl has a large range of capabilities. You can accomplish any Edge Data Store administrative or programming task with curl. curl is also easily scripted, using Bash or PowerShell on either Linux or Windows. OSIsoft recommends this tool for managing Edge Data Store. Any system that can run Edge Data Store supports curl.
 
 ### Postman
 
