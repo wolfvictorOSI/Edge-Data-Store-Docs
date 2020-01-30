@@ -189,7 +189,7 @@ Complete the following to delete components from the Edge Data Store.
 
 You can use the edgecmd utility to view the configuration for each part of Edge Data Store.
 
-- Complete the following to view the entire configuration for every system component.
+Complete the following to view the entire configuration for every component in Edge Data Store:
 
 	1. Open command line.
 	2. Type the following in the command line and press Enter.
@@ -198,7 +198,7 @@ You can use the edgecmd utility to view the configuration for each part of Edge 
 		edgecmd Configuration
 		```
 
-- Complete the following to retrieve component specific configuration.
+Complete the following to retrieve component specific configuration:
 
 	1. Open command line.
 	2. Type the following in the command line, replacing `<componentId>` with the ID of the component, and press Enter.
@@ -207,7 +207,7 @@ You can use the edgecmd utility to view the configuration for each part of Edge 
 		edgecmd Configuration <componentId>
 		```
 
-- Complete the following to retrieve facet specific configuration of an Edge Data Store component.
+Complete the following to retrieve facet specific configuration of an Edge Data Store component:
 
 	1. Open command line.
 	2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name, and press Enter.
@@ -216,7 +216,7 @@ You can use the edgecmd utility to view the configuration for each part of Edge 
 		edgecmd Configuration <componentId> <facetName>
 		```
 
-- Complete the following to retrieve the configuration for a specific facet entry.
+Complete the following to retrieve the configuration for a specific facet entry:
 
 	1. Open command line.
 	2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name.
@@ -290,7 +290,7 @@ edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 
 ### Configure Edge Data Store
 
-- Complete the following to change all values of a facet.
+Complete the following to change all values of a facet:
 
 	1. Open command line.
 	2. Type the `componentId` and `facetName`, followed by key=value pairs that you want to change. Then press Enter.
@@ -301,7 +301,7 @@ edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 	edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
 	```
 
-- Complete the following to configure any number of valid key=value pairs in a facet.
+Complete the following to configure any number of valid key=value pairs in a facet:
 
 	1. Open command line.
 	2. Type the `componentId` and `facetName` followed by the key=value pairs that you want to change, and press Enter.
@@ -312,7 +312,7 @@ edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 	edgecmd Configuration Storage Logging LogFileCountLimit=5
 	```
 
-- Complete the following to add an entry to a collection configuration.
+Complete the following to add an entry to a collection configuration:
 
 	1. Open command line.
 	2. Type the `componentId` and `facetName` followed by the key=value pairs, and press Enter.
@@ -327,7 +327,7 @@ edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 ### Configure with JSON Files
 You can also configure Edge Data Store by a JSON file input into the EdgeCmd application. A file import completely replaces the existing configurations; therefore, you cannot use it to change individual values in a facet without modifying others.
 
-- Complete the following to import a bulk configuration.
+Complete the following to import a bulk configuration:
 	
 	1. Open command line.
 	2. Type the following in the command line, replacing `PathToJsonFile` with the path to the file, and press Enter.
@@ -336,7 +336,7 @@ You can also configure Edge Data Store by a JSON file input into the EdgeCmd app
 		edgecmd Configuration file=PathToJsonFile
 		```
 
-- Complete the following to import a facet specific configuration file for a component.
+Complete the following to import a facet specific configuration file for a component:
 	
 	1. Open command line.
 	2. Type the following in the command line, replacing the `componentId` with the ID of the component, `facetName` with the name of the facet, and `PathToJsonFile` with the path to the file. Then press Enter.
@@ -345,7 +345,7 @@ You can also configure Edge Data Store by a JSON file input into the EdgeCmd app
 		edgecmd Configuration componentId facetName file=PathToJsonFile
 		```
 
-- Complete the following to import a file with configuration for individual facets as a bulk file import operation. 
+Complete the following to import a file with configuration for individual facets as a bulk file import operation:
 	**Note:** The file must contain only information for the given component ID. 
 	
 	1. Open command line.
