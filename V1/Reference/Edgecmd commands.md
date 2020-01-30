@@ -4,13 +4,13 @@ uid: EdgecmdCommands
 
 # EdgeCmd commands
 
-The following tables provide an overview of available edgecmd commands that you can use with components of Edge Data Store. Every command that you use with the edgecmd utility has to be preceded by `edgecmd`.
+The following tables provide an overview of available edgecmd commands that you can use with components of Edge Data Store. Every command that you use with the EdgeCmd utility has to be preceded by `edgecmd`.
 
 ## Help
 
 | edgecmd command | Description | Examples |
 |-----------------|-------------|----------|
-|`edgecmd Help`| Display general instructions on how to use  the edgecmd utility. | 
+|`edgecmd Help`| Display general instructions on how to use the EdgeCmd utility. | 
 |`edgecmd Help <componentName>`| Display help for a specific Edge Data Store component. | `edgecmd Help System`|
 |`edgecmd Help <componentName> <facetName>`| Display help for a specific facet of an Edge Data store component. | `edgecmd Help System Port`|
 
