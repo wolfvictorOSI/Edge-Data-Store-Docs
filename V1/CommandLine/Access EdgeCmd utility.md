@@ -11,7 +11,7 @@ The following EdgeCmd utility locations are based on the installation instructio
 Complete the following to access EdgeCmd utility on Windows:
 
 1. Open a command prompt.
-2. Type the following in the prompt and press Enter:
+2. Type the following in the command prompt and press Enter:
 
    ```cmd
    C:\Program Files\OSIsoft\EdgeCmd\edgecmd.exe
