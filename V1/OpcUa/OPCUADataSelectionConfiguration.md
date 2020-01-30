@@ -16,7 +16,7 @@ A default OPC UA data selection file will be created if there is no OPC UA data 
 
 **Note:** To avoid possibly expensive browse operations, OSIsoft recommends that you manually create a data selection file instead of generating the default data selection file. For more information, see [Data selection configuration](xref:OPCUADataSelectionConfiguration).
 
-Complete the following steps in order for this default data selection file to be generated:
+Complete the following steps for this default data selection file to be generated:
 
 1. Add an [OPC UA EDS adapter](xref:EdgeDataStoreConfiguration) with a unique ComponentId. 
 
