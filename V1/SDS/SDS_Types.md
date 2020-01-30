@@ -16,7 +16,7 @@ An SdsType is referenced by its identifier or Id field. SdsType identifiers must
 
 An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability. Nested types and base types are automatically created as separate types. For further information, see [Type Reusability](#type-reusability)
 
-SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](#interpolation) and [Extrapolation](#extrapolation).
+SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
 
 SdsTypes are immutable. After you create an SdsType, you cannot change its definition. If the definition of an SdsType is incorrect, you must delete and recreate it. In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.
 
@@ -163,7 +163,7 @@ The Value field is used for properties that represent a value. An example of a p
 
 InterpolationMode is assigned when the property of the event should be interpolated in a specific way that differs from the InterpolationMode of the SdsType. InterpolationMode is only applied to a property that is not part of the Index. If the InterpolationMode is not set, the property is are interpolated in the manner defined by the SdsType’s IntepolationMode.
 
-An SdsType with the InterpolationMode set to ``Discrete`` cannot have a property with an InteroplationMode. For more information on interpolation of events, see [Interpolation](#interpolation).
+An SdsType with the InterpolationMode set to ``Discrete`` cannot have a property with an InteroplationMode. For more information on interpolation of events, see [Interpolation](xref:sdsReadingData#interpolation).
 
 Uom is the unit of measure for the property. The Uom of a property may be specified by the name or the abbreviation. The names and abbreviations of Uoms are case sensitive.
 
@@ -704,7 +704,7 @@ Content-Type: application/json
 
 ## `Get Type Reference Count`
 
-Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. For more information on the use of types to define streams and stream views, see [Streams](xref:sdsstreams) and [Steam Views](xref:sdsStreamViews). For further details about type referencing, see: [Type Reusability](#type-reusability).
+Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. For more information on the use of types to define streams and stream views, see [Streams](xref:sdsStreams) and [Steam Views](xref:sdsStreamViews). For further details about type referencing, see: [Type Reusability](#type-reusability).
 
 **Request**
 
