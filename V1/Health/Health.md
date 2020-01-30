@@ -22,7 +22,7 @@ Edge Data Store has the ability to report system health to one or more OMF endpo
 | ClientSecret | Required for OSIsoft Cloud Services. | The Client Secret used for authentication to OSIsoft Cloud Services. |
 | Buffering | Optional    | Options are memory, disk, or none. The default is none. |
 | MaxBufferSizeMB | Optional    | The limit on the maximum megabytes of data to buffer for messages to this endpoint if an integer is >0. This parameter is useful if you want to limit memory or disk usage growth in the event of disconnection to the endpoint. If the buffer is full, old messages will be discarded for new messages. The default is 0. |
-| ValidateEndpointCertificate | Optional | Edge EDS adapter validates the endpoint certificate if set to true (recommended). If set to false, Edge EDS adapter accepts any endpoint certificate. OSIsoft recommends you to use disabled endpoint certificate validation for testing purposes only.|
+| ValidateEndpointCertificate | Optional | Edge EDS adapter validates the endpoint certificate if set to true (recommended). If set to false, Edge EDS adapter accepts any endpoint certificate. OSIsoft recommends you disable endpoint certificate validation for testing purposes only.|
 
 ## EDS adapter health
 
