@@ -8,7 +8,7 @@ The Edgecmd utility provides a 'Help' utility.
 
 ## View general help instructions
 
-Complete the following to view general instructions on how to use the Edgecmd utility:
+Complete the following to view help instructions on how to use the Edgecmd utility:
 
 1. Open command line.
 2. Type the following in the command line and press Enter.
@@ -18,6 +18,8 @@ Complete the following to view general instructions on how to use the Edgecmd ut
 	```
 
 ## View configuration facet help instructions
+
+Complete the following to view help instructions for a configuration facet that a registered component supports:
 
 1. Open command line.
 2. Type the following in the command line, replacing `<componentId>` with the value that you want, and press Enter.
@@ -32,6 +34,8 @@ Complete the following to view general instructions on how to use the Edgecmd ut
 	
 	
 ## View specific configuration facet help instructions
+
+Complete the following to view help instructions for a specific facet within a component:
 
 1. Open command line.
 2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the value that you want, and press Enter.
