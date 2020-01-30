@@ -12,7 +12,7 @@ The following sections provide instructions for the configuration of EdgeCmd uti
 Complete the following to access EdgeCmd on Windows:
 
 1. Open a command prompt.
-2. Type the following at the prompt and press Enter:
+2. Type the following in the prompt and press Enter:
 
    ```cmd
    C:\Program Files\OSIsoft\EdgeCmd\edgecmd.exe
@@ -25,7 +25,7 @@ Complete the following to access EdgeCmd on Windows:
 Complete the following to access EdgeCmd on Linux:
 
 1. Open a terminal window.
-2. Type the following and press Enter.
+2. Type the following in the terminal and press Enter.
 
    ```bash
    /opt/OSIsoft/EdgeCmd/edgecmd
@@ -35,19 +35,28 @@ Complete the following to access EdgeCmd on Linux:
 
 ## Configure Edge Data Store with EdgeCmd
 
-All configuration options that can be done using REST can also be done using the edgecmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.
+All configuration options that can be done using REST can also be done using the EdgeCmd utility and command line arguments.  Configuration and administrative REST interfaces are generally exposed through the command line. Read/write capabilities to the EDS storage component, OMF ingresss and SDS read/write capabilities are only available using the REST API.
 
 ## Get help
 
-The Edgecmd application provides a 'Help' utility. For general instructions on how to use the Edgecmd application, type:
+The Edgecmd utility provides a 'Help' utility. Complete the following to view general instructions on how to use the Edgecmd utility:
 
-```bash
-edgecmd Help
-```
+1. Open command line.
+2. Type the following in the command line and press Enter.
 
-You can also use the utility to get help for any registered component in Edge Data Store. If you add a specific component ID to the end of the previous command, you receive help output for every configuration facet that the component supports, along with examples of commands that you can run to configure the component.
+	```bash
+	edgecmd Help
+	```
+	
+3. Optional: To receive help output for every configuration facet that a registered component supports, add a specific component ID to the end of the previous command. See example [Help for the System component](#help-for-the-system-component).
+	
+	**Note:** The help output also provides examples of commands that you can run to configure the component.
+	
+4. Optional: To receive help output for a specific facet within a component, add the facet name after the component ID. See example [Help for the Port facet within the System component](#help-for-the-port-facet-within-the-system-component).
 
-Example: View help for the 'System' component:
+### Examples
+
+#### Help for the System component:
 
 ```bash
 edgecmd Help System
@@ -98,9 +107,7 @@ ComponentType                      [Required] Type of the hosted component.
 Example: ./edgecmd Configuration System Components ComponentId=Modus1 ComponentType=Modbus
 ```
 
-For help regarding a specific facet within a component, add the facet name after the component ID.
-
-Example: Help for the 'Port' facet within the 'System' component:
+#### Help for the Port facet within the System component
 
 ```bash
 edgecmd Help System Port
@@ -117,77 +124,107 @@ Example: ./edgecmd Configuration System Port Port=5590
 The EdgeCmd utility enables you to add, configure, and delete Edge Data Store components.
 
 ### View components
-With the following command, you can view which components are currently configured on Edge Data Store:
+Complete the following to view which components are currently configured on Edge Data Store.
 
-```bash
-edgecmd Configuration System Components
-```
+1. Open command line.
+2. Type the following in the command line and press Enter.
+
+	```bash
+	edgecmd Configuration System Components
+	```
 
 ### Add components
-To register a new component, use the following command:
+Complete the following to register a new component.
 
-```bash
-edgecmd Configuration System Components componentId=<componentId> componentType=<componentType>
-```
+1. Open command line.
+2. Type the following in the command line, replacing `<componentId>` and `<componentType>` with the values that you want and press Enter.
 
-Valid component types are "Modbus" and "OpcUa". If you are trying to register a Modbus EDS adapter, use "Modbus" and if you are trying to register an OPC UA adapter, use "OpcUa". 
+	**Note:** Valid component types are "Modbus" and "OpcUa". If you are trying to register a Modbus EDS adapter, use "Modbus" and if you are trying to register an OPC UA adapter, use "OpcUa".
+	
+	```bash
+	edgecmd Configuration System Components componentId=<componentId> componentType=<componentType>
+	```
 
-Example: Modbus adapter component registration:
+	Example: Modbus adapter component registration:
 
-```bash
-edgecmd Configuration System Components componentId=Modbus1 componentType=Modbus
-```
+	```bash
+	edgecmd Configuration System Components componentId=Modbus1 componentType=Modbus
+	```
 
 ### Configure components
 
-The EDS Modbus adapter and OPC UA adapter each have three configurable facets: data source, data selection, and logging. You can configure these with edgecmd by specifying a component ID and facet name. 
+The EDS Modbus adapter and OPC UA adapter each have three configurable facets: data source, data selection, and logging. Complete the following to configure a facet.
 
-Example: Configuration of the data source facet of a Modbus adapter:
+1. Open command line.
+2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the values that you want.
 
-```bash
-edgecmd Configuration Modbus1 DataSource IpAddress=117.23.45.110 port=502 ConnectTimeout=15000 StreamIdPrefix="DataSource1"
-```
+	```bash
+	edgecmd Configuration <componentId> <facetName>
+	```
+3. Add key-value pairs to specify which values of the facet that you want to configure are to be changed and press Enter.
+	
+	Example: Configuration of the data source facet of a Modbus adapter:
 
-For detailed information on how to configure each adapter, see the [Modbus](xref:modbus_schema) and [OPC UA](xref:opcua_schema) schemas.
+	```bash
+	edgecmd Configuration Modbus1 DataSource IpAddress=117.23.45.110 port=502 ConnectTimeout=15000 StreamIdPrefix="DataSource1"
+	```
+
+For detailed information on how to configure each adapter, see [OPC UA EDS adapter](xref:opcUaOverview) and [Modbus TCP EDS adapter](xref:modbusOverview) schemas.
 
 ### Delete components
 
-You can delete components from the Edge Data Store by using the following command:
+Complete the following to delete components from the Edge Data Store.
 
-```bash
-edgecmd Configuration System Components id=<componentId> delete
-```
+1. Open command line.
+2. Type the following in the command line, replacing `<componentId>` with the value that you want, and press Enter.
 
-**Note:** You cannot delete the "Storage" component because it is required for Edge Data Store to operate.
+	```bash
+	edgecmd Configuration System Components id=<componentId> delete
+	```
+
+**Note:** You cannot delete the Storage component because it is required for Edge Data Store to operate.
 
 
 ## Retrieve existing system configuration
 
 You can use the edgecmd utility to view the configuration for each part of Edge Data Store.
 
-To view the entire configuration for every system component, run the following command:
+- Complete the following to view the entire configuration for every system component.
 
-```bash
-edgecmd Configuration
-```
+	1. Open command line.
+	2. Type the following in the command line and press Enter.
 
-To retrieve component specific configuration:
+		```bash
+		edgecmd Configuration
+		```
 
-```bash
-edgecmd Configuration componentId
-```
+- Complete the following to retrieve component specific configuration.
 
-To retrieve facet specific configuration of an Edge Data Store component:
+	1. Open command line.
+	2. Type the following in the command line, replacing `<componentId>` with the value that you want, and press Enter.
 
-```bash
-edgecmd Configuration componentId facetName
-```
+		```bash
+		edgecmd Configuration <componentId>
+		```
 
-For facets that contain multiple entries, you can retrieve the configuration for a specific entry by its Id:
+- Complete the following to retrieve facet specific configuration of an Edge Data Store component.
 
-```bash
-edgecmd Configuration componentId facetName id=IndexToRetrieve
-```
+	1. Open command line.
+	2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the values that you want, and press Enter.
+
+		```bash
+		edgecmd Configuration <componentId> <facetName>
+		```
+
+- Complete the following to retrieve the configuration for a specific facet entry.
+
+	1. Open command line.
+	2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the values that you want.
+
+		```bash
+		edgecmd Configuration <componentId> <facetName> id=IndexToRetrieve
+		```
+	3. Add the parameters and their values of the facet that you want to configure and press Enter.
 
 ### Examples
 
@@ -253,28 +290,39 @@ edgecmd Configuration Storage PeriodicEgressEndpoints id=Endpoint_1
 
 ## Configure Edge Data Store
 
-To create a configuration, you must enter the component and facet where the configuration payload should go, followed by key=value pairs to specify which values are to be changed. 
+- Complete the following to change all values of a facet.
 
-Example: Change all values in the 'Logging' facet:
+	1. Open command line.
+	2. Type the `componentId` and `facetName` where the configuration payload should go, followed by key=value pairs that you want to change. Then press Enter.
 
-```bash
-edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
-```
+	Example: Change all values in the 'Logging' facet:
 
-You can use this to configure any number of valid key=value pairs in a facet.
+	```bash
+	edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
+	```
 
-Example: Change a single value in the 'Logging' facet:
+- Complete the following to configure any number of valid key=value pairs in a facet.
 
-```bash
-edgecmd Configuration Storage Logging LogFileCountLimit=5
-```
+	1. Open command line.
+	2. Type the `componentId` and `facetName` followed by the key=value pair that you want to change.  Then press Enter.
 
-You can also use it to add an entry to a collection configuration, for example, the 'Health Endpoints' facet in the 'System' component:
+	Example: Change a single value in the 'Logging' facet:
 
-```bash
-edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
-```
-**Note:** If an entry with the specified id already exists, it will be updated based on the new key=value pairs.
+	```bash
+	edgecmd Configuration Storage Logging LogFileCountLimit=5
+	```
+
+- Complete the following to add an entry to a collection configuration.
+
+	1. Open command line.
+	2. Type the `componentId` and `facetName` followed by the facet's key=value pairs. Then press Enter.
+
+	Example: Add the 'Health Endpoints' facet to the 'System' component:
+
+	```bash
+	edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
+	```
+	**Note:** If an entry with the specified id already exists, it will be updated based on the new key=value pairs.
 
 ### Configure with JSON Files
 You can also configure Edge Data Store by a JSON file input into the edgecmd application. File imports will completely replace the existing configurations that you are attempting to change. Therefore, it cannot be used to change individual values in a facet without modifying others.
