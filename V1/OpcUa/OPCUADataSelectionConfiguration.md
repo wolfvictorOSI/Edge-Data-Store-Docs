@@ -22,7 +22,7 @@ Complete the following steps for this default data selection file to be generate
 
   During the installation of Edge Data Store, enabling the OPC UA EDS adapter results in addition of a unique component that also satisfies this condition.
   
-2. Configure a valid [OPC UA data source](xref:opcUaOverview).
+2. Configure a valid [OPC UA data source](xref:OPCUADataSourceConfiguration).
 
   Once you complete these steps, a default OPC UA data selection configuration file will be generated in the configuration directory for the corresponding platform.
   
