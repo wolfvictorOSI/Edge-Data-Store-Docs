@@ -2,7 +2,7 @@
 uid: releaseNotes
 ---
 
-# Edge Data Store release notes
+# Release notes
 
 ## Overview
 
