@@ -29,7 +29,7 @@ It is located in:
 
 • Windows: *%ProgramFiles%/OSIsoft/EdgeDataStore/Schema*
 
-• Linux: */opt/EdgeDataStore/Schema*
+• Linux: */opt/OSIsoft/EdgeDataStore/Schema*
 
 ### Log levels
 
