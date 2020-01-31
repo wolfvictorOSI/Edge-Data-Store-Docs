@@ -8,7 +8,7 @@ The Edge Storage component supports both OMF version 1.0 and OMF version 1.1 for
 
 ## OMF specification
 
-You can find the OMF specification here: <http://omf-docs.osisoft.com>
+You can find the OMF specification here: <http://omf-docs.osisoft.com/en/v1.1/?_ga=2.260486986.697819576.1580490598-1442617055.1580490598#>
 
 EDS uses OMF technology developed for use on OSIsoft Cloud Services (OCS). The behavior of OMF in EDS is very similar to OCS. Dynamic messages are supported, but static messages (usually used for creating PI AF assets) are not supported by EDS. Any static OMF messages sent to the EDS OMF REST endpoint will be ignored.
 
