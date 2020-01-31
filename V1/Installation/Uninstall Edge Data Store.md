@@ -19,7 +19,8 @@ uid: UninstallEdgeDataStore
 1. To remove Edge Data Store software from a Linux device, open a terminal window and run the following command:
 
     ```bash
-    sudo apt remove osisoft.EdgeDataStore
+    sudo apt remove osisoft.edgedatastore
+
     ```
 
 2. Optional: To remove data, configuration, and log files, remove the directory _/usr/share/OSIsoft/EdgeDataStore/_.
