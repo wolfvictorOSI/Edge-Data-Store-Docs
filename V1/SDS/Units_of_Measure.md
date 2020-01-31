@@ -306,7 +306,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Quantities/{quantityId}
 
 **Parameters**  
 ``string namespaceId``  
-THe namspace; either default or diagnostics.
+The namespace; either default or diagnostics.
 
 `string quantityId`  
 The quantity identifier.
