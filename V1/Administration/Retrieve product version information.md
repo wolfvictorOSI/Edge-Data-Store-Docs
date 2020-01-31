@@ -18,5 +18,5 @@ Complete the following to retrieve the product version of the Edge Data Store:
    Example using curl:
 
    ```bash
-   curl -v -d "" http://localhost:5590/api/v1/Diagnostics/ProductInformation
+   curl -v http://localhost:5590/api/v1/Diagnostics/ProductInformation
    ```
