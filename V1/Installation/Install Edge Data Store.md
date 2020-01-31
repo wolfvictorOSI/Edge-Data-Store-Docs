@@ -4,7 +4,7 @@ uid: InstallEdgeDataStore
 
 # Install Edge Data Store
 
-You can install Edge Data Store using an install kit, as described in this section, or by using Docker containers. For more information, see [Docker](xref:edgeDocker).
+You can install Edge Data Store using an install kit, as described in this section, or by using Docker containers. For more information, see [Install Edge Data Store using Docker](xref:edgeDocker).
 
 For a list of supported platforms and processors, see [System requirements](xref:SystemRequirements).
 
