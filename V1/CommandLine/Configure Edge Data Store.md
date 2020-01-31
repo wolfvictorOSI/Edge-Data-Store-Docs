@@ -16,6 +16,7 @@ Complete the following to change all values of a facet:
    ```bash
    edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
    ```
+
 ## Configure key=value pairs in a facet
 
 Complete the following to configure any number of valid key=value pairs in a facet:
@@ -28,6 +29,7 @@ Complete the following to configure any number of valid key=value pairs in a fac
    ```bash
    edgecmd Configuration Storage Logging LogFileCountLimit=5
    ```
+
 ## Add an entry to a collection configuration
 
 Complete the following to add an entry to a collection configuration:
@@ -56,6 +58,7 @@ Complete the following to import a bulk configuration:
    ```bash
    edgecmd Configuration file=<PathToJsonFile>
    ```
+
 ### Import facet specific configuration
 
 Complete the following to import a facet specific configuration file for a component:
@@ -66,7 +69,7 @@ Complete the following to import a facet specific configuration file for a compo
    ```bash
    edgecmd Configuration <componentId> <facetName> file=<PathToJsonFile>
    ```
-   
+
 ### Import facets configuration in bulk
 
 Complete the following to import a file with configuration for individual facets as a bulk file import operation:
