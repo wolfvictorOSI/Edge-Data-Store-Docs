@@ -21,10 +21,10 @@ Complete the following to install the EdgeCmd utility on Windows:
 1. Copy the _EdgeCmd.msi_ file to the file system of the device.
 2. To start the installer, double-click the _EdgeCmd.msi_ file in Windows Explorer.
 
-   **Note:** To change the install path from the default path of C:\Program Files\OSIsoft\EdgeCmd, enter the following command in the command prompt. OSIsoft recommends you use the default value.
+   **Note:** To change the install path from the default path of C:\Program Files\OSIsoft\EdgeCmd, enter the following command in the command prompt and update the <file_path>. OSIsoft recommends you use the default value.
     
     ```bash
-    msiexec /i EdgeCmd.msi INSTALLFOLDER=<path_to_desired_location>
+    msiexec /i EdgeCmd.msi INSTALLFOLDER=<file_path>
     ```
 
    **Note:** INSTALLFOLDER must be in all caps as shown in the preceding example.
@@ -39,7 +39,7 @@ Complete the following to install the EdgeCmd utility on Linux:
 
 1. Open a terminal window and type the sudo command for the appropriate EdgeCmd deb file for your processor:
 
-    **Debian 9 or later (Intel/AMD 64 bit processors)**
+    **Debian 9 or later (Intel/AMD 64-bit processors)**
 
     ```bash
     sudo apt install ./EdgeCmd_linux-x64.deb
