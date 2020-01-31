@@ -33,13 +33,13 @@ The following diagram depicts the relationship of key functions to relevant comp
 
 ## Data ingress to Edge Data Store
 
-Edge Data Store can ingress data in a number of ways. There are two built-in adapters: [EDS Modbus TCP](xref:modbusQuickStart) and [EDS OPC UA](xref:opcUaQuickStart). Data can also be ingressed using OSIsoft Message Format [(OMF)](xref:omfQuickStart) and the Sequential Data Store [SDS](xref:sdsWritingData) REST APIs.
+Edge Data Store can ingress data in a number of ways. There are two built-in adapters: [Modbus TCP EDS](xref:modbusQuickStart) and [OPC UA EDS](xref:opcUaQuickStart). Data can also be ingressed using OSIsoft Message Format [(OMF)](xref:omfQuickStart) and the Sequential Data Store [SDS](xref:sdsWritingData) REST APIs.
 
 The following diagram depicts an OMF data ingress scenario in the Edge Data Store:
 
 ![EDS OMF Ingress](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOMFIngress.jpg "EDS OMF Ingress")
 
-During installation of Edge Data Store, you can choose to install either an EDS Modbus TCP adapter or an EDS OPC UA adapter, or both. The EDS Modbus and EDS OPC UA adapters require configuration of data source and data selection before they can collect data in Edge Data Store. You can use OMF data ingress once Edge Data Store is installed, with no further configuration steps.
+During installation of Edge Data Store, you can choose to install either an Modbus TCP EDS adapter or an OPC UA EDS adapter, or both. The Modbus TCP and OPC UA EDS adapters require configuration of data source and data selection before they can collect data in Edge Data Store. You can use OMF data ingress once Edge Data Store is installed, with no further configuration steps.
 
 Edge Data Store is composed of components, and is designed to allow additional EDS adapters at a later point.
 
