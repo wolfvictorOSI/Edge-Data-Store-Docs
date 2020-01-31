@@ -85,7 +85,7 @@ Example: ./edgecmd Configuration System HealthEndpoints Endpoint=endpointURL Use
 ---------------------------------------------------------------------------------------------------------
 Component System command-line options => 'Port'
 ---------------------------------------------------------------------------------------------------------
-Port                        [Required] The tcp port to bind this application host to (Range [1024,65535])
+Port                        [Required] The TCP port to bind this application host to (Range [1024,65535])
 
 Example: ./edgecmd Configuration System Port Port=5590
 
@@ -107,7 +107,7 @@ edgecmd Help System Port
 ---------------------------------------------------------------------------------------------------------
 Component System command-line options => 'Port'
 ---------------------------------------------------------------------------------------------------------
-Port                        [Required] The tcp port to bind this application host to (Range [1024,65535])
+Port                        [Required] The TCP port to bind this application host to (Range [1024,65535])
 
 Example: ./edgecmd Configuration System Port Port=5590
 ```
