@@ -70,20 +70,20 @@ Complete the following:
 
 1. Open a terminal window and type:
 
-  ```bash
-  sudo apt install ./EdgeDataStore_linux_<either x64 or arm depending upon processor>.deb
-  ```
+    ```bash
+    sudo apt install ./EdgeDataStore_linux_<either x64 or arm depending upon processor>.deb
+    ```
 
-  A check will be done for prerequisites. If the Linux operating system is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:
+    A check will be done for prerequisites. If the Linux operating system is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:
 
-  ```bash
-  sudo apt update
-  sudo apt upgrade
-  ```
+    ```bash
+    sudo apt update
+    sudo apt upgrade
+    ```
 
 2. After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.
 
-  The install will complete, and Edge Data Store will be running on your device. 
+    The install will complete, and Edge Data Store will be running on your device. 
   
 3. Optional: To verify that Edge Data Store is correctly installed, run the following script from the terminal window. 
   
