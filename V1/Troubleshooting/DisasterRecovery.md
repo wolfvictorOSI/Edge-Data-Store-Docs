@@ -8,12 +8,12 @@ This topic provides procedures for recovery from the failure of a device which h
 
 - Back up the Edge Data Store data from the failed device to another location
 - Install Edge Data Store on a new device
-- Move a .zip file of the backed up data to the new device
-- Restore the backed up data files to the new device
+- Move a .zip file of the backed-up data to the new device
+- Restore the backed-up data files to the new device
 
 Procedures are provided for Windows and Linux systems.
  
-**Prequisite:**  This topic does not provide instruction for backing up or restoring credentials. All credentials are encrypted for security purposes, so they cannot be copied or transferred. After the new system has had the storage and configuration files copied over, and the service has started, do the following:
+**Prerequisite:**  This topic does not provide instruction for backing up or restoring credentials. All credentials are encrypted for security purposes, so they cannot be copied or transferred. After the new system has had the storage and configuration files copied over, and the service has started, do the following:
 
 1. Re-enter the credentials for the operating system using API calls. 
 2. After updating, restart the Edge Data Store service. 
