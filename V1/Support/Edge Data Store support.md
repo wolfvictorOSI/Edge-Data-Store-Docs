@@ -4,16 +4,22 @@ uid: EdgeDataStoreSupport
 
 # Edge Data Store support
 
-## Edge Data Store documentation feedback
+## Documentation feedback
 
 If you have questions, comments, or other feedback about the Edge Data Store documentation, send an email to [Documentation](mailto:documentation@osisoft.com?subject=[DocFX]%20Edge%20Data%20Store).
 
-## Edge Data Store general feedback
+## Technical support and other resources
 
-If you have questions, comments, issues, and other feedback about the Edge Data Store software, send an email to [Edge support](mailto:edgesupport@osisoft.com).
+For technical assistance, contact OSIsoft Technical Support at +1 510-297-5828 or through the [OSIsoft Customer Portal Contact Us page](https://customers.osisoft.com/s/contactus). The Contact Us page offers additional contact options for customers outside of the United States.
 
-As a member of the Edge Data Store program, you also have access to a private community on PI Square called [Edge](https://pisquare.osisoft.com/groups/edge). 
-The Edge Data Store community is monitored by members of the Edge Data Store development team. 
-You can use this site to ask questions, request advice and share ideas about working with the Edge Data Store with other community members.
+When you contact OSIsoft Technical Support, be prepared to provide this information:
+- Product name, version, and build numbers
+- Details about your computer platform (CPU type, operating system, and version number)
+- Time that the difficulty started
+- Log files at that time
+- Details of any environment changes prior to the start of the issue
+-	Summary of the issue, including any relevant log files during the time the issue occurred
 
-Once Edge Data Store is released for general availability, access to OSIsoft Technical Support will be available and will be used instead of the previously mentioned options.
+To ask questions of others who use OSIsoft software, join the OSIsoft user community, [PI Square](https://pisquare.osisoft.com). Members of the community can request advice and share ideas about the PI System. The PI Developers Club space within PI Square offers resources to help you with the programming and integration of OSIsoft products.
+
+
