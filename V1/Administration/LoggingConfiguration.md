@@ -67,14 +67,14 @@ Complete the following to change the logging configuration:
 
 3. Use any tool capable of making HTTP requests to execute a PUT command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<ComponentId>/Logging`.
 
+  **Note:**  Replace `<ComponentId>` with the ComponentId of the adapter or Storage, for example _OpcUa1_.
+    
     Example using curl (run this command from the same directory where the file is located):
 
     ```bash
     curl -i -d "@Component_Logging.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/<ComponentId>/Logging
     ```
 
-**Note:**  Replace _&lt;ComponentId&gt;_ with the ComponentId of the adapter or Storage, for example _OpcUa1_.
+  On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. 
 
-On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. 
-
-**Note:**  Any parameter not specified in the updated configuration file will revert to the default schema value.
+  **Note:**  Any parameter not specified in the updated configuration file will revert to the default schema value.
