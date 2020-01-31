@@ -259,7 +259,7 @@ The namespace; either default or diagnostics.
 The stream identifier.  
 
 **Request body**
-A serialized list of one or more events of the stream type..
+A serialized list of one or more events of the stream type.
 
 **Response**  
 The response includes a status code.
