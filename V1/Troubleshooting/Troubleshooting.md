@@ -16,7 +16,7 @@ Complete the following when a custom application fails to write stream data to E
 
 1. Verify the custom application is sending OMF messages in the correct order: 1) OMF type, 2) OMF container, 3) OMF data.
 
-   **Note:** No OMF Messages will be ingressed into Edge Data Store if they are not sent in correct order.
+   **Note:** OMF messages must be sent in the correct order to be ingressed into Edge Data Store.
    
 2. Refer to logging of warnings, errors, and messages for help with diagnosing these issues.
 
@@ -38,7 +38,7 @@ Debugging helps to troubleshoot problems between an OMF application and Edge Dat
 
 Examples of valid strings representing date and time:
 
-    Utc: “yyyy-mm-ddThh:mm:ssZ”
+    UTC: “yyyy-mm-ddThh:mm:ssZ”
     Local: “mm-dd-yyyy hh:mm:ss”
 
 ## Periodic egress
@@ -50,7 +50,7 @@ EDS periodic egress extracts data from SDS streams and sends the appropriate seq
 1. Check all egress configuration files in Edge Data Store to verify whether any endpoints are duplicated. A duplicate endpoint means that more than one device is egressing data to it, resulting in unexpected data.
 2. Assign stream prefixes in the [periodic egress endpoint configuration](xref:egress) to ensure that output data streams are logically separated in the systems of record.
 
-   **Note:** Type prefixes may be helpful if you have changed a stream type definitions on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.
+   **Note:** Type prefixes may be helpful if you have changed a stream type definition on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.
 
 ### Periodic egress logging
 
@@ -70,25 +70,23 @@ Debugging helps to troubleshoot problems between Edge Data Store and the egress 
 
 Examples of valid strings representing date and time:
 
-    Utc: “yyyy-mm-ddThh:mm:ssZ”
+    UTC: “yyyy-mm-ddThh:mm:ssZ”
     Local: “mm-dd-yyyy hh:mm:ss”
 
 ### Debugging folder/file structure
 
-The overall number and content length of each request/response pair can be quite large. Debug information is therefore stored to disk in a separate location from the typical log messages. Debug folders and files will be created under the Edge Data Store data folder. 
-
-The following displays the debugging folder/file structure:
+The overall number and content length of each request/response pair can be quite large. Debug information is therefore stored to disk in a separate location from the typical log messages. Debug folders and files will be created under the Edge Data Store data folder as follows: 
 
     Windows: %programdata%\OSIsoft\EdgeDataStore\Storage\egressdump\{tenantId}\{namespaceId}\{egressId}\{omfType}\{Ticks}-{Guid}-{Req/Res}.txt
 
     Linux: /usr/share/OSIsoft/EdgeDataStore/Storage/egressdump/{tenantId}/{namespaceId}/{egressId}/{omfType}/{Ticks}-{Guid}-{Req/Res}.txt
 
-The following table displays the information represented by the non-intuitive elements of the file structure:
+The OMF specific elements of the file structure are defined in the following table:
 
 | Element    | Represents                       |
 |------------|----------------------------------|
-| *omfType*  | Type/Container/Data              |
-|  *Ticks*   | tick count for UTC DateTime when determined message would be written to disk     |
-|   *Guid*   | unique Guid for each request/response pair     |
-|  *Req/Res* | whether message was HTTP request or response   |
+| *omfType*  | The OMF message type: Type, Container, or Data.    |
+| *Ticks*    | The time in milliseconds (tick count) for UTC DateTime when determined message would be written to disk.  |
+| *Guid*     | The unique GUID for each request/response pair.     |
+| *Req/Res*  | Whether the message was HTTP request or response.   |
 
