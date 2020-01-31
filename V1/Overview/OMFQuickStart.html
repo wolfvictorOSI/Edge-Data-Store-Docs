@@ -103,7 +103,7 @@
 </li>
 <li><p>In order to create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json on the local device.</p>
 </li>
-<li><p>Run the following curl script:</p>
+<li><p>Run the following curl command:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OmfCreateType.json&quot; -H &quot;Content-Type: application/json&quot; -H &quot;producertoken: x &quot; -H &quot;omfversion: 1.1&quot; -H &quot;action: create&quot; -H &quot;messageformat: json&quot; -H &quot;messagetype: type&quot; -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
 </code></pre></li>
 </ol>
@@ -120,7 +120,7 @@
 </li>
 <li><p>To create the OMF container in the Edge Storage, store the JSON file with the name OmfCreateContainer.json on the local device.</p>
 </li>
-<li><p>To create the SDS stream to store data defined by the type, run the following curl script:</p>
+<li><p>To create the SDS stream to store data defined by the type, run the following curl command:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OmfCreateContainer.json&quot; -H &quot;Content-Type: application/json&quot; -H &quot;producertoken: x &quot; -H &quot;omfversion: 1.1&quot; -H &quot;action: create&quot; -H &quot;messageformat: json&quot; -H &quot;messagetype: container&quot; -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
 </code></pre></li>
 </ol>
@@ -142,31 +142,31 @@
 </code></pre></li>
 <li><p>To write the data in the Edge Storage, store the JSON file with the name OmfCreateDataEvents.json on the local device.</p>
 </li>
-<li><p>To write data values to the SDS stream, run the following curl script:</p>
+<li><p>To write data values to the SDS stream, run the following curl command:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OmfCreateDataEvents.json&quot; -H &quot;Content-Type: application/json&quot; -H &quot;producertoken: x &quot; -H &quot;omfversion: 1.1&quot; -H &quot;action: create&quot; -H &quot;messageformat: json&quot; -H &quot;messagetype: data&quot; -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
 </code></pre></li>
 </ol>
 <h2 id="read-last-data-written-using-sds">Read Last Data written using SDS</h2>
 <p>Complete the following to use the SDS REST API to read back the data written to the server. </p>
 <ol>
-<li><p>Run the following example curl script to read the last value entered:</p>
+<li>Start the curl command line tool.</li>
+<li><p>Execute the following curl command to return the last value written:</p>
 <pre><code class="lang-bash">curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data/Last
-</code></pre></li>
-<li><p>Run the following GET command to return the last value written:</p>
-<pre><code class="lang-json">{&quot;Time&quot;:&quot;2017-11-23T18:00:00Z&quot;,&quot;Measurement&quot;:60.0}
+</code></pre><p>Sample output:</p>
+<pre><code class="lang-json">{&quot;Timestamp&quot;: &quot;2019-07-16T15:18:25.9870136Z&quot;, &quot;Value&quot;: 12346.6789}
 </code></pre></li>
 </ol>
 <h2 id="read-a-range-of-data-events-written-using-sds">Read a range of data events written using SDS</h2>
-<p>You can use the SDS REST API to read back the data written to the server. </p>
+<p>Complete the following to use the SDS REST API to read back the data written to the server. </p>
 <ol>
-<li><p>Run the following example curl script to read back a time range of values:</p>
+<li>Start the curl command line tool.</li>
+<li><p>Execute the following curl command to return up to 100 values after the startIndex specified:</p>
 <pre><code class="lang-bash">curl &quot;http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data?startIndex=2017-07-08T13:00:00Z&amp;count=100&quot;
-</code></pre></li>
-<li><p>Run the following command to return up to 100 values after the startIndex specified:</p>
-<pre><code class="lang-json">[{&quot;Time&quot;:&quot;2017-11-23T17:00:00Z&quot;,&quot;Measurement&quot;:50.0},{&quot;Time&quot;:&quot;2017-11-23T18:00:00Z&quot;,&quot;Measurement&quot;:60.0}]
-</code></pre></li>
+</code></pre><p>Sample output:</p>
+<pre><code class="lang-json">[{&quot;Timestamp&quot;: &quot;2019-07-16T15:18:24.9870136Z&quot;,&quot;Value&quot;: 12345.6789}, {&quot;Timestamp&quot;: &quot;2019-07-16T15:18:25.9870136Z&quot;, &quot;Value&quot;: 12346.6789}]
+</code></pre><p>Both values that were entered are returned. This command returns up to 100 values after the specified timestamp.</p>
+</li>
 </ol>
-<p>Both values that were entered are returned. This command returns up to 100 values after the specified timestamp.</p>
 </article>
           </div>
           

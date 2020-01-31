@@ -83,10 +83,10 @@
 <p><strong>Note:</strong> Some types, and consequently containers and data, cannot be egressed. For more information, see <a class="xref" href="Egress%20execution%20details.html">Egress Execution Details</a>.</p>
 <p>Edge Data Store supports one <a href="https://ocs-docs.osisoft.com/Documentation/Management/Account_Tenant.html">tenant</a> and two <a href="https://ocs-docs.osisoft.com/Documentation/Management/Account_Namespace_1.html">namespaces</a>. The EDS tenant name is default, and the two namespaces are default (where adapter and OMF data is written) and diagnostics. Diagnostics is where the system and its components write information that can be used locally or egressed to a remote PI server or OCS for monitoring. You must create a separate egress definition for each namespace from which you want to egress data.</p>
 <p>The other topics in this section provide instructions for the sequential steps required to egress EDS data to a PI server or OCS:</p>
-<ol>
-<li>Prepare egress destinations in either a PI server or OCS. You will use the information produced by this action to define the endpoint in your egress configuration file.</li>
-<li>Create an egress configuration file for each specific endpoint to which you want to egress data.</li>
-</ol>
+<ul>
+<li><a class="xref" href="Prepare%20egress%20destinations.html">Prepare egress destinations</a> in either a PI server or OCS. You will use the information produced by this action to define the endpoint in your egress configuration file.</li>
+<li><a class="xref" href="Configure%20data%20egress.html">Create an egress configuration file</a> for each specific endpoint to which you want to egress data.</li>
+</ul>
 </article>
           </div>
           

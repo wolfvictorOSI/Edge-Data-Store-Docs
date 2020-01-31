@@ -87,44 +87,44 @@
 <li><p>Run the following curl command from the directory where the file is located: </p>
 <pre><code class="lang-bash">curl -i -d &quot;@EdgeMinimumConfiguration.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration
 </code></pre><p>The following will be set as the configuration of a running Edge Data Store. The configuration takes effect immediately after the command completes.</p>
-</li>
-</ol>
 <pre><code class="lang-json">{
-  &quot;Storage&quot;: {
-    &quot;PeriodicEgressEndpoints&quot;: [],
-    &quot;Runtime&quot;: {
-      &quot;streamStorageLimitMb&quot;: 2,
-      &quot;streamStorageTargetMb&quot;: 1,
-      &quot;ingressDebugExpiration&quot;: &quot;0001-01-01T00:00:00&quot;,
-      &quot;checkpointRateInSec&quot;: 30,
-      &quot;transactionLogLimitMB&quot;: 250,
-      &quot;enableTransactionLog&quot;: true
-    },
-    &quot;Logging&quot;: {
-      &quot;logLevel&quot;: &quot;Information&quot;,
-      &quot;logFileSizeLimitBytes&quot;: 34636833,
-      &quot;logFileCountLimit&quot;: 31
-    }
-  },
-  &quot;System&quot;: {
-    &quot;Logging&quot;: {
-      &quot;logLevel&quot;: &quot;Information&quot;,
-      &quot;logFileSizeLimitBytes&quot;: 34636833,
-      &quot;logFileCountLimit&quot;: 31
-    },
-    &quot;HealthEndpoints&quot;: [],
-    &quot;Port&quot;: {
-      &quot;port&quot;: 5590
-    },
-    &quot;Components&quot;: [
-      {
-        &quot;componentId&quot;: &quot;Storage&quot;,
-        &quot;componentType&quot;: &quot;EDS.Component&quot;
-      }
-    ]
-  }
+ &quot;Storage&quot;: {
+   &quot;PeriodicEgressEndpoints&quot;: [],
+   &quot;Runtime&quot;: {
+     &quot;streamStorageLimitMb&quot;: 2,
+     &quot;streamStorageTargetMb&quot;: 1,
+     &quot;ingressDebugExpiration&quot;: &quot;0001-01-01T00:00:00&quot;,
+     &quot;checkpointRateInSec&quot;: 30,
+     &quot;transactionLogLimitMB&quot;: 250,
+     &quot;enableTransactionLog&quot;: true
+   },
+   &quot;Logging&quot;: {
+     &quot;logLevel&quot;: &quot;Information&quot;,
+     &quot;logFileSizeLimitBytes&quot;: 34636833,
+     &quot;logFileCountLimit&quot;: 31
+   }
+ },
+ &quot;System&quot;: {
+   &quot;Logging&quot;: {
+     &quot;logLevel&quot;: &quot;Information&quot;,
+     &quot;logFileSizeLimitBytes&quot;: 34636833,
+     &quot;logFileCountLimit&quot;: 31
+   },
+   &quot;HealthEndpoints&quot;: [],
+   &quot;Port&quot;: {
+     &quot;port&quot;: 5590
+   },
+   &quot;Components&quot;: [
+     {
+       &quot;componentId&quot;: &quot;Storage&quot;,
+       &quot;componentType&quot;: &quot;EDS.Component&quot;
+     }
+   ]
+ }
 }
-</code></pre><p>This example results in a minimal configuration of Edge Data Store. It only supports <a class="xref" href="../Overview/OMFQuickStart.html">OMF</a> and <a class="xref" href="../Overview/SDSQuickStart.html">SDS</a> operations using REST. No egress is configured, so no data will be forwarded to either <a class="xref" href="../Overview/OCSEgressQuickStart.html">OCS</a> or <a class="xref" href="../Overview/PIEgressQuickStart.html">PI Web API</a>.</p>
+</code></pre></li>
+</ol>
+<p>  This example results in a minimal configuration of Edge Data Store. It only supports <a class="xref" href="../Overview/OMFQuickStart.html">OMF</a> and <a class="xref" href="../Overview/SDSQuickStart.html">SDS</a> operations using REST. No egress is configured, so no data will be forwarded to either <a class="xref" href="../Overview/OCSEgressQuickStart.html">OCS</a> or <a class="xref" href="../Overview/PIEgressQuickStart.html">PI Web API</a>.</p>
 <h2 id="configure-maximum-edge-data-store">Configure maximum Edge Data Store</h2>
 <p>The following JSON file represents maximum configuration of an Edge Data Store. There are Modbus TCP EDS adapter components and OPC UA EDS adapter components, and egress is configured to send to both PI Web API and OCS from both the default (operational data) and diagnostics (diagnostic data) namespace.</p>
 <ol>
@@ -133,329 +133,329 @@
 <li><p>Run the following curl command from the same directory where the file is located:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@EdgeMaximumConfiguration.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration
 </code></pre><p>The following will be set as the configuration for the running Edge Data Store. The configuration takes effect immediately after the command completes.</p>
-</li>
-</ol>
 <pre><code class="lang-json">{
-    &quot;Modbus1&quot;: {
-        &quot;Logging&quot;: {
-            &quot;logLevel&quot;: &quot;Information&quot;,
-            &quot;logFileSizeLimitBytes&quot;: 34636833,
-            &quot;logFileCountLimit&quot;: 31
-        },
-        &quot;DataSource&quot;: {
-            &quot;IpAddress&quot;: &quot;&lt;Modbus IP address&gt;&quot;,
-            &quot;Port&quot;: 502,
-            &quot;ConnectTimeout&quot;: 15000,
-            &quot;ReconnectInterval&quot;: 5000,
-            &quot;RequestTimeout&quot;: 9000,
-            &quot;DelayBetweenRequests&quot;: 0,
-            &quot;MaxResponseDataLength&quot;: 250
-        },
-        &quot;DataSelection&quot;: [{
-                &quot;Selected&quot;: &quot;true&quot;,
-                &quot;UnitId&quot;: 1,
-                &quot;RegisterType&quot;: 3,
-                &quot;RegisterOffset&quot;: 1,
-                &quot;DataTypeCode&quot;: 20,
-                &quot;BitMap&quot;: &quot;16151413&quot;,
-                &quot;ConversionFactor&quot;: 2,
-                &quot;ConversionOffset&quot;: 3.4,
-                &quot;ScanRate&quot;: 500
-            },
-            {
-                &quot;Selected&quot;: &quot;true&quot;,
-                &quot;UnitId&quot;: 1,
-                &quot;RegisterType&quot;: 3,
-                &quot;RegisterOffset&quot;: 2,
-                &quot;DataTypeCode&quot;: 20,
-                &quot;BitMap&quot;: &quot;16151413&quot;,
-                &quot;ConversionFactor&quot;: 2,
-                &quot;ConversionOffset&quot;: 3.4,
-                &quot;ScanRate&quot;: 500
-            },
-            {
-                &quot;Selected&quot;: &quot;true&quot;,
-                &quot;UnitId&quot;: 1,
-                &quot;RegisterType&quot;: 3,
-                &quot;RegisterOffset&quot;: 3,
-                &quot;DataTypeCode&quot;: 20,
-                &quot;BitMap&quot;: &quot;16151413&quot;,
-                &quot;ConversionFactor&quot;: 2,
-                &quot;ConversionOffset&quot;: 3.4,
-                &quot;ScanRate&quot;: 500
-            },
-            {
-                &quot;Selected&quot;: &quot;true&quot;,
-                &quot;UnitId&quot;: 1,
-                &quot;RegisterType&quot;: 3,
-                &quot;RegisterOffset&quot;: 4,
-                &quot;DataTypeCode&quot;: 20,
-                &quot;BitMap&quot;: &quot;16151413&quot;,
-                &quot;ConversionFactor&quot;: 2,
-                &quot;ConversionOffset&quot;: 3.4,
-                &quot;ScanRate&quot;: 500
-            },
-            {
-                &quot;Selected&quot;: &quot;true&quot;,
-                &quot;UnitId&quot;: 1,
-                &quot;RegisterType&quot;: 3,
-                &quot;RegisterOffset&quot;: 5,
-                &quot;DataTypeCode&quot;: 20,
-                &quot;BitMap&quot;: &quot;16151413&quot;,
-                &quot;ConversionFactor&quot;: 2,
-                &quot;ConversionOffset&quot;: 3.4,
-                &quot;ScanRate&quot;: 500
-            }
-        ]
-    },
-    &quot;Storage&quot;: {
-        &quot;Runtime&quot;: {
-            &quot;streamStorageLimitMb&quot;: 2,
-            &quot;streamStorageTargetMb&quot;: 1,
-            &quot;ingressDebugExpiration&quot;: &quot;0001-01-01T00:00:00&quot;
-        },
-        &quot;Logging&quot;: {
-            &quot;logLevel&quot;: &quot;Information&quot;,
-            &quot;logFileSizeLimitBytes&quot;: 34636833,
-            &quot;logFileCountLimit&quot;: 31
-        },
-        &quot;PeriodicEgressEndpoints&quot;: [{
-                &quot;Id&quot;: &quot;OCS&quot;,
-                &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
-                &quot;Name&quot;: null,
-                &quot;NamespaceId&quot;: &quot;default&quot;,
+   &quot;Modbus1&quot;: {
+       &quot;Logging&quot;: {
+           &quot;logLevel&quot;: &quot;Information&quot;,
+           &quot;logFileSizeLimitBytes&quot;: 34636833,
+           &quot;logFileCountLimit&quot;: 31
+       },
+       &quot;DataSource&quot;: {
+           &quot;IpAddress&quot;: &quot;&lt;Modbus IP address&gt;&quot;,
+           &quot;Port&quot;: 502,
+           &quot;ConnectTimeout&quot;: 15000,
+           &quot;ReconnectInterval&quot;: 5000,
+           &quot;RequestTimeout&quot;: 9000,
+           &quot;DelayBetweenRequests&quot;: 0,
+           &quot;MaxResponseDataLength&quot;: 250
+       },
+       &quot;DataSelection&quot;: [{
+               &quot;Selected&quot;: &quot;true&quot;,
+               &quot;UnitId&quot;: 1,
+               &quot;RegisterType&quot;: 3,
+               &quot;RegisterOffset&quot;: 1,
+               &quot;DataTypeCode&quot;: 20,
+               &quot;BitMap&quot;: &quot;16151413&quot;,
+               &quot;ConversionFactor&quot;: 2,
+               &quot;ConversionOffset&quot;: 3.4,
+               &quot;ScanRate&quot;: 500
+           },
+           {
+               &quot;Selected&quot;: &quot;true&quot;,
+               &quot;UnitId&quot;: 1,
+               &quot;RegisterType&quot;: 3,
+               &quot;RegisterOffset&quot;: 2,
+               &quot;DataTypeCode&quot;: 20,
+               &quot;BitMap&quot;: &quot;16151413&quot;,
+               &quot;ConversionFactor&quot;: 2,
+               &quot;ConversionOffset&quot;: 3.4,
+               &quot;ScanRate&quot;: 500
+           },
+           {
+               &quot;Selected&quot;: &quot;true&quot;,
+               &quot;UnitId&quot;: 1,
+               &quot;RegisterType&quot;: 3,
+               &quot;RegisterOffset&quot;: 3,
+               &quot;DataTypeCode&quot;: 20,
+               &quot;BitMap&quot;: &quot;16151413&quot;,
+               &quot;ConversionFactor&quot;: 2,
+               &quot;ConversionOffset&quot;: 3.4,
+               &quot;ScanRate&quot;: 500
+           },
+           {
+               &quot;Selected&quot;: &quot;true&quot;,
+               &quot;UnitId&quot;: 1,
+               &quot;RegisterType&quot;: 3,
+               &quot;RegisterOffset&quot;: 4,
+               &quot;DataTypeCode&quot;: 20,
+               &quot;BitMap&quot;: &quot;16151413&quot;,
+               &quot;ConversionFactor&quot;: 2,
+               &quot;ConversionOffset&quot;: 3.4,
+               &quot;ScanRate&quot;: 500
+           },
+           {
+               &quot;Selected&quot;: &quot;true&quot;,
+               &quot;UnitId&quot;: 1,
+               &quot;RegisterType&quot;: 3,
+               &quot;RegisterOffset&quot;: 5,
+               &quot;DataTypeCode&quot;: 20,
+               &quot;BitMap&quot;: &quot;16151413&quot;,
+               &quot;ConversionFactor&quot;: 2,
+               &quot;ConversionOffset&quot;: 3.4,
+               &quot;ScanRate&quot;: 500
+           }
+       ]
+   },
+   &quot;Storage&quot;: {
+       &quot;Runtime&quot;: {
+           &quot;streamStorageLimitMb&quot;: 2,
+           &quot;streamStorageTargetMb&quot;: 1,
+           &quot;ingressDebugExpiration&quot;: &quot;0001-01-01T00:00:00&quot;
+       },
+       &quot;Logging&quot;: {
+           &quot;logLevel&quot;: &quot;Information&quot;,
+           &quot;logFileSizeLimitBytes&quot;: 34636833,
+           &quot;logFileCountLimit&quot;: 31
+       },
+       &quot;PeriodicEgressEndpoints&quot;: [{
+               &quot;Id&quot;: &quot;OCS&quot;,
+               &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
+               &quot;Name&quot;: null,
+               &quot;NamespaceId&quot;: &quot;default&quot;,
+               &quot;Description&quot;: null,
+               &quot;Enabled&quot;: true,
+               &quot;Backfill&quot;: false,
+               &quot;EgressFilter&quot;: &quot;&quot;,
+               &quot;StreamPrefix&quot;: &quot;ChangeMe&quot;,
+               &quot;TypePrefix&quot;: &quot;ChangeMe&quot;,
+               &quot;Endpoint&quot;: &quot;&lt;OCS OMF URL for your tenant and namespace&gt;&quot;,
+               &quot;ClientId&quot;: &quot;&lt;OCS ClientId&gt;&quot;,
+               &quot;ClientSecret&quot;: &quot;&lt;OCS ClientSecret&gt;&quot;,
+               &quot;UserName&quot;: null,
+               &quot;Password&quot;: null,
+               &quot;DebugExpiration&quot;: null
+           },
+           {
+               &quot;Id&quot;: &quot;PWA&quot;,
+               &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
+               &quot;Name&quot;: null,
+               &quot;NamespaceId&quot;: &quot;default&quot;,
+               &quot;Description&quot;: null,
+               &quot;Enabled&quot;: true,
+               &quot;Backfill&quot;: false,
+               &quot;EgressFilter&quot;: &quot;&quot;,
+               &quot;StreamPrefix&quot;: &quot;ChangeMe&quot;,
+               &quot;TypePrefix&quot;: &quot;ChangeMe&quot;,
+               &quot;Endpoint&quot;: &quot;https://&lt;your PI Web API server&gt;/piwebapi/omf/&quot;,
+               &quot;ClientId&quot;: null,
+               &quot;ClientSecret&quot;: null,
+               &quot;UserName&quot;: &quot;&lt;username&gt;&quot;,
+               &quot;Password&quot;: &quot;&lt;password&gt;&quot;,
+               &quot;DebugExpiration&quot;: null
+           },
+           {
+               &quot;Id&quot;: &quot;OCSDiag&quot;,
+               &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
+               &quot;Name&quot;: null,
+               &quot;NamespaceId&quot;: &quot;diagnostics&quot;,
+               &quot;Description&quot;: null,
+               &quot;Enabled&quot;: true,
+               &quot;Backfill&quot;: false,
+               &quot;EgressFilter&quot;: &quot;&quot;,
+               &quot;StreamPrefix&quot;: &quot;ChangeMe&quot;,
+               &quot;TypePrefix&quot;: &quot;ChangeMe&quot;,
+               &quot;Endpoint&quot;: &quot;&lt;OCS OMF URL for your tenant and namespace&gt;&quot;,
+               &quot;ClientId&quot;: &quot;&lt;OCS ClientId&gt;&quot;,
+               &quot;ClientSecret&quot;: &quot;&lt;OCS ClientSecret&gt;&quot;,
+               &quot;UserName&quot;: null,
+               &quot;Password&quot;: null,
+               &quot;DebugExpiration&quot;: null
+           },
+           {
+               &quot;Id&quot;: &quot;PWADiag&quot;,
+               &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
+               &quot;Name&quot;: null,
+               &quot;NamespaceId&quot;: &quot;diagnostics&quot;,
                 &quot;Description&quot;: null,
-                &quot;Enabled&quot;: true,
-                &quot;Backfill&quot;: false,
-                &quot;EgressFilter&quot;: &quot;&quot;,
-                &quot;StreamPrefix&quot;: &quot;ChangeMe&quot;,
-                &quot;TypePrefix&quot;: &quot;ChangeMe&quot;,
-                &quot;Endpoint&quot;: &quot;&lt;OCS OMF URL for your tenant and namespace&gt;&quot;,
-                &quot;ClientId&quot;: &quot;&lt;OCS ClientId&gt;&quot;,
-                &quot;ClientSecret&quot;: &quot;&lt;OCS ClientSecret&gt;&quot;,
-                &quot;UserName&quot;: null,
-                &quot;Password&quot;: null,
-                &quot;DebugExpiration&quot;: null
-            },
-            {
-                &quot;Id&quot;: &quot;PWA&quot;,
-                &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
-                &quot;Name&quot;: null,
-                &quot;NamespaceId&quot;: &quot;default&quot;,
-                &quot;Description&quot;: null,
-                &quot;Enabled&quot;: true,
-                &quot;Backfill&quot;: false,
-                &quot;EgressFilter&quot;: &quot;&quot;,
-                &quot;StreamPrefix&quot;: &quot;ChangeMe&quot;,
-                &quot;TypePrefix&quot;: &quot;ChangeMe&quot;,
-                &quot;Endpoint&quot;: &quot;https://&lt;your PI Web API server&gt;/piwebapi/omf/&quot;,
-                &quot;ClientId&quot;: null,
-                &quot;ClientSecret&quot;: null,
-                &quot;UserName&quot;: &quot;&lt;username&gt;&quot;,
-                &quot;Password&quot;: &quot;&lt;password&gt;&quot;,
-                &quot;DebugExpiration&quot;: null
-            },
-            {
-                &quot;Id&quot;: &quot;OCSDiag&quot;,
-                &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
-                &quot;Name&quot;: null,
-                &quot;NamespaceId&quot;: &quot;diagnostics&quot;,
-                &quot;Description&quot;: null,
-                &quot;Enabled&quot;: true,
-                &quot;Backfill&quot;: false,
-                &quot;EgressFilter&quot;: &quot;&quot;,
-                &quot;StreamPrefix&quot;: &quot;ChangeMe&quot;,
-                &quot;TypePrefix&quot;: &quot;ChangeMe&quot;,
-                &quot;Endpoint&quot;: &quot;&lt;OCS OMF URL for your tenant and namespace&gt;&quot;,
-                &quot;ClientId&quot;: &quot;&lt;OCS ClientId&gt;&quot;,
-                &quot;ClientSecret&quot;: &quot;&lt;OCS ClientSecret&gt;&quot;,
-                &quot;UserName&quot;: null,
-                &quot;Password&quot;: null,
-                &quot;DebugExpiration&quot;: null
-            },
-            {
-                &quot;Id&quot;: &quot;PWADiag&quot;,
-                &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
-                &quot;Name&quot;: null,
-                &quot;NamespaceId&quot;: &quot;diagnostics&quot;,
-                 &quot;Description&quot;: null,
-                &quot;Enabled&quot;: true,
-                &quot;Backfill&quot;: false,
-                &quot;EgressFilter&quot;: &quot;&quot;,
-                &quot;StreamPrefix&quot;: &quot;ChangeMe&quot;,
-                &quot;TypePrefix&quot;: &quot;ChangeMe&quot;,
-                &quot;Endpoint&quot;: &quot;https://&lt;your PI Web API server&gt;/piwebapi/omf/&quot;,
-                &quot;ClientId&quot;: null,
-                &quot;ClientSecret&quot;: null,
-                &quot;UserName&quot;: &quot;&lt;username&gt;&quot;,
-                &quot;Password&quot;: &quot;&lt;password&gt;&quot;,
-                &quot;DebugExpiration&quot;: null
-            }
-        ]
-    },
-    &quot;OpcUa1&quot;: {
-        &quot;Logging&quot;: {
-            &quot;logLevel&quot;: &quot;Information&quot;,
-            &quot;logFileSizeLimitBytes&quot;: 34636833,
-            &quot;logFileCountLimit&quot;: 31
-        },
-        &quot;DataSource&quot;: {
-            &quot;EndpointUrl&quot;: &quot;opc.tcp://&lt;OPC UA server IP and port&gt;/OSIsoftTestServer&quot;,
-            &quot;UseSecureConnection&quot;: false,
-            &quot;UserName&quot;: null,
-            &quot;Password&quot;: null,
-            &quot;RootNodeIds&quot;: null,
-            &quot;IncomingTimestamp&quot;: &quot;Source&quot;,
-            &quot;StreamIdPrefix&quot;: &quot;OpcUa&quot;
-        },
-        &quot;DataSelection&quot;: [{
-                &quot;Selected&quot;: true,
-                &quot;Name&quot;: &quot;Cold Side Inlet Temperature&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1001.ColdSideInletTemperature&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Cold Side Outlet Temperature&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1001.ColdSideOutletTemperature&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: true,
-                &quot;Name&quot;: &quot;Hot Side Inlet Temperature&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1001.HotSideInletTemperature&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: true,
-                &quot;Name&quot;: &quot;Hot Side Outlet Temperature&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1001.HotSideOutletTemperature&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: true,
-                &quot;Name&quot;: &quot;Cold Side Inlet Temperature&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1002.ColdSideInletTemperature&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Cold Side Outlet Temperature&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1002.ColdSideOutletTemperature&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Hot Side Inlet Temperature&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1002.HotSideInletTemperature&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: true,
-                &quot;Name&quot;: &quot;Hot Side Outlet Temperature&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1002.HotSideOutletTemperature&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Power&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_001.Power&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Efficiency&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_001.Efficiency&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Flowrate&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_001.Flowrate&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Power&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_002.Power&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Efficiency&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_002.Efficiency&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Flowrate&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_002.Flowrate&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Level&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank1.Level&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Mass&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank1.Mass&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Volume&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank1.Volume&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Level&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank2.Level&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Mass&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank2.Mass&quot;,
-                &quot;StreamId&quot;: null
-            },
-            {
-                &quot;Selected&quot;: false,
-                &quot;Name&quot;: &quot;Volume&quot;,
-                &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank2.Volume&quot;,
-                &quot;StreamId&quot;: null
-            }
-        ]
-    },
-    &quot;System&quot;: {
-        &quot;Logging&quot;: {
-            &quot;logLevel&quot;: &quot;Information&quot;,
-            &quot;logFileSizeLimitBytes&quot;: 34636833,
-            &quot;logFileCountLimit&quot;: 31
-        },
-        &quot;Components&quot;: [{
-                &quot;componentId&quot;: &quot;OpcUa1&quot;,
-                &quot;componentType&quot;: &quot;OpcUa&quot;
-            },
-            {
-                &quot;componentId&quot;: &quot;Modbus1&quot;,
-                &quot;componentType&quot;: &quot;Modbus&quot;
-            },
-            {
-                &quot;componentId&quot;: &quot;Storage&quot;,
-                &quot;componentType&quot;: &quot;EDS.Component&quot;
-            }
-        ],
-        &quot;HealthEndpoints&quot;: [],
-        &quot;Port&quot;: {
-            &quot;port&quot;: 5590
-        }
-    }
+               &quot;Enabled&quot;: true,
+               &quot;Backfill&quot;: false,
+               &quot;EgressFilter&quot;: &quot;&quot;,
+               &quot;StreamPrefix&quot;: &quot;ChangeMe&quot;,
+               &quot;TypePrefix&quot;: &quot;ChangeMe&quot;,
+               &quot;Endpoint&quot;: &quot;https://&lt;your PI Web API server&gt;/piwebapi/omf/&quot;,
+               &quot;ClientId&quot;: null,
+               &quot;ClientSecret&quot;: null,
+               &quot;UserName&quot;: &quot;&lt;username&gt;&quot;,
+               &quot;Password&quot;: &quot;&lt;password&gt;&quot;,
+               &quot;DebugExpiration&quot;: null
+           }
+       ]
+   },
+   &quot;OpcUa1&quot;: {
+       &quot;Logging&quot;: {
+           &quot;logLevel&quot;: &quot;Information&quot;,
+           &quot;logFileSizeLimitBytes&quot;: 34636833,
+           &quot;logFileCountLimit&quot;: 31
+       },
+       &quot;DataSource&quot;: {
+           &quot;EndpointUrl&quot;: &quot;opc.tcp://&lt;OPC UA server IP and port&gt;/OSIsoftTestServer&quot;,
+           &quot;UseSecureConnection&quot;: false,
+           &quot;UserName&quot;: null,
+           &quot;Password&quot;: null,
+           &quot;RootNodeIds&quot;: null,
+           &quot;IncomingTimestamp&quot;: &quot;Source&quot;,
+           &quot;StreamIdPrefix&quot;: &quot;OpcUa&quot;
+       },
+       &quot;DataSelection&quot;: [{
+               &quot;Selected&quot;: true,
+               &quot;Name&quot;: &quot;Cold Side Inlet Temperature&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1001.ColdSideInletTemperature&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Cold Side Outlet Temperature&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1001.ColdSideOutletTemperature&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: true,
+               &quot;Name&quot;: &quot;Hot Side Inlet Temperature&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1001.HotSideInletTemperature&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: true,
+               &quot;Name&quot;: &quot;Hot Side Outlet Temperature&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1001.HotSideOutletTemperature&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: true,
+               &quot;Name&quot;: &quot;Cold Side Inlet Temperature&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1002.ColdSideInletTemperature&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Cold Side Outlet Temperature&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1002.ColdSideOutletTemperature&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Hot Side Inlet Temperature&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1002.HotSideInletTemperature&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: true,
+               &quot;Name&quot;: &quot;Hot Side Outlet Temperature&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.HeatExchanger1002.HotSideOutletTemperature&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Power&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_001.Power&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Efficiency&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_001.Efficiency&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Flowrate&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_001.Flowrate&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Power&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_002.Power&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Efficiency&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_002.Efficiency&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Flowrate&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.SF_Pump_002.Flowrate&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Level&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank1.Level&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Mass&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank1.Mass&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Volume&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank1.Volume&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Level&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank2.Level&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Mass&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank2.Mass&quot;,
+               &quot;StreamId&quot;: null
+           },
+           {
+               &quot;Selected&quot;: false,
+               &quot;Name&quot;: &quot;Volume&quot;,
+               &quot;NodeId&quot;: &quot;ns=2;s=Line1.Tank2.Volume&quot;,
+               &quot;StreamId&quot;: null
+           }
+       ]
+   },
+   &quot;System&quot;: {
+       &quot;Logging&quot;: {
+           &quot;logLevel&quot;: &quot;Information&quot;,
+           &quot;logFileSizeLimitBytes&quot;: 34636833,
+           &quot;logFileCountLimit&quot;: 31
+       },
+       &quot;Components&quot;: [{
+               &quot;componentId&quot;: &quot;OpcUa1&quot;,
+               &quot;componentType&quot;: &quot;OpcUa&quot;
+           },
+           {
+               &quot;componentId&quot;: &quot;Modbus1&quot;,
+               &quot;componentType&quot;: &quot;Modbus&quot;
+           },
+           {
+               &quot;componentId&quot;: &quot;Storage&quot;,
+               &quot;componentType&quot;: &quot;EDS.Component&quot;
+           }
+       ],
+       &quot;HealthEndpoints&quot;: [],
+       &quot;Port&quot;: {
+           &quot;port&quot;: 5590
+       }
+   }
 }
-</code></pre></article>
+</code></pre></li>
+</ol>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

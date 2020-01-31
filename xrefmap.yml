@@ -197,7 +197,7 @@ references:
   name: Reference
   href: V1/Reference/Reference.html
 - uid: releaseNotes
-  name: Edge Data Store release notes
+  name: Release notes
   href: V1/ReleaseNotes/ReleaseNotes.html
 - uid: ResetEdgeDataStore
   name: Reset Edge Data Store
