@@ -728,7 +728,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data/
     Interpolated?index=2017-11-23T13:30:00Z
 ```
 
-Because the index is a valid type for interpolation and the stream has a ``InterpolationMode`` of ``Continuous``, this request receives a response with an event interpolated at the specified index:
+Because the index is a valid type for interpolation and the stream has an ``InterpolationMode`` of ``Continuous``, this request receives a response with an event interpolated at the specified index:
 
 **Response body**
   
@@ -1035,7 +1035,7 @@ Content-Type: application/json
 
 Returns data sampled by intervals between a specified start and end index.
 
-Sampling is driven by a specified property or properties of the stream's Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information see [Interpolation.](xref:sdsReadingData#interpolation)
+Sampling is driven by a specified property or properties of the stream's SdsType. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information see [Interpolation.](xref:sdsReadingData#interpolation)
 
 **Request**  
 
