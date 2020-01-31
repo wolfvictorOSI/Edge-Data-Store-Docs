@@ -97,9 +97,9 @@ The table below describes how the **Continuous InterpolationMode** affects index
 *When extreme values are involved in an interpolation (for example,
 Decimal.MaxValue) the call might result in a BadRequest exception.
 
-\**Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.
+\**Nullable types are interpolated in the same manner as their non-nullable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.
 
-If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property, see [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). For more information on overriding the interpolation mode for a specific stream, see [Sds Streams](xref:sdsStreams).
+If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property, see [SdsTypeProperty](xref:sdsTypes#sdstypeproperty). For more information on overriding the interpolation mode for a specific stream, see [Streams](xref:sdsStreams).
 
 ### Extrapolation
 
@@ -125,13 +125,13 @@ ExtrapolationMode works with the InterpolationMode to determine how a stream res
 | Forward             | 2                   | No event is returned.| No event is returned.|
 | Backward            | 3                   | No event is returned.| No event is returned.|
 
-If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream, see [Sds Streams](xref:sdsStreams).
+If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream, see [Streams](xref:sdsStreams).
 
 For additional information about the effect of read characteristics, see the documentation on the [read method](xref:sdsReadingDataApi) you are using.
 
 ### Read characteristics
 
-When you request data at an index for which no stored event exists, the read characterisitics determine whether the result is an error, no event, interpolated event, or extrapolated event. The combination of the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream determine the read characteristics.
+When you request data at an index for which no stored event exists, the read characteristics determine whether the result is an error, no event, interpolated event, or extrapolated event. The combination of the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream determine the read characteristics.
 
 ### Filter expressions
 
@@ -180,7 +180,7 @@ SDS provides the ability to transform data upon reads. The supported data transf
 * [Reading with SdsStreamViews](#reading-with-sdsstreamviews): Changing the shape of the returned data
 * [Unit of Measure Conversions](#unit-conversion-of-data): Converting the unit of measure of the data  
 
-Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the tranformation endpoints:
+Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the transformation endpoints:
 
 ```text
   api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
