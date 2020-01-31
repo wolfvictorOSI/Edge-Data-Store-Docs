@@ -18,7 +18,7 @@ OPC UA EDS adapter generates a self-signed certificate when the first secure con
    ~~2019-09-08 11:45:48.093 +01:00~~ [Warning] Rejected Certificate: "DC=MyServer.MyDomain.int, O=Prosys OPC, CN=Simulation
    ```
 
-2. Manually move the server certificate from the [_RejectedCertificates\certs_](#adapter-rejected-certificates) folder to the [_Trusted\certs_](#adapter-trusted-certificates) folder using a file explorer or command-line interpreter.
+2. Manually move the server certificate from the RejectedCertificates\certs folder to the Trusted\certs folder using a file explorer or command-line interpreter.
 
    Linux example using command-line:
 
@@ -30,7 +30,7 @@ OPC UA EDS adapter generates a self-signed certificate when the first secure con
 
    Once the certificate is in the adapter trusted certificates folder, the adapter trusts the server and the connection attempt proceeds in making the connection call to the configured server.
   
-3. Add the [adapter's certificate](#adapter's-certificate) to the server's trust store.
+3. Add the adapter certificate to the server's trust store.
 
    The connection succeeds only when the adapter certificate is trusted on the server side. For more details on how to make a client certificate trusted, see your OPC UA server documentation. In general, servers work in a similar fashion as the clients, hence you can take a similar approach for making the server certificate trusted on the client side.
    
