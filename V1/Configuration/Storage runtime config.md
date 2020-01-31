@@ -58,7 +58,7 @@ The following is a valid runtime configuration example.
 
 | Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                                 |
 | ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ---------------------------------------------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [Storage_Runtime_schema.json](Storage_Runtime_schema.json) |
+| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [Storage_Runtime_schema.json](xref:storage_Runtime_schema) |
 
 ## Storage runtime configuration properties
 
