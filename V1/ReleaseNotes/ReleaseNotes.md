@@ -87,76 +87,76 @@ Complete the following:
   
 3. Optional: To verify that Edge Data Store is correctly installed, run the following script from the terminal window. 
   
-  **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
+    **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
 
-  ```bash
-  curl http://localhost:5590/api/v1/configuration
-  ```
+    ```bash
+    curl http://localhost:5590/api/v1/configuration
+    ```
 
-  If the installation was successful, you will get back a JSON copy of the default system configuration:
+    If the installation was successful, you will get back a JSON copy of the default system configuration:
 
-  ```json
-  {
-    "Modbus1": {
-      "Logging": {
-        "logLevel": "Information",
-        "logFileSizeLimitBytes": 34636833,
-        "logFileCountLimit": 31
-      },
-      "DataSource": {},
-      "DataSelection": []
-    },
-    "OpcUa1": {
-      "Logging": {
-        "logLevel": "Information",
-        "logFileSizeLimitBytes": 34636833,
-        "logFileCountLimit": 31
-      },
-      "DataSource": {},
-      "DataSelection": []
-    },
-    "Storage": {
-      "PeriodicEgressEndpoints": [],
-      "Runtime": {
-        "streamStorageLimitMb": 2,
-        "streamStorageTargetMb": 1,
-        "ingressDebugExpiration": "0001-01-01T00:00:00",
-        "checkpointRateInSec": 30,
-        "transactionLogLimitMB": 250,
-        "enableTransactionLog": true
-      },
-      "Logging": {
-        "logLevel": "Information",
-        "logFileSizeLimitBytes": 34636833,
-        "logFileCountLimit": 31
-      }
-    },
-    "System": {
-      "Logging": {
-        "logLevel": "Information",
-        "logFileSizeLimitBytes": 34636833,
-        "logFileCountLimit": 31
-      },
-      "HealthEndpoints": [],
-      "Port": {
-        "port": 5590
-      },
-      "Components": [
-        {
-          "componentId": "OpcUa1",
-          "componentType": "OpcUa"
+    ```json
+    {
+      "Modbus1": {
+        "Logging": {
+          "logLevel": "Information",
+          "logFileSizeLimitBytes": 34636833,
+          "logFileCountLimit": 31
         },
-        {
-          "componentId": "Modbus1",
-          "componentType": "Modbus"
+        "DataSource": {},
+        "DataSelection": []
+      },
+      "OpcUa1": {
+        "Logging": {
+          "logLevel": "Information",
+          "logFileSizeLimitBytes": 34636833,
+          "logFileCountLimit": 31
         },
-        {
-          "componentId": "Storage",
-          "componentType": "Storage"
+        "DataSource": {},
+        "DataSelection": []
+      },
+      "Storage": {
+        "PeriodicEgressEndpoints": [],
+        "Runtime": {
+          "streamStorageLimitMb": 2,
+          "streamStorageTargetMb": 1,
+          "ingressDebugExpiration": "0001-01-01T00:00:00",
+          "checkpointRateInSec": 30,
+          "transactionLogLimitMB": 250,
+          "enableTransactionLog": true
+        },
+        "Logging": {
+          "logLevel": "Information",
+          "logFileSizeLimitBytes": 34636833,
+          "logFileCountLimit": 31
         }
-      ]
+      },
+      "System": {
+        "Logging": {
+          "logLevel": "Information",
+          "logFileSizeLimitBytes": 34636833,
+          "logFileCountLimit": 31
+        },
+        "HealthEndpoints": [],
+        "Port": {
+          "port": 5590
+        },
+        "Components": [
+          {
+            "componentId": "OpcUa1",
+            "componentType": "OpcUa"
+          },
+          {
+            "componentId": "Modbus1",
+            "componentType": "Modbus"
+          },
+          {
+            "componentId": "Storage",
+            "componentType": "Storage"
+          }
+        ]
+      }
     }
-  }
-  ```
+    ```
 
-  If you get back an error, wait a few seconds and try it again. On a device with limited processor, memory, and slow storage, it may take some time before Edge Data Store is fully initialized and running for the first time.
+    If you get back an error, wait a few seconds and try it again. On a device with limited processor, memory, and slow storage, it may take some time before Edge Data Store is fully initialized and running for the first time.
