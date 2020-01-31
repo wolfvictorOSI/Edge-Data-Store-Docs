@@ -24,7 +24,7 @@ Complete the following to access EdgeCmd utility on Windows:
 Complete the following to access EdgeCmd utility on Linux:
 
 1. Open a terminal window.
-2. Type the following in the terminal and press Enter.
+2. Type the following in the terminal and press Enter:
 
    ```bash
    /opt/OSIsoft/EdgeCmd/edgecmd
