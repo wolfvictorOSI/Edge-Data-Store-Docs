@@ -39,7 +39,7 @@ UInt64                   | 12
 Working with indexes
 --------------------
 
-The following discusses the types defined in the [Python](<https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/Python/SDSPy>) and [Java Script](<https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS/JavaScript>) samples. Samples in other languages can be found [here](<https://github.com/osisoft/OCS-Samples/tree/master/basic_samples/SDS>).
+The following discusses the types defined in the Python and Java Script samples. 
 
 To build an SdsType representation of the following sample class, see [Sample](#sample):
 
