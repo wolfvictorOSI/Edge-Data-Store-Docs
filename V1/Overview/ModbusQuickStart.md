@@ -4,11 +4,11 @@ uid: modbusQuickStart
 
 # Modbus TCP EDS adapter quick start
 
-This topic provides quick start instructions for setting up the EDS Modbus TCP adapter. You can add a single EDS Modbus TCP adapter during Edge Data Store installation. You can add a single EDS Modbus TCP adapter during [Edge Data Store installation](xref:InstallEdgeDataStore).
+This topic provides quick start instructions for setting up the Modbus TCP EDS adapter. You can add a single Modbus TCP EDS adapter during Edge Data Store installation. You can add a single Modbus TCP EDS adapter during [Edge Data Store installation](xref:InstallEdgeDataStore).
 
-The following diagram depicts the data flow of a single EDS Modbus TCP adapter:
+The following diagram depicts the data flow of a single Modbus TCP EDS adapter:
 
-![EDS Modbus TCP](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSModbusTCP.jpg "EDS Modbus TCP")
+![Modbus TCP EDS](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSModbusTCP.jpg "Modbus TCP EDS")
 
 ## Configure a Modbus TCP data source
 
