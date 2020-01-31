@@ -14,5 +14,5 @@ Edge Data Store supports one [tenant](https://ocs-docs.osisoft.com/Documentation
 
 The other topics in this section provide instructions for the sequential steps required to egress EDS data to a PI server or OCS:
 
-1. Prepare egress destinations in either a PI server or OCS. You will use the information produced by this action to define the endpoint in your egress configuration file.
-2. Create an egress configuration file for each specific endpoint to which you want to egress data.
+- [Prepare egress destinations](xref:PrepareEgressDestinations) in either a PI server or OCS. You will use the information produced by this action to define the endpoint in your egress configuration file.
+- [Create an egress configuration file](xref:configureEgress) for each specific endpoint to which you want to egress data.
