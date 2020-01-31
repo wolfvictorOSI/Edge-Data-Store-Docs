@@ -1,3 +1,6 @@
 - name: Docs
   href: V1/
   homepage: V1/Edge_Data_Store.md
+- name: Feedback
+  href: V1/
+  homepage: V1/Feedback.md
