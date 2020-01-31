@@ -14,4 +14,4 @@ You can add a single Modbus TCP EDS adapter during installation. If you want mul
 
 For more information on how to configure logging for the Modbus TCP EDS adapter, see [Logging configuration](xref:LoggingConfiguration).
 
-To view data in the streams being written by Modbus, see the [SDS overview](xref:sdsOverview).  To egress the data to OSIsoft Cloud Services or the PI System, see [Data egress configuration](xref:egress).
+To view data in the streams being written by Modbus, see the [SDS reference](xref:sdsOverview).  To egress the data to OSIsoft Cloud Services or the PI System, see [Data egress configuration](xref:egress).
