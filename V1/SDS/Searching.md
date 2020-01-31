@@ -172,7 +172,7 @@ The following examples shows the ``'*'`` operator.
 GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query=log*
 ```
 
-Other operators examples
+Other operator examples
 ---------------------
 
 **Query string**     | **Matches field value** | **Does not match field value**
