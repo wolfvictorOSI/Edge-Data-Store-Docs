@@ -8,7 +8,7 @@ Edge Data Store is designed to run on a variety of small hardware and software p
 
 Mean and Maximum CPU use and Memory (Working Set) are provided. The values are averaged over one minute for the maximum computations, so it is possible there may be momentary spikes in memory or CPU use. These tables are provided as an approximate guideline to what might be expected as an Edge Data Store platform is designed. It is strongly recommended that performance testing is conducted before production deployment of Edge Data Store.
 
-## OMF Ingress Performance
+## OMF Ingress performance
 
 |ProgramSize|ComputerType|Storage|Processor|OS|Cores|TestType|EventsPerSecond|StreamCount|MeanWorkingSetMB|MaxWorkingSetMB|MeanCPU%|MaxCPU%|
 |--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -25,7 +25,7 @@ Mean and Maximum CPU use and Memory (Working Set) are provided. The values are a
 |Large|Intel i5|HDD|X64|Windows 10|4|omf|1002|1006|353|404|7|7|
 |Large|Intel Celeron|EMMC|X64|Windows 10|4|omf|1919|3006|717|858|58|69|
 
-## Modbus TCP Ingress Performance
+## Modbus TCP Ingress performance
 
 |ProgramSize|ComputerType|Storage|Processor|OS|Cores|TestType|EventsPerSecond|StreamCount|MeanWorkingSetMB|MaxWorkingSetMB|MeanCPU%|MaxCPU%|
 |--|--|--|--|--|--|--|--|--|--|--|--|--|
@@ -35,7 +35,7 @@ Mean and Maximum CPU use and Memory (Working Set) are provided. The values are a
 |Medium|Raspberry PI 3|SD Card|ARM32|Linux|4|modbus|255|305|156|205|22|28|
 |Large|Xeon|SSD|X64|Linux|4|modbus|2953|3005|725|943|15|31|
 
-## OPC UA Ingress Performance
+## OPC UA Ingress performance
 
 |ProgramSize|ComputerType|Storage|Processor|OS|Cores|TestType|EventsPerSecond|StreamCount|MeanWorkingSetMB|MaxWorkingSetMB|MeanCPU%|MaxCPU%|
 |--|--|--|--|--|--|--|--|--|--|--|--|--|
