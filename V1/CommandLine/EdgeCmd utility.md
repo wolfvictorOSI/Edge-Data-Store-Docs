@@ -59,13 +59,9 @@ Complete the following to install the EdgeCmd utility on Linux:
     sudo apt install ./EdgeCmd_linux-arm64.deb
     ```
 
-    A validation check for prerequisites will be completed. 
- 
-2. After the check for prerequisites succeeds, you are prompted with the option to change the default port (5590).
+    A validation check for prerequisites will be completed. If the Linux OS is up to date, the install will succeed and the EdgeCmd utility will be running on your device.
 
-    If the Linux OS is up to date, the install will succeed and the EdgeCmd utility will be running on your device.
-
-3. If the install fails, run the following commands from the terminal window and try the install again:
+    If the install fails, run the following commands from the terminal window and try the install again:
 
     ```bash
     sudo apt update
