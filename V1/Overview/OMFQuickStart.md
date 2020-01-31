@@ -34,7 +34,7 @@ The first step in OMF data ingress is to create an OMF type that describes the f
    The value is indexed by a timestamp, and the numeric value that will be stored is a 32-bit floating point value.
    
 2. In order to create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json on the local device.
-3. Run the following curl script:
+3. Run the following curl command:
 
    ```bash
    curl -i -d "@OmfCreateType.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: type" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
@@ -58,7 +58,7 @@ The next step in writing OMF data is to create a container. As with an OMF type,
    This container references the OMF type that was created earlier, and an error will occur if the type does not exist when the container is created. 
    
 2. To create the OMF container in the Edge Storage, store the JSON file with the name OmfCreateContainer.json on the local device.
-3. To create the SDS stream to store data defined by the type, run the following curl script:
+3. To create the SDS stream to store data defined by the type, run the following curl command:
 
    ```bash
    curl -i -d "@OmfCreateContainer.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: container" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
@@ -84,7 +84,7 @@ The next step in writing OMF data is to create a container. As with an OMF type,
    ```
 
 2. To write the data in the Edge Storage, store the JSON file with the name OmfCreateDataEvents.json on the local device.
-3. To write data values to the SDS stream, run the following curl script:
+3. To write data values to the SDS stream, run the following curl command:
 
    ```bash
    curl -i -d "@OmfCreateDataEvents.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: data" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
@@ -94,33 +94,35 @@ The next step in writing OMF data is to create a container. As with an OMF type,
 
 Complete the following to use the SDS REST API to read back the data written to the server. 
 
-1. Run the following example curl script to read the last value entered:
+1. Start the curl command line tool.
+2. Execute the following curl command to return the last value written:
 
    ```bash
    curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data/Last
    ```
 
-2. Run the following GET command to return the last value written:
-
+   Sample output:
+   
    ```json
-   {"Time":"2017-11-23T18:00:00Z","Measurement":60.0}
+   {"Timestamp": "2019-07-16T15:18:25.9870136Z", "Value": 12346.6789}
    ```
 
 ## Read a range of data events written using SDS
 
-You can use the SDS REST API to read back the data written to the server. 
+Complete the following to use the SDS REST API to read back the data written to the server. 
 
-1. Run the following example curl script to read back a time range of values:
+1. Start the curl command line tool.
+2. Execute the following curl command to return up to 100 values after the startIndex specified:
 
    ```bash
    curl "http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data?startIndex=2017-07-08T13:00:00Z&count=100"
    ```
 
-2. Run the following command to return up to 100 values after the startIndex specified:
-
+   Sample output:
+   
    ```json
-   [{"Time":"2017-11-23T17:00:00Z","Measurement":50.0},{"Time":"2017-11-23T18:00:00Z","Measurement":60.0}]
+   [{"Timestamp": "2019-07-16T15:18:24.9870136Z","Value": 12345.6789}, {"Timestamp": "2019-07-16T15:18:25.9870136Z", "Value": 12346.6789}]
    ```
 
-Both values that were entered are returned. This command returns up to 100 values after the specified timestamp.
+   Both values that were entered are returned. This command returns up to 100 values after the specified timestamp.
 
