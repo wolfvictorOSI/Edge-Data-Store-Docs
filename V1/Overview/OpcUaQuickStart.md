@@ -4,11 +4,11 @@ uid: opcUaQuickStart
 
 # OPC UA EDS adapter quick start
 
-This topic provides quick start instructions for setting up an EDS OPC UA adapter. You can add a single EDS OPC UA adapter during [Edge Data Store installation](xref:InstallEdgeDataStore).  
+This topic provides quick start instructions for setting up an OPC UA EDS adapter. You can add a single OPC UA EDS adapter during [Edge Data Store installation](xref:InstallEdgeDataStore).  
 
 The following diagram depicts the data flow of a single OPC UA EDS adapter:
 
-![EDS Opc Ua](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOpcUA.jpg "EDS Opc Ua")
+![OPC UA EDS](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOpcUA.jpg "OPC UA EDS")
 
 ## Configure an OPC UA data source
 
