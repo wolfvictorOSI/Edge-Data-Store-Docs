@@ -83,7 +83,7 @@
 <p>An SdsType used to define an SdsStream must have a key. A key is a property, or a combination of properties that constitute an ordered, unique identity. The key is ordered, so it functions as an index. It is known as the primary index. While a timestamp (DateTime) is a very common type of key, any type that can be ordered is permitted. Other indexes (secondary indexes), are defined in the SdsStream. For more details on indexes, see <a class="xref" href="indexes.html">Indexes</a>.</p>
 <p>When you define a type, consider how the events will be represented in a stream. The SdsType defines each event in the stream. An event is a single unit whose properties have values that relate to the index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.</p>
 <p>An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace.</p>
-<p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability. Nested types and base types are automatically created as separate types. For further information, see <a href="#type-reusability">Type Reusability</a></p>
+<p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability. Nested types and base types are automatically created as separate types. For further information, see <a href="#type-reusability">Type Reusability</a></p>
 <p>SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
 <p>SdsTypes are immutable. After you create an SdsType, you cannot change its definition. If the definition of an SdsType is incorrect, you must delete and recreate it. In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.</p>
 <p>Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential data store. SdsTypes that define properties or base types are contained within the parent SdsType and are not required to be added to the Data Store independently.</p>
@@ -554,11 +554,11 @@
 </tr>
 </tbody>
 </table>
-<p>The SdsTypeProperty’s identifier follows the same rules as the SdsType’s identifier.</p>
-<p>IsKey is a Boolean value used to identify the SdsType’s Key. A key defined by more than one property is called a compound key. The maximum number of properties that can define a compound key is three.</p>
+<p>The SdsTypeProperty identifier follows the same rules as the SdsType identifier.</p>
+<p>IsKey is a Boolean value used to identify the SdsType Key. A key defined by more than one property is called a compound key. The maximum number of properties that can define a compound key is three.</p>
 <p>In a compound key, each property that is included in the key is specified as IsKey. The Order field defines the precedence of fields applied to the index.</p>
-<p>The Value field is used for properties that represent a value. An example of a property with a value is an enum’s named constant. When representing an enum in a SdsType, the SdsType’s properties collection defines the enum’s constant list. The SdsTypeProperty’s Identifier represents the constant’s name and the SdsTypeProperty’s value represents the constant’s value (see the enum State definitions below).</p>
-<p>InterpolationMode is assigned when the property of the event should be interpolated in a specific way that differs from the InterpolationMode of the SdsType. InterpolationMode is only applied to a property that is not part of the Index. If the InterpolationMode is not set, the property is are interpolated in the manner defined by the SdsType’s IntepolationMode.</p>
+<p>The Value field is used for properties that represent a value. An example of a property with a value is an enum’s named constant. When representing an enum in a SdsType, the SdsType properties collection defines the enum’s constant list. The SdsTypeProperty Identifier represents the name of the constant and the SdsTypeProperty value represents the value of the constant (see the enum State definitions below).</p>
+<p>InterpolationMode is assigned when the property of the event should be interpolated in a specific way that differs from the InterpolationMode of the SdsType. InterpolationMode is only applied to a property that is not part of the Index. If the InterpolationMode is not set, the property is are interpolated in the manner defined by the IntepolationMode of the SdsType.</p>
 <p>An SdsType with the InterpolationMode set to <code>Discrete</code> cannot have a property with an InteroplationMode. For more information on interpolation of events, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a>.</p>
 <p>Uom is the unit of measure for the property. The Uom of a property may be specified by the name or the abbreviation. The names and abbreviations of Uoms are case sensitive.</p>
 <p>The InterpolationMode and Uom of a property can be overridden on the stream. For more information, see <a class="xref" href="SDS_Streams.html#propertyoverrides">Streams</a>.</p>
@@ -849,7 +849,7 @@ derived.BaseType = simpleType # Set the base type to the derived type
 derived.SdsTypeCode = SdsTypeCode.Object
 derived.Properties = [ observation ]
 </code></pre><p><strong>JavaScript</strong></p>
-<pre><code class="lang-javascript">var observationProprety = new SdsObjects.SdsTypeProperty({
+<pre><code class="lang-javascript">var observationProperty = new SdsObjects.SdsTypeProperty({
     &quot;Id&quot;: &quot;Observation&quot;,
     &quot;SdsType&quot;: new SdsObjects.SdsType({
         &quot;Id&quot;: &quot;strType&quot;,
@@ -863,10 +863,10 @@ var derivedType = new SdsObjects.SdsType({
     &quot;Description&quot;: &quot; Derived sample type&quot;,
     &quot;BaseType&quot;: simpleType,
     &quot;SdsTypeCode&quot;: SdsObjects.SdsTypeCodeMap.Object,
-    &quot;Properties&quot;: [ observationProprety ]
+    &quot;Properties&quot;: [ observationProperty ]
 });
 </code></pre><h2 id="type-reusability">Type reusability</h2>
-<p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type re-usability.</p>
+<p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability.</p>
 <p>For example, if there is a common index and value property for a group of types that may have additional properties, a base type can be created with those properties.</p>
 <pre><code class="lang-json">{
     &quot;Id&quot;: &quot;Simple&quot;,
@@ -1035,7 +1035,7 @@ Content-Type: application/json
 <p><strong>Note:</strong> The results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing, see: <a href="#type-reusability">Type Reusability</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
-</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; eitehr default or diagnostics.</p>
+</code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>string query</code><br>An optional query string to match which SdsTypes will be returned. For information about specifying the query parameter, see the <a class="xref" href="Searching.html">Searching</a> topic.</p>
 <p><code>int skip</code><br>An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, a default value of 0 is used.</p>
 <p><code>int count</code><br>An optional value representing the maximum number of SdsTypes to retrieve. If not specified, a default value of 100 is used.</p>

@@ -79,11 +79,16 @@
 <h1 id="retrieve-product-version-information">Retrieve product version information</h1>
 
 <p>The product version information includes the Edge Data Store version number, the .NET Core version, the Core CLR version, and the operating system. This information can be useful for troubleshooting purposes.</p>
-<p>To retrieve the product version of the Edge Data Store, use any <a class="xref" href="ManagementTools.html">Configuration tool</a> capable of making HTTP requests to execute a GET command to the following endpoint:</p>
+<p>Complete the following to retrieve the product version of the Edge Data Store:</p>
+<ol>
+<li>Start any <a class="xref" href="ManagementTools.html">Configuration tool</a> capable of making HTTP requests.</li>
+<li><p>Execute a GET command to the following endpoint:</p>
 <pre><code class="lang-http">http://localhost:5590/api/v1/diagnostics/productinformation
-</code></pre><p>  Example using curl:</p>
+</code></pre><p>Example using curl:</p>
 <pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Diagnostics/ProductInformation
-</code></pre></article>
+</code></pre></li>
+</ol>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

@@ -79,7 +79,7 @@
 <h1 id="configure-data-egress">Configure data egress</h1>
 
 <p>After you have configured one or more OMF destinations, you can configure data egress.</p>
-<p><strong>Note:</strong> You cannot add egress configurations manually, because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see <a href="#rest-urls">REST Urls</a>.</p>
+<p><strong>Note:</strong> You cannot add egress configurations manually because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see <a href="#rest-urls">REST URLs</a>.</p>
 <h2 id="create-egress-endpoints">Create egress endpoints</h2>
 <p>Complete the following procedure to create new egress endpoints:</p>
 <ol>
@@ -127,7 +127,7 @@
 <td><strong>DebugExpiration</strong></td>
 <td>Optional</td>
 <td>string</td>
-<td>A property that enables persistence of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value of this property represents the date and time this detailed information should stop being persisted. Examples of valid strings representing date and time:  Utc: “yyyy-mm-ddThh:mm:ssZ”, Local: “mm-dd-yyyy hh:mm:ss”. For more information, see <a href="../Troubleshooting/Troubleshooting.html">Troubleshooting</a>.</td>
+<td>A property that enables persistence of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value of this property represents the date and time this detailed information should stop being persisted. Examples of valid strings representing date and time:  UTC: “yyyy-mm-ddThh:mm:ssZ”, Local: “mm-dd-yyyy hh:mm:ss”. For more information, see <a href="../Troubleshooting/Troubleshooting.html">Troubleshooting</a>.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
@@ -144,7 +144,7 @@
 <tr>
 <td><strong>Enabled</strong></td>
 <td>Optional</td>
-<td>bool</td>
+<td>Boolean</td>
 <td>An indicator of whether egress is enabled when the egress endpoint is loaded. Defaults to true.</td>
 </tr>
 <tr>
@@ -304,47 +304,47 @@
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints</td>
 <td>GET</td>
-<td>Gets all configured egress endpoints</td>
+<td>Gets all configured egress endpoints.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints</td>
 <td>DELETE</td>
-<td>Deletes all configured egress endpoints</td>
+<td>Deletes all configured egress endpoints.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints</td>
 <td>POST</td>
-<td>Adds an array of egress endpoints, will fail if any endpoint already exists</td>
+<td>Adds an array of egress endpoints, fails if any endpoint already exists.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints</td>
 <td>POST</td>
-<td>Adds a single egress endpoints, will fail if endpoint already exists</td>
+<td>Adds a single egress endpoint, fails if endpoint already exists.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints</td>
 <td>PUT</td>
-<td>Replaces all egress endpoints</td>
+<td>Replaces all egress endpoints.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints/{id}</td>
 <td>GET</td>
-<td>Gets configured endpoint with <em>id</em></td>
+<td>Gets configured endpoint with <em>id</em>.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints/{id}</td>
 <td>DELETE</td>
-<td>Deletes configured endpoint with <em>id</em></td>
+<td>Deletes configured endpoint with <em>id</em>.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints/{id}</td>
 <td>PUT</td>
-<td>Replaces egress endpoint with <em>id</em>, will fail if endpoint doesn&#39;t exist</td>
+<td>Replaces egress endpoint with <em>id</em>, fails if endpoint does not exist.</td>
 </tr>
 <tr>
 <td>api/v1/configuration/storage/periodicegressendpoints/{id}</td>
 <td>PATCH</td>
-<td>Allows partial updating of configured endpoint with <em>id</em></td>
+<td>Allows partial updating of configured endpoint with <em>id</em>.</td>
 </tr>
 </tbody>
 </table>

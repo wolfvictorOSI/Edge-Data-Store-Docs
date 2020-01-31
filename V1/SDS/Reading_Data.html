@@ -217,8 +217,8 @@ and specified start and end indexes.</li>
 </table>
 <p>*When extreme values are involved in an interpolation (for example,
 Decimal.MaxValue) the call might result in a BadRequest exception.</p>
-<p>**Nullable types are interpolated in the same manner as their non-nulllable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.</p>
-<p>If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property, see <a class="xref" href="SDS_Types.html#sdstypeproperty">SdsTypeProperty</a>. For more information on overriding the interpolation mode for a specific stream, see <a class="xref" href="SDS_Streams.html">Sds Streams</a>.</p>
+<p>**Nullable types are interpolated in the same manner as their non-nullable equivalents as long as the values surrounding the desired interpolation index are non-null. If either of the values are null, the interpolated value will be null.</p>
+<p>If the InterpolationMode is not assigned, the events are interpolated in the default manner, unless the interpolation mode is overridden in the SdsTypeProperty or the SdsStream. For more information on overriding the interpolation mode on a specific type property, see <a class="xref" href="SDS_Types.html#sdstypeproperty">SdsTypeProperty</a>. For more information on overriding the interpolation mode for a specific stream, see <a class="xref" href="SDS_Streams.html">Streams</a>.</p>
 <h3 id="extrapolation">Extrapolation</h3>
 <p>Extrapolation defines how a stream responds to requests with indexes that precede or follow all data in the steam. ExtrapolationMode acts as a master switch to determine whether extrapolation occurs and at which end of the data.</p>
 <p>ExtrapolationMode works with the InterpolationMode to determine how a stream responds. The following tables show how ExtrapolationMode affects returned values for each InterpolationMode value:</p>
@@ -296,10 +296,10 @@ Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 </tr>
 </tbody>
 </table>
-<p>If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream, see <a class="xref" href="SDS_Streams.html">Sds Streams</a>.</p>
+<p>If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream, see <a class="xref" href="SDS_Streams.html">Streams</a>.</p>
 <p>For additional information about the effect of read characteristics, see the documentation on the <a class="xref" href="Reading_Data_API.html">read method</a> you are using.</p>
 <h3 id="read-characteristics">Read characteristics</h3>
-<p>When you request data at an index for which no stored event exists, the read characterisitics determine whether the result is an error, no event, interpolated event, or extrapolated event. The combination of the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream determine the read characteristics.</p>
+<p>When you request data at an index for which no stored event exists, the read characteristics determine whether the result is an error, no event, interpolated event, or extrapolated event. The combination of the type of the index and the interpolation and extrapolation modes of the SdsType and the SdsStream determine the read characteristics.</p>
 <h3 id="filter-expressions">Filter expressions</h3>
 <p>You can apply filter expressions to any read that returns multiple values, including Get Values, Get Range Values, Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally filtering events that do not meet the filter conditions.</p>
 <p>For details on filter expressions, see the <a class="xref" href="Filter_Expressions.html">Filter expressions</a> section.</p>
@@ -386,7 +386,7 @@ Decimal.MaxValue) the call might result in a BadRequest exception.</p>
 <li><a href="#reading-with-sdsstreamviews">Reading with SdsStreamViews</a>: Changing the shape of the returned data</li>
 <li><a href="#unit-conversion-of-data">Unit of Measure Conversions</a>: Converting the unit of measure of the data  </li>
 </ul>
-<p>Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the tranformation endpoints:</p>
+<p>Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the transformation endpoints:</p>
 <pre><code class="lang-text">  api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/First
   api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform/Last
   api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/Transform

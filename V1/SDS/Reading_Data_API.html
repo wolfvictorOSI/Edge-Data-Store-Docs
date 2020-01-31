@@ -444,7 +444,7 @@ Content-Type: application/json
         &quot;Measurement&quot;: 40
     }
 ]
-</code></pre><p>In order to page the results of the request, a continuation token may be specified. This requests the first page of the first two stored events between start index and end index by indicating count is 2 and continuationToken is an empty string:</p>
+</code></pre><p>To page the results of the request, a continuation token may be specified. This requests the first page of the first two stored events between start index and end index by indicating count is 2 and continuationToken is an empty string:</p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data
     ?startIndex=2017-11-23T12:30:00Z&amp;endIndex=2017-11-23T15:30:00Z
     &amp;count=2&amp;continuationToken=
@@ -491,7 +491,7 @@ Content-Type: application/json
 <p>Returns a collection of values based on request parameters. The stream&#39;s read characteristics determine how events are calculated for indexes at which no stored event exists. Interpolation is not supported for streams with compound indexes.
 SDS supports two ways of specifying which interpolated events to return:  </p>
 <ul>
-<li><a href="#getvaluesindexcollection">Index Collection</a>: One or more indexes can be passed to the request in order to retrieve events at specific indexes.</li>
+<li><a href="#getvaluesindexcollection">Index Collection</a>: One or more indexes can be passed to the request to retrieve events at specific indexes.</li>
 <li><a href="#getvaluesinterpolatedinterval">Interval</a>: An interval can be specified with a start index, end index, and count. This will return the specified count of events evenly spaced from start index to end index.</li>
 </ul>
 <p><a name="getvaluesindexcollection"></a></p>
@@ -522,7 +522,7 @@ Content-Type: application/json
 </code></pre><p>The following request specifies an index for which no stored event exists:</p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data/
     Interpolated?index=2017-11-23T13:30:00Z
-</code></pre><p>Because the index is a valid type for interpolation and the stream has a <code>InterpolationMode</code> of <code>Continuous</code>, this request receives a response with an event interpolated at the specified index:</p>
+</code></pre><p>Because the index is a valid type for interpolation and the stream has an <code>InterpolationMode</code> of <code>Continuous</code>, this request receives a response with an event interpolated at the specified index:</p>
 <p><strong>Response body</strong></p>
 <pre><code class="lang-json">HTTP/1.1 200
 Content-Type: application/json
@@ -806,7 +806,7 @@ Content-Type: application/json
 </code></pre><hr>
 <h2 id="get-sampled-values"><code>Get Sampled Values</code></h2>
 <p>Returns data sampled by intervals between a specified start and end index.</p>
-<p>Sampling is driven by a specified property or properties of the stream&#39;s Sds Type. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information see <a class="xref" href="Reading_Data.html#interpolation">Interpolation.</a></p>
+<p>Sampling is driven by a specified property or properties of the stream&#39;s SdsType. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information see <a class="xref" href="Reading_Data.html#interpolation">Interpolation.</a></p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/
     Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;sampleBy={sampleBy}

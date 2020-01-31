@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="sdsWritingDataApi">
 <h1 id="api-calls-for-writing-data">API calls for writing data</h1>
 
-<h4 id="example-type-stream-and-data">Example type, stream, and data</h4>
+<h2 id="example-type-stream-and-data">Example type, stream, and data</h2>
 <p>Many of the following API methods descriptions contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples:</p>
 <p><strong>Example type</strong><br><code>SimpleType</code> is an SdsType with a single index and two additional properties. This type is defined in Python and Javascript:</p>
 <h6 id="python">Python</h6>
@@ -213,7 +213,7 @@ var SimpleType = function () {
 </code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>string streamId</code><br>The stream identifier.  </p>
 <p><strong>Request body</strong>
-A serialized list of one or more events of the stream type..</p>
+A serialized list of one or more events of the stream type.</p>
 <p><strong>Response</strong><br>The response includes a status code.</p>
 <p><strong>Note:</strong> This request returns an error if the stream does not have an event to be replaced at the specified index. If any individual event fails to be replaced, the entire operation is rolled back and no replaces are performed. The index that caused the issue and the streamId are included in the error response.</p>
 <hr>

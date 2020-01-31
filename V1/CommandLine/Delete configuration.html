@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Egress execution details </title>
+    <title>Delete configuration </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Egress execution details ">
+    <meta name="title" content="Delete configuration ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,24 +75,29 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="EgressExecutionDetails">
-<h1 id="egress-execution-details">Egress execution details</h1>
+            <article class="content wrap" id="_content" data-uid="DeleteConfiguration">
+<h1 id="delete-configuration">Delete configuration</h1>
 
-<p>After you add configuration for an egress endpoint, egress execution will periodically occur for that endpoint. Egress is handled individually per configured endpoint. Only the first execution types and containers will be egressed; subsequently only new or changed types/containers will be egressed. </p>
-<p><strong>Note:</strong> Only streams with a single, timeseries-based index can be egressed. </p>
-<p>Type creation must be successful to perform container creation; likewise, container creation must be successful to perform data egress.</p>
-<p>Type, container and data items are batched into one or more OMF messages when egressing. Per the requirements defined in OMF, a single message will not exceed 192KB in size. Compression is automatically applied to outbound egress messages. On the destination, failure to add a single item will result in the message failing. In that case the Edge Data Store will fall back to egressing each item individually, per type or stream (that is each type, each stream, all data for a single stream). Types, containers, and data will continue to be egressed as long as the destination continues to respond to HTTP requests - retrying previous failures as needed.</p>
-<p>Certain HTTP failures during egress will result in a retry. Edge Data Store will retry an HTTP request a maximum of five times with exponentially increasing delays between each request. The total time waiting and retrying is currently set at 1 minute. During that time egress of other messages will be delayed. The following are retriable occurrences:</p>
-<ul>
-<li>TimeoutException</li>
-<li>HttpRequestException</li>
-<li>HttpStatusCode RequestTimeout (408)</li>
-<li>HttpStatusCode BadGateway (502)</li>
-<li>HttpStatusCode ServiceUnavailable (503)</li>
-<li>HttpStatusCode GatewayTimeout (504)</li>
-</ul>
-<p>For data collection and egress, in-memory and on-disk storage are used to track the last successfully egressed data event, per stream. Data is egressed in order and includes future events.</p>
-<p><strong>Note:</strong>  When an event with a future timestamp is successfully egressed, only values after the associated timestamp of that event will be egressed.</p>
+<h2 id="delete-configuration-entry">Delete configuration entry</h2>
+<p>Complete the following to delete a configuration entry from a collection configuration in Edge Data Store. For example, you can delete a single health endpoint of the &#39;HealthEndpoints&#39; facet within the &#39;System&#39; component.</p>
+<ol>
+<li>Open command line. </li>
+<li>Type the <code>componentId</code> and <code>facetName</code> followed by the ID of the entry to be removed.</li>
+<li><p>Add the <code>delete</code> keyword and press Enter.</p>
+<p><strong>Example:</strong> Delete endpoint_1 of the HealthEndpoints facet from the System:</p>
+<pre><code class="lang-bash">edgecmd Configuration System HealthEndpoints Id=endpoint_1 delete
+</code></pre></li>
+</ol>
+<h2 id="delete-configuration-file">Delete configuration file</h2>
+<p>Complete the following to delete a configuration file from Edge Data Store. For example, you can delete the configuration file of the &#39;HealthEndpoints&#39; facet within the &#39;System&#39; component.</p>
+<ol>
+<li>Open command line. </li>
+<li>Type the <code>componentId</code> and <code>facetName</code>.</li>
+<li><p>Add the <code>delete</code> keyword and press Enter.</p>
+<p><strong>Example:</strong> Delete the HealthEndpoints facet configuration file:</p>
+<pre><code class="lang-bash">edgecmd Configuration System HealthEndpoints delete
+</code></pre></li>
+</ol>
 </article>
           </div>
           
@@ -101,7 +106,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/Egress/Egress execution details.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/CommandLine/Delete configuration.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

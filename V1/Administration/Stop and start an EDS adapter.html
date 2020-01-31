@@ -80,36 +80,28 @@
 
 <p>By default, when Edge Data Store starts, all currently configured EDS adapters are started and remain running until the product shuts down.</p>
 <h2 id="stop-an-eds-adapter">Stop an EDS adapter</h2>
-<p>To stop an EDS adapter, use any <a class="xref" href="ManagementTools.html">Configuration tool</a> capable of making HTTP requests to execute a POST command to the following endpoint:</p>
-<pre><code>```http
-http://localhost:5590/api/v1/administration/EDS adapterId/Stop
-```
-
-Example using curl:
-
-```bash
-curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/OpcUa1/Stop
-```
-
-**Note:** Replace _EDS adapterId_ with the ID of the EDS adapter you want to stop.
-
-An HTTP status 204 message indicates success.
-</code></pre><h2 id="start-an-eds-adapter">Start an EDS adapter</h2>
-<p>To start an EDS adapter, use any <a class="xref" href="ManagementTools.html">Configuration tool</a> capable of making HTTP requests to execute a POST command to the following endpoint:</p>
-<pre><code>```http
-http://localhost:5590/api/v1/administration/EDS adapterId/Start
-```
-
-Example using curl:
-
-```bash
-curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/Modbus1/Start
-```
-
-**Note:** Replace _EDS adapterId_ with the ID of the EDS adapter you want to start.
-
-An HTTP status 204 message indicates success.
-</code></pre></article>
+<p>Complete the follwing to stop an EDS adapter:</p>
+<ol>
+<li>Start any <a class="xref" href="ManagementTools.html">Configuration tool</a> capable of making HTTP requests.</li>
+<li><p>Execute a POST command to the following endpoint, replacing <code>&lt;adapterId&gt;</code> with the adapter that you want to stop:</p>
+<pre><code class="lang-http">http://localhost:5590/api/v1/administration/&lt;adapterId&gt;/Stop
+</code></pre><p> Example <strong>Stop the OpcUa1 adapter</strong> using curl: </p>
+<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/OpcUa1/Stop
+</code></pre><p> An HTTP status 204 message indicates success.</p>
+</li>
+</ol>
+<h2 id="start-an-eds-adapter">Start an EDS adapter</h2>
+<p>Complete the following to start an EDS adapter:</p>
+<ol>
+<li>Start any <a class="xref" href="ManagementTools.html">Configuration tool</a> capable of making HTTP requests.</li>
+<li><p>Execute a POST command to the following endpoint, replacing <code>&lt;adapterId&gt;</code> with the adapter that you want to start:</p>
+<pre><code class="lang-http">http://localhost:5590/api/v1/administration/&lt;adapterId&gt;/Start
+</code></pre><p> Example <strong>Stop the Modbus1 adapter</strong> using curl:</p>
+<pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/Modbus1/Start
+</code></pre><p> An HTTP status 204 message indicates success.</p>
+</li>
+</ol>
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">

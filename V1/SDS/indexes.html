@@ -79,8 +79,8 @@
 <h1 id="indexes">Indexes</h1>
 
 <p>Indexes speed up and order the results of searches. A key uniquely identifies a record within a collection of records. Keys are unique within the collection.</p>
-<p>In Sds, the key of an SdsType is also an index. The key is often referred to as the <em>primary index,</em> while all other indexes are referred to as <em>secondary indexes</em> or <em>secondaries</em>.</p>
-<p>An SdsType that is used to define an SdsStream must specify a key. When inserting data into an SdsStream, every key value must be unique. Sds will not store more than a single event for a given key. An event with a particular key may be deleted or updated, but two events with the same key cannot exist.</p>
+<p>In SDS, the key of an SdsType is also an index. The key is often referred to as the <em>primary index,</em> while all other indexes are referred to as <em>secondary indexes</em> or <em>secondaries</em>.</p>
+<p>An SdsType that is used to define an SdsStream must specify a key. When inserting data into an SdsStream, every key value must be unique. SDS will not store more than a single event for a given key. An event with a particular key may be deleted or updated, but two events with the same key cannot exist.</p>
 <p>Secondary indexes are defined on SdsStreams and are applied to a single property. You can define many secondary indexes. Secondary index values do not need to be unique.</p>
 <p>The following table contains supported index types:</p>
 <table>

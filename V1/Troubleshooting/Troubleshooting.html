@@ -80,12 +80,12 @@
 
 <p>You have both local and remote means of diagnosing any issues you encounter while using or developing against Edge Data Store.</p>
 <p>Edge Data Store supports a diagnostics namespace that is used to store streams containing <a class="xref" href="../Diagnostics/Diagnostics.html">diagnostic</a> information from Edge Data Store itself. As with any other stream data stored in the Edge Storage component, you can egress this to either a PI Web Server or OSIsoft Cloud Services to monitor the state of a system remotely.</p>
-<p>In addition to diagnostics data, all components in Edge Data Store support OMF health messages. You configure health messages with the <a href="xref:SystemHealthEndpointsConfiguration">Health endpoint configuration</a>, to send health data to either PI Web Server or OSIsoft Cloud Service endpoints for remote monitoring of devices.</p>
+<p>In addition to diagnostics data, all components in Edge Data Store support OMF health messages. You configure health messages with the <a class="xref" href="../Configuration/System%20health%20endpoints%20configuration.html">Health endpoint configuration</a>, to send health data to either PI Web Server or OSIsoft Cloud Service endpoints for remote monitoring of devices.</p>
 <h2 id="omf-ingress">OMF ingress</h2>
 <p>Complete the following when a custom application fails to write stream data to EDS:</p>
 <ol>
 <li><p>Verify the custom application is sending OMF messages in the correct order: 1) OMF type, 2) OMF container, 3) OMF data.</p>
-<p><strong>Note:</strong> No OMF Messages will be ingressed into Edge Data Store if they are not sent in correct order.</p>
+<p><strong>Note:</strong> OMF messages must be sent in the correct order to be ingressed into Edge Data Store.</p>
 </li>
 <li><p>Refer to logging of warnings, errors, and messages for help with diagnosing these issues.</p>
 </li>
@@ -105,7 +105,7 @@
 </li>
 </ol>
 <p>Examples of valid strings representing date and time:</p>
-<pre><code>Utc: “yyyy-mm-ddThh:mm:ssZ”
+<pre><code>UTC: “yyyy-mm-ddThh:mm:ssZ”
 Local: “mm-dd-yyyy hh:mm:ss”
 </code></pre><h2 id="periodic-egress">Periodic egress</h2>
 <p>EDS periodic egress extracts data from SDS streams and sends the appropriate sequences of type, container, and data OMF messages on startup.  </p>
@@ -113,7 +113,7 @@ Local: “mm-dd-yyyy hh:mm:ss”
 <ol>
 <li>Check all egress configuration files in Edge Data Store to verify whether any endpoints are duplicated. A duplicate endpoint means that more than one device is egressing data to it, resulting in unexpected data.</li>
 <li><p>Assign stream prefixes in the <a class="xref" href="../Egress/Egress.html">periodic egress endpoint configuration</a> to ensure that output data streams are logically separated in the systems of record.</p>
-<p><strong>Note:</strong> Type prefixes may be helpful if you have changed a stream type definitions on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.</p>
+<p><strong>Note:</strong> Type prefixes may be helpful if you have changed a stream type definition on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.</p>
 </li>
 </ol>
 <h3 id="periodic-egress-logging">Periodic egress logging</h3>
@@ -131,15 +131,14 @@ Local: “mm-dd-yyyy hh:mm:ss”
 </li>
 </ol>
 <p>Examples of valid strings representing date and time:</p>
-<pre><code>Utc: “yyyy-mm-ddThh:mm:ssZ”
+<pre><code>UTC: “yyyy-mm-ddThh:mm:ssZ”
 Local: “mm-dd-yyyy hh:mm:ss”
 </code></pre><h3 id="debugging-folderfile-structure">Debugging folder/file structure</h3>
-<p>The overall number and content length of each request/response pair can be quite large. Debug information is therefore stored to disk in a separate location from the typical log messages. Debug folders and files will be created under the Edge Data Store data folder. </p>
-<p>The following displays the debugging folder/file structure:</p>
+<p>The overall number and content length of each request/response pair can be quite large. Debug information is therefore stored to disk in a separate location from the typical log messages. Debug folders and files will be created under the Edge Data Store data folder as follows: </p>
 <pre><code>Windows: %programdata%\OSIsoft\EdgeDataStore\Storage\egressdump\{tenantId}\{namespaceId}\{egressId}\{omfType}\{Ticks}-{Guid}-{Req/Res}.txt
 
 Linux: /usr/share/OSIsoft/EdgeDataStore/Storage/egressdump/{tenantId}/{namespaceId}/{egressId}/{omfType}/{Ticks}-{Guid}-{Req/Res}.txt
-</code></pre><p>The following table displays the information represented by the non-intuitive elements of the file structure:</p>
+</code></pre><p>The OMF specific elements of the file structure are defined in the following table:</p>
 <table>
 <thead>
 <tr>
@@ -150,19 +149,19 @@ Linux: /usr/share/OSIsoft/EdgeDataStore/Storage/egressdump/{tenantId}/{namespace
 <tbody>
 <tr>
 <td><em>omfType</em></td>
-<td>Type/Container/Data</td>
+<td>The OMF message type: Type, Container, or Data.</td>
 </tr>
 <tr>
 <td><em>Ticks</em></td>
-<td>tick count for UTC DateTime when determined message would be written to disk</td>
+<td>The time in milliseconds (tick count) for UTC DateTime when determined message would be written to disk.</td>
 </tr>
 <tr>
 <td><em>Guid</em></td>
-<td>unique Guid for each request/response pair</td>
+<td>The unique GUID for each request/response pair.</td>
 </tr>
 <tr>
 <td><em>Req/Res</em></td>
-<td>whether message was HTTP request or response</td>
+<td>Whether the message was HTTP request or response.</td>
 </tr>
 </tbody>
 </table>

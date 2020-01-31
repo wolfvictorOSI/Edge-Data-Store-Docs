@@ -121,23 +121,27 @@ ENTRYPOINT [&quot;./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host&quot;]
 <li><p>Copy the <em>EdgeDataStore_linux-arm.tar</em> file to the same directory as the Dockerfile.</p>
 </li>
 <li><p>Run the following command line (sudo may be necessary):</p>
-<pre><code>docker build -t edgedatastore .
+<pre><code>docker build -t edgedatastore
 </code></pre></li>
 </ol>
 <h2 id="run-the-edge-data-store-docker-containers">Run the Edge Data Store Docker containers</h2>
 <h3 id="rest-access-from-the-local-machine-from-docker">REST access from the local machine from Docker</h3>
-<ul>
-<li><p>To run the container, type the following in the command line (sudo may be necessary):</p>
+<p>Complete the following to run the container:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line (sudo may be necessary):</p>
 <pre><code class="lang-bash">docker run -d --network host edgedatastore
 </code></pre></li>
-</ul>
+</ol>
 <p>Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data stored by the Edge Data Store is stored in the container itself. When the container is deleted, the data stored is also deleted.</p>
 <h3 id="persistent-storage-on-the-local-file-system-from-docker">Persistent storage on the local file system from Docker</h3>
-<ul>
-<li><p>To run the container, type the following in the command line (sudo may be necessary):</p>
+<p>Complete the following to run the container:</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line (sudo may be necessary):</p>
 <pre><code class="lang-bash">docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ edgedatastore
 </code></pre></li>
-</ul>
+</ol>
 <p>Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data that would be written to the container is instead written to the host directory. In this example the host directory is a simple directory on the local machine, /edgeds. You can specify any directory you want. </p>
 <h3 id="port-number-change">Port number change</h3>
 <p>To use a different port other than 5590, see <a class="xref" href="../Configuration/System%20port%20configuration.html">System port configuration</a>. Changing the configuration of the Edge Data Store running in the container changes the port exposed to the local machine.</p>

@@ -83,17 +83,18 @@ receiving health messages. To enable this functionality, you must configure Heal
 <h2 id="configure-system-health-endpoints">Configure system health endpoints</h2>
 <p>Complete the following to configure system health endpoints</p>
 <ol>
-<li>Using any text editor, create a file that contains system health endpoints in JSON form. This file can be created or copied to any directory on a device with Edge Data Store installed.<ul>
-<li>For content structure, see <a href="#system-health-endpoints-example">System health endpoints example</a>. </li>
-<li>For a table of all available parameters, see <a href="#parameters-for-system-health-endpoints">Parameters for system health endpoints</a>. </li>
+<li>Create a JSON file containing system health endpoints.<ul>
+<li>For content structure, see <a href="#system-health-endpoints-example">System health endpoints example</a>.  </li>
 </ul>
 </li>
+<li>Update the parameters as needed. For a table of all available parameters, see <a href="#parameters">Parameters</a>.</li>
 <li>Save the file as <em>System_HealthEndpoints.config.json</em>.</li>
-<li>Use any <a href="xref:managementTools">tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/System/HealthEndpoints</code>.
-Example using cURL (run this command from the same directory where the file is located):</li>
-</ol>
+<li><p>Use any <a href="xref:managementTools">Configuration tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/System/HealthEndpoints</code>.</p>
+<p> Example using curl (run this command from the same directory where the file is located):</p>
 <pre><code class="lang-bash">curl -v -d &quot;@System_HealthEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; http://localhost:5590/api/v1/configuration/System/HealthEndpoints
-</code></pre><h2 id="system-health-endpoints-schema">System health endpoints schema</h2>
+</code></pre></li>
+</ol>
+<h2 id="system-health-endpoints-schema">System health endpoints schema</h2>
 <p>The following table defines the basic behavior of the <em>System_HealthEndpoints.config.json</em> file.</p>
 <table>
 <thead>
@@ -117,7 +118,7 @@ Example using cURL (run this command from the same directory where the file is l
 </tr>
 </tbody>
 </table>
-<h2 id="parameters-for-system-health-endpoints">Parameters for system health endpoints</h2>
+<h2 id="parameters">Parameters</h2>
 <p>The following parameters are available for configuring system health endpoints.</p>
 <table>
 <thead>
