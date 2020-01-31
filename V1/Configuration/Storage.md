@@ -4,7 +4,7 @@ uid: storage
 
 # Storage
 
-The EDS storage component provides Sequential Data Store (SDS) storage, with a rich array of functionality available through REST APIs. For the storage component, you configure [storage runtime](xref:storageruntime), [logging configuration](xref:LoggingConfiguration), and [configure data egress](xref:configureEgress).
+The EDS storage component provides Sequential Data Store (SDS) storage, with a rich array of functionality available through REST APIs. For the storage component, you configure [storage runtime](xref:storageruntime), [logging](xref:LoggingConfiguration), and [data egress](xref:configureEgress).
 
 For more information, see [SDS reference](sdsOverview).
 
