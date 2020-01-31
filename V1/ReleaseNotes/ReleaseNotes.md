@@ -74,7 +74,7 @@ Complete the following:
   sudo apt install ./EdgeDataStore_linux_<either x64 or arm depending upon processor>.deb
   ```
 
-A check will be done for prerequisites. If the Linux operating system is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:
+  A check will be done for prerequisites. If the Linux operating system is up to date, the install will succeed. If the install fails, run the following commands from the terminal window and try the install again:
 
   ```bash
   sudo apt update
@@ -83,77 +83,80 @@ A check will be done for prerequisites. If the Linux operating system is up to d
 
 2. After the check for prerequisites succeeds, a prompt will display asking if you want to change the default port (5590). If you want to change the port, type in another port number in the acceptable range for the operating system you are using. If 5590 is acceptable, press Enter.
 
-The install will complete, and Edge Data Store will be running on your device. You can verify that Edge Data Store is correctly installed by running the following script from the terminal window. 
-**Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
+  The install will complete, and Edge Data Store will be running on your device. 
+  
+3. Optional: To verify that Edge Data Store is correctly installed, run the following script from the terminal window. 
+  
+  **Note:** Depending on the processor, memory, and storage, it may take the system a few seconds to start up.
 
   ```bash
   curl http://localhost:5590/api/v1/configuration
   ```
 
-If the installation was successful, you will get back a JSON copy of the default system configuration:
+  If the installation was successful, you will get back a JSON copy of the default system configuration:
 
-```json
-{
-  "Modbus1": {
-    "Logging": {
-      "logLevel": "Information",
-      "logFileSizeLimitBytes": 34636833,
-      "logFileCountLimit": 31
-    },
-    "DataSource": {},
-    "DataSelection": []
-  },
-  "OpcUa1": {
-    "Logging": {
-      "logLevel": "Information",
-      "logFileSizeLimitBytes": 34636833,
-      "logFileCountLimit": 31
-    },
-    "DataSource": {},
-    "DataSelection": []
-  },
-  "Storage": {
-    "PeriodicEgressEndpoints": [],
-    "Runtime": {
-      "streamStorageLimitMb": 2,
-      "streamStorageTargetMb": 1,
-      "ingressDebugExpiration": "0001-01-01T00:00:00",
-      "checkpointRateInSec": 30,
-      "transactionLogLimitMB": 250,
-      "enableTransactionLog": true
-    },
-    "Logging": {
-      "logLevel": "Information",
-      "logFileSizeLimitBytes": 34636833,
-      "logFileCountLimit": 31
-    }
-  },
-  "System": {
-    "Logging": {
-      "logLevel": "Information",
-      "logFileSizeLimitBytes": 34636833,
-      "logFileCountLimit": 31
-    },
-    "HealthEndpoints": [],
-    "Port": {
-      "port": 5590
-    },
-    "Components": [
-      {
-        "componentId": "OpcUa1",
-        "componentType": "OpcUa"
+  ```json
+  {
+    "Modbus1": {
+      "Logging": {
+        "logLevel": "Information",
+        "logFileSizeLimitBytes": 34636833,
+        "logFileCountLimit": 31
       },
-      {
-        "componentId": "Modbus1",
-        "componentType": "Modbus"
+      "DataSource": {},
+      "DataSelection": []
+    },
+    "OpcUa1": {
+      "Logging": {
+        "logLevel": "Information",
+        "logFileSizeLimitBytes": 34636833,
+        "logFileCountLimit": 31
       },
-      {
-        "componentId": "Storage",
-        "componentType": "Storage"
+      "DataSource": {},
+      "DataSelection": []
+    },
+    "Storage": {
+      "PeriodicEgressEndpoints": [],
+      "Runtime": {
+        "streamStorageLimitMb": 2,
+        "streamStorageTargetMb": 1,
+        "ingressDebugExpiration": "0001-01-01T00:00:00",
+        "checkpointRateInSec": 30,
+        "transactionLogLimitMB": 250,
+        "enableTransactionLog": true
+      },
+      "Logging": {
+        "logLevel": "Information",
+        "logFileSizeLimitBytes": 34636833,
+        "logFileCountLimit": 31
       }
-    ]
+    },
+    "System": {
+      "Logging": {
+        "logLevel": "Information",
+        "logFileSizeLimitBytes": 34636833,
+        "logFileCountLimit": 31
+      },
+      "HealthEndpoints": [],
+      "Port": {
+        "port": 5590
+      },
+      "Components": [
+        {
+          "componentId": "OpcUa1",
+          "componentType": "OpcUa"
+        },
+        {
+          "componentId": "Modbus1",
+          "componentType": "Modbus"
+        },
+        {
+          "componentId": "Storage",
+          "componentType": "Storage"
+        }
+      ]
+    }
   }
-}
-```
+  ```
 
-If you get back an error, wait a few seconds and try it again. On a device with limited processor, memory, and slow storage, it may take some time before Edge Data Store is fully initialized and running for the first time.
+  If you get back an error, wait a few seconds and try it again. On a device with limited processor, memory, and slow storage, it may take some time before Edge Data Store is fully initialized and running for the first time.
