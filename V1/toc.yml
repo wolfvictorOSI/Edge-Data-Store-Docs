@@ -24,5 +24,3 @@
   topicHref: SDS/SequentialDataStore.md
 - name: Release notes
   href: ReleaseNotes/ReleaseNotes.md
-- name: Edge Data Store support
-  href: Support/Edge Data Store support.md
