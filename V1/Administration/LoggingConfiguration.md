@@ -2,7 +2,7 @@
 uid: loggingConfiguration
 ---
 
-# Message logging configuration
+# Logging configuration
 
 Edge Data Store writes daily log messages to flat text files in the following locations:
 
