@@ -98,13 +98,13 @@
 <p>The following diagram depicts the relationship of key functions to relevant components of the Edge Data Store:</p>
 <p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOverview2.jpg" alt="EDS components" title="EDS components"></p>
 <h2 id="data-ingress-to-edge-data-store">Data ingress to Edge Data Store</h2>
-<p>Edge Data Store can ingress data in a number of ways. There are two built-in adapters: <a class="xref" href="Overview/ModbusQuickStart.html">Modbus TCP EDS</a> and <a class="xref" href="Overview/OpcUaQuickStart.html">OPC UA EDS</a>. Data can also be ingressed using OSIsoft Message Format <a class="xref" href="Overview/OMFQuickStart.html">(OMF)</a> and the Sequential Data Store <a class="xref" href="SDS/Writing_Data.html">SDS</a> REST APIs.</p>
+<p>Edge Data Store can ingress data in a number of ways. There are two built-in adapters: Modbus TCP EDS adapter and OPC UA EDS adapter. Data can also be ingressed using OSIsoft Message Format (OMF) and the Sequential Data Store (SDS) REST APIs.</p>
 <p>The following diagram depicts an OMF data ingress scenario in the Edge Data Store:</p>
 <p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOMFIngress.jpg" alt="EDS OMF Ingress" title="EDS OMF Ingress"></p>
 <p>During installation of Edge Data Store, you can choose to install either a Modbus TCP EDS adapter or an OPC UA EDS adapter, or both. The Modbus TCP and OPC UA EDS adapters require configuration of data source and data selection before they can collect data in Edge Data Store. You can use OMF data ingress once Edge Data Store is installed, with no further configuration steps.</p>
 <p>Edge Data Store is composed of components, and is designed to allow additional EDS adapters at a later point.</p>
 <h2 id="local-data-read-and-write-access">Local data read and write access</h2>
-<p>You can access all data in Edge Data Store by using the Sequential Data Store <a class="xref" href="Overview/SDSQuickStart.html">SDS Read/Write quick start</a> REST API. You can use this data for local applications that perform analytics or visualization. </p>
+<p>You can access all data in Edge Data Store by using the Sequential Data Store (SDS) REST API. You can use this data for local applications that perform analytics or visualization. </p>
 <h3 id="example-eds-visualization-application">Example EDS visualization application</h3>
 <p>The following diagram depicts the flow of data from a customer visualization application into Edge Data Store, via either OMF or SDS REST calls:</p>
 <p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSVisualization.jpg" alt="EDS Visualization" title="EDS Visualization"></p>
@@ -112,8 +112,8 @@
 <p>The following diagram depicts the flow of data from a customer analytics application into Edge Data Store, via either OMF or SDS REST calls:</p>
 <p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSAnalytics.jpg" alt="EDS Analytics" title="EDS Analytics"></p>
 <h2 id="data-egress-from-edge-data-store">Data egress from Edge Data Store</h2>
-<p>Edge Data Store can send data to both PI Data Archive using PI Web API and OSIsoft Cloud Services. For more information, see <a class="xref" href="Overview/PIEgressQuickStart.html">PI egress quick start</a> and <a class="xref" href="Overview/OCSEgressQuickStart.html">OCS egress quick start</a>.</p>
-<p>After Edge Data Store is installed, additional configuration is necessary to send data to both OCS and PI Web API.</p>
+<p>Edge Data Store can send data to both PI Data Archive using PI Web API and OSIsoft Cloud Services (OCS). After Edge Data Store is installed, additional configuration is necessary to send data to both OCS and PI Web API.</p>
+<p>For information about using a componet of EDS, see the corresponding quick start guide for that component.</p>
 </article>
           </div>
           
