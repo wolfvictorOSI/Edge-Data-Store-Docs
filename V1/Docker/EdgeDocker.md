@@ -40,7 +40,7 @@ This topic provides examples of how to create a Docker container with the Edge D
     ENTRYPOINT ["./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host"]
     ```
 
-2. Copy the _EdgeDataStore_linux-arm.tar_ file to the same directory as the Dockerfile.
+2. Copy the _EdgeDataStore_linux-arm.tar.gz_ file to the same directory as the Dockerfile.
 
 3. Run the following command line (sudo may be necessary):
 
