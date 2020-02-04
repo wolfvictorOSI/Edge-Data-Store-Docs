@@ -15,7 +15,7 @@ Complete the following to configure system health endpoints
     - For content structure, see [System health endpoints example](#system-health-endpoints-example).  
 2. Update the parameters as needed. For a table of all available parameters, see [Parameters](#parameters).
 3. Save the file as _System_HealthEndpoints.config.json_.
-4. Use any [Configuration tool](xref:managementTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/System/HealthEndpoints`.
+4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/System/HealthEndpoints`.
 
     Example using curl (run this command from the same directory where the file is located):
 
