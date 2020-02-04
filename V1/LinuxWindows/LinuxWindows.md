@@ -10,7 +10,7 @@ When developing applications to work with the Edge Data Store, there is no diffe
 
 ### Windows
 
-Program binaries are placed in the _C:\Program Files\OSIsoft\EdgeDataStore_ directory by default. For information about changing this location, see the [installation](xref:InstallEdgeDataStore) documentation. 
+Program binaries are placed in the _C:\Program Files\OSIsoft\EdgeDataStore_ directory by default. For information about changing this location, see [Install Edge Data Store](xref:InstallEdgeDataStore). 
 
 Configuration, log, and data files are placed under _C:\ProgramData\OSIsoft\EdgeDataStore_ This is not configurable. This folder structure will not be automatically removed if you uninstall EDS.  For information about clearing these files, see [Uninstall Edge Data Store](xref:UninstallEdgeDataStore).
 
