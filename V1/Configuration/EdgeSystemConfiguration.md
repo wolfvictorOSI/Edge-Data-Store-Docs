@@ -60,7 +60,7 @@ The following JSON file represents minimal configuration of an Edge Data Store. 
 
 
 
-  This example results in a minimal configuration of Edge Data Store. It only supports [OMF](xref:omfQuickStart) and [SDS](xref:sdsQuickStart) operations using REST. No egress is configured, so no data will be forwarded to either [OCS](xref:ocsEgressQuickStart) or [PI Web API](xref:piEgressQuickStart).
+This example results in a minimal configuration of Edge Data Store. It only supports OMF and SDS operations using REST. No egress is configured, so no data will be sent to either OCS or PI Web API.
 
 ## Configure maximum Edge Data Store
 
