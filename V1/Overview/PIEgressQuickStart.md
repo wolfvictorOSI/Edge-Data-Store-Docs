@@ -35,7 +35,7 @@ Complete the following to configure Edge Storage periodic egress for the PI Web 
    }]
    ```
 
-2. Add the server name, username, and password of your PI Web API server into the "Endpoint" definition.  You must specify a valid user account that can write data via PI Web API using Basic authentication.  See [Data egress configuration](xref:egress) for examples.
+2. Add the server name, username, and password of your PI Web API server into the "Endpoint" definition.  You must specify a valid user account that can write data via PI Web API using Basic authentication. For examples, see [Data egress configuration](xref:egress).
 
    **Note:** StreamPrefix and TypePrefix values can be used to ensure uniqueness on the destination system, if required. The StreamPrefix value will create unique PI Points on the PI System. If you want to only send specific streams, edit the "EgressFilter" value. Examples of more advanced scenarios are in the Egress section of this documentation.
 
