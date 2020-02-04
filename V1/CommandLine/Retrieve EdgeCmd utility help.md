@@ -28,7 +28,7 @@ Complete the following to view help instructions for a configuration facet that 
 	edgecmd Help <componentId>
 	```
 
-	For more information, see the example [Help for the System component](#help-for-the-system-component).
+	For more information, see the example, [Help for the System component](#help-for-the-system-component).
 	
 	**Note:** The help output also provides examples of commands that you can run to configure the component.
 	
@@ -44,7 +44,7 @@ Complete the following to view help instructions for a specific facet within a c
 	edgecmd Help <componentId> <facetName>
 	```
 	
-	For more information, see the example [Help for the Port facet within the System component](#help-for-the-port-facet-within-the-system-component).
+	For more information, see the example, [Help for the Port facet within the System component](#help-for-the-port-facet-within-the-system-component).
 
 ### Examples
 
