@@ -78,9 +78,8 @@
             <article class="content wrap" id="_content" data-uid="Performance">
 <h1 id="performance">Performance</h1>
 
-<p>Edge Data Store is designed to run on a variety of small hardware and software platforms, and to support running customer applications on the same platform. In order to assist in determining the  Edge Data Store is designed to run on a variety of small hardware and software platforms, and to support running customer applications on the same platform. To assist in determining the correct hardware and software configuration for a specific use, Edge Data Store has been tested on a variety of different hardware platforms with the supported ingress protocols at different event rates. Summary tables are provided below for each of the different protocols on different hardware platforms. </p>
-<p>correct hardware and software configuration for a specific use, testing has been done with the Edge Data Store on a variety of different hardware platforms with the supported ingress protocols at different event rates. Summary tables are provided below for each of the different<br>protocols on different hardware platforms. </p>
-<p>Mean and Maximum CPU use and Memory (Working Set) are provided. The values are averaged over one minute for the maximum computations, so it is possible there may be momentary spikes in memory or CPU use. These tables are provided as an approximate guideline to what might be expected as an Edge Data Store platform is designed. It is strongly recommended that before production deployment of Edge Data Store performance testing is conducted. Mean and Maximum CPU use and Memory (Working Set) are provided. The values are averaged over one minute for the maximum computations, so it is possible there may be momentary spikes in memory or CPU use. These tables are provided as an approximate guideline to what might be expected as an Edge Data Store platform is designed. It is strongly recommended that performance testing is conducted before production deployment of Edge Data Store.</p>
+<p>Edge Data Store is designed to run on a variety of small hardware and software platforms, and to support running customer applications on the same platform. In order to assist in determining Edge Data Store is designed to run on a variety of small hardware and software platforms, and to support running customer applications on the same platform. To assist in determining the correct hardware and software configuration for a specific use, Edge Data Store has been tested on a variety of different hardware platforms with the supported ingress protocols at different event rates. Summary tables are provided below for each of the different protocols on different hardware platforms.</p>
+<p>This topic is provided to assist in determining hardware and software that can be used for specific applications.</p>
 <h2 id="edge-data-store-platforms">Edge Data Store Platforms</h2>
 <p>For this release of Edge Data Store performance measurements platforms have been divided into three categories with the maximum supported Ingress rate for each category:</p>
 <ul>
@@ -88,6 +87,7 @@
 <li>Medium devices (e.g. 1 - 2 core CPU, 1 – 2 GB RAM): 300 events / sec</li>
 <li>Large devices (e.g. 2 – 4 core CPU, 4 GB RAM and larger): 3,000 events / sec</li>
 </ul>
+<p>It is possible that specific hardware and software configurations might support lower values. These are upper limits of what is supported for this release of the Edge Data Store.</p>
 <h2 id="ingress-performance">Ingress Performance</h2>
 <p>Data in the Edge Data Store can be ingressed using OMF, OPC UA or Modbus TCP. Each of these methods has different performance profiles, so they are treated separately.</p>
 <p>When selecting the hardware to host Edge Data Store, there are some general principles that come out of our testing:</p>
@@ -110,6 +110,7 @@
 <li>Max RAM MB - maximum memory used by EDS in this test</li>
 <li>Max CPU % - maximum CPU percentage used by EDS in this test</li>
 </ul>
+<p>Memory and CPU use metrics were computed using a one-minute average of memory and CPU use, so there may be momentary spikes of CPU and memory use that exceed the values shown.</p>
 <h3 id="omf-ingress-performance">OMF Ingress Performance</h3>
 <table>
 <thead>
