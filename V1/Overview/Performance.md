@@ -4,12 +4,9 @@ uid: Performance
 
 # Performance
 
-Edge Data Store is designed to run on a variety of small hardware and software platforms, and to support running customer applications on the same platform. In order to assist in determining the	Edge Data Store is designed to run on a variety of small hardware and software platforms, and to support running customer applications on the same platform. To assist in determining the correct hardware and software configuration for a specific use, Edge Data Store has been tested on a variety of different hardware platforms with the supported ingress protocols at different event rates. Summary tables are provided below for each of the different protocols on different hardware platforms. 
+Edge Data Store is designed to run on a variety of small hardware and software platforms, and to support running customer applications on the same platform. In order to assist in determining Edge Data Store is designed to run on a variety of small hardware and software platforms, and to support running customer applications on the same platform. To assist in determining the correct hardware and software configuration for a specific use, Edge Data Store has been tested on a variety of different hardware platforms with the supported ingress protocols at different event rates. Summary tables are provided below for each of the different protocols on different hardware platforms.
 
-correct hardware and software configuration for a specific use, testing has been done with the Edge Data Store on a variety of different hardware platforms with the supported ingress protocols at different event rates. Summary tables are provided below for each of the different	
-protocols on different hardware platforms. 
-
-Mean and Maximum CPU use and Memory (Working Set) are provided. The values are averaged over one minute for the maximum computations, so it is possible there may be momentary spikes in memory or CPU use. These tables are provided as an approximate guideline to what might be expected as an Edge Data Store platform is designed. It is strongly recommended that before production deployment of Edge Data Store performance testing is conducted. Mean and Maximum CPU use and Memory (Working Set) are provided. The values are averaged over one minute for the maximum computations, so it is possible there may be momentary spikes in memory or CPU use. These tables are provided as an approximate guideline to what might be expected as an Edge Data Store platform is designed. It is strongly recommended that performance testing is conducted before production deployment of Edge Data Store.
+This topic is provided to assist in determining hardware and software that can be used for specific applications.
 
 ## Edge Data Store Platforms
 
@@ -18,6 +15,8 @@ For this release of Edge Data Store performance measurements platforms have been
 * Small devices (e.g. 1 core CPU, 512 MB RAM): 30 events / sec
 * Medium devices (e.g. 1 - 2 core CPU, 1 – 2 GB RAM): 300 events / sec
 * Large devices (e.g. 2 – 4 core CPU, 4 GB RAM and larger): 3,000 events / sec
+
+It is possible that specific hardware and software configurations might support lower values. These are upper limits of what is supported for this release of the Edge Data Store.
 
 ## Ingress Performance
 
@@ -42,6 +41,8 @@ In the tables below are some representative performance numbers based on interna
 * Stream Count - total number of streams on the device in the default namespace
 * Max RAM MB - maximum memory used by EDS in this test
 * Max CPU % - maximum CPU percentage used by EDS in this test
+
+Memory and CPU use metrics were computed using a one-minute average of memory and CPU use, so there may be momentary spikes of CPU and memory use that exceed the values shown.
 
 ### OMF Ingress Performance
 
