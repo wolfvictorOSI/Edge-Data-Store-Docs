@@ -50,7 +50,7 @@ Memory and CPU use metrics were computed using a one-minute average of memory an
 |--|--|--|--|--|--|--|--|--|--|--|
 |Small|BeagleBone|SD Card|ARM32|512 MB|Linux|1|2|30|130|90|
 |Medium|Raspberry PI 3|SD Card|ARM32|1 GB|Linux|4|300|300|202|50|
-|Large|Toshiba|HDD|x64|4 GB|Linux|2|1500|3000|912|90|
+|Large|Dell|SSD|x64|8 GB|Linux|4|3000|3000|1100|70|
 
 ### Modbus TCP Ingress Performance
 
@@ -58,7 +58,7 @@ Memory and CPU use metrics were computed using a one-minute average of memory an
 |--|--|--|--|--|--|--|--|--|--|--|
 |Small|BeagleBone|SD Card|ARM32|512 MB|Linux|1|15|30|120|65|
 |Medium|Raspberry PI 3|SD Card|ARM32|1 GB|Linux|4|38|300|200|30|
-|Large|Dell|SSD|x64|8 GB|Linux|4|1500|3000|950|90|
+|Large|Dell|SSD|x64|8 GB|Linux|4|3000|3000|1100|35|
 
 ### OPC UA Ingress Performance
 
@@ -66,7 +66,7 @@ Memory and CPU use metrics were computed using a one-minute average of memory an
 |--|--|--|--|--|--|--|--|--|--|--|
 |Small|BeagleBone|SD Card|ARM32|512 MB|Linux|1|50|50|150|95|
 |Medium|Raspberry PI 3|SD Card|ARM32|1 GB|Linux|4|300|300|220|30|
-|Large|Dell|SSD|x64|8 GB|Linux|4|3000|3000|1100|34|
+|Large|Dell|SSD|x64|8 GB|Linux|4|3000|3000|1100|35|
 
 ## Periodic Egress Performance
 
