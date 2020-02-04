@@ -4,7 +4,7 @@ uid: omfQuickStart
 
 # OMF quick start
 
-This topic provides quick start instructions for getting data into the Edge Storage component using the OSIsoft Message Format (OMF), and then retrieving that data using the Sequential Data Store (SDS) API. Both OMF data ingress and SDS data retrieval are accomplished using REST APIs.  
+This topic provides quick start instructions for getting data into the Edge Storage component using the OSIsoft Message Format (OMF), and then retrieving that data using the Sequential Data Store (SDS) REST API. Both OMF data ingress and SDS data retrieval are accomplished using REST APIs.  
 
 ## Create an OMF type
 
