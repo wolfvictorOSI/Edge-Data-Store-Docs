@@ -29,7 +29,7 @@ Complete the following to view the configuration of a specific component:
    edgecmd Configuration <componentId>
    ```
    
-   See example [View the configuration of the System component](#view-the-configuration-of-the-system-component).
+   For more information, see the example, [View the configuration of the System component](#view-the-configuration-of-the-system-component).
 
 ## View a specific facet configuration
 
@@ -41,7 +41,7 @@ Complete the following to view the configuration of a specific facet of a compon
    ```bash
    edgecmd Configuration <componentId> <facetName>
    ```
-   See example [View the configuration of the Logging facet within the Storage component](#view-the-configuration-of-the-logging-facet-within-the-storage-component).
+   For more information, see the example, [View the configuration of the Logging facet within the Storage component](#view-the-configuration-of-the-logging-facet-within-the-storage-component).
    
 ## View a specific facet entry configuration
 
@@ -56,7 +56,7 @@ Complete the following to view the configuration of a specific facet entry of a 
 
 3. Add the key=value pairs for the facet to configure, for example `id=IndexToRetrieve`, and press Enter.
 
-   See example [View the configuration of a specific entry in the PeriodicEgressEndpoint facet within the Storage component](#view-the-configuration-of-a-specific-entry-in-the-periodicegressendpoint-facet-within-the-storage-component).
+   For more information, see the example, [View the configuration of a specific entry in the PeriodicEgressEndpoint facet within the Storage component](#view-the-configuration-of-a-specific-entry-in-the-periodicegressendpoint-facet-within-the-storage-component).
 
 ### Examples
 
