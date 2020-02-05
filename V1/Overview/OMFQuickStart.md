@@ -33,7 +33,7 @@ The first step in OMF data ingress is to create an OMF type that describes the f
 
    The value is indexed by a timestamp, and the numeric value that will be stored is a 32-bit floating point value.
    
-2. In order to create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json on the local device.
+2. To create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json on the local device.
 3. Run the following curl command:
 
    ```bash
