@@ -14,5 +14,7 @@
   topicHref: ../Egress/Egress.md
 - name: Health endpoints configuration
   href: System health endpoints configuration.md
-- name: Logging configuration
+- name: System-level logging configuration
   href: ../Administration/LoggingConfiguration.md
+- name: Component-level logging configuration
+  href: ../Configuration/Logging configuration.md
