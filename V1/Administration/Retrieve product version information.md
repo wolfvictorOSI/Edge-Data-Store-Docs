@@ -8,7 +8,7 @@ The product version information includes the Edge Data Store version number, the
 
 Complete the following to retrieve the product version of the Edge Data Store:
 
-1. Start any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests.
+1. Start any tool capable of making HTTP requests.
 2. Execute a GET command to the following endpoint:
 
   ```http
