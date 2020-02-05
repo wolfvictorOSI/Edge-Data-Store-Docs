@@ -14,7 +14,7 @@ Complete the following to configure Modbus TCP data selection:
     - For content structure, see [Modbus TCP data selection examples](#modbus-tcp-data-selection-examples). 
 2. Update the parameters as needed. For a table of all available parameters, see [Parameters for Modbus TCP data selection](#parameters-for-modbus-tcp-data-selection). 
 3. Save the file as _DataSelection.config.json_.
-4. Use any [tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`.
+4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`.
 
     The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):
 
