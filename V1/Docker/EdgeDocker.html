@@ -82,67 +82,50 @@
 <p>This topic provides examples of how to create a Docker container with the Edge Data Store. </p>
 <h2 id="create-a-docker-container-containing-the-edge-data-store">Create a Docker container containing the Edge Data Store</h2>
 <ol>
-<li><p>Create the following Dockerfile in the directory where you want to create and run the container:</p>
-<div class="tabGroup" id="tabgroup_g8gKmViDy-">
-<ul role="tablist">
-<li role="presentation">
-<a href="#tabpanel_g8gKmViDy-_tabid-1" role="tab" aria-controls="tabpanel_g8gKmViDy-_tabid-1" data-tab="tabid-1" tabindex="0" aria-selected="true">ARM32</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_g8gKmViDy-_tabid-2" role="tab" aria-controls="tabpanel_g8gKmViDy-_tabid-2" data-tab="tabid-2" tabindex="-1">ARM64</a>
-</li>
-<li role="presentation">
-<a href="#tabpanel_g8gKmViDy-_tabid-3" role="tab" aria-controls="tabpanel_g8gKmViDy-_tabid-3" data-tab="tabid-3" tabindex="-1">AMD64 (x64)</a>
-</li>
-</ul>
-<section id="tabpanel_g8gKmViDy-_tabid-1" role="tabpanel" data-tab="tabid-1">
-<pre><code>FROM ubuntu
+<li>Create the following Dockerfile in the directory where you want to create and run the container. Dockerfile is the required name of the file, and which variation you will use depends on the operating system you are using:</li>
+</ol>
+<h3 id="arm32">ARM32</h3>
+<pre><code class="lang-bash">FROM ubuntu
 WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-arm.tar.gz .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host&quot;]
-</code></pre></section>
-<section id="tabpanel_g8gKmViDy-_tabid-2" role="tabpanel" data-tab="tabid-2" aria-hidden="true" hidden="hidden">
-<pre><code>FROM ubuntu
+</code></pre><h3 id="arm64">ARM64</h3>
+<pre><code class="lang-bash">FROM ubuntu
 WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-arm64.tar.gz .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-arm64/OSIsoft.Data.System.Host&quot;]
-</code></pre></section>
-<section id="tabpanel_g8gKmViDy-_tabid-3" role="tabpanel" data-tab="tabid-3" aria-hidden="true" hidden="hidden">
-<pre><code>FROM ubuntu
+</code></pre><h3 id="amd64-x64">AMD64 (x64)</h3>
+<pre><code class="lang-bash">FROM ubuntu
 WORKDIR /
 RUN apt-get update &amp;&amp; DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
 ADD ./EdgeDataStore_linux-x64.tar.gz .
 ENTRYPOINT [&quot;./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host&quot;]
-</code></pre></section>
-</div>
+</code></pre><ol>
+<li><p>Copy the appropriate EdgeDataStore_linux-(x64, arm, or arm64 depending upon platform).tar.gz file to the same directory as the Dockerfile.</p>
 </li>
-<li><p>Copy the <em>EdgeDataStore_linux-arm.tar.gz</em> file to the same directory as the Dockerfile.</p>
+<li><p>Run the following command line in the same directory (sudo may be necessary):</p>
 </li>
-<li><p>Run the following command line (sudo may be necessary):</p>
-<pre><code>docker build -t edgedatastore
-</code></pre></li>
 </ol>
-<h2 id="run-the-edge-data-store-docker-containers">Run the Edge Data Store Docker containers</h2>
+<pre><code class="lang-bash">docker build -t edgedatastore .
+</code></pre><h2 id="run-the-edge-data-store-docker-containers">Run the Edge Data Store Docker containers</h2>
 <h3 id="rest-access-from-the-local-machine-from-docker">REST access from the local machine from Docker</h3>
 <p>Complete the following to run the container:</p>
 <ol>
 <li>Open command line.</li>
-<li><p>Type the following in the command line (sudo may be necessary):</p>
-<pre><code class="lang-bash">docker run -d --network host edgedatastore
-</code></pre></li>
+<li>Type the following in the command line (sudo may be necessary):</li>
 </ol>
-<p>Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data stored by the Edge Data Store is stored in the container itself. When the container is deleted, the data stored is also deleted.</p>
+<pre><code class="lang-bash">docker run -d --network host edgedatastore
+</code></pre><p>Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data stored by the Edge Data Store is stored in the container itself. When the container is deleted, the data stored is also deleted.</p>
 <h3 id="persistent-storage-on-the-local-file-system-from-docker">Persistent storage on the local file system from Docker</h3>
 <p>Complete the following to run the container:</p>
 <ol>
-<li>Open command line.</li>
-<li><p>Type the following in the command line (sudo may be necessary):</p>
-<pre><code class="lang-bash">docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ edgedatastore
-</code></pre></li>
+<li>Open a terminal window.</li>
+<li>Type the following in the command line (sudo may be necessary):</li>
 </ol>
-<p>Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data that would be written to the container is instead written to the host directory. In this example the host directory is a simple directory on the local machine, /edgeds. You can specify any directory you want. </p>
+<pre><code class="lang-bash">docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ edgedatastore
+</code></pre><p>Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data that would be written to the container is instead written to the host directory. In this example the host directory is a directory on the local machine, /edgeds. You can specify any directory.</p>
 <h3 id="port-number-change">Port number change</h3>
 <p>To use a different port other than 5590, see <a class="xref" href="../Configuration/System%20port%20configuration.html">System port configuration</a>. Changing the configuration of the Edge Data Store running in the container changes the port exposed to the local machine.</p>
 <h3 id="limiting-local-host-access-to-docker">Limiting local host access to Docker</h3>

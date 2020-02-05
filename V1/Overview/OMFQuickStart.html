@@ -101,7 +101,7 @@
 }]
 </code></pre><p>The value is indexed by a timestamp, and the numeric value that will be stored is a 32-bit floating point value.</p>
 </li>
-<li><p>In order to create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json on the local device.</p>
+<li><p>To create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json on the local device.</p>
 </li>
 <li><p>Run the following curl command:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@OmfCreateType.json&quot; -H &quot;Content-Type: application/json&quot; -H &quot;producertoken: x &quot; -H &quot;omfversion: 1.1&quot; -H &quot;action: create&quot; -H &quot;messageformat: json&quot; -H &quot;messagetype: type&quot; -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/

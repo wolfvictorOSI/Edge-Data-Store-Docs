@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Logging configuration </title>
+    <title>System-level logging configuration </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Logging configuration ">
+    <meta name="title" content="System-level logging configuration ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,8 +75,8 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="loggingConfiguration">
-<h1 id="logging-configuration">Logging configuration</h1>
+            <article class="content wrap" id="_content" data-uid="systemloggingConfiguration">
+<h1 id="system-level-logging-configuration">System-level logging configuration</h1>
 
 <p>Edge Data Store writes daily log messages to flat text files in the following locations:</p>
 <p>• Windows: <em>%ProgramData%/OSIsoft/EdgeDataStore/Logs</em></p>
@@ -94,6 +94,26 @@ The following logging configuration is the default for a component on install:</
 It is located in:</p>
 <p>• Windows: <em>%ProgramFiles%/OSIsoft/EdgeDataStore/Schema</em></p>
 <p>• Linux: <em>/opt/OSIsoft/EdgeDataStore/Schema</em></p>
+<h2 id="change-logging-configuration">Change logging configuration</h2>
+<p>Complete the following to change the logging configuration:</p>
+<ol>
+<li><p>Update the parameters of the message logging configuration JSON file that you want as needed. For example, the <em>Component_Logging.json</em> file:</p>
+<pre><code class="lang-json">{
+  &quot;logLevel&quot;: &quot;Warning&quot;,
+  &quot;logFileSizeLimitBytes&quot;: 16777216,
+  &quot;logFileCountLimit&quot;: 30   
+}
+</code></pre></li>
+<li><p>Save the file.</p>
+</li>
+<li><p>Use any tool capable of making HTTP requests to execute a PUT command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging</code>.</p>
+<p> <strong>Note:</strong>  Replace <code>&lt;ComponentId&gt;</code> with the ComponentId of the adapter or Storage, for example <em>OpcUa1</em>.</p>
+<p>   Example using curl (run this command from the same directory where the file is located):</p>
+<pre><code class="lang-bash">curl -i -d &quot;@Component_Logging.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging
+</code></pre><p> On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. </p>
+<p> <strong>Note:</strong>  Any parameter not specified in the updated configuration file will revert to the default schema value.</p>
+</li>
+</ol>
 <h3 id="log-levels">Log levels</h3>
 <p>The logLevel sets the minimum severity for messages to be included in the logs. Messages with a severity below the level set are not included. The log levels in their increasing order of severity are as follows: Trace, Debug, Information, Warning, Error, Critical.</p>
 <p>Table: General guidelines for setting the log level.</p>
@@ -131,28 +151,42 @@ It is located in:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="log-file-count-limit">Log file count limit</h3>
-<p>The logFileCountLimit controls the number of days the log files are stored before they are deleted. </p>
-<h2 id="change-logging-configuration">Change logging configuration</h2>
-<p>Complete the following to change the logging configuration:</p>
-<ol>
-<li><p>Update the parameters of the message logging configuration JSON file that you want as needed. For example, the <em>Component_Logging.json</em> file:</p>
-<pre><code class="lang-json">{
-  &quot;logLevel&quot;: &quot;Warning&quot;,
-  &quot;logFileSizeLimitBytes&quot;: 16777216,
-  &quot;logFileCountLimit&quot;: 30   
-}
-</code></pre></li>
-<li><p>Save the file.</p>
-</li>
-<li><p>Use any tool capable of making HTTP requests to execute a PUT command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging</code>.</p>
-<p> <strong>Note:</strong>  Replace <code>&lt;ComponentId&gt;</code> with the ComponentId of the adapter or Storage, for example <em>OpcUa1</em>.</p>
-<p>   Example using curl (run this command from the same directory where the file is located):</p>
-<pre><code class="lang-bash">curl -i -d &quot;@Component_Logging.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/&lt;ComponentId&gt;/Logging
-</code></pre><p> On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. </p>
-<p> <strong>Note:</strong>  Any parameter not specified in the updated configuration file will revert to the default schema value.</p>
-</li>
-</ol>
+<h2 id="parameters-for-logging">Parameters for logging</h2>
+<p>The following parameters are available for configuring logging.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Nullable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LogFileCountLimit</strong></td>
+<td>Optional</td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The log level settings that you want. The following options are available: <br> <strong>Verbose</strong> - Captures all messages: Verbose, Debug, Information, Warning and Error <br> <strong>Debug</strong> - Captures most messages: Debug, Information, Warning and Error <br> <strong>Information</strong> - Captures most messages: Information, Warning and Error <br> <strong>Warning</strong> - Captures only Warning and Error messages <br> <strong>Error</strong> - Captures Error messages only</td>
+</tr>
+<tr>
+<td><strong>LogFileSizeLimitBytes</strong></td>
+<td>Optional</td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>The maximum size in bytes of log files that the service will create for the component. It must be a positive integer.</td>
+</tr>
+<tr>
+<td><strong>LogLevel</strong></td>
+<td>Optional</td>
+<td>reference</td>
+<td>No</td>
+<td>The maximum number of log files that the service will create for the component. It must be a positive integer.</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           
