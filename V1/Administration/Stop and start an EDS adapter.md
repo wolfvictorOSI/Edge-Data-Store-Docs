@@ -10,7 +10,7 @@ By default, when Edge Data Store starts, all currently configured EDS adapters a
 
 Complete the follwing to stop an EDS adapter:
 
-1. Start any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests.
+1. Start any tool capable of making HTTP requests.
 2. Execute a POST command to the following endpoint, replacing `<adapterId>` with the adapter that you want to stop:
 
     ```http
@@ -29,7 +29,7 @@ Complete the follwing to stop an EDS adapter:
 
 Complete the following to start an EDS adapter:
 
-1. Start any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests.
+1. Start any tool capable of making HTTP requests.
 2. Execute a POST command to the following endpoint, replacing `<adapterId>` with the adapter that you want to start:
 
     ```http
