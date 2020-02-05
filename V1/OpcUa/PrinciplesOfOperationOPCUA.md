@@ -14,7 +14,7 @@ For the OPC UA EDS adapter to start data collection, you need to configure the a
 - Data selection: Perform selection of OPC UA items to which the adapter should subscribe for data.
 - Logging: Set up the logging attributes to manage the adapter logging behavior.
 
-For more information, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration) and [OPC UA data selection configuration](xref:OPCUADataSelectionConfiguration). 
+For more information, see [Data source configuration](xref:OPCUADataSourceConfiguration) and [Data selection configuration](xref:OPCUADataSelectionConfiguration). 
 
 ## Connection
 
@@ -43,4 +43,4 @@ Stream ID is a unique identifier for each stream created by the adapter for a gi
 <Adapter Component ID>.<Namespace>.<Identifier>
 ```
 
-**Note:** The naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more information, see [OPC UA data source configuration](xref:OPCUADataSourceConfiguration).
+**Note:** The naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more information, see [Data source configuration](xref:OPCUADataSourceConfiguration).
