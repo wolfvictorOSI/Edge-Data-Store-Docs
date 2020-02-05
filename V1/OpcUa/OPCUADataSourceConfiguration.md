@@ -16,7 +16,7 @@ Complete the following to configure the OPC UA data source:
     - For content structure, see [OPC UA data source example](#opc-ua-data-source-example).
 2. Update the parameters as needed. For a table of all available parameters, see [Parameters for OPC UA data source](#parameters-for-opc-ua-data-source).
 3. Save the file as _DataSource.config.json_.
-4. Use any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`. 
+4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSource/`. 
 
 The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):
 
