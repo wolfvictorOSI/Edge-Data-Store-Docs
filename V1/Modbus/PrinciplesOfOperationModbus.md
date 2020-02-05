@@ -12,7 +12,7 @@ For the Modbus TCP EDS adapter to be ready for data collection, you need to conf
 - Data selection: Perform selection of Modbus TCP items to which the adapter should subscribe for data.
 - Logging: Set up the logging attributes to manage the adapter logging behavior.
 
-For more details, see [Modbus TCP data source configuration](xref:ModbusTCPDataSourceConfiguration) and [Modbus TCP data selection configuration](xref:ModbusTCPDataSelectionConfiguration).
+For more details, see [Data source configuration](xref:ModbusTCPDataSourceConfiguration) and [Data selection configuration](xref:ModbusTCPDataSelectionConfiguration).
 
 ## Connection
 The Modbus TCP EDS adapter communicates with the Modbus TCP devices through the TCP/IP network by sending request packets that are constructed based on the data selection configurations, and collects the response packets returned by the devices. 
@@ -35,4 +35,4 @@ There is a unique identifier (Stream ID) for each stream created for the selecte
 ```
 <Adapter Component ID>.<Unit ID>.<Register Type>.<Register Offset> 
 ```
-**Note:** Naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more information, see [Modbus TCP data source configuration](xref:ModbusTCPDataSourceConfiguration).
+**Note:** Naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more information, see [Data source configuration](xref:ModbusTCPDataSourceConfiguration).
