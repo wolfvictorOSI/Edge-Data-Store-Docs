@@ -10,44 +10,45 @@ This topic provides examples of how to create a Docker container with the Edge D
 
 ## Create a Docker container containing the Edge Data Store
 
-1. Create the following Dockerfile in the directory where you want to create and run the container:
+1. Create the following Dockerfile in the directory where you want to create and run the container. Dockerfile is the required name of the file, and which variation you will use depends on the operating system you are using:
 
-    ### [ARM32](#tab/tabid-1)
+### ARM32
 
-    ```
-    FROM ubuntu
-    WORKDIR /
-    RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
-    ADD ./EdgeDataStore_linux-arm.tar.gz .
-    ENTRYPOINT ["./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host"]
-    ```
-    ### [ARM64](#tab/tabid-2)
-    ```
-    FROM ubuntu
-    WORKDIR /
-    RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
-    ADD ./EdgeDataStore_linux-arm64.tar.gz .
-    ENTRYPOINT ["./EdgeDataStore_linux-arm64/OSIsoft.Data.System.Host"]
-    ```
+```bash
+FROM ubuntu
+WORKDIR /
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
+ADD ./EdgeDataStore_linux-arm.tar.gz .
+ENTRYPOINT ["./EdgeDataStore_linux-arm/OSIsoft.Data.System.Host"]
+```
 
-    ### [AMD64 (x64)](#tab/tabid-3)
+### ARM64
 
-    ```
-    FROM ubuntu
-    WORKDIR /
-    RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
-    ADD ./EdgeDataStore_linux-x64.tar.gz .
-    ENTRYPOINT ["./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host"]
-    ```
+```bash
+FROM ubuntu
+WORKDIR /
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
+ADD ./EdgeDataStore_linux-arm64.tar.gz .
+ENTRYPOINT ["./EdgeDataStore_linux-arm64/OSIsoft.Data.System.Host"]
+```
 
-2. Copy the _EdgeDataStore_linux-arm.tar.gz_ file to the same directory as the Dockerfile.
+### AMD64 (x64)
 
-3. Run the following command line (sudo may be necessary):
+```bash
+FROM ubuntu
+WORKDIR /
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libicu60 libssl1.0.0
+ADD ./EdgeDataStore_linux-x64.tar.gz .
+ENTRYPOINT ["./EdgeDataStore_linux-x64/OSIsoft.Data.System.Host"]
+```
 
-    ```
-    docker build -t edgedatastore
-    ```
+2. Copy the appropriate EdgeDataStore_linux-(x64, arm, or arm64 depending upon platform).tar.gz file to the same directory as the Dockerfile.
 
+3. Run the following command line in the same directory (sudo may be necessary):
+
+```bash
+docker build -t edgedatastore .
+```
 
 ## Run the Edge Data Store Docker containers
 
@@ -58,24 +59,24 @@ Complete the following to run the container:
 1. Open command line.
 2. Type the following in the command line (sudo may be necessary):
 
-   ```bash
-   docker run -d --network host edgedatastore
-   ```
-   
+```bash
+docker run -d --network host edgedatastore
+```
+
 Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data stored by the Edge Data Store is stored in the container itself. When the container is deleted, the data stored is also deleted.
 
 ### Persistent storage on the local file system from Docker
 
 Complete the following to run the container:
 
-1. Open command line.
+1. Open a terminal window.
 2. Type the following in the command line (sudo may be necessary):
 
-   ```bash
-   docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ edgedatastore
-   ```
-   
-Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data that would be written to the container is instead written to the host directory. In this example the host directory is a simple directory on the local machine, /edgeds. You can specify any directory you want. 
+```bash
+docker run -d --network host -v /edgeds:/usr/share/OSIsoft/ edgedatastore
+```
+
+Port 5590 is accessible from the host and you can make REST calls to Edge Data Store from applications on the local host computer. In this example, all data that would be written to the container is instead written to the host directory. In this example the host directory is a directory on the local machine, /edgeds. You can specify any directory.
 
 ### Port number change
 
