@@ -17,4 +17,4 @@
 - name: System-level logging configuration
   href: ../Administration/LoggingConfiguration.md
 - name: Component-level logging configuration
-  href: ../Configuration/LoggingConfiguration.md
+  href: ../Configuration/Logging configuration.md
