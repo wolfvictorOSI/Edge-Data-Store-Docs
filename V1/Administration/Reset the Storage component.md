@@ -8,7 +8,7 @@ You can delete and reset all event and configuration data related to the Storage
 
 Complete the following to reset the Storage component:
 
-1. Start any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests.
+1. Start any tool capable of making HTTP requests.
 2. Execute a POST command to the following endpoint:
 
     ```http
