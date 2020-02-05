@@ -18,11 +18,11 @@ A default OPC UA data selection file will be created if there is no OPC UA data 
 
 Complete the following steps for this default data selection file to be generated:
 
-1. Add an [OPC UA EDS adapter](xref:EdgeDataStoreConfiguration) with a unique ComponentId. 
+1. Add an OPC UA EDS adapter with a unique ComponentId. For details, see [Edge Data Store configuration](xref:EdgeDataStoreConfiguration).
 
   During the installation of Edge Data Store, enabling the OPC UA EDS adapter results in addition of a unique component that also satisfies this condition.
   
-2. Configure a valid [OPC UA data source](xref:OPCUADataSourceConfiguration).
+2. Configure a valid OPC UA data source. For details, see [Data source configuration](xref:OPCUADataSourceConfiguration).
 
   Once you complete these steps, a default OPC UA data selection configuration file will be generated in the configuration directory for the corresponding platform.
   
@@ -72,7 +72,7 @@ Complete the following to configure the OPC UA data selection:
     - For content structure, see [OPC UA data selection example](#opc-ua-data-selection-example).
 2. Update the parameters as needed. For a table of all available parameters, see [Parameters for OPC UA data selection](#parameters-for-opc-ua-data-selection).
 3. Save the file as _DataSelection.config.json_.
-4. Use any [Configuration tool](xref:ConfigurationTools) capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`
+4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<EDS adapterId>/DataSelection/`
 
 The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):
 
