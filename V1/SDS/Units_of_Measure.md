@@ -4,7 +4,7 @@ uid: unitsOfMeasure
 
 # Units of measure
 
-The Sequential Data Store (SDS) provides a collection of built-in units of measure (Uom). These units of measure can be [associated](#associate-a-unit-of-measure-with-an-sdstype) with SdsStreams and SdsTypes to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. For more information, see [Reading data](xref:sdsReadingData).
+The Sequential Data Store (SDS) provides a collection of built-in units of measure (Uom). These units of measure can be associated with SdsStreams and SdsTypes to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS is able to support unit conversions when retrieving data. For more information, see [Reading data](xref:sdsReadingData).
 
 Since a unit of measurement (such as meter) defines the magnitude of a quantity (such as Length), SDS represents this through two objects: SdsUom and SdsUomQuantity.
 
@@ -291,7 +291,7 @@ A list of the supported units of measure follows. Supported units of measure are
 
 # SdsUomQuantity API
 
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUomQuantitys. For general [SdsUomQuantity](#sdsuomquantity) information, see [Units of Measure](#units-of-measure).
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUomQuantitys. For more information, see [SdsUomQuantity](#sdsuomquantity).
 *****
 
 ## `Get Quantity`
@@ -525,7 +525,7 @@ Content-Type: application/json
 
 # SdsUom API
 
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUoms. For general [SdsUom](#sdsuom) information, see [Units of Measure](#units-of-measure).
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUoms. For more information, see [SdsUom](#sdsuom).
 *****
 
 ## ``Get Uom``
@@ -632,8 +632,8 @@ Content-Type: application/json
 
 ## Associate a unit of measure with an SdsType
 
-At [SdsType](xref:sdsTypes) creation, you can associate an SdsUom with a [SdsTypeProperty](xref:sdsTypes#sdstypeproperty).
+At SdsType creation, you can associate an SdsUom with an SdsTypeProperty. For more information, see [SdsTypeProperty](xref:sdsTypes#sdstypeproperty).
 
 ## Associate a unit of measure with an SdsStream
 
-At [SdsStream](xref:sdsStreams) creation, you can override any unit of measure associated with an SdsTypeProperty belonging to the SdsType of the stream. This enables the reuse of an SdsType that may have default unit information associated with it already.
+At SdsStream creation, you can override any unit of measure associated with an SdsTypeProperty belonging to the SdsType of the stream. This enables the reuse of an SdsType that may have default unit information associated with it already. For more information, see [SdsStream](xref:sdsStreams).
