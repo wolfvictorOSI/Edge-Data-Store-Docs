@@ -136,7 +136,7 @@ The SdsStreamViewMap would appear as follows.
 
 # SdsStreamView API
 
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsStreamViews. See [Stream Views](#stream-views) for general SdsStreamView information.
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsStreamViews. For general SdsStreamView information, see [Stream views](#stream-views).
 *****
 
 ## `Get Stream View`
