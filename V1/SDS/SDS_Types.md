@@ -14,9 +14,9 @@ When you define a type, consider how the events will be represented in a stream.
 
 An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace.
 
-An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability. Nested types and base types are automatically created as separate types. For further information, see [Type Reusability](#type-reusability)
+An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability. Nested types and base types are automatically created as separate types. For further information, see [Type reusability](#type-reusability)
 
-SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation).
+SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](xref:sdsReadingData#interpolation) and [Extrapolation](xref:sdsReadingData#extrapolation) in [Reading data](xref:sdsReadingData).
 
 SdsTypes are immutable. After you create an SdsType, you cannot change its definition. If the definition of an SdsType is incorrect, you must delete and recreate it. In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.
 
@@ -171,7 +171,7 @@ The InterpolationMode and Uom of a property can be overridden on the stream. For
 
 ## Supported units of measure
 
-For a list of units of measures that are supported for an SdsTypeProperty, see [Units of Measure](xref:unitsOfMeasure#supported-units-of-measure).
+For a list of units of measures that are supported for an SdsTypeProperty, see [Units of measure](xref:unitsOfMeasure#supported-units-of-measure).
 
 ## Working with SdsTypes
 
@@ -704,7 +704,7 @@ Content-Type: application/json
 
 ## `Get Type Reference Count`
 
-Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. For more information on the use of types to define streams and stream views, see [Streams](xref:sdsStreams) and [Steam Views](xref:sdsStreamViews). For further details about type referencing, see: [Type Reusability](#type-reusability).
+Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. For more information on the use of types to define streams and stream views, see [Streams](xref:sdsStreams) and [Stream views](xref:sdsStreamViews). For further details about type referencing, see [Type reusability](#type-reusability).
 
 **Request**
 
@@ -743,7 +743,7 @@ Returns a list of types within a given namespace.
 
 If specifying the optional search query parameter, the list of types returned will match the search criteria. If the search query parameter is not specified, the list will include all types in the namespace. For information about specifying those respective parameters, see [Searching](xref:sdsSearching).
 
-**Note:** The results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing, see: [Type Reusability](#type-reusability).
+**Note:** The results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing, see [Type reusability](#type-reusability).
 
 **Request**
 
@@ -840,7 +840,7 @@ Creates the specified type. If a type with a matching identifier already exists,
 
 If the types are identical, a ``Found`` (302) error is returned with the Location header set to the URI where the type may be retrieved using a Get function.
 
-If the types do not match, a ``Conflict`` (409) error is returned. **Note:** A ``Conflict`` (409) error will also be returned if the type contains reference to any existing type, but the referenced type definition in the body does not match the existing type. You may reference an existing type without including the reference type definition in the body by using only the Ids. For further details about type referencing, see: [Type Reusability](#type-reusability).
+If the types do not match, a ``Conflict`` (409) error is returned. **Note:** A ``Conflict`` (409) error will also be returned if the type contains reference to any existing type, but the referenced type definition in the body does not match the existing type. You may reference an existing type without including the reference type definition in the body by using only the Ids. For further details about type referencing, see [Type reusability](#type-reusability).
 
 For a matching type (``Found``), clients that are capable of performing a redirect that includes the authorization header can automatically redirect to retrieve the type. However, most clients, including the .NET HttpClient, consider redirecting with the authorization token to be a security vulnerability.
 
