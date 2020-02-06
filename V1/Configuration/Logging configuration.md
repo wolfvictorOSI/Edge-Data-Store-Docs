@@ -22,7 +22,7 @@ To adjust the message logging behavior, complete the following:
 3. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the respective endpoint. <br><br> Example using curl for the Edge Data Store logging endpoint (run this command from the same directory where the file is located):
 
 ```bash
-curl -v -d "@System_Logging.json" -H "Content-Type application/json" http://localhost:5590/api/v1/configuration/System/Logging
+curl -v -d "@System_Logging.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/System/Logging
 ```
 
 **Note:** The other endpoints are the following:<br>
