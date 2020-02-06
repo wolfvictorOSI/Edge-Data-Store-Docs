@@ -36,11 +36,11 @@ The following table shows the required and optional SdsStream fields. Fields not
 
 * Secondary indexes are applied to a single property; there are no compound secondary indexes. Only SdsTypeCodes that can be ordered are supported for use in a secondary index.
 
-* Indexes are discussed in greater detail here: [Indexes](xref:sdsIndexes)
+* For more information about indexes, see [Indexes](xref:sdsIndexes).
 
 ## Interpolation and extrapolation
 
-The InterpolationMode, ExtrapolationMode, and [PropertyOverrides](#propertyoverrides) can be used to determine how a specific stream reads data. These read characteristics are inherited from the type if they are not defined at the stream level. For more information about type read characteristics and how these characteristics dictate how events are read see [Types](xref:sdsTypes).
+The InterpolationMode, ExtrapolationMode, and [PropertyOverrides](#propertyoverrides) can be used to determine how a specific stream reads data. These read characteristics are inherited from the type if they are not defined at the stream level. For more information about type read characteristics and how these characteristics dictate how events are read, see [Types](xref:sdsTypes).
 
 ## PropertyOverrides
 
@@ -62,7 +62,7 @@ When specifying property interpolation overrides, if the SdsType InterpolationMo
 
 # SdsStream API
 
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsStreams. See [Streams](#streams) for general SdsStream information.
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsStreams. For general SdsStream information, see [Streams](#streams).
 *****
 
 ## `Get Stream`
