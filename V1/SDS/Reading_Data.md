@@ -4,7 +4,7 @@ uid: sdsReadingData
 
 # Reading data
 
-The REST APIs provide programmatic access to read and write data. This section identifies and describes the APIs used to read [streams](xref:sdsStreams) data. Results are influenced by [types](xref:sdsTypes), [stream views](xref:sdsStreamViews), [filter expressions](xref:sdsFilterExpressions), and [table format](xref:sdsTableFormat).
+The REST APIs provide programmatic access to read and write data. This section identifies and describes the APIs used to read streams data. Results are influenced by types, stream views, filter expressions, and table format.
 
 ### Single stream reads
 
@@ -61,7 +61,7 @@ Supported response formats include JSON, verbose JSON, and SDS.
 
 ### Indexes and reading data
 
-Most read operations take at least one index as a parameter. Indexes may be specified as strings. You can find additional details about working with indexes on the [Indexes](xref:sdsIndexes) page.
+Most read operations take at least one index as a parameter. Indexes may be specified as strings. For additional details about working with indexes, see [Indexes](xref:sdsIndexes).
 
 ### Interpolation
 
@@ -127,7 +127,7 @@ ExtrapolationMode works with the InterpolationMode to determine how a stream res
 
 If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream, see [Streams](xref:sdsStreams).
 
-For additional information about the effect of read characteristics, see the documentation on the [read method](xref:sdsReadingDataApi) you are using.
+For additional information about the effect of read characteristics for the available read methods, see [API calls for reading data](xref:sdsReadingDataApi).
 
 ### Read characteristics
 
@@ -137,7 +137,7 @@ When you request data at an index for which no stored event exists, the read cha
 
 You can apply filter expressions to any read that returns multiple values, including Get Values, Get Range Values, Get Window Values, and Get Intervals. The filter expression is applied to the collection events conditionally filtering events that do not meet the filter conditions.
 
-For details on filter expressions, see the [Filter expressions](xref:sdsFilterExpressions) section.
+For details on filter expressions, see the [Filter expressions](xref:sdsFilterExpressions) topic.
 
 ### Table format
 
@@ -147,7 +147,7 @@ When you specify the form parameter as table, ``?form=table``, events are return
 
 When you specify a form of type ``table-headers``, ``?form=tableh``, it results in a collection where the Rows collection contains a column header list.
 
-For details on table formats, see the [Table format](xref:sdsTableFormat) section.
+For details on table formats, see the [Table format](xref:sdsTableFormat) topic.
 
 ### SdsBoundaryType
 
@@ -193,7 +193,7 @@ Data transformations are supported for all single stream reads, but transformati
 
 ### Reading with SdsStreamViews
 
-When you transform data with an SdsStreamView, the data read is converted to the *target type* specified in the SdsStreamView. For details on working with stream views, see the [Stream Views](xref:sdsStreamViews) section.
+When you transform data with an SdsStreamView, the data read is converted to the *target type* specified in the SdsStreamView. For details on working with stream views, see [Stream Views](xref:sdsStreamViews).
 
 All stream view transformations are GET HTTP requests. You specify the stream view by appending the stream view identifier to requests to the transformation endpoint. For example, the following request would return the first event in the stream as the target type in the stream view specified by the `streamViewId`:
 
@@ -207,7 +207,7 @@ When you request data with an SdsStreamView, the read characteristics defined by
 
 ### Unit conversion of data
 
-SDS supports assigning [Units of Measure](xref:unitsOfMeasure) (UOM) to stream data. If stream data has UOM information associated, SDS supports reading data with unit conversions applied. On each read data request, unit conversions are specified by a user defined collection of `SdsStreamPropertyOverride` objects in read requests. The `SdsStreamPropertyOverride` object has the following structure:
+SDS supports assigning units of measure (UOM) to stream data. For more information, see [Units of measure](xref:unitsOfMeasure). If stream data has UOM information associated, SDS supports reading data with unit conversions applied. On each read data request, unit conversions are specified by a user defined collection of `SdsStreamPropertyOverride` objects in read requests. The `SdsStreamPropertyOverride` object has the following structure:
 
 | Property          | Type                 | Optionality | Description                                            |
 | ----------------- | -------------------- | ----------- | -----------------------------------------------------  |
