@@ -90,7 +90,7 @@ To specify SDS format, set the ``Accept`` header in the request to ``application
 
 ## Indexes
 
-SDS writes rely on the primary index for positioning within streams and locating existing events. Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, indexes are specified as strings in the URI. For more details about working with indexes, see the [Indexes](xref:sdsIndexes) page.
+SDS writes rely on the primary index for positioning within streams and locating existing events. Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, indexes are specified as strings in the URI. For more details about working with indexes, see [Indexes](xref:sdsIndexes).
 
 To specify compound indexes in the URI, specify each field that composes the index, in the specified order, separated by the pipe character, ‘|’.
 *****
