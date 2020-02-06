@@ -79,8 +79,8 @@
 <h1 id="troubleshoot-edge-data-store">Troubleshoot Edge Data Store</h1>
 
 <p>You have both local and remote means of diagnosing any issues you encounter while using or developing against Edge Data Store.</p>
-<p>Edge Data Store supports a diagnostics namespace that is used to store streams containing <a class="xref" href="../Diagnostics/Diagnostics.html">diagnostic</a> information from Edge Data Store itself. As with any other stream data stored in the Edge Storage component, you can egress this to either a PI Web Server or OSIsoft Cloud Services to monitor the state of a system remotely.</p>
-<p>In addition to diagnostics data, all components in Edge Data Store support OMF health messages. You configure health messages with the <a class="xref" href="../Configuration/System%20health%20endpoints%20configuration.html">Health endpoint configuration</a>, to send health data to either PI Web Server or OSIsoft Cloud Service endpoints for remote monitoring of devices.</p>
+<p>Edge Data Store supports a diagnostics namespace that is used to store streams containing diagnostic information from Edge Data Store itself. As with any other stream data stored in the Edge Storage component, you can egress this to either a PI Web Server or OSIsoft Cloud Services to monitor the state of a system remotely. For details about egressing diagnostic data, see <a class="xref" href="../Diagnostics/Diagnostics.html">Diagnostics configuration</a>.</p>
+<p>In addition to diagnostics data, all components in Edge Data Store support OMF health messages. You can configure health messages to send health data to either PI Web Server or OSIsoft Cloud Service endpoints for remote monitoring of devices. For more information, see <a class="xref" href="../Configuration/System%20health%20endpoints%20configuration.html">Health endpoints configuration</a>.</p>
 <h2 id="omf-ingress">OMF ingress</h2>
 <p>Complete the following when a custom application fails to write stream data to EDS:</p>
 <ol>
@@ -93,13 +93,13 @@
 <h3 id="omf-ingress-logging">OMF ingress logging</h3>
 <p>Ingress logging messages provide a record of ingress events. Complete the following to capture maximum information for troubleshooting:</p>
 <ol>
-<li>Refer to <a href="xref:LoggingConfiguration">Logging Configuration</a> to set logging parameters.</li>
+<li>Refer to <a class="xref" href="../Administration/LoggingConfiguration.html">System-level logging configuration</a> to set logging parameters.</li>
 <li>For maximum message logging information, set the log level to <strong>Trace</strong>.</li>
 </ol>
 <h3 id="omf-ingress-message-debugging">OMF ingress message debugging</h3>
 <p>Debugging helps to troubleshoot problems between an OMF application and Edge Data Store.  Complete the following to enable debugging:</p>
 <ol>
-<li>Refer to <a class="xref" href="../Configuration/Storage%20runtime%20config.html">Storage Runtime Configuration</a> to enable debugging.</li>
+<li>Refer to <a class="xref" href="../Configuration/Storage%20runtime%20config.html">Storage runtime configuration</a> to enable debugging.</li>
 <li><p>Set an appropriate time value for the <em>IngressDebugExpiration</em> property. </p>
 <p><strong>Note:</strong> You can also disable debugging by setting the expiration value to <em>null</em>.</p>
 </li>
@@ -112,14 +112,14 @@ Local: “mm-dd-yyyy hh:mm:ss”
 <p><strong>Note:</strong> If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same SDS stream. </p>
 <ol>
 <li>Check all egress configuration files in Edge Data Store to verify whether any endpoints are duplicated. A duplicate endpoint means that more than one device is egressing data to it, resulting in unexpected data.</li>
-<li><p>Assign stream prefixes in the <a class="xref" href="../Egress/Egress.html">periodic egress endpoint configuration</a> to ensure that output data streams are logically separated in the systems of record.</p>
+<li><p>Assign stream prefixes in the periodic egress endpoint configuration to ensure that output data streams are logically separated in the systems of record. For instructions, see <a href="xref:configurEgress">Configure data egress</a></p>
 <p><strong>Note:</strong> Type prefixes may be helpful if you have changed a stream type definition on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.</p>
 </li>
 </ol>
 <h3 id="periodic-egress-logging">Periodic egress logging</h3>
 <p>Egress logging messages provide a record of egress events. Complete the following to capture maximum information for troubleshooting:</p>
 <ol>
-<li>Refer to <a href="xref:LoggingConfiguration">Logging Configuration</a> to set logging parameters.</li>
+<li>Refer to <a class="xref" href="../Administration/LoggingConfiguration.html">System-level logging configuration</a> to set logging parameters.</li>
 <li>For maximum message logging information, set the log level to <strong>Trace</strong>.</li>
 </ol>
 <h3 id="periodic-egress-debugging">Periodic egress debugging</h3>

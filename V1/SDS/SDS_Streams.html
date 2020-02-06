@@ -164,11 +164,11 @@
 </li>
 <li><p>Secondary indexes are applied to a single property; there are no compound secondary indexes. Only SdsTypeCodes that can be ordered are supported for use in a secondary index.</p>
 </li>
-<li><p>Indexes are discussed in greater detail here: <a class="xref" href="indexes.html">Indexes</a></p>
+<li><p>For more information about indexes, see <a class="xref" href="indexes.html">Indexes</a>.</p>
 </li>
 </ul>
 <h2 id="interpolation-and-extrapolation">Interpolation and extrapolation</h2>
-<p>The InterpolationMode, ExtrapolationMode, and <a href="#propertyoverrides">PropertyOverrides</a> can be used to determine how a specific stream reads data. These read characteristics are inherited from the type if they are not defined at the stream level. For more information about type read characteristics and how these characteristics dictate how events are read see <a class="xref" href="SDS_Types.html">Types</a>.</p>
+<p>The InterpolationMode, ExtrapolationMode, and <a href="#propertyoverrides">PropertyOverrides</a> can be used to determine how a specific stream reads data. These read characteristics are inherited from the type if they are not defined at the stream level. For more information about type read characteristics and how these characteristics dictate how events are read, see <a class="xref" href="SDS_Types.html">Types</a>.</p>
 <h2 id="propertyoverrides">PropertyOverrides</h2>
 <p>PropertyOverrides provide a way to override interpolation behavior and unit of measure for individual SdsType properties for a specific stream.</p>
 <p>The <code>SdsStreamPropertyOverride</code> object has the following structure:</p>
@@ -206,7 +206,7 @@
 <p>Read characteristics of the stream are determined by the type and the PropertyOverrides of the stream. The interpolation mode for non-index properties can be defined and overridden at the stream level. For more information about type read characteristics, see <a class="xref" href="SDS_Types.html">Types</a>.</p>
 <p>When specifying property interpolation overrides, if the SdsType InterpolationMode is <code>Discrete</code>, it cannot be overridden at any level. When InterpolationMode is set to <code>Discrete</code> and an event it not defined for that index, a null value is returned for the entire event.</p>
 <h1 id="sdsstream-api">SdsStream API</h1>
-<p>The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsStreams. See <a href="#streams">Streams</a> for general SdsStream information.</p>
+<p>The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsStreams. For general SdsStream information, see <a href="#streams">Streams</a>.</p>
 <hr>
 <h2 id="get-stream"><code>Get Stream</code></h2>
 <p>Returns the specified stream.</p>

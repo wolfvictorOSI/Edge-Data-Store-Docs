@@ -139,7 +139,7 @@ The events must be formatted as a serialized JSON array of the stream&#39;s type
 <p>Verbose has no impact on writes; writes return only error messages.</p>
 <p>To specify SDS format, set the <code>Accept</code> header in the request to <code>application/sds</code>.</p>
 <h2 id="indexes">Indexes</h2>
-<p>SDS writes rely on the primary index for positioning within streams and locating existing events. Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, indexes are specified as strings in the URI. For more details about working with indexes, see the <a class="xref" href="indexes.html">Indexes</a> page.</p>
+<p>SDS writes rely on the primary index for positioning within streams and locating existing events. Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, indexes are specified as strings in the URI. For more details about working with indexes, see <a class="xref" href="indexes.html">Indexes</a>.</p>
 <p>To specify compound indexes in the URI, specify each field that composes the index, in the specified order, separated by the pipe character, ‘|’.</p>
 <hr>
 </article>

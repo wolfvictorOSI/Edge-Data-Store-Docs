@@ -83,8 +83,8 @@
 <p>An SdsType used to define an SdsStream must have a key. A key is a property, or a combination of properties that constitute an ordered, unique identity. The key is ordered, so it functions as an index. It is known as the primary index. While a timestamp (DateTime) is a very common type of key, any type that can be ordered is permitted. Other indexes (secondary indexes), are defined in the SdsStream. For more details on indexes, see <a class="xref" href="indexes.html">Indexes</a>.</p>
 <p>When you define a type, consider how the events will be represented in a stream. The SdsType defines each event in the stream. An event is a single unit whose properties have values that relate to the index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.</p>
 <p>An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace.</p>
-<p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability. Nested types and base types are automatically created as separate types. For further information, see <a href="#type-reusability">Type Reusability</a></p>
-<p>SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a>.</p>
+<p>An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability. Nested types and base types are automatically created as separate types. For further information, see <a href="#type-reusability">Type reusability</a></p>
+<p>SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation</a> and <a class="xref" href="Reading_Data.html#extrapolation">Extrapolation</a> in <a class="xref" href="Reading_Data.html">Reading data</a>.</p>
 <p>SdsTypes are immutable. After you create an SdsType, you cannot change its definition. If the definition of an SdsType is incorrect, you must delete and recreate it. In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.</p>
 <p>Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential data store. SdsTypes that define properties or base types are contained within the parent SdsType and are not required to be added to the Data Store independently.</p>
 <p>The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use.</p>
@@ -563,7 +563,7 @@
 <p>Uom is the unit of measure for the property. The Uom of a property may be specified by the name or the abbreviation. The names and abbreviations of Uoms are case sensitive.</p>
 <p>The InterpolationMode and Uom of a property can be overridden on the stream. For more information, see <a class="xref" href="SDS_Streams.html#propertyoverrides">Streams</a>.</p>
 <h2 id="supported-units-of-measure">Supported units of measure</h2>
-<p>For a list of units of measures that are supported for an SdsTypeProperty, see <a class="xref" href="Units_of_Measure.html#supported-units-of-measure">Units of Measure</a>.</p>
+<p>For a list of units of measures that are supported for an SdsTypeProperty, see <a class="xref" href="Units_of_Measure.html#supported-units-of-measure">Units of measure</a>.</p>
 <h2 id="working-with-sdstypes">Working with SdsTypes</h2>
 <p>The following discussion refers to the following types and are defined in Python and JavaScript samples. 
 In the sample code, <code>SdsType</code>, <code>SdsTypeProperty</code>, and <code>SdsTypeCode</code> are defined as in the code snippets shown here:</p>
@@ -1015,7 +1015,7 @@ Content-Type: application/json
 }
 </code></pre><hr>
 <h2 id="get-type-reference-count"><code>Get Type Reference Count</code></h2>
-<p>Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. For more information on the use of types to define streams and stream views, see <a class="xref" href="SDS_Streams.html">Streams</a> and <a class="xref" href="SDS_Views.html">Steam Views</a>. For further details about type referencing, see: <a href="#type-reusability">Type Reusability</a>.</p>
+<p>Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. For more information on the use of types to define streams and stream views, see <a class="xref" href="SDS_Streams.html">Streams</a> and <a class="xref" href="SDS_Views.html">Stream views</a>. For further details about type referencing, see <a href="#type-reusability">Type reusability</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types/{typeId}/ReferenceCount
 </code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
@@ -1032,7 +1032,7 @@ Content-Type: application/json
 <h2 id="get-types"><code>Get Types</code></h2>
 <p>Returns a list of types within a given namespace.</p>
 <p>If specifying the optional search query parameter, the list of types returned will match the search criteria. If the search query parameter is not specified, the list will include all types in the namespace. For information about specifying those respective parameters, see <a class="xref" href="Searching.html">Searching</a>.</p>
-<p><strong>Note:</strong> The results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing, see: <a href="#type-reusability">Type Reusability</a>.</p>
+<p><strong>Note:</strong> The results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing, see <a href="#type-reusability">Type reusability</a>.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types?query={query}&amp;skip={skip}&amp;count={count}&amp;orderby={orderby}
 </code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
@@ -1101,7 +1101,7 @@ Content-Type: application/json
 <h2 id="get-or-create-type"><code>Get or Create Type</code></h2>
 <p>Creates the specified type. If a type with a matching identifier already exists, SDS compares the existing type with the type that was sent.</p>
 <p>If the types are identical, a <code>Found</code> (302) error is returned with the Location header set to the URI where the type may be retrieved using a Get function.</p>
-<p>If the types do not match, a <code>Conflict</code> (409) error is returned. <strong>Note:</strong> A <code>Conflict</code> (409) error will also be returned if the type contains reference to any existing type, but the referenced type definition in the body does not match the existing type. You may reference an existing type without including the reference type definition in the body by using only the Ids. For further details about type referencing, see: <a href="#type-reusability">Type Reusability</a>.</p>
+<p>If the types do not match, a <code>Conflict</code> (409) error is returned. <strong>Note:</strong> A <code>Conflict</code> (409) error will also be returned if the type contains reference to any existing type, but the referenced type definition in the body does not match the existing type. You may reference an existing type without including the reference type definition in the body by using only the Ids. For further details about type referencing, see <a href="#type-reusability">Type reusability</a>.</p>
 <p>For a matching type (<code>Found</code>), clients that are capable of performing a redirect that includes the authorization header can automatically redirect to retrieve the type. However, most clients, including the .NET HttpClient, consider redirecting with the authorization token to be a security vulnerability.</p>
 <p>When a client performs a redirect and strips the authorization header, SDS cannot authorize the request and returns <code>Unauthorized</code> (401). For this reason, OSIsoft recommends that when using clients that do not redirect with the authorization header, you should disable automatic redirect and perform the redirect manually.</p>
 <p><strong>Request</strong>  </p>

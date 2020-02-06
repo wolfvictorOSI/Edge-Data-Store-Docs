@@ -88,7 +88,7 @@
 </li>
 <li>Update the parameters as needed. For a table of all available parameters, see <a href="#parameters-for-modbus-tcp-data-selection">Parameters for Modbus TCP data selection</a>. </li>
 <li>Save the file as <em>DataSelection.config.json</em>.</li>
-<li><p>Use any <a class="xref" href="../Administration/ManagementTools.html">tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection/</code>.</p>
+<li><p>Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection/</code>.</p>
 <p> The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):</p>
 <pre><code class="lang-bash">curl -v -d &quot;@DataSelection.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection&quot;
 </code></pre></li>

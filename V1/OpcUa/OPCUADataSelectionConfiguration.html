@@ -86,10 +86,10 @@
 <p><strong>Note:</strong> To avoid possibly expensive browse operations, OSIsoft recommends that you manually create a data selection file instead of generating the default data selection file.</p>
 <p>Complete the following steps for this default data selection file to be generated:</p>
 <ol>
-<li><p>Add an <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">OPC UA EDS adapter</a> with a unique ComponentId. </p>
+<li><p>Add an OPC UA EDS adapter with a unique ComponentId. For details, see <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store configuration</a>.</p>
 <p>During the installation of Edge Data Store, enabling the OPC UA EDS adapter results in addition of a unique component that also satisfies this condition.</p>
 </li>
-<li><p>Configure a valid <a class="xref" href="OPCUADataSourceConfiguration.html">OPC UA data source</a>.</p>
+<li><p>Configure a valid OPC UA data source. For details, see <a class="xref" href="OPCUADataSourceConfiguration.html">Data source configuration</a>.</p>
 <p>Once you complete these steps, a default OPC UA data selection configuration file will be generated in the configuration directory for the corresponding platform.</p>
 <p>The following are example locations of the file created. In this example, it is assumed that the ComponentId of the OPC UA component is the default OpcUa1:</p>
 <pre><code class="lang-bash">Windows: %programdata%\OSIsoft\EdgeDataStore\Configuration\OpcUa1_DataSelection.json
@@ -129,7 +129,7 @@ Linux: /usr/share/OSIsoft/EdgeDataStore/Configuration/OpcUa1_DataSelection.json
 </li>
 <li>Update the parameters as needed. For a table of all available parameters, see <a href="#parameters-for-opc-ua-data-selection">Parameters for OPC UA data selection</a>.</li>
 <li>Save the file as <em>DataSelection.config.json</em>.</li>
-<li>Use any <a class="xref" href="../Administration/ManagementTools.html">Configuration tool</a> capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection/</code></li>
+<li>Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSelection/</code></li>
 </ol>
 <p>The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):</p>
 <p><strong>Note:</strong> During installation, you can add a single OPC UA EDS adapter named OpcUA1. The following example uses this component name.</p>

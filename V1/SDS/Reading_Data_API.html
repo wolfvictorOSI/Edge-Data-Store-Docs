@@ -151,7 +151,7 @@ var SimpleType = function () {
 </code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>string streamId</code><br>The stream identifier.</p>
 <p><code>string index</code><br>The index.</p>
-<p><code>string searchMode</code><br>The <a class="xref" href="Reading_Data.html#sdssearchmode">SdsSearchMode</a>, the default is <code>exact</code>.</p>
+<p><code>string searchMode</code><br>The <a class="xref" href="Reading_Data.html#sdssearchmode">SdsSearchMode</a>; the default is <code>exact</code>.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection with one event. Depending on the request <code>index</code> and <code>searchMode</code>, it is possible to have an empty collection returned.</p>
 <p><strong>Example</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data
@@ -188,19 +188,19 @@ Content-Type: application/json
 <p>Returns a collection of <em>stored</em> values at indexes based on request parameters.
 SDS supports three ways of specifying which stored events to return:</p>
 <ul>
-<li><a href="#getvaluesfiltered">Filtered</a>: A filtered request accepts a <a class="xref" href="Filter_Expressions.html">filter expression</a>.</li>
+<li><a href="#getvaluesfiltered">Filtered</a>: A filtered request accepts a filter expression.</li>
 <li><a href="#getvaluesrange">Range</a>: A range request accepts a start index and a count.</li>
 <li><a href="#getvalueswindow">Window</a>: A window request accepts a start index and end index. This request has an optional continuation token for large collections of events.</li>
 </ul>
 <p><a name="getvaluesfiltered"></a></p>
 <h3 id="filtered"><code>Filtered</code></h3>
-<p>Returns a collection of stored values as determined by a <code>filter</code>. The <code>filter</code> limits results by applying an expression against event fields. Filter expressions are explained in detail in the <a class="xref" href="Filter_Expressions.html">Filter expressions</a> section.</p>
+<p>Returns a collection of stored values as determined by a <code>filter</code>. The <code>filter</code> limits results by applying an expression against event fields. For more information about filter expressions, see <a class="xref" href="Filter_Expressions.html">Filter expressions</a>.</p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data
     ?filter={filter}
 </code></pre><p><strong>Parameters</strong><br><code>string namespaceId</code><br>The namespace; either default or diagnostics.</p>
 <p><code>string streamId</code><br>The stream identifier.</p>
-<p><code>string filter</code><br>The filter expression (see <a class="xref" href="Filter_Expressions.html">Filter expressions</a>)</p>
+<p><code>string filter</code><br>The filter expression (see <a class="xref" href="Filter_Expressions.html">Filter expressions</a>).</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
 <p><strong>Example</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data
@@ -358,7 +358,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data?
 <p><code>SdsBoundaryType boundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundarytype">SdsBoundaryType</a> specifies handling of events at or near the start and end indexes.</p>
 <p><code>SdsBoundaryType startBoundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundarytype">SdsBoundaryType</a> specifies the first value in the result in relation to the start index. If <code>startBoundaryType</code> is specified, <code>endBoundaryType</code> must be specified.</p>
 <p><code>SdsBoundaryType endBoundaryType</code><br>Optional <a class="xref" href="Reading_Data.html#sdsboundarytype">SdsBoundaryType</a> specifies the last value in the result in relation to the end index. If <code>startBoundaryType</code> is specified, <code>endBoundaryType</code> must be specified.</p>
-<p><code>string filter</code><br>Optional <a class="xref" href="Filter_Expressions.html">filter expression</a></p>
+<p><code>string filter</code><br>Optional filter expression (see <a class="xref" href="Filter_Expressions.html">Filter expressions</a>).</p>
 <p><code>string continuationToken</code><br>Optional token used to retrieve the next page of data. If <code>count</code> is specified, a <code>continuationToken</code> must also be specified.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events. A continuation token can be returned if specified in the request.</p>
 <p><strong>Example</strong><br>The following requests all stored events between 12:30 and 15:30:</p>
@@ -662,7 +662,7 @@ Content-Type: application/json
 <p><code>string startIndex</code><br>The start index for the intervals.</p>
 <p><code>string endIndex</code><br>The end index for the intervals.</p>
 <p><code>int count</code><br>The number of intervals requested.</p>
-<p><code>string filter</code><br>Optional filter expression.</p>
+<p><code>string filter</code><br>Optional filter expression (see <a class="xref" href="Filter_Expressions.html">Filter expressions</a>).</p>
 <p><code>string streamViewId</code><br>Optional stream view identifier.</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of SdsIntervals.</p>
 <p>Each SdsInterval has a start, end, and collection of summary values.</p>
@@ -806,7 +806,7 @@ Content-Type: application/json
 </code></pre><hr>
 <h2 id="get-sampled-values"><code>Get Sampled Values</code></h2>
 <p>Returns data sampled by intervals between a specified start and end index.</p>
-<p>Sampling is driven by a specified property or properties of the stream&#39;s SdsType. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information see <a class="xref" href="Reading_Data.html#interpolation">Interpolation.</a></p>
+<p>Sampling is driven by a specified property or properties of the stream&#39;s SdsType. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information, see <a class="xref" href="Reading_Data.html#interpolation">Interpolation.</a></p>
 <p><strong>Request</strong>  </p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}/Data/
     Sampled?startIndex={startIndex}&amp;endIndex={endIndex}&amp;intervals={intervals}&amp;sampleBy={sampleBy}
@@ -821,7 +821,7 @@ Content-Type: application/json
 <p><code>SdsBoundaryType boundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex and endIndex.</p>
 <p><code>SdsBoundaryType startBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the startIndex.</p>
 <p><code>SdsBoundaryType endBoundaryType</code><br>Optional SdsBoundaryType specifies the handling of events at or near the endIndex.</p>
-<p><code>string filter</code><br>Optional filter expression.</p>
+<p><code>string filter</code><br>Optional filter expression (see <a class="xref" href="Filter_Expressions.html">Filter expressions</a>).</p>
 <p><strong>Response</strong><br>The response includes a status code and a response body containing a serialized collection of events.</p>
 <p><strong>Example</strong><br>The following request returns two sample intervals between the <code>startIndex</code> and <code>endIndex</code>:</p>
 <pre><code class="lang-text">GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/Simple/Data/
