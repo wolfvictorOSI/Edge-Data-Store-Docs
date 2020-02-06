@@ -134,7 +134,7 @@ The stream identifier.
 The index.
 
 ``string searchMode``  
-The [SdsSearchMode](xref:sdsReadingData#sdssearchmode), the default is ``exact``.
+The [SdsSearchMode](xref:sdsReadingData#sdssearchmode); the default is ``exact``.
 
 **Response**  
 The response includes a status code and a response body containing a serialized collection with one event. Depending on the request `index` and `searchMode`, it is possible to have an empty collection returned.
@@ -194,7 +194,7 @@ Content-Type: application/json
 Returns a collection of *stored* values at indexes based on request parameters.
 SDS supports three ways of specifying which stored events to return:
 
-* [Filtered](#getvaluesfiltered): A filtered request accepts a [filter expression](xref:sdsFilterExpressions).
+* [Filtered](#getvaluesfiltered): A filtered request accepts a filter expression.
 * [Range](#getvaluesrange): A range request accepts a start index and a count.
 * [Window](#getvalueswindow): A window request accepts a start index and end index. This request has an optional continuation token for large collections of events.
 
@@ -202,7 +202,7 @@ SDS supports three ways of specifying which stored events to return:
 
 ### `Filtered`  
 
-Returns a collection of stored values as determined by a `filter`. The `filter` limits results by applying an expression against event fields. Filter expressions are explained in detail in the [Filter expressions](xref:sdsFilterExpressions) section.
+Returns a collection of stored values as determined by a `filter`. The `filter` limits results by applying an expression against event fields. For more information about filter expressions, see [Filter expressions](xref:sdsFilterExpressions).
 
 **Request**  
 
@@ -219,7 +219,7 @@ The namespace; either default or diagnostics.
 The stream identifier.
 
 ``string filter``  
-The filter expression (see [Filter expressions](xref:sdsFilterExpressions))
+The filter expression (see [Filter expressions](xref:sdsFilterExpressions)).
 
 **Response**  
 The response includes a status code and a response body containing a serialized collection of events.
@@ -482,7 +482,7 @@ Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the fi
 Optional [SdsBoundaryType](xref:sdsReadingData#sdsboundarytype) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 ``string filter``  
-Optional [filter expression](xref:sdsFilterExpressions)
+Optional filter expression (see [Filter expressions](xref:sdsFilterExpressions)).
 
 ``string continuationToken``  
 Optional token used to retrieve the next page of data. If `count` is specified, a `continuationToken` must also be specified.
@@ -889,7 +889,7 @@ The end index for the intervals.
 The number of intervals requested.
 
 ``string filter``  
-Optional filter expression.
+Optional filter expression (see [Filter expressions](xref:sdsFilterExpressions)).
 
 ``string streamViewId``  
 Optional stream view identifier.
@@ -1035,7 +1035,7 @@ Content-Type: application/json
 
 Returns data sampled by intervals between a specified start and end index.
 
-Sampling is driven by a specified property or properties of the stream's SdsType. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information see [Interpolation.](xref:sdsReadingData#interpolation)
+Sampling is driven by a specified property or properties of the stream's SdsType. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information, see [Interpolation.](xref:sdsReadingData#interpolation)
 
 **Request**  
 
@@ -1075,7 +1075,7 @@ Optional SdsBoundaryType specifies the handling of events at or near the startIn
 Optional SdsBoundaryType specifies the handling of events at or near the endIndex.
 
 ``string filter``  
-Optional filter expression.
+Optional filter expression (see [Filter expressions](xref:sdsFilterExpressions)).
 
 **Response**  
 The response includes a status code and a response body containing a serialized collection of events.
