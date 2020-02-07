@@ -94,7 +94,7 @@ If you have more than one OSIsoft Adapter of the same kind configured, the defau
 <li>Change the values as needed, so it looks similar to the <a href="#logging-example">Logging example</a>.</li>
 <li>Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the respective endpoint. <br><br> Example using curl for the Edge Data Store logging endpoint (run this command from the same directory where the file is located):</li>
 </ol>
-<pre><code class="lang-bash">curl -v -d &quot;@System_Logging.json&quot; -H &quot;Content-Type application/json&quot; http://localhost:5590/api/v1/configuration/System/Logging
+<pre><code class="lang-bash">curl -v -d &quot;@System_Logging.json&quot; -H &quot;Content-Type: application/json&quot; http://localhost:5590/api/v1/configuration/System/Logging
 </code></pre><p><strong>Note:</strong> The other endpoints are the following:<br></p>
 <ul>
 <li>Edge Data Store: <code>http://localhost:5590/api/v1/configuration/System/Logging</code></li>
@@ -181,7 +181,7 @@ If you have more than one OSIsoft Adapter of the same kind configured, the defau
 <td>Optional</td>
 <td><code>integer</code></td>
 <td>Yes</td>
-<td>The log level settings that you want. The following options are available: <br> <strong>Verbose</strong> - Captures all messages: Verbose, Debug, Information, Warning and Error <br> <strong>Debug</strong> - Captures most messages: Debug, Information, Warning and Error <br> <strong>Information</strong> - Captures most messages: Information, Warning and Error <br> <strong>Warning</strong> - Captures only Warning and Error messages <br> <strong>Error</strong> - Captures Error messages only</td>
+<td>The maximum number of log files that the service will create for the component. It must be a positive integer.</td>
 </tr>
 <tr>
 <td><strong>LogFileSizeLimitBytes</strong></td>
@@ -195,7 +195,7 @@ If you have more than one OSIsoft Adapter of the same kind configured, the defau
 <td>Optional</td>
 <td>reference</td>
 <td>No</td>
-<td>The maximum number of log files that the service will create for the component. It must be a positive integer.</td>
+<td>The log level settings that you want. The following options are available: <br> <strong>Verbose</strong> - Captures all messages: Verbose, Debug, Information, Warning and Error <br> <strong>Debug</strong> - Captures most messages: Debug, Information, Warning and Error <br> <strong>Information</strong> - Captures most messages: Information, Warning and Error <br> <strong>Warning</strong> - Captures only Warning and Error messages <br> <strong>Error</strong> - Captures Error messages only</td>
 </tr>
 </tbody>
 </table>
