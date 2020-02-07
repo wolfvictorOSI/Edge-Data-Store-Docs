@@ -151,7 +151,7 @@ The value is expressed in seconds.
 
 ##### Requirement 1
 
-- []() � `#/definitions/EdgeConfigurationBase`
+- []() `#/definitions/EdgeConfigurationBase`
 
 ##### Requirement 2
 
