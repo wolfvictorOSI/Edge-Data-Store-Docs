@@ -4,80 +4,41 @@ uid: Performance
 
 # Performance
 
-Edge Data Store is designed to run on a variety of small hardware and software platforms, and to support running customer applications on the same platform. In order to assist in determining Edge Data Store is designed to run on a variety of small hardware and software platforms, and to support running customer applications on the same platform. To assist in determining the correct hardware and software configuration for a specific use, Edge Data Store has been tested on a variety of different hardware platforms with the supported ingress protocols at different event rates. Summary tables are provided below for each of the different protocols on different hardware platforms.
+Edge Data Store is designed to run on a variety of low powered hardware platforms and to serve data to custom applications that run on the same platform. To assist in determining the appropriate hardware and software configuration for a specific use, Edge Data Store was tested on a variety of different hardware platforms, with different data stream counts and with the supported ingress protocols at different event rates. 
 
-This topic is provided to assist in determining hardware and software that can be used for specific applications.
+This topic is provided to assist the user in determining the appropriate hardware and software where Edge Data Store can be used to meet the needs of different scenarios.
 
-## Edge Data Store Platforms
+## Edge Data Store Performance Testing Hardware
 
-For this release of Edge Data Store performance measurements platforms have been divided into three categories with the maximum supported Ingress rate for each category:
+Edge Data Store performance test cases were divided into three categories based on commonly available hardware platforms. The exmaple devices used in these test cases, the maximum supported data stream count and data ingress rate for each category are listed below. 
 
-* Small devices (e.g. 1 core CPU, 512 MB RAM): 30 events / sec
-* Medium devices (e.g. 1 - 2 core CPU, 1 – 2 GB RAM): 300 events / sec
-* Large devices (e.g. 2 – 4 core CPU, 4 GB RAM and larger): 3,000 events / sec
+* Small devices (BeagleBone Pocket Beagle, 1 core ARM32 CPU, 512 MB RAM): 30 data streams, 30 events / sec
+* Medium devices (Raspberry Pi 3B+, 4 core ARM32 CPU, 1 GB RAM): 300 data streams, 300 events / sec
+* Large devices (Dell, 4 core Intel x64 CPU, 8 GB RAM): 3,000 data streams, 3,000 events / sec
 
-It is possible that specific hardware and software configurations might support lower values. These are upper limits of what is supported for this release of the Edge Data Store.
+It is possible that lower performance resutls may be realized on other hardware and software configurations and/or due to other tasks running on the device. The data stream counts and throughput rates shown above are the upper limits of what is supported for the current release of Edge Data Store for each device category.
 
 ## Ingress Performance
 
-Data in the Edge Data Store can be ingressed using OMF, OPC UA or Modbus TCP. Each of these methods has different performance profiles, so they are treated separately.
+Data in Edge Data Store can be ingressed the EDS Modbus TCP adapter, the EDS OPC UA adapter and/or with a custom OMF application. Each of these data ingress methods have a different performance profile, so the performance of Edge Data Store using these different methods will vary. 
 
-When selecting the hardware to host Edge Data Store, there are some general principles that come out of our testing:
+When selecting the hardware to host Edge Data Store, there are a few general principles that come out of the performance testing:
 
-1. EDS Adapters use less CPU than OMF. In general across all platforms CPU use for EDS OPC UA and EDS Modbus TCP adapters is about half that of OMF ingress at the same event rates.
-2. Memory use is largely determined by the number of streams of data being written to. More streams of data will require additional RAM memory (in addition to storage space) to host additional streams.
-3. Windows is slightly more efficient than Linux on similar hardware. Both memory and CPU are slightly lower when running on Windows 10 than on Linux on the AMD64/Intel x64 platform where both are supported. 
-4. SSD storage is recommended for maximum performance and reliability. Our testing was done across all storage media - SSDs, HDDs, eMMC, and SD cards. EDS testing was successful on all those platforms but for maximum performance and reliability SSD storage is the best choice.
-
-In the tables below are some representative performance numbers based on internal testing of the Edge Data Store. Performance on any specific platform is expected to vary from the tables below, and the numbers below are only estimates of what can be expected on a real device in production. The columns of the table are:
-
-* Size - Small, Medium, or Large based on the definition earlier in this topic
-* Computer Type - Maker of the hardware tested
-* Storage - hard drive (HDD), solid state drive (SSD), eMMC, or SD card
-* RAM - total amount of RAM
-* OS - Linux or Windows
-* Cores - number of processor cores in the CPU
-* Events Per Second - number of events per second being ingressed
-* Stream Count - total number of streams on the device in the default namespace
-* Max RAM MB - maximum memory used by EDS in this test
-* Max CPU % - maximum CPU percentage used by EDS in this test
-
-Memory and CPU use metrics were computed using a one-minute average of memory and CPU use, so there may be momentary spikes of CPU and memory use that exceed the values shown.
-
-### OMF Ingress Performance
-
-|Size|Computer Type|Storage|Process|RAM|OS|Cores|Events Second|Stream Count|Max RAM MB|Max CPU %|
-|--|--|--|--|--|--|--|--|--|--|--|
-|Small|BeagleBone|SD Card|ARM32|512 MB|Linux|1|2|30|130|90|
-|Medium|Raspberry PI 3|SD Card|ARM32|1 GB|Linux|4|300|300|202|50|
-|Large|Dell|SSD|x64|8 GB|Linux|4|3000|3000|1100|70|
-
-### Modbus TCP Ingress Performance
-
-|Size|Computer Type|Storage|Process|RAM|OS|Cores|Events Second|Stream Count|Max RAM MB|Max CPU %|
-|--|--|--|--|--|--|--|--|--|--|--|
-|Small|BeagleBone|SD Card|ARM32|512 MB|Linux|1|15|30|120|65|
-|Medium|Raspberry PI 3|SD Card|ARM32|1 GB|Linux|4|38|300|200|30|
-|Large|Dell|SSD|x64|8 GB|Linux|4|3000|3000|1100|35|
-
-### OPC UA Ingress Performance
-
-|Size|Computer Type|Storage|Process|RAM|OS|Cores|Events Second|Stream Count|Max RAM MB|Max CPU %|
-|--|--|--|--|--|--|--|--|--|--|--|
-|Small|BeagleBone|SD Card|ARM32|512 MB|Linux|1|50|50|150|95|
-|Medium|Raspberry PI 3|SD Card|ARM32|1 GB|Linux|4|300|300|220|30|
-|Large|Dell|SSD|x64|8 GB|Linux|4|3000|3000|1100|35|
+1. EDS adapters use less CPU than custom OMF applications using the Edge Data Store OMF endpoint. In general, across all hardware platforms, CPU use for EDS Modbus TCP and EDS OPC UA adapters is about half of that used by custom OMF applcations at the same event rates.
+2. RAM use is largely determined by the number of data streams written to. More data streams require additional RAM (in addition to requiring more storage space).
+3. Edge Data Store is slightly more efficient running on Windows than Linux on similar hardware. Both CPU and RAM usage are slightly lower when Edge Data Store is running on Windows 10 than on Linux when comparing them on the AMD64/Intel x64 platform where both operating systems are supported. 
+4. SSD storage is recommended for maximum performance and reliability. Edge Data Store performance testing was completed on a variety of storage media - SSDs, HDDs, eMMC, and SD cards. Edge Data Store performance testing was successful using all storage technologies but for maximum performance and reliability, SSD storage is the best choice.
 
 ## Periodic Egress Performance
 
-An important part of periodic egress performance is the amount of network bandwidth available between the device hosting the Edge Data Store and the PI Web API or OCS endpoint. The performance numbers below reflect having access to a 1 GB LAN connection and a high speed connection to the Internet. If the device is located in an location with limited network bandwidth a lower level of performance can be expected.
+Edge Data Store generates OMF messages when configured to egress data to a PI Server or to OSIsoft Cloud Services. An important part of periodic egress performance is the amount of network bandwidth available between the device hosting the Edge Data Store and the PI Web API OMF endpoint or the OSIsoft Cloud Servcies OMF endpoint. The performance numbers presented in this section reflect use of a network with a 1 GB LAN connection and a high speed connection to the Internet. If Edge Data Store is installed on a device in an location with limited network bandwidth, a lower level of egress performance can be expected.
 
-Egress has a much lower performance impact on Edge Data Store than Ingress. Generally the peformance impact of egress on memory and CPU use is generally only a small percentage of the CPU and memory use of Ingress, so is not a major factor in system design.
+Data egress has a much lower performance impact on Edge Data Store than data ingress. Generally speaking, the peformance impact of data egress on CPU and RAM usage is only a small percentage of the CPU and RAM use of data ingress, so data egress configuration is not a major factor in Edge Data Store system design.
 
 ### Periodic Egress Performance to PI Web API
 
-Performance testing of Periodic Egress between Edge Data Store and PI Web API was done with a 1 GB network connection between the Edge Data Store computer and PI Web API with PI Web API hosted on a Xeon based server class machine that also included a local PI Data Archive installation. The Edge Data Store test device was set to backfill, and several million events were sent to the PI Web API. In all cases egress performance exceeded 10,000 events per second, which exceeds the maximum ingress rate for Edge Data Store of 3,000 events per second. In addition extended tests for several weeks with an egress rate of 3,000 events per second.
+Performance testing of periodic egress between Edge Data Store and the PI Web API OMF endpoint was completed with a 1 GB LAN connection between the Edge Data Store device and the PI Web API. The PI Web API was hosted on server class PC that also included a PI Server. The Edge Data Store test device was configured for backfill and several million events were sent to the PI Web API. In all cases, Edge Data Store egress performance exceeded 10,000 events per second. In addition, extended tests were run over several weeks with an egress rate of 3,000 events per second.
 
 ### Periodic Egress Performance to OSIsoft Cloud Services (OCS)
 
-Performance testing of Periodic Egress between Edge Data Store and OCS was done with a 1 GB network connection between the Edge Data Store computer and a high speed Internet connection. The Edge Data Store test device was set to backfill, and several million events were sent to OCS. In all cases egress performance exceeded 10,000 events per second, which exceeds the maximum ingress rate for Edge Data Store of 3,000 events per second. In addition extended tests for several weeks with a lower egress rate.
+Performance testing of periodic egress between Edge Data Store and the OSIsoft Cloud Services OMF endpoint was completed with a high speed Internet connection between the Edge Data Store and OSIsoft Cloud Services running in the Microsoft Azure West US Data Center, approximately 2,500 miles apart. The Edge Data Store test device was configured for backfill and several million events were sent to OSIsoft Cloud Services. In all cases, Edge Data Store egress performance exceeded 10,000 events per second. In addition, extended tests were run over several weeks with a lower egress rate.
