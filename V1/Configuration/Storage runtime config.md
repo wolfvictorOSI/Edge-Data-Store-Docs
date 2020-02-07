@@ -88,7 +88,7 @@ The content of an incoming OMF message, including the headers, will be written t
 
 `string`
 
-- format: `date-time` � date and time (according to [RFC 3339, section 5.6](http://tools.ietf.org/html/rfc3339))
+- format: `date-time` date and time (according to [RFC 3339, section 5.6](http://tools.ietf.org/html/rfc3339))
 - minimum length: 1 character
 
 ### StreamStorageLimitMb
