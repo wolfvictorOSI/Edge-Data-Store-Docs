@@ -62,4 +62,4 @@ The following diagram depicts the flow of data from a customer analytics applica
 
 Edge Data Store can send data to both PI Data Archive using PI Web API and OSIsoft Cloud Services (OCS). After Edge Data Store is installed, additional configuration is necessary to send data to both OCS and PI Web API.
 
-For information about using a componet of EDS, see the corresponding quick start guide for that component.
+For information about using a component of EDS, see the corresponding quick start guide for that component.
