@@ -160,3 +160,7 @@ Complete the following:
     ```
 
     If you get back an error, wait a few seconds and try it again. On a device with limited processor, memory, and slow storage, it may take some time before Edge Data Store is fully initialized and running for the first time.
+
+## Security
+
+Edge Data Store was developed following the Security Development Lifecycle (SDL) process. This is a new product so there are no security issues in previous releases that were fixed with this release. There are no known security issues with this initial release.
