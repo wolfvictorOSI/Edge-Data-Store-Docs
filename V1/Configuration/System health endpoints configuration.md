@@ -54,14 +54,14 @@ The following parameters are available for configuring system health endpoints.
         "endpoint": "https://<pi web api server>/piwebapi/omf/",
         "UserName": "<username>",
         "Password": "<password>",
-        "buffering": 0,
+        "buffering": "none",
         "maxBufferSizeMB": 0
     },
     {
         "Endpoint": "https://<OCS OMF endpoint>",
         "ClientId": "<clientid>",
         "ClientSecret": "<clientsecret>",
-        "buffering": 0,
+        "buffering": "disk",
         "maxBufferSizeMB": 0
     }
 ]
