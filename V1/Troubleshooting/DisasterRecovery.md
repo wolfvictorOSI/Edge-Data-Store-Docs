@@ -70,8 +70,8 @@ When you have first installed Edge Data Store on the new device, the new system 
 2. Locate the storage and configuration files.
 
    **Note:** Linux storage and configuration files should be in the following locations:
-			_/usr/share/OSIsoft/EdgeDataStore/Configuration_
-			_/usr/share/OSIsoft/EdgeDataStore /Storage_
+	_/usr/share/OSIsoft/EdgeDataStore/Configuration_
+	_/usr/share/OSIsoft/EdgeDataStore/Storage_
 
 3. Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.
 
