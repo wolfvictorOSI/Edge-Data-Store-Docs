@@ -4,20 +4,18 @@ uid: EdgeDataStore
 
 # Edge Data Store
 
-Edge Data Store (EDS) is an embedded data server that runs on Linux and Windows. EDS provides a lightweight data collection and storage application designed to enable the capturing of data for historical storage and analysis at the edge of networks. A storage component based on sequential data storage technology is provided. You can configure and administer EDS through REST programming, configuration, administrative interfaces, and the EdgeCmd command line tool. EDS complements existing OSIsoft products, and is designed for small devices. You can install and run it on 64-bit Intel/AMD compatible, 32-bit ARM v7/v8 compatible, and 64-bit ARM v8 compatible chips.
-
-While not a replacement for a PI System, EDS augments the PI System by providing historical data access in situations where deploying a full PI System is impractical. EDS provides native capability, via its Egress functionality, to send data to a PI System or to OSIsoft Cloud Services for long term historical storage and analysis.
+Edge Data Store (EDS) is a lightweight data collection and storage application designed to capture operational data at the edge of networks in remote locations that may not be continuously connected. EDS provides egress functionality to send data to a PI System or to OSIsoft Cloud Services (OCS) for long-term historical storage and analysis. While not a replacement for a PI System, EDS augments the PI System by providing historical data access in situations where deploying a full PI System is impractical. EDS is designed for small devices such as 64-bit Intel/AMD compatible, 32-bit ARM v7/v8 compatible, and 64-bit ARM v8 compatible chips.
 
 EDS provides the following capabilities:
 
-- OMF data ingress
+- OSIsoft Message Format (OMF) data ingress
 - Edge connectivity through Modbus TCP and OPC UA
 - Configurable data storage
-- Data egress to PI Web API and OCS
+- OMF data egress to PI Web API and OSIsoft Cloud Services
 - REST API to enable custom applications for visualization and analytics on Edge Data Store
 
 ## Edge Data Store architecture
-The following diagram depicts the relationships of architectural components to one another in the Edge Data Store:
+EDS is an embedded data server that runs on Linux and Windows devices. The following diagram depicts the relationships of architectural components to one another in the Edge Data Store:
 
 ![EDS architecture](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSArchitecture.jpg "EDS architecture")
 
@@ -25,6 +23,8 @@ The following diagram depicts the relationships of architectural components to o
 The following diagram depicts the flow of data in the Edge Data Store:
 
 ![EDS data flow](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSOverview1.jpg "EDS data flow")
+
+Modbus TCP EDS adapters and OPC UA EDS adapters collect data from devices and store it in a storage component based on sequential data storage technology. OMF data ingress collects data from other sources and stores in the storage component. Sequential Data Store (SDS) REST APIs can also read and write data to the storage component. The collected operational data, as well as system health data, is then sent to the PI System or OCS.
 
 ## Edge Data Store components
 The following diagram depicts the relationship of key functions to relevant components of the Edge Data Store:
