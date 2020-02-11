@@ -17,7 +17,7 @@ Complete the following to view help instructions on how to use the Edgecmd utili
 	edgecmd Help
 	```
 
-## View configuration facet help instructions
+## View component help instructions
 
 Complete the following to view help instructions for a configuration facet that a registered component supports:
 
@@ -33,7 +33,7 @@ Complete the following to view help instructions for a configuration facet that 
 	**Note:** The help output also provides examples of commands that you can run to configure the component.
 	
 	
-## View specific configuration facet help instructions
+## View component facet help instructions
 
 Complete the following to view help instructions for a specific facet within a component:
 
