@@ -4,7 +4,7 @@ uid: EdgeDataStore
 
 # Edge Data Store
 
-Edge Data Store (EDS) is a lightweight data collection and storage application designed to capture operational data at the edge of networks in remote locations that may not be continuously connected. EDS provides egress functionality to send data to a PI System or to OSIsoft Cloud Services (OCS) for long-term historical storage and analysis. While not a replacement for a PI System, EDS augments the PI System by providing historical data access in situations where deploying a full PI System is impractical. 
+Edge Data Store (EDS) is a lightweight application designed to capture and store operational data at the edge of networks in remote locations that may not be continuously connected. EDS augments the PI System by providing historical data access in situations where deploying a full PI System is impractical. Once data is collected, it is stored locally until it can be sent to a PI System or OSIsoft Cloud Services (OCS) for long-term storage and analysis.
 
 EDS provides the following capabilities:
 
@@ -60,6 +60,6 @@ The following diagram depicts the flow of data from a customer analytics applica
 
 ## Data egress from Edge Data Store
 
-Edge Data Store can send data to both PI Data Archive using PI Web API and OSIsoft Cloud Services (OCS). After Edge Data Store is installed, additional configuration is necessary to send data to both OCS and PI Web API.
+Edge Data Store can send data to both PI Data Archive and OSIsoft Cloud Services (OCS) using PI Web API. After Edge Data Store is installed, additional configuration is necessary to send data to either OCS and PI Web API.
 
-For information about using a component of EDS, see the corresponding quick start guide for that component.
+For information about configuring or using a component of EDS, see the corresponding quick start guide for that component.
