@@ -4,7 +4,7 @@ uid: EdgeDataStore
 
 # Edge Data Store
 
-Edge Data Store (EDS) is a lightweight data collection and storage application designed to capture operational data at the edge of networks in remote locations that may not be continuously connected. EDS provides egress functionality to send data to a PI System or to OSIsoft Cloud Services (OCS) for long-term historical storage and analysis. While not a replacement for a PI System, EDS augments the PI System by providing historical data access in situations where deploying a full PI System is impractical. EDS is designed for small devices such as 64-bit Intel/AMD compatible, 32-bit ARM v7/v8 compatible, and 64-bit ARM v8 compatible chips.
+Edge Data Store (EDS) is a lightweight data collection and storage application designed to capture operational data at the edge of networks in remote locations that may not be continuously connected. EDS provides egress functionality to send data to a PI System or to OSIsoft Cloud Services (OCS) for long-term historical storage and analysis. While not a replacement for a PI System, EDS augments the PI System by providing historical data access in situations where deploying a full PI System is impractical. 
 
 EDS provides the following capabilities:
 
@@ -15,7 +15,7 @@ EDS provides the following capabilities:
 - REST API to enable custom applications for visualization and analytics on Edge Data Store
 
 ## Edge Data Store architecture
-EDS is an embedded data server that runs on Linux and Windows devices. The following diagram depicts the relationships of architectural components to one another in the Edge Data Store:
+EDS is designed for small devices, such as 64-bit Intel/AMD compatible, 32-bit ARM v7/v8 compatible, and 64-bit ARM v8 compatible chips,  running Linux and Windows. The following diagram depicts the relationships of architectural components to one another in the Edge Data Store:
 
 ![EDS architecture](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSArchitecture.jpg "EDS architecture")
 
