@@ -19,7 +19,7 @@ Complete the following to view help instructions on how to use the Edgecmd utili
 
 ## View component help instructions
 
-Complete the following to view help instructions for a configuration facet that a registered component supports:
+Complete the following procedure to view help instructions for a registered component that Edge Data Store supports:
 
 1. Open command line.
 2. Type the following in the command line, replacing `<componentId>` with the value that you want, and press Enter.
