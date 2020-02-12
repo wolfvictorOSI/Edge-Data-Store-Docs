@@ -6,12 +6,9 @@ uid: opcUaOverview
 
 ## Overview
 
-OPC UA is an open standard, which ensures interoperability, security, and reliability of industrial automation devices and systems. OPC UA is recognized as one of the key communication and data modeling technologies of Industry 4.0, due to the fact that it works with many software platforms, and is completely scalable and flexible.
+The OPC UA EDS adapter is a component of Edge Data Store that transfers time-series data from an OPC UA capable device to EDS. OPC Unified Architecture (OPC UA) is a machine to machine communication protocol for industrial automation developed by the OPC Foundation. The OPC UA EDS adapter can connect to any device that uses the OPC UA communication protocol and uses subscriptions to reduce the amount of data transferred by only reading data changes and events. Once the data from the device is transferred to EDS, it is stored locally until it can be sent to a PI System or OSIsoft Cloud Services for long-term storage and analysis. 
 
-The OPC UA EDS adapter transfers time-series data from OPC UA devices into Edge Data Store.
+A single OPC UA EDS adapter can be installed as part of the Edge Data Store installation and, once configured, can connect to a single device. To connect to multiple devices, install and configure an additional instance of the OPC UA EDS adapter for each device.  
 
-You can add a single OPC UA EDS adapter during installation. To install multiple OPC UA EDS adapters, see [Edge Data Store Configuration](xref:EdgeDataStoreConfiguration) for adding a new component to Edge Data Store.
+Use JSON documents to configure the data source and data selection for each OPC UA EDS adapter. The data source configuration identifies the device from which the data originates, specifies the security for the connection, and controls how the data is identified. The data selection configuration controls what data is collected from the device. One data stream is created in EDS for each OPC UA item identified in the data selection configuration. 
 
-As with other EDS adapters, the OPC UA EDS adapter is configured with data source and data selection JSON documents. The data source configurations are identical with other adapters, but OPC UA supports an option to generate a data selection file template that you can manually edit and use for subsequent configuration. For details, see [Data selection configuration](xref:OPCUADataSelectionConfiguration). Once you create a template file, you can reuse it on both Linux and Windows without changes.
-
-For more information on how to configure logging for the OPC UA EDS adapter, see [Component-level logging configuration](xref:ComponentLoggingConfiguration).
