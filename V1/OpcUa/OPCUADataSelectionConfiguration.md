@@ -14,7 +14,7 @@ You can either have the data selection configuration file generated for you or y
 
 A default OPC UA data selection file will be created if there is no OPC UA data selection configuration, but a valid OPC UA data source exists.
 
-**Note:** To avoid possibly expensive browse operations, OSIsoft recommends that you manually create a data selection file instead of generating the default data selection file.
+**Note:** To avoid resource-intensive browse operations, OSIsoft recommends that you manually create a data selection file instead of generating the default data selection file.
 
 Complete the following steps for this default data selection file to be generated:
 
@@ -36,7 +36,7 @@ Complete the following steps for this default data selection file to be generate
 
 3. Copy the file to a different directory.
 
-  The contents of the file will look something like:
+  The contents of the file will look similar to the following:
 
   ```json
   [
