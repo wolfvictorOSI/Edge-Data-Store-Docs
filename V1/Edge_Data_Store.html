@@ -78,7 +78,7 @@
             <article class="content wrap" id="_content" data-uid="EdgeDataStore">
 <h1 id="edge-data-store">Edge Data Store</h1>
 
-<p>Edge Data Store (EDS) is a lightweight data collection and storage application designed to capture operational data at the edge of networks in remote locations that may not be continuously connected. EDS provides egress functionality to send data to a PI System or to OSIsoft Cloud Services (OCS) for long-term historical storage and analysis. While not a replacement for a PI System, EDS augments the PI System by providing historical data access in situations where deploying a full PI System is impractical. </p>
+<p>Edge Data Store (EDS) is a lightweight application designed to capture and store operational data at the edge of networks in remote locations that may not be continuously connected. EDS augments the PI System by providing historical data access in situations where deploying a full PI System is impractical. Once data is collected, it is stored locally until it can be sent to a PI System or OSIsoft Cloud Services (OCS) for long-term storage and analysis.</p>
 <p>EDS provides the following capabilities:</p>
 <ul>
 <li>OSIsoft Message Format (OMF) data ingress</li>
@@ -112,8 +112,8 @@
 <p>The following diagram depicts the flow of data from a customer analytics application into Edge Data Store, via either OMF or SDS REST calls:</p>
 <p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSAnalytics.jpg" alt="EDS Analytics" title="EDS Analytics"></p>
 <h2 id="data-egress-from-edge-data-store">Data egress from Edge Data Store</h2>
-<p>Edge Data Store can send data to both PI Data Archive using PI Web API and OSIsoft Cloud Services (OCS). After Edge Data Store is installed, additional configuration is necessary to send data to both OCS and PI Web API.</p>
-<p>For information about using a component of EDS, see the corresponding quick start guide for that component.</p>
+<p>Edge Data Store can send data to both PI Data Archive and OSIsoft Cloud Services (OCS) using PI Web API. After Edge Data Store is installed, additional configuration is necessary to send data to either OCS and PI Web API.</p>
+<p>For information about configuring or using a component of EDS, see the corresponding quick start guide for that component.</p>
 </article>
           </div>
           

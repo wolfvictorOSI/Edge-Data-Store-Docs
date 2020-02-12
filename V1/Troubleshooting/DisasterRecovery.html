@@ -99,12 +99,10 @@
 <li>If your device is still able to boot, verify that Edge Data Store service has stopped. Use the Windows Task Manager to stop the Edge Data Store service.</li>
 <li><p>Locate the storage and configuration files.</p>
 <p><strong>Note:</strong> Windows storage and configuration files should be in the following locations:</p>
-<pre><code> _C:\ProgramData\OSIsoft\EdgeDataStore\Configuration_
-
- _C:\ProgramData\OSIsoft\EdgeDataStore\Storage_
-
- The ProgramData folder is typically hidden, so if it is not visible, go to the **View** tab in **Windows Explorer** and select the **Hidden Items** check box.
-</code></pre></li>
+<p> <em>C:\ProgramData\OSIsoft\EdgeDataStore\Configuration</em></p>
+<p> <em>C:\ProgramData\OSIsoft\EdgeDataStore\Storage</em></p>
+<p> The ProgramData folder is typically hidden, so if it is not visible, go to the <strong>View</strong> tab in <strong>Windows Explorer</strong> and select the <strong>Hidden Items</strong> check box.</p>
+</li>
 <li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.</p>
 </li>
 </ol>
@@ -131,8 +129,8 @@
 </code></pre></li>
 <li><p>Locate the storage and configuration files.</p>
 <p><strong>Note:</strong> Linux storage and configuration files should be in the following locations:
-         <em>/usr/share/OSIsoft/EdgeDataStore/Configuration</em>
-         <em>/usr/share/OSIsoft/EdgeDataStore /Storage</em></p>
+ <em>/usr/share/OSIsoft/EdgeDataStore/Configuration</em>
+ <em>/usr/share/OSIsoft/EdgeDataStore/Storage</em></p>
 </li>
 <li><p>Create a zip or tar file containing the storage and configuration directories, and move it to a USB device or other safe location. File transfer can be done with WinSCP, SFTP, or external device.</p>
 <p><strong>Note:</strong> Using the <em>cp</em> command may result in a change in file ownership to the current user. </p>
