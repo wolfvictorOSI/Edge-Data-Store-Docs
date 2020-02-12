@@ -4,17 +4,19 @@ uid: ConfigurationTools
 
 # Configuration tools
 
+Edge Data Store and adapters can be configured with either the EdgeCmd utility, OSIsoft's proprietary tool, or REST tools.
+
 ## EdgeCmd utility
 
-You can use the EdgeCmd utility on both Linux and Windows to configure and manage Edge Data Store. For more information, see [EdgeCmd utility](xref:Installedgecmd).
+The EdgeCmd utility enables EDS and adapter configuration on both Linux and Windows operating systems. For more information on using the EdgeCmd utility, see [EdgeCmd utility](xref:Installedgecmd).
 
 ## REST tools
 
-The following tools are available to facilitate the execution of REST calls.
+The following tools can be used to make REST calls.
 
 ### curl
 
-Edge Data Store documentation displays curl commands for configuration and management examples. curl is a command line tool supported on Windows and Linux that is used to make HTTP calls. curl has a large range of capabilities. You can accomplish any Edge Data Store administrative or programming task with curl. curl is also easily scripted, using Bash or PowerShell on either Linux or Windows. OSIsoft recommends this tool for managing Edge Data Store. Any system that can run Edge Data Store supports curl.
+curl is a command line tool used to make HTTP calls and is supported on both Windows and Linux operating systems. curl is easily scripted using Bash or PowerShell on either Linux or Windows, and can be used to perform EDS administrative and programming tasks. curl commands are used in configuration and management examples throughout this document.
 
 ### Postman
 
@@ -22,8 +24,8 @@ Postman is an effective REST tool for systems with GUI components. Edge Data Sto
 
 ### C#, Python, Go
 
-You can use any modern programming language to make REST calls to administer and write programs for Edge Data Store. Since the administrative and programming interfaces are unified in using REST, you can write applications that both manage Edge Data Store and read and write data. For example, you can access the Diagnostics namespace locally to monitor and act upon the local system state.
+Edge Data Store is designed to use platform-independent programming, and any modern programming language can be used to make REST calls to administer and write programs for Edge Data Store. Since the administrative and programming interfaces use REST, you can write applications that both manage Edge Data Store and read and write data. For example, an application can access the Diagnostics namespace locally to monitor and act upon the local system state.
 
 ### System Tools
 
-Many OSIsoft customers use Windows computers, even though they may deploy Linux devices to host Edge Storage. You can install Edge Data Store on Windows 10, and the same custom applications developed on Windows should work on Linux, as long as the application development environment is supported on Linux. Edge Data Store has been designed to use platform independent programming. To facilitate working with Linux devices, Windows tools like PuTTY and WinSCP are very useful for copying files and remotely accessing Linux command lines.
+Use Windows tools like PuTTY and WinSCP to faciliate working across platforms, such as to copy files and remotely access Linux command lines.
