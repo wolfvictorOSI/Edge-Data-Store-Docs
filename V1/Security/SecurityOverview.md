@@ -2,9 +2,11 @@
 uid: security
 ---
 # Security
+
 The following topics discuss basic Edge Data Store security practices.
 
 ## REST APIs
+
 Edge Data Store supports REST APIs for configuration, data reading (through SDS), and data writing (through OMF and SDS). Edge Data Store provides only localhost access to REST APIs. Any code that reads or writes to the REST APIs must reside on the computer or device on which Edge Data Store is running. 
 
 REST access is through HTTP. The default port is 5590. The port number can be changed during installation, or during configuration after installation. URLs must be of the form http://<i></i>localhost:{port}/ or http://<i></i>127.0.0.1:{port}/. 
@@ -14,13 +16,15 @@ REST access is through HTTP. The default port is 5590. The port number can be ch
 **Note:** Docker users must use the "host" networking mode for the container. For information about using EDS with Docker, see [Install Edge Data Store using Docker](xref:edgeDocker).
 
 ## Data egress
+
 Writing data to OSIsoft Cloud Services or OSIsoft PI Web API is not limited to the local machine. You can write data to either of these destinations using HTTPS.
 
-
 ## EDS adapters
+
 Modbus and OPC UA are not limited to the local machine. Both are enabled to access remote data sources through binary protocols.
 
 ## Secure storage
+
 Sensitive information such as passwords and client secrets are saved in configuration files in an encrypted form. Only the Edge Data Store runtime can properly store and retrieve these protected data items. 
 
 **Note:** Do not manually edit configuration files. Altering encrypted values will cause failures.
@@ -35,3 +39,4 @@ The installer creates a specific user account that the Edge Data Store service r
 
 The Edge Data Store binary files, configuration files, and data files are configured by the installer and runtime to allow appropriate access by the service account. You do not normally need to modify the permission and ownership assignments for these files, and should not modify them as failures could occur.
 
+Consider a third party encryption-at-rest technique for your data storage. This security measure protects your data in the case the device storage is physically stolen, lost, or otherwise falls into the wrong hands.  On Linux, Edge Data Store is compatible with whole disk encryption systems such as [LUKS](https://en.wikipedia.org/wiki/Linux_Unified_Key_Setup) or partial encryption systems such as [eCryptfs](https://en.wikipedia.org/wiki/ECryptfs). On Windows, Edge Data Store is compatible with whole disk encryption solutions such as [BitLocker](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732774(v=ws.11)) and [Windows EFS](https://docs.microsoft.com/en-us/previous-versions/tn-archive/cc700811(v=technet.10)).
