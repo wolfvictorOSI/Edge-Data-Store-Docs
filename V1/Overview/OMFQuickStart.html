@@ -146,8 +146,8 @@
 <pre><code class="lang-bash">curl -i -d &quot;@OmfCreateDataEvents.json&quot; -H &quot;Content-Type: application/json&quot; -H &quot;producertoken: x &quot; -H &quot;omfversion: 1.1&quot; -H &quot;action: create&quot; -H &quot;messageformat: json&quot; -H &quot;messagetype: data&quot; -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
 </code></pre></li>
 </ol>
-<h2 id="read-last-data-written-using-sds">Read Last Data written using SDS</h2>
-<p>Complete the following to use the SDS REST API to read back the data written to the server. </p>
+<h2 id="use-sds-to-read-last-data-written">Use SDS to read last data written</h2>
+<p>Use the SDS REST API to read back the last data event written to the server. </p>
 <ol>
 <li>Start the curl command line tool.</li>
 <li><p>Execute the following curl command to return the last value written:</p>
@@ -156,8 +156,8 @@
 <pre><code class="lang-json">{&quot;Timestamp&quot;: &quot;2019-07-16T15:18:25.9870136Z&quot;, &quot;Value&quot;: 12346.6789}
 </code></pre></li>
 </ol>
-<h2 id="read-a-range-of-data-events-written-using-sds">Read a range of data events written using SDS</h2>
-<p>Complete the following to use the SDS REST API to read back the data written to the server. </p>
+<h2 id="use-sds-to-read-a-range-of-data-events">Use SDS to read a range of data events</h2>
+<p>Use the SDS REST API to read back the a range of data written to the server. </p>
 <ol>
 <li>Start the curl command line tool.</li>
 <li><p>Execute the following curl command to return up to 100 values after the startIndex specified:</p>

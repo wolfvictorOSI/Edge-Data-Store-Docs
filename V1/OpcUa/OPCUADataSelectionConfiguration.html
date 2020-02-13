@@ -83,7 +83,7 @@
 <p>You can either have the data selection configuration file generated for you or you can create it manually yourself.</p>
 <h2 id="generate-default-opc-ua-data-selection-configuration-file">Generate default OPC UA data selection configuration file</h2>
 <p>A default OPC UA data selection file will be created if there is no OPC UA data selection configuration, but a valid OPC UA data source exists.</p>
-<p><strong>Note:</strong> To avoid possibly expensive browse operations, OSIsoft recommends that you manually create a data selection file instead of generating the default data selection file.</p>
+<p><strong>Note:</strong> To avoid resource-intensive browse operations, OSIsoft recommends that you manually create a data selection file instead of generating the default data selection file.</p>
 <p>Complete the following steps for this default data selection file to be generated:</p>
 <ol>
 <li><p>Add an OPC UA EDS adapter with a unique ComponentId. For details, see <a class="xref" href="../Configuration/EdgeSystemConfiguration.html">Edge Data Store configuration</a>.</p>
@@ -97,7 +97,7 @@
 Linux: /usr/share/OSIsoft/EdgeDataStore/Configuration/OpcUa1_DataSelection.json
 </code></pre></li>
 <li><p>Copy the file to a different directory.</p>
-<p>The contents of the file will look something like:</p>
+<p>The contents of the file will look similar to the following:</p>
 <pre><code class="lang-json">[
 {
   &quot;Selected&quot;: false,
