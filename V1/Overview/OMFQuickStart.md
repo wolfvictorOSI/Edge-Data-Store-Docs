@@ -90,9 +90,9 @@ The next step in writing OMF data is to create a container. As with an OMF type,
    curl -i -d "@OmfCreateDataEvents.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: data" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
    ```
 
-## Read Last Data written using SDS
+## Use SDS to read last data written
 
-Complete the following to use the SDS REST API to read back the data written to the server. 
+Use the SDS REST API to read back the last data event written to the server. 
 
 1. Start the curl command line tool.
 2. Execute the following curl command to return the last value written:
@@ -107,9 +107,9 @@ Complete the following to use the SDS REST API to read back the data written to 
    {"Timestamp": "2019-07-16T15:18:25.9870136Z", "Value": 12346.6789}
    ```
 
-## Read a range of data events written using SDS
+## Use SDS to read a range of data events
 
-Complete the following to use the SDS REST API to read back the data written to the server. 
+Use the SDS REST API to read back the a range of data written to the server. 
 
 1. Start the curl command line tool.
 2. Execute the following curl command to return up to 100 values after the startIndex specified:
