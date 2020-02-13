@@ -10,5 +10,5 @@ The OPC UA EDS adapter is a component of Edge Data Store that transfers time-ser
 
 A single OPC UA EDS adapter can be installed as part of the Edge Data Store installation and, once configured, can connect to a single device. To connect to multiple devices, install and configure an additional instance of the OPC UA EDS adapter for each device.  
 
-Use JSON documents to configure the data source and data selection for each OPC UA EDS adapter. The data source configuration identifies the device from which the data originates, specifies the security for the connection, and controls how the data is identified. The data selection configuration controls what data is collected from the device. One data stream is created in EDS for each OPC UA item identified in the data selection configuration. 
+Use JSON documents to configure the data source and data selection for each OPC UA EDS adapter. The data source configuration identifies the device from which the data originates, specifies the security for the connection, and controls how the data streams from that device identified. The data selection configuration controls what data is collected from the device and how it is identified. For each data item identified in the data selection configuration, one data stream is created in EDS and sent to the storage component based on the storage runtime configuration. 
 
