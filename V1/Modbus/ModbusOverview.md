@@ -16,4 +16,4 @@ The Modbus TCP EDS adapter is installed as part of the Edge Data Store installat
   
   * Data selection configuration - specifies what data is collected from the device and how it is identified. Each adapter component requires a data selection configuration.
   
- With these configurations completed, the Modbus TCP EDS adapter polls devices to capture data, at the rate specified in the configuration and sends it to EDS, where it is stored locally until it can be sent to a PI System or OSIsoft Cloud Services for long-term storage and analysis.
+With these configurations completed, the Modbus TCP EDS adapter polls devices to capture data, at the rate specified in the configuration and sends it to EDS, where it is stored locally until it can be sent to a PI System or OSIsoft Cloud Services for long-term storage and analysis.
