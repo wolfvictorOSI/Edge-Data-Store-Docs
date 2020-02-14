@@ -4,7 +4,7 @@ uid: ConfigurationTools
 
 # Configuration tools
 
-Edge Data Store and adapters can be configured with either the EdgeCmd utility, OSIsoft's proprietary tool, or REST tools.
+Edge Data Store and adapters can be configured with either the EdgeCmd utility, OSIsoft's proprietary tool for configuring the Edge Data Store and adapters, or a commonly-used REST tool.
 
 ## EdgeCmd utility
 
