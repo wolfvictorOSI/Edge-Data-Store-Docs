@@ -4,18 +4,22 @@ uid: InstallEdgeDataStore
 
 # Install Edge Data Store
 
-You can install Edge Data Store using an install kit, as described in this section, or by using Docker containers. For more information, see [Install Edge Data Store using Docker](xref:edgeDocker).
+Install Edge Data Store using an install kit, as described in this section, or by using Docker containers. For more information, see [Install Edge Data Store using Docker](xref:edgeDocker).
 
 For a list of supported platforms and processors, see [System requirements](xref:SystemRequirements).
 
-**Note:**  You can change the port assignment either during or after installation. For more information on how to change the port number, see [System port configuration](xref:SystemPortConfiguration).
+**Note:**  The port assignment can be changed either during or after installation. For more information on how to change the port number after installation, see [System port configuration](xref:SystemPortConfiguration).
 
 ## Windows (Windows 10 x64)
 
-You must have administrative privileges to run the installer. Complete the following to install Edge Data Store on Windows:
+You must have administrative privileges to run the installer. Complete the following steps to install Edge Data Store on Windows:
 
-1. Copy the _EdgeDataStore.msi_ file to the file system of the device.
-2. To start the installer, double-click the _EdgeDataStore.msi_ file in Windows Explorer.
+1. Download the Windows .msi file from the [OSIsoft Customer portal (https://customers.osisoft.com/s/products)](https://customers.osisoft.com/s/products).
+
+       **Note:** Customer login credentials are required to access the portal.
+
+2. Copy the _EdgeDataStore.msi_ file to the file system of the device.
+3. To start the installer, double-click the _EdgeDataStore.msi_ file in Windows Explorer.
 
     Alternatively, you can start the installer from the command line with the following command:
 
@@ -23,26 +27,32 @@ You must have administrative privileges to run the installer. Complete the follo
     msiexec /i EdgeDataStore.msi PORT=5590 INSTALLFOLDER="C:\otherdir"
     ```
 
-    **Note:** You can use the optional INSTALLFOLDER parameter (must be in all caps) to specify an alternate location for Edge Data Store's binary components. The default value is "C:\Program Files\OSISoft\EdgeDataStore". OSIsoft recommends you use the default value.
+    **Note:** You can use the optional INSTALLFOLDER parameter (must be in all caps) to specify an alternate location for Edge Data Store's binary components. OSIsoft recommends you use the default location of "C:\Program Files\OSISoft\EdgeDataStore". Use the optional PORT parameter (must be in all caps) to specify the port. If you omit PORT=nnnn, the default port will be used. If the "quiet" or "no ui" flag for msiexec is specified and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
 
-3. In the OSIsoft Edge Data Store Setup window, click **Next**.
-4. Optional: Change the install folder and port number (default 5590) and select the Modbus or OpcUa component or both.
+4. In the OSIsoft Edge Data Store Setup window, click **Next**.
+5. Optional: Change the install folder and port number (default port is 5590).
 
-   **Note:** Valid values are in the range of 1024 to 65535. Select a port not already in use on the host because the installer will not check for this case. In the command line, use the optional PORT parameter (must be in all caps) to specify the port. 
-
-    If you omit PORT=nnnn, the default port will be used. The UI will start with the port pre-set to the value specified; validity will be checked as mentioned previously, with the install proceeding only when a valid port number is provided. However, if the "quiet" or "no ui" flag for msiexec is specified and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
-
-5. Click **Next** > **Install**.
-
-    When the install finishes, Edge Data Store will be installed and running on the port specified.
+   **Note:** Valid values for the port number are in the range of 1024 to 65535 and only an unused port number should be entered.  
     
-6. Click **Finish**.
+6. Optional: Select to add a Modbus TCP EDS Adapter system component, an OPC UA EDS Adapter system component, or both.
+
+    **Note:** The Modus TCP EDS adapter and the OPC UA EDS adapter are both installed, regardless of whether a system component is added. Additional system components can be added for each adapter after installation.
+
+7. Click **Next** > **Install**.
+    
+8. Click **Finish**.
+
+For instructions on how to verify the Edge Data Store installation, see [Verify installation](xref:VerifyInstallation).
 
 ## Linux
 
-You must have administrative privileges to install the software, for example root or sudo privilege. Complete the following to install Edge Data Store on Linux:
+You must have administrative privileges to install the software, for example root or sudo privilege, and the Linux OS must be up to date for the install to succeed. Complete the following steps to install Edge Data Store on Linux:
 
-1. Open a terminal window and type the sudo command for the installation kit appropriate to your operating system and processor. 
+1. Download the Linux distribution file from the [OSIsoft Customer portal (https://customers.osisoft.com/s/products)](https://customers.osisoft.com/s/products).
+
+       **Note:** Customer login credentials are required to access the portal.
+
+2. Open a terminal window and run the sudo apt install command for the installation kit appropriate to your operating system and processor. 
 
     **Debian 9 or later (Intel/AMD 64 bit processors)**
 
@@ -64,23 +74,21 @@ You must have administrative privileges to install the software, for example roo
     sudo apt install ./EdgeDataStore_linux-arm64.deb
     ```
 
-    A validation check for prerequisites will be completed. If the Linux OS is up to date, the install will succeed.
+    A validation check for prerequisites is performed. 
 
-2. If the install fails, run the following commands from the terminal window and try the install again:
+3. If the install fails, run the following commands from the terminal window and try the install again:
 
     ```bash
     sudo apt update
     sudo apt upgrade
     ```
 
-    After the check for prerequisites succeeds, you will be prompted if you want to change the default port (5590).
-
-3. Optional: Type the port value you want and press Enter. If 5590 is acceptable, press Enter.
+4. Optional: Change the port number (default port is 5590) and press Enter. 
 
    **Note:** If you specify an invalid value for the port, the install will proceed with the default value of 5590.
 
-    You will then be prompted if you want to install a Modbus TCP or OPC UA EDS adapter in addition to the default Storage component. The default is not to install them. You can add them after the installation is complete if you want.
+5. Optional: Select to add a Modbus TCP EDS Adapter system component, an OPC UA EDS Adapter system component, or both, and press Enter.
 
-4. If you want to install neither EDS adapter, press Enter to proceed.
+    **Note:** The Modus TCP EDS adapter and the OPC UA EDS adapter are both installed, regardless of whether a system component is added. Additional system components can be added for each adapter after installation.
 
-   The install will complete and Edge Data Store will be running on your device.
+For instructions on how to verify the Edge Data Store installation, see [Verify installation](xref:VerifyInstallation).
