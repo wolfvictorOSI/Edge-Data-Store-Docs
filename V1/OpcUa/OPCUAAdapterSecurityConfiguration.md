@@ -23,7 +23,7 @@ OPC UA EDS adapter generates a self-signed certificate when the first secure con
    Linux example using command-line:
 
    ```bash
-   mv /usr/share/OSIsoft/EdgeDataStore/OpcUa1/Certificates/RejectedCertificates/certsSimulationServer\ \[F9823DCF607063DBCECCF6F8F39FD2584F46AEBB\].der /usr/share/OSIsoft/EdgeDataStore/OpcUa1/Certificates/Trusted/certs/
+   mv /usr/share/OSIsoft/EdgeDataStore/OpcUa1/Certificates/RejectedCertificates/certs/SimulationServer\ \[F9823DCF607063DBCECCF6F8F39FD2584F46AEBB\].der /usr/share/OSIsoft/EdgeDataStore/OpcUa1/Certificates/Trusted/certs/
    ```
 
    **Note:** Administrator or root privileges are required to perform this operation.
@@ -54,7 +54,7 @@ Linux: `/usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates/Trusted/cert
 
 #### Adapter's certificate
 
-Windows: `%programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates`
+Windows: `%programdata%\OSIsoft\EdgeDataStore\{ComponentId}\Certificates\My\certs`
 
-Linux: `/usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates`
+Linux: `/usr/share/OSIsoft/EdgeDataStore/{ComponentId}/Certificates/My/certs`
 
