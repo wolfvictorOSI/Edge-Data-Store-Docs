@@ -52,7 +52,6 @@ After you create the data source file, you select the streams you want to store 
            "RegisterType": 3,
            "RegisterOffset": 1,
            "DataTypeCode": 20,
-           "BitMap": "16151413",
            "ConversionFactor": 2,
            "ConversionOffset": 3.4,
            "ScanRate": 500
@@ -63,7 +62,6 @@ After you create the data source file, you select the streams you want to store 
            "RegisterType": 3,
            "RegisterOffset": 2,
            "DataTypeCode": 20,
-           "BitMap": "16151413",
            "ConversionFactor": 2,
            "ConversionOffset": 3.4,
            "ScanRate": 500
@@ -74,7 +72,6 @@ After you create the data source file, you select the streams you want to store 
            "RegisterType": 3,
            "RegisterOffset": 3,
            "DataTypeCode": 20,
-           "BitMap": "16151413",
            "ConversionFactor": 2,
            "ConversionOffset": 3.4,
            "ScanRate": 500
@@ -85,7 +82,6 @@ After you create the data source file, you select the streams you want to store 
            "RegisterType": 3,
            "RegisterOffset": 4,
            "DataTypeCode": 20,
-           "BitMap": "16151413",
            "ConversionFactor": 2,
            "ConversionOffset": 3.4,
            "ScanRate": 500
@@ -96,7 +92,6 @@ After you create the data source file, you select the streams you want to store 
            "RegisterType": 3,
            "RegisterOffset": 5,
            "DataTypeCode": 20,
-           "BitMap": "16151413",
            "ConversionFactor": 2,
            "ConversionOffset": 3.4,
            "ScanRate": 500
