@@ -8,6 +8,8 @@
   href: Configure Edge Data Store.md
 - name: Configure Edge Data Store components
   href: Configure Edge Data Store components.md
+- name: Configure port
+  href: ConfigurePort
 - name: Delete configuration
   href: Delete configuration.md
 - name: EdgeCmd commands
