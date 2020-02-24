@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Egress execution details </title>
+    <title>Configure port </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Egress execution details ">
+    <meta name="title" content="Configure port ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -75,25 +75,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="EgressExecutionDetails">
-<h1 id="egress-execution-details">Egress execution details</h1>
+            <article class="content wrap" id="_content" data-uid="ConfigurePort">
+<h1 id="configure-port">Configure port</h1>
 
-<p>After an egress endpoint is configured, egress execution occurs periodically for that endpoint. Egress is handled individually per configured endpoint. Only the first execution types and containers are egressed; subsequently, only new or changed types/containers are egressed. </p>
-<p><strong>Note:</strong> Only streams with a single, timeseries-based index can be egressed. </p>
-<p>Type creation must be successful to perform container creation, and container creation must be successful to perform data egress.</p>
-<p>Type, container, and data items are batched into one or more OMF messages when egressing. Per the requirements defined in the OMF specification, a single message will not exceed 192KB in size. Compression is automatically applied to outbound egress messages. On the destination, failure to add a single item will result in the message failing. In that case the Edge Data Store will fall back to egressing each item individually, per type or stream (that is each type, each stream, all data for a single stream). Types, containers, and data will continue to be egressed as long as the destination continues to respond to HTTP requests - retrying previous failures as needed.</p>
-<p>If egress fails with one of the following errors, EDS will retry the request up to five times:</p>
-<ul>
-<li>TimeoutException</li>
-<li>HttpRequestException</li>
-<li>HttpStatusCode RequestTimeout (408)</li>
-<li>HttpStatusCode BadGateway (502)</li>
-<li>HttpStatusCode ServiceUnavailable (503)</li>
-<li>HttpStatusCode GatewayTimeout (504)</li>
-</ul>
-<p>There is an increasing delay before each retry. The total time for all five retries is one minute; during which time, all other egress messages for this definition are queued. If a TimeoutException or HttpRequestException error still occurs at the fifth retry, the egress fails, and EDS waits five minutes before trying the whole process again. If one of the other errors still occurs at the fifth retry, the message fails and EDS sends the next message in the queue.</p>
-<p>For data collection and egress, in-memory and on-disk storage are used to track the last successfully egressed data event, per stream. Data is egressed in order and includes future events.</p>
-<p><strong>Note:</strong>  When an event with a future timestamp is successfully egressed, only values after the associated timestamp of that event will be egressed.</p>
+<p>Complete the following procedure to configure or change the port on which the system is listening for REST API calls using the EdgeCmd utility.</p>
+<ol>
+<li>Open command line.</li>
+<li><p>Type the following in the command line, replacing <code>&lt;portNumber&gt;</code> with the port number, and press Enter.</p>
+<pre><code>edgecmd Configuration System Port port=&lt;portNumber&gt;
+</code></pre><p> <strong>Example:</strong> Set port number to 5595</p>
+<pre><code>edgecmd Configuration System Port port=5595
+</code></pre><p>To verify that the port number has been changed, see <a href="xref:RetrieveExistingConfiguration#view-a-specific-facet-configuration">Retrieve existing configuration</a>.</p>
+</li>
+</ol>
 </article>
           </div>
           
@@ -102,7 +96,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/Egress/Egress execution details.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/osisoft/Edge-Data-Store-Docs/blob/master/V1/CommandLine/Configure_port.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
