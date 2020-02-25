@@ -53,13 +53,6 @@ The following is a valid runtime configuration example.
 }
 ```
 
-
-## Storage runtime schema
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                                 |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ---------------------------------------------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | Storage_Runtime_schema.json |
-
 ## Storage runtime configuration properties
 
 | Property                                          | Type      | Required     | Nullable | Defined by                                |
