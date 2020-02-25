@@ -27,14 +27,6 @@ You can create or copy this file to any directory on a device with Edge Data Sto
 curl -v -d "@DataSource.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/Modbus1/DataSource"
 ```
 
-## Modbus TCP data source schema
-
-The following table describes the basic behavior of the _Modbus_DataSource_schema.json_ file.
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
-
 ## Parameters for Modbus TCP data source
 
 The following parameters are available for configuring a Modbus TCP data source.
