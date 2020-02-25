@@ -23,14 +23,6 @@ Complete the following to configure system health endpoints
     curl -v -d "@System_HealthEndpoints.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/System/HealthEndpoints
     ```
 
-## System health endpoints schema
-
-The following table defines the basic behavior of the _System_HealthEndpoints.config.json_ file.
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | 
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | 
-
 ## Parameters
 
 The following parameters are available for configuring system health endpoints.
