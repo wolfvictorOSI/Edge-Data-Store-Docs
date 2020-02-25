@@ -94,30 +94,6 @@ receiving health messages. To enable this functionality, you must configure Heal
 <pre><code class="lang-bash">curl -v -d &quot;@System_HealthEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; http://localhost:5590/api/v1/configuration/System/HealthEndpoints
 </code></pre></li>
 </ol>
-<h2 id="system-health-endpoints-schema">System health endpoints schema</h2>
-<p>The following table defines the basic behavior of the <em>System_HealthEndpoints.config.json</em> file.</p>
-<table>
-<thead>
-<tr>
-<th>Abstract</th>
-<th>Extensible</th>
-<th>Status</th>
-<th>Identifiable</th>
-<th>Custom properties</th>
-<th>Additional properties</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Can be instantiated</td>
-<td>Yes</td>
-<td>Experimental</td>
-<td>No</td>
-<td>Forbidden</td>
-<td>Forbidden</td>
-</tr>
-</tbody>
-</table>
 <h2 id="parameters">Parameters</h2>
 <p>The following parameters are available for configuring system health endpoints.</p>
 <table>

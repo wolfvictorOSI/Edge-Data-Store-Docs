@@ -102,30 +102,6 @@ If you have more than one OSIsoft Adapter of the same kind configured, the defau
 <li>OSIsoft Adapter for OPC UA: <code>http://localhost:5590/api/v1/configuration/OpcUa1/Logging</code></li>
 <li>OSIsoft Adapter for Modbus TCP: <code>http://localhost:5590/api/v1/configuration/Modbus1/Logging</code></li>
 </ul>
-<h2 id="logging-schema">Logging schema</h2>
-<p>The following table defines the basic behavior of any of the <em>componentId_Logging.json</em> files.</p>
-<table>
-<thead>
-<tr>
-<th>Abstract</th>
-<th>Extensible</th>
-<th>Status</th>
-<th>Identifiable</th>
-<th>Custom properties</th>
-<th>Additional properties</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Can be instantiated</td>
-<td>Yes</td>
-<td>Experimental</td>
-<td>No</td>
-<td>Forbidden</td>
-<td>Forbidden</td>
-</tr>
-</tbody>
-</table>
 <h3 id="log-levels">Log levels</h3>
 <p>The logLevel sets the minimum severity for messages to be included in the logs. Messages with a severity below the level set are not included. The log levels in their increasing order of severity are as follows: Trace, Debug, Information, Warning, Error, Critical.</p>
 <p>Table: General guidelines for setting the log level.</p>

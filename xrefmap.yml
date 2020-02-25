@@ -119,10 +119,10 @@ references:
   name: Sample Modbus TCP data source configuration
   href: V1/Configuration/Schemas/Modbus_DataSource_schema.html
 - uid: modbus_Logging_schema
-  name: ModbusLoggerConfiguration Schema
+  name: ModbusLoggerConfiguration Properties
   href: V1/Configuration/Schemas/Modbus_Logging_schema.html
 - uid: modbus_schema
-  name: ModbusConfiguration schema
+  name: Modbus TCP configuration properties
   href: V1/Configuration/Schemas/Modbus_schema.html
 - uid: modbusOverview
   name: Modbus TCP EDS adapter
@@ -152,10 +152,10 @@ references:
   name: Sample OPC UA data source configuration
   href: V1/Configuration/Schemas/OpcUa_DataSource_schema.html
 - uid: opcUa_Logging_schema
-  name: OPC UA logging configuration schema
+  name: OPC UA logging configuration properties
   href: V1/Configuration/Schemas/OpcUa_Logging_schema.html
 - uid: opcua_schema
-  name: OPC UA configuration schema
+  name: OPC UA configuration properties
   href: V1/Configuration/Schemas/OpcUa_schema.html
 - uid: OPCUAAdapterSecurityConfiguration
   name: Adapter security
@@ -272,10 +272,10 @@ references:
   name: Storage
   href: V1/Configuration/Storage.html
 - uid: Storage_Logging_schema
-  name: Storage logging configuration schema
+  name: Storage logging configuration properties
   href: V1/Configuration/Schemas/Storage_Logging_schema.html
 - uid: storage_PeriodicEgressEndpoints_schema
-  name: Periodic egress configuration schema
+  name: Sample periodic egress configuration
   href: V1/Configuration/Schemas/Storage_PeriodicEgressEndpoints_schema.html
 - uid: storage_Runtime_schema
   name: Sample storage runtime configuration
@@ -302,7 +302,7 @@ references:
   name: Sample OMF health endpoint configuration
   href: V1/Configuration/Schemas/System_HealthEndpoints_schema.html
 - uid: system_Logging_schema
-  name: System logging configuration schema
+  name: System logging configuration properties
   href: V1/Configuration/Schemas/System_Logging_schema.html
 - uid: system_Port_schema
   name: Sample system port configuration
