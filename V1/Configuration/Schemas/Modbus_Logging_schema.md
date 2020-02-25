@@ -2,7 +2,7 @@
 uid: modbus_Logging_schema
 ---
 
-## ModbusLoggerConfiguration Properties
+# ModbusLoggerConfiguration Properties
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
