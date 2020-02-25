@@ -2,7 +2,7 @@
 uid: storage_PeriodicEgressEndpoints_schema
 ---
 
-## Sample periodic egress configuration
+# Sample periodic egress configuration
 
 ```json
 [{
