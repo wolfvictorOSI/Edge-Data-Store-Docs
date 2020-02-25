@@ -24,12 +24,6 @@ The OMF health endpoint configuration schema specifies how to formally describe 
 ]
 ```
 
-# OMF health endpoint configuration schema
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                                               |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ------------------------------------------------------------------------ |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [System_HealthEndpoints_schema.json](System_HealthEndpoints_schema.json) |
-
 # OMF health endpoint configuration properties
 
 | Property                                                    | Type      | Required | Nullable | Defined by                                   |
