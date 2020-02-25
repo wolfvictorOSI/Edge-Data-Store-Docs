@@ -2,16 +2,6 @@
 uid: modbus_schema
 ---
 
-# ModbusConfiguration schema
-
-```
-
-```
-
-| Abstract            | Extensible | Status       | Identifiable | Custom Properties | Additional Properties | Defined In                                               |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [Modbus_Logging_schema.json](Modbus_Logging_schema.json) |
-
 # Modbus TCP configuration properties
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
