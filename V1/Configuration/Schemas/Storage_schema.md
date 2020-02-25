@@ -20,12 +20,6 @@ uid: storage_schema
     }
 ```
 
-# Storage configuration schema
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                               |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [Modbus_Logging_schema.json](Modbus_Logging_schema.json) |
-
 # Storage configuration properties
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
