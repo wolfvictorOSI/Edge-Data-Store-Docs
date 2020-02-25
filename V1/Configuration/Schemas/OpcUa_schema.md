@@ -2,7 +2,7 @@
 uid: opcua_schema
 ---
 
-## OPC UA configuration properties
+# OPC UA configuration properties
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
