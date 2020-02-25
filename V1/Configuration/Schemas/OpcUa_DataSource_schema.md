@@ -19,12 +19,6 @@ The OPC UA data source configuration schema specifies how to formally describe t
 }
 ```
 
-# OPC UA data source configuration schema
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                                   |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ------------------------------------------------------------ |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [OpcUa_DataSource_schema.json](OpcUa_DataSource_schema.json) |
-
 # OPC UA data source configuration properties
 
 | Property                                    | Type      | Required | Nullable | Defined by                            |
