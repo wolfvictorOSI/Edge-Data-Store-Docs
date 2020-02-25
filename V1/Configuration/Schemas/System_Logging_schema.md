@@ -2,14 +2,6 @@
 uid: system_Logging_schema
 ---
 
-# System logging configuration schema
-
-The System logging configuration schema specifies how to formally describe the logging parameters for the System.
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                               |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [System_Logging_schema.json](System_Logging_schema.json) |
-
 # System logging configuration properties
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
