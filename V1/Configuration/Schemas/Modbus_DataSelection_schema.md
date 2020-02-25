@@ -63,14 +63,6 @@ uid: modbus_DataSelection_schema
 ]
 ```
 
-# Modbus TCP data selection configuration schema
-
-The Modbus TCP data selection configuration schema specifies how to formally describe the data selection parameters for Modbus TCP.
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                                           |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [Modbus_DataSelection_schema.json](Modbus_DataSelection_schema.json) | 
-
 # Modbus TCP data selection configuration properties
 
 | Property                              | Type      | Required | Nullable | Defined by                               |
