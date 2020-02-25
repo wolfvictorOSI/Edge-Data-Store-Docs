@@ -2,14 +2,6 @@
 uid: Storage_Logging_schema
 ---
 
-# Storage logging configuration schema
-
-The Storage logging configuration schema specifies how to formally describe the logging parameters for Storage.
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
-
 # Storage logging configuration properties
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
