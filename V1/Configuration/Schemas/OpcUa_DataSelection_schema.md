@@ -40,15 +40,6 @@ The OPC UA data selection configuration schema specifies how to formally describ
 ]
 ```
 
-
-
-# OPC UA data selection configuration schema
-
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                                         |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | ------------------------------------------------------------------ |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [OpcUa_DataSelection_schema.json](OpcUa_DataSelection_schema.json) |
-
 # OPC UA data selection configuration properties
 
 | Property              | Type      | Required | Nullable | Defined by                       |
