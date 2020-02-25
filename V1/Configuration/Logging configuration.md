@@ -31,14 +31,6 @@ curl -v -d "@System_Logging.json" -H "Content-Type: application/json" http://loc
   - OSIsoft Adapter for OPC UA: `http://localhost:5590/api/v1/configuration/OpcUa1/Logging`
   - OSIsoft Adapter for Modbus TCP: `http://localhost:5590/api/v1/configuration/Modbus1/Logging`
 
-## Logging schema
-
-The following table defines the basic behavior of any of the _componentId_Logging.json_ files.
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | 
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | 
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
-
 ### Log levels
 
 The logLevel sets the minimum severity for messages to be included in the logs. Messages with a severity below the level set are not included. The log levels in their increasing order of severity are as follows: Trace, Debug, Information, Warning, Error, Critical.
