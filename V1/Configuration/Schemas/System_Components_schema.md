@@ -21,12 +21,6 @@ uid: system_Components_schema
 ]
  ```
 
-# Edge Data Store components configuration schema
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                                     |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [System_Components_schema.json](System_Components_schema.json) |
-
 # Edge Data Store components configuration properties
 
 | Property                        | Type     | Required | Nullable | Group                              |
