@@ -82,14 +82,6 @@ The following example shows the HTTPS request using curl (run this command from 
 curl -v -d "@DataSelection.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/OpcUa1/DataSelection"
 ```
 
-## OPC UA data selection schema
-
-The following table shows the basic behavior of the _OpcUa_DataSelection_schema.json_ file.
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
-
 ## Parameters for OPC UA data selection
 
 The following parameters can be used to configure OPC UA data selection:
