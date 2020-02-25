@@ -16,14 +16,6 @@ uid: modbus_DataSource_schema
 }
 ```
 
-# Modbus TCP data source configuration schema
-
-The Modbus TCP data source configuration schema specifies how to formally describe the Modbus TCP data source parameters.
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                                     |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [Modbus_DataSource_schema.json](Modbus_DataSource_schema.json) |
-
 # DataSourceConfiguration properties
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
