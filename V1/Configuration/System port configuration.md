@@ -20,14 +20,6 @@ Before you change the default, ensure that no other service or application on th
 
 2. After the REST command completes, restart Edge Data Store for the change to take effect.
 
-## System port schema
-
-The following table shows the basic behavior of the _System_Port.json_ file.
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | 
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | 
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | 
-
 ## Parameters for system port
 
 The following parameters are available for configuring system port.
