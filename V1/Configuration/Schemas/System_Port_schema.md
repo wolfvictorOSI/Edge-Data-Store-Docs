@@ -10,12 +10,6 @@ uid: system_Port_schema
 }
 ```
 
-# System port configuration schema
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties | Defined in                                         |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- | -------------------------------------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             | [System_Port_schema.json](System_Port_schema.json) |
-
 # System port configuration properties
 
 | Property      | Type      | Required | Nullable | Defined by                      |
