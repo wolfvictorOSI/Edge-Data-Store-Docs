@@ -27,14 +27,6 @@ curl -v -d "@DataSource.config.json" -H "Content-Type: application/json" "http:/
 ```
 **Note:** After you have completed data source configuration, the next step is to configure data selection. You can either have a default data selection file generated or you can create the data selection file yourself. For more information, see [Data selection configuration](xref:OPCUADataSelectionConfiguration).
 
-## OPC UA data source schema
-
-The following table shows the basic behavior of the _OpcUa_DataSource_schema.json_ file.
-
-| Abstract            | Extensible | Status       | Identifiable | Custom properties | Additional properties |
-| ------------------- | ---------- | ------------ | ------------ | ----------------- | --------------------- |
-| Can be instantiated | Yes        | Experimental | No           | Forbidden         | Forbidden             |
-
 ## Parameters for OPC UA data source
 
 The following parameters can be used to configure an OPC UA data source:
