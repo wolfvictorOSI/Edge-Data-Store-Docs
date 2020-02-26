@@ -12,8 +12,8 @@
 - name: Data egress configuration
   href: ../Egress/toc.yml
   topicHref: ../Egress/Egress.md
-- name: Health endpoints configuration
-  href: System health endpoints configuration.md
+- name: Edge Data Store Health
+  href: ../Health/toc.ym
 - name: System-level logging configuration
   href: ../Administration/LoggingConfiguration.md
 - name: Component-level logging configuration
