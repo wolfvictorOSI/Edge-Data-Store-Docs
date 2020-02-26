@@ -1,0 +1,4 @@
+- name: Edge Data Store Health
+  href: ../Health.md
+- name: Health endpoints configuration
+  href: ../Configuration/System health endpoints configuration.md
