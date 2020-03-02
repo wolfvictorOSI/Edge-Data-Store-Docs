@@ -21,7 +21,7 @@ You must have administrative privileges to run the installer. Complete the follo
 2. Copy the _EdgeDataStore.msi_ file to the file system of the device.
 3. To start the installer, double-click the _EdgeDataStore.msi_ file in Windows Explorer.
 
-    **Note:** To specify an alternate location for Edge Data Store's binary components fro the default location of "C:\Program Files\OSISoft\EdgeDataStore", use a command prompt to enter the following command and update the <file_path> with the path to the directory where you want to install the files. OSIsoft recommends you use the default path. Use the optional PORT parameter (must be in all caps) to specify a different port than the default of 5590. If the "quiet" or "no ui" flag for msiexec is specified and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
+    **Note:** To specify an alternate location for Edge Data Store's binary components for the default location of "C:\Program Files\OSISoft\EdgeDataStore", use a command prompt to enter the following command and update the <file_path> with the path to the directory where you want to install the files. OSIsoft recommends you use the default path. Use the optional PORT parameter (must be in all caps) to specify a different port than the default of 5590. If the "quiet" or "no ui" flag for msiexec is specified and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
     
     ```bash
     msiexec /i EdgeDataStore.msi PORT=5590 INSTALLFOLDER="<file_path>"
