@@ -30,39 +30,39 @@ The following health types and streams are created to reflect the health of EDS 
 
 The Connectors static type includes these properties and servers as a root AF element with the ID Connectors.
 
-| Type         | Property | Description      |
+| Property     | Type     | Description      |
 |--------------|----------|------------------|
-| string | Id | Connectors - root AF element |
-| string | Description | Collection of Connector assets |
+| Id | string | Connectors - root AF element |
+| Description | string | Collection of Connector assets |
 
 ### EDS adapter health
 
 The Connector Health static type includes the following properties, which are logged in a stream with the ID {machinename}.{componentid}. The stream is linked to root AF element (Connectors).
 
-| Type         | Property | Description      |
+| Property     | Type     | Description      |
 |--------------|----------|------------------|
-| string | Id  | {machinename}.{componentId} |
-| string | Description | {productname} health |
-| string | Connector Type | {adaptertype} |
-| string | Version | {adapterversion} |
+| Id | string  | {machinename}.{componentId} |
+| Description | string | {productname} health |
+| Connector Type | string | {adaptertype} |
+| Version | string | {adapterversion} |
 
 ### Device status
 
 The DeviceStatus dynamic type includes the following values, which are logged in a stream with the ID Connectors.{machinename}.{componentid}.DeviceStatus. The stream is linked to {machinename}.{componentid} static stream.
 
-| Type         | Property | Description      |
+| Property     | Type     | Description      |
 |--------------|----------|------------------|
-| string | Time | Timestamp of event |
-| string | DeviceStatus | Device status value |
+| Time | string | Timestamp of event |
+| DeviceStatus | string | Device status value |
 
 ### Next health message expected
 
 The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Connectors.{machinename}.{componentid}.NextHealthMessageExpected. The stream is linked to {machinename}.{componentid} static stream. Heard beat message is expected once a minute.
 
-| Type         | Property | Description      |
+| Property     | Type     | Description      |
 |--------------|----------|------------------|
-| string | Time | Timestamp of event |
-| string | NextHealthMessageExpected | Time when next health message is expected. |
+| Time | string | Timestamp of event |
+| NextHealthMessageExpected | string | Time when next health message is expected. |
 
 ## Storage component health
 
@@ -70,36 +70,36 @@ The following health types and streams are created to reflect the health of the 
 
 The Storage static type includes the following properties and servers as a root AF element with the ID Storage.
 
-| Type         | Property | Description      |
+| Property     | Type     | Description      |
 |--------------|----------|------------------|
-| string | Id | Storage - root AF element |
-| string | Description | Storage Health |
+| Id | string | Storage - root AF element |
+| Description | string | Storage Health |
 
 ### Storage health
 
 The Storage Health static type includes the following properties, which are logged in a stream with the ID {machinename}.Storage. The stream is linked to root AF element (Storage).
 
-| Type         | Property | Description      |
+| Property     | Type     | Description      |
 |--------------|----------|------------------|
-| string | Id  | {machinename}.Storage |
-| string | Description | {productname} health |
-| string | Connector Type | {adaptertype} |
-| string | Version | {storageversion} |
+| Id | string  | {machinename}.Storage |
+| Description | string | {productname} health |
+| Connector Type | string | {adaptertype} |
+| Version | string | {storageversion} |
 
 ### Storage device status
 
 The DeviceStatus dynamic type includes the following values, which are logged in a stream with the ID Storage.{machinename}.DeviceStatus. The stream is linked to {machinename}.Storage static stream.
 
-| Type         | Property | Description      |
+| Property     | Type     | Description      |
 |--------------|----------|------------------|
-| string | Time | Timestamp of event |
-| string | DeviceStatus | Device status value |
+| Time | string | Timestamp of event |
+| DeviceStatus | string | Device status value |
 
 ### Storage next health message expected
 
 The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Storage.{machinename}.NextHealthMessageExpected. The stream is linked to {machinename}.Storage static stream. Heard beat message is expected once a minute.
 
-| Type         | Property | Description      |
+| Property     | Type     | Description      |
 |--------------|----------|------------------|
-| string | Time | Timestamp of event |
-| string | NextHealthMessageExpected | Time when next health message is expected. |
+| Time | string | Timestamp of event |
+| NextHealthMessageExpected | string | Time when next health message is expected. |
