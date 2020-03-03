@@ -4,8 +4,7 @@ uid: HealthEndpointsConfiguration
 
 # Health endpoints configuration
 
-Edge Data Store sends health information for all of its OSIsoft Adapters. Edge Data Store has the ability to report health of the components to an OMF endpoint capable of
-receiving health messages. To enable this functionality, you must configure HealthEndpoints.
+Edge Data Store can be configured to egress health information for its components to an OMF endpoint capable of receiving health messages. Health data is transmitted at a one minute interval.
 
 ## Configure system health endpoints
 
