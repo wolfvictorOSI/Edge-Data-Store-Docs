@@ -78,86 +78,27 @@
             <article class="content wrap" id="_content" data-uid="EdgeDataStoreHealth">
 <h1 id="edge-data-store-health">Edge Data Store health</h1>
 
-<p>Insight into the health of the Edge Data Store and the components that make it up can be critical for ensuring that your needs for data collection are being met. To that end, Edge Data Store and its components produce health information. When configured, Edge Data Store transfers health information to OMF endpoints, including the types and containers that represent available health information.</p>
-<h2 id="configure-edge-data-store-health-endpoints">Configure Edge Data Store health endpoints</h2>
-<p>Edge Data Store has the ability to report system health to one or more OMF endpoints capable of receiving health messages. To enable this functionality, you must configure one or more health endpoints.</p>
-<p><strong>Configuration parameters for Edge Data Store health endpoints</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Id</td>
-<td>Optional</td>
-<td>The ID can be any alphanumeric string; for example, Endpoint1. If you do not specify an ID, Edge Data Store generates one automatically.</td>
-</tr>
-<tr>
-<td>Endpoint</td>
-<td>Required</td>
-<td>The URL of the ingress endpoint which accepts OMF health messages.</td>
-</tr>
-<tr>
-<td>UserName</td>
-<td>Required for PI Web API endpoints</td>
-<td>The user name used for authentication to PI Web API OMF endpoint.</td>
-</tr>
-<tr>
-<td>Password</td>
-<td>Required for PI Web API endpoints</td>
-<td>The password used for authentication to PI Web API OMF endpoint.</td>
-</tr>
-<tr>
-<td>ClientId</td>
-<td>Required for OSIsoft Cloud Services.</td>
-<td>The Client Id used for authentication to OSIsoft Cloud Services.</td>
-</tr>
-<tr>
-<td>ClientSecret</td>
-<td>Required for OSIsoft Cloud Services.</td>
-<td>The Client Secret used for authentication to OSIsoft Cloud Services.</td>
-</tr>
-<tr>
-<td>Buffering</td>
-<td>Optional</td>
-<td>Options are memory, disk, or none. The default is none.</td>
-</tr>
-<tr>
-<td>MaxBufferSizeMB</td>
-<td>Optional</td>
-<td>The limit on the maximum megabytes of data to buffer for messages to this endpoint if an integer is &gt;0. This parameter is useful if you want to limit memory or disk usage growth in the event of disconnection to the endpoint. If the buffer is full, old messages will be discarded for new messages. The default is 0.</td>
-</tr>
-<tr>
-<td>ValidateEndpointCertificate</td>
-<td>Optional</td>
-<td>Edge EDS adapter validates the endpoint certificate if set to true (recommended). If set to false, Edge EDS adapter accepts any endpoint certificate. OSIsoft recommends you disable endpoint certificate validation for testing purposes only.</td>
-</tr>
-</tbody>
-</table>
+<p>Insight into the health of the Edge Data Store and the components that make it up can be critical for ensuring that your needs for data collection are being met. To that end, Edge Data Store and its components produce health information. When configured, Edge Data Store transfers health information to OMF endpoints, including the types and containers that represent available health information. To enable this functionality, you must configure one or more health endpoints.</p>
 <h2 id="eds-adapter-health">EDS adapter health</h2>
 <p>The following health types and streams are created to reflect the health of EDS adapters.</p>
 <p>The Connectors static type includes these properties and servers as a root AF element with the ID Connectors.</p>
 <table>
 <thead>
 <tr>
-<th>Type</th>
 <th>Property</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>string</td>
 <td>Id</td>
+<td>string</td>
 <td>Connectors - root AF element</td>
 </tr>
 <tr>
-<td>string</td>
 <td>Description</td>
+<td>string</td>
 <td>Collection of Connector assets</td>
 </tr>
 </tbody>
@@ -167,30 +108,30 @@
 <table>
 <thead>
 <tr>
-<th>Type</th>
 <th>Property</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>string</td>
 <td>Id</td>
+<td>string</td>
 <td>{machinename}.{componentId}</td>
 </tr>
 <tr>
-<td>string</td>
 <td>Description</td>
+<td>string</td>
 <td>{productname} health</td>
 </tr>
 <tr>
-<td>string</td>
 <td>Connector Type</td>
+<td>string</td>
 <td>{adaptertype}</td>
 </tr>
 <tr>
-<td>string</td>
 <td>Version</td>
+<td>string</td>
 <td>{adapterversion}</td>
 </tr>
 </tbody>
@@ -200,20 +141,20 @@
 <table>
 <thead>
 <tr>
-<th>Type</th>
 <th>Property</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>string</td>
 <td>Time</td>
+<td>string</td>
 <td>Timestamp of event</td>
 </tr>
 <tr>
-<td>string</td>
 <td>DeviceStatus</td>
+<td>string</td>
 <td>Device status value</td>
 </tr>
 </tbody>
@@ -223,20 +164,20 @@
 <table>
 <thead>
 <tr>
-<th>Type</th>
 <th>Property</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>string</td>
 <td>Time</td>
+<td>string</td>
 <td>Timestamp of event</td>
 </tr>
 <tr>
-<td>string</td>
 <td>NextHealthMessageExpected</td>
+<td>string</td>
 <td>Time when next health message is expected.</td>
 </tr>
 </tbody>
@@ -247,20 +188,20 @@
 <table>
 <thead>
 <tr>
-<th>Type</th>
 <th>Property</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>string</td>
 <td>Id</td>
+<td>string</td>
 <td>Storage - root AF element</td>
 </tr>
 <tr>
-<td>string</td>
 <td>Description</td>
+<td>string</td>
 <td>Storage Health</td>
 </tr>
 </tbody>
@@ -270,30 +211,30 @@
 <table>
 <thead>
 <tr>
-<th>Type</th>
 <th>Property</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>string</td>
 <td>Id</td>
+<td>string</td>
 <td>{machinename}.Storage</td>
 </tr>
 <tr>
-<td>string</td>
 <td>Description</td>
+<td>string</td>
 <td>{productname} health</td>
 </tr>
 <tr>
-<td>string</td>
 <td>Connector Type</td>
+<td>string</td>
 <td>{adaptertype}</td>
 </tr>
 <tr>
-<td>string</td>
 <td>Version</td>
+<td>string</td>
 <td>{storageversion}</td>
 </tr>
 </tbody>
@@ -303,20 +244,20 @@
 <table>
 <thead>
 <tr>
-<th>Type</th>
 <th>Property</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>string</td>
 <td>Time</td>
+<td>string</td>
 <td>Timestamp of event</td>
 </tr>
 <tr>
-<td>string</td>
 <td>DeviceStatus</td>
+<td>string</td>
 <td>Device status value</td>
 </tr>
 </tbody>
@@ -326,20 +267,20 @@
 <table>
 <thead>
 <tr>
-<th>Type</th>
 <th>Property</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>string</td>
 <td>Time</td>
+<td>string</td>
 <td>Timestamp of event</td>
 </tr>
 <tr>
-<td>string</td>
 <td>NextHealthMessageExpected</td>
+<td>string</td>
 <td>Time when next health message is expected.</td>
 </tr>
 </tbody>
