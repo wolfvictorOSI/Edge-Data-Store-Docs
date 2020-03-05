@@ -564,7 +564,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Configuration/System health endpoints configuration.html",
-          "hash": "amLhlTvoxvkQqsku6WsDKQ=="
+          "hash": "C00i7i4twus5sUo3ANz5mw=="
         }
       },
       "is_incremental": false,
@@ -721,18 +721,6 @@
         ".html": {
           "relative_path": "V1/Health/Health.html",
           "hash": "Kknv6R0WbLruXP9NPdHFnw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "V1/Health/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "V1/Health/toc.html",
-          "hash": "hapc9zxEndmyTwIF2cBCow=="
         }
       },
       "is_incremental": false,
@@ -1620,7 +1608,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/toc.html",
-          "hash": "Z4MwyMezI7i30dUuJMUMWg=="
+          "hash": "LIOXo/WapT3jRmouXAe+5Q=="
         }
       },
       "is_incremental": false,
