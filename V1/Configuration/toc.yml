@@ -13,8 +13,8 @@
   href: ../Egress/toc.yml
   topicHref: ../Egress/Egress.md
 - name: Edge Data Store Health
-  href: ../Health/Health.md
-  topicHref: Health/Configuration.md
+  href: ../Health/toc.yml
+  topicHref: Health/Health.md
 - name: System-level logging configuration
   href: ../Administration/LoggingConfiguration.md
 - name: Component-level logging configuration
