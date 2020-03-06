@@ -146,7 +146,7 @@ Complete the following steps to perform a silent install Edge Data Store on Linu
    - _Edgeinstallfile.deb_ – The name of the distribution file.
    - < /dev/null – All defaults are used in the installation.
    
- ### Silent install on a Linux device with specified parameters
+### Silent install on a Linux device with specified parameters
  
  Complete the following steps to perform a silent install Edge Data Store on Linux using a parameter file to customize the installation:
  
