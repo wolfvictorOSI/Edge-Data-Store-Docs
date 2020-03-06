@@ -63,7 +63,7 @@ Msiexec /quiet /i EdgeDataStore.msi PORT=”<number>” INSTALLFOLDER=”<file_p
    - /quiet – The installation runs in silent mode.
    - /i – This is the install flag.
    - PORT – Use this property to specify a port other than the default of 5590. If the "quiet" or "no ui" flag for msiexec is specified and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
-   - INSTALLFOLDER – Use this property to specify an alternate location for the binary components other than the default location of "C:\Program Files\OSISoft\EdgeDataStore". OSIsoft recommends you use the default installation path.
+   - INSTALLFOLDER – Use this property to specify an alternate location for the binary components other than the default location of "%PROGRAMFILES%\OSISoft\EdgeDataStore". OSIsoft recommends you use the default installation path.
    - WIXUI_ENABLEMODBUS – Use this property to add a Modbus TCP EDS Adapter system component. The value for the parameter must be 1 for the component to be added.
    - WIXUI_ENABLEOPCUA - Use this property to add a OPC UA EDS Adapter system component. The value for the parameter must be 1, for the component to be added.
 
@@ -167,7 +167,7 @@ Complete the following steps to perform a silent install Edge Data Store on Linu
 3.  Run the apt-get install command for the distribution file appropriate to your operating system and processor.
 
     ```bash
-    sudo apt-get install -q -y ./ Edgeinstallfile.deb < silent.ini
+    sudo apt-get install -q -y ./Edgeinstallfile.deb < silent.ini
     ```
    Parameters:
    
