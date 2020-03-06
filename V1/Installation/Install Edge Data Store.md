@@ -50,7 +50,7 @@ Complete the following steps to install Edge Data Store on Windows using the ins
 
 Complete the following steps to install Edge Data Store on Windows from the command line:
 
-1. Open a command window and change the working directory to the location of the EdgeDataStore.msi file.
+1. Open a command window, by running as an administrator, and change the working directory to the location of the EdgeDataStore.msi file.
 
 2. Enter the msiexec command and specify parameters to run the installation, using the following example as a guide.
 
