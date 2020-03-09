@@ -181,23 +181,27 @@ sudo apt upgrade
 <li><em>Edgeinstallfile.deb</em> – The name of the distribution file.</li>
 <li>&lt; /dev/null – All defaults are used in the installation.</li>
 </ul>
+</li>
+</ol>
 <h3 id="silent-install-on-a-linux-device-with-specified-parameters">Silent install on a Linux device with specified parameters</h3>
-<p>Complete the following steps to perform a silent install Edge Data Store on Linux using a parameter file to customize the installation:</p>
+<p> Complete the following steps to perform a silent install Edge Data Store on Linux using a parameter file to customize the installation:</p>
 <ol>
-<li>Create a file called <em>silent.ini</em> with the following properties on separate lines:<ul>
+<li><p>Create a file called <em>silent.ini</em> with the following properties on separate lines:</p>
+<ul>
 <li>&lt;port_number&gt;</li>
 <li><y or="" n=""> - Specifies whether to create a Modbus TCP EDS component.</y></li>
 <li><y or="" n=""> - Specifies whether to create an OPCUA EDS component.</y></li>
 </ul>
-</li>
-</ol>
 <p>The following example shows the contents of a silent.ini file:</p>
 <pre><code>4567
 Y
 N
-</code></pre></li>
-<li><p>Open a terminal window.</p>
+</code></pre><ol>
+<li>Open a terminal window.</li>
+</ol>
 </li>
+</ol>
+<ol>
 <li><p>Run the apt-get install command for the distribution file appropriate to your operating system and processor.</p>
 <pre><code class="lang-bash">sudo apt-get install -q -y ./Edgeinstallfile.deb &lt; silent.ini
 </code></pre><p>Parameters:</p>
