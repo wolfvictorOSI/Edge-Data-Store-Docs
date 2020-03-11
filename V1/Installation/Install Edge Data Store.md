@@ -155,13 +155,8 @@ Complete the following steps to perform a silent install Edge Data Store on Linu
     - <Y or N> - Specifies whether to create a Modbus TCP EDS component.
     - <Y or N> - Specifies whether to create an OPCUA EDS component.
 
-   The following example shows the contents of a silent.ini file:
-   
-    ```
-    4567
-    Y
-    N
-    ```
+      An example _silent.ini_ file is shown in the following section.
+ 
 2. Open a terminal window.
 
 3.  Run the apt-get install command for the distribution file appropriate to your operating system and processor.
@@ -175,3 +170,13 @@ Complete the following steps to perform a silent install Edge Data Store on Linu
    - -y – Responds Yes to installing prerequisites.
    - _Edgeinstallfile.deb_ – The name of the distribution file.
    - < _silent.ini_ – is the file with the installation properties.
+
+#### Example Silent.ini file   
+   The following example shows the contents of a silent.ini file:
+   
+    ```
+    4567
+    Y
+    N
+    ```
+    
