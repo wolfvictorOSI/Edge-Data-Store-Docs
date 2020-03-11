@@ -190,18 +190,15 @@ sudo apt upgrade
 <ul>
 <li>&lt;port_number&gt;</li>
 <li><y or="" n=""> - Specifies whether to create a Modbus TCP EDS component.</y></li>
-<li><y or="" n=""> - Specifies whether to create an OPCUA EDS component.</y></li>
+<li><p><y or="" n=""> - Specifies whether to create an OPCUA EDS component.<p>
+<p>An example <em>silent.ini</em> file is shown in the following section.</p>
+</y></li>
 </ul>
-<p>The following example shows the contents of a silent.ini file:</p>
-<pre><code>4567
-Y
-N
-</code></pre><ol>
-<li>Open a terminal window.</li>
-</ol>
 </li>
 </ol>
 <ol>
+<li><p>Open a terminal window.</p>
+</li>
 <li><p>Run the apt-get install command for the distribution file appropriate to your operating system and processor.</p>
 <pre><code class="lang-bash">sudo apt-get install -q -y ./Edgeinstallfile.deb &lt; silent.ini
 </code></pre><p>Parameters:</p>
@@ -213,7 +210,14 @@ N
 </ul>
 </li>
 </ol>
-</article>
+<h4 id="example-silentini-file">Example Silent.ini file</h4>
+<p>   The following example shows the contents of a silent.ini file:</p>
+<pre><code>```
+4567
+Y
+N
+```
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
