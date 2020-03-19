@@ -4,11 +4,11 @@ uid: AccessEdgeCmdUtility
 
 # Access EdgeCmd utility
 
-The following EdgeCmd utility locations are based on the installation instructions in [EdgeCmd utility](xref:Installedgecmd).
+Access the EdgeCmd utility by entering the installation path in a command prompt or terminal window. If you did not use the default path during installation, use the path specified during installation. 
 
 ## Windows
 
-Complete the following to access EdgeCmd utility on Windows:
+Complete the following steps to access EdgeCmd utility on Windows:
 
 1. Open a command prompt.
 2. Type the following in the command prompt and press Enter:
@@ -21,7 +21,7 @@ Complete the following to access EdgeCmd utility on Windows:
 
 ## Linux
 
-Complete the following to access EdgeCmd utility on Linux:
+Complete the following steps to access EdgeCmd utility on Linux:
 
 1. Open a terminal window.
 2. Type the following in the terminal and press Enter:

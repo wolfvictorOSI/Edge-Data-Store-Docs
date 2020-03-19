@@ -8,10 +8,10 @@ You can use the EdgeCmd utility to view the configuration for each part of Edge 
 
 ## View components configuration
 
-Complete the following to view the configuration of every component in Edge Data Store:
+Complete the following steps to view the configuration of every component in Edge Data Store:
 
-1. Open command line.
-2. Type the following in the command line and press Enter.
+1. Open a command prompt.
+2. Type the following command and press Enter.
 
    ```bash
    edgecmd Configuration
@@ -20,10 +20,10 @@ Complete the following to view the configuration of every component in Edge Data
   
 ## View a specific component configuration
 
-Complete the following to view the configuration of a specific component:
+Complete the following steps to view the configuration of a specific component:
 
-1. Open command line.
-2. Type the following in the command line, replacing `<componentId>` with the ID of the component, and press Enter.
+1. Open a command prompt.
+2. Type the following command, replacing `<componentId>` with the ID of the component, and press Enter.
 
    ```bash
    edgecmd Configuration <componentId>
@@ -33,10 +33,10 @@ Complete the following to view the configuration of a specific component:
 
 ## View a specific facet configuration
 
-Complete the following to view the configuration of a specific facet of a component:
+Complete the following steps to view the configuration of a specific facet of a component:
 
-1. Open command line.
-2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name, and press Enter.
+1. Open a command prompt.
+2. Type the following command, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name, and press Enter.
 
    ```bash
    edgecmd Configuration <componentId> <facetName>
@@ -45,10 +45,10 @@ Complete the following to view the configuration of a specific facet of a compon
    
 ## View a specific facet entry configuration
 
-Complete the following to view the configuration of a specific facet entry of a component:
+Complete the following steps to view the configuration of a specific facet entry of a component:
 
-1. Open command line.
-2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name.
+1. Open a command prompt.
+2. Type the following command, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name.
 
    ```bash
    edgecmd Configuration <componentId> <facetName> id=IndexToRetrieve

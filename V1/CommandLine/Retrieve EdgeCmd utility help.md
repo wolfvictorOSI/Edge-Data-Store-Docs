@@ -4,25 +4,25 @@ uid: RetrieveEdgeCmdUtilityHelp
 
 # Retrieve EdgeCmd utility help
 
-The EdgeCmd utility provides a 'Help' utility with instructions on how to use EdgeCmd utility. 
+The EdgeCmd utility includes command-line syntax help that can be accessed directly from a command line. 
 
-## View general help instructions
+## View general help
 
-Complete the following to view help instructions on how to use the Edgecmd utility:
+Complete the following steps to view help on how to use the Edgecmd utility:
 
-1. Open command line.
-2. Type the following in the command line and press Enter.
+1. Open a command prompt.
+2. Type the following command and press Enter.
 
 	```bash
 	edgecmd Help
 	```
 
-## View component help instructions
+## View component help
 
-Complete the following procedure to view help instructions for a registered component that Edge Data Store supports:
+Complete the following steps to view help for a registered component for Edge Data Store:
 
-1. Open command line.
-2. Type the following in the command line, replacing `<componentId>` with the value that you want, and press Enter.
+1. Open a command prompt.
+2. Type the following command, replacing `<componentId>` with the component ID, and press Enter.
 
 	```bash
 	edgecmd Help <componentId>
@@ -30,15 +30,15 @@ Complete the following procedure to view help instructions for a registered comp
 
 	For more information, see the example, [Help for the System component](#help-for-the-system-component).
 	
-	**Note:** The help output also provides examples of commands that you can run to configure the component.
+	**Note:** The help includes examples of commands used to configure the component.
 	
 	
-## View component facet help instructions
+## View component facet help
 
-Complete the following to view help instructions for a specific facet within a component:
+Complete the following steps to view help for a specific facet within a component:
 
-1. Open command line.
-2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the value that you want, and press Enter.
+1. Open a command prompt.
+2. Type the following command, replacing `<componentId>` and `<facetName>` with the component ID and the facet name, and press Enter.
 
 	```bash
 	edgecmd Help <componentId> <facetName>
