@@ -146,7 +146,7 @@ Complete the following steps to perform a silent install Edge Data Store on Linu
    - -q – Specifies a silent install.
    - -y – Responds Yes to installing prerequisites.
    - _Edgeinstallfile.deb_ – The name of the distribution file.
-   - /dev/null – All defaults are used in the installation.
+   - < /dev/null – All defaults are used in the installation.
    
 ### Silent install on a Linux device with specified parameters
  
@@ -177,5 +177,5 @@ Complete the following steps to perform a silent install Edge Data Store on Linu
    - -q – Specifies a silent install.
    - -y – Responds Yes to installing prerequisites.
    - _Edgeinstallfile.deb_ – The name of the distribution file.
-   - _silent.ini_ – The file with the installation properties.
+   - < _silent.ini_ – The file with the installation properties.
 
