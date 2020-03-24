@@ -4,13 +4,13 @@ uid: RetreiveExistingSystemConfiguration
 
 # Retrieve existing system configuration
 
-You can use the EdgeCmd utility to view the configuration for each part of Edge Data Store.
+Use the EdgeCmd utility to view the configuration for the components of Edge Data Store.
 
-## View components configuration
+## View all components configuration
 
 Complete the following steps to view the configuration of every component in Edge Data Store:
 
-1. Open a command prompt.
+1. Access the EdgeCmd utility through a command line tool.
 2. Type the following command and press Enter.
 
    ```bash
@@ -22,7 +22,7 @@ Complete the following steps to view the configuration of every component in Edg
 
 Complete the following steps to view the configuration of a specific component:
 
-1. Open a command prompt.
+1. Access the EdgeCmd utility through a command line tool.
 2. Type the following command, replacing `<componentId>` with the ID of the component, and press Enter.
 
    ```bash
@@ -35,7 +35,7 @@ Complete the following steps to view the configuration of a specific component:
 
 Complete the following steps to view the configuration of a specific facet of a component:
 
-1. Open a command prompt.
+1. Access the EdgeCmd utility through a command line tool.
 2. Type the following command, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name, and press Enter.
 
    ```bash
@@ -47,7 +47,7 @@ Complete the following steps to view the configuration of a specific facet of a 
 
 Complete the following steps to view the configuration of a specific facet entry of a component:
 
-1. Open a command prompt.
+1. Access the EdgeCmd utility through a command line tool.
 2. Type the following command, replacing `<componentId>` and `<facetName>` with the ID of the component and the facet name.
 
    ```bash

@@ -4,27 +4,27 @@ uid: ConfigureEdgeDataStoreComponents
 
 # Configure Edge Data Store components
 
-The EdgeCmd utility enables you to add, configure, and delete Edge Data Store components.
+Use the EdgeCmd utility to add, configure, and delete Edge Data Store components.
 
 ## View configured components
 
-Complete the following to view the components currently configured on Edge Data Store.
+Complete the following steps to view the components currently configured on Edge Data Store.
 
-1. Open command line.
-2. Type the following in the command line and press Enter.
+1. Access the EdgeCmd utility through a command line tool.
+2. Type the following command and press Enter.
 
 	```bash
 	edgecmd Configuration System Components
 	```
 
-## Add components
+## Add a component
 
-Complete the following to add a new component.
+Complete the following steps to add a Modbus TCP EDS adapter component or an OPC UA EDS adapter component.
 
-1. Open command line.
-2. Type the following in the command line, replacing `<componentId>` and `<componentType>` with the values that you want and press Enter.
+1. Access the EdgeCmd utility through a command line tool.
+2. Type the following command, replacing `<componentId>` and `<componentType>` with the values for the new component and press Enter.
 
-	**Note:** Valid component types are `Modbus` and `OpcUa`. If you are trying to register a Modbus EDS adapter, use `Modbus` and if you are trying to register an OPC UA adapter, use `OpcUa`.
+	**Note:** Valid component types are `Modbus` and `OpcUa`.
 	
 	```bash
 	edgecmd Configuration System Components componentId=<componentId> componentType=<componentType>
@@ -36,18 +36,18 @@ Complete the following to add a new component.
 	edgecmd Configuration System Components componentId=Modbus1 componentType=Modbus
 	```
 
-## Configure components
+## Configure facets of a component
 
-The Modbus TCP EDS adapter and OPC UA EDS adapter each have three configurable facets: data source, data selection, and logging. Complete the following to configure a facet.
+The Modbus TCP EDS adapter and OPC UA EDS adapter each have three configurable facets: data source, data selection, and logging. Complete the following steps to configure a facet for a component.
 
-1. Open command line.
-2. Type the following in the command line, replacing `<componentId>` and `<facetName>` with the values that you want.
+1. Access the EdgeCmd utility through a command line tool.
+2. Type the following command, replacing `<componentId>` and `<facetName>` with the values that you want.
 
 	```bash
 	edgecmd Configuration <componentId> <facetName>
 	```
 	
-3. Add key=value pairs to specify which values of the facet that you want to configure are to be changed and press Enter.
+3. Add key=value pairs to specify the values to changed and press Enter.
 	
 	**Example**: Configuration of the data source facet of a Modbus adapter
 
@@ -57,12 +57,12 @@ The Modbus TCP EDS adapter and OPC UA EDS adapter each have three configurable f
 
 For detailed information on how to configure each adapter, see [OPC UA EDS adapter](xref:opcUaOverview) and [Modbus TCP EDS adapter](xref:modbusOverview).
 
-## Delete components
+## Delete a component
 
-Complete the following to delete components from the Edge Data Store.
+Complete the following steps to delete a component from Edge Data Store.
 
-1. Open command line.
-2. Type the following in the command line, replacing `<componentId>` with the ID of the component that you want to delete, and press Enter.
+1. Access the EdgeCmd utility through a command line tool.
+2. Type the following command, replacing `<componentId>` with the ID of the component to delete, and press Enter.
 
 	```bash
 	edgecmd Configuration System Components id=<componentId> delete

@@ -4,10 +4,10 @@ uid: ConfigurePort
 
 # Configure port
 
-Complete the following procedure to configure or change the port on which the system is listening for REST API calls using the EdgeCmd utility.
+Complete the following procedure to change the port on which the system is listening for REST API calls using the EdgeCmd utility.
 
-1. Open command line.
-2. Type the following in the command line, replacing `<portNumber>` with the port number, and press Enter.
+1. Access the EdgeCmd utility through a command line tool.
+2. Type the following command, replacing `<portNumber>` with the port number, and press Enter.
 
     ```
     edgecmd Configuration System Port port=<portNumber>
