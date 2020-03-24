@@ -4,15 +4,17 @@ uid: InstallEdgeDataStore
 
 # Install Edge Data Store
 
-Install Edge Data Store using an install kit, as described in this section, or by using Docker containers. For more information, see [Install Edge Data Store using Docker](xref:edgeDocker). The installation includes the OPC UA EDS adapter, the Modbus TCP EDS adapter, and the Sequential Data Store (SDS) storage. An OPC UA EDS adapter component and a Modbus TCP EDS adapter component can each be added during the installation. Additional system components can be added for each adapter after installation.
+Install Edge Data Store using an install kit, as described in this section, or using Docker containers. For more information, see [Install Edge Data Store using Docker](xref:edgeDocker). 
 
 For a list of supported platforms and processors, see [System requirements](xref:SystemRequirements).
+
+The installation includes the OPC UA EDS adapter, the Modbus TCP EDS adapter, and the Sequential Data Store (SDS) storage. An OPC UA EDS adapter component and a Modbus TCP EDS adapter component can each be added during the installation. Additional components can be added for each adapter after installation. For more information, see [Data ingress configuration](xref:EDSDataIngress).
 
 The port assignment can be changed either during or after installation. For more information on how to change the port number after installation, see [System port configuration](xref:SystemPortConfiguration).
 
 ## Windows (Windows 10 x64)
 
-You must have administrative privileges on the device to run the installer. Run the installation file directly to step through a wizard or use the command line to run the installation, including silent installation. 
+You must have administrative privileges on the device to install Edge Data Store. Run the installation file directly to step through a wizard, or use the command line to run the installation, including silent installation. 
 
 For instructions on verifying the Edge Data Store installation, see [Verify installation](xref:VerifyInstallation).
 
@@ -20,7 +22,7 @@ For instructions on verifying the Edge Data Store installation, see [Verify inst
 
 Complete the following steps to download the Windows installation file:
 
-1. Download the Windows .msi file from the [OSIsoft Customer portal (https://customers.osisoft.com/s/products)](https://customers.osisoft.com/s/products).
+1. Download the Windows _EdgeDataStore.msi_ file from the [OSIsoft Customer portal (https://customers.osisoft.com/s/products)](https://customers.osisoft.com/s/products).
 
        **Note:** Customer login credentials are required to access the portal.
 
@@ -34,11 +36,11 @@ Complete the following steps to install Edge Data Store on Windows using the ins
 
 2. In the OSIsoft Edge Data Store Setup window, click **Next**.
 
-3. Optional: Change the install folder and port number (default port is 5590).
+3. Optional: Change the installation folder and port number (default port is 5590).
 
    **Note:** OSIsoft recommends you use the default installation path. Valid values for the port number are in the range of 1024 to 65535 and only an unused port number should be entered.  
     
-4. Optional: Select to add a Modbus TCP EDS Adapter system component, an OPC UA EDS Adapter system component, or both.
+4. Optional: Add a Modbus TCP EDS Adapter system component, an OPC UA EDS Adapter system component, or both.
 
     **Note:** The Modus TCP EDS adapter and the OPC UA EDS adapter are both installed, regardless of whether a system component is added. Additional system components can be added for each adapter after installation.
 
@@ -62,12 +64,12 @@ Msiexec /quiet /i EdgeDataStore.msi PORT=”<number>” INSTALLFOLDER=”<file_p
    
    - /quiet – The installation runs in silent mode.
    - /i – This is the install flag.
-   - PORT – Use this property to specify a port other than the default of 5590. If the "quiet" or "no ui" flag for msiexec is specified and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
-   - INSTALLFOLDER – Use this property to specify an alternate location for the binary components other than the default location of "%PROGRAMFILES%\OSISoft\EdgeDataStore". OSIsoft recommends you use the default installation path.
-   - WIXUI_ENABLEMODBUS – Use this property to add a Modbus TCP EDS Adapter system component. The value for the parameter must be 1 for the component to be added.
-   - WIXUI_ENABLEOPCUA - Use this property to add a OPC UA EDS Adapter system component. The value for the parameter must be 1, for the component to be added.
+   - PORT – Specify a port other than the default of 5590. If the "quiet" or "no ui" flag for msiexec is specified and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
+   - INSTALLFOLDER – Specify an alternate location for the binary components other than the default location of "%PROGRAMFILES%\OSISoft\EdgeDataStore". OSIsoft recommends you use the default installation path.
+   - WIXUI_ENABLEMODBUS – Add a Modbus TCP EDS Adapter system component. The value must be 1 for the component to be added.
+   - WIXUI_ENABLEOPCUA - Add a OPC UA EDS Adapter system component. The value must be 1, for the component to be added.
 
-    **Note:** If you do not use a parameter, the default value for the parameter is used. Property names must be in all capital letters.
+    **Note:** If you do not use a parameter, the default value for the parameter is used. Property names must be in all capital letters, for example, PORT.
 
 ## Linux
 
@@ -83,7 +85,7 @@ Complete the following steps to download the appropriate file for your device:
 
        **Note:** Customer login credentials are required to access the portal.
        
-2. Copy the file to the file system of the device.
+2. Copy the Linux distribution file to the file system of the device.
 
 ### Install on a Linux device
 
@@ -124,7 +126,7 @@ Complete the following steps to install Edge Data Store on Linux:
 
    **Note:** If you specify an invalid value for the port, the install will proceed with the default value of 5590.
 
-4. Optional: Select to add a Modbus TCP EDS Adapter system component, an OPC UA EDS Adapter system component, or both, and press Enter.
+4. Optional: Add a Modbus TCP EDS Adapter system component, an OPC UA EDS Adapter system component, or both, and press Enter.
 
     **Note:** The Modus TCP EDS adapter and the OPC UA EDS adapter are both installed, regardless of whether a system component is added. Additional system components can be added for each adapter after installation.
 
@@ -150,16 +152,22 @@ Complete the following steps to perform a silent install Edge Data Store on Linu
  
  Complete the following steps to perform a silent install Edge Data Store on Linux using a parameter file to customize the installation:
  
- 1. Create a file called _silent.ini_ with the following properties on separate lines:
+ 1. Create a file called _silent.ini_ with the following parameters on separate lines:
     - <port_number>
-    - <Y or N> - Specifies whether to create a Modbus TCP EDS component.
-    - <Y or N> - Specifies whether to create an OPCUA EDS component.
+    - <Y/N> - Specifies whether to create a Modbus TCP EDS component.
+    - <Y/N> - Specifies whether to create an OPCUA EDS component.
 
-      An example _silent.ini_ file is shown in the following section.
+    For example:
+
+        ```
+        4567
+        Y
+        N
+        ```
  
-2. Open a terminal window.
-
-3.  Run the apt-get install command for the distribution file appropriate to your operating system and processor.
+ 2. Open a terminal window.
+ 
+ 3. Run the apt-get install command for the distribution file appropriate to your operating system and processor.
 
     ```bash
     sudo apt-get install -q -y ./Edgeinstallfile.deb < silent.ini
@@ -169,14 +177,5 @@ Complete the following steps to perform a silent install Edge Data Store on Linu
    - -q – Specifies a silent install.
    - -y – Responds Yes to installing prerequisites.
    - _Edgeinstallfile.deb_ – The name of the distribution file.
-   - < _silent.ini_ – is the file with the installation properties.
+   - < _silent.ini_ – The file with the installation properties.
 
-#### Example Silent.ini file   
-   The following example shows the contents of a silent.ini file:
-   
-    ```
-    4567
-    Y
-    N
-    ```
-    

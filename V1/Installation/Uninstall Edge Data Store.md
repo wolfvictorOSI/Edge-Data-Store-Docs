@@ -10,9 +10,7 @@ uid: UninstallEdgeDataStore
 
     The configuration, data, and log files are not removed by the uninstall process.
 
-2. Optional: To remove data, configuration and log files, remove the directory _C:\ProgramData\OSIsoft\EdgeDataStore_.
-
-    This will delete all data stored in the Edge Storage component in addition to configuration and log files.
+2. Optional: To remove all data stored in the Edge Storage component, all configuration files, and all log files, delete the directory _C:\ProgramData\OSIsoft\EdgeDataStore_.
 
 ## Uninstall from Linux
 
@@ -22,12 +20,12 @@ uid: UninstallEdgeDataStore
     sudo apt remove osisoft.edgedatastore
 
     ```
+    
+    The configuration, data, and log files are not removed by the uninstall process.
 
-2. Optional: To remove data, configuration, and log files, remove the directory _/usr/share/OSIsoft/EdgeDataStore/_.
+2. Optional: To remove all data stored in the Edge Storage component, all configuration files, and all log files, delete the directory _/usr/share/OSIsoft/EdgeDataStore/_.
 
-    This will delete all data stored in the Edge Storage component, in addition to configuration and log files.
-
-    Alternatively, you can run the following command:
+    Alternatively, run the following command:
 
     ```bash
     sudo rm -r /usr/share/OSIsoft/EdgeDataStore/
