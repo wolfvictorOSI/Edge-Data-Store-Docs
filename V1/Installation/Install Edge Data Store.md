@@ -91,7 +91,9 @@ Complete the following steps to download the appropriate file for your device:
 
 Complete the following steps to install Edge Data Store on Linux:
 
-1. Open a terminal window and run the apt install command for the distribution file appropriate to your operating system and processor. 
+1. Open a terminal window and change the working directory to the location of the distribution file.
+
+2. Run the apt install command for the distribution file appropriate to your operating system and processor. 
 
     **Debian 9 or later (Intel/AMD 64-bit processors)**
 
@@ -115,18 +117,18 @@ Complete the following steps to install Edge Data Store on Linux:
 
     A validation check for prerequisites is performed. 
 
-2. If the install fails, run the following commands from the terminal window and try the install again:
+3. If the install fails, run the following commands from the terminal window and try the install again:
 
     ```bash
     sudo apt update
     sudo apt upgrade
     ```
 
-3. Optional: Change the port number (default port is 5590) and press Enter. 
+4. Optional: Change the port number (default port is 5590) and press Enter. 
 
    **Note:** If you specify an invalid value for the port, the install will proceed with the default value of 5590.
 
-4. Optional: Add a Modbus TCP EDS Adapter system component, an OPC UA EDS Adapter system component, or both, and press Enter.
+5. Optional: Add a Modbus TCP EDS Adapter system component, an OPC UA EDS Adapter system component, or both, and press Enter.
 
     **Note:** The Modus TCP EDS adapter and the OPC UA EDS adapter are both installed, regardless of whether a system component is added. Additional system components can be added for each adapter after installation.
 
@@ -134,7 +136,7 @@ Complete the following steps to install Edge Data Store on Linux:
 
 Complete the following steps to perform a silent install Edge Data Store on Linux with all default options:
 
-1. Open a terminal window.
+1. Open a terminal window and change the working directory to the location of the distribution file.
 
 2. Run the apt-get install command for the distribution file appropriate to your operating system and processor.
 
@@ -165,7 +167,7 @@ Complete the following steps to perform a silent install Edge Data Store on Linu
         N
         ```
  
- 2. Open a terminal window.
+ 2. Open a terminal window and change the working directory to the location of the distribution file.
  
  3. Run the apt-get install command for the distribution file appropriate to your operating system and processor.
 
