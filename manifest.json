@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/CommandLine/Configure Edge Data Store components.html",
-          "hash": "LJfqP9YXYPOsX4t7ANMtvA=="
+          "hash": "B+1JXAk1w6zex5/cqUbeHQ=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/CommandLine/Configure Edge Data Store.html",
-          "hash": "esduugz0KIJR+S3ufY6fog=="
+          "hash": "MRw7TOwLYm1EryLrtMV9XA=="
         }
       },
       "is_incremental": false,
@@ -161,11 +161,11 @@
         "UidNotFound"
       ],
       "type": "Conceptual",
-      "source_relative_path": "V1/CommandLine/Configure_port.md",
+      "source_relative_path": "V1/CommandLine/ConfigurePort.md",
       "output": {
         ".html": {
-          "relative_path": "V1/CommandLine/Configure_port.html",
-          "hash": "5bPVgP0c76Xfhzz3mmA+kQ=="
+          "relative_path": "V1/CommandLine/ConfigurePort.html",
+          "hash": "0Vd4pN09q7+40o0irRYqOg=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/CommandLine/Delete configuration.html",
-          "hash": "eVlQ6VTMjjeGyCX/fj81PQ=="
+          "hash": "nlD+5spyTEfKrDop0TuVfg=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/CommandLine/Retrieve existing system configuration.html",
-          "hash": "/hcTbXSmsgS/13oJVoVYnA=="
+          "hash": "5eL2kBfq7MqzHr3x52SPow=="
         }
       },
       "is_incremental": false,
@@ -1116,7 +1116,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/Reference/Edgecmd commands.html",
-          "hash": "rs/6crAka+bUD7n+NnVvZA=="
+          "hash": "Xdhyh+vf/8aWAJjPyD/BrQ=="
         }
       },
       "is_incremental": false,
@@ -1608,7 +1608,7 @@
       "output": {
         ".html": {
           "relative_path": "V1/toc.html",
-          "hash": "IRv35oAaShTxecbdpFnwRg=="
+          "hash": "jGg4zThdWiQl5zVCcmR/pQ=="
         }
       },
       "is_incremental": false,

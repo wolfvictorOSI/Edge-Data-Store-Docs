@@ -39,7 +39,7 @@ references:
   href: V1/Egress/Configure%20data%20egress.html
 - uid: ConfigurePort
   name: Configure port
-  href: V1/CommandLine/Configure_port.html
+  href: V1/CommandLine/ConfigurePort.html
 - uid: DeleteConfiguration
   name: Delete configuration
   href: V1/CommandLine/Delete%20configuration.html

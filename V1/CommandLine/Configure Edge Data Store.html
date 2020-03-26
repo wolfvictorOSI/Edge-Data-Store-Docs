@@ -78,11 +78,12 @@
             <article class="content wrap" id="_content" data-uid="ConfigureEdgeDataStore">
 <h1 id="configure-edge-data-store">Configure Edge Data Store</h1>
 
+<p>Use the EdgeCmd utility to configure Edge Data Store.</p>
 <h2 id="change-all-values-of-a-facet">Change all values of a facet</h2>
 <p>Complete the following to change all values of a facet:</p>
 <ol>
-<li>Open command line.</li>
-<li><p>Type the <code>componentId</code> and <code>facetName</code>, followed by key=value pairs that you want to change. Then press Enter.</p>
+<li>Access the EdgeCmd utility through a command line tool.</li>
+<li><p>Type <em>edgecmd Configuration</em>, then the <code>componentId</code> and <code>facetName</code> followed by key=value pairs, and press Enter.</p>
 <p><strong>Example:</strong> Change all values in the &#39;Logging&#39; facet:</p>
 <pre><code class="lang-bash">edgecmd Configuration Storage Logging LogLevel=Warning LogFileSizeLimitBytes=32768 LogFileCountLimit=5
 </code></pre></li>
@@ -90,8 +91,8 @@
 <h2 id="configure-keyvalue-pairs-in-a-facet">Configure key=value pairs in a facet</h2>
 <p>Complete the following to configure any number of valid key=value pairs in a facet:</p>
 <ol>
-<li>Open command line.</li>
-<li><p>Type the <code>componentId</code> and <code>facetName</code> followed by the key=value pairs that you want to change, and press Enter.</p>
+<li>Access the EdgeCmd utility through a command line tool.</li>
+<li><p>Type <em>edgecmd Configuration</em>, then the <code>componentId</code> and <code>facetName</code> followed by the key=value pairs, and press Enter.</p>
 <p><strong>Example:</strong> Change a single value in the &#39;Logging&#39; facet:</p>
 <pre><code class="lang-bash">edgecmd Configuration Storage Logging LogFileCountLimit=5
 </code></pre></li>
@@ -99,37 +100,37 @@
 <h2 id="add-an-entry-to-a-collection-configuration">Add an entry to a collection configuration</h2>
 <p>Complete the following to add an entry to a collection configuration:</p>
 <ol>
-<li>Open command line.</li>
-<li><p>Type the <code>componentId</code> and <code>facetName</code> followed by the key=value pairs, and press Enter.</p>
+<li>Access the EdgeCmd utility through a command line tool.</li>
+<li><p>Type <em>edgecmd Configuration</em>, then the <code>componentId</code> and <code>facetName</code> followed by the key=value pairs, and press Enter.</p>
 <p><strong>Example:</strong> Add the &#39;Health Endpoints&#39; facet to the &#39;System&#39; component:</p>
 <pre><code class="lang-bash">edgecmd Configuration System HealthEndpoints Id=endpoint_1 Endpoint=endpointURL UserName=UserName Password=Password
 </code></pre><p> <strong>Note:</strong> If an entry with the specified ID already exists, it will be updated based on the new key=value pairs.</p>
 </li>
 </ol>
 <h2 id="configure-with-json-files">Configure with JSON Files</h2>
-<p>You can also configure Edge Data Store by a JSON file input into the EdgeCmd application. A file import completely replaces the existing configurations; therefore, you cannot use it to change individual values in a facet without modifying others.</p>
+<p>Configure Edge Data Store by a JSON file input into the EdgeCmd application. A file import completely replaces the existing configurations; therefore, you cannot use it to change individual values in a facet without modifying others.</p>
 <h3 id="import-bulk-configuration">Import bulk configuration</h3>
 <p>Complete the following to import a bulk configuration:</p>
 <ol>
-<li>Open command line.</li>
-<li><p>Type the following in the command line, replacing <code>&lt;PathToJsonFile&gt;</code> with the path to the file, and press Enter.</p>
+<li>Access the EdgeCmd utility through a command line tool.</li>
+<li><p>Type the following command, replacing <code>&lt;PathToJsonFile&gt;</code> with the path to the file, and press Enter.</p>
 <pre><code class="lang-bash">edgecmd Configuration file=&lt;PathToJsonFile&gt;
 </code></pre></li>
 </ol>
 <h3 id="import-facet-specific-configuration">Import facet specific configuration</h3>
 <p>Complete the following to import a facet specific configuration file for a component:</p>
 <ol>
-<li>Open command line.</li>
-<li><p>Type the following in the command line, replacing <code>&lt;componentId&gt;</code> with the ID of the component, <code>&lt;facetName&gt;</code> with the name of the facet, and <code>&lt;PathToJsonFile&gt;</code> with the path to the file. Then press Enter.</p>
+<li>Access the EdgeCmd utility through a command line tool.</li>
+<li><p>Type the following command, replacing <code>&lt;componentId&gt;</code> with the ID of the component, <code>&lt;facetName&gt;</code> with the name of the facet, and <code>&lt;PathToJsonFile&gt;</code> with the path to the file. Then press Enter.</p>
 <pre><code class="lang-bash">edgecmd Configuration &lt;componentId&gt; &lt;facetName&gt; file=&lt;PathToJsonFile&gt;
 </code></pre></li>
 </ol>
 <h3 id="import-facets-configuration-in-bulk">Import facets configuration in bulk</h3>
-<p>Complete the following to import a file with configuration for individual facets as a bulk file import operation:
+<p>Complete the following steps to import a file with configuration for individual facets as a bulk file import operation:
     <strong>Note:</strong> The file must contain only information for the given component ID. </p>
 <ol>
-<li>Open command line.</li>
-<li><p>Type the file name as shown in the <em>Bulk_Storage_Runtime.json</em> example and press Enter.</p>
+<li>Access the EdgeCmd utility through a command line tool.</li>
+<li><p>Type the following command, replacing the file name as shown in the <em>Bulk_Storage_Runtime.json</em> example, and press Enter.</p>
 <pre><code class="lang-bash">edgecmd Configuration file=&quot;~/Bulk_Storage_Runtime.json&quot;
 </code></pre><p><strong>Example:</strong></p>
 <pre><code class="lang-JSON">{
@@ -144,7 +145,7 @@
          }
      }
  }
-</code></pre><p> <strong>Note:</strong> The command only affects the specified key-value pairs for the &#39;Runtime&#39; facet in the &#39;Storage&#39; component, it does not change any other components or facets; however, import affects all key-value pairs in the facet. If you import the following example JSON file, the &#39;StreamStorageLimitMb&#39; and &#39;StreamStorageTargetMb&#39; values will be modified and the remaining values in the &#39;Runtime&#39; facet will be reset to their default values (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog).</p>
+</code></pre><p> <strong>Note:</strong> The command only affects the specified key-value pairs for the &#39;Runtime&#39; facet in the &#39;Storage&#39; component. It does not change any other components or facets; however, import affects all key-value pairs in the facet. If you import the following example JSON file, the &#39;StreamStorageLimitMb&#39; and &#39;StreamStorageTargetMb&#39; values will be modified and the remaining values in the &#39;Runtime&#39; facet will be reset to their default values (IngressDebugExpiration, CheckpointRateInSec, TransactionLogLimitMB, and EnableTransactionLog).</p>
 <pre><code class="lang-JSON">{
     &quot;Storage&quot;: {
         &quot;Runtime&quot;: {
