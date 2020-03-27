@@ -147,7 +147,9 @@
 <h3 id="install-on-a-linux-device">Install on a Linux device</h3>
 <p>Complete the following steps to install Edge Data Store on Linux:</p>
 <ol>
-<li><p>Open a terminal window and run the apt install command for the distribution file appropriate to your operating system and processor. </p>
+<li><p>Open a terminal window and change the working directory to the location of the distribution file.</p>
+</li>
+<li><p>Run the apt install command for the distribution file appropriate to your operating system and processor. </p>
 <p> <strong>Debian 9 or later (Intel/AMD 64-bit processors)</strong></p>
 <pre><code class="lang-bash">sudo apt install ./EdgeDataStore_linux-x64.deb
 </code></pre><p> <strong>Debian 9 or later (ARM32, Raspberry PI 2,3,4: Raspbian, BeagleBone)</strong></p>
@@ -171,7 +173,7 @@ sudo apt upgrade
 <h3 id="silent-install-on-a-linux-device">Silent install on a Linux device</h3>
 <p>Complete the following steps to perform a silent install Edge Data Store on Linux with all default options:</p>
 <ol>
-<li><p>Open a terminal window.</p>
+<li><p>Open a terminal window and change the working directory to the location of the distribution file.</p>
 </li>
 <li><p>Run the apt-get install command for the distribution file appropriate to your operating system and processor.</p>
 <pre><code class="lang-bash">sudo apt-get install -q -y ./Edgeinstallfile.deb &lt; /dev/null
@@ -200,7 +202,7 @@ Y
 N
 ```
 </code></pre></li>
-<li><p>Open a terminal window.</p>
+<li><p>Open a terminal window and change the working directory to the location of the distribution file.</p>
 </li>
 <li><p>Run the apt-get install command for the distribution file appropriate to your operating system and processor.</p>
 <pre><code class="lang-bash">sudo apt-get install -q -y ./Edgeinstallfile.deb &lt; silent.ini

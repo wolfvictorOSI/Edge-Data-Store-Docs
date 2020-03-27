@@ -82,9 +82,9 @@
 <p>Complete the following to retrieve the product version of the Edge Data Store:</p>
 <ol>
 <li>Start any tool capable of making HTTP requests.</li>
-<li><p>Execute a GET command to the following endpoint:</p>
-<pre><code class="lang-http">http://localhost:5590/api/v1/diagnostics/productinformation
-</code></pre><p>Example using curl:</p>
+<li><p>Execute a GET command to the following endpoint, replacing <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
+<pre><code class="lang-http">http://localhost:&lt;port_number&gt;/api/v1/diagnostics/productinformation
+</code></pre><p>Example using curl and the default port number:</p>
 <pre><code class="lang-bash">curl -v http://localhost:5590/api/v1/Diagnostics/ProductInformation
 </code></pre></li>
 </ol>

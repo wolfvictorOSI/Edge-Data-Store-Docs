@@ -80,8 +80,8 @@
 
 <p>Depending on the device capabilities, it may take some time before the Edge Data Store is fully initialized and running for the first time. After allowing time for start up, use the following steps to verify that Edge Data Store is correctly installed. </p>
 <ol>
-<li><p>Run the following script:</p>
-<pre><code class="lang-bash">curl http://localhost:5590/api/v1/configuration
+<li><p>Open a terminal window and run the following command, replacing <em>&lt;port_number&gt;</em> with the port number specified during installation:</p>
+<pre><code class="lang-bash">curl http://localhost:&lt;port_number&gt;/api/v1/configuration
 </code></pre></li>
 <li><p>If you receive an error, wait a few seconds and try the script again. If the installation was successful, a JSON copy of the default system configuration is returned:</p>
 <pre><code class="lang-json">    {

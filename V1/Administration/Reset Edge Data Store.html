@@ -78,14 +78,14 @@
             <article class="content wrap" id="_content" data-uid="ResetEdgeDataStore">
 <h1 id="reset-edge-data-store">Reset Edge Data Store</h1>
 
-<p>Edge Data Store provides a method by which you can perform a complete reset of the product. When you perform a reset, all event data and Edge Data Store configuration is deleted, and the product is restarted.</p>
+<p>When applied at the system level, the Reset command deletes all event and configuration data and restarts EDS.</p>
 <p><strong>Note:</strong> All configuration and stored data will be lost as a result of performing this action.</p>
 <p>Complete the following to reset Edge Data Store:</p>
 <ol>
 <li>Start any tool capable of making HTTP requests.</li>
-<li><p>Execute a POST command to the following endpoint:</p>
-<pre><code class="lang-http">http://localhost:5590/api/v1/administration/System/Reset
-</code></pre><p>Example using curl:</p>
+<li><p>Execute a POST command to the following endpoint, replacing <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
+<pre><code class="lang-http">http://localhost:&lt;port_number&gt;/api/v1/administration/System/Reset
+</code></pre><p>Example using curl and the default port:</p>
 <pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/System/Reset
 </code></pre><p>An HTTP status 204 message indicates success.</p>
 </li>

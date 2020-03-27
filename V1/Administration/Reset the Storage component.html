@@ -78,13 +78,13 @@
             <article class="content wrap" id="_content" data-uid="ResetTheStorageComponent">
 <h1 id="reset-the-storage-component">Reset the Storage component</h1>
 
-<p>You can delete and reset all event and configuration data related to the Storage component, after which the product will be restarted.</p>
+<p>When applied at the storage component level, the Reset command deletes all event and configuration data related to the Storage component and restarts EDS.</p>
 <p>Complete the following to reset the Storage component:</p>
 <ol>
 <li>Start any tool capable of making HTTP requests.</li>
-<li><p>Execute a POST command to the following endpoint:</p>
-<pre><code class="lang-http">http://localhost:5590/api/v1/administration/Storage/Reset
-</code></pre><p> Example using curl:</p>
+<li><p>Execute a POST command to the following endpoint, replacing <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
+<pre><code class="lang-http">http://localhost:&lt;port_number&gt;/api/v1/administration/Storage/Reset
+</code></pre><p> Example using curl and the default port:</p>
 <pre><code class="lang-bash">curl -v -d &quot;&quot; http://localhost:5590/api/v1/Administration/Storage/Reset
 </code></pre><p> An HTTP status 204 message indicates success.</p>
 </li>
