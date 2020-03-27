@@ -22,14 +22,14 @@ Complete the following steps when a custom application fails to write stream dat
 
 ### OMF ingress logging
 
-Ingress logging messages provide a record of ingress events. Complete the following steps to capture maximum information for troubleshooting:
+Ingress logging messages provide a record of ingress events. Complete the following steps to capture the most information for troubleshooting:
 
 1. Refer to [System-level logging configuration](xref:systemloggingConfiguration) to set logging parameters.
 2. For maximum message logging information, set the log level to **Trace**.
 
 ### OMF ingress message debugging
 
-Debugging helps to troubleshoot problems between an OMF application and Edge Data Store.  Complete the following to enable debugging:
+Use debugging information to troubleshoot problems between an OMF application and Edge Data Store. Complete the following steps to enable debugging:
 
 1. Refer to [Storage runtime configuration](xref:storageruntime) to enable debugging.
 2. Set an appropriate time value for the *IngressDebugExpiration* property. 
@@ -45,9 +45,10 @@ Examples of valid strings representing date and time:
 
 EDS periodic egress extracts data from SDS streams and sends the appropriate sequences of type, container, and data OMF messages on startup.  
 
-**Note:** If you see unexpected data in an OCS or PI System, check if multiple devices are writing to the same SDS stream. 
+**Note:** If unexpected data appears in an OCS or PI System, check if multiple devices are writing to the same SDS stream. 
 
 1. Check all egress configuration files in Edge Data Store to verify whether any endpoints are duplicated. A duplicate endpoint means that more than one device is egressing data to it, resulting in unexpected data.
+
 2. Assign stream prefixes in the periodic egress endpoint configuration to ensure that output data streams are logically separated in the systems of record. For instructions, see [Configure data egress](xref:configurEgress).
 
    **Note:** Type prefixes may be helpful if you have changed a stream type definition on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.
@@ -61,12 +62,12 @@ Egress logging messages provide a record of egress events. Complete the followin
 
 ### Periodic egress debugging
 
-Debugging helps to troubleshoot problems between Edge Data Store and the egress destination.  Complete the following to enable debugging:
+Use debugging information to troubleshoot problems between Edge Data Store and the egress destination. Complete the following steps to enable debugging:
 
 1. Refer to [Data egress configuration](xref:egress) to enable debugging.
 2. Set an appropriate time value for the *IngressDebugExpiration* property. 
 
-   **Note:** You can also disable debugging by setting the expiration value to *null*.
+   **Note:** Disable debugging by setting the expiration value to *null*.
 
 Examples of valid strings representing date and time:
 
