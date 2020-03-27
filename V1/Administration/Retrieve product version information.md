@@ -9,13 +9,13 @@ The product version information includes the Edge Data Store version number, the
 Complete the following to retrieve the product version of the Edge Data Store:
 
 1. Start any tool capable of making HTTP requests.
-2. Execute a GET command to the following endpoint:
+2. Execute a GET command to the following endpoint, replacing `<port_number>` with the port specified for EDS:
 
   ```http
-  http://localhost:5590/api/v1/diagnostics/productinformation
+  http://localhost:<port_number>/api/v1/diagnostics/productinformation
   ```
 
-   Example using curl:
+   Example using curl and the default port number:
 
    ```bash
    curl -v http://localhost:5590/api/v1/Diagnostics/ProductInformation
