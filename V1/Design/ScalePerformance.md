@@ -3,15 +3,15 @@ uid: scalePerformance
 ---
 
 # Design considerations
-Before you install EDS, you need to determine your storage and throughput needs so that you select devices that meet your needs.
+Before installing EDS, determine your storage and throughput needs and select devices that meet those needs.
 
 ## Edge Storage role
 
-The Edge Storage component integrated with the Edge Data Store is a new item in the OSIsoft software ecosystem. It is not designed to replace any existing storage technology produced by OSIsoft. The Edge Storage component is intended as a data store that is resilient and reliable but limited in duration and scope, as appropriate for an Edge software component. 
+The Edge Storage component is integrated with the Edge Data Store and does not replace any existing storage technology produced by OSIsoft. The Edge Storage component is a resilient and reliable data store, but is limited in the duration and scope of the data it retains. 
 
-* The storage component is configured by default to roll off data in a FIFO (first in first out) process: as new data comes in and the size of streams exceeds the configured limits, older data is purged.
+* By default, the storage component processes data in a FIFO (first in first out) method: as new data comes in and the size of streams exceeds the configured limits, older data is purged.
 
-* If data exists in the Edge Storage component that needs to be permanently retained, you should egress it to either PI Data Archive (using the PI Web API OMF endpoint) or to OSIsoft Cloud Services, using the OCS OMF ingress endpoint.
+* Data that needs to be permanently retained must be egressed to either PI Data Archive (using the PI Web API OMF endpoint) or to OSIsoft Cloud Services, using the OCS OMF ingress endpoint.
 
 ## Edge Storage scale
 
@@ -19,7 +19,7 @@ The Edge Storage component provides an appropriate level of storage performance 
 
 * For the smallest of these devices, throughput may be limited to tens of events per second. 
 
-* For larger devices with faster processors, memory and storage, this could increase to up to 3,000 events per second. The Edge Storage component's design is focused on small devices in Edge scenarios: if high throughput or large stream counts are required, OSIsoft Cloud Services or PI Data Archive are more appropriate choices.
+* For larger devices with faster processors, memory and storage, this could increase up to 3,000 events per second. The Edge Storage component is designed for small devices in Edge scenarios: if high throughput or large stream counts are required, OSIsoft Cloud Services or PI Data Archive are more appropriate choices.
 
 
 ## Sizing of Edge devices

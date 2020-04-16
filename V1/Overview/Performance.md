@@ -4,9 +4,9 @@ uid: Performance
 
 # Performance
 
-Edge Data Store was designed to run on a variety of low powered devices and to serve data to custom applications that run on the same platform. To assist in determining the appropriate hardware and software configuration for a specific use, Edge Data Store was tested on a variety of different devices, from single board computers to industrial edge gateways, on Linux and Windows operating systems, with different data stream counts and with the supported ingress methods collecting data at different event rates. 
+Edge Data Store is designed to run on a variety of low powered devices and to serve data to custom applications that run on the same platform. To assist in determining the appropriate hardware and software configuration for a specific use, Edge Data Store was tested on a variety of different devices, from single board computers to industrial edge gateways, on Linux and Windows operating systems, with different data stream counts and with the supported ingress methods collecting data at different event rates. 
 
-This topic is provided to assist the user in determining the appropriate hardware and software where Edge Data Store can be used to meet the needs of different scenarios.
+Use the following performance testing information to determine the appropriate hardware and software to use with Edge Data Store in your scenarios.
 
 ## Edge Data Store Performance Testing Hardware
 
@@ -20,7 +20,7 @@ It is possible that lower performance results may be realized on other devices w
 
 ## Ingress Performance
 
-Edge Data Store can ingress data using the EDS Modbus TCP adapter, the EDS OPC UA adapter and/or using a custom OMF application developed by others. Each of these data ingress methods have a different performance profile, so the performance of Edge Data Store using these different methods will vary. 
+Edge Data Store can ingress data using the EDS Modbus TCP adapter, the EDS OPC UA adapter, and/or a custom OMF application developed by others. Each of these data ingress methods have a different performance profile, so the performance of Edge Data Store using these different methods will vary. 
 
 When selecting the device to host Edge Data Store, there are a few general principles that arose from the performance testing:
 
@@ -31,9 +31,9 @@ When selecting the device to host Edge Data Store, there are a few general princ
 
 ## Periodic Egress Performance
 
-Edge Data Store generates OMF messages when configured to egress data to a PI Server or to OSIsoft Cloud Services. An important part of periodic egress performance is the amount of network bandwidth available between the device hosting the Edge Data Store and the PI Web API OMF endpoint or the OSIsoft Cloud Serivces OMF endpoint. The performance numbers presented in this section reflect use of a network with a 1 GB LAN connection and a high-speed connection to the Internet. If Edge Data Store is installed on a device in a location with limited network bandwidth, a lower level of egress performance can be expected.
+Edge Data Store generates OMF messages when configured to egress data to a PI Server or to OSIsoft Cloud Services. An important part of periodic egress performance is the amount of network bandwidth available between the device hosting the Edge Data Store and the PI Web API OMF endpoint or the OSIsoft Cloud Services OMF endpoint. The performance numbers presented in this section reflect use of a network with a 1 GB LAN connection and a high-speed connection to the Internet. If Edge Data Store is installed on a device in a location with limited network bandwidth, a lower level of egress performance can be expected.
 
-Data egress has a much lower performance impact on Edge Data Store than data ingress. Generally speaking, the performance impact of data egress on CPU and RAM usage is only a small percentage of the CPU and RAM usage of data ingress, so data egress configuration is not a major factor in Edge Data Store system design.
+Data egress has a much smaller performance impact on Edge Data Store than data ingress. Generally speaking, the performance impact of data egress on CPU and RAM usage is only a small percentage of the CPU and RAM usage of data ingress, so data egress configuration is not a major factor in Edge Data Store system design.
 
 ### Periodic Egress Performance to PI Web API
 
