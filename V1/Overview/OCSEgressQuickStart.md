@@ -4,11 +4,23 @@ uid: ocsEgressQuickStart
 
 # OCS egress quick start
 
-This topic provides quick start instructions for getting data stored in the Edge Data Store into OCS. You can accomplish this by using the OCS OMF endpoint which is configured for OCS authentication.
+Data egress provides a mechanism to transfer data to OCS using OMF messages. To get started sending data stored in EDS to OSIsoft Cloud Services, create an OMF connection in OCS and configure an egress endpoint with the connection information for OCS.
+
+## Create an OMF connection in OCS
+
+1. In OCS, create a **Client**.
+
+  The _Client Id_ and _Client Secret_ are used for the corresponding properties in the egress configuration.
+
+2. In OCS, create an **OMF** type **Connection**.
+
+  The connection should link the client to an existing namespace where the data will be stored. The **OMF Endpoint** URL for the connection is used as the value for the _Endpoint_ property in the egress configuration.
+
+  For complete steps, as well as best practices and recommendations, see the [OSIsoft Cloud Services documentation](https://ocs-docs.osisoft.com/Documentation/OSIsoft_Cloud_Services.html).
 
 ## Create a periodic egress configuration
 
-1. Create a JSON file containing one or more egress endpoints, based on the following example:
+1. Create a JSON file containing one or more egress endpoints, by copying the following example into any text editor.
 
    ```json
    [{
@@ -33,16 +45,16 @@ This topic provides quick start instructions for getting data stored in the Edge
    }]
    ```
 
-2. Type the URL of your OCS OMF endpoint into the "Endpoint": value in the preceding JSON file.
-3. Type a ClientId and ClientSecret that can write data to your OCS tenant and namespace in the "ClientId": and "ClientSecret": values in the preceding JSON file.
+2. Modify the **Endpoint** parameter to be the URL of your OCS OMF endpoint.
+3. Modify the **ClientId** and **ClientSecret** parameters with the authentication information to connect to your OCS OMF endpoint.
 
-    **Note:** If required, use the StreamPrefix and TypePrefix to ensure uniqueness on the destination system. If a StreamPrefix is specified, it is used to create a unique stream id on OCS. This configuration is set up to send all stream data to OCS. If you want to only send specific streams, edit the EgressFilter value. For examples of more advanced scenarios, see [Data egress configuration](xref:egress).
+    **Note:** If required, use the **StreamPrefix** and **TypePrefix** parameters to ensure uniqueness on the destination system. If a StreamPrefix is specified, it is used to create a unique stream ID on OCS. This configuration is set up to send all stream data to OCS. To only send specific streams, edit the **EgressFilter** parameter. For examples of more advanced scenarios, see [Data egress configuration](xref:egress).
 
-4. Save the JSON file with the name PeriodicEgressEndpoints.json to any directory on the device with Edge Data Store installed.
-5. To configure the Edge Storage component to send data to OCS, run the following curl script from the directory where you saved the file.
+4. Save the JSON file with the name _PeriodicEgressEndpoints.json_ to any directory on the device where Edge Data Store is installed.
+5. To configure the Edge Storage component to send data to OCS, run the following curl script from the directory where the JSON file is located.
 
     ```bash
     curl -i -d "@PeriodicEgressEndpoints.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
     ```
 
-   When this command completes successfully, data will start being egressed to OCS.
+   When this command completes successfully, data egress to OCS begins.
