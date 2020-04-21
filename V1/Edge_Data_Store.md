@@ -26,16 +26,16 @@ Edge Data Store runs on both Linux and Windows platforms and is comprised of sep
 
 Edge Data Store components are shown in grey within the Edge Data Store in the diagram:
 
-* Modbus TCP EDS adapter – Collects data from Modbus TCP devices and writes it to SDS Data Store
-* OPC UA EDS adapter – Collects data from OPC UA devices and writes it to SDS Data Store
-* SDS Data Store – Stores data locally until it can be egressed
+* Modbus TCP EDS adapter – Collects data from Modbus TCP devices and writes it to data storage
+* OPC UA EDS adapter – Collects data from OPC UA devices and writes it to data storage
+* Data Storage – Stores data locally until it can be egressed
 * Data egress – Sends data from storage to PI Server or OSIsoft Cloud Services
 * Health – Records health information of components and sends it to PI Server or OSIsoft Cloud Services
 
 Blue boxes in the diagram show ways to interact with Edge Data Store from the local device:
 
-* OMF REST – Use OSIsoft Message Format to write data to the SDS Data Store component programmatically
-* SDS REST APIs – Use SDS REST APIs to read data from and write data to the SDS Data Store component programmatically
+* OMF REST – Use OSIsoft Message Format to write data to the data storage component programmatically
+* SDS REST APIs – Use SDS REST APIs to read data from and write data to the data storage component programmatically
 * Configuration – Use REST or the EdgeCmd tool to configure EDS as a whole or each component individually and to view the current configuration
 
 Edge Data Store requires an endpoint to connect to REST APIs on the local device, which is shown outlined in blue in the diagram. By default, the endpoint uses port 5590; however, it can be configured to use another port. 
