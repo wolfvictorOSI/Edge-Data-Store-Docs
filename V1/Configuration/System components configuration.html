@@ -78,8 +78,7 @@
             <article class="content wrap" id="_content" data-uid="SystemComponentsConfiguration">
 <h1 id="system-components-configuration">System components configuration</h1>
 
-<p>Edge Data Store includes Modbus TCP EDS adapter, OPC UA EDS adapter, and the Storage component. These components are only active if you configure the system to use them. EDS itself needs only a small amount of configuration - the list of components and the HTTP Port used for REST calls.</p>
-<h2 id="configure-system-components">Configure system components</h2>
+<p>Edge Data Store components are Modbus TCP EDS adapter, OPC UA EDS adapter, and the Storage component. These components are only active if they are configured for the system to use them. EDS itself needs only a small amount of configuration - the list of components and the HTTP Port used for REST calls.</p>
 <p>The default <em>System_Components.json</em> file for the System component contains the following information. </p>
 <pre><code class="lang-json">[
   {
@@ -87,9 +86,10 @@
     &quot;ComponentType&quot;: &quot;EDS.Component&quot;
   }
 ]
-</code></pre><p>The Storage component is required for Edge Data Store to run. Only a single Storage component is supported. You can add additional Modbus TCP EDS adapter and OPC UA EDS adapter components if you want.  </p>
+</code></pre><p>The Storage component is required for Edge Data Store to run and only one Storage component is supported. Each Modbus device needs a separate Modbus TCP EDS adapter component to connect to EDS and each OPC UA device needs a separate OPC UA EDS adapter component to connect to EDS. Add additional Modbus TCP EDS adapter and OPC UA EDS adapter components if needed.  </p>
+<h2 id="add-system-components">Add system components</h2>
 <ol>
-<li><p>To add a new component, create a JSON file with the ComponentId and ComponentType. The following example adds a Modbus TCP EDS adapter. </p>
+<li><p>Using any text editor, create a JSON file with the ComponentId and ComponentType. The following example adds a Modbus TCP EDS adapter. </p>
 <pre><code class="lang-json">  {
     &quot;ComponentId&quot;: &quot;Modbus1&quot;,
     &quot;ComponentType&quot;: &quot;Modbus&quot;
@@ -102,9 +102,9 @@
 <pre><code class="lang-bash">curl -i -d &quot;@AddComponent.json&quot; -H &quot;Content-Type: application/json&quot; http://localhost:5590/api/v1/configuration/system/components
 </code></pre></li>
 </ol>
-<p>After the curl command completes successfully, you can configure or use the new component.</p>
+<p>After the curl command completes successfully, the new component is available for configuration and use.</p>
 <h2 id="parameters-for-system-components">Parameters for system components</h2>
-<p>The following parameters are available for configuring system components.</p>
+<p>The following parameters are used to define system components.</p>
 <table>
 <thead>
 <tr>

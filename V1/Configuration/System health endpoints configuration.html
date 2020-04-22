@@ -78,17 +78,17 @@
             <article class="content wrap" id="_content" data-uid="HealthEndpointsConfiguration">
 <h1 id="health-endpoints-configuration">Health endpoints configuration</h1>
 
-<p>Edge Data Store can be configured to egress health information for its components to an OMF endpoint capable of receiving health messages. Health data is transmitted at a one minute interval.</p>
+<p>To monitor the status of Edge Data Store, configure health information egress for its components to an OMF endpoint capable of receiving health messages. Health data is transmitted at a one minute interval.</p>
 <h2 id="configure-system-health-endpoints">Configure system health endpoints</h2>
-<p>Complete the following to configure system health endpoints</p>
+<p>Complete the following steps to configure system health endpoints:</p>
 <ol>
-<li>Create a JSON file containing system health endpoints.<ul>
+<li>Using any text editor, create a JSON file containing system health endpoints.<ul>
 <li>For content structure, see <a href="#system-health-endpoints-example">System health endpoints example</a>.  </li>
 </ul>
 </li>
 <li>Update the parameters as needed. For a table of all available parameters, see <a href="#parameters">Parameters</a>.</li>
-<li>Save the file as <em>System_HealthEndpoints.config.json</em>.</li>
-<li><p>Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/System/HealthEndpoints</code>.</p>
+<li>Save the file with the name <em>System_HealthEndpoints.config.json</em>.</li>
+<li><p>Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/System/HealthEndpoints</code>, updating the port number if needed.</p>
 <p> Example using curl (run this command from the same directory where the file is located):</p>
 <pre><code class="lang-bash">curl -v -d &quot;@System_HealthEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; http://localhost:5590/api/v1/configuration/System/HealthEndpoints
 </code></pre></li>
