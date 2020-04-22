@@ -18,7 +18,7 @@ To get started using OMF messages to ingress data into EDS, create an OMF type a
 
 The first step in OMF data ingress is to create an OMF type that describes the format of the data to be stored in a container. In this example, the data to be written is a timestamp and a numeric value.
 
-1. Create an OMF JSON file describing the type as follows:
+1. Create an OMF JSON file that defines the type as follows:
 
    ```json
    [{
@@ -48,13 +48,13 @@ The first step in OMF data ingress is to create an OMF type that describes the f
    curl -i -d "@OmfCreateType.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: type" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
    ```
 
-When this command completes successfully, an OMF type with the same name is created on the server. Any number of containers can be created from the type, as long as they use a timestamp as an index and have a 32-bit floating point value. The Type definition needs to be sent first before containers and data, but it does not cause an error if the same definition is sent at a later time.
+When this command completes successfully, an OMF type with the same name is created on the server. Any number of containers can be created from the type, as long as they use a timestamp as an index and have a 32-bit floating point value. The create type message needs to be sent first before container and data messages, but it does not cause an error if the same message is sent at a later time.
 
 ## Create an OMF container
 
-The next step in writing OMF data is to create a container. As with an OMF type, this only needs to be sent once before sending data events, but resending the same definition repeatedly does not cause an error.
+The next step in writing OMF data is to create an OMF container. As with an OMF type, the create container message only needs to be sent once before sending data events, but resending the same definition again does not cause an error.
 
-1. Create an OMF JSON file as follows:
+1. Create an OMF JSON file that defines the container as follows:
 
    ```json
    [{
