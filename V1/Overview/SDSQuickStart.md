@@ -83,7 +83,7 @@ Complete the following steps to create an SDS stream.
 
 ## Write data events to the SDS stream
 
-After creating a type and container, use SDS to write data to a stream.
+After you create a type and container, use SDS to write data to a stream.
 
 1. Create a JSON file using the example below:
 
