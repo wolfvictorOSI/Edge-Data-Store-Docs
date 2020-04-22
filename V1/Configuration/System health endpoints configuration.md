@@ -4,17 +4,17 @@ uid: HealthEndpointsConfiguration
 
 # Health endpoints configuration
 
-Edge Data Store can be configured to egress health information for its components to an OMF endpoint capable of receiving health messages. Health data is transmitted at a one minute interval.
+To monitor the status of Edge Data Store, configure health information egress for its components to an OMF endpoint capable of receiving health messages. Health data is transmitted at a one minute interval.
 
 ## Configure system health endpoints
 
-Complete the following to configure system health endpoints
+Complete the following steps to configure system health endpoints:
 
-1. Create a JSON file containing system health endpoints.
+1. Using any text editor, create a JSON file containing system health endpoints.
     - For content structure, see [System health endpoints example](#system-health-endpoints-example).  
 2. Update the parameters as needed. For a table of all available parameters, see [Parameters](#parameters).
-3. Save the file as _System_HealthEndpoints.config.json_.
-4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/System/HealthEndpoints`.
+3. Save the file with the name _System_HealthEndpoints.config.json_.
+4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/System/HealthEndpoints`, updating the port number if needed.
 
     Example using curl (run this command from the same directory where the file is located):
 

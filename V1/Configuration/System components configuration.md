@@ -4,9 +4,7 @@ uid: SystemComponentsConfiguration
 
 # System components configuration
 
-Edge Data Store includes Modbus TCP EDS adapter, OPC UA EDS adapter, and the Storage component. These components are only active if you configure the system to use them. EDS itself needs only a small amount of configuration - the list of components and the HTTP Port used for REST calls.
-
-## Configure system components
+Edge Data Store components are Modbus TCP EDS adapter, OPC UA EDS adapter, and the Storage component. These components are only active if they are configured for the system to use them. EDS itself needs only a small amount of configuration - the list of components and the HTTP Port used for REST calls.
 
 The default _System_Components.json_ file for the System component contains the following information. 
 ```json
@@ -18,9 +16,11 @@ The default _System_Components.json_ file for the System component contains the 
 ]
 ```
 
-The Storage component is required for Edge Data Store to run. Only a single Storage component is supported. You can add additional Modbus TCP EDS adapter and OPC UA EDS adapter components if you want.  
+The Storage component is required for Edge Data Store to run and only one Storage component is supported. Each Modbus device needs a separate Modbus TCP EDS adapter component to connect to EDS and each OPC UA device needs a separate OPC UA EDS adapter component to connect to EDS. Add additional Modbus TCP EDS adapter and OPC UA EDS adapter components if needed.  
 
-1. To add a new component, create a JSON file with the ComponentId and ComponentType. The following example adds a Modbus TCP EDS adapter. 
+## Add system components
+
+1. Using any text editor, create a JSON file with the ComponentId and ComponentType. The following example adds a Modbus TCP EDS adapter. 
 
     ```json
       {
@@ -37,11 +37,11 @@ The Storage component is required for Edge Data Store to run. Only a single Stor
     curl -i -d "@AddComponent.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/system/components
     ```
 
-After the curl command completes successfully, you can configure or use the new component.
+After the curl command completes successfully, the new component is available for configuration and use.
 
 ## Parameters for system components
 
-The following parameters are available for configuring system components.
+The following parameters are used to define system components.
 
 | Parameters     | Required | Type    | Nullable | Description |
 | -------------- | -------- | --------| ---------|-------------|

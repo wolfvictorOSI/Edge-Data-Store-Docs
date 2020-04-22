@@ -4,7 +4,7 @@ uid: EdgeDataStoreHealth
 
 # Edge Data Store health
 
-Insight into the health of the Edge Data Store and the components that make it up can be critical for ensuring that your needs for data collection are being met. To that end, Edge Data Store and its components produce health information. When configured, Edge Data Store transfers health information to OMF endpoints, including the types and containers that represent available health information. To enable this functionality, you must configure one or more health endpoints.
+Edge Data Store and its components produce health information to provide insight into their status, which is critical for monitoring data collection. When configured, Edge Data Store transfers health information to OMF endpoints, including the types and containers that represent available health information. To enable this functionality, configure one or more health endpoints.
 
 ## EDS adapter health
 
@@ -17,7 +17,7 @@ The Connectors static type includes these properties and servers as a root AF el
 | Id | string | Connectors - root AF element |
 | Description | string | Collection of Connector assets |
 
-### EDS adapter health
+### EDS adapter component health
 
 The Connector Health static type includes the following properties, which are logged in a stream with the ID {machinename}.{componentid}. The stream is linked to root AF element (Connectors).
 
@@ -39,7 +39,7 @@ The DeviceStatus dynamic type includes the following values, which are logged in
 
 ### Next health message expected
 
-The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Connectors.{machinename}.{componentid}.NextHealthMessageExpected. The stream is linked to {machinename}.{componentid} static stream. Heard beat message is expected once a minute.
+The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Connectors.{machinename}.{componentid}.NextHealthMessageExpected. The stream is linked to {machinename}.{componentid} static stream. Heart beat message is expected once a minute.
 
 | Property     | Type     | Description      |
 |--------------|----------|------------------|
@@ -79,7 +79,7 @@ The DeviceStatus dynamic type includes the following values, which are logged in
 
 ### Storage next health message expected
 
-The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Storage.{machinename}.NextHealthMessageExpected. The stream is linked to {machinename}.Storage static stream. Heard beat message is expected once a minute.
+The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Storage.{machinename}.NextHealthMessageExpected. The stream is linked to {machinename}.Storage static stream. Heart beat message is expected once a minute.
 
 | Property     | Type     | Description      |
 |--------------|----------|------------------|
