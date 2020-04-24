@@ -4,9 +4,9 @@ uid: storageruntime
 
 # Storage runtime configuration
 
-Edge Data Store provides a mechanism for configuring runtime characteristics of the storage component.  
+The Edge Data Store storage component is install with default configurations that are sufficient for most scenarios; however, the runtime characteristics of the storage component can be configured.  
 
-**Note:** The configured defaults are sufficient for most scenarios.  You should modify these values only after consultation with OSIsoft Support personnel.
+**Note:** Consult with OSIsoft Support personnel before modifying the default configuration.
 
 ## Configure storage runtime
 
@@ -33,8 +33,8 @@ To update the storage runtime configuration, complete the following:
 | **IngressDebugExpiration**      | Required | string   | If set, defines how long OMF ingress debug files should be produced. |
 | **StreamStorageLimitMb**        | Required | integer  | The maximum size in megabytes that a stream can reach. |
 | **StreamStorageTargetMb**       | Required | integer  | The size in megabytes that a stream will be reduced to after StreamStorageLimitMb size is reached for a single stream. |
-| **EnableTransactionLog**        | No       | Boolean     | Enables or disables the transaction log.  The transaction log helps to ensure no data is lost should a device lose power. |
-| **TransactionLogLimitMB**       | No       | integer  | Maximum size for transaction log file.  Transaction log files larger than this size will be deleted, resulting is loss of data should the device lose power. |
+| **EnableTransactionLog**        | No       | Boolean     | Enables or disables the transaction log. The transaction log helps to ensure no data is lost should a device lose power. |
+| **TransactionLogLimitMB**       | No       | integer  | Maximum size for transaction log file. Transaction log files larger than this size will be deleted, resulting is loss of data should the device lose power. |
 | **CheckpointRateInSec**         | No       | integer  | How often to flush new data to store.  |
 
 
@@ -66,7 +66,7 @@ The following is a valid runtime configuration example.
 
 ### IngressDebugExpiration
 
-Ingress Debug Expiration is a property that can be used when debugging OMF. If the date and time is the future incoming OMF messages will be logged until the date and time specified. Once the configured time is past OMF messages will no longer be logged for debugging purposes.  Debugging will be enabled for all incoming OMF messages, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to *null*.
+Use the Ingress Debug Expiration property when debugging OMF to set the date and time when debugging should be disabled. If a future date and time is is specified, incoming OMF messages are logged and HTTP request and response content is stored to disk for review. The debug logging stops at the data and time specified. Set the value to *null* to disable logging.
 
 Examples of valid strings representing date and time:
 
@@ -74,8 +74,7 @@ Examples of valid strings representing date and time:
 
     Local: “mm-dd-yyyy hh:mm:ss”
 
-The content of an incoming OMF message, including the headers, will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in another format than usual log messages. A single file is written to the usual logs directory for every incoming OMF type, container, and data message.
-
+When logging is activated, the content of an incoming OMF message, including the headers, is written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in another format than usual log messages. A single file is written to the usual logs directory for every incoming OMF type, container, and data message.
 
 #### IngressDebugExpiration type
 
@@ -86,7 +85,7 @@ The content of an incoming OMF message, including the headers, will be written t
 
 ### StreamStorageLimitMb
 
-StreamStorageLimitMb is the maximum size in megabytes that a stream can reach. When a stream exceeds the size specified, older data will be deleted from the file. Data will be removed from the stream until the stream is at or below the StreamStorageTargetMb value. It is recommended that the target value be smaller than the limit since trimming can be an expensive operation and should be done infrequently.
+Use the StreamStorageLimitMb property to set the maximum size in megabytes that a stream can reach. When a stream exceeds the size specified, older data is deleted from the file until the stream is at or below the StreamStorageTargetMb value. The target value, set in the StreamStorageTargetMb property, needs to be smaller than the maximum specified in this property.
 
 #### StreamStorageLimitMb type
 
@@ -97,7 +96,7 @@ StreamStorageLimitMb is the maximum size in megabytes that a stream can reach. W
 
 ### StreamStorageTargetMb
 
-StreamStorageTargetMb is the size in megabytes that a stream will be reduced to after StreamStorageLimitMb size is reached for a single stream. When a stream exceeds the size specified, older data will be deleted from the file. Data will be removed from the stream until the stream is at or below the StreamStorageTargetMb value. It is recommended that the target value be smaller than the limit since trimming can be an expensive operation and should be done infrequently.
+Use the StreamStorageTargetMb property to set the size in megabytes that a stream will be reduced to after StreamStorageLimitMb size is reached for a single stream. When a stream exceeds the size specified in the StreamStorageLimitMb property, older data is deleted from the file until the stream is at or below the StreamStorageTargetMb value. The target value needs to be smaller than the maximum specified in the StreamStorageLimitMb property.
 
 #### StreamStorageTargetMb type
 
@@ -108,7 +107,7 @@ StreamStorageTargetMb is the size in megabytes that a stream will be reduced to 
 
 ### EnableTransactionLog
 
-Defines whether the Storage component maintains a transaction log between checkpoint operations.  The transaction log helps the product reduce data loss, should the host device lose power.
+Use the EnableTransactionLog property to define whether the Storage component maintains a transaction log between checkpoint operations. The transaction log helps the product reduce data loss, should the host device lose power.
 
 #### EnableTransactionLog type
 
@@ -116,7 +115,7 @@ Defines whether the Storage component maintains a transaction log between checkp
 
 ### TransactionLogLimitMB
 
-Defines the maximum size, in MB, of a transaction log.  Should a transaction log exceed this size, it will be deleted, thus reducing the amount of data that can be recovered should the host device lose power.
+Use the TransactionLogLimitMB property to define the maximum size, in MB, of a transaction log. When a transaction log exceeds this size, it is deleted, which reduces the amount of data that can be recovered should the host device lose power.
 
 #### TransactionLogLimitMB type
 
@@ -127,11 +126,9 @@ Defines the maximum size, in MB, of a transaction log.  Should a transaction log
 
 ### CheckpointRateInSec
 
-Defines how often the storage component ensures recent data and configuration changes are flushed to storage.  
+Use the CheckpointRateInSec property to define, in seconds, how often the storage component ensures recent data and configuration changes are flushed to storage.  
 
-A setting of 0 disables checkpointing.  Disabling checkpointing reduces the resiliency of the product and thus data loss can occur should the host device lose power.
-
-The value is expressed in seconds.
+A setting of 0 disables checkpointing. Disabling checkpointing reduces the resiliency of the product and thus data loss can occur if the host device loses power.
 
 #### CheckpointRateInSec type
 
@@ -155,7 +152,7 @@ The value is expressed in seconds.
 | `IngressDebugExpiration` | string  | **Required** |
 | `StreamStorageLimitMb`   | integer | **Required** |
 | `StreamStorageTargetMb`  | integer | **Required** |
-| `EnableTransactionLog`   | bool    | Optional     |
+| `EnableTransactionLog`   | Boolean | Optional     |
 | `TransactionLogLimitMB`  | integer | Optional     |
 | `CheckpointRateInSec`    | integer | Optional     |
 
