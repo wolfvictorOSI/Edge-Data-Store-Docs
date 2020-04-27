@@ -78,8 +78,8 @@
             <article class="content wrap" id="_content" data-uid="storageruntime">
 <h1 id="storage-runtime-configuration">Storage runtime configuration</h1>
 
-<p>Edge Data Store provides a mechanism for configuring runtime characteristics of the storage component.  </p>
-<p><strong>Note:</strong> The configured defaults are sufficient for most scenarios.  You should modify these values only after consultation with OSIsoft Support personnel.</p>
+<p>The Edge Data Store storage component is install with default configurations that are sufficient for most scenarios; however, the runtime characteristics of the storage component can be configured.  </p>
+<p><strong>Note:</strong> Consult with OSIsoft Support personnel before modifying the default configuration.</p>
 <h2 id="configure-storage-runtime">Configure storage runtime</h2>
 <p>To update the storage runtime configuration, complete the following:</p>
 <ol>
@@ -127,13 +127,13 @@
 <td><strong>EnableTransactionLog</strong></td>
 <td>No</td>
 <td>Boolean</td>
-<td>Enables or disables the transaction log.  The transaction log helps to ensure no data is lost should a device lose power.</td>
+<td>Enables or disables the transaction log. The transaction log helps to ensure no data is lost should a device lose power.</td>
 </tr>
 <tr>
 <td><strong>TransactionLogLimitMB</strong></td>
 <td>No</td>
 <td>integer</td>
-<td>Maximum size for transaction log file.  Transaction log files larger than this size will be deleted, resulting is loss of data should the device lose power.</td>
+<td>Maximum size for transaction log file. Transaction log files larger than this size will be deleted, resulting is loss of data should the device lose power.</td>
 </tr>
 <tr>
 <td><strong>CheckpointRateInSec</strong></td>
@@ -210,12 +210,12 @@
 </tbody>
 </table>
 <h3 id="ingressdebugexpiration">IngressDebugExpiration</h3>
-<p>Ingress Debug Expiration is a property that can be used when debugging OMF. If the date and time is the future incoming OMF messages will be logged until the date and time specified. Once the configured time is past OMF messages will no longer be logged for debugging purposes.  Debugging will be enabled for all incoming OMF messages, and HTTP request and response content will be stored to disk for review. The property represents the date and time when debugging should no longer be enabled. You can also disable debugging if you set the value to <em>null</em>.</p>
+<p>Use the Ingress Debug Expiration property when debugging OMF to set the date and time when debugging should be disabled. If a future date and time is is specified, incoming OMF messages are logged and HTTP request and response content is stored to disk for review. The debug logging stops at the data and time specified. Set the value to <em>null</em> to disable logging.</p>
 <p>Examples of valid strings representing date and time:</p>
 <pre><code>UTC: “yyyy-mm-ddThh:mm:ssZ”
 
 Local: “mm-dd-yyyy hh:mm:ss”
-</code></pre><p>The content of an incoming OMF message, including the headers, will be written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in another format than usual log messages. A single file is written to the usual logs directory for every incoming OMF type, container, and data message.</p>
+</code></pre><p>When logging is activated, the content of an incoming OMF message, including the headers, is written to a file in the Logs directory. For an active application, this file can become quite large. As a result, debug information is stored to disk in another format than usual log messages. A single file is written to the usual logs directory for every incoming OMF type, container, and data message.</p>
 <h4 id="ingressdebugexpiration-type">IngressDebugExpiration type</h4>
 <p><code>string</code></p>
 <ul>
@@ -223,7 +223,7 @@ Local: “mm-dd-yyyy hh:mm:ss”
 <li>minimum length: 1 character</li>
 </ul>
 <h3 id="streamstoragelimitmb">StreamStorageLimitMb</h3>
-<p>StreamStorageLimitMb is the maximum size in megabytes that a stream can reach. When a stream exceeds the size specified, older data will be deleted from the file. Data will be removed from the stream until the stream is at or below the StreamStorageTargetMb value. It is recommended that the target value be smaller than the limit since trimming can be an expensive operation and should be done infrequently.</p>
+<p>Use the StreamStorageLimitMb property to set the maximum size in megabytes that a stream can reach. When a stream exceeds the size specified, older data is deleted from the file until the stream is at or below the StreamStorageTargetMb value. The target value, set in the StreamStorageTargetMb property, needs to be smaller than the maximum specified in this property.</p>
 <h4 id="streamstoragelimitmb-type">StreamStorageLimitMb type</h4>
 <p><code>integer</code></p>
 <ul>
@@ -231,7 +231,7 @@ Local: “mm-dd-yyyy hh:mm:ss”
 <li>maximum value: <code>2147483647</code></li>
 </ul>
 <h3 id="streamstoragetargetmb">StreamStorageTargetMb</h3>
-<p>StreamStorageTargetMb is the size in megabytes that a stream will be reduced to after StreamStorageLimitMb size is reached for a single stream. When a stream exceeds the size specified, older data will be deleted from the file. Data will be removed from the stream until the stream is at or below the StreamStorageTargetMb value. It is recommended that the target value be smaller than the limit since trimming can be an expensive operation and should be done infrequently.</p>
+<p>Use the StreamStorageTargetMb property to set the size in megabytes that a stream will be reduced to after StreamStorageLimitMb size is reached for a single stream. When a stream exceeds the size specified in the StreamStorageLimitMb property, older data is deleted from the file until the stream is at or below the StreamStorageTargetMb value. The target value needs to be smaller than the maximum specified in the StreamStorageLimitMb property.</p>
 <h4 id="streamstoragetargetmb-type">StreamStorageTargetMb type</h4>
 <p><code>integer</code></p>
 <ul>
@@ -239,11 +239,11 @@ Local: “mm-dd-yyyy hh:mm:ss”
 <li>maximum value: <code>2147483647</code></li>
 </ul>
 <h3 id="enabletransactionlog">EnableTransactionLog</h3>
-<p>Defines whether the Storage component maintains a transaction log between checkpoint operations.  The transaction log helps the product reduce data loss, should the host device lose power.</p>
+<p>Use the EnableTransactionLog property to define whether the Storage component maintains a transaction log between checkpoint operations. The transaction log helps the product reduce data loss, should the host device lose power.</p>
 <h4 id="enabletransactionlog-type">EnableTransactionLog type</h4>
 <p><code>bool</code></p>
 <h3 id="transactionloglimitmb">TransactionLogLimitMB</h3>
-<p>Defines the maximum size, in MB, of a transaction log.  Should a transaction log exceed this size, it will be deleted, thus reducing the amount of data that can be recovered should the host device lose power.</p>
+<p>Use the TransactionLogLimitMB property to define the maximum size, in MB, of a transaction log. When a transaction log exceeds this size, it is deleted, which reduces the amount of data that can be recovered should the host device lose power.</p>
 <h4 id="transactionloglimitmb-type">TransactionLogLimitMB type</h4>
 <p><code>integer</code></p>
 <ul>
@@ -251,9 +251,8 @@ Local: “mm-dd-yyyy hh:mm:ss”
 <li>maximum value: <code>2147483647</code></li>
 </ul>
 <h3 id="checkpointrateinsec">CheckpointRateInSec</h3>
-<p>Defines how often the storage component ensures recent data and configuration changes are flushed to storage.  </p>
-<p>A setting of 0 disables checkpointing.  Disabling checkpointing reduces the resiliency of the product and thus data loss can occur should the host device lose power.</p>
-<p>The value is expressed in seconds.</p>
+<p>Use the CheckpointRateInSec property to define, in seconds, how often the storage component ensures recent data and configuration changes are flushed to storage.  </p>
+<p>A setting of 0 disables checkpointing. Disabling checkpointing reduces the resiliency of the product and thus data loss can occur if the host device loses power.</p>
 <h4 id="checkpointrateinsec-type">CheckpointRateInSec type</h4>
 <p><code>integer</code></p>
 <ul>
@@ -293,7 +292,7 @@ Local: “mm-dd-yyyy hh:mm:ss”
 </tr>
 <tr>
 <td><code>EnableTransactionLog</code></td>
-<td>bool</td>
+<td>Boolean</td>
 <td>Optional</td>
 </tr>
 <tr>
