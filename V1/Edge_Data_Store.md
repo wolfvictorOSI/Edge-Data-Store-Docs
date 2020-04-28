@@ -4,7 +4,7 @@ uid: EdgeDataStore
 
 # Edge Data Store
 
-Edge Data Store (EDS) is a lightweight data collection and storage application designed to capture data at the edge of networks for historical storage and analysis. It runs on small, rugged devices, such as a Raspberry Pi, and is designed to be resilient and require minimal installation and administration. While not a replacement for a PI System, EDS augments the PI System by collecting and storing data in situations where deploying a full PI System is impractical. 
+Edge Data Store (EDS) is a lightweight data collection and storage application designed to capture data at the edge of networks for historical storage and analysis. It runs on small, rugged devices, such as a Raspberry Pi, and is designed to be resilient and require minimal installation and administration. While not a replacement for a PI System or OSIsoft Cloud Services (OCS), EDS augments the PI System and OCS by collecting and storing data in situations where deploying a full PI System is impractical. 
 
 The following diagram shows conceptually how Edge Data Store captures data and sends to permanent storage:
 
