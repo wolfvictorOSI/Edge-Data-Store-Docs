@@ -18,7 +18,7 @@ references:
   href: V1/Overview/CommandLineQuickStartWindows.html
 - uid: ComponentLoggingConfiguration
   name: Component-level logging configuration
-  href: V1/Configuration/Logging%20configuration.html
+  href: V1/Logging/ComponentLogging.html
 - uid: Configuration
   name: Configuration
   href: V1/Configuration/Configuration.html
@@ -112,6 +112,9 @@ references:
 - uid: linuxWindows
   name: Linux and Windows platform differences
   href: V1/LinuxWindows/LinuxWindows.html
+- uid: LoggingConfig
+  name: Logging configuration
+  href: V1/Logging/LoggingConfiguration.html
 - uid: modbus_DataSelection_schema
   name: Sample Modbus TCP data selection configuration
   href: V1/Configuration/Schemas/Modbus_DataSelection_schema.html
@@ -318,7 +321,7 @@ references:
   href: V1/Configuration/System%20configuration.html
 - uid: systemloggingConfiguration
   name: System-level logging configuration
-  href: V1/Administration/LoggingConfiguration.html
+  href: V1/Logging/SystemLogging.html
 - uid: SystemPortConfiguration
   name: System port configuration
   href: V1/Configuration/System%20port%20configuration.html

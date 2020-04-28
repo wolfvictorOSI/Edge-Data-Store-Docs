@@ -78,11 +78,15 @@
             <article class="content wrap" id="_content" data-uid="omfQuickStart">
 <h1 id="omf-quick-start">OMF quick start</h1>
 
-<p>This topic provides quick start instructions for getting data into the Edge Storage component using the OSIsoft Message Format (OMF), and then retrieving that data using the Sequential Data Store (SDS) REST API. Both OMF data ingress and SDS data retrieval are accomplished using REST APIs.  </p>
+<p>Create a custom application using OSIsoft Message Format to send data to EDS from sources that cannot use Modbus or OPC UA protocols.</p>
+<p>The following diagram depicts the data flow from an OMF data collection application into EDS:</p>
+<p><img src="https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/OMFIngressExample.jpg" alt="EDS OMF Ingress" title="OMF Ingress Example"></p>
+<p>The OMF application collects data from a data source and sends it to the Edge Data Store endpoint. The EDS endpoint sends the data to the storage component where it is held until it can be egressed to permanent storage in PI Server or OSIsoft Cloud Services. The OMF application must run on the same device as Edge Data Store and no authentication is needed. </p>
+<p>To get started using OMF messages to ingress data into EDS, create an OMF type and container and then write data events to the container using REST APIs. Use the Sequential Data Store (SDS) REST API to read the data back from EDS.</p>
 <h2 id="create-an-omf-type">Create an OMF type</h2>
 <p>The first step in OMF data ingress is to create an OMF type that describes the format of the data to be stored in a container. In this example, the data to be written is a timestamp and a numeric value.</p>
 <ol>
-<li><p>Create an OMF JSON file describing the type as follows:</p>
+<li><p>Create an OMF JSON file that defines the type as follows:</p>
 <pre><code class="lang-json">[{
     &quot;id&quot;: &quot;MyCustomType&quot;,
     &quot;classification&quot;: &quot;dynamic&quot;,
@@ -107,11 +111,11 @@
 <pre><code class="lang-bash">curl -i -d &quot;@OmfCreateType.json&quot; -H &quot;Content-Type: application/json&quot; -H &quot;producertoken: x &quot; -H &quot;omfversion: 1.1&quot; -H &quot;action: create&quot; -H &quot;messageformat: json&quot; -H &quot;messagetype: type&quot; -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
 </code></pre></li>
 </ol>
-<p>When this command completes successfully, an SDS type with the same name will have been created on the server. Any number of containers can be created from the type, as long as they use a timestamp as an index and have a 32-bit floating point value. You only need to send the Type definition the first time you send data, but it does not cause an error if you resend the same definition at a later time.</p>
+<p>When this command completes successfully, an OMF type with the same name is created on the server. Any number of containers can be created from the type, as long as they use a timestamp as an index and have a 32-bit floating point value. The create type message needs to be sent first before container and data messages, but it does not cause an error if the same message is sent at a later time.</p>
 <h2 id="create-an-omf-container">Create an OMF container</h2>
-<p>The next step in writing OMF data is to create a container. As with an OMF type, this only needs to be done once before sending data events, and resending the same definition repeatedly does not cause an error.</p>
+<p>The next step in writing OMF data is to create an OMF container. As with an OMF type, the create container message only needs to be sent once before sending data events, but resending the same definition again does not cause an error.</p>
 <ol>
-<li><p>Create an OMF JSON file as follows:</p>
+<li><p>Create an OMF JSON file that defines the container as follows:</p>
 <pre><code class="lang-json">[{
     &quot;id&quot;: &quot;MyCustomContainer&quot;,
     &quot;typeid&quot;: &quot;MyCustomType&quot;
