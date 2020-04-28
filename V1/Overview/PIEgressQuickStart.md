@@ -4,13 +4,24 @@ uid: piEgressQuickStart
 
 # PI egress quick start
 
-This topic provides quick start instructions for egressing data stored in the Edge Data Store into a remote PI System. This is accomplished using PI Web API which is configured for basic authentication.
+Data egress provides a mechanism to transfer data to PI Server using OMF messages through a PI Web API endpoint. To get started sending data stored in EDS to a PI System, create a PI Web API OMF endpoint and configure periodic egress to use the PI Web API endpoint.
+
+## Create a PI Web API OMF endpoint
+
+1. Install PI Web API and enable the **OSIsoft Message Format (OMF) Services** feature.
+    - During configuration, choose an AF database and PI Data Archive where metadata and data will be stored.
+    - The account used in an egress configuration needs permissions to create AF elements, element templates, and PI points.
+2. Configure PI Web API to use *Basic* authentication.
+
+ For complete steps, as well as best practices and recommendations, see the [PI Web API User Guide](https://livelibrary.osisoft.com/LiveLibrary/content/en/web-api-v12/GUID-D807EF71-7F37-43DB-A357-EF03CCD001F1) on Live Library.
+
+ **Note:**  The certificate used by PI Web API must be trusted by the device running EDS, otherwise the egress configuration *ValidateEndpointCertificate* property needs to be set to false (this can be the case with a **self-signed certificate** but should only be used for testing purposes).
 
 ## Create a periodic egress configuration
 
-Complete the following to configure Edge Storage periodic egress for the PI Web API endpoint and credentials:
+Complete the following steps to configure Edge Storage periodic egress for the PI Web API endpoint and credentials:
 
-1. Create a JSON file containing one or more egress endpoints, based on the following example:
+1. Create a JSON file containing one or more egress endpoints, by copying the following example into any text editor.
 
    ```json
    [{
@@ -35,17 +46,16 @@ Complete the following to configure Edge Storage periodic egress for the PI Web 
    }]
    ```
 
-2. Add the server name, username, and password of your PI Web API server into the "Endpoint" definition.  You must specify a valid user account that can write data via PI Web API using Basic authentication. For examples, see [Data egress configuration](xref:egress).
+2. Modify the **Endpoint** parameter with the name of the PI Web API sever.
+3. Modify the **Username** and **Password** parameters to specify a valid user account that can write data via PI Web API using Basic authentication. For examples, see [Configure data egress](xref:configureEgress).
 
-   **Note:** StreamPrefix and TypePrefix values can be used to ensure uniqueness on the destination system, if required. The StreamPrefix value will create unique PI Points on the PI System. If you want to only send specific streams, edit the "EgressFilter" value. Examples of more advanced scenarios are in the Egress section of this documentation.
+   **Note:** The **StreamPrefix** and **TypePrefix** parameters ensure uniqueness on the destination system, if required. The StreamPrefix value creates unique PI Points on the PI System. To only send specific streams, edit the **EgressFilter** value. For examples of more advanced scenarios, see [Data egress configuration](xref:egress).
 
-3. Save the JSON file with the name PeriodicEgressEndpoints.json.
-4. To configure Edge Storage to send data to the PI System, run the following curl script from the same directory where you saved the JSON file. 
-
-   **Note:** You can run the file and curl script from any directory on the device as long as the file and the curl script are run from the same directory.
+4. Save the JSON file with the name _PeriodicEgressEndpoints.json_ to any directory on the device where Edge Data Store is installed.
+5. To configure Edge Storage to send data to the PI System, run the following curl script from the directory where the JSON file is located. 
 
 ```bash
 curl -i -d "@PeriodicEgressEndpoints.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
 ```
 
-When the command completes successfully, data will start being sent to the PI System.
+When the command completes successfully, data egress to the PI System begins.

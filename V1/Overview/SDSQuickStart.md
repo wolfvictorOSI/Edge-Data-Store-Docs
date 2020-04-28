@@ -2,9 +2,17 @@
 uid: sdsQuickStart
 ---
 
-# SDS quick start
+# SDS quick start  
 
-This topic provides quick start instructions to get data into the EDS storage component using the Sequential Data Store (SDS) REST API. SDS is the same technology used in OCS for storing data, so the usage of the REST APIs is very similar to OCS for reading and writing data. All data from all sources on Edge Data Store (Modbus TCP, OPC UA, OMF, SDS) can be read using the SDS REST APIs on the local device, in the default tenant and the default namespace.  
+Create a custom application using Sequential Data Store (SDS) REST API to send data to EDS from sources that cannot use Modbus or OPC UA protocols. 
+
+The following diagram depicts the data flow from an SDS custom application into EDS:
+
+![SDS Application Example](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/SDSApplicationExample.jpg "SDS Application Example")
+
+The SDS application collects data from a data source and sends it to the Edge Data Store endpoint. The EDS endpoint sends the data to the storage component where it is held until it can be egressed to permanent storage in PI Server or OSIsoft Cloud Services. All data from all sources on Edge Data Store (Modbus TCP, OPC UA, OMF, SDS) can be read using the SDS REST APIs on the local device, in the default tenant and the default namespace. 
+
+To get started using the SDS REST API to ingress data into EDS, create an SDS type and stream and then write data events to the SDS stream. Use the Sequential Data Store (SDS) REST API to read the data back from EDS.
 
 ## Create an SDS type
 
@@ -46,7 +54,7 @@ Complete the following steps to create an SDS type that describes the format of 
    curl -i -d "@SDSCreateType.json" -H "Content-Type: application/json"  -X POST   http://localhost:5590/api/v1/tenants/default/namespaces/default/types/Simple
    ```
 
-   When this script completes successfully, an SDS type with the same name is created on the server. You can create any number of containers from a single type, as long as they use a timestamp as an index and a 64-bit floating point value. You only need to create a type the first time you send data with a custom application. It does not cause an error to resend the same definition at a later time.
+   When this script completes successfully, an SDS type with the same name is created on the server. You can create any number of containers from a single type, as long as they use a timestamp as an index and a 64-bit floating point value. The Type definition needs to be sent first before you send data with a custom application. It does not cause an error to resend the same definition at a later time.
 
 ## Create an SDS stream
 
@@ -62,7 +70,7 @@ Complete the following steps to create an SDS stream.
    }
    ```
 
-   **Note:** This stream references the type you created earlier.  An error will occur if the type does not exist when the stream is created. As with an SDS type, you only need to create a stream once before sending data events. Resending the same definition repeatedly does not cause an error.
+   **Note:** This stream references the type you created earlier. An error occurs if the type does not exist when the stream is created. As with an SDS type, create a stream once before sending data events. Resending the same definition repeatedly does not cause an error.
 
 2. Save the JSON file with the name SDSCreateStream.json.
 3. Run the following curl script:
@@ -75,7 +83,7 @@ Complete the following steps to create an SDS stream.
 
 ## Write data events to the SDS stream
 
-After you have created a type and container, you can write data using SDS. Complete the following steps to write data to a stream.
+After you create a type and container, use SDS to write data to a stream.
 
 1. Create a JSON file using the example below:
 
@@ -90,7 +98,7 @@ After you have created a type and container, you can write data using SDS. Compl
    }]
    ```
 
-   **Note:** This example includes two data events that will be stored in the SDS Stream you created in the previous steps. For optimal performance, you should batch SDS values when writing them.
+   **Note:** This example includes two data events that will be stored in the SDS Stream created in the previous steps. For optimal performance, batch SDS values when writing them.
 
 2. Save the JSON file with the name SDSWriteData.json.
 3. Run the following curl script:
