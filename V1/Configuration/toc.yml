@@ -15,7 +15,7 @@
 - name: Edge Data Store Health
   href: ../Health/toc.yml
   topicHref: ../Health/Health.md
-- name: System-level logging configuration
-  href: ../Administration/LoggingConfiguration.md
-- name: Component-level logging configuration
-  href: ../Configuration/Logging configuration.md
+- name: Logging configuration
+  href: ../Logging/toc.yml
+  topicHref: ../Logging/LoggingConfiguration.md
+
