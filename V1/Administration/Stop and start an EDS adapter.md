@@ -20,7 +20,7 @@ Complete the following steps to stop an EDS adapter component:
     Example **Stop the OpcUa1 adapter** using curl and the default port: 
 
     ```bash
-    curl -v -d "" http://localhost:5590/api/v1/Administration/OpcUa1/Stop
+    curl -d "" http://localhost:5590/api/v1/Administration/OpcUa1/Stop
     ```
 
     An HTTP status 204 message indicates success.
@@ -39,7 +39,7 @@ Complete the following steps to start an EDS adapter component:
     Example **Stop the Modbus1 adapter** using curl and the default port:
 
     ```bash
-    curl -v -d "" http://localhost:5590/api/v1/Administration/Modbus1/Start
+    curl -d "" http://localhost:5590/api/v1/Administration/Modbus1/Start
     ```
 
     An HTTP status 204 message indicates success.

@@ -54,7 +54,7 @@ Data egress provides a mechanism to transfer data to OCS using OMF messages. To 
 5. To configure the Edge Storage component to send data to OCS, run the following curl script from the directory where the JSON file is located.
 
     ```bash
-    curl -i -d "@PeriodicEgressEndpoints.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
+    curl -d "@PeriodicEgressEndpoints.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
     ```
 
    When this command completes successfully, data egress to OCS begins.

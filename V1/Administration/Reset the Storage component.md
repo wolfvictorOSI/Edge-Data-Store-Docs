@@ -18,7 +18,7 @@ Complete the following to reset the Storage component:
     Example using curl and the default port:
 
     ```bash
-    curl -v -d "" http://localhost:5590/api/v1/Administration/Storage/Reset
+    curl -d "" http://localhost:5590/api/v1/Administration/Storage/Reset
     ```
 
     An HTTP status 204 message indicates success.
