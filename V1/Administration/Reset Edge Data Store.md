@@ -20,7 +20,7 @@ Complete the following to reset Edge Data Store:
   Example using curl and the default port:
 
   ```bash
-  curl -v -d "" http://localhost:5590/api/v1/Administration/System/Reset
+  curl -d "" http://localhost:5590/api/v1/Administration/System/Reset
   ```
 
   An HTTP status 204 message indicates success.

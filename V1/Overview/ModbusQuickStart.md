@@ -33,7 +33,7 @@ The following diagram depicts the data flow of a single Modbus TCP EDS adapter:
 **Note:** You should run the script on the same computer where the Edge Data Store is installed.
 
    ```bash
-   curl -i -d "@Modbus1Datasource.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Datasource
+   curl -d "@Modbus1Datasource.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Datasource
    ```
 
 When the command completes successfully (a 204 is returned by curl), your Modbus TCP data source has been created. If you get a 400 error, check the JSON file for errors. If you get a 404 or 500 error, check that Edge Data Store is running on your device.
@@ -102,6 +102,6 @@ After you create the data source file, you select the streams you want to store 
 3. Run the following curl script to configure Edge Data Store to collect Modbus TCP data values:
 
    ```bash
-   curl -i -d "@Modbus1Dataselection.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Dataselection
+   curl -d "@Modbus1Dataselection.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Dataselection
    ```
 

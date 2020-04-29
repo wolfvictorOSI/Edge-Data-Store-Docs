@@ -4,15 +4,13 @@ uid: egress
 
 # Data egress configuration
 
-Edge Data Store provides an egress mechanism to copy and transfer data to another device or destination. Data is transferred through OMF. Supported destinations are OSIsoft Cloud Services or a PI Server.
+Edge Data Store provides an egress mechanism to copy and transfer data through OMF to OSIsoft Cloud Services or a PI Server. 
 
-Configuration of egress includes specifying zero or more endpoints. An egress endpoint represents a destination to which data will be sent. Each egress endpoint is comprised of the properties specified in the parameters section. It is executed independently of all other egress endpoints, and is expected to accept OMF messages. More than one endpoint for the same destination is allowed.
+Prepare egress destinations to ensure that OCS or PI Server are properly configured to receive OMF messages and record information needed to create a connection to the destination.
+
+Configure an egress endpoint to specify the connection information for a destination and the details of the data transfer. Each endpoint is independent of all other egress endpoints, and more than one endpoint for the same destination is allowed.
 
 **Note:** Some types, and consequently containers and data, cannot be egressed. For more information, see [Egress execution details](xref:EgressExecutionDetails).
 
-Edge Data Store supports one [tenant](https://ocs-docs.osisoft.com/Documentation/Management/Account_Tenant.html) and two [namespaces](https://ocs-docs.osisoft.com/Documentation/Management/Account_Namespace_1.html). The EDS tenant name is default, and the two namespaces are default (where adapter and OMF data is written) and diagnostics. Diagnostics is where the system and its components write information that can be used locally or egressed to a remote PI server or OCS for monitoring. You must create a separate egress definition for each namespace from which you want to egress data.
+Edge Data Store supports one [tenant](https://ocs-docs.osisoft.com/Documentation/Management/Account_Tenant.html) and two [namespaces](https://ocs-docs.osisoft.com/Documentation/Management/Account_Namespace_1.html). The EDS tenant name is _default_, and the two namespaces are _default_ and _diagnostics_. The default namespace is where adapter and OMF data is written. The diagnostics namespace is where performance and system information is written, which can be used locally or egressed to a remote PI server or OCS for monitoring. A separate egress definition is required for each namespace from which you want to egress data.
 
-The other topics in this section provide instructions for the sequential steps required to egress EDS data to a PI server or OCS:
-
-- Prepare egress destinations in either a PI server or OCS. You will use the information produced by this action to define the endpoint in your egress configuration file. For more information, see [Prepare egress destinations](xref:PrepareEgressDestinations).
-- Create an egress configuration file for each specific endpoint to which you want to egress data. For more information, see [Configure data egress](xref:configureEgress)

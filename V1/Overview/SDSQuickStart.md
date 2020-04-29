@@ -51,7 +51,7 @@ Complete the following steps to create an SDS type that describes the format of 
 3. Run the following curl script:
 
    ```bash
-   curl -i -d "@SDSCreateType.json" -H "Content-Type: application/json"  -X POST   http://localhost:5590/api/v1/tenants/default/namespaces/default/types/Simple
+   curl -d "@SDSCreateType.json" -H "Content-Type: application/json"  -X POST   http://localhost:5590/api/v1/tenants/default/namespaces/default/types/Simple
    ```
 
    When this script completes successfully, an SDS type with the same name is created on the server. You can create any number of containers from a single type, as long as they use a timestamp as an index and a 64-bit floating point value. The Type definition needs to be sent first before you send data with a custom application. It does not cause an error to resend the same definition at a later time.
@@ -76,7 +76,7 @@ Complete the following steps to create an SDS stream.
 3. Run the following curl script:
 
    ```bash
-   curl -i -d "@SDSCreateStream.json" -H "Content-Type: application/json"  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple
+   curl -d "@SDSCreateStream.json" -H "Content-Type: application/json"  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple
    ```
 
    When this script completes successfully, an SDS stream is created on the server to store data defined by the specified type.
@@ -104,7 +104,7 @@ After you create a type and container, use SDS to write data to a stream.
 3. Run the following curl script:
 
    ```bash
-   curl -i -d "@SDSWriteData.json" -H "Content-Type: application/json"  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple/Data
+   curl -d "@SDSWriteData.json" -H "Content-Type: application/json"  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple/Data
    ```
 
    When this script completes successfully, two values are written to the SDS stream.

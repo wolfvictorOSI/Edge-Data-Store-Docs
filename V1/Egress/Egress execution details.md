@@ -4,13 +4,14 @@ uid: EgressExecutionDetails
 
 # Egress execution details
 
-After an egress endpoint is configured, egress execution occurs periodically for that endpoint. Egress is handled individually per configured endpoint. Only the first execution types and containers are egressed; subsequently, only new or changed types/containers are egressed. 
+
+After an egress endpoint is configured, data egress occurs periodically for that endpoint based on its configuration and independently from other endpoints. 
+
+Types and containers are sent only on the first egress for an endpoint; subsequently, only new or changed types and containers are egressed. Type creation must be successful to perform container creation, and container creation must be successful to perform data egress.
 
 **Note:** Only streams with a single, timeseries-based index can be egressed. 
 
-Type creation must be successful to perform container creation, and container creation must be successful to perform data egress.
-
-Type, container, and data items are batched into one or more OMF messages when egressing. Per the requirements defined in the OMF specification, a single message will not exceed 192KB in size. Compression is automatically applied to outbound egress messages. On the destination, failure to add a single item will result in the message failing. In that case the Edge Data Store will fall back to egressing each item individually, per type or stream (that is each type, each stream, all data for a single stream). Types, containers, and data will continue to be egressed as long as the destination continues to respond to HTTP requests - retrying previous failures as needed.
+Type, container, and data items are batched into one or more OMF messages for egress. Per the requirements defined in the OMF specification, a single message cannot exceed 192KB in size. Compression is automatically applied to outbound egress messages. On the destination, failure to add a single item results in the message failing. In that case, Edge Data Store egresses each item individually, per type or stream (that is each type, each stream, all data for a single stream). Types, containers, and data will continue to be egressed as long as the destination continues to respond to HTTP requests - retrying previous failures as needed.
 
 If egress fails with one of the following errors, EDS will retry the request up to five times:
 

@@ -45,7 +45,7 @@ The first step in OMF data ingress is to create an OMF type that describes the f
 3. Run the following curl command:
 
    ```bash
-   curl -i -d "@OmfCreateType.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: type" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
+   curl -d "@OmfCreateType.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: type" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
    ```
 
 When this command completes successfully, an OMF type with the same name is created on the server. Any number of containers can be created from the type, as long as they use a timestamp as an index and have a 32-bit floating point value. The create type message needs to be sent first before container and data messages, but it does not cause an error if the same message is sent at a later time.
@@ -69,7 +69,7 @@ The next step in writing OMF data is to create an OMF container. As with an OMF 
 3. To create the SDS stream to store data defined by the type, run the following curl command:
 
    ```bash
-   curl -i -d "@OmfCreateContainer.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: container" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
+   curl -d "@OmfCreateContainer.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: container" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
    ```
 
 ## Write data events to the OMF container
@@ -95,7 +95,7 @@ The next step in writing OMF data is to create an OMF container. As with an OMF 
 3. To write data values to the SDS stream, run the following curl command:
 
    ```bash
-   curl -i -d "@OmfCreateDataEvents.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: data" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
+   curl -d "@OmfCreateDataEvents.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: data" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
    ```
 
 ## Use SDS to read last data written
