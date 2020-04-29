@@ -100,7 +100,7 @@
 <li>Run the following curl script from the same directory where the file is located. </li>
 </ol>
 <p><strong>Note:</strong> You should run the script on the same computer where the Edge Data Store is installed.</p>
-<pre><code class="lang-bash">curl -i -d &quot;@Modbus1Datasource.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Datasource
+<pre><code class="lang-bash">curl -d &quot;@Modbus1Datasource.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Datasource
 </code></pre><p>When the command completes successfully (a 204 is returned by curl), your Modbus TCP data source has been created. If you get a 400 error, check the JSON file for errors. If you get a 404 or 500 error, check that Edge Data Store is running on your device.</p>
 <h2 id="configure-modbus-tcp-data-selection">Configure Modbus TCP data selection</h2>
 <p>After you create the data source file, you select the streams you want to store in Edge Data Store by configuring Modbus data selection.  To configure the data selection file, complete the following:</p>
@@ -160,7 +160,7 @@
 ]
 </code></pre></li>
 <li><p>Run the following curl script to configure Edge Data Store to collect Modbus TCP data values:</p>
-<pre><code class="lang-bash">curl -i -d &quot;@Modbus1Dataselection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Dataselection
+<pre><code class="lang-bash">curl -d &quot;@Modbus1Dataselection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/Modbus1/Dataselection
 </code></pre></li>
 </ol>
 </article>

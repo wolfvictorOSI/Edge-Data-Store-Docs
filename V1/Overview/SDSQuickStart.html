@@ -114,7 +114,7 @@
 <li><p>Save the JSON file the name SDSCreateType.json.</p>
 </li>
 <li><p>Run the following curl script:</p>
-<pre><code class="lang-bash">curl -i -d &quot;@SDSCreateType.json&quot; -H &quot;Content-Type: application/json&quot;  -X POST   http://localhost:5590/api/v1/tenants/default/namespaces/default/types/Simple
+<pre><code class="lang-bash">curl -d &quot;@SDSCreateType.json&quot; -H &quot;Content-Type: application/json&quot;  -X POST   http://localhost:5590/api/v1/tenants/default/namespaces/default/types/Simple
 </code></pre><p>When this script completes successfully, an SDS type with the same name is created on the server. You can create any number of containers from a single type, as long as they use a timestamp as an index and a 64-bit floating point value. The Type definition needs to be sent first before you send data with a custom application. It does not cause an error to resend the same definition at a later time.</p>
 </li>
 </ol>
@@ -132,7 +132,7 @@
 <li><p>Save the JSON file with the name SDSCreateStream.json.</p>
 </li>
 <li><p>Run the following curl script:</p>
-<pre><code class="lang-bash">curl -i -d &quot;@SDSCreateStream.json&quot; -H &quot;Content-Type: application/json&quot;  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple
+<pre><code class="lang-bash">curl -d &quot;@SDSCreateStream.json&quot; -H &quot;Content-Type: application/json&quot;  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple
 </code></pre><p>When this script completes successfully, an SDS stream is created on the server to store data defined by the specified type.</p>
 </li>
 </ol>
@@ -153,7 +153,7 @@
 <li><p>Save the JSON file with the name SDSWriteData.json.</p>
 </li>
 <li><p>Run the following curl script:</p>
-<pre><code class="lang-bash">curl -i -d &quot;@SDSWriteData.json&quot; -H &quot;Content-Type: application/json&quot;  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple/Data
+<pre><code class="lang-bash">curl -d &quot;@SDSWriteData.json&quot; -H &quot;Content-Type: application/json&quot;  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple/Data
 </code></pre><p>When this script completes successfully, two values are written to the SDS stream.</p>
 </li>
 </ol>

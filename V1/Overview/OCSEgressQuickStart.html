@@ -121,7 +121,7 @@
 <li><p>Save the JSON file with the name <em>PeriodicEgressEndpoints.json</em> to any directory on the device where Edge Data Store is installed.</p>
 </li>
 <li><p>To configure the Edge Storage component to send data to OCS, run the following curl script from the directory where the JSON file is located.</p>
-<pre><code class="lang-bash">curl -i -d &quot;@PeriodicEgressEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
+<pre><code class="lang-bash">curl -d &quot;@PeriodicEgressEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
 </code></pre><p>When this command completes successfully, data egress to OCS begins.</p>
 </li>
 </ol>
