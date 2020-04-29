@@ -4,7 +4,7 @@ uid: PrepareEgressDestinations
 
 # Prepare egress destinations
 
-The various OSIsoft OMF destinations may require additional configuration. See the following details to prepare an OSIsoft destination to receive OMF messages. 
+OCS and PI Server destinations may require additional configuration to receive OMF messages. 
 
 ## OCS
 

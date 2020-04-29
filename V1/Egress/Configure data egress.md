@@ -4,7 +4,7 @@ uid: configureEgress
 
 # Configure data egress
 
-After you have configured one or more OMF destinations, you can configure data egress.
+Once the OCS or PI Server destinations are prepared to receive OMF messages, configure data egress endpoints to create the connection to the destination and specify the details of the data transfer.
 
 **Note:** You cannot add egress configurations manually because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see [REST URLs](#rest-urls).
 
@@ -15,13 +15,13 @@ Complete the following procedure to create new egress endpoints:
 1. Create a JSON file containing one or more egress endpoints.
     - For content structure, see the following [Examples](#examples). 
 2. Update the parameters as needed. For a table of all available parameters, see [Parameters](#parameters).
-3. Save the file.
+3. Save the JSON file with the name _PeriodicEgressEndpoints.json_ to any directory on the device where Edge Data Store is installed.
 4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints/`
 
-Example using cURL:
+Example using cURL, which must be run from the directory where the JSON file is saved:
 
 ```bash
-curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
+curl "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
 ```
 
 **Note** The @ symbol is a required prefix for the above command.
@@ -30,10 +30,10 @@ curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: app
 
 | Parameter                       | Required                  | Type      | Description                                        |
 |---------------------------------|---------------------------|-----------|----------------------------------------------------|
-| **Backfill**                    | Optional                  | bool      | An indicator of whether data should be backfilled. Enabling the backfill flag will result in all data from the earliest index to the latest stored index being egressed. Backfilling occurs for each stream, including when a new stream is added. Once backfilling is complete for a stream, any out-of-order data is not egressed.  Defaults to false. |
+| **Backfill**                    | Optional                  | Boolean   | An indicator of whether data should be backfilled. Enabling the backfill flag will result in all data from the earliest index to the latest stored index being egressed. Backfilling occurs for each stream, including when a new stream is added. Once backfilling is complete for a stream, any out-of-order data is not egressed.  Defaults to false. |
 | **ClientId**                    | Required for OCS endpoint | string    | Used for authentication with the OCS OMF endpoint. |
 | **ClientSecret**                | Required for OCS endpoint | string    | Used for authentication with the OCS OMF endpoint. |
-| **DebugExpiration**             | Optional                  | string    | A property that enables persistence of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value of this property represents the date and time this detailed information should stop being persisted. Examples of valid strings representing date and time:  UTC: “yyyy-mm-ddThh:mm:ssZ”, Local: “mm-dd-yyyy hh:mm:ss”. For more information, see [Troubleshoot Edge Data Store](../Troubleshooting/Troubleshooting.md). |
+| **DebugExpiration**             | Optional                  | string    | Enables logging of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value represents the date and time this detailed information should stop being saved. Examples of valid strings representing date and time:  UTC: “yyyy-mm-ddThh:mm:ssZ”, Local: “mm-dd-yyyy hh:mm:ss”. For more information, see [Troubleshoot Edge Data Store](../Troubleshooting/Troubleshooting.md). |
 | **Description**                 | Optional                  | string    | Friendly description |
 | **EgressFilter**                | Optional                  | string    | A filter used to determine which streams and types are egressed. For more information on valid filters, see [Searching](../Sds/Searching.md). |
 | **Enabled**                     | Optional                  | Boolean      | An indicator of whether egress is enabled when the egress endpoint is loaded. Defaults to true. |
@@ -43,11 +43,11 @@ curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: app
 | **Name**                        | Optional                  | string    | Friendly name |
 | **NamespaceId**                 | Optional                  | string    | Represents the namespace that will be egressed. There are two available namespaces: default and diagnostics. Default namespace is “default”. |
 | **Password**                    | Required for PI endpoint  | string    | Used for Basic authentication to the PI Web API OMF endpoint. |
-| **StreamPrefix**                | Optional                  | string    | Prefix applied to any streams that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters will not be allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
+| **StreamPrefix**                | Optional                  | string    | Prefix applied to any streams that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters are not allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
 | **TokenEndpoint**               | Optional for OCS endpoint | string    | Used to retrieve an OCS token from an alternative endpoint. *This is not normally necessary with OCS. Only use if directed to do so by customer support*. |
-| **TypePrefix**                  | Optional                  | string    | Prefix applied to any types that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters will not be allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
-| **Username**                    | Required for PI endpoint  | string    | Used for Basic authentication to the PI Web API OMF endpoint. If domain is required, the backslash must be escaped (i.e., *domain*\\\\*username*).  |
-| **ValidateEndpointCertificate** | Optional                  | bool      | Used to disable verification of destination certificate. Use for testing only with self-signed certificates. Defaults to true. |
+| **TypePrefix**                  | Optional                  | string    | Prefix applied to any types that are egressed. A null string or a string containing only empty spaces will be ignored. The following restricted characters are not allowed: / : ? # [ ] @ ! $ & ' ( ) \ * + , ; = % | < > { } ` " |
+| **Username**                    | Required for PI endpoint  | string    | Used for Basic authentication to the PI Web API OMF endpoint. If domain is required, the backslash must be escaped (e.g., *domain*\\\\*username*). |
+| **ValidateEndpointCertificate** | Optional                  | Boolean   | Used to disable verification of destination certificate. Use for testing only with self-signed certificates. Defaults to true. |
 
 ### Examples
 
