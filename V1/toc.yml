@@ -1,6 +1,7 @@
 - name: Edge Data Store
   href: Overview/toc.yml
-  topicHref: Edge_Data_Store.md
+  topicHref: index.md
+  homepage: index.md
 - name: Quick start guides
   href: Overview/Quick start guides/toc.yml
   topicHref: Overview/Quick start guides.md
