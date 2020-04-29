@@ -4,9 +4,9 @@ uid: commandLineLinuxQuickStart
 
 # Command line quick start - Linux
 
-This topic provides quick start instructions for using EdgeCmd in the Linux environment. You can utilize the edgecmd.exe command line tool to configure Edge Data Store, in addition to curl commands and REST calls. 
+The EdgeCmd utility is OSIsoft's proprietary tool for configuring Edge Data Store from a command line. EdgeCmd must be installed on the device with Edge Data Store. For instructions on installing EdgeCmd, see [EdgeCmd utility](xref:Installedgecmd).
 
-You can install EdgeCmd from the Linux command prompt. Complete the following to access edgecmd on Linux:
+Complete the following steps to access edgecmd on Linux:
 
 1. Open a command prompt. 
 2. Enter the following command to start the edgecmd.exe tool from any directory.

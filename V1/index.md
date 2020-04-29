@@ -53,7 +53,7 @@ uid: index
     - [Egress execution details](xref:EgressExecutionDetails)
   - [Diagnostics configuration](xref:EdgeDataStoreDiagnostics)
   - [Health endpoints configuration](xref:HealthEndpointsConfiguration)
-  - [Logging configuration](xref:loggingConfiguration)
+  - [Logging configuration](xref:LoggingConfig)
 - [Administration](xref:EdgeDataStoreAdministration)
   - [Retrieve product version information](xref:RetrieveProductVersionInformation)
   - [Reset Edge Data Store](xref:ResetEdgeDataStore)

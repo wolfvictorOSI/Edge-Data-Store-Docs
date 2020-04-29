@@ -49,7 +49,7 @@ EDS periodic egress extracts data from SDS streams and sends the appropriate seq
 
 1. Check all egress configuration files in Edge Data Store to verify whether any endpoints are duplicated. A duplicate endpoint means that more than one device is egressing data to it, resulting in unexpected data.
 
-2. Assign stream prefixes in the periodic egress endpoint configuration to ensure that output data streams are logically separated in the systems of record. For instructions, see [Configure data egress](xref:configurEgress).
+2. Assign stream prefixes in the periodic egress endpoint configuration to ensure that output data streams are logically separated in the systems of record. For instructions, see [Configure data egress](xref:configureEgress).
 
    **Note:** Type prefixes may be helpful if you have changed a stream type definition on EDS. OMF types on both OCS and the PI System are immutable once created. If the type of the data stream changes, it is best to either delete the old type definition (if nothing is still using it) or add a type prefix to create a new unique type that will be used by new streams egressing from EDS to the systems of record.
 
