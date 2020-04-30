@@ -98,7 +98,7 @@ references:
   name: Health endpoints configuration
   href: V1/Configuration/System%20health%20endpoints%20configuration.html
 - uid: index
-  name: OSIsoft Edge Data Store
+  name: Edge Data Store
   href: V1/index.html
 - uid: installationOverview
   name: Installation
