@@ -4,11 +4,13 @@ uid: modbusQuickStart
 
 # Modbus TCP EDS adapter quick start
 
-This topic provides quick start instructions for setting up the Modbus TCP EDS adapter. You can add a single Modbus TCP EDS adapter during Edge Data Store installation. For more information, see [Install Edge Data Store](xref:InstallEdgeDataStore).
+The Modbus TCP EDS adapter is a component of Edge Data Store that defines connections to and receives data from Modbus TCP capable devices. The Modbus TCP EDS adapter can connect to multiple devices by defining one instance of the adapter for each device. The EDS installation includes the Modbus TCP EDS adapter and the option to add a single Modbus TCP EDS adapter instance. Additional instances can be configured after installation. For more information about installation, see [Install Edge Data Store](xref:InstallEdgeDataStore). To get started collecting data with an instance of the Modbus TCP EDS adapter, you need to configure the data source, which specifies the device connection, and the data selection, which specifies the data to collect.
 
-The following diagram depicts the data flow of a single Modbus TCP EDS adapter:
+The following diagram depicts the data flow of a single instance of Modbus TCP EDS adapter:
 
-![Modbus TCP EDS](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/EDSModbusTCP.jpg "Modbus TCP EDS")
+![Modbus TCP EDS](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/ModbusTCP.jpg "Modbus TCP EDS")
+
+The adapter instance requests data from the Modbus TCP device and then the device sends its data. The adapter sends the collected data to the storage component where it is held until it can be egressed to permanent storage in PI Server or OSIsoft Cloud Services. The adapter instance can be configured from the device where EDS is installed, and EDS collects health information about the adapter that can be egressed.
 
 ## Configure a Modbus TCP data source
 

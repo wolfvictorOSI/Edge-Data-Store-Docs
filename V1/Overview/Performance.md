@@ -12,9 +12,9 @@ Use the following performance testing information to determine the appropriate h
 
 Edge Data Store performance test cases were divided into three categories based on commonly available, consumer grade and industrial grade devices. Several devices in each category were tested to validate performance expectations and the results of these tests are summarized below in terms of the maximum supported data stream count and data ingress rate for each category. 
 
-* Small devices (e.g. 1 core ARM CPU, 512 MB RAM, Linux): 30 data streams, 30 events / sec
-* Medium devices (e.g. 2 core ARM or Intel CPU, 2 GB RAM, Linux or Windows): 300 data streams, 300 events / sec
-* Large devices (e.g. 4 core ARM or Intel CPU, 4 GB RAM, Linux or Windows): 3,000 data streams, 3,000 events / sec
+* Small devices (e.g., 1 core ARM CPU, 512 MB RAM, Linux): 30 data streams, 30 events / sec
+* Medium devices (e.g., 2 core ARM or Intel CPU, 2 GB RAM, Linux or Windows): 300 data streams, 300 events / sec
+* Large devices (e.g., 4 core ARM or Intel CPU, 4 GB RAM, Linux or Windows): 3,000 data streams, 3,000 events / sec
 
 It is possible that lower performance results may be realized on other devices with similar hardware and software configurations. Other applications running on the same device may also affect actual performance of Edge Data Store. The data stream counts and throughput rates shown above are the upper limits of what is supported for the current release of Edge Data Store for each device category.
 
