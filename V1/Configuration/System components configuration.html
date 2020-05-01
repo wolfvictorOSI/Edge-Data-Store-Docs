@@ -86,15 +86,15 @@
     &quot;ComponentType&quot;: &quot;EDS.Component&quot;
   }
 ]
-</code></pre><p>The Storage component is required for Edge Data Store to run and only one Storage component is supported. Each Modbus device needs a separate Modbus TCP EDS adapter component to connect to EDS and each OPC UA device needs a separate OPC UA EDS adapter component to connect to EDS. Add additional Modbus TCP EDS adapter and OPC UA EDS adapter components if needed.  </p>
+</code></pre><p>The Storage component is required for Edge Data Store to run and only one Storage component instance is supported. Each Modbus device needs a separate Modbus TCP EDS adapter component instance to connect to EDS, and each OPC UA device needs a separate OPC UA EDS adapter component instance to connect to EDS. Multiple Modbus TCP EDS adapter component instances and the OPC UA EDS adapter component instances are supported.  </p>
 <h2 id="add-system-components">Add system components</h2>
 <ol>
-<li><p>Using any text editor, create a JSON file with the ComponentId and ComponentType. The following example adds a Modbus TCP EDS adapter. </p>
+<li><p>Using any text editor, create a JSON file with the ComponentId and ComponentType. The following example adds a Modbus TCP EDS adapter instance. </p>
 <pre><code class="lang-json">  {
     &quot;ComponentId&quot;: &quot;Modbus1&quot;,
     &quot;ComponentType&quot;: &quot;Modbus&quot;
   }
-</code></pre><p><strong>Note:</strong> A unique ComponentId is necessary for each component in the system. This example uses the ComponentId Modbus1 since it is the first Modbus TCP EDS adapter.</p>
+</code></pre><p><strong>Note:</strong> The ComponentId must be a unique value. This example uses the ComponentId Modbus1, since it is the first Modbus TCP EDS adapter.</p>
 </li>
 <li><p>Save the JSON file with the name <em>AddComponent.json</em>. </p>
 </li>
@@ -121,14 +121,14 @@
 <td>Required</td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>The ID of the component. It can be any alphanumeric string, for example Storage.</td>
+<td>The unique ID of the component instance. It can be any alphanumeric string, for example Storage.</td>
 </tr>
 <tr>
 <td>ComponentType</td>
 <td>Required</td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>The type of the component, for example EDS.Component. There are three types of components: Storage, OPC UA EDS Adapter, and Modbus TCP EDS Adapter.</td>
+<td>The type of the component, for example EDS.Component. There are three types of components: Storage identified by <em>EDS.Component</em>, OPC UA EDS Adapter identified by <em>OpcUa</em>, and Modbus TCP EDS Adapter identified by <em>Modbus</em>.</td>
 </tr>
 </tbody>
 </table>
