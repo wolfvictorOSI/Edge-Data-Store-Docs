@@ -25,3 +25,5 @@
   topicHref: SDS/SequentialDataStore.md
 - name: Release notes
   href: ReleaseNotes/ReleaseNotes.md
+- name: Technical support and feedback
+  href: Feedback.md
