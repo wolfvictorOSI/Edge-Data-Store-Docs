@@ -2,11 +2,9 @@
 uid: Feedback
 ---
 
-
 # Technical support and feedback
 
-Do you need help with Edge Data Store? We are here for you. 
-Do you have feedback for us? We would like to hear it!
+OSIsoft provides several ways to report issues and provide feedback on Edge Data Store.
 
 ## Technical support
 
@@ -22,9 +20,7 @@ When you contact OSIsoft Technical Support, be prepared to provide this informat
 - Time that the difficulty started
 - Log files at that time
 - Details of any environment changes prior to the start of the issue
-- Summary of the issue, including any relevant log files during the time the issue occurred 
-
-For a brief primer on Edge Data Store, see the [OSIsoft Edge Data Store playbook](https://customers.osisoft.com/s/knowledgearticle?knowledgeArticleUrl=Playbook-Edge-Data-Store) in the OSIsoft Customer Portal. 
+- Summary of the issue, including any relevant log files during the time the issue occurred  
 
 ## Product feedback
 
@@ -33,8 +29,8 @@ The product team at OSIsoft regularly monitors the page.
 
 ## Documentation feedback
 
-For documentation feedback, send an email to [documentation@osisoft.com](mailto:documentation@osisoft.com?subject=OSIsoft%20adapter%20documentation) and a technical documentation team will review and respond to your feedback. Be sure to include the following information with your feedback:
-- Product name and version
-- Documentation page title
+For documentation feedback, send an email to [documentation@osisoft.com](mailto:documentation@osisoft.com?subject=OSIsoft%20adapter%20documentation). Be sure to include the following information:
+- Documentation topic URL
 - Details of the suggestion or error
 
+The technical documentation team at OSIsoft will review and respond to your feedback.
