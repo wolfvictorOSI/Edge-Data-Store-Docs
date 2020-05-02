@@ -2,15 +2,15 @@
 uid: PrinciplesOfOperationOPCUA.md
 ---
 
-# Principles of operation
+# Operational overview
 
-This topic provides an operational overview of the OPC UA EDS adapter, focusing on streams creation and error handling.
+The OPC UA EDS adapter conforms to the OPC UA specification for operation. The adapter must be configured for it to create streams and collect data.
 
 ## Adapter configuration
 
-For the OPC UA EDS adapter to start data collection, you need to configure the adapter by defining the following:
+For the OPC UA EDS adapter to start data collection, configure the adapter by defining the following:
 
-- Data source: Provide the data source from which the adapter should collect data.
+- Data source: Provide the OPC UA data source from which the adapter should collect data.
 - Data selection: Perform selection of OPC UA items to which the adapter should subscribe for data.
 - Logging: Set up the logging attributes to manage the adapter logging behavior.
 
@@ -28,7 +28,7 @@ The OPC UA EDS adapter creates types upon receiving the value update for a strea
 
 The OPC UA EDS adapter collects time-series data from selected OPC UA dynamic variables through OPC UA subscriptions (unsolicited reads). The adapter supports the Data Access (DA) part of OPC UA specification.
 
-## Streams by OPC UA EDS adapter
+## Stream properties
 
 The OPC UA EDS adapter creates a stream with two properties per selected OPC UA item. The properties are described in the following table:
 
@@ -44,3 +44,7 @@ Stream ID is a unique identifier for each stream created by the adapter for a gi
 ```
 
 **Note:** The naming convention is affected by StreamIdPrefix and ApplyPrefixToStreamID settings in data source configuration. For more information, see [Data source configuration](xref:OPCUADataSourceConfiguration).
+
+## Export operation
+
+The OPC UA EDS adapter is able to export available OPC UA dynamic variables by browsing the OPC UA hierarchies or sub-hierarchies as part of the data source configuration process. For more information, see [Data source configuration](xref:OPCUADataSourceConfiguration).

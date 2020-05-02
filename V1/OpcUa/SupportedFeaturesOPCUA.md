@@ -2,11 +2,9 @@
 uid: SupportedFeaturesOPCUA
 ---
 
-# Supported features
+# Data type mapping
 
-## Data types
-
-The following table lists OPC UA variable types that the OPC UA EDS adapter supports data collection from and types of streams that are going to be created in Edge Data Store.
+The following table lists OPC UA data types from which the OPC UA EDS adapter supports data collection and corresponding stream data types that will be created in Edge Data Store.
 
 | OPC UA data type | Stream data type |
 |------------------|------------------|
@@ -23,19 +21,3 @@ The following table lists OPC UA variable types that the OPC UA EDS adapter supp
 | Double           | Float64          |
 | DateTime         | DateTime         |
 | String           | String           |
-
-## Export operation
-
-The OPC UA EDS adapter is able to export available OPC UA dynamic variables by browsing the OPC UA hierarchies or sub-hierarchies.
-
-### Export operation actions
-
-1. To limit browsing, specify a comma-separated collection of nodeIds in data source configuration (RootNodeIds).
-   
-   **Note:** They are treated as roots from where the adapter starts the browse operation.
-   
-   The adapter triggers an export operation after a successful connection to the OPC UA server when the data selection file does not exist in configuration directory.
-  
-2. Copy the exported data selection JSON file from the directory or retrieve it using a REST API call.
-
-3. Optional: To avoid a potentially long and expensive browse operation, create the data selection file manually. Configure it before you configure the data source or push both in one configuration call together.
