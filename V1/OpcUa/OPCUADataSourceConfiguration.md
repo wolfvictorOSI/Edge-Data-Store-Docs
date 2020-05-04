@@ -8,7 +8,7 @@ For each instance of the OPC UA EDS adapter defined in system configuration, you
 
 ## Configure OPC UA data source
 
-**Note:** OPC UA data source configurations cannot be modified manually. Use the REST endpoints to add or edit the configuration.
+**Note:** OPC UA data source configurations cannot be modified manually. You must use the REST endpoints to add or edit the configuration.
 
 Complete the following steps to configure the OPC UA data source:
 
@@ -18,11 +18,12 @@ Complete the following steps to configure the OPC UA data source:
 3. Save the file to the device with Edge Data Store installed using a file name based on the adapter instance name. For example, to use the adapter instance created during installation, which is OpcUa1, name the file _OpcUa1Datasource.json_.
 4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:<port_number>/api/v1/configuration/<EDS_adapterId>/DataSource/`. 
 
-The following example shows the HTTPS request using curl (run this command from the same directory where the file is located) and uses the adapter instance created during installation, which is OpcUa1:
+The following example shows the HTTPS request using curl, which must be run from the same directory where the file is located, and uses the adapter instance created during installation, which is OpcUa1:
 
 ```bash
-curl -d "@DataSource.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/OpcUa1/DataSource"
+curl -d "@OpcUa1DataSource.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/OpcUa1/DataSource"
 ```
+
 **Note:** After completing data source configuration, the next step is to configure data selection. You can either have a default data selection file generated or create the data selection file yourself. For more information, see [Data selection configuration](xref:OPCUADataSelectionConfiguration).
 
 ## Export OPC UA dynamic variables

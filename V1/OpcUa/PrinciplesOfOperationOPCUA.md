@@ -4,15 +4,15 @@ uid: PrinciplesOfOperationOPCUA.md
 
 # Operational overview
 
-The OPC UA EDS adapter conforms to the OPC UA specification for operation. The adapter must be configured for it to create streams and collect data.
+The OPC UA EDS adapter conforms to the OPC UA specification for operation. Once an instance of the adapter is defined in the system components configuration, it must be configured for it to create streams and collect data.
 
 ## Adapter configuration
 
-For the OPC UA EDS adapter to start data collection, configure the adapter by defining the following:
+For an OPC UA EDS adapter instance to start data collection, configure the adapter by defining the following:
 
-- Data source: Provide the OPC UA data source from which the adapter should collect data.
-- Data selection: Perform selection of OPC UA items to which the adapter should subscribe for data.
-- Logging: Set up the logging attributes to manage the adapter logging behavior.
+- Data source: Provide the connection information for the OPC UA data source.
+- Data selection: Specify the OPC UA items to which the adapter instance should subscribe for data.
+- Logging: Set up the logging behavior for the adapter instance.
 
 For more information, see [Data source configuration](xref:OPCUADataSourceConfiguration) and [Data selection configuration](xref:OPCUADataSelectionConfiguration). For more information on how to configure logging, see [Component-level logging configuration](xref:ComponentLoggingConfiguration).
 

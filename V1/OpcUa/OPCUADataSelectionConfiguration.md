@@ -4,7 +4,7 @@ uid: OPCUADataSelectionConfiguration
 
 # Data selection configuration
 
-After configuring the data source, create a data selection configuration file to specify the data for the OPC UA EDS adapter to collect from the data source.
+After configuring the data source, create a data selection configuration file to specify the data for the OPC UA EDS adapter instance to collect from the data source.
 
 When you add a data source, the OPC UA EDS adapter browses the OPC UA server address space and exports the available OPC UA variables into a JSON file for data selection. If RootNodeIds are specified in the data source configuration, only those nodeIds are browsed. Data is collected automatically based upon user demands. OPC UA data from OPC UA variables is read through subscriptions (unsolicited reads).
 
@@ -73,7 +73,7 @@ Complete the following steps to configure the OPC UA data selection:
 3. Save the file to the device with Edge Data Store installed with the name _DataSelection.config.json_.
 4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:<port_number>/api/v1/configuration/<EDS adapterId>/DataSelection/`
 
-The following example shows the HTTPS request using curl and the adapter instance created during installation, which is OpcUa1 (run this script from the same directory where the file is located):
+The following example shows the HTTPS request using curl, which must be run from the same directory where the file is located, and uses the adapter instance created during installation, which is OpcUa1:
 
 ```bash
 curl -d "@DataSelection.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/OpcUa1/DataSelection"
