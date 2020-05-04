@@ -78,23 +78,35 @@
             <article class="content wrap" id="_content" data-uid="OPCUADataSourceConfiguration">
 <h1 id="data-source-configuration">Data source configuration</h1>
 
-<p>To use the OPC UA EDS adapter, you must configure the data source from which it will receive data.</p>
+<p>For each instance of the OPC UA EDS adapter defined in system configuration, you must configure the data source from which it will receive data.</p>
 <h2 id="configure-opc-ua-data-source">Configure OPC UA data source</h2>
-<p><strong>Note:</strong> You cannot modify OPC UA data source configurations manually. You must use the REST endpoints to add or edit the configuration.</p>
-<p>Complete the following to configure the OPC UA data source:</p>
+<p><strong>Note:</strong> OPC UA data source configurations cannot be modified manually. You must use the REST endpoints to add or edit the configuration.</p>
+<p>Complete the following steps to configure the OPC UA data source:</p>
 <ol>
 <li>Using any text editor, create a file that contains an OPC UA data source in JSON form.<ul>
 <li>For content structure, see <a href="#opc-ua-data-source-example">OPC UA data source example</a>.</li>
 </ul>
 </li>
-<li>Update the parameters as needed. For a table of all available parameters, see <a href="#parameters-for-opc-ua-data-source">Parameters for OPC UA data source</a>.</li>
-<li>Save the file as <em>DataSource.config.json</em>.</li>
-<li>Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:5590/api/v1/configuration/&lt;EDS adapterId&gt;/DataSource/</code>. </li>
+<li>Modify the parameters in the example to match your environment. For a table of all available parameters, see <a href="#parameters-for-opc-ua-data-source">Parameters for OPC UA data source</a>.</li>
+<li>Save the file to the device with Edge Data Store installed using a file name based on the adapter instance name. For example, to use the adapter instance created during installation, which is OpcUa1, name the file <em>OpcUa1Datasource.json</em>.</li>
+<li>Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: <code>http://localhost:&lt;port_number&gt;/api/v1/configuration/&lt;EDS_adapterId&gt;/DataSource/</code>. </li>
 </ol>
-<p>The following example shows the HTTPS request using curl (run this command from the same directory where the file is located):</p>
-<p><strong>Note:</strong> During installation, you can add a single OPC UA EDS adapter named OpcUa1. The following example uses this component name.</p>
-<pre><code class="lang-bash">curl -v -d &quot;@DataSource.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/OpcUa1/DataSource&quot;
-</code></pre><p><strong>Note:</strong> After you have completed data source configuration, the next step is to configure data selection. You can either have a default data selection file generated or you can create the data selection file yourself. For more information, see <a class="xref" href="OPCUADataSelectionConfiguration.html">Data selection configuration</a>.</p>
+<p>The following example shows the HTTPS request using curl, which must be run from the same directory where the file is located, and uses the adapter instance created during installation, which is OpcUa1:</p>
+<pre><code class="lang-bash">curl -d &quot;@OpcUa1DataSource.config.json&quot; -H &quot;Content-Type: application/json&quot; &quot;http://localhost:5590/api/v1/configuration/OpcUa1/DataSource&quot;
+</code></pre><p><strong>Note:</strong> After completing data source configuration, the next step is to configure data selection. You can either have a default data selection file generated or create the data selection file yourself. For more information, see <a class="xref" href="OPCUADataSelectionConfiguration.html">Data selection configuration</a>.</p>
+<h2 id="export-opc-ua-dynamic-variables">Export OPC UA dynamic variables</h2>
+<p>The OPC UA EDS adapter is able to export available OPC UA dynamic variables by browsing the OPC UA hierarchies or sub-hierarchies as part of the data source configuration process. </p>
+<h3 id="export-operation-actions">Export operation actions</h3>
+<ol>
+<li><p>To limit browsing, specify a comma-separated collection of nodeIds in data source configuration file using the <strong>RootNodeIds</strong> parameter.</p>
+<p><strong>Note:</strong> The nodeIds are treated as roots from which the adapter starts the browse operation.</p>
+<p>The adapter triggers an export operation after a successful connection to the OPC UA server when the data selection file does not exist in configuration directory.</p>
+</li>
+<li><p>Copy the exported data selection JSON file from the directory or retrieve it using a REST API call.</p>
+</li>
+<li><p>Optional: To avoid a potentially long and resource-intensive browse operation, create the data selection file manually. Configure it before you configure the data source or push both in one configuration call together.</p>
+</li>
+</ol>
 <h2 id="parameters-for-opc-ua-data-source">Parameters for OPC UA data source</h2>
 <p>The following parameters can be used to configure an OPC UA data source:</p>
 <table>
@@ -113,7 +125,7 @@
 <td>Required</td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>The endpoint URL of the OPC UA server. The following is an example of the URL format: opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer<br><br><strong>Note:</strong> If you change the EndpointURL on a configured OPC UA EDS adapter that has ComponentID_DataSelection.json file exported, you need to remove the <em>ComponentID_DataSelection.json</em> file from the configuration directory to trigger a new browse (export).</td>
+<td>The endpoint URL of the OPC UA server. The following is an example of the URL format: opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer<br><br><strong>Note:</strong> If you change the EndpointURL on a configured OPC UA EDS adapter instance that has ComponentID_DataSelection.json file exported, remove the <em>ComponentID_DataSelection.json</em> file from the configuration directory to trigger a new browse (export).</td>
 </tr>
 <tr>
 <td><strong>UseSecureConnection</strong></td>
@@ -141,21 +153,21 @@
 <td>Optional</td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>List of comma-separated NodeIds of those objects from which the OPC UA EDS adapter browses the OPC UA server address space. This option allows selecting only subsets of the OPC UA address by explicitly listing one or more NodeIds which are used to start the initial browse. For example: ns=5;s=85/0:Simulation, ns=3;s=DataItems. If not specified, it means that the whole address space will be browsed.</td>
+<td>List of comma-separated NodeIds of those objects from which the OPC UA EDS adapter browses the OPC UA server address space. This option allows selecting only subsets of the OPC UA address by explicitly listing one or more NodeIds which are used to start the initial browse. For example: ns=5;s=85/0:Simulation, ns=3;s=DataItems. If not specified, the whole address space will be browsed.</td>
 </tr>
 <tr>
 <td><strong>IncomingTimestamp</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
 <td>No</td>
-<td>Specifies whether the incoming timestamp is taken from the source, from the OPC UA server, or should be created by the OPC UA EDS adapter instance. <strong>Source</strong> - Default and recommended setting. The timestamp is taken from the source timestamp field. The source is what provides data for the item to the OPC UA server, such as a field device. <strong>Server</strong> - In case the OPC UA item has an invalid source timestamp field, the Server timestamp can be used. <strong>Connector</strong> - The OPC UA EDS adapter generates a timestamp for the item upon receiving it from the OPC UA server.</td>
+<td>Specifies whether the incoming timestamp is taken from the source, from the OPC UA server, or created by the OPC UA EDS adapter. <strong>Source</strong> - Default and recommended setting. The timestamp is taken from the source timestamp field. The source is what provides data for the item to the OPC UA server, such as a field device. <strong>Server</strong> - In case the OPC UA item has an invalid source timestamp field, the Server timestamp can be used. <strong>Connector</strong> - The OPC UA EDS adapter generates a timestamp for the item upon receiving it from the OPC UA server.</td>
 </tr>
 <tr>
 <td><strong>StreamIdPrefix</strong></td>
 <td>Optional</td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td>Specifies what prefix is used for Stream IDs. Naming convention is StreamIdPrefixNodeId. <strong>Note:</strong> An empty string means no prefix will be added to the Stream IDs. Null value means ComponentID followed by dot character will be added to the stream IDs (for example, OpcUa1.NodeId).</td>
+<td>Specifies the prefix used for Stream IDs. Naming convention is StreamIdPrefixNodeId. <strong>Note:</strong> An empty string means no prefix is added to the Stream IDs. Null value means ComponentID followed by dot character will be added to the stream IDs (for example, OpcUa1.NodeId).</td>
 </tr>
 <tr>
 <td><strong>ApplyPrefixToStreamId</strong></td>

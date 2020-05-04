@@ -92,7 +92,7 @@ references:
   name: Egress execution details
   href: V1/Egress/Egress%20execution%20details.html
 - uid: Feedback
-  name: Feedback
+  name: Technical support and feedback
   href: V1/Feedback.html
 - uid: HealthEndpointsConfiguration
   name: Health endpoints configuration
@@ -188,10 +188,10 @@ references:
   name: Prepare egress destinations
   href: V1/Egress/Prepare%20egress%20destinations.html
 - uid: PrinciplesOfOperationModbus
-  name: Principles of operation
+  name: Operational overview
   href: V1/Modbus/PrinciplesOfOperationModbus.html
 - uid: PrinciplesOfOperationOPCUA.md
-  name: Principles of operation
+  name: Operational overview
   href: V1/OpcUa/PrinciplesOfOperationOPCUA.html
 - uid: QuickStartGuides
   name: Quick start guides
@@ -293,7 +293,7 @@ references:
   name: Supported features
   href: V1/Modbus/SupportedFeaturesModbus.html
 - uid: SupportedFeaturesOPCUA
-  name: Supported features
+  name: Data type mapping
   href: V1/OpcUa/SupportedFeaturesOPCUA.html
 - uid: system
   name: Edge Data Store system component

@@ -99,7 +99,7 @@
 <li><p>Modify the values in the example to match your environment, including the IP address and port for the OPC UA data source.</p>
 </li>
 <li>Save the file to the device with Edge Data Store installed using a file name based on the adapter instance name. For example, to use the adapter instance created during installation, which is OpcUa1, name the file <em>OpcUa1Datasource.json</em>.</li>
-<li>Run the following curl script from the directory where the file is located, updating the file name and the endpoint URL in the script if needed. </li>
+<li>Run the following curl script from the directory where the file is located, updating the file name and the destination in the script if needed. </li>
 </ol>
 <pre><code class="lang-bash">curl -d &quot;@OpcUa1Datasource.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Datasource
 </code></pre><p>When the command completes successfully (a 204 message is returned by curl), the OPC UA data source has been created. If you receive a 400 error, check the data source JSON file for errors. If you receive a 404 or 500 error, check that Edge Data Store is running on the device.</p>
@@ -143,7 +143,7 @@
 <li><p>To ingress a stream to Edge Data Store, change the value of the <strong>Selected</strong> key from <code>false</code> to <code>true</code>. All streams in the auto generated data selection file are initially set to <code>false</code>.</p>
 </li>
 <li>Save the the file.</li>
-<li><p>Run the following curl script from the directory where the file is located to configure Edge Data Store to collect OPC UA data values, updating the file name in the script if needed:</p>
+<li><p>Run the following curl script from the directory where the file is located, updating the file name and destination in the script if needed:</p>
 <pre><code class="lang-bash">curl -d &quot;@OpcUa1Dataselection.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/OpcUa1/Dataselection
 </code></pre></li>
 </ol>
