@@ -78,8 +78,9 @@
             <article class="content wrap" id="_content" data-uid="piEgressQuickStart">
 <h1 id="pi-egress-quick-start">PI egress quick start</h1>
 
-<p>Data egress provides a mechanism to transfer data to PI Server using OMF messages through a PI Web API endpoint. To get started sending data stored in EDS to a PI System, create a PI Web API OMF endpoint and configure periodic egress to use the PI Web API endpoint.</p>
+<p>Data egress provides a mechanism to transfer data to PI Server using OMF messages through a PI Web API endpoint. To get started sending data stored in Edge Data Store to a PI System, create a PI Web API OMF endpoint and configure periodic egress to use the PI Web API endpoint.</p>
 <h2 id="create-a-pi-web-api-omf-endpoint">Create a PI Web API OMF endpoint</h2>
+<p>Complete the following steps to create a PI Web API OMF endpoint:</p>
 <ol>
 <li>Install PI Web API and enable the <strong>OSIsoft Message Format (OMF) Services</strong> feature.<ul>
 <li>During configuration, choose an AF database and PI Data Archive where metadata and data will be stored.</li>
@@ -94,7 +95,7 @@
 <h2 id="create-a-periodic-egress-configuration">Create a periodic egress configuration</h2>
 <p>Complete the following steps to configure Edge Storage periodic egress for the PI Web API endpoint and credentials:</p>
 <ol>
-<li><p>Create a JSON file containing one or more egress endpoints, by copying the following example into any text editor.</p>
+<li><p>Create a JSON file containing one or more egress endpoints, by copying the following example into a text editor.</p>
 <pre><code class="lang-json">[{
     &quot;Id&quot;: &quot;PWA&quot;,
     &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
@@ -121,7 +122,7 @@
 <li><p>Modify the <strong>Username</strong> and <strong>Password</strong> parameters to specify a valid user account that can write data via PI Web API using Basic authentication. For examples, see <a class="xref" href="../Egress/Configure%20data%20egress.html">Configure data egress</a>.</p>
 <p><strong>Note:</strong> The <strong>StreamPrefix</strong> and <strong>TypePrefix</strong> parameters ensure uniqueness on the destination system, if required. The StreamPrefix value creates unique PI Points on the PI System. To only send specific streams, edit the <strong>EgressFilter</strong> value. For examples of more advanced scenarios, see <a class="xref" href="../Egress/Egress.html">Data egress configuration</a>.</p>
 </li>
-<li><p>Save the JSON file with the name <em>PeriodicEgressEndpoints.json</em> to any directory on the device where Edge Data Store is installed.</p>
+<li><p>Save the JSON file with the name <em>PeriodicEgressEndpoints.json</em> to any directory on the device where EDS is installed.</p>
 </li>
 <li>To configure Edge Storage to send data to the PI System, run the following curl script from the directory where the JSON file is located. </li>
 </ol>

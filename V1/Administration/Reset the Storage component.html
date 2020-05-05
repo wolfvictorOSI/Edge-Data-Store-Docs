@@ -78,11 +78,11 @@
             <article class="content wrap" id="_content" data-uid="ResetTheStorageComponent">
 <h1 id="reset-the-storage-component">Reset the Storage component</h1>
 
-<p>When applied at the storage component level, the Reset command deletes all event and configuration data related to the Storage component and restarts EDS.</p>
-<p>Complete the following to reset the Storage component:</p>
+<p>When applied at the storage component level, the Reset command deletes all event and configuration data related to the Storage component and restarts Edge Data Store.</p>
+<p>Complete the following steps to reset the Storage component:</p>
 <ol>
-<li>Start any tool capable of making HTTP requests.</li>
-<li><p>Execute a POST command to the following endpoint, replacing <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
+<li>Open a tool capable of making HTTP requests.</li>
+<li><p>Run a POST command to the following endpoint, replacing <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
 <pre><code class="lang-http">http://localhost:&lt;port_number&gt;/api/v1/administration/Storage/Reset
 </code></pre><p> Example using curl and the default port:</p>
 <pre><code class="lang-bash">curl -d &quot;&quot; http://localhost:5590/api/v1/Administration/Storage/Reset

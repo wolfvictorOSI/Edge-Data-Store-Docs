@@ -78,22 +78,22 @@
             <article class="content wrap" id="_content" data-uid="SystemPortConfiguration">
 <h1 id="system-port-configuration">System port configuration</h1>
 
-<p>The <em>System_Port.json</em> file specifies the port on which EDS is listening for REST API calls. The same port is used for configuration and for writing data to OMF and SDS. The default port is 5590. Valid ports are in the range of 1024-65535. </p>
+<p>The <em>System_Port.json</em> file specifies the port on which Edge Data Store is listening for REST API calls. The same port is used for configuration and for writing data to OMF and SDS. The default port is 5590. Valid ports are in the range of 1024-65535. </p>
 <h2 id="configure-system-port">Configure system port</h2>
-<p>Before changing the port, ensure that no other service or application on the device running Edge Data Store is using that port because only one application or service can use a port. If you change the port number through the REST API, you must restart Edge Data Store.</p>
+<p>Before changing the port, ensure that no other service or application on the device running EDS is using that port because only one application or service can use a port. If you change the port number through the REST API, you must restart EDS.</p>
 <ol>
-<li>Using any text editor, create a JSON file based on the following example and enter the new port number:</li>
-</ol>
+<li><p>Using any text editor, create a JSON file based on the following example and enter the new port number:</p>
 <pre><code class="lang-json">{
   &quot;Port&quot;: 5590
 }
-</code></pre><ol>
-<li>Save the JSON file with the name <em>EdgePort.json</em> </li>
+</code></pre></li>
+<li><p>Save the JSON file with the name <em>EdgePort.json</em> </p>
+</li>
 <li><p>Run the following script:</p>
 <pre><code class="lang-bash">curl -i -d &quot;@EdgePort.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/system/port
 </code></pre><p> <strong>Note:</strong> The port number in the script must be the current port number, not the new port number in the file.</p>
 </li>
-<li><p>After the REST command completes, restart Edge Data Store for the change to take effect.</p>
+<li><p>After the REST command completes, restart EDS for the change to take effect.</p>
 </li>
 </ol>
 <h2 id="parameters-for-system-port">Parameters for system port</h2>
@@ -114,7 +114,7 @@
 <td>Required</td>
 <td><code>integer</code></td>
 <td>No</td>
-<td>The TCP port to bind Edge Data Store to. (Range [1024,65535]) Example: 5590</td>
+<td>The TCP port to bind EDS to. (Range [1024,65535]) Example: 5590</td>
 </tr>
 </tbody>
 </table>

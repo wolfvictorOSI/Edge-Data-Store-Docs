@@ -78,12 +78,12 @@
             <article class="content wrap" id="_content" data-uid="StopAndStartAnEDSAdapter">
 <h1 id="stop-and-start-an-eds-adapter">Stop and start an EDS adapter</h1>
 
-<p>By default, when Edge Data Store starts, all currently configured EDS adapter components are started and remain running until the product shuts down.</p>
+<p>By default, when Edge Data Store starts, all currently configured EDS adapter instance are started and remain running until the product shuts down.</p>
 <h2 id="stop-an-eds-adapter">Stop an EDS adapter</h2>
-<p>Complete the following steps to stop an EDS adapter component:</p>
+<p>Complete the following steps to stop an EDS adapter instance:</p>
 <ol>
-<li>Start any tool capable of making HTTP requests.</li>
-<li><p>Execute a POST command to the following endpoint, replacing <code>&lt;adapterId&gt;</code> with the adapter that you want to stop and <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
+<li>Open a tool capable of making HTTP requests.</li>
+<li><p>Run a POST command to the following endpoint, replacing <code>&lt;adapterId&gt;</code> with the adapter instance to stop and <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
 <pre><code class="lang-http">http://localhost:&lt;port_number&gt;/api/v1/administration/&lt;adapterId&gt;/Stop
 </code></pre><p> Example <strong>Stop the OpcUa1 adapter</strong> using curl and the default port: </p>
 <pre><code class="lang-bash">curl -d &quot;&quot; http://localhost:5590/api/v1/Administration/OpcUa1/Stop
@@ -91,10 +91,10 @@
 </li>
 </ol>
 <h2 id="start-an-eds-adapter">Start an EDS adapter</h2>
-<p>Complete the following steps to start an EDS adapter component:</p>
+<p>Complete the following steps to start an EDS adapter instance:</p>
 <ol>
-<li>Start any tool capable of making HTTP requests.</li>
-<li><p>Execute a POST command to the following endpoint, replacing <code>&lt;adapterId&gt;</code> with the adapter that you want to start and <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
+<li>Open a tool capable of making HTTP requests.</li>
+<li><p>Run a POST command to the following endpoint, replacing <code>&lt;adapterId&gt;</code> with the adapter instance to start and <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
 <pre><code class="lang-http">http://localhost:&lt;port_number&gt;/api/v1/administration/&lt;adapterId&gt;/Start
 </code></pre><p> Example <strong>Stop the Modbus1 adapter</strong> using curl and the default port:</p>
 <pre><code class="lang-bash">curl -d &quot;&quot; http://localhost:5590/api/v1/Administration/Modbus1/Start

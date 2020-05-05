@@ -79,10 +79,10 @@
 <h1 id="retrieve-product-version-information">Retrieve product version information</h1>
 
 <p>The product version information includes the Edge Data Store version number, the .NET Core version, the Core CLR version, and the operating system. This information can be useful for troubleshooting purposes.</p>
-<p>Complete the following to retrieve the product version of the Edge Data Store:</p>
+<p>Complete the following steps to retrieve the product version of EDS:</p>
 <ol>
-<li>Start any tool capable of making HTTP requests.</li>
-<li><p>Execute a GET command to the following endpoint, replacing <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
+<li>Open a tool capable of making HTTP requests.</li>
+<li><p>Run a GET command to the following endpoint, replacing <code>&lt;port_number&gt;</code> with the port specified for EDS:</p>
 <pre><code class="lang-http">http://localhost:&lt;port_number&gt;/api/v1/diagnostics/productinformation
 </code></pre><p>Example using curl and the default port number:</p>
 <pre><code class="lang-bash">curl -v http://localhost:5590/api/v1/Diagnostics/ProductInformation

@@ -78,8 +78,9 @@
             <article class="content wrap" id="_content" data-uid="ocsEgressQuickStart">
 <h1 id="ocs-egress-quick-start">OCS egress quick start</h1>
 
-<p>Data egress provides a mechanism to transfer data to OCS using OMF messages. To get started sending data stored in EDS to OSIsoft Cloud Services, create an OMF connection in OCS and configure an egress endpoint with the connection information for OCS.</p>
+<p>Data egress provides a mechanism to transfer data to OSIsoft Cloud Services using OMF messages. To get started sending data stored in Edge Data Store to OCS, create an OMF connection in OCS and configure an egress endpoint with the connection information for OCS.</p>
 <h2 id="create-an-omf-connection-in-ocs">Create an OMF connection in OCS</h2>
+<p>Complete the following steps to create an OMF connection in OCS:</p>
 <ol>
 <li><p>In OCS, create a <strong>Client</strong>.</p>
 <p>The <em>Client Id</em> and <em>Client Secret</em> are used for the corresponding properties in the egress configuration.</p>
@@ -90,8 +91,9 @@
 </li>
 </ol>
 <h2 id="create-a-periodic-egress-configuration">Create a periodic egress configuration</h2>
+<p>Complete the following steps to configure periodic egress to OCS:</p>
 <ol>
-<li><p>Create a JSON file containing one or more egress endpoints, by copying the following example into any text editor.</p>
+<li><p>Create a JSON file containing one or more egress endpoints, by copying the following example into a text editor.</p>
 <pre><code class="lang-json">[{
     &quot;Id&quot;: &quot;OCS&quot;,
     &quot;ExecutionPeriod&quot;: &quot;00:00:50&quot;,
@@ -113,12 +115,12 @@
     &quot;TokenEndpoint&quot;: null
 }]
 </code></pre></li>
-<li><p>Modify the <strong>Endpoint</strong> parameter to be the URL of your OCS OMF endpoint.</p>
+<li><p>Modify the <strong>Endpoint</strong> parameter to be the URL of the OCS OMF endpoint.</p>
 </li>
-<li><p>Modify the <strong>ClientId</strong> and <strong>ClientSecret</strong> parameters with the authentication information to connect to your OCS OMF endpoint.</p>
+<li><p>Modify the <strong>ClientId</strong> and <strong>ClientSecret</strong> parameters with the authentication information to connect to the OCS OMF endpoint.</p>
 <p> <strong>Note:</strong> If uniqueness is required on the destination system, use the <strong>StreamPrefix</strong> and <strong>TypePrefix</strong> parameters. If a StreamPrefix is specified, it is used to create a unique stream ID on OCS. This configuration is set up to send all stream data to OCS. To only send specific streams, edit the <strong>EgressFilter</strong> parameter. For examples of more advanced scenarios, see <a class="xref" href="../Egress/Egress.html">Data egress configuration</a>.</p>
 </li>
-<li><p>Save the JSON file with the name <em>PeriodicEgressEndpoints.json</em> to any directory on the device where Edge Data Store is installed.</p>
+<li><p>Save the JSON file with the name <em>PeriodicEgressEndpoints.json</em> to any directory on the device where EDS is installed.</p>
 </li>
 <li><p>To configure the Edge Storage component to send data to OCS, run the following curl script from the directory where the JSON file is located.</p>
 <pre><code class="lang-bash">curl -d &quot;@PeriodicEgressEndpoints.json&quot; -H &quot;Content-Type: application/json&quot; -X PUT http://localhost:5590/api/v1/configuration/storage/PeriodicEgressEndpoints/
