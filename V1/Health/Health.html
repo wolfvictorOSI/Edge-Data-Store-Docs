@@ -81,7 +81,7 @@
 <p>Edge Data Store and its components produce health information to provide insight into their status, which is critical for monitoring data collection. When configured, EDS transfers health information to OMF endpoints, including the types and containers that represent available health information. To enable this functionality, configure one or more health endpoints.</p>
 <h2 id="eds-adapter-health">EDS adapter health</h2>
 <p>The following health types and streams are created to reflect the health of EDS adapters.</p>
-<p>The Connectors static type includes these properties and servers as a root AF element with the ID Connectors.</p>
+<p>The Adapters static type includes these properties and servers as a root AF element with the ID Adapters.</p>
 <table>
 <thead>
 <tr>
@@ -94,17 +94,17 @@
 <tr>
 <td>Id</td>
 <td>string</td>
-<td>Connectors - root AF element</td>
+<td>Adapters - root AF element</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>string</td>
-<td>Collection of Connector assets</td>
+<td>Collection of Adapter assets</td>
 </tr>
 </tbody>
 </table>
 <h3 id="eds-adapter-component-health">EDS adapter component health</h3>
-<p>The Connector Health static type includes the following properties, which are logged in a stream with the ID {machinename}.{componentid}. The stream is linked to root AF element (Connectors).</p>
+<p>The Adapter Health static type includes the following properties, which are logged in a stream with the ID {machinename}.{componentid}. The stream is linked to root AF element (Adapters).</p>
 <table>
 <thead>
 <tr>
@@ -125,7 +125,7 @@
 <td>{productname} health</td>
 </tr>
 <tr>
-<td>Connector Type</td>
+<td>Adapter Type</td>
 <td>string</td>
 <td>{adaptertype}</td>
 </tr>
@@ -137,7 +137,7 @@
 </tbody>
 </table>
 <h3 id="device-status">Device status</h3>
-<p>The DeviceStatus dynamic type includes the following values, which are logged in a stream with the ID Connectors.{machinename}.{componentid}.DeviceStatus. The stream is linked to {machinename}.{componentid} static stream.</p>
+<p>The DeviceStatus dynamic type includes the following values, which are logged in a stream with the ID Adapters.{machinename}.{componentid}.DeviceStatus. The stream is linked to {machinename}.{componentid} static stream.</p>
 <table>
 <thead>
 <tr>
@@ -160,7 +160,7 @@
 </tbody>
 </table>
 <h3 id="next-health-message-expected">Next health message expected</h3>
-<p>The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Connectors.{machinename}.{componentid}.NextHealthMessageExpected. The stream is linked to {machinename}.{componentid} static stream. Heart beat message is expected once a minute.</p>
+<p>The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Adapters.{machinename}.{componentid}.NextHealthMessageExpected. The stream is linked to {machinename}.{componentid} static stream. Heart beat message is expected once a minute.</p>
 <table>
 <thead>
 <tr>
@@ -228,7 +228,7 @@
 <td>{productname} health</td>
 </tr>
 <tr>
-<td>Connector Type</td>
+<td>Adapter Type</td>
 <td>string</td>
 <td>{adaptertype}</td>
 </tr>
