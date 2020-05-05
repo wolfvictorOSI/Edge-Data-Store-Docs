@@ -48,7 +48,7 @@ Complete the following to change the logging configuration:
 
 3. Use any tool capable of making HTTP requests to execute a PUT command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<ComponentId>/Logging`.
 
-    **Note:**  Replace `<ComponentId>` with the ComponentId of the adapter or Storage, for example _OpcUa1_.
+    **Note:**  Replace `<ComponentId>` with the ComponentId of the adapter instance or Storage component, for example _OpcUa1_.
 
       Example using curl (run this command from the same directory where the file is located):
 

@@ -18,7 +18,7 @@ For more details, see [Data source configuration](xref:ModbusTCPDataSourceConfig
 The Modbus TCP EDS adapter communicates with the Modbus TCP devices through the TCP/IP network by sending request packets that are constructed based on the data selection configurations, and collects the response packets returned by the devices. 
 
 ## Stream creation
-From the parsed data selection configurations, the Modbus TCP EDS adapter creates types, streams, and data based on the information provided. For each measurement in the data selection configuration, a stream is created in EDS to store timeseries data.
+From the parsed data selection configurations, the Modbus TCP EDS adapter creates types, streams, and data based on the information provided. For each measurement in the data selection configuration, a stream is created in EDS to store time series data.
 
 ## Data collection
 The Modbus TCP EDS adapter collects data from the Modbus TCP devices at the polling rates specified in the configuration. The rates are set in each of the data selection configurations and can range from 0 milliseconds (as fast as possible) up to 1 day per polling. The adapter automatically optimizes the data collection process by grouping the requests to reduce the I/O load imposed on the Modbus TCP networks.

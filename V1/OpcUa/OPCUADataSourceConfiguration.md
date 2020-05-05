@@ -24,13 +24,11 @@ The following example shows the HTTPS request using curl, which must be run from
 curl -d "@OpcUa1DataSource.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/OpcUa1/DataSource"
 ```
 
-**Note:** After completing data source configuration, the next step is to configure data selection. You can either have a default data selection file generated or create the data selection file yourself. For more information, see [Data selection configuration](xref:OPCUADataSelectionConfiguration).
+**Note:** After completing data source configuration, the next step is to configure data selection. You can either generate a default data selection file or create the data selection file manually. For more information, see [Data selection configuration](xref:OPCUADataSelectionConfiguration).
 
 ## Export OPC UA dynamic variables
 
 The OPC UA EDS adapter is able to export available OPC UA dynamic variables by browsing the OPC UA hierarchies or sub-hierarchies as part of the data source configuration process. 
-
-### Export operation actions
 
 1. To limit browsing, specify a comma-separated collection of nodeIds in data source configuration file using the **RootNodeIds** parameter.
    

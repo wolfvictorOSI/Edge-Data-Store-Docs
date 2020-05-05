@@ -26,7 +26,7 @@ The following table lists all data types with their corresponding type codes sup
 
 | Data type code | Data type name | Value type | Register type | Description |
 |----------------|----------------|------------|---------------|-------------|
-| 1              | Boolean        | Bool       | Bool          | 0 = false <br> 1 = true
+| 1              | Boolean        | Boolean       | Bool          | 0 = false <br> 1 = true
 | 10             | Int16          | Int16      | Bool/16-bit   | Read 1 Modbus TCP register and interpret as a 16-bit integer. Bytes [BA] read from the device are stored as [AB]. |
 | 20             | UInt16         | UInt16     | Bool/16-bit   | Read 1 Modbus TCP register and interpret as an unsigned 16-bit integer. Bytes [BA] read from the device are stored as [AB]. |
 | 30             | Int32          | Int32      | 16-bit/32-bit | Read 32 bits from the Modbus TCP device and interpret as a 32-bit integer. Bytes [DCBA] read from the device are stored as [ABCD]. |

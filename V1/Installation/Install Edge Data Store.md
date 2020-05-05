@@ -4,19 +4,19 @@ uid: InstallEdgeDataStore
 
 # Install Edge Data Store
 
-Install Edge Data Store using an install kit, as described in this section, or using Docker containers. For more information, see [Install Edge Data Store using Docker](xref:edgeDocker). 
+Install Edge Data Store using an install kit, as described in this section, or using Docker containers. For more information on using Docker, see [Install Edge Data Store using Docker](xref:edgeDocker). 
 
 For a list of supported platforms and processors, see [System requirements](xref:SystemRequirements).
 
-The installation includes the OPC UA EDS adapter, the Modbus TCP EDS adapter, and the Sequential Data Store (SDS) storage. An OPC UA EDS adapter component and a Modbus TCP EDS adapter component can each be added during the installation. Additional components can be added for each adapter after installation. For more information, see [Data ingress configuration](xref:EDSDataIngress).
+The installation includes the OPC UA EDS adapter, the Modbus TCP EDS adapter, and the Sequential Data Store (SDS) storage. An OPC UA EDS adapter instance and a Modbus TCP EDS adapter instance can each be added during the installation. Additional instances can be added for each adapter after installation. For more information, see [Data ingress configuration](xref:EDSDataIngress).
 
 The port assignment can be changed either during or after installation. For more information on how to change the port number after installation, see [System port configuration](xref:SystemPortConfiguration).
 
 ## Windows (Windows 10 x64)
 
-You must have administrative privileges on the device to install Edge Data Store. Run the installation file directly to step through a wizard, or use the command line to run the installation, including silent installation. 
+You must have administrative privileges on the device to install EDS. Run the installation file directly to step through a wizard, or use the command line to run the installation, including silent installation. 
 
-For instructions on verifying the Edge Data Store installation, see [Verify installation](xref:VerifyInstallation).
+For instructions on verifying the EDS installation, see [Verify installation](xref:VerifyInstallation).
 
 ### Download the install file
 
@@ -30,7 +30,7 @@ Complete the following steps to download the Windows installation file:
 
 ### Run the installation wizard
 
-Complete the following steps to install Edge Data Store on Windows using the installation wizard:
+Complete the following steps to install EDS on Windows using the installation wizard:
 
 1. To start the installer, double-click the _EdgeDataStore.msi_ file in Windows Explorer.
 
@@ -40,9 +40,9 @@ Complete the following steps to install Edge Data Store on Windows using the ins
 
    **Note:** OSIsoft recommends you use the default installation path. Valid values for the port number are in the range of 1024 to 65535 and only an unused port number should be entered.  
     
-4. Optional: Add a Modbus TCP EDS Adapter system component, an OPC UA EDS Adapter system component, or both.
+4. Optional: Add a system component for a Modbus TCP EDS adapter instance, an OPC UA EDS adapter instance, or both.
 
-    **Note:** The Modus TCP EDS adapter and the OPC UA EDS adapter are both installed, regardless of whether a system component is added. Additional system components can be added for each adapter after installation.
+    **Note:** The Modus TCP EDS adapter and the OPC UA EDS adapter are both installed, regardless of whether system components are added. Additional system components can be added for each adapter after installation.
 
 5. Click **Next** > **Install**.
     
@@ -50,7 +50,7 @@ Complete the following steps to install Edge Data Store on Windows using the ins
 
 ### Run the installation from a command line
 
-Complete the following steps to install Edge Data Store on Windows from the command line:
+Complete the following steps to install EDS on Windows from the command line:
 
 1. Open a command window, by running as an administrator, and change the working directory to the location of the EdgeDataStore.msi file.
 
@@ -66,8 +66,8 @@ Msiexec /quiet /i EdgeDataStore.msi PORT=”<number>” INSTALLFOLDER=”<file_p
    - /i – This is the install flag.
    - PORT – Specify a port other than the default of 5590. If the "quiet" or "no ui" flag for msiexec is specified and the PORT value on the command line is not valid, the install will proceed with the default 5590 value.
    - INSTALLFOLDER – Specify an alternate location for the binary components other than the default location of "%PROGRAMFILES%\OSISoft\EdgeDataStore". OSIsoft recommends you use the default installation path.
-   - WIXUI_ENABLEMODBUS – Add a Modbus TCP EDS Adapter system component. The value must be 1 for the component to be added.
-   - WIXUI_ENABLEOPCUA - Add a OPC UA EDS Adapter system component. The value must be 1, for the component to be added.
+   - WIXUI_ENABLEMODBUS – Add a system component to create a Modbus TCP EDS adapter instance. The value must be 1 for the component to be added.
+   - WIXUI_ENABLEOPCUA - Add a system component to create a OPC UA EDS adapter instance. The value must be 1, for the component to be added.
 
     **Note:** If you do not use a parameter, the default value for the parameter is used. Property names must be in all capital letters, for example, PORT.
 
@@ -89,7 +89,7 @@ Complete the following steps to download the appropriate file for your device:
 
 ### Install on a Linux device
 
-Complete the following steps to install Edge Data Store on Linux:
+Complete the following steps to install EDS on Linux:
 
 1. Open a terminal window and change the working directory to the location of the distribution file.
 
@@ -128,13 +128,13 @@ Complete the following steps to install Edge Data Store on Linux:
 
    **Note:** If you specify an invalid value for the port, the install will proceed with the default value of 5590.
 
-5. Optional: Add a Modbus TCP EDS Adapter system component, an OPC UA EDS Adapter system component, or both, and press Enter.
+5. Optional: Add a system component for a Modbus TCP EDS adapter instance, an OPC UA EDS adapter instance, or both, and press Enter.
 
-    **Note:** The Modus TCP EDS adapter and the OPC UA EDS adapter are both installed, regardless of whether a system component is added. Additional system components can be added for each adapter after installation.
+    **Note:** The Modus TCP EDS adapter and the OPC UA EDS adapter are both installed, regardless of whether system components are added. Additional system components can be added for each adapter after installation.
 
 ### Silent install on a Linux device
 
-Complete the following steps to perform a silent install Edge Data Store on Linux with all default options:
+Complete the following steps to perform a silent install EDS on Linux with all default options:
 
 1. Open a terminal window and change the working directory to the location of the distribution file.
 
@@ -152,7 +152,7 @@ Complete the following steps to perform a silent install Edge Data Store on Linu
    
 ### Silent install on a Linux device with specified parameters
  
- Complete the following steps to perform a silent install Edge Data Store on Linux using a parameter file to customize the installation:
+ Complete the following steps to perform a silent install EDS on Linux using a parameter file to customize the installation:
  
  1. Create a file called _silent.ini_ with the following parameters on separate lines:
     - <port_number>
