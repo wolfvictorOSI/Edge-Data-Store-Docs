@@ -32,4 +32,4 @@ To submit documentation feedback, send an email to [documentation@osisoft.com](m
 - Documentation topic URL
 - Details of the issue
 
-The OSIsoft technical documentation team will review and address your feedback in future documentation udpates.
+The OSIsoft technical documentation team will review and address your feedback in future documentation updates.
