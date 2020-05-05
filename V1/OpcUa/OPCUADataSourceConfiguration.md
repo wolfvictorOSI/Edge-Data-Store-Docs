@@ -15,7 +15,7 @@ Complete the following steps to configure the OPC UA data source:
 1. Using any text editor, create a file that contains an OPC UA data source in JSON form.
     - For content structure, see [OPC UA data source example](#opc-ua-data-source-example).
 2. Modify the parameters in the example to match your environment. For a table of all available parameters, see [Parameters for OPC UA data source](#parameters-for-opc-ua-data-source).
-3. Save the file to the device with Edge Data Store installed using a file name based on the adapter instance name. For example, to use the adapter instance created during installation, which is OpcUa1, name the file _OpcUa1Datasource.json_.
+3. Save the file to the device with EDS installed using a file name based on the adapter instance name. For example, to use the adapter instance created during installation, which is OpcUa1, name the file _OpcUa1Datasource.json_.
 4. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the following endpoint: `http://localhost:<port_number>/api/v1/configuration/<EDS_adapterId>/DataSource/`. 
 
 The following example shows the HTTPS request using curl, which must be run from the same directory where the file is located, and uses the adapter instance created during installation, which is OpcUa1:

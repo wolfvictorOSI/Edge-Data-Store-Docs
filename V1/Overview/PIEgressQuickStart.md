@@ -4,9 +4,11 @@ uid: piEgressQuickStart
 
 # PI egress quick start
 
-Data egress provides a mechanism to transfer data to PI Server using OMF messages through a PI Web API endpoint. To get started sending data stored in EDS to a PI System, create a PI Web API OMF endpoint and configure periodic egress to use the PI Web API endpoint.
+Data egress provides a mechanism to transfer data to PI Server using OMF messages through a PI Web API endpoint. To get started sending data stored in Edge Data Store to a PI System, create a PI Web API OMF endpoint and configure periodic egress to use the PI Web API endpoint.
 
 ## Create a PI Web API OMF endpoint
+
+Complete the following steps to create a PI Web API OMF endpoint:
 
 1. Install PI Web API and enable the **OSIsoft Message Format (OMF) Services** feature.
     - During configuration, choose an AF database and PI Data Archive where metadata and data will be stored.
@@ -21,7 +23,7 @@ Data egress provides a mechanism to transfer data to PI Server using OMF message
 
 Complete the following steps to configure Edge Storage periodic egress for the PI Web API endpoint and credentials:
 
-1. Create a JSON file containing one or more egress endpoints, by copying the following example into any text editor.
+1. Create a JSON file containing one or more egress endpoints, by copying the following example into a text editor.
 
    ```json
    [{
@@ -51,7 +53,7 @@ Complete the following steps to configure Edge Storage periodic egress for the P
 
    **Note:** The **StreamPrefix** and **TypePrefix** parameters ensure uniqueness on the destination system, if required. The StreamPrefix value creates unique PI Points on the PI System. To only send specific streams, edit the **EgressFilter** value. For examples of more advanced scenarios, see [Data egress configuration](xref:egress).
 
-4. Save the JSON file with the name _PeriodicEgressEndpoints.json_ to any directory on the device where Edge Data Store is installed.
+4. Save the JSON file with the name _PeriodicEgressEndpoints.json_ to any directory on the device where EDS is installed.
 5. To configure Edge Storage to send data to the PI System, run the following curl script from the directory where the JSON file is located. 
 
 ```bash

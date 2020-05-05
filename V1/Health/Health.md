@@ -4,7 +4,7 @@ uid: EdgeDataStoreHealth
 
 # Edge Data Store health
 
-Edge Data Store and its components produce health information to provide insight into their status, which is critical for monitoring data collection. When configured, Edge Data Store transfers health information to OMF endpoints, including the types and containers that represent available health information. To enable this functionality, configure one or more health endpoints.
+Edge Data Store and its components produce health information to provide insight into their status, which is critical for monitoring data collection. When configured, EDS transfers health information to OMF endpoints, including the types and containers that represent available health information. To enable this functionality, configure one or more health endpoints.
 
 ## EDS adapter health
 

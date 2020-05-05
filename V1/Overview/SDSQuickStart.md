@@ -4,19 +4,19 @@ uid: sdsQuickStart
 
 # SDS quick start  
 
-Create a custom application using Sequential Data Store (SDS) REST API to send data to EDS from sources that cannot use Modbus or OPC UA protocols. 
+Create a custom application using Sequential Data Store (SDS) REST API to send data to Edge Data Store from sources that cannot use Modbus or OPC UA protocols. 
 
 The following diagram depicts the data flow from an SDS custom application into EDS:
 
 ![SDS Application Example](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/SDSApplicationExample.jpg "SDS Application Example")
 
-The SDS application collects data from a data source and sends it to the Edge Data Store endpoint. The EDS endpoint sends the data to the storage component where it is held until it can be egressed to permanent storage in PI Server or OSIsoft Cloud Services. All data from all sources on Edge Data Store (Modbus TCP, OPC UA, OMF, SDS) can be read using the SDS REST APIs on the local device, in the default tenant and the default namespace. 
+The SDS application collects data from a data source and sends it to the EDS endpoint. The EDS endpoint sends the data to the storage component where it is held until it can be egressed to permanent storage in PI Server or OSIsoft Cloud Services. All data from all sources on EDS (Modbus TCP, OPC UA, OMF, SDS) can be read using the SDS REST APIs on the local device, in the default tenant and the default namespace. 
 
 To get started using the SDS REST API to ingress data into EDS, create an SDS type and stream and then write data events to the SDS stream. Use the Sequential Data Store (SDS) REST API to read the data back from EDS.
 
 ## Create an SDS type
 
-Complete the following steps to create an SDS type that describes the format of the data to be stored in a container.
+Complete the following steps to create an SDS type that describes the format of the data to be stored in a container:
 
 1. Create a JSON file using the example below:
 
@@ -47,8 +47,8 @@ Complete the following steps to create an SDS type that describes the format of 
 
    **Note:** The data to be written is a timestamp and numeric value. It is indexed by a timestamp, and the numeric value that will be stored is a 64-bit floating point value. 
 
-2. Save the JSON file the name SDSCreateType.json.
-3. Run the following curl script:
+2. Save the JSON file the name _SDSCreateType.json_.
+3. Run the following curl script from the directory where the file is located:
 
    ```bash
    curl -d "@SDSCreateType.json" -H "Content-Type: application/json"  -X POST   http://localhost:5590/api/v1/tenants/default/namespaces/default/types/Simple
@@ -58,7 +58,7 @@ Complete the following steps to create an SDS type that describes the format of 
 
 ## Create an SDS stream
 
-Complete the following steps to create an SDS stream. 
+Complete the following steps to create an SDS stream: 
 
 1. Create a JSON file using the example below:
 
@@ -72,8 +72,8 @@ Complete the following steps to create an SDS stream.
 
    **Note:** This stream references the type you created earlier. An error occurs if the type does not exist when the stream is created. As with an SDS type, create a stream once before sending data events. Resending the same definition repeatedly does not cause an error.
 
-2. Save the JSON file with the name SDSCreateStream.json.
-3. Run the following curl script:
+2. Save the JSON file with the name _SDSCreateStream.json_.
+3. Run the following curl script from the directory where the file is located:
 
    ```bash
    curl -d "@SDSCreateStream.json" -H "Content-Type: application/json"  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple
@@ -100,8 +100,8 @@ After you create a type and container, use SDS to write data to a stream.
 
    **Note:** This example includes two data events that will be stored in the SDS Stream created in the previous steps. For optimal performance, batch SDS values when writing them.
 
-2. Save the JSON file with the name SDSWriteData.json.
-3. Run the following curl script:
+2. Save the JSON file with the name _SDSWriteData.json_.
+3. Run the following curl script from the directory where the file is located:
 
    ```bash
    curl -d "@SDSWriteData.json" -H "Content-Type: application/json"  -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple/Data
@@ -111,28 +111,37 @@ After you create a type and container, use SDS to write data to a stream.
 
 ## Read last data written using SDS
 
-Use the SDS REST API to read back data which has been written to the server. The following is an example curl script that reads back the last value entered:
+Use the SDS REST API to read back the last data event written to the server. 
 
-```bash
-curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple/Data/Last
-```
+1. Start the curl command line tool.
+2. Run the following curl command to return the last value written:
 
-Use the following GET command to return the last value written:
+   ```bash
+   curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data/Last
+   ```
 
-```json
-{"Time":"2017-11-23T18:00:00Z","Measurement":60.0}
-```
+   Sample output:
+   
+   ```json
+   {"Timestamp": "2019-07-16T15:18:25.9870136Z", "Value": 12346.6789}
+   ```
+
 
 ## Read a range of data events written using SDS
 
-Use the SDS REST API to read back data which has been written to the server. The following is an example curl script that reads back a time range of values entered:
+Use the SDS REST API to read back the a range of data written to the server. 
 
-```bash
-curl "http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/Simple/Data?startIndex=2017-07-08T13:00:00Z&count=100"
-```
+1. Start the curl command line tool.
+2. Run the following curl command to return up to 100 values after the startIndex specified:
 
-```json
-[{"Time":"2017-11-23T17:00:00Z","Measurement":50.0},{"Time":"2017-11-23T18:00:00Z","Measurement":60.0}]
-```
+   ```bash
+   curl "http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data?startIndex=2017-07-08T13:00:00Z&count=100"
+   ```
 
-Both values that were entered were returned. A maximum of 100 values after the specified timestamp will be returned.
+   Sample output:
+   
+   ```json
+   [{"Timestamp": "2019-07-16T15:18:24.9870136Z","Value": 12345.6789}, {"Timestamp": "2019-07-16T15:18:25.9870136Z", "Value": 12346.6789}]
+   ```
+
+   Both values that were entered are returned. This command returns up to 100 values after the specified timestamp.

@@ -18,7 +18,7 @@ For more details, see [Data source configuration](xref:ModbusTCPDataSourceConfig
 The Modbus TCP EDS adapter communicates with the Modbus TCP devices through the TCP/IP network by sending request packets that are constructed based on the data selection configurations, and collects the response packets returned by the devices. 
 
 ## Stream creation
-From the parsed data selection configurations, the Modbus TCP EDS adapter creates types, streams, and data based on the information provided. For each measurement in the data selection configuration, a stream is created in the Edge Data Store to store timeseries data.
+From the parsed data selection configurations, the Modbus TCP EDS adapter creates types, streams, and data based on the information provided. For each measurement in the data selection configuration, a stream is created in EDS to store timeseries data.
 
 ## Data collection
 The Modbus TCP EDS adapter collects data from the Modbus TCP devices at the polling rates specified in the configuration. The rates are set in each of the data selection configurations and can range from 0 milliseconds (as fast as possible) up to 1 day per polling. The adapter automatically optimizes the data collection process by grouping the requests to reduce the I/O load imposed on the Modbus TCP networks.
@@ -31,7 +31,7 @@ For each data selection configuration, the Modbus TCP EDS adapter creates a stre
 | Timestamp     | String    | The response time of the stream data from the Modbus TCP device. |
 | Value         | Specified by the data selection | The value of the stream data from the Modbus TCP device. | 
 
-Stream ID is a unique identifier for each stream created by the adapter for the selected measurement. If a custom stream ID is specified for the measurement in the data selection configuration, the Modbus TCP EDS adapter will use that stream ID to create the stream. Otherwise, the connector constructs the stream ID using the following format: 
+Stream ID is a unique identifier for each stream created by the adapter for the selected measurement. If a custom stream ID is specified for the measurement in the data selection configuration, the Modbus TCP EDS adapter will use that stream ID to create the stream. Otherwise, the adapter constructs the stream ID using the following format: 
 ```
 <Adapter Component ID>.<Unit ID>.<Register Type>.<Register Offset> 
 ```

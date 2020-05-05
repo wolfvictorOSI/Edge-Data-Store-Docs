@@ -3,11 +3,11 @@ uid: scalePerformance
 ---
 
 # Design considerations
-Before installing EDS, determine your storage and throughput needs and select devices that meet those needs.
+Before installing Edge Data Store, determine your storage and throughput needs and select devices that meet those needs.
 
 ## Edge Storage role
 
-The Edge Storage component is integrated with the Edge Data Store and does not replace any existing storage technology produced by OSIsoft. The Edge Storage component is a resilient and reliable data store, but is limited in the duration and scope of the data it retains. 
+The Edge Storage component is integrated with the EDS and does not replace any existing storage technology produced by OSIsoft. The Edge Storage component is a resilient and reliable data store, but is limited in the duration and scope of the data it retains. 
 
 * By default, the storage component processes data in a FIFO (first in first out) method: as new data comes in and the size of streams exceeds the configured limits, older data is purged.
 
@@ -24,7 +24,7 @@ The Edge Storage component provides an appropriate level of storage performance 
 
 ## Sizing of Edge devices
 
-For Edge Data Store, there are three supported tiers of performance:
+For EDS, there are three supported tiers of performance:
 
 
 * Small Devices: 1 Core CPU, 512 MB RAM. 30 events/second, 200 streams total.

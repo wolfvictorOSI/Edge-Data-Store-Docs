@@ -14,9 +14,9 @@ The adapter instance polls the OPC UA device and then collects data from the dev
 
 ## Configure an OPC UA data source
 
-Configure a data source to connect an OPC UA device to an OPC UA EDS adapter instance added during installation, _OpcUa1_. 
+To configure a data source to connect an OPC UA device to an OPC UA EDS adapter instance, perform the following steps:
 
-1. Using any text editor, copy the example below to create a file in JSON format with the location of the OPC UA data source.  
+1. Using a text editor, copy the example below to create a file in JSON format with the location of the OPC UA data source.  
 
    ```json
    {
@@ -31,7 +31,7 @@ Configure a data source to connect an OPC UA device to an OPC UA EDS adapter ins
    ```
 
 2. Modify the values in the example to match your environment, including the IP address and port for the OPC UA data source.
-3. Save the file to the device with Edge Data Store installed using a file name based on the adapter instance name. For example, to use the adapter instance created during installation, which is OpcUa1, name the file _OpcUa1Datasource.json_.
+3. Save the file to the device with EDS installed using a file name based on the adapter instance name. For example, to use the adapter instance created during installation, which is OpcUa1, name the file _OpcUa1Datasource.json_.
 4. Run the following curl script from the directory where the file is located, updating the file name and the destination in the script if needed. 
 
 ```bash
@@ -42,10 +42,10 @@ When the command completes successfully (a 204 message is returned by curl), the
 
 ## Configure OPC UA data selection
 
-When you create the data source file, the OPC UA adapter auto generates the data selection file, which lists all available streams in the designated data source. To configure the data selection file, complete the following:
+When you create the data source file, the OPC UA adapter auto generates the data selection file, which lists all available streams in the designated data source. To configure the data selection file, perform the following steps:
 
 1. Save the data selection file to the local device and name it based on the adapter instance name. For example, to use the adapter instance created during installation, which is OpcUa1, name the file _OpcUa1Dataselection.json_. 
-2. Open the file in any text editor. It should look similar to the following example:
+2. Open the file in a text editor. It should look similar to the following example:
 
    ```json
    [{

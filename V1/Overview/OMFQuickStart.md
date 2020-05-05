@@ -4,11 +4,11 @@ uid: omfQuickStart
 
 # OMF quick start
 
-Create a custom application using OSIsoft Message Format to send data to EDS from sources that cannot use Modbus or OPC UA protocols. The following diagram depicts the data flow from an OMF data collection application into EDS:
+Create a custom application using OSIsoft Message Format to send data to Edge Data Store from sources that cannot use Modbus or OPC UA protocols. The following diagram depicts the data flow from an OMF data collection application into EDS:
 
 ![EDS OMF Ingress](https://osisoft.github.io/Edge-Data-Store-Docs/V1/images/OMFIngressExample.jpg "OMF Ingress Example")
 
-The OMF application collects data from a data source and sends it to the Edge Data Store endpoint. The EDS endpoint sends the data to the storage component where it is held until it can be egressed to permanent storage in PI Server or OSIsoft Cloud Services. The OMF application must run on the same device as Edge Data Store and no authentication is needed. 
+The OMF application collects data from a data source and sends it to the EDS endpoint. The EDS endpoint sends the data to the storage component where it is held until it can be egressed to permanent storage in PI Server or OSIsoft Cloud Services. The OMF application must run on the same device as EDS and no authentication is needed. 
 
 To get started using OMF messages to ingress data into EDS, create an OMF type and container and then write data events to the container using REST APIs. Use the Sequential Data Store (SDS) REST API to read the data back from EDS.
 
@@ -39,7 +39,7 @@ The first step in OMF data ingress is to create an OMF type that describes the f
 
    The value is indexed by a timestamp, and the numeric value that will be stored is a 32-bit floating point value.
    
-2. To create the OMF type in Edge Storage, store the JSON file with the name OmfCreateType.json on the local device.
+2. To create the OMF type in Edge Storage, store the JSON file with the name _OmfCreateType.json_ on the local device.
 3. Run the following curl command:
 
    ```bash
@@ -63,7 +63,7 @@ The next step in writing OMF data is to create an OMF container. As with an OMF 
 
    This container references the OMF type that was created earlier, and an error will occur if the type does not exist when the container is created. 
    
-2. To create the OMF container in the Edge Storage, store the JSON file with the name OmfCreateContainer.json on the local device.
+2. To create the OMF container in Edge Storage, store the JSON file with the name _OmfCreateContainer.json_ on the local device.
 3. To create the SDS stream to store data defined by the type, run the following curl command:
 
    ```bash
@@ -71,6 +71,8 @@ The next step in writing OMF data is to create an OMF container. As with an OMF 
    ```
 
 ## Write data events to the OMF container
+
+Once a type and container are defined, complete the following steps to write data to the container:
 
 1. Create an OMF JSON file to define data events to be stored in the SDS Stream created in the previous steps. For best performance, you should batch OMF values together, as in the following example: 
 
@@ -89,7 +91,7 @@ The next step in writing OMF data is to create an OMF container. As with an OMF 
    }]
    ```
 
-2. To write the data in the Edge Storage, store the JSON file with the name OmfCreateDataEvents.json on the local device.
+2. To write the data to EDS, store the JSON file with the name _OmfCreateDataEvents.json_ on the local device.
 3. To write data values to the SDS stream, run the following curl command:
 
    ```bash
@@ -101,7 +103,7 @@ The next step in writing OMF data is to create an OMF container. As with an OMF 
 Use the SDS REST API to read back the last data event written to the server. 
 
 1. Start the curl command line tool.
-2. Execute the following curl command to return the last value written:
+2. Run the following curl command to return the last value written:
 
    ```bash
    curl http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data/Last
@@ -118,7 +120,7 @@ Use the SDS REST API to read back the last data event written to the server.
 Use the SDS REST API to read back the a range of data written to the server. 
 
 1. Start the curl command line tool.
-2. Execute the following curl command to return up to 100 values after the startIndex specified:
+2. Run the following curl command to return up to 100 values after the startIndex specified:
 
    ```bash
    curl "http://localhost:5590/api/v1/tenants/default/namespaces/default/streams/MyCustomContainer/Data?startIndex=2017-07-08T13:00:00Z&count=100"
