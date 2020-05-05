@@ -10,27 +10,27 @@ Edge Data Store and its components produce health information to provide insight
 
 The following health types and streams are created to reflect the health of EDS adapters.
 
-The Connectors static type includes these properties and servers as a root AF element with the ID Connectors.
+The Adapters static type includes these properties and servers as a root AF element with the ID Adapters.
 
 | Property     | Type     | Description      |
 |--------------|----------|------------------|
-| Id | string | Connectors - root AF element |
-| Description | string | Collection of Connector assets |
+| Id | string | Adapters - root AF element |
+| Description | string | Collection of Adapter assets |
 
 ### EDS adapter component health
 
-The Connector Health static type includes the following properties, which are logged in a stream with the ID {machinename}.{componentid}. The stream is linked to root AF element (Connectors).
+The Adapter Health static type includes the following properties, which are logged in a stream with the ID {machinename}.{componentid}. The stream is linked to root AF element (Adapters).
 
 | Property     | Type     | Description      |
 |--------------|----------|------------------|
 | Id | string  | {machinename}.{componentId} |
 | Description | string | {productname} health |
-| Connector Type | string | {adaptertype} |
+| Adapter Type | string | {adaptertype} |
 | Version | string | {adapterversion} |
 
 ### Device status
 
-The DeviceStatus dynamic type includes the following values, which are logged in a stream with the ID Connectors.{machinename}.{componentid}.DeviceStatus. The stream is linked to {machinename}.{componentid} static stream.
+The DeviceStatus dynamic type includes the following values, which are logged in a stream with the ID Adapters.{machinename}.{componentid}.DeviceStatus. The stream is linked to {machinename}.{componentid} static stream.
 
 | Property     | Type     | Description      |
 |--------------|----------|------------------|
@@ -39,7 +39,7 @@ The DeviceStatus dynamic type includes the following values, which are logged in
 
 ### Next health message expected
 
-The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Connectors.{machinename}.{componentid}.NextHealthMessageExpected. The stream is linked to {machinename}.{componentid} static stream. Heart beat message is expected once a minute.
+The NextHealthMessageExpected dynamic type includes the following values, which are logged in a stream with the ID Adapters.{machinename}.{componentid}.NextHealthMessageExpected. The stream is linked to {machinename}.{componentid} static stream. Heart beat message is expected once a minute.
 
 | Property     | Type     | Description      |
 |--------------|----------|------------------|
@@ -65,7 +65,7 @@ The Storage Health static type includes the following properties, which are logg
 |--------------|----------|------------------|
 | Id | string  | {machinename}.Storage |
 | Description | string | {productname} health |
-| Connector Type | string | {adaptertype} |
+| Adapter Type | string | {adaptertype} |
 | Version | string | {storageversion} |
 
 ### Storage device status
