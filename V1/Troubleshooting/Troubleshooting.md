@@ -65,7 +65,7 @@ Egress logging messages provide a record of egress events. Complete the followin
 Use debugging information to troubleshoot problems between Edge Data Store and the egress destination. Complete the following steps to enable debugging:
 
 1. Refer to [Data egress configuration](xref:egress) to enable debugging.
-2. Set an appropriate time value for the *IngressDebugExpiration* property. 
+2. Set an appropriate time value for the *DebugExpiration* property. 
 
    **Note:** Disable debugging by setting the expiration value to *null*.
 
