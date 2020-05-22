@@ -47,7 +47,7 @@ The Modbus TCP EDS adapter and OPC UA EDS adapter each have three configurable f
 	edgecmd Configuration <componentId> <facetName>
 	```
 	
-3. Add key=value pairs to specify the values to changed and press Enter.
+3. Add key=value pairs to specify the values to change and press Enter.
 	
 	**Example**: Configuration of the data source facet of a Modbus adapter
 
