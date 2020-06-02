@@ -1,0 +1,21 @@
+- name: Configuration tools
+  href: ../Administration/ManagementTools_1-0.md
+- name: System configuration
+  href: System Configuration/toc.yml
+  topicHref: System configuration_1-0.md
+- name: Data ingress configuration
+  href: ../DataIngress/toc.yml
+  topicHref: ../DataIngress/EDSDataIngress_1-0.md
+- name: Storage
+  href: Storage/toc.yml
+  topicHref: Storage_1-0.md
+- name: Data egress configuration
+  href: ../Egress/toc.yml
+  topicHref: ../Egress/Egress_1-0.md
+- name: Edge Data Store Health
+  href: ../Health/toc.yml
+  topicHref: ../Health/Health_1-0.md
+- name: Logging configuration
+  href: ../Logging/toc.yml
+  topicHref: ../Logging/LoggingConfiguration_1-0.md
+
