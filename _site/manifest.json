@@ -1,0 +1,1770 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/aflores/Documents/GitHub/Edge-Data-Store-Docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html",
+          "hash": "wNk0iuwgIuFNuqj4MSpPcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Administration/Administration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Administration/Administration_1-0.html",
+          "hash": "kKibJIFt1U3JepoRxIStLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Administration/ManagementTools_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Administration/ManagementTools_1-0.html",
+          "hash": "IEaLaUbKTcsDMe4x8H4W7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Administration/Reset Edge Data Store_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Administration/Reset Edge Data Store_1-0.html",
+          "hash": "885re1G4tPEBYhA/4JmAXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Administration/Reset the Storage component_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Administration/Reset the Storage component_1-0.html",
+          "hash": "K1PvHIHX67oqGzcdPstpEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Administration/Retrieve product version information_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Administration/Retrieve product version information_1-0.html",
+          "hash": "qXTGUVqqvdunzys+WTzNIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Administration/Stop and start an EDS adapter_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Administration/Stop and start an EDS adapter_1-0.html",
+          "hash": "37PkwDDXmuedHCkNmlsiNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/CommandLine/Access EdgeCmd utility_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/CommandLine/Access EdgeCmd utility_1-0.html",
+          "hash": "1BP0MYM8zwedZx+AiF33Nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/CommandLine/CommandLine_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/CommandLine/CommandLine_1-0.html",
+          "hash": "EJmO6hbp2F4d/EA+Rrbl4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/CommandLine/Configure Edge Data Store components_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/CommandLine/Configure Edge Data Store components_1-0.html",
+          "hash": "GYNcZllLVXvInAvSQaEgVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/CommandLine/Configure Edge Data Store_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/CommandLine/Configure Edge Data Store_1-0.html",
+          "hash": "Qwjngi3IaJpUxoeZ5cDe7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/CommandLine/ConfigurePort_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/CommandLine/ConfigurePort_1-0.html",
+          "hash": "+iVPDikXq0qFYwNAa5FSOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/CommandLine/Delete configuration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/CommandLine/Delete configuration_1-0.html",
+          "hash": "/yIpruNMgmNm9GX3CtOWMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/CommandLine/EdgeCmd utility_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/CommandLine/EdgeCmd utility_1-0.html",
+          "hash": "VDkZbGe6Lrb7dgDvzK1y7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/CommandLine/Retrieve EdgeCmd utility help_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/CommandLine/Retrieve EdgeCmd utility help_1-0.html",
+          "hash": "0dqTGz8z0Mj3t5al9wCKsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/CommandLine/Retrieve existing system configuration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/CommandLine/Retrieve existing system configuration_1-0.html",
+          "hash": "PJXQiuaP1j5Xe6t3nIwZ1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Configuration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Configuration_1-0.html",
+          "hash": "vdS5ojlN8jirJjn5AZ1X+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/EDSModbusTCPAdapter_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/EDSModbusTCPAdapter_1-0.html",
+          "hash": "7gGd8NgemCx16cmS6DZzMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/EDSOPCUAAdapter_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/EDSOPCUAAdapter_1-0.html",
+          "hash": "5/FJpdHJHVELysoOZqRhEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/EdgeSystemConfiguration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/EdgeSystemConfiguration_1-0.html",
+          "hash": "qn/mXifliw6LdZ14YEFXcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/ConfigurationSchemaList.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/ConfigurationSchemaList.html",
+          "hash": "XWlJjpsQ6FmbwdxtSfqKsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/EdgeSystem_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/EdgeSystem_schema.html",
+          "hash": "0hAwCtdUuiiBV2DhynJbIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/Modbus_DataSelection_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/Modbus_DataSelection_schema.html",
+          "hash": "ADPloT5iSoEuGVrhpWpOlg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/Modbus_DataSource_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/Modbus_DataSource_schema.html",
+          "hash": "c/xKvC6Mn/j7qXn+2q+DEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/Modbus_Logging_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/Modbus_Logging_schema.html",
+          "hash": "+MU7a5Ek7XkQlaZV2ZhA0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/Modbus_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/Modbus_schema.html",
+          "hash": "J4uLRyPfsW4uob8CKL4ELQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/OpcUa_DataSelection_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/OpcUa_DataSelection_schema.html",
+          "hash": "TMCn69FW/QOnwQbFejfGXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/OpcUa_DataSource_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/OpcUa_DataSource_schema.html",
+          "hash": "EfGQCsIVmuuosWp+kg6lvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/OpcUa_Logging_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/OpcUa_Logging_schema.html",
+          "hash": "5s2+6LIo47yq0Jn/pQvCwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/OpcUa_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/OpcUa_schema.html",
+          "hash": "QZkRvo2xx1GTVmiN7B8Rfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/Storage_Logging_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/Storage_Logging_schema.html",
+          "hash": "DKrc6cTNKyzOKRwpgcz9Xg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/Storage_PeriodicEgressEndpoints_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/Storage_PeriodicEgressEndpoints_schema.html",
+          "hash": "Ad/yAMEagu3fn932OTJj6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/Storage_Runtime_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/Storage_Runtime_schema.html",
+          "hash": "tqoYgWcwL6bNwUJw9wfxeg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/Storage_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/Storage_schema.html",
+          "hash": "EXlBgEVNXiRvz3rl5s/6hw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/System_Components_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/System_Components_schema.html",
+          "hash": "hlwImIvcVywS27TQe+dOBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/System_HealthEndpoints_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/System_HealthEndpoints_schema.html",
+          "hash": "yGiY0xw/0gdfdnEhuIla4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/System_Logging_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/System_Logging_schema.html",
+          "hash": "LHmWfZij0Y/iqmes69Ujww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/System_Port_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/System_Port_schema.html",
+          "hash": "efxpBtMj9l5QFrwdXUOp3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Schemas/System_schema.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Schemas/System_schema.html",
+          "hash": "xkElesEscp2AbKlc8J/M/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Storage runtime config_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Storage runtime config_1-0.html",
+          "hash": "m/PLNz0NipiMYB2VUq3OFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/Storage_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/Storage_1-0.html",
+          "hash": "Oqw9OjLFi51eX3HwI24Ajw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/System components configuration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/System components configuration_1-0.html",
+          "hash": "oIPy2evlTsvWWeZb19mXjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/System configuration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/System configuration_1-0.html",
+          "hash": "fSUwFLRe+4Hq52rRNrsCJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/System health endpoints configuration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/System health endpoints configuration_1-0.html",
+          "hash": "lq9IXVaPrJrKOhufPrcBxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/System port configuration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/System port configuration_1-0.html",
+          "hash": "Ct+6TzN8VoVxljAM1KTkNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "V1/Configuration/System_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Configuration/System_1-0.html",
+          "hash": "zZoLl1gTHSaeA5VLKun+Yg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/DataIngress/EDSDataIngress_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/DataIngress/EDSDataIngress_1-0.html",
+          "hash": "dT7bQ+mpXIQjYBDWZb4cCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Design/ScalePerformance_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Design/ScalePerformance_1-0.html",
+          "hash": "MxjM5qSWykA/i/v7Lt+CQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Diagnostics/Diagnostics_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Diagnostics/Diagnostics_1-0.html",
+          "hash": "NZu0v+ufopuSXmQvbXzkSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Docker/EdgeDocker_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Docker/EdgeDocker_1-0.html",
+          "hash": "a9LUGcnbMMA5ZkcBTiwBjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Edge_Data_Store_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Edge_Data_Store_1-0.html",
+          "hash": "djVi48rz7MNkWZ7MA4RgRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Egress/Configure data egress_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Egress/Configure data egress_1-0.html",
+          "hash": "DfFCI1GxDzFuOAl67L3l1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Egress/Egress execution details_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Egress/Egress execution details_1-0.html",
+          "hash": "AuGXsJdoa82qLEDLGMcKOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Egress/Egress_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Egress/Egress_1-0.html",
+          "hash": "ERRHA/xJAJT9Mtw4kA2sMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Egress/Prepare egress destinations_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Egress/Prepare egress destinations_1-0.html",
+          "hash": "rut00YOWeZoZPpJuLnqGhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Feedback_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Feedback_1-0.html",
+          "hash": "8wUzd0kIikZ7GR3PAfeZHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Health/Health_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Health/Health_1-0.html",
+          "hash": "TZfGoAuEC7ZTGS7j+v6mtA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Installation/Install Edge Data Store_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Installation/Install Edge Data Store_1-0.html",
+          "hash": "JOrTs/JJtf/HtAwhc6Xfmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Installation/InstallationOverview_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Installation/InstallationOverview_1-0.html",
+          "hash": "N8+igAzjQ7rsdGtYUJ0HCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Installation/System Requirements_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Installation/System Requirements_1-0.html",
+          "hash": "xzO7V92PQZJNQx5yNl9WwA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Installation/Uninstall Edge Data Store_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Installation/Uninstall Edge Data Store_1-0.html",
+          "hash": "Yo1m+bT90uOh7ecaDE20VA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Installation/Verify installation_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Installation/Verify installation_1-0.html",
+          "hash": "pvxwIPkIAGAUBw8sfjVwZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/LinuxWindows/LinuxWindows_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/LinuxWindows/LinuxWindows_1-0.html",
+          "hash": "eEB33JXUiy7ypL8dZU8xTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Logging/ComponentLogging_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Logging/ComponentLogging_1-0.html",
+          "hash": "j4ybu+/nUa2Y8dop41MICg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Logging/LoggingConfiguration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Logging/LoggingConfiguration_1-0.html",
+          "hash": "eMFVFALCmXKOXNedXsHd8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Logging/SystemLogging_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Logging/SystemLogging_1-0.html",
+          "hash": "Vc3uE1+vOWR67Rn402Ql1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Modbus/ModbusOverview_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Modbus/ModbusOverview_1-0.html",
+          "hash": "z211d4DSu5d4UMuPFqaFOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Modbus/ModbusTCPDataSelectionConfiguration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Modbus/ModbusTCPDataSelectionConfiguration_1-0.html",
+          "hash": "MRelTrHWEQMzGqFbEdiwEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Modbus/ModbusTCPDataSourceConfiguration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Modbus/ModbusTCPDataSourceConfiguration_1-0.html",
+          "hash": "EfpPyDp+RWcA5T6oubfP4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Modbus/PrinciplesOfOperationModbus_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Modbus/PrinciplesOfOperationModbus_1-0.html",
+          "hash": "tzkvBVzqxwDAc9+VQa952w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Modbus/SupportedFeaturesModbus_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Modbus/SupportedFeaturesModbus_1-0.html",
+          "hash": "TfM8zoca7k4uXTRemkA6AQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/OMF/OMFOverview_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/OMF/OMFOverview_1-0.html",
+          "hash": "twiChp/OOktByEd+5iW8Rg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/OpcUa/OPCUAAdapterSecurityConfiguration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/OpcUa/OPCUAAdapterSecurityConfiguration_1-0.html",
+          "hash": "U7HFuJMj6AHKo7uk1NEwnQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/OpcUa/OPCUADataSelectionConfiguration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/OpcUa/OPCUADataSelectionConfiguration_1-0.html",
+          "hash": "U1JMXGmJ4XVWvPlu9jT3nA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "V1/OpcUa/OPCUADataSourceConfiguration_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/OpcUa/OPCUADataSourceConfiguration_1-0.html",
+          "hash": "L1r3o3CAAaxkscjxUh8wKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/OpcUa/OpcUaDataSelection_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/OpcUa/OpcUaDataSelection_1-0.html",
+          "hash": "l8TjU9WrlknRRLnrueWenA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/OpcUa/OpcUaOverview_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/OpcUa/OpcUaOverview_1-0.html",
+          "hash": "fjG4tWr2Cs2hT00EXbmgZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/OpcUa/PrinciplesOfOperationOPCUA_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/OpcUa/PrinciplesOfOperationOPCUA_1-0.html",
+          "hash": "ifH9a0WugULEwxa0eLurDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/OpcUa/SupportedFeaturesOPCUA_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/OpcUa/SupportedFeaturesOPCUA_1-0.html",
+          "hash": "WqmDr0boFjePrF9QR6qZGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/AnalyticsQuickStart.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/AnalyticsQuickStart.html",
+          "hash": "UpnPMKvVnqNF/Okrrw3Gxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/CommandLineLinuxQuickStart_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/CommandLineLinuxQuickStart_1-0.html",
+          "hash": "UZov87ZTT7yO9hiyAZJ4fg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/CommandLineQuickStartWindows_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/CommandLineQuickStartWindows_1-0.html",
+          "hash": "JXVnGyRhi6U+HnTbwUYaRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/EdgeSystemOverview_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/EdgeSystemOverview_1-0.html",
+          "hash": "5/xogBX4Q4SZsH+LLxfEHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/ModbusQuickStart_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/ModbusQuickStart_1-0.html",
+          "hash": "/S7xgAsJHAcyK26uW966xw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/OCSEgressQuickStart_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/OCSEgressQuickStart_1-0.html",
+          "hash": "ChBWUvaOiBMMbVFsy8DA5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/OMFQuickStart_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/OMFQuickStart_1-0.html",
+          "hash": "u/zTRnP//z+OWATck1q6zQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/OpcUaQuickStart_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/OpcUaQuickStart_1-0.html",
+          "hash": "l36sSYTRYiACgWi2Htppxg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/PIEgressQuickStart_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/PIEgressQuickStart_1-0.html",
+          "hash": "Fy6QyjL7hb9m6fKubC5NTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/Performance_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/Performance_1-0.html",
+          "hash": "cSYsn/hNcZMaN3mJo9qbug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/Quick start guides_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/Quick start guides_1-0.html",
+          "hash": "J0uQw8WbXoYNVKsCpc34WQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/SDSQuickStart_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/SDSQuickStart_1-0.html",
+          "hash": "3gKAWaeQpy/pQ+TzOXBV7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Overview/VisualizationQuickStart_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Overview/VisualizationQuickStart_1-0.html",
+          "hash": "J+pKFJed3eCt6rqJ27bbGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Reference/Edgecmd commands_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Reference/Edgecmd commands_1-0.html",
+          "hash": "8hi1HQfKFii+CzlWTvL2WQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Reference/REST commands_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Reference/REST commands_1-0.html",
+          "hash": "S+00hVkkysim30KvWYLmxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Reference/Reference_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Reference/Reference_1-0.html",
+          "hash": "4KiC0T8LgfDouhpjcU6pGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "V1/Reference/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Reference/toc.html",
+          "hash": "T2JHzGF26ggaPeObSczFUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/ReleaseNotes/ReleaseNotes_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/ReleaseNotes/ReleaseNotes_1-0.html",
+          "hash": "/hKyHp8olIy7tinENLSVQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/Compression_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/Compression_1-0.html",
+          "hash": "+lAR6Q/ePrXVJFJJK6m8Ww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/Filter_Expressions_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/Filter_Expressions_1-0.html",
+          "hash": "YiTzTnGlZSdCyyabla1+pQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/Reading_Data_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/Reading_Data_1-0.html",
+          "hash": "I+Ihonv9GWJLYCAThmxXYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/Reading_Data_API_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/Reading_Data_API_1-0.html",
+          "hash": "RgD1r1x9yf4WE1PucJaTDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/SDS_Streams_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/SDS_Streams_1-0.html",
+          "hash": "G6+a+vdVevxTLYm8nCk6ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/SDS_Types_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/SDS_Types_1-0.html",
+          "hash": "hnnklUCftwDJbkeqbEju3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/SDS_Views_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/SDS_Views_1-0.html",
+          "hash": "Ngj8MBrbbv4wUgUJl335rA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/Searching_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/Searching_1-0.html",
+          "hash": "zIivE+8wvE2nD2QZoYt3+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/SequentialDataStore_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/SequentialDataStore_1-0.html",
+          "hash": "MY49mSnrlAPpVHw/Qw53KA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/Units_of_Measure_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/Units_of_Measure_1-0.html",
+          "hash": "DoKgie02QG17RvJZpnu8ow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/Writing_Data_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/Writing_Data_1-0.html",
+          "hash": "1KDIQ82MikBQRl52a9RF7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/Writing_Data_API_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/Writing_Data_API_1-0.html",
+          "hash": "MoE19bVnwyjogXOMOTZUng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/indexes_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/indexes_1-0.html",
+          "hash": "yJSi315zwA3OKLcBDCX9Yw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/SDS/table_format_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/SDS/table_format_1-0.html",
+          "hash": "3km+7YsHvugyoV4D3qUKFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Security/SecurityOverview_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Security/SecurityOverview_1-0.html",
+          "hash": "B1TZk3KksixRuHNTIFusPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Support/Edge Data Store support_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Support/Edge Data Store support_1-0.html",
+          "hash": "zAy9qSnl+b4C8X7Iy7nmWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Troubleshooting/DisasterRecovery_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Troubleshooting/DisasterRecovery_1-0.html",
+          "hash": "3Wx6mHRXJ2XFiaEbYMEqNA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/Troubleshooting/Troubleshooting_1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/Troubleshooting/Troubleshooting_1-0.html",
+          "hash": "ZzD1IkrtVYsTpVqYAtpXIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/Add_Button.png",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/Add_Button.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSAnalytics.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSAnalytics.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSArchitecturalDiag.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSArchitecturalDiag.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSArchitecture.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSArchitecture.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSConceptualDiag.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSConceptualDiag.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSModbusTCP.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSModbusTCP.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSOMFIngress.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSOMFIngress.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSOpcUA.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSOpcUA.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSOverview1.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSOverview1.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSOverview2.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSOverview2.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSStorage.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSStorage.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSSystem.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSSystem.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/EDSVisualization.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/EDSVisualization.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/LinuxInstall1.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/LinuxInstall1.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/ModbusTCP.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/ModbusTCP.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/ModbusTCPConfiguration.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/ModbusTCPConfiguration.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/OMFIngressExample.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/OMFIngressExample.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/OPCUAConfiguration.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/OPCUAConfiguration.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/SDSApplicationExample.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/SDSApplicationExample.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/WindowsInstall1.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/WindowsInstall1.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/WindowsInstall2.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/WindowsInstall2.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/WindowsInstall3.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/WindowsInstall3.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/WindowsInstall4.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/WindowsInstall4.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/WindowsInstall5.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/WindowsInstall5.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "V1/images/atlas_icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "V1/images/atlas_icon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "V1/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "V1/index.html",
+          "hash": "Wpszo+Kg7LCSE28Pq5lapw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "V1/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "V1/toc.html",
+          "hash": "uDzwpWs0orFb/AZS2msb+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "z26jP5kyRvtfrPHUvPFFcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 115,
+          "skipped_file_count": 114
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
