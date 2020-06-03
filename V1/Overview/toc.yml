@@ -1,6 +1,6 @@
 - name: Design considerations
-  href: ../Design/ScalePerformance.md
+  href: ../Design/ScalePerformance_1-0.md
 - name: Performance
-  href: Performance.md
+  href: Performance_1-0.md
 - name: Security
-  href: ../Security/SecurityOverview.md
+  href: ../Security/SecurityOverview_1-0.md

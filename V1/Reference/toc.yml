@@ -1,5 +1,5 @@
 - name: Sequential Data Store (SDS)
   href: ../SDS/toc.yml
-  topicHref: ../SDS/SequentialDataStore.md
+  topicHref: ../SDS/SequentialDataStore_1-0.md
 - name: Release Notes
-  href: ../ReleaseNotes/ReleaseNotes.md
+  href: ../ReleaseNotes/ReleaseNotes_1-0.md

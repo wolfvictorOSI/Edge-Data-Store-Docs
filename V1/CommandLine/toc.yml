@@ -1,16 +1,16 @@
 - name: Access EdgeCmd utility
-  href: Access EdgeCmd utility.md
+  href: Access EdgeCmd utility_1-0.md
 - name: Retrieve EdgeCmd utility help
-  href: Retrieve EdgeCmd utility help.md
+  href: Retrieve EdgeCmd utility help_1-0.md
 - name: Retrieve existing system configuration
-  href: Retrieve existing system configuration.md
+  href: Retrieve existing system configuration_1-0.md
 - name: Configure Edge Data Store
-  href: Configure Edge Data Store.md
+  href: Configure Edge Data Store_1-0.md
 - name: Configure Edge Data Store components
-  href: Configure Edge Data Store components.md
+  href: Configure Edge Data Store components_1-0.md
 - name: Configure port
-  href: ConfigurePort.md
+  href: ConfigurePort_1-0.md
 - name: Delete configuration
-  href: Delete configuration.md
+  href: Delete configuration_1-0.md
 - name: EdgeCmd commands
-  href: ../Reference/Edgecmd commands.md
+  href: ../Reference/Edgecmd commands_1-0.md
