@@ -28,7 +28,7 @@ To submit product feedback, including enhancement requests, visit the [Edge Data
 
 ## Documentation feedback
 
-To submit documentation feedback, send an email to [documentation@osisoft.com](mailto:documentation@osisoft.com?subject=Edge%20Data%20Store%20documentation) and include the following information:
+To submit documentation feedback, send an email to [documentation@osisoft.com](mailto:documentation@osisoft.com?subject=OSIsoft%20adapter%20documentation) and include the following information:
 - Documentation topic URL
 - Details of the issue
 
