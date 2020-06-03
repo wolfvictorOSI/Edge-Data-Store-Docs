@@ -14,7 +14,7 @@ The following support writing multiple values:
 
 * [Insert Values](xref:sdsWritingDataApi1-0#insert-values) inserts a collection of events.
 * [Patch Values](xref:sdsWritingDataApi1-0#patch-values) updates specific fields for a collection of events.
-* [Replace Values](xref:sdsWritingDataApi1-0#replace-values) replaces a collection of events.
+* [Replace Values](xref:sdsWritingDataApi1-0#remove-values) replaces a collection of events.
 * [Remove Values](xref:sdsWritingDataApi1-0#remove-values) deletes the events based on the request parameters.
 * [Update Values](xref:sdsWritingDataApi1-0#update-values) add or replaces a collection of events.
 
