@@ -1,8 +1,0 @@
-- name: Operational overview
-  href: PrinciplesOfOperationModbus_1-0.md
-- name: Supported features
-  href: SupportedFeaturesModbus_1-0.md
-- name: Data source configuration
-  href: ModbusTCPDataSourceConfiguration_1-0.md
-- name: Data selection configuration
-  href: ModbusTCPDataSelectionConfiguration_1-0.md

@@ -1,0 +1,9 @@
+- name: System requirements
+  href: ../LinuxWindows/toc.yml
+  topicHref: System Requirements.md
+- name: Install Edge Data Store using Docker
+  href: ../Docker/EdgeDocker.md
+- name: Verify installation
+  href: Verify installation.md
+- name: Uninstall Edge Data Store
+  href: Uninstall Edge Data Store.md

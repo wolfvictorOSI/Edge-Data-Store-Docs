@@ -1,8 +1,0 @@
-- name: Prepare egress destinations
-  href: Prepare egress destinations_1-0.md
-- name: Configure data egress
-  href: Configure data egress_1-0.md
-- name: Egress execution details
-  href: Egress execution details_1-0.md
-- name: Diagnostics configuration
-  href: ../Diagnostics/Diagnostics_1-0.md
