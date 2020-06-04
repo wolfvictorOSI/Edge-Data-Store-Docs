@@ -1,10 +1,10 @@
 - name: Operational overview
-  href: PrinciplesOfOperationOPCUA.md
+  href: PrinciplesOfOperationOPCUA_1-0.md
 - name: Data type mapping
-  href: SupportedFeaturesOPCUA.md
+  href: SupportedFeaturesOPCUA_1-0.md
 - name: Data source configuration
-  href: OPCUADataSourceConfiguration.md
+  href: OPCUADataSourceConfiguration_1-0.md
 - name: Adapter security
-  href: OPCUAAdapterSecurityConfiguration.md
+  href: OPCUAAdapterSecurityConfiguration_1-0.md
 - name: Data selection configuration
-  href: OPCUADataSelectionConfiguration.md 
+  href: OPCUADataSelectionConfiguration_1-0.md 
