@@ -58,10 +58,10 @@ The first step in OMF data ingress is to create an OMF type that describes the f
    curl -d "@OmfCreateType.json" -H "Content-Type: application/json" -H "producertoken: x " -H "omfversion: 1.1" -H "action: create" -H "messageformat: json" -H "messagetype: type" -X POST http://localhost:5590/api/v1/tenants/default/namespaces/default/omf/
    ```
 
-When this command completes successfully, an OMF type with the same name is created on the server. Any number of containers can be created from the type, as long as they use a timestamp as an index and have a 32-bit floating point value. The create type message needs to be sent first before container and data messages, but it does not cause an error if the same message is sent at a later time.
+When this command completes successfully, an OMF type with the same name is created on the server. Any number of containers can be created from the type, as long as they use a timestamp as an index and have a 32-bit floating point value. The create type message needs to be sent before container and data messages.
 
 ## Container messages
-An OMF container messages uses an OMF type as a template to create a way to collect and group data events. A container message is interpreted as an SdsStream in the Sequential Data Store.    
+An OMF container message uses an OMF type as a template to create a way to collect and group data events. A container message is interpreted as an SdsStream in the Sequential Data Store.    
 
 ### Create an OMF container
 
@@ -87,7 +87,7 @@ The next step in writing OMF data is to create an OMF container.
 
 ## Data messages
 
-AN OMF data message sends actual data events, like time-series data, to be stored. A data message is mapped to generic Sds values in the Sequential Data Store. 
+An OMF data message sends actual data events, like time-series data, to be stored. A data message is mapped to generic SDS values in the Sequential Data Store. 
 
 ### Write data events to the OMF container
 
