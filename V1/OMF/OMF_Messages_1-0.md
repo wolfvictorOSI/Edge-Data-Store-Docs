@@ -11,9 +11,9 @@ uid: OMFMessages1-0
 Message headers allow you to pass additional information with the message. The message header is where you specify the action for the message, such as CREATE. For a description of each of the headers, see the [OMF specification](http://omf-docs.osisoft.com). 
 
 The ``omfversion`` header must match the version of the OMF spec used to construct the message.
-Versions 1.0 and 1.1 of the spec are currently supported. 
+EDS suuports versions 1.0 and 1.1 of the OMF specification. 
 
-## Message Types
+## Message types
 
 OMF message types fall into three categories: Type, Container, and Data, which are described below. 
 Each message type creates a different type of data and contains keywords that define characteristics of the data. Most of the message types are used to create the structure of the data and to give it meaning. Data messages contain time-series data for which the PI System is known. The message types and the data they create are described in detail in this section. For details about the keywords supported by OCS, see the OCS topic, [Use OSIsoft Message Format with OSIsoft Cloud Service](https://ocs-docs.osisoft.com/Documentation/DataIngress/OMF_Ingress_Specification.html).
