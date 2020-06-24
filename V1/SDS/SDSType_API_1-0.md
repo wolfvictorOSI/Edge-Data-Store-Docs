@@ -92,7 +92,7 @@ Content-Type: application/json
 
 ## `Get Type Reference Count`
 
-Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. For more information on the use of types to define streams and stream views, see [Streams](xref:sdsStreams1-0) and [Stream views](xref:sdsStreamViews1-0). For further details about type referencing, see [Type reusability](#type-reusability).
+Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. For more information on the use of types to define streams and stream views, see [Streams](xref:sdsStreams1-0) and [Stream views](xref:sdsStreamViews1-0). For further details about type referencing, see [Type reusability](xref:sdsTypeReusability1-0).
 
 **Request**
 
@@ -131,7 +131,7 @@ Returns a list of types within a given namespace.
 
 If specifying the optional search query parameter, the list of types returned will match the search criteria. If the search query parameter is not specified, the list will include all types in the namespace. For information about specifying those respective parameters, see [Searching](xref:sdsSearching1-0).
 
-**Note:** The results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing, see [Type reusability](#type-reusability).
+**Note:** The results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing, see [Type reusability](xref:sdsTypeReusability1-0).
 
 **Request**
 
@@ -228,7 +228,7 @@ Creates the specified type. If a type with a matching identifier already exists,
 
 If the types are identical, a ``Found`` (302) error is returned with the Location header set to the URI where the type may be retrieved using a Get function.
 
-If the types do not match, a ``Conflict`` (409) error is returned. **Note:** A ``Conflict`` (409) error will also be returned if the type contains reference to any existing type, but the referenced type definition in the body does not match the existing type. You may reference an existing type without including the reference type definition in the body by using only the Ids. For further details about type referencing, see [Type reusability](#type-reusability).
+If the types do not match, a ``Conflict`` (409) error is returned. **Note:** A ``Conflict`` (409) error will also be returned if the type contains reference to any existing type, but the referenced type definition in the body does not match the existing type. You may reference an existing type without including the reference type definition in the body by using only the Ids. For further details about type referencing, see [Type reusability](xref:sdsTypeReusability1-0).
 
 For a matching type (``Found``), clients that are capable of performing a redirect that includes the authorization header can automatically redirect to retrieve the type. However, most clients, including the .NET HttpClient, consider redirecting with the authorization token to be a security vulnerability.
 

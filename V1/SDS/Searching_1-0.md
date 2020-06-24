@@ -5,7 +5,7 @@ uid: sdsSearching1-0
 Searching
 =====================
 
-You can search text and fields across the Sequential Data Store. This topic covers searching for SdsStreams, SdsTypes, and SdsStreamViews.
+Search text and fields across the Sequential Data Store to locate data. This topic covers searching for SdsStreams, SdsTypes, and SdsStreamViews.
 
 Searching for streams
 =====================
@@ -100,7 +100,7 @@ Using the stream data above, the following table shows the results of a call to 
 ``DeviceA*``        | All three streams returned.
 ``humidity*``       | No streams returned.
 
-The ``skip`` and ``count`` parameters determine which items are returned when a large number of them match the ``query`` criteria. ``count`` indicates the maximum number of items returned. The maximum value of the ``count`` parameter is 1000. ``skip`` indicates the number of matched items to skip over before returning matching items. You use the skip parameter when more items match the search criteria than can be returned in a single call.
+The ``skip`` and ``count`` parameters determine which items are returned when a large number of them match the ``query`` criteria. ``count`` indicates the maximum number of items returned. The maximum value of the ``count`` parameter is 1000. ``skip`` indicates the number of matched items to skip over before returning matching items. Use the skip parameter when more items match the search criteria than can be returned in a single call.
 
 The ``orderby`` parameter is supported for searching both streams and types. It returns the result in sorted order.
 The default value for ``orderby`` parameter is ascending order. You can change it to descending order by specifying ``desc`` alongside the orderby field value. It can be used in conjunction with ``query``, ``skip``, and ``count`` parameters.
@@ -121,7 +121,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query=name:pump name
 Search operators
 =====================
 
-You can specify search operators in the ``query`` string to return more specific search results.
+Specify search operators in the ``query`` string to return more specific search results.
 
 Operators | Description
 ----------|-------------------------------------------------------------------
@@ -137,7 +137,7 @@ Operators | Description
 **: Operator**
 ---------------
 
-You can determine which fields are searched by using the following syntax:
+Set the fields to search using the following syntax:
 
 ```text
 fieldname:fieldvalue
@@ -153,7 +153,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query=name:pump name
 **\* Operator**
 -----------------
 
-  You can use the ``'*'`` character as a wildcard to specify an incomplete string.
+Use the ``'*'`` character as a wildcard to specify an incomplete string.
 **Query string**     | **Matches field value** | **Does not match field value**
 ------------------ | --------------------------------- | -----------------------------
 ``log*`` | log<br>logger | analog

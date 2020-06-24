@@ -6,7 +6,7 @@ uid: sdsIndexExamples1-0
 
 The following discusses the types defined in the Python and Java Script samples. 
 
-To build an SdsType representation of the following sample class, see [Sample](#sample):
+To build an SdsType representation of the following sample class, see the [Sample](#sample) section below.
 
 *Python*
 
@@ -53,7 +53,7 @@ var Simple = function () {
 }
 ```
 
-### Sample
+## Sample
 
 The following code is used to build an SdsType representation of the sample class above:
 

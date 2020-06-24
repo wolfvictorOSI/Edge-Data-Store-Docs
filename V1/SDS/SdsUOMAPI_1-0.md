@@ -4,7 +4,7 @@ uid: SdsUOMAPI1-0
 
 # SdsUom API
 
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUoms. For more information, see [SdsUom](#sdsuom).
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUoms. For more information, see [SdsUom](xref:unitsOfMeasure1-0#sdsuom).
 *****
 
 ## ``Get Uom``
@@ -111,7 +111,7 @@ Content-Type: application/json
 
 ## Associate a unit of measure with an SdsType
 
-At SdsType creation, you can associate an SdsUom with an SdsTypeProperty. For more information, see [SdsTypeProperty](xref:sdsTypes1-0#sdstypeproperty).
+At SdsType creation, you can associate an SdsUom with an SdsTypeProperty. For more information, see [SdsTypeProperty](xref:sdsTypeProperty1-0).
 
 ## Associate a unit of measure with an SdsStream
 

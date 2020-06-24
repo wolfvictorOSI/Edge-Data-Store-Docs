@@ -4,7 +4,7 @@ uid: SdsUOMQuantityAPI1-0
 
 # SdsUomQuantity API
 
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUomQuantitys. For more information, see [SdsUomQuantity](#sdsuomquantity).
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsUomQuantitys. For more information, see [SdsUomQuantity](xref:unitsOfMeasure1-0#sdsuomquantity).
 *****
 
 ## `Get Quantity`

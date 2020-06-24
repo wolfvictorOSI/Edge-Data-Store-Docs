@@ -4,7 +4,7 @@ uid: sdsStreamsAPI1-0
 
 # SdsStream API
 
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsStreams. For general SdsStream information, see [Streams](#streams).
+The REST APIs provide programmatic access to read and write SDS data. The APIs in this section interact with SdsStreams. For general SdsStream information, see [Streams](xref:sdsStreams1-0).
 *****
 
 ## `Get Stream`
@@ -172,7 +172,7 @@ Creates the specified stream. If a stream with the same Id already exists, the d
 
 Note that modifying Indexes will result in re-indexing all of the stream's data for each additional secondary index.
 
-For more information on secondary indexes, see [Indexes](#indexes).
+For more information on secondary indexes, see [Indexes](xref:sdsStreams1-0#indexes).
 
 Unpermitted changes result in an error.
 

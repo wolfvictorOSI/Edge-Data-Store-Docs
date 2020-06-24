@@ -34,9 +34,9 @@ An SdsType with the InterpolationMode set to ``Discrete`` cannot have a property
 
 Uom is the unit of measure for the property. The Uom of a property may be specified by the name or the abbreviation. The names and abbreviations of Uoms are case sensitive.
 
-The InterpolationMode and Uom of a property can be overridden on the stream. For more information, see [Streams](xref:sdsStreams1-0#propertyoverrides).
+The InterpolationMode and Uom of a property can be overridden on the stream. For more information, see [PropertyOverrides in Streams](xref:sdsStreams1-0#propertyoverrides).
 
 
 ## Supported units of measure
 
-For a list of units of measures that are supported for an SdsTypeProperty, see [Units of measure](xref:unitsOfMeasure1-0#supported-units-of-measure).
+For a list of units of measures that are supported for an SdsTypeProperty, see [Units of measure](xref:SupportedUOM1-0).
