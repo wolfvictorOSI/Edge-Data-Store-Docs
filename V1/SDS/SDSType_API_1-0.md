@@ -5,7 +5,7 @@ uid: sdsTypeAPI1-0
 # SdsType API
 
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this section
-interact with SdsTypes. See [Types](#types) for general SdsType information.
+interact with SdsTypes. See [Types](xref:sdsTypes1-0) for general SdsType information.
 *****
 
 ## `Get Type`
