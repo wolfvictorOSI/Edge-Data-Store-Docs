@@ -4,7 +4,7 @@ uid: SupportedUOM1-0
 
 # Supported units of measure
 
-A list of the supported units of measure follows. Supported units of measure are read-only.
+The following table shows the supported units of measure. Supported units of measure are read-only.
 
 | Uom Id                                           | Abbreviation | Quantity Id                                 | Conversion Factor | Conversion Offset |
 | ------------------------------------------------ | ------------ | ------------------------------------------- | ----------------- | ----------------- |
