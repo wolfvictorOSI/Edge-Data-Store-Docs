@@ -4,8 +4,7 @@ uid: sdsTypeAPI1-0
 
 # SdsType API
 
-The REST APIs provide programmatic access to read and write SDS data. The APIs in this section
-interact with SdsTypes. See [Types](xref:sdsTypes1-0) for general SdsType information.
+The REST APIs provide programmatic access to read and write SDS data. The following APIs interact with SdsTypes. See [Types](xref:sdsTypes1-0) for general SdsType information.
 *****
 
 ## `Get Type`
@@ -92,7 +91,7 @@ Content-Type: application/json
 
 ## `Get Type Reference Count`
 
-Returns a dictionary mapping the object name to the number of references held by streams, stream views and parent types for the specified type. For more information on the use of types to define streams and stream views, see [Streams](xref:sdsStreams1-0) and [Stream views](xref:sdsStreamViews1-0). For further details about type referencing, see [Type reusability](xref:sdsTypeReusability1-0).
+Returns a dictionary mapping the object name to the number of references held by streams, stream views, and parent types for the specified type. For more information on the use of types to define streams and stream views, see [Streams](xref:sdsStreams1-0) and [Stream views](xref:sdsStreamViews1-0). For further details about type referencing, see [Type reusability](xref:sdsTypeReusability1-0).
 
 **Request**
 
@@ -129,7 +128,7 @@ Example response body:
 
 Returns a list of types within a given namespace.
 
-If specifying the optional search query parameter, the list of types returned will match the search criteria. If the search query parameter is not specified, the list will include all types in the namespace. For information about specifying those respective parameters, see [Searching](xref:sdsSearching1-0).
+If you specify the optional search query parameter, the list of types returned will match the search criteria. If you do not specify the search query parameter, the list will include all types in the namespace. For information about specifying those respective parameters, see [Search in SDS](xref:sdsSearching1-0).
 
 **Note:** The results will also include types that were automatically created by SDS as a result of type referencing. For further details about type referencing, see [Type reusability](xref:sdsTypeReusability1-0).
 
@@ -144,7 +143,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types?query={query}&skip={sk
 The namespace; either default or diagnostics.
 
 `string query`  
-An optional query string to match which SdsTypes will be returned. For information about specifying the query parameter, see the [Searching](xref:sdsSearching1-0) topic.
+An optional query string to match which SdsTypes will be returned. For information about specifying the query parameter, see [Search in SDS](xref:sdsSearching1-0).
 
 `int skip`  
 An optional value representing the zero-based offset of the first SdsType to retrieve. If not specified, a default value of 0 is used.

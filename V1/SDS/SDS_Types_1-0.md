@@ -4,11 +4,13 @@ uid: sdsTypes1-0
 
 # Types
 
-The Sequential Data Store (SDS) stores streams of events and provides convenient ways to find and associate events. Events are stored in SdsStreams. An SdsType defines the structure of the event and how to associate events within the SdsStream.
-
-SdsTypes can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries. They can also define complex types using SdsTypes. Define complex, nested types using the Properties collection of an SdsType.
+The Sequential Data Store (SDS) stores streams of events and provides ways to find and associate events. Events are stored in SdsStreams. An SdsType defines the structure of events and how the are associated within the SdsStream.
 
 An SdsType used to define an SdsStream must have a key. A key is a property, or a combination of properties that constitute an ordered, unique identity. The key is ordered, so it functions as an index. It is known as the primary index. While a timestamp (DateTime) is a very common type of key, any type that can be ordered is permitted. Other indexes (secondary indexes), are defined in the SdsStream. For more details on indexes, see [Indexes](xref:sdsIndexes1-0).
+
+SdsTypes can be simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or they can be complex, nested types defined using the Properties collection of an SdsType.
+
+
 
 When you define a type, consider how the events will be represented in a stream. The SdsType defines each event in the stream. An event is a single unit whose properties have values that relate to the index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.
 
@@ -18,13 +20,11 @@ An SdsType can also refer other SdsTypes by using their identifiers. This enable
 
 SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](xref:sdsReadingData1-0#interpolation) and [Extrapolation](xref:sdsReadingData1-0#extrapolation) in [Reading data](xref:sdsReadingData1-0).
 
-SdsTypes are immutable. After you create an SdsType, you cannot change its definition. If the definition of an SdsType is incorrect, you must delete and recreate it. In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.
+SdsTypes are immutable; once it is created, you cannot change its definition. If the definition of an SdsType is incorrect, you must delete and recreate it. In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.
 
 Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential data store. SdsTypes that define properties or base types are contained within the parent SdsType and are not required to be added to the Data Store independently.
 
 The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use.
-
-For search limitations, see [Searching](xref:sdsSearching1-0).
 
 | Property          | Type                   | Optionality | Searchable | Details |
 |-------------------|------------------------|-------------|---------|---------|
@@ -36,7 +36,11 @@ For search limitations, see [Searching](xref:sdsSearching1-0).
 | ExtrapolationMode | SdsExtrapolationMode   | Optional    | No | Extrapolation setting of the type. Default is All. |
 | Properties        | IList\<SdsTypeProperty\> | Required    | Yes, with limitations | List of SdsTypeProperty items. |
 
+For search limitations, see [Search in SDS](xref:sdsSearching1-0).
+
 **Rules for the type identifier (SdsType.Id)**
+
+When constructing the type identifier, SdsType.ID, the following rules apply:
 
 1. Is not case sensitive.
 2. Can contain spaces.
