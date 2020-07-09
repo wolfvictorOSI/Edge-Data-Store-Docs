@@ -6,23 +6,23 @@ uid: sdsTypes1-0
 
 The Sequential Data Store (SDS) stores streams of events and provides ways to find and associate events. Events are stored in SdsStreams. An SdsType defines the structure of events and how the are associated within the SdsStream.
 
-An SdsType used to define an SdsStream must have a key. A key is a property, or a combination of properties that constitute an ordered, unique identity. The key is ordered, so it functions as an index. It is known as the primary index. While a timestamp (DateTime) is a very common type of key, any type that can be ordered is permitted. Other indexes (secondary indexes), are defined in the SdsStream. For more details on indexes, see [Indexes](xref:sdsIndexes1-0).
+Event data is stored in SDS in an SdsStream.
 
-SdsTypes can be simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or they can be complex, nested types defined using the Properties collection of an SdsType.
+An SdsType defines the structure of an event stored in an SdsStream and how to associate events within the SdsStream. An event is a single unit whose properties have values that relate to the index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.
 
+SdsTypes can define simple atomic types, such as integers, floats, strings, arrays, and dictionaries, or  complex types with nested SdsTypes using the Properties collection of an SdsType.
 
+An SdsType used to define an SdsStream must have a key, which is a property, or a combination of properties that constitute an ordered, unique identity. Because the key is ordered, it functions as an index. It is known as the primary index. While a timestamp (DateTime) is a very common key, any data that can be ordered is permitted. Other indexes (secondary indexes), are defined in the SdsStream. For more details on indexes, see [Indexes](xref:sdsIndexes1-0).
 
-When you define a type, consider how the events will be represented in a stream. The SdsType defines each event in the stream. An event is a single unit whose properties have values that relate to the index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.
+An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace. An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability. Nested types and base types are automatically created as separate types. For further information, see [Type reusability](xref:sdsTypeReusability1-0).
 
-An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace.
+SdsTypes are immutable. Once you create an SdsType, you cannot change its definition. If the SdsType definition is incorrect, you must delete and recreate it, and the SdsType can only be deleted if no streams, stream views, or types reference it.
 
-An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability. Nested types and base types are automatically created as separate types. For further information, see [Type reusability](xref:sdsTypeReusability1-0).
+Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential Data Store. SdsTypes that define properties or base types are contained within the parent SdsType and are not required to be added to the Data Store separately.
+
 
 SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](xref:sdsReadingData1-0#interpolation) and [Extrapolation](xref:sdsReadingData1-0#extrapolation) in [Reading data](xref:sdsReadingData1-0).
 
-SdsTypes are immutable; once it is created, you cannot change its definition. If the definition of an SdsType is incorrect, you must delete and recreate it. In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.
-
-Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential data store. SdsTypes that define properties or base types are contained within the parent SdsType and are not required to be added to the Data Store independently.
 
 The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use.
 
@@ -38,7 +38,7 @@ The following table shows the required and optional SdsType fields. Fields that 
 
 For search limitations, see [Search in SDS](xref:sdsSearching1-0).
 
-**Rules for the type identifier (SdsType.Id)**
+## Rules for the type identifier (SdsType.Id)
 
 When constructing the type identifier, SdsType.ID, the following rules apply:
 
