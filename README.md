@@ -6,7 +6,7 @@ Edge Data Store and adapters can be configured with either the EdgeCmd utility, 
 
 ## EdgeCmd utility
 
-The EdgeCmd utility enables EDS and adapter configuration on both Linux and Windows operating systems. For more information on using the EdgeCmd utility, see [EdgeCmd utility](xref:Installedgecmd).
+The EdgeCmd utility enables EDS and adapter configuration on both Linux and Windows operating systems. For more information on using the EdgeCmd utility, see [EdgeCmd utility](https://osisoft.github.io/Edgecmd-Docs/index.html).
 
 ## REST tools
 
@@ -26,4 +26,4 @@ Edge Data Store is designed to use platform-independent programming, and any mod
 
 ### System Tools
 
-Use Windows tools like PuTTY and WinSCP to faciliate working across platforms, such as to copy files and remotely access Linux command lines.
+Use Windows tools like PuTTY and WinSCP to facilitate working across platforms, such as to copy files and remotely access Linux command lines.
