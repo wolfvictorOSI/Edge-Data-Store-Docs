@@ -37,7 +37,7 @@ The Edge Data Store configuration schema specifies how to formally describe the 
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
-| [Storage](#storage)         | [`StorageConfiguration`](xref:storage_schema) | Optional | Yes      | StorageConfiguration |
-| [System](#system) | [`SystemConfiguration`](xref:system_schema) | Optional | Yes      | SystemConfiguration |
-| [{ComponentName}](#system) | [`{ComponentConfiguration}`](#system) | Optional | Yes      | {ComponentConfiguration} |
+| Storage         | StorageConfiguration | Optional | Yes      | StorageConfiguration |
+| System | SystemConfiguration | Optional | Yes      | SystemConfiguration |
+| {ComponentName} | `{ComponentConfiguration}` | Optional | Yes      | {ComponentConfiguration} |
 

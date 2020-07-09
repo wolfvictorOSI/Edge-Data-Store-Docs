@@ -35,7 +35,7 @@ uid: system_schema
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
-| [Logging](#logging)         | [`SystemLoggingConfiguration`](xref:system_Logging_schema) | Optional | Yes      | EdgeLoggerConfiguration |
-| [Components](#components) | [`[SystemComponentsConfiguration]`](xref:system_Components_schema) | Optional | Yes      | ComponentsConfiguration |
-| [HealthEndpoints](#healthEndpoints) | [`[SystemHealthEndpointsConfiguration]`](xref:system_HealthEndpoints_schema) | Optional | Yes      | HealthEndpointsConfiguration |
-| [Port](#port) | [`SystemPortConfiguration`](xref:system_Port_schema) | Optional | Yes      | PortConfiguration |
+| Logging        | `SystemLoggingConfiguration` | Optional | Yes      | EdgeLoggerConfiguration |
+| Components | `[SystemComponentsConfiguration]` | Optional | Yes      | ComponentsConfiguration |
+| HealthEndpoints | `[SystemHealthEndpointsConfiguration]` | Optional | Yes      | HealthEndpointsConfiguration |
+| Port | `SystemPortConfiguration` | Optional | Yes      | PortConfiguration |

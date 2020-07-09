@@ -6,9 +6,9 @@ uid: system_Logging_schema
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
-| [LogFileCountLimit](#logfilecountlimit)         | `integer` | Optional | Yes      | EdgeLoggerConfiguration (this schema) |
-| [LogFileSizeLimitBytes](#logfilesizelimitbytes) | `integer` | Optional | Yes      | EdgeLoggerConfiguration (this schema) |
-| [LogLevel](#loglevel)                           | reference <br> `#/definitions/EdgeLogLevel` | Optional | No       | EdgeLoggerConfiguration (this schema) |
+| LogFileCountLimit         | `integer` | Optional | Yes      | EdgeLoggerConfiguration (this schema) |
+| LogFileSizeLimitBytes | `integer` | Optional | Yes      | EdgeLoggerConfiguration (this schema) |
+| LogLevel                          | reference <br> `#/definitions/EdgeLogLevel` | Optional | No       | EdgeLoggerConfiguration (this schema) |
 
 
 **Note:** All of the following _requirements_ need to be fulfilled.

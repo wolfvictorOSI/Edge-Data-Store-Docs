@@ -20,14 +20,14 @@ uid: modbus_DataSource_schema
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
-| [ConnectTimeout](#connecttimeout)               | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
-| [DelayBetweenRequests](#delaybetweenrequests)   | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
-| [IpAddress](#ipaddress)                         | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
-| [MaxResponseDataLength](#maxresponsedatalength) | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
-| [Port](#port)                                   | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
-| [ReconnectInterval](#reconnectinterval)         | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
-| [RequestTimeout](#requesttimeout)               | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
-| [StreamIdPrefix](#streamidprefix)               | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
+| ConnectTimeout               | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
+| DelayBetweenRequests | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
+| IpAddress                       | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
+| MaxResponseDataLength | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
+| Port                                  | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
+| ReconnectInterval        | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
+| RequestTimeout              | `integer` | Optional | No       | DataSourceConfiguration (this schema) |
+| StreamIdPrefix              | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
 
 
 **Note:** All of the following _requirements_ need to be fulfilled.

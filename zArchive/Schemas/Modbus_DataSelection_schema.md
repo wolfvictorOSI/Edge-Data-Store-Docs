@@ -67,17 +67,17 @@ uid: modbus_DataSelection_schema
 
 | Property                              | Type      | Required | Nullable | Defined by                               |
 | ------------------------------------- | --------- | -------- | -------- | ---------------------------------------- |
-| [BitMap](#bitmap)                     | `string`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
-| [ConversionFactor](#conversionfactor) | `number`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
-| [ConversionOffset](#conversionoffset) | `number`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
-| [DataTypeCode](#datatypecode)         | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
-| [Name](#name)                         | `string`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
-| [RegisterOffset](#registeroffset)     | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
-| [RegisterType](#registertype)         | reference <br> `#/definitions/ModbusRegisterType`| Optional | No       | DataSelectionConfiguration (this schema) |
-| [ScanRate](#scanrate)                 | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
-| [Selected](#selected)                 | `boolean` | Optional | No       | DataSelectionConfiguration (this schema) |
-| [StreamId](#streamid)                 | `string`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
-| [UnitId](#unitid)                     | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
+| BitMap                    | `string`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
+| ConversionFactor | `number`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
+| ConversionOffset | `number`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
+| DataTypeCode       | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
+| Name                         | `string`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
+| RegisterOffset    | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
+| RegisterType        | reference <br> `#/definitions/ModbusRegisterType`| Optional | No       | DataSelectionConfiguration (this schema) |
+| ScanRate                | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
+| Selected                | `boolean` | Optional | No       | DataSelectionConfiguration (this schema) |
+| StreamId                | `string`  | Optional | Yes      | DataSelectionConfiguration (this schema) |
+| UnitId                    | `integer` | Optional | No       | DataSelectionConfiguration (this schema) |
 
 
 

@@ -28,15 +28,15 @@ The OMF health endpoint configuration schema specifies how to formally describe 
 
 | Property                                                    | Type      | Required | Nullable | Defined by                                   |
 | ----------------------------------------------------------- | --------- | -------- | -------- | -------------------------------------------- |
-| [Buffering](#buffering)                                     | reference <br> `#/definitions/BufferType` | Optional | No       | OmfHealthEndpointConfiguration (this schema) |
-| [ClientId](#clientid)                                       | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
-| [ClientSecret](#clientsecret)                               | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
-| [Endpoint](#endpoint)                                       | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
-| [Id](#id)                                                   | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
-| [MaxBufferSizeMB](#maxbuffersizemb)                         | `integer` | Optional | No       | OmfHealthEndpointConfiguration (this schema) |
-| [Password](#password)                                       | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
-| [UserName](#username)                                       | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
-| [ValidateEndpointCertificate](#validateendpointcertificate) | `boolean` | Optional | No       | OmfHealthEndpointConfiguration (this schema) |
+| Buffering                                     | reference <br> `#/definitions/BufferType` | Optional | No       | OmfHealthEndpointConfiguration (this schema) |
+| ClientId                                      | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
+| ClientSecret                              | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
+| Endpoint                                    | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
+| Id                                                  | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
+| MaxBufferSizeMB                         | `integer` | Optional | No       | OmfHealthEndpointConfiguration (this schema) |
+| Password                                      | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
+| UserName                                     | `string`  | Optional | Yes      | OmfHealthEndpointConfiguration (this schema) |
+| ValidateEndpointCertificate | `boolean` | Optional | No       | OmfHealthEndpointConfiguration (this schema) |
 
 
 **Note:** All of the following _requirements_ need to be fulfilled.

@@ -6,7 +6,7 @@ uid: opcua_schema
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
-| [Logging](#logging)         | [`OpcUaLoggingConfiguration`](xref:opcUa_Logging_schema) | Optional | Yes      | EdgeLoggerConfiguration |
-| [DataSource](#datasource) | [`DataSourceConfiguration`](xref:opcUa_DataSource_Schema) | Optional | Yes      | ComponentsConfiguration |
-| [DataSelection](#dataselection) | [`[OpcUaDataSelectionConfiguration]`](xref:opcUa_DataSelection_schema) | Optional | Yes      | DataSelectionConfiguration |
+| Logging        | `OpcUaLoggingConfiguration` | Optional | Yes      | EdgeLoggerConfiguration |
+| DataSource | `DataSourceConfiguration` | Optional | Yes      | ComponentsConfiguration |
+| DataSelection | `[OpcUaDataSelectionConfiguration]` | Optional | Yes      | DataSelectionConfiguration |
 

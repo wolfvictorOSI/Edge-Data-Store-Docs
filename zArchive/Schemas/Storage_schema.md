@@ -24,6 +24,6 @@ uid: storage_schema
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
-| [Runtime](#runtime)         | [`StorageRuntimeConfiguration`](xref:storage_Runtime_schema) | Optional | Yes      | StorageRuntimeConfiguration |
-| [Logging](#logging) | [`StorageLoggingConfiguration`](xref:Storage_Logging_schema) | Optional | Yes      | StorageLoggingConfiguration |
-| [PeriodicEgressEndpoints](#periodicegressendpoints) | [`[PeriodicEgressEndpointsConfiguration]`](xref:storage_PeriodicEgressEndpoints_schema) | Optional | Yes      | PeriodicEgressEndpointsConfiguration |
+| Runtime         | `StorageRuntimeConfiguration` | Optional | Yes      | StorageRuntimeConfiguration |
+| Logging | `StorageLoggingConfiguration`| Optional | Yes      | StorageLoggingConfiguration |
+| PeriodicEgressEndpoints | `[PeriodicEgressEndpointsConfiguration]` | Optional | Yes      | PeriodicEgressEndpointsConfiguration |

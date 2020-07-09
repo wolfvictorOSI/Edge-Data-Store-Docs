@@ -16,9 +16,9 @@ uid: storage_Runtime_schema
 
 | Property                                          | Type      | Required     | Nullable | Defined by                                |
 | ------------------------------------------------- | --------- | ------------ | -------- | ----------------------------------------- |
-| [IngressDebugExpiration](#ingressdebugexpiration) | `string`  | **Required** | No       | StorageRuntimeConfiguration (this schema) |
-| [StreamStorageLimitMb](#streamstoragelimitmb)     | `integer` | **Required** | No       | StorageRuntimeConfiguration (this schema) |
-| [StreamStorageTargetMb](#streamstoragetargetmb)   | `integer` | **Required** | No       | StorageRuntimeConfiguration (this schema) |
+| IngressDebugExpiration | `string`  | **Required** | No       | StorageRuntimeConfiguration (this schema) |
+| StreamStorageLimitMb     | `integer` | **Required** | No       | StorageRuntimeConfiguration (this schema) |
+| StreamStorageTargetMb  | `integer` | **Required** | No       | StorageRuntimeConfiguration (this schema) |
 
 ## IngressDebugExpiration
 

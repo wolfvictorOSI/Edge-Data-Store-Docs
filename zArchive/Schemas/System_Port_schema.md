@@ -14,7 +14,7 @@ uid: system_Port_schema
 
 | Property      | Type      | Required | Nullable | Defined by                      |
 | ------------- | --------- | -------- | -------- | ------------------------------- |
-| [Port](#port) | `integer` <br> minimum value: `1024` <br> maximum value: `65535` | Optional | No       | PortConfiguration (this schema) |
+| Port | `integer` <br> minimum value: `1024` <br> maximum value: `65535` | Optional | No       | PortConfiguration (this schema) |
 
 **Note:**  All of the following _requirements_ need to be fulfilled.
 

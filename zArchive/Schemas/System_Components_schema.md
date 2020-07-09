@@ -25,15 +25,15 @@ uid: system_Components_schema
 
 | Property                        | Type     | Required | Nullable | Group                              |
 | ------------------------------- | -------- | -------- | -------- |----------------------------------- |
-| [ComponentId](#componentid)     | `string` | Optional | Yes      |`#/definitions/EdgeComponentConfig` |
-| [ComponentType](#componenttype) | `string` | Optional | Yes      |`#/definitions/EdgeComponentConfig` |
+| ComponentId     | `string` | Optional | Yes      |`#/definitions/EdgeComponentConfig` |
+| ComponentType | `string` | Optional | Yes      |`#/definitions/EdgeComponentConfig` |
 
 
 # Edge Data Store configuration properties
 
 | Property                                            | Type      | Required | Nullable | Defined by                     |
 | --------------------------------------------------- | --------- | -------- | -------- | ------------------------------ |
-| [ComponentConfigurations](#componentconfigurations) | reference <br> `#/definitions/EdgeComponentConfig` | Optional | Yes      | EdgeDataStoreConfig (this schema) |
+| ComponentConfigurations | reference <br> `#/definitions/EdgeComponentConfig` | Optional | Yes      | EdgeDataStoreConfig (this schema) |
 
 
 **Note:** All of the following _requirements_ need to be fulfilled.

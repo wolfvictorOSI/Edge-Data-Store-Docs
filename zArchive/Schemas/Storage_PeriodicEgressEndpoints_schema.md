@@ -92,24 +92,24 @@ uid: storage_PeriodicEgressEndpoints_schema
 
 | Property                            | Type      | Required     | Nullable | Defined by                                |
 | ----------------------------------- | --------- | ------------ | -------- | ----------------------------------------- |
-| [Backfill](#backfill)               | `boolean` | Optional     | No       | PeriodicEgressConfiguration (this schema) |
-| [ClientId](#clientid)               | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [ClientSecret](#clientsecret)       | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [DebugExpiration](#debugexpiration) | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [Description](#description)         | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [EgressFilter](#egressfilter)       | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [Enabled](#enabled)                 | `boolean` | Optional     | No       | PeriodicEgressConfiguration (this schema) |
-| [Endpoint](#endpoint)               | `string`  | **Required** | No       | PeriodicEgressConfiguration (this schema) |
-| [ExecutionPeriod](#executionperiod) | `string`  | **Required** | No       | PeriodicEgressConfiguration (this schema) |
-| [Id](#id)                           | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [Name](#name)                       | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [NamespaceId](#namespaceid)         | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [Password](#password)               | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [StreamPrefix](#streamprefix)       | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [TokenEndpoint](#tokenendpoint)     | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [TypePrefix](#typeprefix)           | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [UserName](#username)               | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
-| [ValidateEndpointCertificate](#validateendpointcertificate) | `boolean` | Optional | No | PeriodicEgressConfiguration (this schema) |
+| Backfill               | `boolean` | Optional     | No       | PeriodicEgressConfiguration (this schema) |
+| ClientId               | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| ClientSecret      | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| DebugExpiration | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| Description         | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| EgressFilter       | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| Enabled                | `boolean` | Optional     | No       | PeriodicEgressConfiguration (this schema) |
+| Endpoint             | `string`  | **Required** | No       | PeriodicEgressConfiguration (this schema) |
+| ExecutionPeriod | `string`  | **Required** | No       | PeriodicEgressConfiguration (this schema) |
+| Id                          | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| Name                      | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| NamespaceId        | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| Password             | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| StreamPrefix      | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| TokenEndpoint     | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| TypePrefix           | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| UserName             | `string`  | Optional     | Yes      | PeriodicEgressConfiguration (this schema) |
+| ValidateEndpointCertificate | `boolean` | Optional | No | PeriodicEgressConfiguration (this schema) |
 
 
 **Note:** All of the following _requirements_ need to be fulfilled.

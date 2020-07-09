@@ -6,9 +6,9 @@ uid: modbus_Logging_schema
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
-| [LogFileCountLimit](#logfilecountlimit)         | `integer` | Optional | Yes      | EdgeLoggerConfiguration (this schema) |
-| [LogFileSizeLimitBytes](#logfilesizelimitbytes) | `integer` | Optional | Yes      | EdgeLoggerConfiguration (this schema) |
-| [LogLevel](#loglevel)                           | reference | Optional | No       | EdgeLoggerConfiguration (this schema) |
+| LogFileCountLimit         | `integer` | Optional | Yes      | EdgeLoggerConfiguration (this schema) |
+| LogFileSizeLimitBytes | `integer` | Optional | Yes      | EdgeLoggerConfiguration (this schema) |
+| LogLevel                          | reference | Optional | No       | EdgeLoggerConfiguration (this schema) |
 
 ## LogFileCountLimit
 

@@ -6,7 +6,7 @@ uid: modbus_schema
 
 | Property                                        | Type      | Required | Nullable | Defined by                            |
 | ----------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
-| [Logging](#logging)         | [`ModbusLoggingConfiguration`](xref:modbus_Logging_schema) | Optional | Yes      | EdgeLoggerConfiguration |
-| [DataSource](#datasource) | [`DataSourceConfiguration`](xref:modbus_DataSource_schema) | Optional | Yes      | ComponentsConfiguration |
-| [DataSelection](#dataselection) | [`[ModbusDataSelectionConfiguration]`](xref:modbus_DataSelection_schema) | Optional | Yes      | DataSelectionConfiguration |
+| Logging        | `ModbusLoggingConfiguration` | Optional | Yes      | EdgeLoggerConfiguration |
+| DataSource | `DataSourceConfiguration` | Optional | Yes      | ComponentsConfiguration |
+| DataSelection | `[ModbusDataSelectionConfiguration]` | Optional | Yes      | DataSelectionConfiguration |
 

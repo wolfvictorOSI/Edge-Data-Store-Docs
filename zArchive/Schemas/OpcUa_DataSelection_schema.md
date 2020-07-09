@@ -44,10 +44,10 @@ The OPC UA data selection configuration schema specifies how to formally describ
 
 | Property              | Type      | Required | Nullable | Defined by                       |
 | --------------------- | --------- | -------- | -------- | -------------------------------- |
-| [Name](#name)         | `string`  | Optional | Yes      | DataCollectionItem (this schema) |
-| [NodeId](#nodeid)     | `string`  | Optional | Yes      | DataCollectionItem (this schema) |
-| [Selected](#selected) | `boolean` | Optional | No       | DataCollectionItem (this schema) |
-| [StreamId](#streamid) | `string`  | Optional | Yes      | DataCollectionItem (this schema) |
+| Name         | `string`  | Optional | Yes      | DataCollectionItem (this schema) |
+| NodeId     | `string`  | Optional | Yes      | DataCollectionItem (this schema) |
+| Selected | `boolean` | Optional | No       | DataCollectionItem (this schema) |
+| StreamId | `string`  | Optional | Yes      | DataCollectionItem (this schema) |
 
 
 

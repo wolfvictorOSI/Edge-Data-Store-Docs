@@ -23,13 +23,13 @@ The OPC UA data source configuration schema specifies how to formally describe t
 
 | Property                                    | Type      | Required | Nullable | Defined by                            |
 | ------------------------------------------- | --------- | -------- | -------- | ------------------------------------- |
-| [EndpointUrl](#endpointurl)                 | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
-| [IncomingTimestamp](#incomingtimestamp)     | reference | Optional | No       | DataSourceConfiguration (this schema) |
-| [Password](#password)                       | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
-| [RootNodeIds](#rootnodeids)                 | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
-| [StreamIdPrefix](#streamidprefix)           | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
-| [UseSecureConnection](#usesecureconnection) | `boolean` | Optional | No       | DataSourceConfiguration (this schema) |
-| [UserName](#username)                       | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
+| EndpointUrl                | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
+| IncomingTimestamp     | reference | Optional | No       | DataSourceConfiguration (this schema) |
+| Password                       | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
+| RootNodeIds                 | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
+| StreamIdPrefix          | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
+| UseSecureConnection | `boolean` | Optional | No       | DataSourceConfiguration (this schema) |
+| UserName                      | `string`  | Optional | Yes      | DataSourceConfiguration (this schema) |
 
 
 **Note:** All of the following _requirements_ need to be fulfilled.
