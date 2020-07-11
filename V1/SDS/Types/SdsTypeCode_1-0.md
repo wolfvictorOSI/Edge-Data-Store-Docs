@@ -4,7 +4,7 @@ uid: sdsTypeCode1-0
 
 # SdsTypeCode
 
-The SdsTypeCode is a numeric identifier used by the Data Store to identify SdsTypes. A SdsTypeCode exists for every supported type.
+The SdsTypeCode is a numeric identifier used by SDS to identify SdsTypes. An SdsTypeCode exists for every supported type.
 
 Atomic types, such as strings, floats, and arrays, are defined entirely by the SdsTypeCode. Atomic types do not need fields to define the type.
 

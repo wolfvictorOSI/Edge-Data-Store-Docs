@@ -4,9 +4,7 @@ uid: sdsTypes1-0
 
 # Types
 
-The Sequential Data Store (SDS) stores streams of events and provides ways to find and associate events. Events are stored in SdsStreams. An SdsType defines the structure of events and how the are associated within the SdsStream.
-
-Event data is stored in SDS in an SdsStream.
+An SdsType (used interchangeably with type throughout documentation) defines the shape of a single measured event or object. A type gives structure to your data. For example, if you're measuring three things (longitute, latitude, speed) from a device at the same time, then those three properties should be included in the type. 
 
 An SdsType defines the structure of an event stored in an SdsStream and how to associate events within the SdsStream. An event is a single unit whose properties have values that relate to the index; that is, each property of an SdsType event is related to the event’s index. Each event is a single unit.
 
@@ -16,12 +14,11 @@ An SdsType used to define an SdsStream must have a key, which is a property, or 
 
 An SdsType is referenced by its identifier or Id field. SdsType identifiers must be unique within a Namespace. An SdsType can also refer other SdsTypes by using their identifiers. This enables type reusability. Nested types and base types are automatically created as separate types. For further information, see [Type reusability](xref:sdsTypeReusability1-0).
 
-SdsTypes are immutable. Once you create an SdsType, you cannot change its definition. If the SdsType definition is incorrect, you must delete and recreate it, and the SdsType can only be deleted if no streams, stream views, or types reference it.
+SdsTypes are immutable. Once an SdsType is created, you cannot change its definition. If the SdsType definition is incorrect, you must delete and recreate it, and it can only be deleted if no streams, stream views, or types reference it.
 
 Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential Data Store. SdsTypes that define properties or base types are contained within the parent SdsType and are not required to be added to the Data Store separately.
 
-
-SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](xref:sdsReadingData1-0#interpolation) and [Extrapolation](xref:sdsReadingData1-0#extrapolation) in [Reading data](xref:sdsReadingData1-0).
+SdsTypes define how events are associated and read within an SdsStream. When attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, the results are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](xref:sdsReadingData1-0#interpolation) and [Extrapolation](xref:sdsReadingData1-0#extrapolation) in [Read data](xref:sdsReadingData1-0).
 
 
 The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use.
@@ -34,15 +31,15 @@ The following table shows the required and optional SdsType fields. Fields that 
 | SdsTypeCode       | SdsTypeCode            | Required    | No | Numeric code identifying the base SdsType. |
 | InterpolationMode | SdsInterpolationMode   | Optional    | No | Interpolation setting of the type. Default is Continuous. |
 | ExtrapolationMode | SdsExtrapolationMode   | Optional    | No | Extrapolation setting of the type. Default is All. |
-| Properties        | IList\<SdsTypeProperty\> | Required    | Yes, with limitations | List of SdsTypeProperty items. |
+| Properties        | IList\<SdsTypeProperty\> | Required    | Yes, with limitations | List of SdsTypeProperty items. See [SdsTypeProperty](sdsTypeProperty1-0) |
 
 For search limitations, see [Search in SDS](xref:sdsSearching1-0).
 
 ## Rules for the type identifier (SdsType.Id)
 
-When constructing the type identifier, SdsType.ID, the following rules apply:
+The type identifier, SdsType.ID, has the following requirements:
 
-1. Is not case sensitive.
-2. Can contain spaces.
-3. Cannot contain forward slash ("/").
-4. Can contain a maximum of 100 characters. 
+- Is not case sensitive.
+- Can contain spaces.
+- Cannot contain forward slash ("/").
+- Contains a maximum of 100 characters. 
