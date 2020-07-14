@@ -2,13 +2,11 @@
 uid: sdsFilterExpressions1-0
 ---
 
-Filter expressions
-==================
+# Filter expressions
 
 You can apply filter expressions to certain read operations that return Sequential Data Store values, including: `Get Values` and `Get Summaries`.
 
-SdsTypeCodes
-------------
+## SdsTypeCodes
 
 The following types are supported for use within a filter expression:
 
@@ -41,8 +39,7 @@ The following types are not supported for use within a filter expression:
 - ``SdsTypeProperty``
 - ``Nullable Types``
 
-Logical operators
-------------
+## Logical operators
 
 The following logical operators are supported for use within a filter expression:
 
@@ -62,7 +59,7 @@ The following logical operators are supported for use within a filter expression
 
 ### Logical operator examples
 
-For the following examples, you can assume that the SDS Type event includes a field named ``Value`` of type **double**:
+For the following examples, assume that the SDS Type event includes a field named ``Value`` of type **double**:
 
 - ``Value eq 1.0``
 - ``Value ne 15.6``
@@ -74,8 +71,7 @@ For the following examples, you can assume that the SDS Type event includes a fi
 - ``Value gt 6.0 or Value lt 2.0``
 - ``not (Value eq 1.0)``
 
-Math functions
-------------
+## Math functions
 
 The following math functions are supported for use within a filter expression:
 
@@ -92,7 +88,7 @@ The following math functions are supported for use within a filter expression:
 
 ### Math function examples
 
-For the following examples, you can assume that the SDS Type event includes a field named ``Value`` of type **double**:
+For the following examples, assume that the SDS Type event includes a field named ``Value`` of type **double**:
 
 - ``Value eq (6.0 add 3.0)``
 - ``Value eq (6.0 sub 3.0)``
@@ -103,8 +99,7 @@ For the following examples, you can assume that the SDS Type event includes a fi
 - ``floor(Value) eq 15``
 - ``ceiling(Value) eq 16``
 
-String functions
-------------
+## String functions
 
 String operations are case sensitive. The character index in a string is 0-based. The following string functions are supported for use within a filter expression:
 
@@ -124,7 +119,7 @@ String operations are case sensitive. The character index in a string is 0-based
 
 ### String function examples
 
-For the following examples, you can assume that the SDS Type event includes a field named ``sValue`` of type **string**:
+For the following examples, assume that the SDS Type event includes a field named ``sValue`` of type **string**:
 
 |Example                                      |Result                                                           |
 |---------------------------------------------|-----------------------------------------------------------------|
@@ -140,8 +135,7 @@ For the following examples, you can assume that the SDS Type event includes a fi
 |``concat(sValue,'xyz') eq 'dataValue_7xyz'`` |Add characters to ``sValue`` and compare to ‘dataValue_7xyz’     |
 |``replace(sValue,'L','D') eq 'Dog1'``        |Replace any ‘L’ in ``sValue`` with ‘D’ and compare to ‘Dog1’     |
 
-DateTime functions
-------------
+## DateTime functions
 
 The following DateTime functions are supported for use within a filter expression:
 
@@ -156,7 +150,7 @@ The following DateTime functions are supported for use within a filter expressio
 
 ### DateTime function examples
 
-For the following examples, you can assume that the SDS Type event includes a field named ``TimeId`` of type **DateTime**:
+For the following examples, assume that the SDS Type event includes a field named ``TimeId`` of type **DateTime**:
 
 - ``year(TimeId) eq 2015``
 - ``month(TimeId) eq 11``
@@ -165,8 +159,7 @@ For the following examples, you can assume that the SDS Type event includes a fi
 - ``minute(TimeId) eq 5``
 - ``second(TimeId) eq 3``
 
-TimeSpan functions
-------------
+## TimeSpan functions
 
 The following TimeSpan functions are supported for use within a filter expression:
 
@@ -180,7 +173,7 @@ The following TimeSpan functions are supported for use within a filter expressio
 
 ### TimeSpan function examples
 
-For the following examples, you can assume that the SDS Type event includes a field named ``TimeSpanValue`` of type **TimeSpan**:
+For the following examples, assume that the SDS Type event includes a field named ``TimeSpanValue`` of type **TimeSpan**:
 
 - ``years(TimeSpanValue) eq 1``
 - ``days(TimeSpanValue) eq 22``

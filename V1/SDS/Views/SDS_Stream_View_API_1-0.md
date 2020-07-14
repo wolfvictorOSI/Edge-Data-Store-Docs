@@ -121,7 +121,7 @@ Returns a list of stream views within a given namespace.
 
 If specifying the optional search query parameter, the list of stream views returned will match
 the search criteria. If the search query parameter is not specified, the list will include
-all stream views in the Namespace. See [Searching](xref:sdsSearching1-0) for information about specifying those respective parameters.
+all stream views in the Namespace. See [Search in SDS](xref:sdsSearching1-0) for information about specifying those respective parameters.
 
 **Request**
 
@@ -134,7 +134,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews?query={query}&sk
 The namespace; either default or diagnostics.
 
 `string query`  
-An optional parameter representing a string search. For information about specifying the search parameter, see [Searching](xref:sdsSearching1-0).
+An optional parameter representing a string search. For information about specifying the search parameter, see [Search in SDS](xref:sdsSearching1-0).
 
 `int skip`  
 An optional parameter representing the zero-based offset of the first SdsStreamView to retrieve. If not specified, a default value of 0 is used.

@@ -12,7 +12,7 @@ When SDS is unable to determine how to map a source property, the property is re
 
 To map a property that is beyond the ability of SDS to map on its own, you should define an SdsStreamViewProperty and add it to the SdsStreamView’s Properties collection.
 
-The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. For more information on search limitations, see [Searching](xref:sdsSearching1-0).
+The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. For more information on search limitations, see [Search in SDS](xref:sdsSearching1-0).
 
 | Property     | Type                   | Optionality | Searchability | Details |
 |--------------|------------------------|-------------|------------|---------|

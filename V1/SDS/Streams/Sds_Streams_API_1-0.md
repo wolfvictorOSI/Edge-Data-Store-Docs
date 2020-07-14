@@ -60,7 +60,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Streams?query={query}&skip={
 The namespace; either default or diagnostics.
 
 `string query`  
-An optional parameter representing a string search. For information about specifying the search parameter, see [Searching](xref:sdsSearching1-0).
+An optional parameter representing a string search. For information about specifying the search parameter, see [Search in SDS](xref:sdsSearching1-0).
 
 `int skip`  
 An optional parameter representing the zero-based offset of the first SdsStream to retrieve. If not specified, a default value of 0 is used.
