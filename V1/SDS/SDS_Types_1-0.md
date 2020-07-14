@@ -31,7 +31,7 @@ The following table shows the required and optional SdsType fields. Fields that 
 | SdsTypeCode       | SdsTypeCode            | Required    | No | Numeric code identifying the base SdsType. |
 | InterpolationMode | SdsInterpolationMode   | Optional    | No | Interpolation setting of the type. Default is Continuous. |
 | ExtrapolationMode | SdsExtrapolationMode   | Optional    | No | Extrapolation setting of the type. Default is All. |
-| Properties        | IList\<SdsTypeProperty\> | Required    | Yes, with limitations | List of SdsTypeProperty items. See [SdsTypeProperty](sdsTypeProperty1-0) |
+| Properties        | IList\<SdsTypeProperty\> | Required    | Yes, with limitations | List of SdsTypeProperty items. See [SdsTypeProperty](xref:sdsTypeProperty1-0) |
 
 For search limitations, see [Search in SDS](xref:sdsSearching1-0).
 

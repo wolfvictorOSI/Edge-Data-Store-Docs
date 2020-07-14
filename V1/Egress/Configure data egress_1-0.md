@@ -35,7 +35,7 @@ curl -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: applic
 | **ClientSecret**                | Required for OCS endpoint | string    | Used for authentication with the OCS OMF endpoint. |
 | **DebugExpiration**             | Optional                  | string    | Enables logging of detailed information, for each outbound HTTP request pertaining to this egress endpoint, to disk. The value represents the date and time this detailed information should stop being saved. Examples of valid strings representing date and time:  UTC: “yyyy-mm-ddThh:mm:ssZ”, Local: “mm-dd-yyyy hh:mm:ss”. For more information, see [Troubleshoot Edge Data Store](../Troubleshooting/Troubleshooting_1-0.md). |
 | **Description**                 | Optional                  | string    | Friendly description |
-| **EgressFilter**                | Optional                  | string    | A filter used to determine which streams and types are egressed. For more information on valid filters, see [Searching](../Sds/Searching_1-0.md). |
+| **EgressFilter**                | Optional                  | string    | A filter used to determine which streams and types are egressed. For more information on valid filters, see [Searching](../Sds/Search_1-0.md). |
 | **Enabled**                     | Optional                  | Boolean      | An indicator of whether egress is enabled when the egress endpoint is loaded. Defaults to true. |
 | **Endpoint**                    | Required                  | string    | Destination that accepts OMF v1.1 messages. Supported destinations include OCS and PI. |
 | **ExecutionPeriod**             | Required                  | string    | Frequency of time between each egress action. Must be a string in the format d.hh:mm:ss.##. |
