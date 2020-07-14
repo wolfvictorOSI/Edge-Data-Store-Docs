@@ -10,7 +10,7 @@ SdsStreams are referenced by their identifier, which is the `Id` field. SdsStrea
 
 The following table shows the required and optional SdsStream fields. Fields not listed are reserved for internal SDS use.
 
-| Property          | Type                             | Optionality | Searchability | Details |
+| Property          | Type                             | Optionality | Searchable | Details |
 |-------------------|----------------------------------|-------------|------------|---------|
 | Id                | String                           | Required    | Yes        | An identifier for referencing the stream. |
 | TypeId            | String                           | Required    | Yes        | The SdsType identifier of the type to be used for this stream. |
