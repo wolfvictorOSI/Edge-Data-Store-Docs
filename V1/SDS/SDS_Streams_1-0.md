@@ -8,7 +8,7 @@ SdsStreams are collections of sequentially occurring values indexed by a single 
 
 SdsStreams are referenced by their identifier, which is the `Id` field. SdsStream identifiers must be unique within a namespace. An SdsStream must include a `TypeId` that references the identifier of an existing SdsType. When an SdsStream contains data, you must use a stream view to update the stream type.
 
-The following table shows the required and optional SdsStream fields. Fields not listed are reserved for internal SDS use.
+The following table shows the SdsStream fields. Fields not listed are reserved for internal SDS use.
 
 | Property          | Type                             | Optionality | Searchable | Details |
 |-------------------|----------------------------------|-------------|------------|---------|

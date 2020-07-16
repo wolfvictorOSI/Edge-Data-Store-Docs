@@ -4,17 +4,21 @@ uid: sdsStreamViews1-0
 
 # Stream views
 
-An SdsStreamView provides a way to map stream data requests from one data type to another. You can apply a stream View to any read or GET operation. SdsStreamView is used to specify the mapping between source and target types.
+SdsStreamViews (or stream views) provide flexibility in the use of SdsTypes. While you cannot actually change the properties of SdsTypes themselves, the stream views feature enables you to create a view of a selected SdsStream that appears as if you had changed the SdsType on which it is based. You create a stream view by choosing a source and target type then a set of mappings between properties of those two types. Using a stream view to leverage existing SdsType properties is preferable to creating a new SdsType, because the SdsStream that is based on the SdsType continues to function with its previously archived stream data intact.
 
-SDS attempts to determine how to map Properties from the source to the destination. When the mapping is straightforward, such as when the properties are in the same position and of the same data type, or when the properties have the same name, SDS will map the properties automatically.
+You can either see the impact of the stream view on a stream in an ad hoc manner through a GET method or assign the stream view to a stream with a PUT method.
+
+An SdsStreamView provides a way to map stream data requests from one data type to another. You can apply a stream view to any read or GET operation. SdsStreamView is used to specify the mapping between source and target types.
+
+SDS attempts to determine how to map properties from the source to the destination. When the mapping is straightforward, such as when the properties are in the same position and of the same data type, or when the properties have the same name, SDS will map the properties automatically.
 
 When SDS is unable to determine how to map a source property, the property is removed. If SDS encounters a target property that it cannot map to, the property is added and configured with a default value.
 
-To map a property that is beyond the ability of SDS to map on its own, you should define an SdsStreamViewProperty and add it to the SdsStreamView’s Properties collection.
+To map a property that is beyond the ability of SDS to map on its own, define an SdsStreamViewProperty and add it to the SdsStreamView’s Properties collection.
 
-The following table shows the required and optional SdsStreamView fields. Fields that are not included are reserved for internal SDS use. For more information on search limitations, see [Search in SDS](xref:sdsSearching1-0).
+The following table shows the SdsStreamView fields. Fields that are not included are reserved for internal SDS use. For more information on search limitations, see [Search in SDS](xref:sdsSearching1-0).
 
-| Property     | Type                   | Optionality | Searchability | Details |
+| Property     | Type                   | Optionality | Searchable | Details |
 |--------------|------------------------|-------------|------------|---------|
 | Id           | String                 | Required    | Yes        |Identifier for referencing the stream view. |
 | Name         | String                 | Optional    | Yes        |Friendly name. |
@@ -23,12 +27,14 @@ The following table shows the required and optional SdsStreamView fields. Fields
 | TargetTypeId | String                 | Required    | Yes        |Identifier of the SdsType to convert events to. |
 | Properties   | IList\<SdsStreamViewProperty\> | Optional    | Yes, with limitations  |Property level mapping. |
 
-**Rules for the stream view identifier (SdsStreamView.Id)**
+## Rules for the stream view identifier (SdsStreamView.Id)
 
-1. Is not case sensitive.
-2. Can contain spaces.
-3. Cannot contain forward slash ("/").
-4. Can contain a maximum of 100 characters.
+The type identifier, SdsStreamView.ID, has the following requirements:
+
+ - Is not case sensitive.
+ - Can contain spaces.
+ - Cannot contain forward slash ("/").
+ - Contains a maximum of 100 characters.
 
 ## Properties / SdsStreamViewProperty
 

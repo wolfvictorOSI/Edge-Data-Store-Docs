@@ -20,7 +20,7 @@ Only the SdsTypes used to define SdsStreams or SdsStreamViews are required to be
 
 SdsTypes define how events are associated and read within an SdsStream. When attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, the results are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](xref:sdsReadingData1-0#interpolation) and [Extrapolation](xref:sdsReadingData1-0#extrapolation) in [Read data](xref:sdsReadingData1-0).
 
-The following table shows the required and optional SdsType fields. Fields that are not included are reserved for internal SDS use.
+The following table shows the SdsType fields. Fields that are not included are reserved for internal SDS use.
 
 | Property          | Type                   | Optionality | Searchable | Details |
 |-------------------|------------------------|-------------|---------|---------|
