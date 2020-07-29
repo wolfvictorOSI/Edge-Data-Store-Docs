@@ -2,10 +2,13 @@
 uid: sdsTableFormat1-0
 ---
 
-Table format
-============
+# Table format
 
-A table is a convenient structure for analytics and display. REST APIs for retrieving multiple events from the data store support returning results in a table. You can set the form variable to specify a table or a table with headers. You can apply table format to any read that returns multiple values and summaries.
+Results of a query can be organized into tables by directing the form parameter to return a table. Two forms of table are available: table and header table. Apply the table format to any read that returns multiple values and summaries by setting the form variable to specify a table or a table with headers.
+
+When the form parameter is specified as ``table``, ``?form=table``, events are returned in row column form. Results include a collection named Columns that lists column name and type and a collection named Rows containing a collection of rows matching the order of the columns.
+
+Specifying a form of type ``table-headers``, ``?form=tableh``, results in a collection where the Rows collection contains a column header list.
 
 The following is a request to retrieve values using the window parameters:
 

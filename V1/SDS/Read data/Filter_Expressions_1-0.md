@@ -4,7 +4,7 @@ uid: sdsFilterExpressions1-0
 
 # Filter expressions
 
-You can apply filter expressions to certain read operations that return Sequential Data Store values, including: `Get Values` and `Get Summaries`.
+Apply filter expressions to any read that returns multiple values, including `Get Values`, `Get Range Values`, `Get Window Values`, and `Get Intervals` to further control the results of the read. The filter expression is applied to the collection events conditionally filtering events that do not meet the filter conditions.
 
 ## SdsTypeCodes
 

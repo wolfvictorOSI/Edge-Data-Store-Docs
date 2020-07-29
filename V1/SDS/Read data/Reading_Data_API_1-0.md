@@ -4,6 +4,8 @@ uid: sdsReadingDataApi1-0
 
 # API calls for reading data
 
+The following example API calls show different methods for reading data.
+
 ## Example type, stream, and data
 
 Many of the API methods described below contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples:
