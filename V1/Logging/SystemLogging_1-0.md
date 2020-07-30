@@ -35,7 +35,7 @@ It is located in:
 
 Complete the following to change the logging configuration:
 
-1. Update the parameters of the message logging configuration JSON file that you want as needed. For example, the _Component_Logging.json_ file:
+1. Update the parameters of the message logging configuration JSON file that you want as needed. For example, the _System_Logging.json_ file:
 
     ```json
     {
@@ -46,14 +46,12 @@ Complete the following to change the logging configuration:
     ```
 2. Save the file.
 
-3. Use any tool capable of making HTTP requests to execute a PUT command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/<ComponentId>/Logging`.
-
-    **Note:**  Replace `<ComponentId>` with the ComponentId of the adapter instance or Storage component, for example _OpcUa1_.
+3. Use any tool capable of making HTTP requests to execute a PUT command with the contents of that file to the following endpoint: `http://localhost:5590/api/v1/configuration/System/Logging`.
 
       Example using curl (run this command from the same directory where the file is located):
 
       ```bash
-      curl -i -d "@Component_Logging.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/<ComponentId>/Logging
+      curl -i -d "@System_Logging.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/System/Logging
       ```
 
     On successful execution, the log level change takes effect immediately during runtime. The other configurations (log file size and file count) get updated after Edge Data Store is restarted. 
