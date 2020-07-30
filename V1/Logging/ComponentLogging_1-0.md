@@ -19,11 +19,15 @@ To adjust the message logging behavior, complete the following:
 
 1. Using any text editor, open the _componentId_Logging.json_ file that you want.
 2. Change the values as needed, so it looks similar to the [Logging example](#logging-example).
-3. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the respective endpoint. <br><br> Example using curl for the EDS logging endpoint (run this command from the same directory where the file is located):
+3. Use any tool capable of making HTTP requests to execute a POST command with the contents of that file to the respective endpoint.
 
-```bash
-curl -v -d "@System_Logging.json" -H "Content-Type: application/json" http://localhost:5590/api/v1/configuration/System/Logging
-```
+    **Note:**  Replace `<ComponentId>` with the ComponentId of the adapter instance or Storage component, for example _OpcUa1_.
+
+      Example using curl (run this command from the same directory where the file is located):
+
+      ```bash
+      curl -i -d "@componentId_Logging.json" -H "Content-Type: application/json" -X PUT http://localhost:5590/api/v1/configuration/<ComponentId>/Logging
+      ```
 
 **Note:** The other endpoints are the following:<br>
   - Edge Data Store: `http://localhost:5590/api/v1/configuration/System/Logging`
