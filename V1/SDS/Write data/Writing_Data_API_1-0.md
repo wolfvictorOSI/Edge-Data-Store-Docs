@@ -6,7 +6,7 @@ uid: sdsWritingDataApi1-0
 
 ## Example type, stream, and data
 
-Many of the following API methods descriptions contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples:
+The descriptions of the following API methods contain example requests and responses in JSON to highlight usage and specific behaviors. The following type, stream, and data are used in the examples:
 
 **Example type**  
 ``SimpleType`` is an SdsType with a single index and two additional properties. This type is defined in Python and Javascript:

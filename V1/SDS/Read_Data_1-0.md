@@ -4,7 +4,7 @@ uid: sdsReadingData1-0
 
 # Read data
 
-The REST APIs provide programmatic access to read and write data to and from SDS. The APIs used to read streams data are described in the following sections. The results returned are affected by types, stream views, filter expressions, and table format.
+The REST APIs provide programmatic access to read stream data from SDS. The results returned by the APIs are affected by types, stream views, filter expressions, and table format.
 
 ## Single stream reads
 

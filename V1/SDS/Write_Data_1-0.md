@@ -4,13 +4,13 @@ uid: sdsWritingData1-0
 
 # Write data
 
-The SDS REST APIs provide programmatic access to read and write SDS data. This topic describes the APIs used to write SdsStream data.
+The SDS REST APIs provide programmatic access to write data to SDS. 
 
 All writes rely on a stream’s key or primary index. The primary index determines the order of events in the stream. Secondary indexes are updated, but they do not contribute to the request. All references to indexes are to the primary index.
 
 ## Single stream writes
 
-The following support writing multiple values:
+The following methods support writing a single or multiple values:
 
 * [Insert Values](xref:sdsWritingDataApi1-0#insert-values) inserts a collection of events.
 * [Patch Values](xref:sdsWritingDataApi1-0#patch-values) updates specific fields for a collection of events.
@@ -78,20 +78,17 @@ You can serialize your data using one of many available JSON serializers availab
 
 ## Response format
 
-Supported response formats include JSON, verbose JSON, and SDS.
+The format of the response is specified in the API call. For write APIs, the supported response formats are:
 
-The default response format for SDS is JSON, which is used in all examples in this documentation. Default JSON responses do not include any values that are equal to the default value for their type.
+ - JSON - The default response format for SDS, which is used in all examples in this documentation. Default JSON responses do not include any values that are equal to the default value for their type.
 
-Verbose JSON responses include all values in the returned JSON payload, including defaults. To specify verbose JSON return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request.
+ - Verbose JSON - Verbose has no impact on writes because writes return only error messages. To specify verbose JSON return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request.
 
-Verbose has no impact on writes; writes return only error messages.
-
-To specify SDS format, set the ``Accept`` header in the request to ``application/sds``.
+ - SDS - To specify SDS format, set the ``Accept`` header in the request to ``application/sds``.
 
 ## Indexes
 
-SDS writes rely on the primary index for positioning within streams and locating existing events. Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, indexes are specified as strings in the URI. For more details about working with indexes, see [Indexes](xref:sdsIndexes1-0).
+SDS writes rely on the primary index for positioning within streams and locating existing events. Most writes use the index as specified by the value; however, for deletes, indexes are specified as strings in the URI. For more details about working with indexes, see [Indexes](xref:sdsIndexes1-0).
 
 To specify compound indexes in the URI, specify each field that composes the index, in the specified order, separated by the pipe character, ‘|’.
-*****
   
