@@ -16,7 +16,7 @@ To prepare OCS to receive OMF messages from EDS, create an OMF connection in OCS
    
 2. Create an **OMF** type **Connection**.
    
-   The connection should link the created client to an existing [namespace](https://ocs-docs.osisoft.com/Documentation/Management/Account_Namespace_1.html) where the data will be stored.
+   The connection should link the created client to an existing [namespace](https://ocs-docs.osisoft.com/Content_Portal/Documentation/Management/Account_Namespace_1.html) where the data will be stored.
    The **OMF Endpoint** URL for the connection will be used as the egress configuration *Endpoint* property.
 
 ## PI Server
