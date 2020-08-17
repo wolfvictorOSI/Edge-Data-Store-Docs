@@ -49,7 +49,7 @@ The following are examples of valid Modbus TCP data source configurations.
 
 ```json
 {
-    "IpAddress": "127.0.0.2", 
+    "IpAddress": "127.0.0.2" 
 }
 ```
 
