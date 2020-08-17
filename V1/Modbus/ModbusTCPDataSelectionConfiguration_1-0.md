@@ -62,7 +62,7 @@ The following are examples of valid Modbus TCP data selection configurations.
         "RegisterType": 3,
         "RegisterOffset": 122,
         "DataTypeCode": 20,
-        "ScanRate": 1000,
+        "ScanRate": 1000
     }
 ]
 ```
