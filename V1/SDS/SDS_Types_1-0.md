@@ -18,7 +18,7 @@ An SdsType can also refer other SdsTypes by using their identifiers. This enable
 
 SdsTypes define how events are associated and read within a collection of events, or SdsStream. The read characteristics when attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, are determined by the interpolation and extrapolation settings of the SdsType. For more information about read characteristics, see [Interpolation](xref:sdsReadingData1-0#interpolation) and [Extrapolation](xref:sdsReadingData1-0#extrapolation) in [Reading data](xref:sdsReadingData1-0).
 
-SdsTypes are immutable. After you create an SdsType, you cannot change its definition. If the definition of an SdsType is incorrect, you must delete and recreate it. In addition, the SdsType may be deleted only if no streams, stream views, or types reference it.
+SdsTypes are immutable. After you create an SdsType, you cannot modify its definition. If the definition of an SdsType requires modification, you must delete and recreate it. In addition, the SdsType may be deleted only if no streams, stream views, or types reference it. If streams, stream views, or other types do reference the SdsType, they must be deleted or the reference must be removed.
 
 Only SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential data store. SdsTypes that define properties or base types are contained within the parent SdsType and are not required to be added to the Data Store independently.
 

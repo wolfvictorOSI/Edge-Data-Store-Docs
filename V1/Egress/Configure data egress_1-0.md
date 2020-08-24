@@ -8,6 +8,8 @@ Once the OCS or PI Server destinations are prepared to receive OMF messages, con
 
 **Note:** You cannot add egress configurations manually because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see [REST URLs](#rest-urls).
 
+**Warning:** If a periodic egress endpoint is deleted/removed and then recreated with backfilling set to true, duplicate data will appear on any stream that was previously egressed successfully. New streams will not see duplicate data.
+
 ## Create egress endpoints
 
 Complete the following procedure to create new egress endpoints:
