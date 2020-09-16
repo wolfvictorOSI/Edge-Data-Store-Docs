@@ -156,7 +156,7 @@ Content-Type: application/json
    {  
       "Id":"Compound",
       "TypeId":"Compound"
-   },
+   }
 ]
 ```
 
