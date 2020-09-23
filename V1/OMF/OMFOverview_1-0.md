@@ -19,6 +19,8 @@ Method: POST
 Endpoint: http://localhost:<port_number>/api/v1/tenants/default/namespaces/default/omf
 ```
 
+This endpoint can only be accessed locally, so the OMF application must run on the same device as EDS.
+
 ## Supported functionality
 
 Edge Data Store supports OMF versions 1.0 and OMF version 1.1 for data ingress. For details on the difference versions of OMF, see the OMF specification, available here: [OSIsoft Message Format](https://omf-docs.osisoft.com/index.html). The OMF ingress functionality is the same technology that is used in OSIsoft Cloud Services (OCS) and writing an OMF application for EDS is very similar to writing an OMF application for OCS. 
