@@ -32,4 +32,4 @@ To prepare a PI Server to receive OMF messages from EDS, a PI Web API OMF endpoi
 
 **Note:**  The certificate used by PI Web API must be trusted by the device running EDS, otherwise the egress configuration *ValidateEndpointCertificate* property needs to be set to false (this can be the case with a **self-signed certificate** but should only be used for testing purposes).
 
-To continue to send OMF egress messages to the PI Web API endpoint after upgrading PI Web API, the EDS service may need to be restarted.
+**Note:**  To continue to send OMF egress messages to the PI Web API endpoint after upgrading PI Web API, restart the EDS service.
