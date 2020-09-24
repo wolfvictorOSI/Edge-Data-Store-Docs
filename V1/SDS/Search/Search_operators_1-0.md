@@ -12,7 +12,7 @@ Operators | Description
 ``OR``  | OR operator. For example, ``cat OR dog`` searches for streams containing either "cat" or "dog" or both.  OR must be in all caps.
 ``NOT`` | NOT operator. For example, ``cat NOT dog`` searches for streams that have the "cat" term or do not have "dog".  NOT must be in all caps.
 ``*``   | Wildcard operator. For example, ``cat*`` searches for streams that have a term that starts with "cat", ignoring case.
-``:``   | Field-scoped query.  For example, ``id:stream*`` will search for streams where the ``id`` field starts with "stream", but will not search on other fields like ``name`` or ``description``.  **Note:** Field names are camel case and are case sensitive.
+``:``   | Field-scoped query.  For example, ``id:stream*`` will search for streams where the ``id`` field starts with "stream", but will not search on other fields like ``name`` or ``description``.  <br> **Note:** Field names are camel case and are case sensitive.
 ``( )`` | Precedence operator. For example, ``motel AND (wifi OR luxury)`` searches for streams containing motel and either wifi or luxury (or both).
 
 **Note:** You can use the wildcard ``*`` only once for each search term, except for the case of a Contains type query clause. In that case, two wildcards are allowed: one as prefix and one as suffix; for example, ``*Tank*`` is valid, but ``*Ta*nk``, ``Ta*nk*``, and ``*Ta*nk*`` are not supported. The wildcard ``*`` only works when specifying a single search term. For example, you can search for ``Tank*``, ``*Tank``, ``Ta*nk`` but not ``Tank Meter*``.

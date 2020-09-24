@@ -47,7 +47,7 @@ Content-Type: application/json
 
 Returns a list of streams.
 
-If the optional search query parameter is specified, the list of streams returned will match the search criteria. If the search query parameter is not specified, the list will include all streams in the namespace. See [Searching](xref:sdsSearching1-0) for information about specifying those respective parameters.
+If the optional search query parameter is specified, the list of streams returned will match the search criteria. If the search query parameter is not specified, the list will include all streams in the namespace. See [Search in SDS](xref:sdsSearching1-0) for information about specifying those respective parameters.
 
 **Request**
 
@@ -136,7 +136,7 @@ For a matching stream (Found), clients that are capable of performing a redirect
 
 When a client performs a redirect and strips the authorization header, SDS cannot authorize the request and returns ``Unauthorized`` (401). For this reason, it is recommended that when using clients that do not redirect with the authorization header, you should disable automatic redirect.
 
-**Request**  
+**Request** 
 
 ```text
 POST api/v1/Tenants/default/Namespaces/{namespaceId}/Streams/{streamId}
