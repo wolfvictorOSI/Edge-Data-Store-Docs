@@ -13,11 +13,11 @@ the EDS Sequential Data Store supports the following compression schemes:
 - ``gzip``
 - ``deflate``
 
-## Request compression (writing data)
+## Request compression (write data)
 
 Specify the compression scheme in the **Content-Encoding** HTTP header of compressed-content requests. This header provides context to the API to properly decode the request content.
 
-## Response compression (reading data)
+## Response compression (read data)
 
 Request compressed responses from the REST API by specifying one of the supported compression schemes using the **Accept-Encoding** HTTP header. Compressed responses from the REST API include a **Content-Encoding** HTTP header indicating the compression scheme used to compress the response content.
 

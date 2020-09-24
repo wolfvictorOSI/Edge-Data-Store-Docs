@@ -10,12 +10,12 @@
 - name: Indexes
   href: Indexes/toc.yml
   href: indexes_1-0.md
-- name: Write data
-  href: Write data/toc.yml
-  topicHref: Write_Data_1-0.md
 - name: Read data
   href: Read data/toc.yml
   topicHref: Read_Data_1-0.md
+- name: Write data
+  href: Write data/toc.yml
+  topicHref: Write_Data_1-0.md
 - name: Units of measure
   href: UOM/toc.yml
   topicHref: Units_of_Measure_1-0.md

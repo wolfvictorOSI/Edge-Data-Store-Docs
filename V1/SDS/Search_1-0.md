@@ -20,7 +20,7 @@ GET api/v1/Tenants/default/Namespaces/{namespaceId}/Types?query={query}&skip={sk
 GET api/v1/Tenants/default/Namespaces/{namespaceId}/StreamViews?query={query}&skip={skip}&count={count}
 ```
 
-## Search properties for streams
+## Search properties for SdsStreams
 
 The searchable properties for SdsStreams are shown in the following table.
 
@@ -37,7 +37,7 @@ The searchable properties for SdsStreams are shown in the following table.
 
 The Stream fields valid for search are identified in the fields table located on the [Streams](xref:sdsStreams1-0) page. 
 
-## Search properties for types
+## Search properties for SdsTypes
 
 Searchable properties for SdsTypes are shown in the following table. 
 
@@ -53,7 +53,7 @@ Searchable properties for SdsTypes are shown in the following table.
 
 The Type fields valid for search are identified in the fields table located on the [Types](xref:sdsTypes1-0) page. The Properties field is searchable with limitations because each SdsTypeProperty of a given SdsType has its name and Id included in the Properties field. This includes nested SdsTypes of the given SdsType. Therefore, the searching of properties will distinguish SdsTypes by their respective lists of relevant SdsTypeProperty Ids and names.
 
-## Search properties for stream views
+## Search properties for SdsStreamViews
 
 The searchable properties for SdsStreamViews are shown in the following table.
 

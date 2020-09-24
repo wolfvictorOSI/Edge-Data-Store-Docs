@@ -4,7 +4,7 @@ uid: unitsOfMeasure1-0
 
 # Units of measure
 
-The Sequential Data Store (SDS) provides a collection of built-in units of measure (Uom). These units of measure can be associated with SdsStreams and SdsTypes to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS supports unit conversions when retrieving data. For more information, see [Reading data](xref:sdsReadingData1-0).
+The Sequential Data Store (SDS) provides a collection of built-in units of measure (Uom). These units of measure can be associated with SdsStreams and SdsTypes to provide unit information for stream data that model measurable quantities. If data has unit information associated with it, SDS supports unit conversions when retrieving data. For more information, see [Read data](xref:sdsReadingData1-0).
 
 Since a unit of measurement (such as meter) defines the magnitude of a quantity (such as Length), SDS represents this through two objects: SdsUom and SdsUomQuantity.
 
