@@ -7,7 +7,7 @@ uid: DataTransformations1-0
 SDS supports the following data transformations on read requests:
 
 * [Reading with SdsStreamViews](#reading-with-sdsstreamviews): Changing the shape of the returned data
-* [Unit of Measure Conversions](#UOM-conversion): Converting the unit of measure of the data  
+* [Unit of Measure Conversions](#Unit-0f-measure-conversions): Converting the unit of measure of the data  
 
 Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the transformation endpoints:
 
@@ -34,7 +34,7 @@ All single stream data reads support stream view transformations.
 
 When you request data with an SdsStreamView, the read characteristics defined by the *target type* of the SdsStreamView determine what is returned. The read characteristics are discussed in the code samples.
 
-## UOM conversion
+## Unit 0f measure conversions
 
 SDS supports assigning units of measure (UOM) to stream data. For more information, see [Units of measure](xref:unitsOfMeasure1-0). If stream data has UOM information associated, SDS supports reading data with unit conversions applied. On each read data request, unit conversions are specified by a user defined collection of `SdsStreamPropertyOverride` objects in read requests. The `SdsStreamPropertyOverride` object has the following structure:
 
