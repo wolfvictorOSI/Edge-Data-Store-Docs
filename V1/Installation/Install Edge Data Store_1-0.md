@@ -77,6 +77,8 @@ You must have administrative privileges to install the software, for example roo
 
 For instructions on how to verify the Edge Data Store installation, see [Verify installation](xref:VerifyInstallation1-0).
 
+**Note:** For devices using Ubuntu 20.04 or higher, install the libicu63 package prior to installing Edge Data Store.
+
 ### Download the distribution file
 
 Complete the following steps to download the appropriate file for your device:

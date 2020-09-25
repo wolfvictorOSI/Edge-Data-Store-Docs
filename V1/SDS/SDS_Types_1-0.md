@@ -18,6 +18,7 @@ Once an SdsType is created, it is immutable and its definition cannot be changed
 
 Only the SdsTypes used to define SdsStreams or SdsStreamViews are required to be added to the Sequential Data Store. SdsTypes that define properties or base types are contained within the parent SdsType do not need to be added to the Data Store separately.
 
+
 SdsTypes define how events are associated and read within an SdsStream. When attempting to read non-existent indexes, indexes that fall between, before or after existing indexes, the results are determined by the interpolation and extrapolation settings of the SdsType. For more information about interpolation and extrapolation, see [Read characteristics](xref:ReadCharacteristics1-0).
 
 The following table shows the SdsType fields. Fields that are not included are reserved for internal SDS use.

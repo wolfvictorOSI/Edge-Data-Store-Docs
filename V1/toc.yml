@@ -8,9 +8,6 @@
 - name: Install Edge Data Store
   href: Installation/toc.yml
   topicHref: Installation/Install Edge Data Store_1-0.md
-- name: EdgeCmd utility
-  href: CommandLine/toc.yml
-  topicHref: CommandLine/EdgeCmd utility_1-0.md  
 - name: Configuration
   href: Configuration/toc.yml
   topicHref: Configuration/Configuration_1-0.md

@@ -8,6 +8,8 @@ Once the OCS or PI Server destinations are prepared to receive OMF messages, con
 
 **Note:** You cannot add egress configurations manually because some parameters are stored to disk encrypted. You must use the REST endpoints to add/edit egress configuration. For additional endpoints, see [REST URLs](#rest-urls).
 
+**Warning:** If a periodic egress endpoint is deleted/removed and then recreated with backfilling set to true, duplicate data will appear on any stream that was previously egressed successfully. New streams will not see duplicate data.
+
 ## Create egress endpoints
 
 Complete the following procedure to create new egress endpoints:
@@ -21,7 +23,7 @@ Complete the following procedure to create new egress endpoints:
 Example using cURL, which must be run from the directory where the JSON file is saved:
 
 ```bash
-curl -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
+curl -d "@PeriodicEgressEndpoints.config.json" -H "Content-Type: application/json" "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
 ```
 
 **Note** The @ symbol is a required prefix for the above command.
