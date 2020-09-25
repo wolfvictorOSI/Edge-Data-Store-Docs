@@ -6,8 +6,8 @@ uid: DataTransformations1-0
 
 SDS supports the following data transformations on read requests:
 
-* [Reading with SdsStreamViews](#reading-with-sdsstreamviews): Changing the shape of the returned data
-* [Unit of Measure Conversions](#Unit-0f-measure-conversions): Converting the unit of measure of the data  
+* Reading with SdsStreamViews: Changing the shape of the returned data
+* Unit of Measure Conversions: Converting the unit of measure of the data  
 
 Data transformations are supported for all single stream reads, but transformations have specific endpoints. The following are the base URIs for the transformation endpoints:
 
