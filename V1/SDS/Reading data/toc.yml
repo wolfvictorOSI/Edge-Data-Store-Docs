@@ -1,6 +1,0 @@
-- name: API calls for reading data 
-  href: ../Reading_Data_API_1-0.md
-- name: Filter expressions
-  href: ../Filter_Expressions_1-0.md
-- name: Table format
-  href: ../table_format_1-0.md

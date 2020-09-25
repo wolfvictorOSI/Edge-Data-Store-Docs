@@ -1,20 +1,25 @@
 - name: Types
-  href: SDS_Types_1-0.md
+  href: Types/toc.yml
+  topicHref: SDS_Types_1-0.md
 - name: Streams
-  href: SDS_Streams_1-0.md
+  href: Streams/toc.yml
+  topicHref: SDS_Streams_1-0.md
 - name: Stream views
-  href: SDS_Views_1-0.md
+  href: Views/toc.yml
+  topicHref: SDS_Views_1-0.md
 - name: Indexes
+  href: Indexes/toc.yml
   href: indexes_1-0.md
-- name: Writing data
-  href: Writing data/toc.yml
-  topicHref: Writing_Data_1-0.md
-- name: Reading data
-  href: Reading data/toc.yml
-  topicHref: Reading_Data_1-0.md
+- name: Read data
+  href: Read data/toc.yml
+  topicHref: Read_Data_1-0.md
+- name: Write data
+  href: Write data/toc.yml
+  topicHref: Write_Data_1-0.md
 - name: Units of measure
-  href: Units_of_Measure_1-0.md
+  href: UOM/toc.yml
+  topicHref: Units_of_Measure_1-0.md
 - name: Compression
   href: Compression_1-0.md
-- name: Searching
-  href: Searching_1-0.md
+- name: Search in SDS
+  href: Search_1-0.md
