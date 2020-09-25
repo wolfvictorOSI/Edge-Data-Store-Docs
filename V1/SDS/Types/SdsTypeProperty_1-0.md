@@ -33,7 +33,7 @@ The `Value` field is used for properties that represent a value. For example, th
 
 `InterpolationMode` is assigned when the property of the event should be interpolated in a specific way that differs from the `InterpolationMode` of the SdsType. `InterpolationMode` is only applied to a property that is not part of the Index. If the `InterpolationMode` is not set, the property inherits the `IntepolationMode` of the SdsType.
 
-An SdsType with the `InterpolationMode` set to ``Discrete`` cannot have a property with an `InteroplationMode`. For more information on interpolation of events, see [Interpolation](xref:sdsReadingData1-0#interpolation).
+An SdsType with the `InterpolationMode` set to ``Discrete`` cannot have a property with an `InteroplationMode`. For more information on interpolation of events, see [Interpolation](xref:ReadCharacteristics1-0#interpolation).
 
 `Uom` is the unit of measure for the property. The `Uom` of a property may be specified by the name or the abbreviation. The names and abbreviations of Uoms are case sensitive.
 

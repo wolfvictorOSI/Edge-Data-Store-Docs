@@ -136,7 +136,7 @@ The stream identifier.
 The index.
 
 ``string searchMode``  
-The [SdsSearchMode](xref:sdsReadingData1-0#sdssearchmode); the default is ``exact``.
+The [SdsSearchMode](xref:Enums1-0#sdssearchmode); the default is ``exact``.
 
 **Response**  
 The response includes a status code and a response body containing a serialized collection with one event. Depending on the request `index` and `searchMode`, it is possible to have an empty collection returned.
@@ -475,13 +475,13 @@ Index bounding the end of the series of events to return.
 Optional maximum number of events to return. If `count` is specified, a `continuationToken` must also be specified.
 
 ``SdsBoundaryType boundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData1-0#sdsboundarytype) specifies handling of events at or near the start and end indexes.
+Optional [SdsBoundaryType](xref:Enums1-0#sdsboundarytype) specifies handling of events at or near the start and end indexes.
 
 ``SdsBoundaryType startBoundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData1-0#sdsboundarytype) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+Optional [SdsBoundaryType](xref:Enums1-0#sdsboundarytype) specifies the first value in the result in relation to the start index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 ``SdsBoundaryType endBoundaryType``  
-Optional [SdsBoundaryType](xref:sdsReadingData1-0#sdsboundarytype) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
+Optional [SdsBoundaryType](xref:Enums1-0#sdsboundarytype) specifies the last value in the result in relation to the end index. If `startBoundaryType` is specified, `endBoundaryType` must be specified.
 
 ``string filter``  
 Optional filter expression (see [Filter expressions](xref:sdsFilterExpressions1-0)).
@@ -1037,7 +1037,7 @@ Content-Type: application/json
 
 Returns data sampled by intervals between a specified start and end index.
 
-Sampling is driven by a specified property or properties of the stream's SdsType. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information, see [Interpolation.](xref:sdsReadingData1-0#interpolation)
+Sampling is driven by a specified property or properties of the stream's SdsType. Property types that cannot be interpolated do not support sampling requests. Strings are an example of a property that cannot be interpolated. For more information, see [Interpolation.](xref:ReadCharacteristics1-0#interpolation)
 
 **Request**  
 
