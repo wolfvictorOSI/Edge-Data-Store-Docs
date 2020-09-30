@@ -10,5 +10,5 @@
   href: Enums_1-0.md
 - name: Data transformations
   href: Data_transformations_1-0.md
-- name: API calls for reading data 
+- name: Read data API
   href: Reading_Data_API_1-0.md

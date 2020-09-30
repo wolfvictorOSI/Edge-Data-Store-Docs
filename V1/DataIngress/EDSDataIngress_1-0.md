@@ -12,4 +12,4 @@ Edge Data Store supports the following protocols to ingress data:
 
 - OMF Ingress: Use OSIsoft Message Format to send data from a custom application into EDS. OMF is a REST and JSON based data format designed for simplicity of custom application design. For more information, see [OSIsoft Message Format](xref:omfOverview1-0).
 
-- SDS Ingress: Use OSIsoft Sequential Data Store (SDS) REST to send data from a custom application into EDS. SDS offers the most options to send, store, and retrieve data from EDS. For more information about using REST API calls with SDS, see [API calls for writing data](xref:sdsWritingDataApi1-0).
+- SDS Ingress: Use OSIsoft Sequential Data Store (SDS) REST to send data from a custom application into EDS. SDS offers the most options to send, store, and retrieve data from EDS. For more information about using REST API calls with SDS, see [Write data API](xref:sdsWritingDataApi1-0).

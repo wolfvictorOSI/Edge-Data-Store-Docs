@@ -69,4 +69,4 @@ ExtrapolationMode works with the InterpolationMode to determine how a stream res
 
 If the ExtrapolationMode is not assigned, the events are extrapolated in the default manner, unless the extrapolation mode is overridden on the SdsStream. For more information on overriding the extrapolation mode on a specific stream, see [Streams](xref:sdsStreams1-0).
 
-For additional information about the effect of read characteristics for the available read methods, see [API calls for reading data](xref:sdsReadingDataApi1-0).
+For additional information about the effect of read characteristics for the available read methods, see [Read data API](xref:sdsReadingDataApi1-0).

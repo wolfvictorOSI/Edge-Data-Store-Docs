@@ -2,7 +2,7 @@
 uid: sdsReadingDataApi1-0
 ---
 
-# API calls for reading data
+# Read data API
 
 The following example API calls show different methods for reading data.
 
