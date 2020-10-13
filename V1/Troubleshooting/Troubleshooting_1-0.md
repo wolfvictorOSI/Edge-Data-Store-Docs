@@ -38,8 +38,8 @@ Use debugging information to troubleshoot problems between an OMF application an
 
 Examples of valid strings representing date and time:
 
-    UTC: “yyyy-mm-ddThh:mm:ssZ”
-    Local: “mm-dd-yyyy hh:mm:ss”
+    UTC: "yyyy-mm-ddThh:mm:ssZ"
+    Local: "mm-dd-yyyy hh:mm:ss"
 
 ## Periodic egress
 
@@ -71,8 +71,8 @@ Use debugging information to troubleshoot problems between Edge Data Store and t
 
 Examples of valid strings representing date and time:
 
-    UTC: “yyyy-mm-ddThh:mm:ssZ”
-    Local: “mm-dd-yyyy hh:mm:ss”
+    UTC: "yyyy-mm-ddThh:mm:ssZ"
+    Local: "mm-dd-yyyy hh:mm:ss"
 
 ### Debugging folder/file structure
 
